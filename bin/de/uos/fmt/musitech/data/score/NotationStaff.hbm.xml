@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="de.uos.fmt.musitech.data.score.NotationStaff"
+        table="NotationStaff"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="uid"
+            column="uid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="scale"
+            type="double"
+            update="true"
+            insert="true"
+            access="property"
+            column="scale"
+        />
+
+        <property
+            name="clefType"
+            type="char"
+            update="true"
+            insert="true"
+            access="property"
+            column="clefType"
+        />
+
+        <property
+            name="clefLine"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="clefLine"
+        />
+
+        <property
+            name="transposition"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="transposition"
+        />
+
+        <many-to-one
+            name="parent"
+            class="de.uos.fmt.musitech.data.score.NotationSystem"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="parent"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <many-to-one
+            name="context"
+            class="de.uos.fmt.musitech.data.structure.Context"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="context"
+        />
+
+        <bag
+            name="content"
+            table="obj_in_BasColl"
+            lazy="false"
+            inverse="false"
+            cascade="save-update"
+        >
+
+              <key
+                  column="coll_id"
+              >
+              </key>
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.MObject"
+                  column="object_id"
+                  outer-join="auto"
+               />
+
+        </bag>
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-NotationStaff.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

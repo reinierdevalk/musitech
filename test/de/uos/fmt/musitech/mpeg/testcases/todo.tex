@@ -1,0 +1,686 @@
+ \section*{1 CWSMR}
+ \subsection*{1.1 coding classic form}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\      \hline
+ Naming of Staffs &
+  
+\\ 	\hline
+ move rests away vertically &
+  
+\\ 	\hline
+ Staff brace &
+  done. (quite ugly though) 
+\\ 	\hline
+ Measure numbers (are these the rehearsal marks from the .doc?) &
+  
+\\ 	\hline
+ (f) &
+  done 
+\\ 	\hline
+ Small notes &
+  A NotationChord now may have another NotationChord as a child. This child is called entryChord. This recursion is necessary as the small notes in the example are not just small notes, but are part of the following note, meaning that they don't have a metrical duration of their own. This problem is solved graphically in the same manner: a chord has an entryChord as child with extends the width of the parent-chord. 
+\\ 	\hline
+ Dotted and paranthised notes and slurs &
+  
+\\ 	\hline
+ a part which is the same in two voices is rendered only once and ''a 2'' is written above the staff &
+  The representation contains both parts equally. One part has the rendering hint ''duplicate of other voice'' which results in all notes getting invisible and the string being generated. 
+\\ 	\hline
+ the ''a 2'' string has to be added for the duplicate term in the oboe voice, 3rd measure. &
+  for now this is done as a simple StringSymbol on a MetricAttachable 
+\\ 	\hline
+ What to do with two voices rendered as one with chords (bassoon staff). Are these then chords in the representation or are they different voices with rendering hints? &
+  Yes. Two times the same voices with rendering hint ''voices as chords'' on the NotationStaff 
+\\ 	\hline
+ Staccato-Accents &
+  This is done in a simple way. But probably this is unsatisfying. The crux is that there may be notes where a staccato point belongs (or even worse beams). It will be hard to check that and even harder to find free spot. 
+\\ 	\hline
+ fix weird alignment bug (third voice) &
+  done 
+\\ 	\hline
+ should NotationStaff.setTransposition() be semantical? &
+  Yes it should. done. NotationStaff.setTransposition() takes a value between -12 and 12 and transposes that many halftones. (smaller or greater values should also be possible, but have no graphical effect (should they?)) 
+\\ 	\hline
+ scaling for some staffs &
+  scaling of gui.Staff seems to work. As this is the first version, there'll be bugs later on 
+\\ 	\hline
+ lyrics &
+  
+\\ 	\hline
+ voice and staff distinction has to be rethought (voice changing staffs midway) &
+  The voices don't change staffs. They just overlap inside one staff... This is already possible. done 
+\\ 	\hline
+ Measure numbers &
+  
+\\ 	\hline
+ long rests &
+  done 
+\\ 	\hline
+ Stacked objects attached to notes &
+  done. see class data.score.StackSymbol on the representation side and score.gui.CustomStackScoreObject on the rendering side 
+\\ 	\hline
+ triols including rests &
+  done. although there're some quirks regarding beam points 
+\\ 	\hline
+ trills &
+  
+\\ 	\hline
+ indented staffs &
+  
+\\ 	\hline
+ accents above staff &
+  
+\\ 	\hline
+ \end{tabular} \subsection*{1.2 coding romantic form}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	aufloesungszeichen before \# &
+  
+\\ 	\hline
+	fingerings &
+  
+\\ 	\hline
+	complex slurs &
+  
+\\ 	\hline
+	pedal marks &
+  
+\\ 	\hline
+ &
+  
+\\ 	\hline
+	extension lines &
+  
+\\ 	\hline
+	volume hints &
+  
+\\ 	\hline
+	beams with rests &
+  
+\\ 	\hline
+	notes with two stems &
+  
+\\ 	\hline
+	notes belonging to two beams &
+  
+\\ 	\hline
+	beams crossing multiple measures &
+  
+\\ 	\hline
+	one note being small and large &
+  
+\\ 	\hline
+	weird spanners &
+  
+\\ 	\hline
+	beams across staffs &
+  
+\\ 	\hline
+	paranthised accidentals &
+  
+\\ 	\hline
+	vertically broken barline &
+  
+\\ 	\hline
+	cluster notation &
+  
+\\ 	\hline
+ \end{tabular} \subsection*{1.3 coding jazz}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	rhythm section &
+  
+\\ 	\hline
+	using jazz font &
+  
+\\ 	\hline
+ &
+  
+\\ 	\hline
+ \end{tabular} \subsection*{1.4 coding Pop/Rock}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	tablature &
+  
+\\ 	\hline
+	chord names &
+  
+\\ 	\hline
+	lyrics with word extenders &
+  
+\\ 	\hline
+	repeat sign &
+  
+\\ 	\hline
+	slash notation &
+  
+\\ 	\hline
+ \end{tabular} \subsection*{1.5 modeling of symbolic events}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \subsection*{1.6 duration of symbolic events}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	nested tuplets &
+  
+\\ 	\hline
+	???????? &
+  
+\\ 	\hline
+ \end{tabular} \subsection*{1.7 ordering relationships of symbolic events}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	weird alignment &
+  
+\\ 	\hline
+	stem crossing staves &
+  
+\\ 	\hline
+ \end{tabular} \subsection*{1.8 symbolic qualifiers}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	???????? &
+  
+\\ 	\hline
+ \end{tabular} \subsection*{1.9 symbolic selections}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	implement selection &
+  
+\\ 	\hline
+ \end{tabular} \section*{2 different codings}
+ \subsection*{2.1 tablatures}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	tablatures &
+  
+\\ 	\hline
+ \end{tabular} \subsection*{2.2 braille}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	braille &
+  
+\\ 	\hline
+	braille with different rendering hints &
+  
+\\ 	\hline
+ \end{tabular} \subsection*{2.3 spoken music}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	spoken music &
+  
+\\ 	\hline
+ \end{tabular} \subsection*{2.4 percussions}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	new note heads &
+  
+\\ 	\hline
+	voice/instrument is determined by note height &
+  
+\\ 	\hline
+ \end{tabular} \subsection*{2.5 baroque}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	weird alignment of 1/32 and 1/16 &
+  
+\\ 	\hline
+ \end{tabular} \subsection*{2.6 20th century experimental}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	holding marks for notes &
+  
+\\ 	\hline
+	gradually increasing beams &
+  
+\\ 	\hline
+	everything &
+  
+\\ 	\hline
+ \end{tabular} \subsection*{2.7 schenkerian analysis}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	curves of different varities in addition to the score &
+  
+\\ 	\hline
+ \end{tabular} \subsection*{2.8 neumes}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	different font &
+  
+\\ 	\hline
+ \end{tabular} \section*{3 user defined symbolic elements}
+ \subsection*{3.1 symbolic events}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	generic ScoreObject &
+  
+\\ 	\hline
+ \end{tabular} \subsection*{3.2 symbolic qualifiers}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	generic ScoreObject which can be bound to another? &
+  
+\\ 	\hline
+ \end{tabular} \subsection*{3.3 SMR Context}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	??? &
+  
+\\ 	\hline
+ \end{tabular} \subsection*{3.4 symbolic selections}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ &
+  
+\\ 	\hline
+ \end{tabular} \section*{4 audio and video rendering}
+ \subsection*{4.1 audio rendering}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	this is the same as one test case in req. 1 &
+  
+\\ 	\hline
+ \end{tabular} \subsection*{4.2 visual rendering}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	this is the same as one test case in req. 1 &
+  
+\\ 	\hline
+ \end{tabular} \section*{5 linking of symbolic elements}
+ \subsection*{5.1 Symbolic Qualifiers}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \subsection*{5.2 Symbolic Events}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \subsection*{5.3 Symbolic Selection}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \subsection*{5.4 SMR Context}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \section*{6 multilingual metadata}
+ \subsection*{6.1 multilingual metadata}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	evaluate Dublin Core and UNIMARK, check the Java mechanisms for multilingual text &
+  
+\\ 	\hline
+ \end{tabular} \subsection*{6.2 adding MPEG7 metadata}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	research MPEG7 &
+  
+\\ 	\hline
+ \end{tabular} \section*{7 scalable solution}
+ \subsection*{7.1 different renderings of the same piece}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \subsection*{7.2 piece looks different to different renderes}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \section*{8 rendering on different devices}
+ \subsection*{8.1 rendering on different devices}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \section*{9 measured and unmeasured representation}
+ \subsection*{9.1 showing barred and unbarred scores}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \subsection*{9.2 showing that no bars are used internally}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \section*{10 smybolic elements are uniquely addressable}
+ \subsection*{10.1 smybolic elements are uniquely addressable}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \section*{11 allowing context to change rendering of elements}
+ \subsection*{11.1 allowing context to change rendering of elements}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \subsection*{11.2 default contexts}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \section*{12 multiple representations of pitch}
+ \subsection*{12.1 rendered pitch independent of coded pitch}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \subsection*{12.2 tuning of pitch without changing the coded piece}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \section*{13 temp and tempo variations}
+ \subsection*{13.1 allow tempo variation}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \section*{14 rendering from pure logical information}
+ \subsection*{14.1 rendering from pure logical information}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \section*{15 linear browsing}
+ \subsection*{15.1 page markers}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	direct access to symbolic selection??? &
+  
+\\ 	\hline
+ \end{tabular} \section*{16 audio from pure logical information}
+ \subsection*{16.1 audio from pure logical information}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \section*{17 acknowledge symbolic qualifiers for rendering}
+ \subsection*{17.1 acknowledge symbolic qualifiers for rendering}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \subsection*{17.2 allow user defined semantics for symbolic qualifiers}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \subsection*{17.3 use default values if user defined semantics are missing}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \section*{26 multilingual lyrics}
+ \subsection*{26.1 multilingual lyrics}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+	see multilingual metadata &
+  
+\\ 	\hline
+ \end{tabular} \section*{27 view only parts of the score/partitura}
+ \subsection*{27.1 view only parts of the score/partitura}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \section*{28 several symbolic selections}
+ \subsection*{28.1 symbolic selections for formatting information}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \subsection*{28.2 symbolic selections for navigation}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \subsection*{28.3 using a selection to display information}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \section*{29 allow different scales and temperaments}
+ \subsection*{29.1 different scale}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \subsection*{29.2 different temperaments}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \section*{30 transposing full or partly scores}
+ \subsection*{30.1 transposing full scores}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \subsection*{30.2 transposing parts with multiple voices}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \subsection*{30.3 transposing of segments with multiple voices}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \section*{31 rendering hints for symbolic elements}
+ \subsection*{31.1 take rendering hints into account}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \subsection*{31.2 allow rendering hints at different levels}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \section*{32 user defined annotations}
+ \subsection*{32.1 annotations for selections}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \subsection*{32.2 annotations with events}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \subsection*{32.3 annotations with qualifiers}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \subsection*{32.4 annotations with context}
+ \begin{tabular}{|p{.5\textwidth}|p{.5\textwidth}|}
+ \hline
+ \textbf{TODO} &
+ \textbf{Solution} 
+\\
+ \hline
+ \end{tabular} \end{document}

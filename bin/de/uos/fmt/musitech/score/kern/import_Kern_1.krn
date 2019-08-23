@@ -1,0 +1,23 @@
+!!!**kern example file 2.1
+!!!see http://dactyl.som.ohio-state.edu/Humdrum/guide02.html
+!!!COM: Bach, Johann Sebastian
+!!!OTL: Die Kunst der Fuge
+!!!Part of J.S. Bach's Die Kunst der Fuge
+**kern
+*clefG2
+*k[b-]
+*M2/2
+=1-
+2d/
+2a/
+=2
+2f/
+2d/
+=3
+2c#/
+4d/
+4e/
+=4
+2f/
+2r
+*-

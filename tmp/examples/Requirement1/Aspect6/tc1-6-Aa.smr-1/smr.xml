@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<smr>
+<piece>
+<score>
+	<layout>
+		<pages top="20" right="20" bottom="20" left="20"/>
+		<distances>
+			<staffLines small="1.2" pageObj="1.8" normal="1.42"/>
+			<systems top="0" between="0"/>
+		</distances>
+		<instrumentNames>
+			<font height="10" face="Times New Roman"/>
+		</instrumentNames>
+		<staves>
+			<staffLayout description="Flute">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3" mode="internal"/>
+				</notation>
+				<distances top="7" bottom="7"/>
+				<instrument abbrev="Flute" name="Flute"/>
+				<sound volume="127" instr="73"/>
+			</staffLayout>
+			<staffLayout description="unbenannt2">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="7" bottom="7"/>
+				<instrument abbrev="" pairAbbrev="Harp" name="" pairName="Harp"/>
+				<sound volume="127" instr="46"/>
+			</staffLayout>
+			<staffLayout description="unbenannt3">
+				<notation defaultClef="bass">
+					<barlines to="7" from="3" mode="internal"/>
+				</notation>
+				<distances top="7" bottom="7"/>
+				<instrument abbrev="" name=""/>
+				<sound volume="127" instr="46"/>
+			</staffLayout>
+		</staves>
+		<brackets>
+			<bracket to="2" from="1" curly="true"/>
+		</brackets>
+		<spacing abs="16" rel="75"/>
+		<beamFlattening to="29" toMax="55" from="49" fromMax="148"/>
+	</layout>
+	<systems>
+		<system instrNotation="long">
+			<context/><staves>
+				<staff layout="Flute" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="4"/>
+								<timeSign time="12/8"/>
+								<chord>
+									<duration dots="1" base="1/2"/>
+									<heads>
+										<head pitch="C6">
+											<alter step="1"/>
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="C6">
+											<alter step="1"/>
+											<tie begin="true" end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16"/>
+									<heads>
+										<head pitch="C6">
+											<alter step="1"/>
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16"/>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16">
+										<tuplet count="3"/>
+									</duration>
+									<drawObjects>
+										<drawObj>
+											<bracket y2="-4.5" orientation="up" number="3" x2="1" y1="-5" x1="0"/>
+											<basic noteRange="2"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="A5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16">
+										<tuplet count="3"/>
+									</duration>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16">
+										<tuplet count="3"/>
+									</duration>
+									<heads>
+										<head pitch="G5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/8"/>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16"/>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16"/>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<timeSign time="9/8"/>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="unbenannt2" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="4"/>
+								<timeSign time="12/8"/>
+								<rest>
+									<duration base="1"/>
+									<display invisible="true" churchStyle="true"/>
+								</rest>
+								<timeSign time="9/8"/>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="unbenannt3" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="bass"/>
+								<keySign fifths="4"/>
+								<timeSign time="12/8"/>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<beam shift="-14.5"/>
+									<drawObjects>
+										<drawObj>
+											<bracket y1="10.5" x2="1" x1="0" y2="12" number="5"/>
+											<basic noteRange="4"/>
+										</drawObj>
+										<drawObj>
+											<slur y2="-5.15625" x2="-0.0625" y1="-1.75" x3="-6.09375" y3="-3" x1="-0.25" y4="0.5" x4="0.25"/>
+											<basic noteRange="4"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<heads>
+										<head pitch="E4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<display notationStaff="up"/>
+									<heads>
+										<head pitch="G4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<display notationStaff="up"/>
+									<heads>
+										<head pitch="B4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<display notationStaff="up"/>
+									<heads>
+										<head pitch="F5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<clefSign clef="treble"/>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<drawObjects>
+										<drawObj>
+											<bracket y1="-10" x2="1" x1="0" y2="-14.5" number="5"/>
+											<basic noteRange="4"/>
+										</drawObj>
+										<drawObj>
+											<slur y2="5.03125" x2="6.78125" y1="3.5" x3="-0.0625" y3="1.75" x1="0.75" y4="0.25" x4="0.25"/>
+											<basic noteRange="4"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<heads>
+										<head pitch="E5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<display notationStaff="up"/>
+									<heads>
+										<head pitch="G5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<display notationStaff="up"/>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<display notationStaff="up"/>
+									<heads>
+										<head pitch="F6">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<beam shift="20.5"/>
+									<drawObjects>
+										<drawObj>
+											<bracket y1="-13" x2="1" x1="0" y2="-17.5" number="5"/>
+											<basic noteRange="4"/>
+										</drawObj>
+										<drawObj>
+											<slur y2="2.5625" x2="6.5625" y1="0" x3="-0.0625" y3="-1.75" x1="0.75" y4="-3.25" x4="0.25"/>
+											<basic noteRange="4"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<heads>
+										<head pitch="E6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<display notationStaff="up"/>
+									<heads>
+										<head pitch="G6">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<display notationStaff="up"/>
+									<heads>
+										<head pitch="B6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<display notationStaff="up"/>
+									<beam group="split"/>
+									<heads>
+										<head pitch="F7">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<drawObjects>
+										<drawObj>
+											<bracket y1="-10" x2="1" x1="0" y2="-14.5" number="5"/>
+											<basic noteRange="4"/>
+										</drawObj>
+										<drawObj>
+											<slur y2="5.03125" x2="6.78125" y1="3.5" x3="-0.0625" y3="1.75" x1="0.75" y4="0.25" x4="0.25"/>
+											<basic noteRange="4"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<heads>
+										<head pitch="E5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<display notationStaff="up"/>
+									<heads>
+										<head pitch="G5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<display notationStaff="up"/>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<display notationStaff="up"/>
+									<beam group="split"/>
+									<heads>
+										<head pitch="F6">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<clefSign clef="bass"/>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<beam shift="-14.5"/>
+									<drawObjects>
+										<drawObj>
+											<bracket y1="10.5" x2="1" x1="0" y2="12" number="5"/>
+											<basic noteRange="4"/>
+										</drawObj>
+										<drawObj>
+											<slur y2="-4.65625" x2="0.25" y1="-1.5" x3="-6.1875" y3="-2.75" x1="0.25" y4="0.5" x4="0.25"/>
+											<basic noteRange="4"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<heads>
+										<head pitch="E4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<display notationStaff="up"/>
+									<heads>
+										<head pitch="G4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<display notationStaff="up"/>
+									<heads>
+										<head pitch="B4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32">
+										<tuplet count="5"/>
+									</duration>
+									<display notationStaff="up"/>
+									<heads>
+										<head pitch="F5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration dots="1" base="1/2"/>
+								</rest>
+								<timeSign time="9/8"/>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+			</staves>
+		</system>
+	</systems>
+</score>
+</piece>
+</smr>

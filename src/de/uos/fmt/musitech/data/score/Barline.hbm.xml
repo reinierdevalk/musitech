@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="de.uos.fmt.musitech.data.score.Barline"
+        table="Barline"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="uid"
+            column="uid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name=""
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column=""
+        />
+
+        <property
+            name="double"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="double"
+        />
+
+        <many-to-one
+            name="metricTime"
+            class="de.uos.fmt.musitech.utility.math.Rational"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="metricTime"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Barline.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

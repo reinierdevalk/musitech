@@ -1,0 +1,1560 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<smr>
+<piece>
+<score>
+	<layout>
+		<pages top="20" right="29" bottom="20" left="29"/>
+		<distances>
+			<staffLines small="1.2" pageObj="1.8" normal="1.38"/>
+			<systems top="4" between="0"/>
+		</distances>
+		<instrumentNames>
+			<font height="12" face="Times New Roman"/>
+		</instrumentNames>
+		<staves>
+			<staffLayout description="unbenannt1">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="7" bottom="7"/>
+				<instrument abbrev="" name=""/>
+				<sound volume="80" instr="0"/>
+			</staffLayout>
+			<staffLayout description="unbenannt2">
+				<notation defaultClef="bass">
+					<barlines to="7" from="3" mode="internal"/>
+				</notation>
+				<distances top="7" bottom="7"/>
+				<instrument abbrev="" name=""/>
+				<sound volume="80" instr="0"/>
+			</staffLayout>
+		</staves>
+		<brackets>
+			<bracket to="1" from="0" curly="true"/>
+		</brackets>
+		<spacing abs="16" rel="75"/>
+		<beamFlattening to="29" toMax="55" from="49" fromMax="148"/>
+	</layout>
+	<barCount y="3.5" x="0">
+		<font height="10" italic="true" face="Times New Roman"/>
+	</barCount>
+	<systems>
+		<system beamGrouping="2" bracketColor="0000FF" justified="true" instrNotation="long">
+			<context/><staves>
+				<staff layout="unbenannt1" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="-2"/>
+								<timeSign time="2/4"/>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-7.5625" color="FF0000" x2="4.9375" y1="-5.78125" x3="-3.21875" y3="-7.9375" x1="1.65625" y4="-6.5" x4="0.25"/>
+											<basic noteRange="31"/>
+										</drawObj>
+										<drawObj>
+											<text y="0.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>1</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-0.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>2</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-2" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>5</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<rectangle y2="4.09375" x2="0.4375" fillColor="FF0000" lineColor="C0C0C0" y1="3" x1="0.21875" filled="true"/>
+											<basic noteRange="7"/>
+										</drawObj>
+										<drawObj>
+											<text y="0.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>1</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-0.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>2</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-2" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>5</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<barline color="0000FF"/>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="0.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>1</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-0.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>2</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-2" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>5</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<rectangle y2="3.9375" lineWidth="0" x2="2.1875" fillColor="FF0000" y1="3" x1="0.1875" filled="true"/>
+											<basic noteRange="6"/>
+										</drawObj>
+										<drawObj>
+											<text y="0.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>1</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-0.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>2</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-2" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>5</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<barline color="0000FF"/>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-8.1875" color="FF0000" x2="1.90625" y1="-0.5" x3="-0.46875" y3="-4.75" x1="0.75" y4="-1.5" x4="0.25"/>
+											<basic noteRange="15"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-1.96875" color="FF0000" x2="1.5625" y1="-1.5" x3="-0.25" y3="-1.75" x1="0.75" y4="-1" x4="0.25"/>
+											<basic noteRange="1"/>
+										</drawObj>
+										<drawObj>
+											<text y="-1.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>2</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-2.625" color="FF0000" x2="1.15625" y1="-2.5" x3="0.28125" y3="-2.03125" x1="0.5" y4="-1.5" x4="0.5"/>
+											<basic noteRange="1"/>
+										</drawObj>
+										<drawObj>
+											<text y="-2.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>5</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E6">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<rectangle y2="-3.875" lineWidth="0" x2="1.5625" fillColor="FF0000" y1="-5" x1="-0.5" filled="true"/>
+											<basic noteRange="7"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<display xShift="-0.25"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-1.8125" color="FF0000" x2="1.09375" y1="-1.5" x3="0.15625" y3="-1.5625" x1="0.5" y4="-1" x4="0.5"/>
+											<basic noteRange="1"/>
+										</drawObj>
+										<drawObj>
+											<text y="-1.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<display xShift="0.25"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>2</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-2.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>5</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E6">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-1.8125" color="FF0000" x2="1.40625" y1="-1.25" x3="2.5" y3="-2.0625" x1="1.09375" y4="-1.75" x4="3.09375"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<barline color="0000FF"/>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="unbenannt2" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="bass"/>
+								<keySign fifths="-2"/>
+								<timeSign time="2/4"/>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<text y="0" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>5</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B3">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<beam group="force"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-6" color="FF0000" x2="1.75" y1="-4.5" x3="-0.75" y3="-6" x1="0.75" y4="-4.5" x4="0.25"/>
+											<basic noteRange="2"/>
+										</drawObj>
+										<drawObj>
+											<text y="-3" x="-1">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>1</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-2" x="-1">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>2</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B4">
+											<alter step="-1"/>
+										</head>
+										<head pitch="D5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-2" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>4</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="B4">
+											<alter step="-1"/>
+										</head>
+										<head pitch="D5"/>
+									</heads>
+								</chord>
+								<barline color="0000FF"/>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<text y="0" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>5</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B3">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<beam group="force"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-6" color="FF0000" x2="1.75" y1="-4.5" x3="-0.75" y3="-6" x1="0.75" y4="-4.5" x4="0.25"/>
+											<basic noteRange="2"/>
+										</drawObj>
+										<drawObj>
+											<text y="-3" x="-1">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>1</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-2" x="-1">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>2</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B4">
+											<alter step="-1"/>
+										</head>
+										<head pitch="D5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-2" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>4</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="B4">
+											<alter step="-1"/>
+										</head>
+										<head pitch="D5"/>
+									</heads>
+								</chord>
+								<barline color="0000FF"/>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<text y="0.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>5</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="A3"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<beam group="force"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-6.5" color="FF0000" x2="1.75" y1="-5" x3="-0.75" y3="-6.5" x1="0.75" y4="-5" x4="0.25"/>
+											<basic noteRange="2"/>
+										</drawObj>
+										<drawObj>
+											<text y="-3.5" x="-1">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>1</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-2.5" x="-1">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>2</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C5"/>
+										<head pitch="E5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-2" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>5</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="C5"/>
+										<head pitch="E5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<barline color="0000FF"/>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+			</staves>
+		</system>
+		<system beamGrouping="2" bracketColor="0000FF" justified="true" instrNotation="short">
+			<context/><staves>
+				<staff layout="unbenannt1" defaultTime="2/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="-2"/>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-1" color="FF0000" x2="-0.6875" y1="-0.84375" x3="0.40625" y3="0.15625" x1="-1.5625" y4="0.71875" x4="0.59375"/>
+										</drawObj>
+										<drawObj>
+											<slur y2="-5.65625" color="FF0000" x2="3.34375" y1="-2.8125" x3="-0.46875" y3="-4.65625" x1="-1.40625" y4="0.5" x4="0.25"/>
+											<basic noteRange="16"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>2</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-2.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>5</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E6">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<rectangle y2="-3.5" lineWidth="0" x2="1.40625" fillColor="FF0000" y1="-4.5" x1="0.0625" filled="true"/>
+											<basic noteRange="6"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<display xShift="-0.25"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<display xShift="0.25"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>2</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-2.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>5</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E6">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<barline color="0000FF"/>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-7.90625" color="FF0000" x2="4.5625" y1="-5.46875" x3="-0.09375" y3="-6.09375" x1="1.5" y4="-1.03125" x4="0.5"/>
+											<basic noteRange="31"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-2" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>5</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<rectangle y2="-6.5" lineWidth="0" x2="1.5" fillColor="FF0000" y1="-7.65625" x1="0.5" filled="true"/>
+											<basic noteRange="7"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-2" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>5</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<barline color="0000FF"/>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="7.5" x="0">
+												<font height="10" face="Times New Roman"/>
+												<content>cresc.</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="0" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>1</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-2.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>5</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<rectangle y2="-4" lineWidth="0" x2="0.34375" fillColor="FF0000" y1="-5.21875" x1="-0.5" filled="true"/>
+											<basic noteRange="7"/>
+										</drawObj>
+										<drawObj>
+											<text y="0" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>1</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-1" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-2.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>5</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E6">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/32"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<barline color="0000FF"/>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="unbenannt2" defaultTime="2/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="bass"/>
+								<keySign fifths="-2"/>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="A3"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<beam group="force"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-6.5" color="FF0000" x2="1.75" y1="-5" x3="-0.75" y3="-6.5" x1="0.75" y4="-5" x4="0.25"/>
+											<basic noteRange="2"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C5"/>
+										<head pitch="E5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="F4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="C5"/>
+										<head pitch="E5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<barline color="0000FF"/>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="B3">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<beam group="force"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-6" color="FF0000" x2="1.75" y1="-4.5" x3="-0.75" y3="-6" x1="0.75" y4="-4.5" x4="0.25"/>
+											<basic noteRange="2"/>
+										</drawObj>
+										<drawObj>
+											<text y="-2" x="-1">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>3</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B4">
+											<alter step="-1"/>
+										</head>
+										<head pitch="D5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-2" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>4</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="B4">
+											<alter step="-1"/>
+										</head>
+										<head pitch="D5"/>
+									</heads>
+								</chord>
+								<barline color="0000FF"/>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="C4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<beam group="force"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-6.5" color="FF0000" x2="1.75" y1="-5" x3="-0.75" y3="-6.5" x1="0.75" y4="-5" x4="0.25"/>
+											<basic noteRange="2"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B4">
+											<alter step="-1"/>
+										</head>
+										<head pitch="C5"/>
+										<head pitch="E5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-2.5" x="0">
+												<font height="6" weight="700" face="Book Antiqua"/>
+												<content>5</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="B4">
+											<alter step="-1"/>
+										</head>
+										<head pitch="C5"/>
+										<head pitch="E5"/>
+									</heads>
+								</chord>
+								<barline color="0000FF"/>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+			</staves>
+		</system>
+	</systems>
+</score>
+</piece>
+</smr>

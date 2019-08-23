@@ -1,0 +1,61 @@
+Namenänderungen, neue Organisation, Ideen zu größerer Übersichtlichkeit
+
+Interfaces: 
+	FloatInputStream Einfügen: PositionableFIS + methode positionable() (true if positionen markierbar)
+	MappedFloatIS (FISPartReader)  PositionableFIS, RangeFloatIS
+	FloatISConverter (FISReader)   FloatISReader
+	FloatPreviewReader
+
+
+[...]FloatIS - liest von äußeren Quellen ein
+[...]FileFloatIS - liest nur von Files (implementiert MappedStream)
+	FISDummy (DummyFloatStream)          DummyFloatIS
+	FISMP3FileReader (FISmp3PartReader)  MP3FileFloatIS
+	FISMP3Reader (FloatMP3InputStream)	 MP3FloatIS
+	FISPCMFileReader (FloatISPartReader) PCMFileFloatIS
+	FISPCMReader (FloatISSimpleAdapter)  PCMFloatIS
+	
+FIS[...] - FloatInputStream als Quelle (implementiert FloatISReader)
+	FISMerger (FloatInputStreamMerger)
+	FISMultiplexer (FloatInputStreamMultiplexer)
+	FISChannelAdapter (FloatISChannelAdapter)
+	FISChannelMixer (FloatISChannelMixer)
+	FISChannelSplitter (FloatISChannelSplitter)
+	FISGeneralConverter (FloatISGeneralAdapter)
+	FISSampleRateConverter (FloatISSampleRateAdapter)
+	FISSampleSizeConverter (FloatISSampleSizeAdapter)
+	
+
+Outputs:
+	FIStoAIS (FloatToAudioConverter)
+	
+
+anderes:
+	StreamEndListener 
+
+
+Obsolet:
+	FloatAudioFormat
+	FloatInputStreamChooser
+	FormatRangeDescriptor (siehe Kommentar unten)
+	TestFISetc
+
+PlatzÄndern:
+	FloatOscillator
+	NoiseOscillator
+	SawtoothOscillator
+	SineOscillator
+	
+	FloatStreamPlayer
+	MultiReaderRingBuffer
+	RingBuffer
+	
+
+
+
+
+
+Kommentare:
+	
+	zur Entfernung des FormatRangeDescriptor:
+		- was für fälle kann es wirklcih geben, dass klassen mit vielen Formaten nicht auskommen? So selten wie das vorkommen mag, würde ich vorschlagen dass die Klasse, die ein bestimmtes Format benötigt, sich mit AudioUtil.getFloatInputStream(FloatInputStream, AudioFormat) das benötigte anschafft.    Oder man macht ein Format auf dem alle arbeiten können müssen, und wenn einer Meckert, wird die source auf das defaultformat gesetzt, und alle müssen sich danach richten. 

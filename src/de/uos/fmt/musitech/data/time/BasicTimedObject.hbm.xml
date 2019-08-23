@@ -1,0 +1,450 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="de.uos.fmt.musitech.data.time.BasicTimedObject"
+        table="BasicTimedObject"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="uid"
+            column="uid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="time"
+            type="long"
+            update="true"
+            insert="true"
+            access="property"
+            column="time"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-BasicTimedObject.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.audio.AudioObject"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.audio.AudioFileObject"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="id"
+        />
+
+        <property
+            name="edited"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="edited"
+        />
+
+        <property
+            name="fis"
+            type="binary"
+            update="true"
+            insert="true"
+            access="property"
+            column="fis"
+        />
+
+        <property
+            name="loaded"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="loaded"
+        />
+
+        <property
+            name="offsetSamples"
+            type="long"
+            update="true"
+            insert="true"
+            access="property"
+            column="offsetSamples"
+        />
+
+        <property
+            name="previewReader"
+            type="binary"
+            update="true"
+            insert="true"
+            access="property"
+            column="previewReader"
+        />
+
+        </joined-subclass>
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.time.TimedMetrical"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        <many-to-one
+            name="metricTime"
+            class="de.uos.fmt.musitech.utility.math.Rational"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="metricTime"
+        />
+
+        <many-to-one
+            name="metricDuration"
+            class="de.uos.fmt.musitech.utility.math.Rational"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="id"
+            column="metricDuration"
+        />
+
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.structure.harmony.KeyMarker"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+        <property
+            name="accidentalNum"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="accidentalNum"
+        />
+
+        <property
+            name="rootAccidental"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="rootAccidental"
+        />
+
+        <property
+            name="mode"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="mode"
+        />
+
+        <property
+            name="root"
+            type="char"
+            update="true"
+            insert="true"
+            access="property"
+            column="root"
+        />
+
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.structure.harmony.ChordSymbol"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+        <property
+            name="base"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="base"
+        />
+
+        <property
+            name="extensions"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="extensions"
+        />
+
+        <property
+            name="top"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="top"
+        />
+
+        <property
+            name="comment"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="comment"
+        />
+
+        <property
+            name="time"
+            type="long"
+            update="true"
+            insert="true"
+            access="property"
+            column="time"
+        />
+
+        </joined-subclass>
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.time.BeatMarker"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        <property
+            name="beatLevel"
+            type="double"
+            update="true"
+            insert="true"
+            access="property"
+            column="beatLevel"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.structure.lyrics.LyricsSyllable"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+        <property
+            name="text"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="text"
+        />
+
+        <property
+            name="time"
+            type="long"
+            update="true"
+            insert="true"
+            access="property"
+            column="time"
+        />
+
+        </joined-subclass>
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.structure.Note"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        <many-to-one
+            name="scoreNote"
+            class="de.uos.fmt.musitech.data.score.ScoreNote"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="scoreNote"
+        />
+
+        <many-to-one
+            name="performanceNote"
+            class="de.uos.fmt.musitech.data.performance.PerformanceNote"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="performanceNote"
+        />
+
+        <property
+            name="time"
+            type="long"
+            update="true"
+            insert="true"
+            access="property"
+            column="time"
+        />
+
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.score.ColorNote"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+        <property
+            name="color"
+            type="java.awt.Color"
+            update="true"
+            insert="true"
+            access="property"
+            column="color"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.structure.RenderingNote"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.performance.PerformanceNote"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        <property
+            name="duration"
+            type="long"
+            update="true"
+            insert="true"
+            access="property"
+            column="duration"
+        />
+
+        <property
+            name="velocity"
+            type="short"
+            update="true"
+            insert="true"
+            access="property"
+            column="velocity"
+        />
+
+        <property
+            name="pitch"
+            type="byte"
+            update="true"
+            insert="true"
+            access="property"
+            column="pitch"
+        />
+
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.performance.MidiNote"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        <property
+            name="channel"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="channel"
+        />
+
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.performance.MidiNoteMulti"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        <many-to-one
+            name="next"
+            class="de.uos.fmt.musitech.data.performance.PerformanceNote"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="id"
+            column="next"
+        />
+
+        </joined-subclass>
+
+        </joined-subclass>
+
+        </joined-subclass>
+
+    </class>
+
+</hibernate-mapping>

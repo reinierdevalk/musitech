@@ -1,0 +1,3363 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<smr>
+<piece>
+<score>
+	<layout>
+		<pages top="20" right="30" bottom="20" left="30"/>
+		<distances>
+			<staffLines small="1.2" pageObj="1.8" normal="0.86"/>
+			<systems top="0" between="0"/>
+		</distances>
+		<instrumentNames>
+			<font height="6" face="Book Antiqua"/>
+		</instrumentNames>
+		<style modernKeyChange="false"/>
+		<staves>
+			<staffLayout description="1. Flöte">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="1." pairAbbrev="Fl." name="1." pairName="Flöten"/>
+				<sound volume="127" instr="73"/>
+			</staffLayout>
+			<staffLayout description="2. Flöte">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="2." name="2."/>
+				<sound volume="127" instr="73"/>
+			</staffLayout>
+			<staffLayout description="Oboen 1. 2.">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="Ob. 1. 2." name="Oboen 1. 2."/>
+				<sound volume="127" instr="68"/>
+			</staffLayout>
+			<staffLayout description="1. Klarinette">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="1." pairAbbrev="Klar." name="1." pairName="Klarinetten"/>
+				<sound volume="127" transpose="-3" instr="71"/>
+			</staffLayout>
+			<staffLayout description="2. Klarinette">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="2." name="2."/>
+				<sound volume="127" transpose="-3" instr="71"/>
+			</staffLayout>
+			<staffLayout description="Fagotte 1. 2.">
+				<notation defaultClef="bass">
+					<barlines to="7" from="3" mode="internal"/>
+				</notation>
+				<distances top="5" group="3" bottom="5"/>
+				<instrument abbrev="Fg. 1. 2." name="Fagotte 1. 2."/>
+				<sound volume="127" instr="70"/>
+			</staffLayout>
+			<staffLayout description="Horn 1. 2. in F">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="1. 2. (F)" pairAbbrev="Hr." name="1. 2. in F" pairName="Hörner"/>
+				<sound volume="127" transpose="-7" instr="60"/>
+			</staffLayout>
+			<staffLayout description="Horn 3. 4. in F">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="3. 4. (F)" name="3. 4. in F"/>
+				<sound volume="127" transpose="-7" instr="60"/>
+			</staffLayout>
+			<staffLayout description="Trompete 1. 2. in F">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="1. 2. (F)" pairAbbrev="Tr." name="1. 2. in F" pairName="Trompeten"/>
+				<sound volume="127" transpose="5" instr="56"/>
+			</staffLayout>
+			<staffLayout description="Trompete 3. 4. in F">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="3. 4. (F)" name="3. 4. in F"/>
+				<sound volume="127" transpose="5" instr="56"/>
+			</staffLayout>
+			<staffLayout description="Posaune Alt, Tenor">
+				<notation defaultClef="tenor">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="A, T" pairAbbrev="Pos." name="Alt, Tenor" pairName="Posaunen"/>
+				<sound volume="127" instr="57"/>
+			</staffLayout>
+			<staffLayout description="Posaune Baß">
+				<notation defaultClef="bass">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="B" name="Baß"/>
+				<sound volume="127" instr="57"/>
+			</staffLayout>
+			<staffLayout description="Tenor-Tuben 1. 2. in B">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="Tb. 1. 2. (B)" name="Tenor-Tuben 1. 2. in B"/>
+				<sound volume="127" transpose="-14" instr="58"/>
+			</staffLayout>
+			<staffLayout description="Baß-Tuben 1. 2. in F">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="Tb. 1. 2. (F)" name="Baß-Tuben 1. 2. in F"/>
+				<sound volume="127" transpose="-19" instr="58"/>
+			</staffLayout>
+			<staffLayout description="Kontra-Baßtuba">
+				<notation defaultClef="bass">
+					<barlines to="7" from="3" mode="internal"/>
+				</notation>
+				<distances top="5" group="10" bottom="5"/>
+				<instrument abbrev="K-Tb." name="Kontra-Baßtuba"/>
+				<sound volume="127" instr="58"/>
+			</staffLayout>
+			<staffLayout description="Violine 1">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="Vl. 1" name="Violine 1"/>
+				<sound volume="127" instr="40"/>
+			</staffLayout>
+			<staffLayout description="Violine 2">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="Vl. 2" name="Violine 2"/>
+				<sound volume="127" instr="40"/>
+			</staffLayout>
+			<staffLayout description="Viola">
+				<notation defaultClef="alto">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="Va." name="Viola"/>
+				<sound volume="127" instr="41"/>
+			</staffLayout>
+			<staffLayout description="Violoncell">
+				<notation defaultClef="bass">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="Vc." name="Violoncell"/>
+				<sound volume="127" instr="42"/>
+			</staffLayout>
+			<staffLayout description="Kontrabass">
+				<notation defaultClef="bass">
+					<barlines to="7" from="3" mode="internal"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="Kb." name="Kontrabass"/>
+				<sound volume="127" transpose="-12" instr="43"/>
+			</staffLayout>
+		</staves>
+		<brackets>
+			<bracket to="1" from="0" curly="true"/>
+			<bracket to="4" from="3" curly="true"/>
+			<bracket to="7" from="6" curly="true"/>
+			<bracket to="9" from="8" curly="true"/>
+			<bracket to="11" from="10" curly="true"/>
+			<bracket to="13" from="12" curly="true"/>
+			<bracket to="16" from="15" curly="true"/>
+			<bracket to="19" from="0"/>
+		</brackets>
+		<spacing abs="16" rel="75"/>
+		<beamFlattening to="29" toMax="55" from="49" fromMax="148"/>
+	</layout>
+	<pageObjects>
+		<drawObj>
+			<text y="2.4375" x="41.625" align="center">
+				<font height="12" weight="700" face="Book Antiqua"/>
+				<content>2. SATZ. ADAGIO</content>
+			</text>
+		</drawObj>
+		<drawObj>
+			<text y="1.78125" x="81.53125">
+				<font height="8" face="Book Antiqua"/>
+				<content>47</content>
+			</text>
+		</drawObj>
+	</pageObjects>
+	<systems>
+		<system justified="true" instrNotation="long">
+			<context/><staves>
+				<staff layout="1. Flöte" defaultTime="4/4">
+					<extraDistance top="12"/>
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="4"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-4.5" x="-11">
+												<font height="14" weight="700" face="Book Antiqua"/>
+												<content>Sehr feierlich und sehr langsam</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="2. Flöte" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="4"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="Oboen 1. 2." defaultTime="4/4">
+					<context/><voices>
+						<voice stemDir="up">
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="4"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+						<voice stemDir="down">
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="4"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="1. Klarinette" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="1"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="2. Klarinette" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="1"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="Fagotte 1. 2." defaultTime="4/4">
+					<context/><voices>
+						<voice stemDir="up">
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="bass"/>
+								<keySign fifths="4"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+						<voice stemDir="down">
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="bass"/>
+								<keySign fifths="4"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="Horn 1. 2. in F" defaultTime="4/4">
+					<context/><voices>
+						<voice stemDir="up">
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="5"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<chord>
+									<duration base="1/2"/>
+									<drawObjects>
+										<drawObj>
+											<text y="4.5" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C6">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/2"/>
+									<verticalPos centered="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+						<voice stemDir="down">
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="5"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<chord>
+									<duration base="1/2"/>
+									<stem dir="up"/>
+									<drawObjects>
+										<drawObj>
+											<text y="4.5" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E5"/>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/2"/>
+									<verticalPos centered="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="Horn 3. 4. in F" defaultTime="4/4">
+					<context/><voices>
+						<voice stemDir="up">
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="5"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<chord>
+									<duration base="1/2"/>
+									<drawObjects>
+										<drawObj>
+											<text y="6.5" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/2"/>
+									<verticalPos centered="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+						<voice stemDir="down">
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="5"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<chord>
+									<duration base="1/2"/>
+									<stem dir="up"/>
+									<drawObjects>
+										<drawObj>
+											<text y="6.5" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/2"/>
+									<verticalPos centered="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="Trompete 1. 2. in F" defaultTime="4/4">
+					<context/><voices>
+						<voice stemDir="up">
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="5"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+						<voice stemDir="down">
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="5"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="Trompete 3. 4. in F" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="5"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="Posaune Alt, Tenor" defaultTime="4/4">
+					<context/><voices>
+						<voice stemDir="up">
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="tenor"/>
+								<keySign fifths="4"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<chord>
+									<duration base="1/2"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-7.21875" x2="3.125" y1="-5" x3="3.78125" y3="-6.5625" x1="1.5" y4="-4.1875" x4="5.1875"/>
+											<basic noteRange="2"/>
+										</drawObj>
+										<drawObj>
+											<text y="6" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="6" x="1">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>dim.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<heads>
+										<head pitch="A4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<heads>
+										<head pitch="B4"/>
+									</heads>
+								</chord>
+							</noteObjects>
+						</voice>
+						<voice stemDir="down">
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="tenor"/>
+								<keySign fifths="4"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<chord>
+									<duration base="1/2"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="4.5625" x2="3" y1="4" x3="8.1875" y3="3.8125" x1="0.75" y4="2.53125" x4="9.65625"/>
+											<basic noteRange="1"/>
+										</drawObj>
+										<drawObj>
+											<text y="6" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="6" x="1">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>dim.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="A4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="F4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="Posaune Baß" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="bass"/>
+								<keySign fifths="4"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<chord>
+									<duration base="1/2"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-4.84375" x2="5.21875" y1="1.03125" x3="6.96875" y3="-3" x1="1.8125" y4="-1.46875" x4="9.46875"/>
+											<basic noteRange="2"/>
+										</drawObj>
+										<drawObj>
+											<text y="4.5" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="4.5" x="1">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>dim.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F3">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="Tenor-Tuben 1. 2. in B" defaultTime="4/4">
+					<context/><voices>
+						<voice stemDir="up">
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="6"/>
+								<timeSign time="C"/>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-4.28125" x2="2.90625" y1="-2.21875" x3="-1.90625" y3="-6.6875" x1="2.125" y4="-3.5" x4="0.25"/>
+											<basic noteRange="6"/>
+										</drawObj>
+										<drawObj>
+											<text y="-6.5" x="0">
+												<font height="10" face="Times New Roman"/>
+												<content>I.</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-6.5" x="1.5">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>hervortretend</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-5" x="1.5">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>cresc. sempre</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D6">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="A5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/8"/>
+									<display xShift="-0.75"/>
+									<heads>
+										<head pitch="G5">
+											<alter step="2"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16"/>
+									<heads>
+										<head pitch="C6">
+											<alter step="2"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/8"/>
+									<heads>
+										<head pitch="D6">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16"/>
+									<heads>
+										<head pitch="E6">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/2"/>
+									<heads>
+										<head pitch="A5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8">
+										<tuplet count="3"/>
+									</duration>
+									<drawObjects>
+										<drawObj>
+											<bracket y1="-4.5" x2="1" x1="0" y2="-3.5" number="3"/>
+											<basic noteRange="2"/>
+										</drawObj>
+										<drawObj>
+											<slur y2="-6.75" x2="2.40625" y1="-3.5" x3="-0.8125" y3="-7.625" x1="1.5" y4="-5.5" x4="0.25"/>
+											<basic noteRange="10"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="A5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8">
+										<tuplet count="3"/>
+									</duration>
+									<display xShift="0.5"/>
+									<drawObjects>
+										<drawObj>
+											<text y="1" x="-2">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>R</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G5">
+											<alter step="1" display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8">
+										<tuplet count="3"/>
+									</duration>
+									<heads>
+										<head pitch="F5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<heads>
+										<head pitch="D6">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-4.5" x="0">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>dimin.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="D6">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="D6">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="C6">
+											<alter step="2"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="D6">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="E6">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="E6">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/2"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+						<voice stemDir="down">
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="6"/>
+								<timeSign time="C"/>
+								<chord>
+									<duration base="1/2"/>
+									<stem lengthening="-1"/>
+									<drawObjects>
+										<drawObj>
+											<text y="6" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<slur y2="4.625" x2="1.6875" y1="2.5" x3="-1.53125" y3="4.71875" x1="0.75" y4="3" x4="-0.5"/>
+											<basic noteRange="2"/>
+										</drawObj>
+										<drawObj>
+											<text y="6" x="1">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>cresc. semp.</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="3" x="0.5">
+												<font height="6" face="Book Antiqua"/>
+												<content>(</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<display xShift="1"/>
+									<stem lengthening="-1"/>
+									<heads>
+										<head pitch="G5">
+											<alter step="2" display="suppress"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<stem lengthening="-1"/>
+									<drawObjects>
+										<drawObj>
+											<text y="3.5" x="-0.5">
+												<font height="6" face="Book Antiqua"/>
+												<content>)</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<stem lengthening="-1"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="6.3125" x2="1.78125" y1="2.5" x3="-1.4375" y3="3.9375" x1="0.75" y4="1.5" x4="-0.5"/>
+											<basic noteRange="3"/>
+										</drawObj>
+										<drawObj>
+											<text y="3" x="0.5">
+												<font height="6" face="Book Antiqua"/>
+												<content>(</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<stem lengthening="-1"/>
+									<drawObjects>
+										<drawObj>
+											<text y="4" x="4.5">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>dim.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<stem lengthening="-1"/>
+									<drawObjects>
+										<drawObj>
+											<text y="2" x="-0.5">
+												<font height="6" face="Book Antiqua"/>
+												<content>)</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="A5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/2"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="Baß-Tuben 1. 2. in F" defaultTime="4/4">
+					<context/><voices>
+						<voice stemDir="up">
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="5"/>
+								<timeSign time="C"/>
+								<chord>
+									<duration base="1/1"/>
+									<stem dir="down"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-2.5" x2="1.6875" y1="-1" x3="-0.78125" y3="-2.96875" x1="0.75" y4="-1.5" x4="0.25"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<display xShift="0.25"/>
+									<heads>
+										<head pitch="D5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-3.03125" x2="2.5" y1="-0.5" x3="-0.75" y3="-8.1875" x1="1.5" y4="-0.5" x4="0.25"/>
+											<basic noteRange="6"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="G5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="G5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="F5">
+											<alter step="2"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="G5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="G5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="F5">
+											<alter step="2"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/2"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<verticalPos centered="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+						<voice stemDir="down">
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="5"/>
+								<timeSign time="C"/>
+								<chord>
+									<duration base="1/2"/>
+									<stem lengthening="-1"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="7.0625" x2="1.875" y1="3.5" x3="-1.34375" y3="3.9375" x1="0.75" y4="1.5" x4="-0.5"/>
+											<basic noteRange="2"/>
+										</drawObj>
+										<drawObj>
+											<text y="6.5" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="6.5" x="1">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>cresc. semp.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<stem lengthening="-1"/>
+									<heads>
+										<head pitch="E5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<display xShift="-0.25"/>
+									<heads>
+										<head pitch="A5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<stem lengthening="-1"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="6.0625" x2="1.6875" y1="2.5" x3="-1.53125" y3="7.71875" x1="0.75" y4="3.5" x4="-0.5"/>
+											<basic noteRange="3"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<stem lengthening="-1"/>
+									<drawObjects>
+										<drawObj>
+											<text y="4" x="4.5">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>dim.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<stem lengthening="-1"/>
+									<heads>
+										<head pitch="C5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<stem lengthening="-1"/>
+									<heads>
+										<head pitch="D5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="Kontra-Baßtuba" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="bass"/>
+								<keySign fifths="4"/>
+								<timeSign time="C"/>
+								<chord>
+									<duration base="1/1"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="6.5" x2="1.6875" y1="5" x3="-0.78125" y3="6.96875" x1="0.75" y4="5.5" x4="0.25"/>
+											<basic noteRange="1"/>
+										</drawObj>
+										<drawObj>
+											<text y="7.5" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="7.5" x="1">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>cresc. semp.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C3">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="B2">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="7.375" x2="1.6875" y1="5.5" x3="-0.78125" y3="8.46875" x1="0.75" y4="6.5" x4="0.25"/>
+											<basic noteRange="3"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B2"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<drawObjects>
+										<drawObj>
+											<text y="6.5" x="4.5">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>dim.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="A2"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="F2">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="G2">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/2"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="Violine 1" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="4"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-4" x="-11">
+												<font height="14" weight="700" face="Book Antiqua"/>
+												<content>(Sehr feierlich und sehr langsam)</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1/2"/>
+								</rest>
+								<chord>
+									<duration base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-3.5" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Y</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-6" x="-2.5">
+												<font height="10" face="Times New Roman"/>
+												<content>G-Saite immerfort</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="4.5" x="-2.5">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>j</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="5" x="0">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>cresc. sempre</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16"/>
+									<articulation><tenuto/></articulation>
+									<drawObjects>
+										<drawObj>
+											<slur y2="3.84375" x2="1.1875" y1="3.5" x3="0.0625" y3="3.59375" x1="0.5625" y4="3" x4="0.4375"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16"/>
+									<articulation><tenuto/></articulation>
+									<heads>
+										<head pitch="F5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16"/>
+									<articulation><tenuto/></articulation>
+									<drawObjects>
+										<drawObj>
+											<slur y2="3.71875" x2="1.46875" y1="3" x3="-0.46875" y3="3.71875" x1="0.75" y4="3" x4="0.25"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16"/>
+									<articulation><tenuto/></articulation>
+									<heads>
+										<head pitch="F5">
+											<alter step="2"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-5" x="0">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>sehr markig</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16"/>
+									<articulation><tenuto/></articulation>
+									<drawObjects>
+										<drawObj>
+											<slur y2="2.5" x2="1.5625" y1="2" x3="-0.25" y3="2.25" x1="0.75" y4="1.5" x4="0.25"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16"/>
+									<articulation><tenuto/></articulation>
+									<heads>
+										<head pitch="B5">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<articulation><tenuto/></articulation>
+									<heads>
+										<head pitch="C6">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<articulation><tenuto/></articulation>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<articulation><tenuto/></articulation>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<articulation><tenuto/></articulation>
+									<heads>
+										<head pitch="G5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="3" x2="1.5" y1="2" x3="-0.78125" y3="3.21875" x1="0.75" y4="2.5" x4="0.25"/>
+											<basic noteRange="1"/>
+										</drawObj>
+										<drawObj>
+											<text y="5" x="0">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>dim.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<heads>
+										<head pitch="F5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="5.71875" x2="1.78125" y1="5" x3="-0.5" y3="5.5" x1="0.75" y4="4.5" x4="0.25"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="A4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<heads>
+										<head pitch="B4"/>
+									</heads>
+								</chord>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="Violine 2" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<keySign fifths="4"/>
+								<timeSign time="C"/>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1/2"/>
+								</rest>
+								<chord>
+									<duration base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="5.5" x="-3">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>j</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-3.5" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Y</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="6" x="0">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>cresc. sempre</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="B4">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B4">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<rest>
+									<duration base="1/2"/>
+								</rest>
+								<chord>
+									<duration base="1/2"/>
+									<drawObjects>
+										<drawObj>
+											<text y="6" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="6" x="1">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>dim.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="A4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="A4"/>
+									</heads>
+								</chord>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="Viola" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="alto"/>
+								<keySign fifths="4"/>
+								<timeSign time="C"/>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="1.375" x2="1" y1="0.5" x3="-0.96875" y3="2.59375" x1="0.75" y4="2.5" x4="0.25"/>
+											<basic noteRange="1"/>
+										</drawObj>
+										<drawObj>
+											<text y="5" x="-1.5">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="5" x="1">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>cresc. semp.</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-3.5" x="0">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>hervortretend</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="G4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="4" x2="2.15625" y1="3" x3="-0.25" y3="2.0625" x1="0.75" y4="0.5" x4="0.25"/>
+											<basic noteRange="3"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F4">
+											<alter step="2"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16"/>
+									<heads>
+										<head pitch="B4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/8"/>
+									<heads>
+										<head pitch="C5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16"/>
+									<heads>
+										<head pitch="D5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/2"/>
+									<heads>
+										<head pitch="G4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8">
+										<tuplet count="3"/>
+									</duration>
+									<drawObjects>
+										<drawObj>
+											<bracket y1="-3.5" x2="1" x1="0" y2="-2.5" number="3"/>
+											<basic noteRange="2"/>
+										</drawObj>
+										<drawObj>
+											<slur y2="4.03125" x2="1.4375" y1="2.5" x3="-0.96875" y3="4.6875" x1="0.75" y4="3.5" x4="0.25"/>
+											<basic noteRange="2"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8">
+										<tuplet count="3"/>
+									</duration>
+									<display xShift="0.5"/>
+									<drawObjects>
+										<drawObj>
+											<text y="2" x="-2">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>R</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F4">
+											<alter step="1" display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8">
+										<tuplet count="3"/>
+									</duration>
+									<heads>
+										<head pitch="E4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-3.6875" x2="1.125" y1="-1.5" x3="-0.4375" y3="-4.03125" x1="0.75" y4="-3.21875" x4="0.5"/>
+											<basic noteRange="2"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<text y="5" x="0">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>dim.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="C5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-2.53125" x2="1.65625" y1="-1" x3="-0.8125" y3="-2.90625" x1="0.75" y4="-1.5" x4="0.25"/>
+											<basic noteRange="3"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="B4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="C5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="D5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="D5">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-3.5" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Y</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="4.5" x="-1.5">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>j</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B4">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="4.5" x="0">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>cresc. sempre</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16"/>
+									<articulation><tenuto/></articulation>
+									<drawObjects>
+										<drawObj>
+											<slur y2="3.34375" x2="1.1875" y1="3" x3="0.0625" y3="3.09375" x1="0.5625" y4="2.5" x4="0.4375"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/16"/>
+									<articulation><tenuto/></articulation>
+									<heads>
+										<head pitch="A4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="G4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<rest>
+									<duration base="1/2"/>
+								</rest>
+								<chord>
+									<duration base="1/2"/>
+									<drawObjects>
+										<drawObj>
+											<text y="5.5" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="5.5" x="1">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>dim.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="F4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="Violoncell" defaultTime="4/4">
+					<context/><voices>
+						<voice stemDir="up">
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="bass"/>
+								<keySign fifths="4"/>
+								<timeSign time="C"/>
+								<chord>
+									<duration base="1/2"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-2.5" x="-2.5">
+												<font height="10" face="Times New Roman"/>
+												<content>div.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C3">
+											<alter step="1"/>
+										</head>
+										<head pitch="E4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="C3">
+											<alter step="1"/>
+										</head>
+										<head pitch="E4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="D4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/2"/>
+									<display invisible="true"/>
+								</rest>
+								<chord>
+									<duration base="1/2"/>
+									<stem dir="down"/>
+									<heads>
+										<head pitch="E4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<stem lengthening="-1"/>
+									<heads>
+										<head pitch="A4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<stem dir="down"/>
+									<heads>
+										<head pitch="G4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/2"/>
+									<display invisible="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display invisible="true" churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display invisible="true" churchStyle="true"/>
+								</rest>
+								<rest>
+									<duration base="1"/>
+									<display invisible="true" churchStyle="true"/>
+								</rest>
+							</noteObjects>
+						</voice>
+						<voice stemDir="down">
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="bass"/>
+								<keySign fifths="4"/>
+								<timeSign time="C"/>
+								<chord>
+									<duration base="1/2"/>
+									<stem dir="up"/>
+									<drawObjects>
+										<drawObj>
+											<text y="6" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="6" x="1">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>cresc. semp.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G3">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<stem dir="up"/>
+									<heads>
+										<head pitch="A3">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<stem dir="up"/>
+									<heads>
+										<head pitch="G3">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="D4"/>
+										<head pitch="E4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<drawObjects>
+										<drawObj>
+											<text y="4" x="3.5">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>dim.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="6.9375" x2="1.75" y1="4.5" x3="-1.5" y3="6.375" x1="0.75" y4="4.5" x4="-0.5"/>
+											<basic noteRange="3"/>
+										</drawObj>
+										<drawObj>
+											<slur y2="5.21875" x2="1.875" y1="4.5" x3="-1.46875" y3="5.15625" x1="0.75" y4="4.5" x4="-0.5"/>
+											<basic noteRange="2"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="B3">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="C4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="C4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="B3">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem dir="up"/>
+									<drawObjects>
+										<drawObj>
+											<text y="4.5" x="-1.5">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>j</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem dir="up"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B3"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="4.5" x="0">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>cresc. sempre</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="E4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem lengthening="-0.5"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem lengthening="-0.5"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<stem dir="up"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/8"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1/2"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<chord>
+									<duration base="1/2"/>
+									<stem dir="up"/>
+									<drawObjects>
+										<drawObj>
+											<text y="4.5" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="4.5" x="1">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>dim.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F3">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="Kontrabass" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="bass"/>
+								<keySign fifths="4"/>
+								<timeSign time="C"/>
+								<chord>
+									<duration base="1/2"/>
+									<drawObjects>
+										<drawObj>
+											<text y="4.5" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="4.5" x="1">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>cresc. semp.</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="8" x="-4">
+												<font height="14" weight="700" face="Book Antiqua"/>
+												<content>(Sehr feierlich und sehr langsam)</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="C4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="B3">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="B3"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<drawObjects>
+										<drawObj>
+											<text y="4" x="3.5">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>dim.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="A3"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="F3">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="G3">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem dir="up"/>
+									<drawObjects>
+										<drawObj>
+											<text y="4.5" x="-1.5">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>j</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem dir="up"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B3"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="4.5" x="0">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>cresc. sempre</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="E4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem lengthening="-0.5"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem lengthening="-0.5"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<stem dir="up"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ë</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C4">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/8"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<rest>
+									<duration base="1/2"/>
+									<verticalPos centered="true"/>
+								</rest>
+								<chord>
+									<duration base="1/2"/>
+									<stem dir="up"/>
+									<drawObjects>
+										<drawObj>
+											<text y="4.5" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="4.5" x="1">
+												<font height="10" italic="true" face="Times New Roman"/>
+												<content>dim.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F3">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+			</staves>
+		</system>
+	</systems>
+</score>
+</piece>
+</smr>

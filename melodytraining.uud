@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:UseCaseDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" name="melodytraining" metadata="nsuml-1.4" initialized="true" scrolledY="92" tag="5" key="3230303430353234206D75736974656368">
+  <children xsi:type="editmodel:UseCaseActorEditModel" targetConnections="//@children.1/@children.0/@sourceConnections.0" location="117,115" size="70,128" itemName="learner">
+    <sourceConnections xsi:type="editmodel:UseCaseAssociationEditModel" source="//@children.0" target="//@children.1/@children.1" targetEnd="//@children.0/@sourceConnections.0/@children.1" sourceEnd="//@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:UseCaseEndEditModel" location="69,74" attachSource="true"/>
+      <children xsi:type="editmodel:UseCaseEndEditModel" location="1,23"/>
+    </sourceConnections>
+  </children>
+  <children xsi:type="editmodel:SystemEditModel" location="224,2" size="220,248" itemName="MelodyTutorial">
+    <children xsi:type="editmodel:UseCaseEditModel" location="16,18" size="172,46" itemName="Hear and recognize melodies">
+      <sourceConnections xsi:type="editmodel:UseCaseAssociationEditModel" source="//@children.1/@children.0" target="//@children.0" targetEnd="//@children.1/@children.0/@sourceConnections.0/@children.1" sourceEnd="//@children.1/@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+        <children xsi:type="editmodel:UseCaseEndEditModel" location="4,29" attachSource="true"/>
+        <children xsi:type="editmodel:UseCaseEndEditModel" location="69,53"/>
+      </sourceConnections>
+    </children>
+    <children xsi:type="editmodel:UseCaseEditModel" targetConnections="//@children.0/@sourceConnections.0" location="14,183" size="182,49" itemName="Learn background information"/>
+    <children xsi:type="editmodel:UseCaseEditModel" location="10,99" size="207,34" itemName="Make input (multiple choice or notation)"/>
+  </children>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+</editmodel:UseCaseDiagramEditModel>

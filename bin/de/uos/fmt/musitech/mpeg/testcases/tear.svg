@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   width="16.000000pt"
+   height="16.000000pt"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   id="svg1"
+   sodipodi:version="0.32"
+   inkscape:version="0.40"
+   sodipodi:docbase="/home/collin/Sources/projects/musitech/workspace/musitech/test/de/uos/fmt/musitech/mpeg/testcases"
+   sodipodi:docname="tear.svg">
+  <defs
+     id="defs3" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="13.893067"
+     inkscape:cx="9.4196453"
+     inkscape:cy="6.7032425"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="640"
+     inkscape:window-height="538"
+     inkscape:window-x="287"
+     inkscape:window-y="301" />
+  <metadata
+     id="metadata4">
+    <rdf:RDF
+       id="RDF5">
+      <cc:Work
+         rdf:about=""
+         id="Work6">
+        <dc:format
+           id="format7">image/svg+xml</dc:format>
+        <dc:type
+           id="type9"
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:type="arc"
+       style="fill:#000000;fill-opacity:1.0000000;stroke:#000000;stroke-width:0.0000000;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4.0000000;stroke-dasharray:0.0000000 0.0000000 ;stroke-dashoffset:0.0000000;stroke-opacity:1.0000000"
+       id="path1062"
+       sodipodi:cx="8.6823874"
+       sodipodi:cy="9.8780451"
+       sodipodi:rx="2.5642285"
+       sodipodi:ry="5.3533893"
+       d="M 8.8600148,4.5375154 A 2.5642285,5.3533893 0 1 1 8.6931845,4.5247033"
+       sodipodi:start="4.7817158"
+       sodipodi:end="10.999785"
+       sodipodi:open="true"
+       transform="matrix(1.912247,0.000000,0.000000,1.613434,-6.480914,-5.744683)" />
+  </g>
+</svg>

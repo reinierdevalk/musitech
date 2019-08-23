@@ -1,0 +1,37 @@
+
+- skip macht Geräusche (bei mp3, bei wav nicht so auffällig - lag evtl am Beispiel).
+- Stop macht ein Geräusch und reagiert noch mit Verzögerung.
+- Synchronisierung verbessern
+- Graphische Oberfläche von TestShowWave erweitert einsetzbar ins src-Verzeichniss tun.
+		Display implementieren, linearDisplay etc verwenden, usw.
+- aus ScrollWave ein Display und LinearDisplay machen
+
+- manchmal hört WaveDisplay.paintThread nicht auf, man wartet in paintOffscreenImage() 
+	vergeblich. Was tun? kann man den Thread dann abschießen? Geht das überhaupt? 
+	mit Thread.destroy?
+- ringBuff in MP3PreviewReader git noch nicht immer die rechten Daten... 
+	der Buffer scheint nihct immer richtig zu laufen
+	
+- in WaveDisplay HorizontalTimedDisplay fertigimplementieren
+
+- darf repaint() im eigenen Thread stehen? (Im PaintThread, z. B.)
+
+############
+Erledigt:
+
+
+- MP3 Metadaten ID3 
+- Javazoom Antwort schreiben
+- AudioFormat von FIS anders auswerten beim rekonvertieren von FIS in byteströme
+- PlayTimer: bei stop() und reset() müsser alle Exceptions abgefangen werden, 
+   damit, wenn in einem Player ein Fehler geschieht, in den anderen trotzdem 
+   noch stop bzw reset aufgerufen wird!!
+- Kann kein AudioFormat.Ecoding für MP3 machen, ist nicht vorgesehen: Construktor 
+	ist protected. Eine unterklasse von Encoding extra dafür würde sich kaum lohnen. 
+	Verstehe nicht wozu das gut sein sollte, und der Aufwand ist groß, da die 
+	DataLines, AudioInputStream (in FIStoAIS) usw das AudioFormat das vom FIS
+	gegeben wird angewendet wird.
+	Ist es wirklich nötig, mag ich das überall ändern. Sind aber genug TODOs überall 
+	zu lösen, bis dahin. Und die Zeit ist knapp.
+- caching in MP3-prewiev-reader
+- sample-Darstellung in thread tun

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TeamTask>
+	<TeamTaskMeta>
+		<CreationDate format="yyyy-MM-dd :: HH:mm:ss z">2002-12-18 :: 02:51:01 CET</CreationDate>
+		<LastModificationDate format="yyyy-MM-dd :: HH:mm:ss z">2002-12-18 :: 02:56:01 CET</LastModificationDate>
+	</TeamTaskMeta>
+	<Summary>WorkUmstrukturieren</Summary>
+	<User>tweyde</User>
+	<Id>FFFFFFFFFC04FB3F</Id>
+	<Module>musitech</Module>
+	<AssignedTo>tweyde@uos.de</AssignedTo>
+	<State description="Assigned" index="1" />
+	<Severity description="Enhancement" index="0" />
+	<Description>Ein Work sollte aus mehreren Teilen bestehen können (z.B. Sätzen oder Stücken).
+Eine zusätzliche Ebene Piece könnte ein Stück Musik beschreiben, das zeitlich zusammen-
+hängt, so wie jetzt Work. </Description>
+	<Notification>
+		<Recipient>mgieseki@uos.de</Recipient>
+	</Notification>
+	<NoteHistory />
+</TeamTask>
+

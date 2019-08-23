@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaObject><de.uos.fmt.musitech.framework.persistence.DataBase id="0"><java.util.ArrayList id="1" field-name="ScrapBook" isCollection="true"><collElements/></java.util.ArrayList><java.util.ArrayList isReference="true" id="1" field-name="TopLevelCollections"/></de.uos.fmt.musitech.framework.persistence.DataBase></JavaObject>

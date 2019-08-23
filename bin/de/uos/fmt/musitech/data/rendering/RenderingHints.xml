@@ -1,0 +1,85 @@
+
+<RenderingHintsCollection>
+	<RenderingHints java-class="de.uos.fmt.musitech.data.structure.Note">
+		<RenderingHint>
+			<key>scale</key>
+			<value>java.lang.Float</value>
+			<comment>scale this by the given factor</comment>
+		</RenderingHint>
+		<RenderingHint>
+			<key>appoggiatura</key>
+			<value>de.uos.fmt.musitech.utility.math.Rational</value>
+			<comment>this is a appoggiatura</comment>
+		</RenderingHint>
+		<RenderingHint>
+			<key>duplicate of other voice</key>
+			<value>java.lang.Boolean</value>
+			<comment>this results in the note being invisible</comment>
+		</RenderingHint>
+		<RenderingHint>
+			<key>tabulatur note</key>
+			<value>de.uos.fmt.musitech.data.score.TablatureNote</value>
+			<comment>This tabulatur note will be drawn if the embracing staff has the rendering hint "draw tabulatur"</comment>
+		</RenderingHint>		
+		<RenderingHint>
+			<key>custom head</key>
+			<value>de.uos.fmt.musitech.data.score.CustomSVGGraphic</value>
+			<comment>The head of this note will be drawn through the supplied graphics object</comment>
+		</RenderingHint>
+		<RenderingHint>
+			<key>tremolo</key>
+			<value>java.lang.Boolean</value>
+			<comment>A tremolo mark will be drawn on the stem of the chord containing this note</comment>
+		</RenderingHint>
+		<RenderingHint>
+			<key>visible</key>
+			<value>java.lang.Boolean</value>
+			<comment>this results in the note being invisible</comment>
+		</RenderingHint>
+	</RenderingHints>
+	<RenderingHints java-class="de.uos.fmt.musitech.data.structure.container.StaffContainer">
+		<RenderingHint>
+			<key>staff lines</key>
+			<value>java.lang.String</value>
+			<comment>How the lines of the Staff are rendered. Only known value: "rhythm"</comment>
+		</RenderingHint>
+		<RenderingHint>
+			<key>note spacing</key>
+			<value>java.lang.Float</value>
+			<comment>a factor used to calculate the space after a note (the "Hinterfleisch"). Defaults to 1.0</comment>
+		</RenderingHint>
+		<RenderingHint>
+			<key>draw tabulatur</key>
+			<value>java.lang.Boolean</value>
+			<comment>If a tablature shall be drawn underneath the staff</comment>
+		</RenderingHint>
+	</RenderingHints>
+	
+	
+	
+	<!-- Now come the internal (Notation*) classes -->
+	<RenderingHints java-class="de.uos.fmt.musitech.data.score.NotationChord">
+		<RenderingHint>
+			<key>custom head</key>
+			<value>de.uos.fmt.musitech.data.score.CustomSVGGraphic</value>
+			<comment>The head of this note will be drawn through the supplied graphics object</comment>
+		</RenderingHint>
+		<RenderingHint>
+			<key>tabulatur note</key>
+			<value>de.uos.fmt.musitech.data.score.TablatureNote</value>
+			<comment>This tabulatur note will be drawn if the embracing staff has the rendering hint "draw tabulatur"</comment>
+		</RenderingHint>		
+		<RenderingHint>
+			<key>tremolo</key>
+			<value>java.lang.Boolean</value>
+			<comment>A tremolo mark will be drawn on the stem of the chord containing this note</comment>
+		</RenderingHint>
+		<RenderingHint>
+			<key>visible</key>
+			<value>java.lang.Boolean</value>
+			<comment>this results in the note being invisible</comment>
+		</RenderingHint>
+	</RenderingHints>
+	
+	
+</RenderingHintsCollection>

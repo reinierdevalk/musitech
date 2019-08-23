@@ -1,0 +1,14 @@
+/* 
+** $Id: mozart.gin,v 1.2 2002/10/04 16:40:32 mgieseki Exp $
+** Anfang aus Mozarts Sonate in C-Dur 
+** Script zum Testen des Notenmoduls  
+*/
+
+// rechte Hand
+Cg:-1 T4/4 
+2''{cef} 4eg | '4.b 16[''cd]4c r | 2a 4g'''c | ''g [8f 16ef] 4e r |
+;;
+
+// linke Hand
+Cg:-1 T4/4 
+'8[cgeg][cgeg] | [dgfg][cgeg] | [cafa][cgeg] | [,b'gdg][cgeg] |

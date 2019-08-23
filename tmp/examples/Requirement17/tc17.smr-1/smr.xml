@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<smr>
+<piece>
+<score>
+	<layout>
+		<pages top="20" right="30" bottom="20" left="30"/>
+		<distances>
+			<staffLines small="1.2" pageObj="1.8" normal="2.1"/>
+			<systems top="4" between="0"/>
+		</distances>
+		<instrumentNames>
+			<font height="12" face="Times New Roman"/>
+		</instrumentNames>
+		<staves>
+			<staffLayout description="unbenannt1">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3" mode="internal"/>
+				</notation>
+				<distances top="4" bottom="4"/>
+				<instrument abbrev="" name=""/>
+				<sound volume="80" instr="0"/>
+			</staffLayout>
+		</staves>
+		<spacing abs="16" rel="75"/>
+		<beamFlattening to="29" toMax="55" from="49" fromMax="148"/>
+	</layout>
+	<systems>
+		<system justified="true" instrNotation="short">
+			<context/><staves>
+				<staff layout="unbenannt1" defaultTime="12/8">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<timeSign time="12/8"/>
+								<chord>
+									<duration base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<line y1="0.71875" x2="-0.15625" x1="1.34375" y2="1.1875" lineWidth="0.3"/>
+											<basic noteRange="1"/>
+										</drawObj>
+										<drawObj>
+											<text y="-2.75" x="1.28125">
+												<font height="8" italic="true" face="Times New Roman"/>
+												<content>gliss.</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-5" x="3">
+												<font height="10" face="Times New Roman"/>
+												<content>ca. 40</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-5.5" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>¢</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-6" x="0.3125">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="F5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<stem dir="up"/>
+									<articulation><accent/></articulation>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<stem dir="up"/>
+									<articulation><accent/></articulation>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<stem dir="up"/>
+									<heads>
+										<head pitch="D6">
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="D6">
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<articulation><staccato/></articulation>
+									<heads>
+										<head pitch="E6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<articulation><staccato/></articulation>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<articulation><staccato/></articulation>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<articulation><staccato/></articulation>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<articulation><staccato/></articulation>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<articulation><strongAccent/></articulation>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration noDuration="true" base="1/8"/>
+									<display small="true"/>
+									<stem tremoloBars="1" dir="up"/>
+									<beam group="split"/>
+									<heads>
+										<head pitch="E5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="F5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<articulation><staccato/></articulation>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<articulation><staccato/></articulation>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<trill x2="1.71875" y="-4" x1="-1"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D6">
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="D6">
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<articulation><accent/></articulation>
+									<heads>
+										<head pitch="E6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<articulation><accent/></articulation>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<articulation><accent/></articulation>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<articulation><accent/></articulation>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<articulation><accent/></articulation>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+			</staves>
+		</system>
+	</systems>
+</score>
+</piece>
+</smr>

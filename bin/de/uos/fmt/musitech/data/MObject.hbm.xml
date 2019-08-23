@@ -1,0 +1,365 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="de.uos.fmt.musitech.data.MObject"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="uid"
+            column="uid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+		<joined-subclass
+		       name="de.uos.fmt.musitech.data.structure.MusicCollection"
+		       dynamic-update="false"
+		       dynamic-insert="false"
+		>
+       <key column = "uid"/>
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <list
+            name="content"
+            table="obj_in_TypedColl"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+        >
+
+              <key
+                  column="coll_id"
+              >
+              </key>
+
+              <index
+                  column="position"
+              />
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.MObject"
+                  column="object_id"
+                  outer-join="auto"
+               />
+        </list>
+       </joined-subclass>
+
+		<joined-subclass
+		       name="de.uos.fmt.musitech.data.structure.Piece"
+		       dynamic-update="false"
+		       dynamic-insert="false"
+		>
+       <key column = "uid"/>
+        <many-to-one
+            name="audioPool"
+            class="de.uos.fmt.musitech.data.MObject"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="audioPool"
+        />
+
+<!--foreign-key="uid"-->
+        <many-to-one
+            name="containerPool"
+            class="de.uos.fmt.musitech.data.MObject"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            
+            column="containerPool"
+        />
+
+        <many-to-one
+            name="timeLine"
+            class="de.uos.fmt.musitech.time.TimeLine"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="timeLine"
+        />
+
+        <!--many-to-one
+            name="metaInfoPool"
+            class="de.uos.fmt.musitech.data.MObject"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="metaInfoPool"
+        /-->
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <many-to-one
+            name="notePool"
+            class="de.uos.fmt.musitech.data.MObject"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="notePool"
+        />
+
+        <many-to-one
+            name="metricalTimeLine"
+            class="de.uos.fmt.musitech.data.time.MetricalTimeLine"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="metricalTimeLine"
+        />
+
+        <many-to-one
+            name="context"
+            class="de.uos.fmt.musitech.data.structure.Context"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="context"
+        />
+
+        <list
+            name="mapKeyList"
+            table="PieceMapKeyList"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+        >
+
+              <key
+                  column="piece_id"
+              >
+              </key>
+
+              <index
+                  column="position"
+              />
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.MObject"
+                  column="mobject_id"
+                  outer-join="auto"
+               />
+
+        </list>
+
+        <list
+            name="mapValueList"
+            table="PieceMapValueList"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+        >
+
+              <key
+                  column="piece_id"
+              >
+              </key>
+
+              <index
+                  column="position"
+              />
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.metadata.MetaDataCollection"
+                  column="metadata_id"
+                  outer-join="auto"
+               />
+
+        </list>
+
+     
+       </joined-subclass>
+
+		<joined-subclass
+		       name="de.uos.fmt.musitech.data.structure.form.Form$FormPrototype"
+		        table="FormPrototype"
+		       dynamic-update="false"
+		       dynamic-insert="false"
+		>
+       <key column = "uid"/>
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <property
+            name="comment"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="comment"
+        />
+       
+       
+       </joined-subclass>
+
+		<joined-subclass
+		       name="de.uos.fmt.musitech.data.metadata.MetaDataCollection"
+		       table="MetaDataCollection"
+		       dynamic-update="false"
+		       dynamic-insert="false"
+		>
+       <key column = "uid"/>
+        <list
+            name="listOfProfiles"
+            table="profiles_in_MDColl"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+        >
+
+              <key
+                  column="coll_id"
+              >
+              </key>
+
+              <index
+                  column="position"
+              />
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.metadata.MetaDataProfile"
+                  column="object_id"
+                  outer-join="auto"
+               />
+
+        </list>
+
+        <many-to-one
+            name="describedObject"
+            class="de.uos.fmt.musitech.data.MObject"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="describedObject"
+        />
+
+        <map
+            name="dataMap"
+            table="obj_in_MDColl"
+            lazy="false"
+            sort="unsorted"
+            inverse="false"
+            cascade="all"
+        >
+
+              <key
+                  column="MDColl_id"
+              >
+              </key>
+
+              <index
+                  column="item_id"
+                  type="java.lang.String"
+              />
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.metadata.MetaDataItem"
+                  column="MetaDataItem"
+                  outer-join="auto"
+               />
+
+        </map>
+       
+       </joined-subclass>
+
+		<joined-subclass
+		       name="de.uos.fmt.musitech.data.media.image.ImageURL"
+		       table="ImageURL"
+		       dynamic-update="false"
+		       dynamic-insert="false"
+		>
+       <key column = "uid"/>
+        <property
+            name="sourceUrl"
+            type="java.net.URL"
+            update="true"
+            insert="true"
+            access="property"
+            column="sourceUrl"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-ImageURL.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.media.image.TimedImage"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        <property
+            name="time"
+            type="long"
+            update="true"
+            insert="true"
+            access="property"
+            column="time"
+        />
+
+        </joined-subclass>
+       </joined-subclass>
+
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-MObject.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

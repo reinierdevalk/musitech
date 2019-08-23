@@ -1,0 +1,4 @@
+
+9: der Schlüssel zu Beginn der Romanze ist ein Text; 
+   die Balken sind manuell verbunden; 
+   die Taktzahlen sind (folgerichtig) entfernt

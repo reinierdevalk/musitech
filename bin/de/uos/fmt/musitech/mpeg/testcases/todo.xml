@@ -1,0 +1,491 @@
+<!DOCTYPE requirements SYSTEM "todo.dtd">
+
+<requirements>
+  <requirement id="1" name="CWSMR">
+    <aspect id="1" name="coding classic form">
+      <test-case id="a">
+	<todo>
+	  Naming of Staffs
+	</todo>
+	<todo>
+		move rests away vertically
+	</todo>
+	<todo>
+		Staff brace
+		<solution>
+			done. (quite ugly though)
+		</solution>
+	</todo>
+	<todo>
+		Measure numbers (are these the rehearsal marks from the .doc?)
+	</todo>
+	<todo>
+		(f)
+		<solution>
+			done
+		</solution>
+	</todo>
+	<todo>
+	  Small notes
+	  <solution>
+	  	A NotationChord now may have another NotationChord as a child. This child is called entryChord.
+	  	This recursion is necessary as the small notes in the example are not just small notes, but are
+	  	part of the following note, meaning that they don't have a metrical duration of their own. This
+	  	problem is solved graphically in the same manner: a chord has an entryChord as child with extends
+	  	the width of the parent-chord.
+	  </solution>
+	 </todo>
+	<todo>
+	  Dotted and paranthised notes and slurs
+	</todo>
+	<todo>
+		a part which is the same in two voices is rendered only once and "a 2" is written above the staff
+		<solution>
+			The representation contains both parts equally. One part has the rendering hint "duplicate of other voice" which
+			results in all notes getting invisible and the string being generated.
+		</solution>
+	</todo>
+	<todo>
+		the "a 2" string has to be added for the duplicate term in the oboe voice, 3rd measure.
+		<solution>
+			for now this is done as a simple StringSymbol on a MetricAttachable
+		</solution>
+	</todo>
+	<todo>
+		What to do with two voices rendered as one with chords (bassoon staff). Are these then chords in the representation or are they different voices with rendering hints?
+		<solution>
+			Yes. Two times the same voices with rendering hint "voices as chords" on the NotationStaff
+		</solution>
+	</todo>
+	<todo>
+	  Staccato-Accents
+	  <solution>
+	  	This is done in a simple way. But probably this is unsatisfying. The crux is that there may be notes where a staccato
+	  	point belongs (or even worse beams). It will be hard to check that and even harder to find free spot.
+	  </solution>
+	 </todo>
+       </test-case>
+      <test-case id="b">
+	<todo>
+		fix weird alignment bug (third voice)
+		<solution>
+			done
+		</solution>
+	</todo>
+	<todo>
+		should NotationStaff.setTransposition() be semantical?
+		<solution>
+			Yes it should. done. NotationStaff.setTransposition() takes a value between -12 and 12 and transposes that many halftones. (smaller or greater values should also be possible, but have no graphical effect (should they?))
+		</solution>
+	</todo>
+	<todo>
+	  scaling for some staffs
+	  <solution>
+	  	scaling of gui.Staff seems to work. As this is the first version, there'll be bugs later on
+	  </solution>
+	 </todo>
+	<todo>
+	  lyrics
+	 </todo>
+	<todo>
+	  voice and staff distinction has to be rethought (voice changing staffs midway)
+	  <solution>
+	  	The voices don't change staffs. They just overlap inside one staff... This is already possible. done
+	  </solution>
+	 </todo>
+      </test-case>
+      <test-case id="c">
+	<todo>
+	  Measure numbers
+	 </todo>
+	<todo>
+	  long rests
+	  <solution>
+	  	done
+	  </solution>
+	</todo>
+	<todo>
+		Stacked objects attached to notes
+		<solution>
+			done. see class data.score.StackSymbol on the representation side and score.gui.CustomStackScoreObject on the rendering side
+		</solution>
+	</todo>
+	<todo>
+	  triols including rests
+	  <solution>
+	  	done. although there're some quirks regarding beam points
+	  </solution>
+	 </todo>
+	<todo>
+	  trills
+	 </todo>
+	<todo>
+	  indented staffs
+	</todo>
+      </test-case>
+      <test-case id="d">
+	<todo>
+	  accents above staff
+	</todo>
+       </test-case>
+     </aspect>
+    <aspect id="2" name="coding romantic form">
+      <test-case id="a">
+	<todo>aufloesungszeichen before #</todo>
+      </test-case>
+      <test-case id="b">
+	<todo>fingerings</todo>
+	<todo>complex slurs</todo>
+	<todo>pedal marks</todo>
+	<todo></todo>
+      </test-case>
+      <test-case id="c">
+	<todo>extension lines</todo>
+	<todo>volume hints</todo>
+	<todo>beams with rests</todo>
+      </test-case>
+      <test-case id="d">
+	<todo>notes with two stems</todo>
+	<todo>notes belonging to two beams</todo>
+	<todo>beams crossing multiple measures</todo>
+	<todo>one note being small and large</todo>
+	<todo>weird spanners</todo>
+	<todo>beams across staffs</todo>
+	<todo>paranthised accidentals</todo>
+	<todo>vertically broken barline</todo>
+	<todo>cluster notation</todo>
+      </test-case>
+    </aspect>
+    <aspect id="3" name="coding jazz">
+      <test-case id="a">
+	<todo>rhythm section</todo>
+      </test-case>
+      <test-case id="b">
+	<todo>using jazz font</todo>
+	<todo></todo>
+      </test-case>
+    </aspect>
+    <aspect id="4" name="coding Pop/Rock">
+      <test-case id="a">
+	<todo>tablature</todo>
+	<todo>chord names</todo>
+	<todo>lyrics with word extenders</todo>
+	<todo>repeat sign</todo>
+	<todo>slash notation</todo>
+      </test-case>
+    </aspect>
+    <aspect id="5" name="modeling of symbolic events">
+      <test-case id="">
+      </test-case>
+    </aspect>
+    <aspect id="6" name="duration of symbolic events">
+      <test-case id="a">
+	<todo>nested tuplets</todo>
+      </test-case>
+      <test-case id="b">
+	<todo>????????</todo>
+      </test-case>
+    </aspect>
+    <aspect id="7" name="ordering relationships of symbolic events">
+      <test-case id="a">
+	<todo>weird alignment</todo>
+	<todo>stem crossing staves</todo>
+      </test-case>
+    </aspect>
+    <aspect id="8" name="symbolic qualifiers">
+      <test-case id="a">
+	<todo>????????</todo>
+      </test-case>
+    </aspect>
+    <aspect id="9" name="symbolic selections">
+      <test-case id="a">
+	<todo>implement selection</todo>
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="2" name="different codings">
+    <aspect id="1" name="tablatures">
+      <test-case id="a">
+	<todo>tablatures</todo>
+      </test-case>
+    </aspect>
+    <aspect id="2" name="braille">
+      <test-case id="a">
+	<todo>braille</todo>
+      </test-case>
+      <test-case id="b">
+	<todo>braille with different rendering hints</todo>
+      </test-case>
+    </aspect>
+    <aspect id="3" name="spoken music">
+      <test-case id="">
+	<todo>spoken music</todo>
+      </test-case>
+    </aspect>
+    <aspect id="4" name="percussions">
+      <test-case id="a">
+	<todo>new note heads</todo>
+	<todo>voice/instrument is determined by note height</todo>
+      </test-case>
+    </aspect>
+    <aspect id="5" name="baroque">
+      <test-case id="a">
+	<todo>weird alignment of 1/32 and 1/16</todo>
+      </test-case>
+    </aspect>
+    <aspect id="6" name="20th century experimental">
+      <test-case id="a">
+	<todo>holding marks for notes</todo>
+	<todo>gradually increasing beams</todo>
+      </test-case>
+      <test-case id="b">
+	<todo>everything</todo>
+      </test-case>
+    </aspect>
+    <aspect id="7" name="schenkerian analysis">
+      <test-case id="a">
+	<todo>curves of different varities in addition to the score</todo>
+      </test-case>
+    </aspect>
+    <aspect id="8" name="neumes">
+      <test-case id="a">
+	<todo>different font</todo>
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="3" name="user defined symbolic elements">
+    <aspect id="1" name="symbolic events">
+      <test-case id="">
+	<todo>generic ScoreObject</todo>
+      </test-case>
+    </aspect>
+    <aspect id="2" name="symbolic qualifiers">
+      <test-case id="">
+	<todo>generic ScoreObject which can be bound to another?</todo>
+      </test-case>
+    </aspect>
+    <aspect id="3" name="SMR Context">
+      <test-case id="">
+	<todo>???</todo>
+      </test-case>
+    </aspect>
+    <aspect id="4" name="symbolic selections">
+      <test-case id="">
+	<todo></todo>
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="4" name="audio and video rendering">
+    <aspect id="1" name="audio rendering">
+      <test-case id="a">
+	<todo>this is the same as one test case in req. 1</todo>
+      </test-case>
+    </aspect>
+    <aspect id="2" name="visual rendering">
+      <test-case id="a">
+	<todo>this is the same as one test case in req. 1</todo>
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="5" name="linking of symbolic elements">
+    <aspect id="1" name="Symbolic Qualifiers">
+      <test-case id="">
+      </test-case>
+    </aspect>
+    <aspect id="2" name="Symbolic Events">
+      <test-case id="">
+      </test-case>
+    </aspect>
+    <aspect id="3" name="Symbolic Selection">
+      <test-case id="">
+      </test-case>
+    </aspect>
+    <aspect name="SMR Context" id="4">
+      <test-case id="">
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="6" name="multilingual metadata">
+    <aspect id="1" name="multilingual metadata">
+      <test-case id="">
+	<todo>evaluate Dublin Core and UNIMARK, check the Java mechanisms for multilingual text</todo>
+      </test-case>
+    </aspect>
+    <aspect id="2" name="adding MPEG7 metadata">
+      <test-case id="">
+	<todo>research MPEG7</todo>
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="7" name="scalable solution">
+    <aspect id="1" name="different renderings of the same piece">
+      <test-case id="a">
+      </test-case>
+    </aspect>
+    <aspect id="2" name="piece looks different to different renderes">
+      <test-case id="">
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="8" name="rendering on different devices">
+    <aspect id="1" name="rendering on different devices">
+      <test-case id="a">
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="9" name="measured and unmeasured representation">
+    <aspect id="1" name="showing barred and unbarred scores">
+      <test-case id="a">
+      </test-case>
+    </aspect>
+    <aspect id="2" name="showing that no bars are used internally">
+      <test-case id="">
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="10" name="smybolic elements are uniquely addressable">
+    <aspect id="1" name="smybolic elements are uniquely addressable">
+      <test-case id="">
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="11" name="allowing context to change rendering of elements">
+    <aspect id="1" name="allowing context to change rendering of elements">
+      <test-case id="a">
+      </test-case>
+    </aspect>
+    <aspect id="2" name="default contexts">
+      <test-case id="">
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="12" name="multiple representations of pitch">
+    <aspect id="1" name="rendered pitch independent of coded pitch">
+      <test-case id="">
+      </test-case>
+    </aspect>
+    <aspect id="2" name="tuning of pitch without changing the coded piece">
+      <test-case id="">
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="13" name="temp and tempo variations">
+    <aspect id="1" name="allow tempo variation">
+      <test-case id="a">
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="14" name="rendering from pure logical information">
+    <aspect id="1" name="rendering from pure logical information">
+      <test-case id="">
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="15" name="linear browsing">
+    <aspect id="1" name="page markers">
+      <test-case id="">
+	<todo>direct access to symbolic selection???</todo>
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="16" name="audio from pure logical information">
+    <aspect id="1" name="audio from pure logical information">
+      <test-case id="">
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="17" name="acknowledge symbolic qualifiers for rendering">
+    <aspect id="1" name="acknowledge symbolic qualifiers for rendering">
+      <test-case id="a">
+      </test-case>
+    </aspect>
+    <aspect id="2" name="allow user defined semantics for symbolic qualifiers">
+      <test-case id="a">
+      </test-case>
+    </aspect>
+    <aspect id="3" name="use default values if user defined semantics are missing">
+      <test-case id="a">
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="26" name="multilingual lyrics">
+    <aspect id="1" name="multilingual lyrics">
+      <test-case id="">
+	<todo>see multilingual metadata</todo>
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="27" name="view only parts of the score/partitura">
+    <aspect id="1" name="view only parts of the score/partitura">
+      <test-case id="">
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="28" name="several symbolic selections">
+    <aspect id="1" name="symbolic selections for formatting information">
+      <test-case id="">
+      </test-case>
+    </aspect>
+    <aspect id="2" name="symbolic selections for navigation">
+      <test-case id="">
+      </test-case>
+    </aspect>
+    <aspect id="3" name="using a selection to display information">
+      <test-case id="">
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="29" name="allow different scales and temperaments">
+    <aspect id="1" name="different scale">
+      <test-case id="">
+      </test-case>
+    </aspect>
+    <aspect id="2" name="different temperaments">
+      <test-case id="">
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="30" name="transposing full or partly scores">
+    <aspect id="1" name="transposing full scores">
+      <test-case id="">
+      </test-case>
+    </aspect>
+    <aspect id="2" name="transposing parts with multiple voices">
+      <test-case id="">
+      </test-case>
+    </aspect>
+    <aspect id="3" name="transposing of segments with multiple voices">
+      <test-case id="">
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="31" name="rendering hints for symbolic elements">
+    <aspect name="take rendering hints into account" id="1">
+      <test-case id="a">
+      </test-case>
+    </aspect>
+    <aspect id="2" name="allow rendering hints at different levels">
+      <test-case id="">
+      </test-case>
+    </aspect>
+  </requirement>
+  <requirement id="32" name="user defined annotations">
+    <aspect id="1" name="annotations for selections">
+      <test-case id="">
+      </test-case>
+    </aspect>
+    <aspect id="2" name="annotations with events">
+      <test-case id="">
+      </test-case>
+    </aspect>
+    <aspect id="3" name="annotations with qualifiers">
+      <test-case id="">
+      </test-case>
+    </aspect>
+    <aspect id="4" name="annotations with context">
+      <test-case id="">
+      </test-case>
+    </aspect>
+  </requirement>
+</requirements>
+

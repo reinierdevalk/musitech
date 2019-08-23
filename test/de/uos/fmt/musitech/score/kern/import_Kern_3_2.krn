@@ -1,0 +1,21 @@
+!!!**kern example file 
+!!!dotted note and dotted rest example
+**kern
+*clefG2
+*k[b-]
+*M2/2
+=1-
+2.d/
+8a/L
+8a/J
+=2
+2.r
+4d/
+=3
+2c#/
+4d/
+4e/
+=4
+2f/
+2r
+*-

@@ -1,0 +1,15 @@
+!!!**kern example file
+!!! two voices in one staff
+!!!see	http://dactyl.som.ohio-state.edu/Humdrum/guide02.html
+**kern	**kern
+*staff2	*staff2
+*clefG2	*clefG2
+*k[]	*k[]
+*M4/4	*M4/4
+=1	=1
+4c	4g
+4d	.
+.	8b
+4e	.
+=2	=2
+*-	*-

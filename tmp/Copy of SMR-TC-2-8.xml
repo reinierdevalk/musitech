@@ -1,0 +1,2381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 2 U (http://www.xmlspy.com) by Tillman Weyde (Universität Osnabrueck/Forschungsstelle Musik- und Medientechnologie) -->
+<smr xmlns="http://musitech.fmt.uos.de/MPEG-SMR" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<piece>
+		<score>
+			<renderingHints>
+				<renderingHint key="barline" value="none"/>
+			</renderingHints>
+			<layout>
+				<pages top="20" right="20" bottom="20" left="20"/>
+				<distances>
+					<staffLines small="1.24" pageObj="1.8" normal="1.4"/>
+					<systems top="0" between="0"/>
+				</distances>
+				<instrumentNames>
+					<font height="12" face="Times New Roman"/>
+				</instrumentNames>
+				<staves>
+					<staffLayout description="unbenannt1">
+						<notation defaultClef="treble">
+							<barlines to="7" from="3" mode="internal"/>
+						</notation>
+						<distances top="5" bottom="5"/>
+						<instrument abbrev="" name=""/>
+						<sound volume="80" instr="0"/>
+					</staffLayout>
+					<staffLayout description="unbenannt2">
+						<notation defaultClef="treble">
+							<barlines to="7" from="3" mode="internal"/>
+						</notation>
+						<distances top="5" bottom="5"/>
+						<instrument abbrev="" name=""/>
+						<sound volume="80" instr="0"/>
+					</staffLayout>
+					<staffLayout description="unbenannt3">
+						<notation defaultClef="G2-">
+							<barlines to="7" from="3" mode="internal"/>
+						</notation>
+						<distances top="5" group="1" bottom="5"/>
+						<instrument abbrev="" name=""/>
+						<sound volume="80" instr="0"/>
+					</staffLayout>
+					<staffLayout description="unbenannt4">
+						<notation defaultClef="treble">
+							<barlines to="7" from="3"/>
+						</notation>
+						<distances lineDist="small" top="5" bottom="5"/>
+						<instrument abbrev="" name=""/>
+						<sound volume="80" instr="0"/>
+					</staffLayout>
+					<staffLayout description="unbenannt5">
+						<notation defaultClef="bass">
+							<barlines to="7" from="3" mode="internal"/>
+						</notation>
+						<distances lineDist="small" top="5" bottom="5"/>
+						<instrument abbrev="" name=""/>
+						<sound volume="80" instr="0"/>
+					</staffLayout>
+				</staves>
+				<brackets>
+					<bracket to="2" from="0"/>
+					<bracket to="4" from="3" curly="true"/>
+				</brackets>
+				<spacing useRealSize="false" abs="0" rel="0" useLyricsSize="false"/>
+				<beamFlattening to="0" toMax="0" from="0" fromMax="0"/>
+			</layout>
+			<systems>
+				<system wrap="line-hard">
+					<context>
+						<timeSign time="4/4">
+							<renderingHints>
+								<renderingHint key="visible" value="false"/>
+							</renderingHints>
+							<metricTime numerator="0" denominator="1"/>
+						</timeSign>
+						<tempo tempo="120.0">
+							<metricTime numerator="0" denominator="1"/>
+						</tempo>
+						<tempo tempo="120">
+							<metricTime numerator="1" denominator="1"/>
+						</tempo>
+						<barline>
+							<renderingHints>
+								<renderingHint key="custom" value="-0.5/0.5"/>
+							</renderingHints>
+							<metricTime numerator="43" denominator="32"/>
+						</barline>
+					</context>
+					<staves>
+						<staff layout="unbenannt1" defaultTime="4/4">
+							<renderingHints>
+								<renderingHint key="number of lines" value="4"/>
+							</renderingHints>
+							<context>
+								<clefSign clef="G2">
+									<drawObjects>
+										<drawObj>
+											<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neumClef.svg" width="1" height="1" x="0" y="0"/>
+											<basic vertAlign="1" vertShift="3.0"/>
+										</drawObj>
+									</drawObjects>
+									<metricTime numerator="0" denominator="1"/>
+								</clefSign>
+							</context>
+							<voices>
+								<voice>
+									<lyricsSettings lineDist="1.5" firstLine="5.5">
+										<font height="9" face="Times New Roman"/>
+									</lyricsSettings>
+									<noteObjects>
+										<chord>
+											<duration base="1/2"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">l</verse>
+											</lyric>
+											<heads>
+												<head pitch="B5" id="8">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/4"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">le</verse>
+											</lyric>
+											<heads>
+												<head pitch="D6" id="10">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum10.svg" width="2" height="3" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">lu</verse>
+											</lyric>
+											<heads>
+												<head pitch="D6" id="12">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum2.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="14">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum3.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="D6" id="16">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="B5" id="18">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/2"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="20">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/32"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">ia.</verse>
+											</lyric>
+											<heads>
+												<head pitch="F6" id="22">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/32"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">*</verse>
+											</lyric>
+											<heads>
+												<head pitch="F6" id="24">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">ij.</verse>
+											</lyric>
+											<heads>
+												<head pitch="F6" id="26">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="D6" id="28">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum2.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="C6" id="30">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="A5" id="32">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="34">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum5.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="D6" id="36">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum5.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="C6" id="38">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum6.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="C6" id="40">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum5.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="A5" id="42">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum6.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="A5" id="44">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="C6" id="46">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum2.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="D6" id="48">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum7.svg" width="3" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="B5" id="50">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="A5" id="52">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="C6" id="54">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum8.svg" width="3" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="B5" id="56">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum5.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+									</noteObjects>
+								</voice>
+							</voices>
+						</staff>
+					</staves>
+				</system>
+				<system wrap="line-hard">
+					<context>
+						<barline type="double">
+							<drawObjects>
+								<drawObj>
+									<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/preview1.svg" width="2" height="2" x="0" y="0"/>
+									<basic vertAlign="1" vertShift="0.0"/>
+								</drawObj>
+							</drawObjects>
+							<metricTime numerator="13" denominator="8"/>
+						</barline>
+						<barline>
+							<renderingHints>
+								<renderingHint key="custom" value="-0.5/0.5"/>
+							</renderingHints>
+							<metricTime numerator="81" denominator="32"/>
+						</barline>
+					</context>
+					<staves>
+						<staff layout="unbenannt1" defaultTime="4/4">
+							<renderingHints>
+								<renderingHint key="number of lines" value="4"/>
+							</renderingHints>
+							<context>
+								<clefSign clef="G2">
+									<drawObjects>
+										<drawObj>
+											<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neumClef.svg" width="1" height="1" x="0" y="0"/>
+											<basic vertAlign="1" vertShift="3.0"/>
+										</drawObj>
+									</drawObjects>
+									<metricTime numerator="0" denominator="1"/>
+								</clefSign>
+							</context>
+							<voices>
+								<voice>
+									<lyricsSettings lineDist="1.5" firstLine="5.5">
+										<font height="9" face="Times New Roman"/>
+									</lyricsSettings>
+									<noteObjects>
+										<chord>
+											<duration base="1/2"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">Os</verse>
+											</lyric>
+											<heads>
+												<head pitch="C6" id="65">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">ten</verse>
+											</lyric>
+											<heads>
+												<head pitch="D6" id="67">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="69">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="71">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="73">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">de</verse>
+											</lyric>
+											<heads>
+												<head pitch="F6" id="75">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum9.svg" width="2" height="3" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">mi</verse>
+											</lyric>
+											<heads>
+												<head pitch="F6" id="77">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum2.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/32"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="G6" id="79">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum6.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">hi</verse>
+											</lyric>
+											<heads>
+												<head pitch="F6" id="81">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="83">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum5.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="E6" id="85">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum6.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="D6" id="87">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum6.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">fa</verse>
+											</lyric>
+											<heads>
+												<head pitch="E6" id="89">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum6.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="91">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum12.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">ci</verse>
+											</lyric>
+											<heads>
+												<head pitch="E6" id="93">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum8.svg" width="3" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/4"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">em</verse>
+											</lyric>
+											<heads>
+												<head pitch="D6" id="95">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">tu</verse>
+											</lyric>
+											<heads>
+												<head pitch="F6" id="97">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum2.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="G6" id="99">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum3.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="101">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="D6" id="103">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="105">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum13.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="E6" id="107">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="D6" id="109">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/32"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="111">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum2.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/32"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">am,</verse>
+											</lyric>
+											<heads>
+												<head pitch="F6" id="113">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="B5" id="115">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum6.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+									</noteObjects>
+								</voice>
+							</voices>
+						</staff>
+					</staves>
+				</system>
+				<system wrap="line-hard">
+					<context>
+						<barline>
+							<renderingHints>
+								<renderingHint key="custom" value="0.5/2.5"/>
+							</renderingHints>
+							<drawObjects>
+								<drawObj>
+									<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/preview1.svg" width="2" height="2" x="0" y="0"/>
+									<basic vertAlign="1" vertShift="0.0"/>
+								</drawObj>
+							</drawObjects>
+							<metricTime numerator="103" denominator="32"/>
+						</barline>
+						<barline>
+							<renderingHints>
+								<renderingHint key="custom" value="-0.5/0.5"/>
+							</renderingHints>
+							<metricTime numerator="57" denominator="16"/>
+						</barline>
+					</context>
+					<staves>
+						<staff layout="unbenannt1" defaultTime="4/4">
+							<renderingHints>
+								<renderingHint key="number of lines" value="4"/>
+							</renderingHints>
+							<context>
+								<clefSign clef="G2">
+									<drawObjects>
+										<drawObj>
+											<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neumClef.svg" width="1" height="1" x="0" y="0"/>
+											<basic vertAlign="1" vertShift="3.0"/>
+										</drawObj>
+									</drawObjects>
+									<metricTime numerator="0" denominator="1"/>
+								</clefSign>
+							</context>
+							<voices>
+								<voice>
+									<lyricsSettings lineDist="1.5" firstLine="5.5">
+										<font height="9" face="Times New Roman"/>
+									</lyricsSettings>
+									<noteObjects>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">so</verse>
+											</lyric>
+											<heads>
+												<head pitch="C6" id="122">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="124">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/32"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="126">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="128">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="130">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="132">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">net</verse>
+											</lyric>
+											<heads>
+												<head pitch="E6" id="134">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum8.svg" width="3" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">vox</verse>
+											</lyric>
+											<heads>
+												<head pitch="F6" id="136">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum5.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/32"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="D6" id="138">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum6.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">tu</verse>
+											</lyric>
+											<heads>
+												<head pitch="D6" id="140">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum6.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/32"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="C6" id="142">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum6.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/32"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">a</verse>
+											</lyric>
+											<heads>
+												<head pitch="B5" id="144">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">in</verse>
+											</lyric>
+											<heads>
+												<head pitch="B5" id="146">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">au</verse>
+											</lyric>
+											<heads>
+												<head pitch="B5" id="148">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum2.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="D6" id="150">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum2.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">ri</verse>
+											</lyric>
+											<heads>
+												<head pitch="C6" id="152">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/4"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">bus</verse>
+											</lyric>
+											<heads>
+												<head pitch="C6" id="154">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">me</verse>
+											</lyric>
+											<heads>
+												<head pitch="D6" id="156">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum2.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="158">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum3.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="D6" id="160">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="C6" id="162">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="B5" id="164">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="D6" id="166">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum12.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="E6" id="168">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum3.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="D6" id="170">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="C6" id="172">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/32"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="D6" id="174">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/32"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">is:</verse>
+											</lyric>
+											<heads>
+												<head pitch="D6" id="176">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum6.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="B5" id="178">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum6.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+									</noteObjects>
+								</voice>
+							</voices>
+						</staff>
+					</staves>
+				</system>
+				<system wrap="line-hard">
+					<context>
+						<barline>
+							<drawObjects>
+								<drawObj>
+									<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/preview1.svg" width="2" height="2" x="0" y="0"/>
+									<basic vertAlign="1" vertShift="-0.5"/>
+								</drawObj>
+							</drawObjects>
+							<metricTime numerator="137" denominator="32"/>
+						</barline>
+						<barline>
+							<renderingHints>
+								<renderingHint key="custom" value="0.5/2.5"/>
+							</renderingHints>
+							<metricTime numerator="155" denominator="32"/>
+						</barline>
+						<barline>
+							<renderingHints>
+								<renderingHint key="custom" value="-0.5/0.5"/>
+							</renderingHints>
+							<metricTime numerator="167" denominator="32"/>
+						</barline>
+					</context>
+					<staves>
+						<staff layout="unbenannt1" defaultTime="4/4">
+							<renderingHints>
+								<renderingHint key="number of lines" value="4"/>
+							</renderingHints>
+							<context>
+								<clefSign clef="G2">
+									<drawObjects>
+										<drawObj>
+											<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neumClef.svg" width="1" height="1" x="0" y="0"/>
+											<basic vertAlign="1" vertShift="3.0"/>
+										</drawObj>
+									</drawObjects>
+									<metricTime numerator="0" denominator="1"/>
+								</clefSign>
+							</context>
+							<voices>
+								<voice>
+									<lyricsSettings lineDist="1.5" firstLine="5.5">
+										<font height="9" face="Times New Roman"/>
+									</lyricsSettings>
+									<noteObjects>
+										<chord>
+											<duration base="1/16"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">vox</verse>
+											</lyric>
+											<heads>
+												<head pitch="F6" id="185">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum2.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">e</verse>
+											</lyric>
+											<heads>
+												<head pitch="D6" id="187">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum6.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">nim</verse>
+											</lyric>
+											<heads>
+												<head pitch="D6" id="189">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="191">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="193">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/32"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">tu</verse>
+											</lyric>
+											<heads>
+												<head pitch="D6" id="195">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum2.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/32"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">a</verse>
+											</lyric>
+											<heads>
+												<head pitch="C6" id="197">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum6.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">dul</verse>
+											</lyric>
+											<heads>
+												<head pitch="C6" id="199">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum3.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="B5" id="201">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="G5" id="203">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="B5" id="205">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum13.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="A5" id="207">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="G5" id="209">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="B5" id="211">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum2.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">cis,</verse>
+											</lyric>
+											<heads>
+												<head pitch="A5" id="213">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">et</verse>
+											</lyric>
+											<heads>
+												<head pitch="A5" id="215">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum14.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/32"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">fa</verse>
+											</lyric>
+											<heads>
+												<head pitch="C6" id="217">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum2.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/32"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">ci</verse>
+											</lyric>
+											<heads>
+												<head pitch="C6" id="219">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">es</verse>
+											</lyric>
+											<heads>
+												<head pitch="D6" id="221">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum2.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">tu</verse>
+											</lyric>
+											<heads>
+												<head pitch="D6" id="223">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum7.svg" width="3" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">a *</verse>
+											</lyric>
+											<heads>
+												<head pitch="D6" id="225">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">de</verse>
+											</lyric>
+											<heads>
+												<head pitch="D6" id="227">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="E6" id="229">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="E6" id="231">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="E6" id="233">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="B5" id="235">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum6.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+									</noteObjects>
+								</voice>
+							</voices>
+						</staff>
+					</staves>
+				</system>
+				<system>
+					<context>
+						<barline>
+							<renderingHints>
+								<renderingHint key="custom" value="0.0/0.0"/>
+							</renderingHints>
+							<drawObjects>
+								<drawObj>
+									<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/preview1.svg" width="2" height="2" x="0" y="0"/>
+									<basic vertAlign="1" vertShift="-0.5"/>
+								</drawObj>
+							</drawObjects>
+							<metricTime numerator="169" denominator="32"/>
+						</barline>
+						<barline>
+							<renderingHints>
+								<renderingHint key="custom" value="-0.5/0.5"/>
+							</renderingHints>
+							<metricTime numerator="91" denominator="16"/>
+						</barline>
+						<barline type="double">
+							<metricTime numerator="383" denominator="64"/>
+						</barline>
+					</context>
+					<staves>
+						<staff layout="unbenannt1" defaultTime="4/4">
+							<renderingHints>
+								<renderingHint key="number of lines" value="4"/>
+							</renderingHints>
+							<context>
+								<clefSign clef="G2">
+									<drawObjects>
+										<drawObj>
+											<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neumClef.svg" width="1" height="1" x="0" y="0"/>
+											<basic vertAlign="1" vertShift="3.0"/>
+										</drawObj>
+									</drawObjects>
+									<metricTime numerator="0" denominator="1"/>
+								</clefSign>
+							</context>
+							<voices>
+								<voice>
+									<lyricsSettings lineDist="1.5" firstLine="5.5">
+										<font height="9" face="Times New Roman"/>
+									</lyricsSettings>
+									<noteObjects>
+										<chord>
+											<duration base="1/16"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">co</verse>
+											</lyric>
+											<heads>
+												<head pitch="F6" id="242">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum9.svg" width="2" height="3" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<lyric lang="de_DE">
+												<verse i="0">ra</verse>
+											</lyric>
+											<heads>
+												<head pitch="F6" id="244">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum2.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/32"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="G6" id="246">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum6.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="248">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum15.svg" width="3" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="E6" id="250">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum3.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="D6" id="252">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="C6" id="254">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="D6" id="256">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="258">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="260">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="G6" id="262">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum3.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="D6" id="264">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/32"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="B5" id="266">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="E6" id="268">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum2.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="C6" id="270">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="A5" id="272">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="C6" id="274">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="C6" id="276">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum7.svg" width="3" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="278">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum1.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="F6" id="280">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum3.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="D6" id="282">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/32"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="C6" id="284">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="E6" id="286">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum3.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="D6" id="288">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="C6" id="290">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/32"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="B5" id="292">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="D6" id="294">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum3.svg" width="1" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="C6" id="296">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="B5" id="298">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="A5" id="300">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum4.svg" width="1" height="1" x="0" y="0"/>
+															<basic vertAlign="1" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/64"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="C6" id="302">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum8.svg" width="3" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<stem invisible="true"/>
+											<heads>
+												<head pitch="B5" id="304">
+													<drawObjects>
+														<drawObj>
+															<svg url="file:/D:/Programme/eclipse/workspace/musitech/bin/de/uos/fmt/musitech/mpeg/testcases/neum6.svg" width="2" height="2" x="0" y="0"/>
+															<basic vertAlign="-4" vertShift="0.0"/>
+														</drawObj>
+													</drawObjects>
+												</head>
+											</heads>
+										</chord>
+									</noteObjects>
+								</voice>
+							</voices>
+						</staff>
+					</staves>
+				</system>
+			</systems>
+		</score>
+		<selections/>
+	</piece>
+</smr>

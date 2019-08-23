@@ -1,0 +1,15 @@
+!!!**kern example file two notes with one slur over two bars
+!!!see http://dactyl.som.ohio-state.edu/Humdrum/guide02.html
+**kern
+*staff1
+*clefG2
+*k[]
+*M3/4
+=3
+(2.B\
+=4
+4G\)
+4r
+4r
+=5
+*-

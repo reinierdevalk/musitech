@@ -1,0 +1,38 @@
+!!!**kern example file
+!!!staff1 of import_Kern_2.krn
+!!!COM: Bach, Johann Sebastian
+!!!OTL: Praeambulum BWV 390
+!!!Part of J.S. Bach's Praeambulum BWV 390
+!!!See http://dactyl.som.ohio-state.edu/Humdrum/guide02.html
+**kern
+*staff1
+*clefG2
+*k[b-]
+*M3/4
+=1-
+8r
+8d/L
+8g/
+8b-/
+8g/
+8d/J
+=2
+4dd\
+4r
+4r
+=3
+8r
+8dd\L
+8b-\
+8g\
+8gg\
+8b-\J
+=4
+8a/L
+8gg/
+8ff/
+8ee/
+8ff/
+8a-/J
+=5
+*-

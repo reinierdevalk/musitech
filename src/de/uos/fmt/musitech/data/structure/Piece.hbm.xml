@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="de.uos.fmt.musitech.data.structure.Piece"
+        table="Piece"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="uid"
+            column="uid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <many-to-one
+            name="audioPool"
+            class="de.uos.fmt.musitech.data.MObject"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="audioPool"
+        />
+
+        <many-to-one
+            name="containerPool"
+            class="de.uos.fmt.musitech.data.MObject"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="containerPool"
+        />
+
+        <many-to-one
+            name="timeLine"
+            class="de.uos.fmt.musitech.time.TimeLine"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="timeLine"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <many-to-one
+            name="notePool"
+            class="de.uos.fmt.musitech.data.MObject"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="notePool"
+        />
+
+        <many-to-one
+            name="metricalTimeLine"
+            class="de.uos.fmt.musitech.data.time.MetricalTimeLine"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="metricalTimeLine"
+        />
+
+        <many-to-one
+            name="context"
+            class="de.uos.fmt.musitech.data.structure.Context"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="context"
+        />
+
+        <list
+            name="mapKeyList"
+            table="PieceMapKeyList"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+        >
+
+              <key
+                  column="piece_id"
+              >
+              </key>
+
+              <index
+                  column="position"
+              />
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.MObject"
+                  column="mobject_id"
+                  outer-join="auto"
+               />
+
+        </list>
+
+        <list
+            name="mapValueList"
+            table="PieceMapValueList"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+        >
+
+              <key
+                  column="piece_id"
+              >
+              </key>
+
+              <index
+                  column="position"
+              />
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.metadata.MetaDataCollection"
+                  column="metadata_id"
+                  outer-join="auto"
+               />
+
+        </list>
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Piece.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,11 @@
+<!ELEMENT RenderingHintsCollection (RenderingHints+)>
+
+<!ELEMENT RenderingHints (RenderingHint+)>
+<!ATTLIST RenderingHints
+	java-class	CDATA	#REQUIRED
+>
+
+<ELEMENT RenderingHint (key,value,comment)>
+<ELEMENT key (#PCDATA)>
+<ELEMENT value (#PCDATA)>
+<ELEMENT comment (#PCDATA)>

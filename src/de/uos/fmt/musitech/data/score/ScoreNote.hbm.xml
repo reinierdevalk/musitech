@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="de.uos.fmt.musitech.data.score.ScoreNote"
+        table="ScoreNote"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="uid"
+            column="uid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <many-to-one
+            name="tiedNote"
+            class="de.uos.fmt.musitech.data.score.ScoreNote"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="tiedNote"
+        />
+
+        <property
+            name="accidental"
+            type="byte"
+            update="true"
+            insert="true"
+            access="property"
+            column="accidental"
+        />
+
+        <property
+            name="diatonic"
+            type="char"
+            update="true"
+            insert="true"
+            access="property"
+            column="diatonic"
+        />
+
+        <property
+            name="octave"
+            type="byte"
+            update="true"
+            insert="true"
+            access="property"
+            column="octave"
+        />
+
+        <many-to-one
+            name="metricTime"
+            class="de.uos.fmt.musitech.utility.math.Rational"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="metricTime"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-ScoreNote.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+        <query name="ScoreNote.getScoreNotebyDiatonic"><![CDATA[
+            from ScoreNote as note where note.diatonic = :dia
+        ]]></query>
+
+</hibernate-mapping>

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="de.uos.fmt.musitech.data.media.image.ImageURL"
+        table="ImageURL"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="uid"
+            column="uid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="sourceUrl"
+            type="java.net.URL"
+            update="true"
+            insert="true"
+            access="property"
+            column="sourceUrl"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-ImageURL.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.media.image.TimedImage"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        <property
+            name="time"
+            type="long"
+            update="true"
+            insert="true"
+            access="property"
+            column="time"
+        />
+
+        </joined-subclass>
+
+    </class>
+
+</hibernate-mapping>

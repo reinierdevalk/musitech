@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="de.uos.fmt.musitech.data.media.image.ImageSequenceContainer"
+        table="ImageSequenceContainer"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="uid"
+            column="uid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="endTime"
+            type="long"
+            update="true"
+            insert="true"
+            access="property"
+            column="endTime"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <many-to-one
+            name="context"
+            class="de.uos.fmt.musitech.data.structure.Context"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="context"
+        />
+
+        <list
+            name="content"
+            table="obj_in_SortedColl"
+            lazy="false"
+            inverse="false"
+            cascade="save-update"
+        >
+
+              <key
+                  column="coll_id"
+              >
+              </key>
+
+              <index
+                  column="position"
+              />
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.MObject"
+                  column="object_id"
+                  outer-join="auto"
+               />
+
+        </list>
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-ImageSequenceContainer.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

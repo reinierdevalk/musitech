@@ -1,0 +1,54 @@
+!!!COM: Mozart, Wolfgang Amadeus
+!!!OPR: String Quartet in G Major
+!!!OTL: Allegro
+!!!OMV: 2
+!!!SCT: K 80
+!!!SCA: Chronologisch-thematisches Verzeichnis sämtlicher Tonwerke Wolfgang Amade Mozarts (L. von Köchel; 1862, 2/1905, 3/1937, 1947)
+!!!YOR: Breitkopf & Härtel Edition
+!!!EED: Edmund Correia, Jr.
+!!!ENC: Edmund Correia, Jr.
+!!!CDT: 1756/1/27/-1791/12/5/
+!!!OCY: Österreich
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved.
+!!!YEM: Refer to licensing agreement for further details.
+!!!YEN: United States of America
+**kern	**kern	**kern	**kern	
+*clefG2	*clefG2	*clefC3	*clefF4
+*k[f#]	*k[f#]	*k[f#]	*k[f#]
+*G:	*G:	*G:	*G:
+*M4/4	*M4/4	*M4/4	*M4/4
+=1-	=1-	=1-	=1-
+4gg/xx 4b/ 4d/	f	4b/xx 4d/ 4G/	f	8G/Lxx	f	4G\xx	f
+.	.	.	.	8G/	.	.	.
+(16gg\LL	.	(16b\LL	.	8G/	.	4r	.
+16ff#\	.	16a\	.	.	.	.	.
+16gg\	.	16b\	.	8G/J	.	.	.
+16aa\JJ	.	16cc\JJ	.	.	.	.	.
+8gg\L)	.	8b\L)	.	8G/L	.	2r	.
+8gg'\	.	8b'\	.	8G/	.	.	.
+8ff#'\	.	8a'\	.	8G/	.	.	.
+8aa'\J	.	8cc'\J	.	8G/J	.	.	.
+=2	=2	=2	=2	=2	=2	=2	=2
+8gg'\L	.	8b'/L	.	8G/L	.	1r	.
+8bb'\	.	8g'/	.	8G/	.	.	.
+8aa'\	.	8f#'/	.	8G/	.	.	.
+8ccc'\J	.	8a'/J	.	8G/J	.	.	.
+8bb'\	.	8g'/	.	4G/	.	.	.
+8r	.	8r	.	.	.	.	.
+4r	.	4r	.	4r	.	.	.
+=3	=3	=3	=3	=3	=3	=3	=3
+==:|!	==:|!	==:|!	==:|!
+*-	*-	*-	*-
+!!!RWG: Appoggiaturas of spine 'Violino I' need manual editing in measures: 4, 8, 33, 34, 53, 57, 82, 83
+!!!RWG: Appoggiaturas of spine 'Violino II' need manual editing in measures: 4, 8, 34, 53, 57, 83
+!!!RWG: Appoggiaturas of spine 'Viola' need manual editing in measures: 4, 8, 33, 53, 57, 82
+!!!RWG: Appoggiaturas of spine 'Violoncello' need manual editing in measures: 4, 8, 53, 57
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!AFT: stage2
+!!!END: 1993/08/17
+!!format changes:
+!!content changes:
+!!public access: complete
+!!!KEY: 4267447152
+!!!EMD: Converted from MuseData to Humdrum Dec 16, 2000, by Andreas Kornstaedt using muse2kern.

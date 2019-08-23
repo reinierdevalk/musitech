@@ -1,0 +1,25 @@
+/* 
+** $Id: bach.gin,v 1.2 2002/10/04 16:40:32 mgieseki Exp $
+** Anfang aus J.S. Bachs Choral "Herliebster Jesu" (Matthäus Passion)
+** Script zum Testen des Notenmoduls  
+*/
+
+// Sopran
+Cc:-2 K2+ T(4/4)
+b | b b 8[a+g+] 4f | b ''c d d | e d c 
+;;
+
+// Alt
+Cc:0 K2+ T(4/4)
+'f | g 8[de] 4f c | f f f f | 2 f 4f 
+;;
+
+// Tenor
+Cc:1 K2+ T(4/4)
+'d | e , b 8['c,b] 4 a+ | b a+ 8[b'c] 4d | c ,b a+ 
+;;
+
+// Bass
+Cf:1 K2+ T(4/4)
+,b | 8[ef] 4g f 8[fe] | 4 d f,,b,b | a+ b f 
+

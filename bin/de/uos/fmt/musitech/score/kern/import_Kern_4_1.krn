@@ -1,0 +1,15 @@
+!!!**kern example file with beams
+!!!see http://dactyl.som.ohio-state.edu/Humdrum/guide02.html
+**kern
+*staff1
+*clefG2
+*k[]
+*M3/4
+=1-
+[4ee\
+8.ee\]L
+16ff\Jk
+8.dd\L
+16ee\Jk
+=:|!
+*-

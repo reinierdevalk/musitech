@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="de.uos.fmt.musitech.data.structure.container.BasicContainer"
+        table="BasicContainer"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="uid"
+            column="uid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <many-to-one
+            name="context"
+            class="de.uos.fmt.musitech.data.structure.Context"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="context"
+        />
+
+        <bag
+            name="content"
+            table="obj_in_BasColl"
+            lazy="false"
+            inverse="false"
+            cascade="save-update"
+        >
+
+              <key
+                  column="coll_id"
+              >
+              </key>
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.MObject"
+                  column="object_id"
+                  outer-join="auto"
+               />
+
+        </bag>
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-BasicContainer.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.structure.form.Motif"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.score.NotationStaff"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        <property
+            name="scale"
+            type="double"
+            update="true"
+            insert="true"
+            access="property"
+            column="scale"
+        />
+
+        <property
+            name="clefType"
+            type="char"
+            update="true"
+            insert="true"
+            access="property"
+            column="clefType"
+        />
+
+        <property
+            name="clefLine"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="clefLine"
+        />
+
+        <property
+            name="transposition"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="transposition"
+        />
+
+        <many-to-one
+            name="parent"
+            class="de.uos.fmt.musitech.data.score.NotationSystem"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="parent"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.structure.form.Section"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.structure.form.Movement"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.structure.linear.Part"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.structure.linear.Voice"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.score.NotationSystem"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        <property
+            name="prepared"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="prepared"
+        />
+
+        <many-to-one
+            name="barlines"
+            class="de.uos.fmt.musitech.data.score.BarlineContainer"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="id"
+            column="barlines"
+        />
+
+        <bag
+            name="linebreaks"
+            table="Rational"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+        >
+
+              <key
+                  column="id"
+              >
+              </key>
+
+              <one-to-many
+                  class="de.uos.fmt.musitech.utility.math.Rational"
+              />
+        </bag>
+
+        <bag
+            name="pagebreaks"
+            table="Rational"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+        >
+
+              <key
+                  column="id"
+              >
+              </key>
+
+              <one-to-many
+                  class="de.uos.fmt.musitech.utility.math.Rational"
+              />
+        </bag>
+
+        <many-to-one
+            name="context"
+            class="de.uos.fmt.musitech.data.structure.Context"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="context"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.structure.form.Form"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.score.NotationChord"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.structure.form.Phrase"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.structure.Instrumentation"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+        <property
+            name="instrument"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="instrument"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.metadata.MetaDataContainer"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+
+    </class>
+
+</hibernate-mapping>

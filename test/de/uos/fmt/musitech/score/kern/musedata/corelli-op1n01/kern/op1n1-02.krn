@@ -1,0 +1,621 @@
+!!!COM: Corelli, Arcangelo
+!!!OPR: Church Sonata in F Major
+!!!ONM: Opus 1, No. 1
+!!!OTL:
+!!!OMV: 2
+!!!YOR: Chrysander Edition
+!!!EED: Steven Rasmussen
+!!!ENC: Steven Rasmussen
+!!!CDT: 1653/2/17/-1713/1/8/
+!!!OCY: Italia
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved.
+!!!YEM: Refer to licensing agreement for further details.
+!!!YEN: United States of America
+**kern	**kern	**kern	**kern
+*I:Violino 1	*I:Violino 2	*I:Violone	*I:Organo
+*clefG2	*clefG2	*clefF4	*clefF4
+*k[b-]	*k[b-]	*k[b-]	*k[b-]
+*F:	*F:	*F:	*F:
+*M4/4	*M4/4	*M4/4	*M4/4
+! Allegro.	! Allegro.	! Allegro.	! Allegro.
+*tb16	*tb16	*tb16	*tb16
+=1-	=1-	=1-	=1-
+2f/	1r	1r	4FF/
+!	!	!	! **Bnum:4_5
+!	!	!	! **Bnum:._4 2
+.	.	.	2F\
+2g/	.	.	.
+!	!	!	! **Bnum:._6
+.	.	.	4E\
+=2	=2	=2	=2
+2a/	16r	1r	2F\
+.	16cc\LL	.	.
+.	16b-\	.	.
+.	16cc\JJ	.	.
+.	16a/LL	.	.
+.	16g/	.	.
+.	16f/	.	.
+.	16e/JJ	.	.
+2b-\	16d/LL	.	2G\
+.	16dd/	.	.
+.	16cc/	.	.
+.	16dd/JJ	.	.
+.	16b-/LL	.	.
+.	16a/	.	.
+.	16g/	.	.
+.	16f/JJ	.	.
+=3	=3	=3	=3
+!	!	!	! **Bnum:._5
+2cc\	16e\LL	1r	2A\
+.	16ee\	.	.
+.	16dd\	.	.
+.	16ee\JJ	.	.
+.	16cc\LL	.	.
+.	16b-\	.	.
+.	16a\	.	.
+.	16g\JJ	.	.
+4dd\	16f\LL	.	2D\
+.	16ff\	.	.
+.	16ee\	.	.
+.	16ff\JJ	.	.
+[4dd\	16dd\LL	.	.
+.	16cc\	.	.
+.	16bn\	.	.
+.	16a\JJ	.	.
+=4	=4	=4	=4
+!	!	!	! **Bnum:._n
+4dd\]	16bn/LL	1r	4G\
+.	16g/	.	.
+.	16a/	.	.
+.	16b/JJ	.	.
+!	!	!	! **Bnum:._5
+2cc\	16cc\LL	.	4A\
+.	16dd\	.	.
+.	16ee\	.	.
+.	16ff\JJ	.	.
+!	!	!	! **Bnum:._4
+.	16gg\LL	.	4G\
+.	16ff\	.	.
+.	16ee\	.	.
+.	16ff\JJ	.	.
+!	!	!	! **Bnum:._n
+4bn\	8.dd\L	.	4GG/
+.	16dd\Jk	.	.
+=5	=5	=5	=5
+4cc\	4ee\	2C/	2C/
+4r	2cc\	.	.
+!	!	!	! **Bnum:4_7
+!	!	!	! **Bnum:._6n
+2r	.	2D\	2D\
+.	4bn\	.	.
+=6	=6	=6	=6
+!	!	!	! **Bnum:._6
+16r	[4cc\	2E\	2E\
+16gg\LL	.	.	.
+16ff\	.	.	.
+16gg\JJ	.	.	.
+16ee\LL	16cc\LL]	.	.
+16dd\	16b-\	.	.
+16cc\	16a\	.	.
+16b-\JJ	16g\JJ	.	.
+16a\LL	4f/	2F\	2F\
+16aa\	.	.	.
+16gg\	.	.	.
+16aa\JJ	.	.	.
+16ff\LL	4aa\	.	.
+16ee\	.	.	.
+16dd\	.	.	.
+16cc\JJ	.	.	.
+=7	=7	=7	=7
+16b-\LL	[4gg\	2G\	2G\
+16bb-\	.	.	.
+16aa\	.	.	.
+16bb-\JJ	.	.	.
+16gg\LL	16gg\LL]	.	.
+16ff\	16aa\	.	.
+16ee\	16gg\	.	.
+16dd\JJ	16ff\JJ	.	.
+!	!	!	! **Bnum:4_5
+!	!	!	! **Bnum:._6
+16cc\LL	16ee\LL	2A\	2A\
+16ee\	16cc\	.	.
+16ff\	16dd\	.	.
+16gg\JJ	16ee\JJ	.	.
+16aa\LL	16ff\LL	.	.
+16bb-\	16gg\	.	.
+16aa\	16ff\	.	.
+16gg\JJ	16ee\JJ	.	.
+=8	=8	=8	=8
+(16ff\LL	(16dd\LL	4B-\	4B-\
+16ee\)	16cc\)	.	.
+(16ff\	(16dd\	.	.
+16gg\JJ)	16ee\JJ)	.	.
+(16aa\LL	8ff\L	4F\	4F\
+16gg\)	.	.	.
+(16aa\	8ff\J	.	.
+16bb-\JJ)	.	.	.
+!	!	!	! **Bnum:._5 4
+8gg\L	4.ff\	4c\	4c\
+8aa\	.	.	.
+!	!	!	! **Bnum:8_b
+!	!	!	! **Bnum:._b 3
+8.gg\	.	4C/	4C/
+.	8ee\	.	.
+16gg\Jk	.	.	.
+=9	=9	=9	=9
+4ff\	2ff\	2F\	4FF/
+!	!	!	! **Bnum:4_5
+!	!	!	! **Bnum:._4 2
+4r	.	.	2F\
+4r	2gg\	2r	.
+!	!	!	! **Bnum:._6
+16r	.	.	4E\
+16cc\LL	.	.	.
+16b-\	.	.	.
+16cc\JJ	.	.	.
+=10	=10	=10	=10
+4a/	2aa\	16r	2F\
+.	.	16c\LL	.
+.	.	16B-\	.
+.	.	16c\JJ	.
+4cc\	.	16A\LL	.
+.	.	16G\	.
+.	.	16F\	.
+.	.	16E\JJ	.
+!	!	!	! **Bnum:._6
+16r	2bb-\	16D\LL	2D\
+16ff\LL	.	16d\	.
+16ee\	.	16c\	.
+16ff\JJ	.	16d\JJ	.
+4dd\	.	16B-\LL	.
+.	.	16A\	.
+.	.	16G\	.
+.	.	16F\JJ	.
+=11	=11	=11	=11
+!	!	!	! **Bnum:._6
+16r	2ccc\	16E\LL	4E\
+16gg\LL	.	16e\	.
+16ff\	.	16d\	.
+16gg\JJ	.	16e\JJ	.
+4ee\	.	16c\LL	4C/
+.	.	16B-\	.
+.	.	16A\	.
+.	.	16G\JJ	.
+!	!	!	! **Bnum:._6
+16r	2ddd\	16F\LL	4F\
+16aa\LL	.	16f\	.
+16gg\	.	16e\	.
+16aa\JJ	.	16f\JJ	.
+4ff\	.	16d\LL	4D\
+.	.	16c\	.
+.	.	16Bn\	.
+.	.	16A\JJ	.
+=12	=12	=12	=12
+!	!	!	! **Bnum:._n
+16r	4bbn\	4G\	4G\
+16gg\LL	.	.	.
+16ff\	.	.	.
+16gg\JJ	.	.	.
+16ee\LL	4ccc\	16C\LL	4C/
+16ff\	.	16D\	.
+16gg\	.	16E\	.
+16aa\JJ	.	16F\JJ	.
+!	!	!	! **Bnum:._5 4
+8dd\L	4.ccc\	8G\L	8G\L
+!	!	!	! **Bnum:._7 5
+8ee\	.	8F\	8F\
+!	!	!	! **Bnum:._5 4
+8.dd\	.	8G\	8G\
+!	!	!	! **Bnum:._b n
+.	8bb\	8GG\J	8GG\J
+16dd\Jk	.	.	.
+=13	=13	=13	=13
+!	!	!	! **Bnum:4_5
+!	!	!	! **Bnum:._6
+2cc\	16ccc\LL	2C/	2C/
+.	16ee\	.	.
+.	16ff\	.	.
+.	16gg\JJ	.	.
+.	[4aa\	.	.
+!	!	!	! **Bnum:._6 5
+2b-\	16aa\LL]	2r	4D\
+.	16dd\	.	.
+.	16ee\	.	.
+.	16ff\JJ	.	.
+!	!	!	! **Bnum:._5
+.	[4gg\	.	4E\
+=14	=14	=14	=14
+!	!	!	! **Bnum:._9
+2a/	16gg\LL]	1r	4F\
+.	16cc\	.	.
+.	16dd\	.	.
+.	16ee\JJ	.	.
+!	!	!	! **Bnum:._6
+.	2ff\	.	4AA/
+!	!	!	! **Bnum:._6 5
+2g/	.	.	4BB-/
+.	4ee\	.	4C/
+=15	=15	=15	=15
+!	!	!	! **Bnum:._5
+16f/LL	2ff\	[4F\	4FF/
+16a/	.	.	.
+16b-/	.	.	.
+16cc/JJ	.	.	.
+!	!	!	! **Bnum:._6
+[4dd\	.	16F\LL]	4F\
+.	.	16D\	.
+.	.	16E\	.
+.	.	16F\JJ	.
+!	!	!	! **Bnum:._6 5
+16dd\LL]	2ee\	[4G\	4G\
+16g\	.	.	.
+16a\	.	.	.
+16b-\JJ	.	.	.
+[4cc\	.	16G\LL]	4C/
+.	.	16C\	.
+.	.	16D\	.
+.	.	16E\JJ	.
+=16	=16	=16	=16
+!	!	!	! **Bnum:._6 5
+16cc/LL]	2dd\	4F\	4F\
+16f/	.	.	.
+16g/	.	.	.
+16a/JJ	.	.	.
+!	!	!	! **Bnum:._6
+2b-\	.	8D/L	8D/L
+.	.	8BB-/J	8BB-/J
+!	!	!	! **Bnum:._5 4
+.	2cc\	4F\	4F\
+!	!	!	! **Bnum:._b 3
+4a/	.	4FF/	4FF/
+=17	=17	=17	=17
+8b-\L	4.b-\	4BB-/	4BB-/
+8cc\	.	.	.
+8dd\	.	8B-\L	8B-\L
+!	!	!	! **Bnum:._6
+8ee\J	8b-\	8G\J	8G\J
+8ff\L	4.a/	4F\	4F\
+8cc\J	.	.	.
+!	!	!	! **Bnum:8_5
+!	!	!	! **Bnum:._6
+[4ff\	.	4FF/	4FF/
+.	8dd\	.	.
+=18	=18	=18	=18
+!	!	!	! **Bnum:._7 n
+4ff\]	8bn/L	4GG/	4GG/
+.	8g/J	.	.
+!	!	!	! **Bnum:._5
+4ee\	2cc\	8AA/L	8AA/L
+!	!	!	! **Bnum:._6
+.	.	8E/J	8E/J
+!	!	!	! **Bnum:._6 5
+2dd\	.	4F\	4F\
+!	!	!	! **Bnum:._n
+.	4b\	4G\	4G\
+=19	=19	=19	=19
+!	!	!	! **Bnum:4_5
+!	!	!	! **Bnum:._6
+16cc\LL	[4cc\	2c\	2c\
+16ee\	.	.	.
+16ff\	.	.	.
+16gg\JJ	.	.	.
+[4aa\	16cc\LL]	.	.
+.	16a\	.	.
+.	16b-\	.	.
+.	16cc\JJ	.	.
+!	!	!	! **Bnum:4_7
+!	!	!	! **Bnum:._6
+16aa\LL]	[4dd\	2B-\	2B-\
+16dd\	.	.	.
+16ee\	.	.	.
+16ff\JJ	.	.	.
+[4gg\	16dd\LL]	.	.
+.	16g\	.	.
+.	16a\	.	.
+.	16b-\JJ	.	.
+=20	=20	=20	=20
+!	!	!	! **Bnum:4_7
+!	!	!	! **Bnum:._6
+16gg\LL]	[4cc\	2A\	2A\
+16cc\	.	.	.
+16dd\	.	.	.
+16ee\JJ	.	.	.
+2ff\	16cc/LL]	.	.
+.	16f/	.	.
+.	16g/	.	.
+.	16a/JJ	.	.
+!	!	!	! **Bnum:4_7
+!	!	!	! **Bnum:._6
+.	8b-/L	2G\	2G\
+.	8a/J	.	.
+4ee\	8g/L	.	.
+.	(16cc/L	.	.
+.	16b-/JJ)	.	.
+=21	=21	=21	=21
+!	!	!	! **Bnum:._5
+16ff\LL	16a\LL	4F\	4F\
+16a\	16cc\	.	.
+16b-\	16dd\	.	.
+16cc\JJ	16ee\JJ	.	.
+16dd\LL	16ff\LL	4D\	4D\
+16ff\	16aa\	.	.
+16ee\	16gg\	.	.
+16dd\JJ	16ff\JJ	.	.
+!	!	!	! **Bnum:._#
+8cc#\	4ee\	4AA/	4AA/
+4aa\	.	.	.
+!	!	!	! **Bnum:8_7
+!	!	!	! **Bnum:._6
+.	4dd\	4BB-/	4BB-/
+[8gg\	.	.	.
+=22	=22	=22	=22
+!	!	!	! **Bnum:8_7 #
+!	!	!	! **Bnum:._6
+8gg\]	4cc#\	4AA/	4AA/
+4ff\	.	.	.
+!	!	!	! **Bnum:._7 n
+.	4bn\	4GG/	4GG/
+16gg\LL	.	.	.
+16ff\JJ	.	.	.
+!	!	!	! **Bnum:8_5 #
+!	!	!	! **Bnum:8_6 4
+!	!	!	! **Bnum:8_5 4
+!	!	!	! **Bnum:._b #
+16ee\LL	8cc#\L	2AA/	2AA/
+16aa\	.	.	.
+16gg\	8dd\	.	.
+16ff\JJ	.	.	.
+8.ee\L	8.dd\	.	.
+16ee\Jk	16cc#\Jk	.	.
+=23	=23	=23	=23
+2dd\	4dd\	4D\	4DD/
+!	!	!	! **Bnum:4_5 3
+!	!	!	! **Bnum:._4 2
+.	4r	2D\	2D\
+2ee\	2r	.	.
+!	!	!	! **Bnum:._6
+.	.	4C#/	4C#/
+=24	=24	=24	=24
+2ff\	16r	4D\	4D\
+.	16aa\LL	.	.
+.	16gg\	.	.
+.	16aa\JJ	.	.
+.	4ff\	16r	4d\
+.	.	16d\LL	.
+.	.	16c\	.
+.	.	16d\JJ	.
+!	!	!	! **Bnum:._6 5
+2gg\	16r	4B-\	4B-\
+.	16bb-\LL	.	.
+.	16aa\	.	.
+.	16bb-\JJ	.	.
+.	[4gg\	16r	4c\
+.	.	16c\LL	.
+.	.	16B-\	.
+.	.	16c\JJ	.
+=25	=25	=25	=25
+!	!	!	! **Bnum:4_9
+!	!	!	! **Bnum:._8
+4.aa\	16gg\LL]	2F\	2F\
+.	16cc\	.	.
+.	16dd\	.	.
+.	16ee\JJ	.	.
+.	16ff\LL	.	.
+.	16ee\	.	.
+8ff\	16dd\	.	.
+.	16cc\JJ	.	.
+!	!	!	! **Bnum:4_7
+!	!	!	! **Bnum:._6
+4ff\	16b-\LL	2G\	2G\
+.	16cc\	.	.
+.	16b-\	.	.
+.	16a\JJ	.	.
+4ee\	16g\LL	.	.
+.	16cc\	.	.
+.	16b-\	.	.
+.	16cc\JJ	.	.
+=26	=26	=26	=26
+!	!	!	! **Bnum:._6
+16ff\LL	4a/	2A\	2A\
+16cc\	.	.	.
+16b-\	.	.	.
+16cc\JJ	.	.	.
+16a/LL	4r	.	.
+16g/	.	.	.
+16f/	.	.	.
+16e/JJ	.	.	.
+16d/LL	2r	2B-\	2B-\
+16dd/	.	.	.
+16cc/	.	.	.
+16dd/JJ	.	.	.
+16b-/LL	.	.	.
+16a/	.	.	.
+16g/	.	.	.
+16f/JJ	.	.	.
+=27	=27	=27	=27
+8e/L	2cc\	4c\	4c\
+8c/J	.	.	.
+!	!	!	! **Bnum:._6
+2cc\	.	4E\	4E\
+!	!	!	! **Bnum:._7
+.	2dd\	4D\	4D\
+!	!	!	! **Bnum:._n
+4bn\	.	4GG/	4GG/
+=28	=28	=28	=28
+4cc\	16ee\LL	2C/	2C/
+.	16gg\	.	.
+.	16ff\	.	.
+.	16gg\JJ	.	.
+4r	16ee\LL	.	.
+.	16dd\	.	.
+.	16cc\	.	.
+.	16b-\JJ	.	.
+16r	4a/	2F\	2F\
+16cc\LL	.	.	.
+16b-\	.	.	.
+16cc\JJ	.	.	.
+16a/LL	4r	.	.
+16g/	.	.	.
+16f/	.	.	.
+16e/JJ	.	.	.
+=29	=29	=29	=29
+4d/	16r	2B-\	2B-\
+.	16ff\LL	.	.
+.	16ee\	.	.
+.	16ff\JJ	.	.
+4r	16dd\LL	.	.
+.	16cc\	.	.
+.	16b-\	.	.
+.	16a\JJ	.	.
+!	!	!	! **Bnum:._6
+16r	4g/	2BB-/	2BB-/
+16b-/LL	.	.	.
+16a/	.	.	.
+16b-/JJ	.	.	.
+16g/LL	4r	.	.
+16f/	.	.	.
+16e/	.	.	.
+16d/JJ	.	.	.
+=30	=30	=30	=30
+16e/LL	2cc\	2C/	2C/
+16g/	.	.	.
+16a/	.	.	.
+16b-/JJ	.	.	.
+2cc\	.	.	.
+!	!	!	! **Bnum:4_4
+!	!	!	! **Bnum:._f
+.	2dd\	2G\	2G\
+[4b-\	.	.	.
+=31	=31	=31	=31
+!	!	!	! **Bnum:._7
+4b-\]	4ee\	4C/	4C/
+4a/	2ff\	4FF/	4FF/
+!	!	!	! **Bnum:._7 n
+4b\	.	4GG/	4GG/
+!	!	!	! **Bnum:._5
+[4cc\	4ee\	4AA/	4AA/
+=32	=32	=32	=32
+!	!	!	! **Bnum:._6 5
+4cc\]	2dd\	4FF/	4FF/
+!	!	!	! **Bnum:._n
+4bn\	.	4GG/	4GG/
+!	!	!	! **Bnum:4_5
+!	!	!	! **Bnum:._6
+16cc\LL	2cc\	4C/	2C/
+16ee\	.	.	.
+16ff\	.	.	.
+16gg\JJ	.	.	.
+[4aa\	.	16r	.
+.	.	16A\LL	.
+.	.	16B-\	.
+.	.	16c\JJ	.
+=33	=33	=33	=33
+!	!	!	! **Bnum:._6 5
+16aa\LL]	2b-\	[4d\	4D\
+16dd\	.	.	.
+16ee\	.	.	.
+16ff\JJ	.	.	.
+!	!	!	! **Bnum:._6
+[4gg\	.	16d\LL]	4BB-/
+.	.	16G\	.
+.	.	16A\	.
+.	.	16B-\JJ	.
+!	!	!	! **Bnum:._6 5
+16gg\LL]	2a/	[4c\	4C/
+16cc\	.	.	.
+16dd\	.	.	.
+16ee\JJ	.	.	.
+!	!	!	! **Bnum:._6
+[4ff\	.	16c\LL]	4AA/
+.	.	16F\	.
+.	.	16G\	.
+.	.	16A\JJ	.
+=34	=34	=34	=34
+!	!	!	! **Bnum:._6 5
+4ff\]	2g/	4B-\	4BB-/
+4ee\	.	4c\	4C/
+!	!	!	! **Bnum:4_5 4 2
+!	!	!	! **Bnum:._6
+4ff\	16f/LL	2F\	2F\
+.	16a/	.	.
+.	16b-/	.	.
+.	16cc/JJ	.	.
+16r	[4dd\	.	.
+16d/LL	.	.	.
+16e/	.	.	.
+16f/JJ	.	.	.
+=35	=35	=35	=35
+!	!	!	! **Bnum:4_7
+!	!	!	! **Bnum:._6
+[4g/	16dd\LL]	2E\	2E\
+.	16g\	.	.
+.	16a\	.	.
+.	16b-\JJ	.	.
+16g/LL]	[4cc\	.	.
+16c/	.	.	.
+16d/	.	.	.
+16e/JJ	.	.	.
+!	!	!	! **Bnum:4_7
+!	!	!	! **Bnum:._6
+[4f/	16cc\LL]	2D\	2D\
+.	16ff\	.	.
+.	16gg\	.	.
+.	16aa\JJ	.	.
+16f/LL]	[4bb-\	.	.
+16b-/	.	.	.
+16cc/	.	.	.
+16dd/JJ	.	.	.
+=36	=36	=36	=36
+!	!	!	! **Bnum:4_7
+!	!	!	! **Bnum:._6
+[4ee\	16bb-\LL]	2C/	2C/
+.	16ee\	.	.
+.	16ff\	.	.
+.	16gg\JJ	.	.
+16ee\LL]	[4aa\	.	.
+16a\	.	.	.
+16b-\	.	.	.
+16cc\JJ	.	.	.
+!	!	!	! **Bnum:4_7
+!	!	!	! **Bnum:._6
+[4dd\	16aa\LL]	2BB-/	2BB-/
+.	16dd\	.	.
+.	16ee\	.	.
+.	16ff\JJ	.	.
+16dd\LL]	[4gg\	.	.
+16g\	.	.	.
+16a\	.	.	.
+16b-\JJ	.	.	.
+=37	=37	=37	=37
+!	!	!	! **Bnum:4_7
+!	!	!	! **Bnum:._6
+[4cc\	16gg\LL]	2AA/	2AA/
+.	16cc\	.	.
+.	16dd\	.	.
+.	16ee\JJ	.	.
+16cc/LL]	2ff\	.	.
+16f/	.	.	.
+16g/	.	.	.
+16a/JJ	.	.	.
+!	!	!	! **Bnum:4_7
+!	!	!	! **Bnum:._6
+16b-/LL	.	2GG/	2GG/
+16cc/	.	.	.
+16b-/	.	.	.
+16a/JJ	.	.	.
+8.g/L	4ee\	.	.
+16g/Jk	.	.	.
+=38	=38	=38	=38
+1a/	1ff\	1FF/	1FF/
+==|!	==|!	==|!	==|!
+*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!GTL: Sonate a tre
+!!!AFT: stage2
+!!!END: 1993/08/16
+!!format changes:
+!!content changes:
+!!public access: complete
+!!!KEY: 2508996068
+!!!EMD: Converted from MuseData to Humdrum Dec 16, 2000, by Andreas Kornstaedt using muse2kern.

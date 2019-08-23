@@ -1,0 +1,379 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="de.uos.fmt.musitech.data.structure.container.SortedContainer"
+        table="SortedContainer"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="uid"
+            column="uid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <many-to-one
+            name="context"
+            class="de.uos.fmt.musitech.data.structure.Context"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="context"
+        />
+
+        <list
+            name="content"
+            table="obj_in_SortedColl"
+            lazy="false"
+            inverse="false"
+            cascade="save-update"
+        >
+
+              <key
+                  column="coll_id"
+              >
+              </key>
+
+              <index
+                  column="position"
+              />
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.MObject"
+                  column="object_id"
+                  outer-join="auto"
+               />
+
+        </list>
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-SortedContainer.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.score.TupletContainer"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+        <property
+            name="arity"
+            type="byte"
+            update="true"
+            insert="true"
+            access="property"
+            column="arity"
+        />
+
+        <many-to-one
+            name="metricDuration"
+            class="de.uos.fmt.musitech.utility.math.Rational"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="id"
+            column="metricDuration"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.score.BarlineContainer"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.structure.form.NoteGroup"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.time.MetricalTimeLine"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.time.TimeLine"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.structure.container.NoteSequence"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.score.SlurContainer"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.media.image.ImageSequenceContainer"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        <property
+            name="endTime"
+            type="long"
+            update="true"
+            insert="true"
+            access="property"
+            column="endTime"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.score.NotationVoice"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        <bag
+            name="beamContainers"
+            table="BeamObj_in_NotVoice"
+            lazy="false"
+            inverse="false"
+            cascade="save-update"
+        >
+
+              <key
+                  column="NotationVoice_id"
+              >
+              </key>
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.MObject"
+                  column="MObject_id"
+                  outer-join="auto"
+               />
+
+        </bag>
+
+        <bag
+            name="slurContainers"
+            table="SlurObj_in_NotVoice"
+            lazy="false"
+            inverse="false"
+            cascade="save-update"
+        >
+
+              <key
+                  column="NotationVoice_id"
+              >
+              </key>
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.MObject"
+                  column="MObject_id"
+                  outer-join="auto"
+               />
+
+        </bag>
+
+        <bag
+            name="tupletContainers"
+            table="TupletObj_in_NotVoice"
+            lazy="false"
+            inverse="false"
+            cascade="save-update"
+        >
+
+              <key
+                  column="NotationVoice_id"
+              >
+              </key>
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.MObject"
+                  column="MObject_id"
+                  outer-join="auto"
+               />
+
+        </bag>
+
+        <property
+            name="color"
+            type="java.awt.Color"
+            update="true"
+            insert="true"
+            access="property"
+            column="color"
+        />
+
+        <many-to-one
+            name="parent"
+            class="de.uos.fmt.musitech.data.score.NotationStaff"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="parent"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.performance.MidiNoteSequence"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.score.BeamContainer"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.structure.form.NoteList"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.time.TimedMetricalContainer"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.time.TimedContainer"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.structure.lyrics.LyricsSyllableSequence"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.structure.harmony.ChordSymbolSequence"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+
+        </joined-subclass>
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<project name="EpecParser" default="compile">
+  <target name="compile" depends="lexer,parser">
+  </target>
+
+  <target name="lexer">
+    <apply executable="jflex" dest=".">
+      <arg value="--nobak"/>
+      <arg value="--skel"/>
+      <arg value="skeleton.nested"/>
+      <srcfile/>
+      <fileset dir="." includes="*.l"/>
+      <mapper type="glob" from="*.l" to="*.java"/>
+    </apply>
+  </target>
+
+  <target name="parser">
+    <exec executable="/bin/sh">
+      <arg value="-c"/>
+      <arg value="jay -t -v &lt; skeleton EpecParser.y &gt; EpecParser.java"/>
+    </exec>
+  </target>
+
+</project>

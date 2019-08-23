@@ -1,0 +1,19 @@
+!!!**kern example file 16th notes beams
+!!!see http://dactyl.som.ohio-state.edu/Humdrum/guide02.html
+**kern
+*staff1
+*clefG2
+*k[]
+*M3/4
+=7
+16gg#\LL
+16aa\JJ
+8r
+16ee\LL
+16ff\JJ
+8r
+16dd\LL
+16b\JJ
+8r
+=8
+*-

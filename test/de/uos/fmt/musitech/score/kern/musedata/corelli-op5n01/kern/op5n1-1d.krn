@@ -1,0 +1,157 @@
+!!!COM: Corelli, Arcangelo
+!!!OPR: Church Sonata in D Major
+!!!ONM: Opus 5, No. 1
+!!!OTL: Allegro 
+!!!OMV: 1d
+!!!YOR:
+!!!EED: Frances Bennion
+!!!ENC: Frances Bennion
+!!!CDT: 1653/2/17/-1713/1/8/
+!!!OCY: Italia
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved.
+!!!YEM: Refer to licensing agreement for further details.
+!!!YEN: United States of America
+**kern	**kern	**kern
+*k[f#c#]	*k[f#c#]	*k[f#c#]
+*D:	*D:	*D:
+*clefG	*clefG	*clefC
+*M6/8	*M6/8	*M6/8
+*tb16	*tb16	*tb16
+=1	=1	=1
+2.r	2.r	2.r
+=2	=2	=2
+2.r	2.r	2.r
+=3	=3	=3
+2.r	2.r	2.r
+=4	=4	=4
+2.r	2.r	2.r
+=5	=5	=5
+2.r	2.r	2.r
+=6	=6	=6
+2.r	2.r	2.r
+=7	=7	=7
+2.r	2.r	2.r
+=8	=8	=8
+2.r	2.r	2.r
+=9	=9	=9
+2.r	2.r	2.r
+=10	=10	=10
+2.r	2.r	2.r
+=11	=11	=11
+2.r	2.r	2.r
+=12	=12	=12
+2.r	2.r	2.r
+=13	=13	=13
+2.r	2.r	2.r
+=14	=14	=14
+2.r	2.r	2.r
+=15	=15	=15
+2.r	2.r	2.r
+=16	=16	=16
+2.r	2.r	2.r
+=17	=17	=17
+16r	2.r	[2.AA
+16e	.	.
+16a	.	.
+16cc#	.	.
+16ee	.	.
+16cc#	.	.
+16a	.	.
+16e	.	.
+16a	.	.
+16cc#	.	.
+16ee	.	.
+16cc#	.	.
+=18	=18	=18
+16a	2.r	2.AA_
+16a	.	.
+16cc#	.	.
+16ee	.	.
+16aa	.	.
+16ee	.	.
+16cc#	.	.
+16a	.	.
+16cc#	.	.
+16ee	.	.
+16aa	.	.
+16ee	.	.
+=19	=19	=19
+16cc#	2.r	2.AA_
+16ee	.	.
+16aa	.	.
+16ccc#	.	.
+16eee	.	.
+16ccc#	.	.
+16aa	.	.
+16ee	.	.
+16aa	.	.
+16ccc#	.	.
+16eee	.	.
+16ccc#	.	.
+=20	=20	=20
+16aa	2.r	2.AA_
+16ccc#	.	.
+16eee	.	.
+16ccc#	.	.
+16aa	.	.
+16ccc#	.	.
+16ee	.	.
+16aa	.	.
+16ccc#	.	.
+16aa	.	.
+16ee	.	.
+16aa	.	.
+=21	=21	=21
+16cc#	2.r	2.AA_
+16ee	.	.
+16aa	.	.
+16ee	.	.
+16cc#	.	.
+16ee	.	.
+16a	.	.
+16cc#	.	.
+16ee	.	.
+16cc#	.	.
+16a	.	.
+16cc#	.	.
+=22	=22	=22
+16e	2.r	2.AA_
+16a	.	.
+16cc#	.	.
+16a	.	.
+16e	.	.
+16a	.	.
+16c#	.	.
+16e	.	.
+16a	.	.
+16e	.	.
+16c#	.	.
+16e	.	.
+=23	=23	=23
+16A	2.r	2.AA]
+16cc#	.	.
+16ee	.	.
+16aa	.	.
+16ee	.	.
+16cc#	.	.
+16a	.	.
+16cc#	.	.
+16ee	.	.
+16cc#	.	.
+16a	.	.
+16cc#	.	.
+==	==	==
+*-	*-	*-
+!!!RWG1: This file contains only pitch and duration data.
+!!!RWG2: Transposing instruments are not transposed.
+!!!RWG3: Spines may have incompatible meters.
+!!!RWG4: Durations of rests and tied notes may be interpreted.
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!AFT: stage1
+!!!END: 1997/04/15
+!!format changes:
+!!content changes:
+!!public access: complete
+!!!KEY: 3827844469
+!!!EMD: Converted from MuseData to Humdrum Dec 16, 2000, by Andreas Kornstaedt using muse2kern.

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="de.uos.fmt.musitech.data.score.ScorePitch"
+        table="ScorePitch"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="octave"
+            type="byte"
+            update="true"
+            insert="true"
+            access="property"
+            column="octave"
+        />
+
+        <property
+            name="accidental"
+            type="byte"
+            update="true"
+            insert="true"
+            access="property"
+            column="accidental"
+        />
+
+        <property
+            name="diatonic"
+            type="char"
+            update="true"
+            insert="true"
+            access="property"
+            column="diatonic"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-ScorePitch.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

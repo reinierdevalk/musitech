@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!-- edited with XMLSPY v5 rel. 2 U (http://www.xmlspy.com) by Tillman Weyde (Universität Osnabrueck/Forschungsstelle Musik- und Medientechnologie) -->
+<smr xmlns="http://musitech.fmt.uos.de/MPEG-SMR" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://musitech.fmt.uos.de/MPEG-SMR
+D:\Programme\eclipse\workspace\musiteXML\Integration\mpeg-smr.xsd">
+	<piece>
+		<score>
+			<layout>
+				<pages top="20" right="27" bottom="20" left="26"/>
+				<distances>
+					<staffLines small="1.2" pageObj="1.8" normal="1.72"/>
+					<systems top="4" between="0"/>
+				</distances>
+				<instrumentNames>
+					<font height="12" face="Times New Roman"/>
+				</instrumentNames>
+				<staves>
+					<staffLayout description="unbenannt1">
+						<notation defaultClef="treble">
+							<barlines to="7" from="3"/>
+						</notation>
+						<distances top="6" bottom="7"/>
+						<instrument abbrev="" name=""/>
+						<sound volume="127" instr="0"/>
+					</staffLayout>
+					<staffLayout description="unbenannt2">
+						<notation defaultClef="bass">
+							<barlines to="7" from="3" mode="internal"/>
+						</notation>
+						<distances top="6" bottom="7"/>
+						<instrument abbrev="" name=""/>
+						<sound volume="127" instr="0"/>
+					</staffLayout>
+				</staves>
+				<brackets>
+					<bracket to="1" from="0" curly="true"/>
+				</brackets>
+				<spacing abs="16" rel="75"/>
+				<beamFlattening to="29" toMax="55" from="49" fromMax="148"/>
+			</layout>
+			<systems>
+				<system justified="true" instrNotation="short">
+					<context>
+						<tempo tempo="30">
+							<metricTime numerator="0" denominator="1"/>
+						</tempo>
+					</context>
+					<staves>
+						<staff layout="unbenannt1" defaultTime="3/8">
+							<context/>
+							<voices>
+								<voice stemDir="up">
+									<lyricsSettings lineDist="1.5" firstLine="5">
+										<font height="12" face="Times New Roman"/>
+									</lyricsSettings>
+									<noteObjects>
+										<clefSign clef="treble"/>
+										<keySign fifths="-6"/>
+										<chord>
+											<duration dots="1" base="1/8"/>
+											<drawObjects>
+												<drawObj>
+													<text y="7" x="-3">
+														<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+														<content>f</content>
+													</text>
+												</drawObj>
+												<drawObj>
+													<text y="-9" x="-12.5">
+														<font pitchAndFamily="0" height="12" weight="0" face="Times New Roman"/>
+														<content>very slowly (ca.     = 60)</content>
+													</text>
+												</drawObj>
+												<drawObj>
+													<text y="-9" x="5">
+														<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+														<content>¦</content>
+													</text>
+												</drawObj>
+											</drawObjects>
+											<heads>
+												<head pitch="G6">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<display xShift="0.5"/>
+											<drawObjects>
+												<drawObj>
+													<slur y2="-8.40625" x2="2.59375" y1="-6" x3="-0.625" y3="-7.78125" x1="1.5" y4="-5.5" x4="0.25"/>
+													<basic noteRange="2"/>
+												</drawObj>
+											</drawObjects>
+											<heads>
+												<head pitch="F5"/>
+												<head pitch="F6"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<heads>
+												<head pitch="G5">
+													<alter step="-1"/>
+												</head>
+												<head pitch="G6">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<display xShift="0.25"/>
+											<heads>
+												<head pitch="E5">
+													<alter step="-1"/>
+												</head>
+												<head pitch="E6">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<drawObjects>
+												<drawObj>
+													<slur y2="-8" x2="2.5" y1="-6.5" x3="-0.75" y3="-8" x1="1.5" y4="-6.5" x4="0.25"/>
+													<basic noteRange="5"/>
+												</drawObj>
+											</drawObjects>
+											<heads>
+												<head pitch="G5">
+													<alter step="-1"/>
+												</head>
+												<head pitch="G6">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<heads>
+												<head pitch="F5"/>
+												<head pitch="F6"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<heads>
+												<head pitch="G5">
+													<alter step="-1"/>
+												</head>
+												<head pitch="G6">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<heads>
+												<head pitch="E5">
+													<alter step="-1"/>
+												</head>
+												<head pitch="E6">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<heads>
+												<head pitch="F5"/>
+												<head pitch="F6"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<display xShift="1"/>
+											<drawObjects>
+												<drawObj>
+													<text y="2.5" x="-1">
+														<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+														<content>.</content>
+													</text>
+												</drawObj>
+											</drawObjects>
+											<heads>
+												<head pitch="G5">
+													<alter step="-1"/>
+												</head>
+												<head pitch="G6">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="split"/>
+											<drawObjects>
+												<drawObj>
+													<text y="3.5" x="-1">
+														<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+														<content>.</content>
+													</text>
+												</drawObj>
+												<drawObj>
+													<text y="7" x="-1">
+														<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+														<content>f</content>
+													</text>
+												</drawObj>
+												<drawObj>
+													<rectangle y2="8" lineWidth="0" x2="-1.46875" fillColor="FFFFFF" y1="4.78125" x1="-3.46875" filled="true"/>
+												</drawObj>
+												<drawObj>
+													<text y="7" x="-4">
+														<font height="10" italic="true" face="Times New Roman"/>
+														<content>piu</content>
+													</text>
+												</drawObj>
+											</drawObjects>
+											<heads>
+												<head pitch="E5">
+													<alter step="-1"/>
+												</head>
+												<head pitch="G5">
+													<alter step="-1"/>
+												</head>
+												<head pitch="B5">
+													<alter step="-1"/>
+												</head>
+												<head pitch="E6">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<display notationStaff="up"/>
+											<beam group="split"/>
+											<drawObjects>
+												<drawObj>
+													<wavyLine y1="1.3125" x2="-2" x1="-2" y2="17.5625"/>
+												</drawObj>
+											</drawObjects>
+											<heads>
+												<head pitch="G4" audioDelay="4/128">
+													<alter step="-1"/>
+												</head>
+												<head pitch="C5" audioDelay="5/128">
+													<alter step="-1" display="force"/>
+												</head>
+												<head pitch="E5" audioDelay="6/128">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<drawObjects>
+												<drawObj>
+													<wavyLine y1="1.3125" x2="-1" x1="-1" y2="17.625"/>
+												</drawObj>
+											</drawObjects>
+											<heads>
+												<head pitch="G4" audioDelay="4/128">
+													<alter step="-1"/>
+												</head>
+												<head pitch="C5" audioDelay="5/128">
+													<alter step="-1"/>
+												</head>
+												<head pitch="E5" audioDelay="6/128">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<barline type="end"/>
+									</noteObjects>
+								</voice>
+								<voice stemDir="down">
+									<lyricsSettings lineDist="1.5" firstLine="5">
+										<font height="12" face="Times New Roman"/>
+									</lyricsSettings>
+									<noteObjects>
+										<clefSign clef="treble"/>
+										<keySign fifths="-6"/>
+										<chord>
+											<duration base="1/16"/>
+											<heads>
+												<head pitch="G5">
+													<alter step="-1"/>
+												</head>
+												<head pitch="A5"/>
+												<head pitch="C6"/>
+												<head pitch="E6">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<heads>
+												<head pitch="G5">
+													<alter step="-1"/>
+												</head>
+												<head pitch="A5"/>
+												<head pitch="C6"/>
+												<head pitch="E6">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<display xShift="-0.75"/>
+											<heads>
+												<head pitch="G5">
+													<alter step="-1"/>
+												</head>
+												<head pitch="A5"/>
+												<head pitch="C6"/>
+												<head pitch="E6">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<heads>
+												<head pitch="B5">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<rest>
+											<duration base="1/16"/>
+											<verticalPos shift="-2"/>
+										</rest>
+										<chord>
+											<duration base="1/8"/>
+											<display xShift="-1.25"/>
+											<heads>
+												<head pitch="D6">
+													<alter step="-1"/>
+												</head>
+												<head pitch="E6">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<display xShift="-1.25"/>
+											<heads>
+												<head pitch="C6"/>
+												<head pitch="E6">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<heads>
+												<head pitch="A5">
+													<alter step="-1" display="force"/>
+												</head>
+												<head pitch="D6">
+													<alter display="force"/>
+												</head>
+											</heads>
+										</chord>
+										<rest>
+											<duration dots="1" base="1/4"/>
+											<display invisible="true"/>
+										</rest>
+										<barline type="end"/>
+									</noteObjects>
+								</voice>
+							</voices>
+						</staff>
+						<staff layout="unbenannt2" defaultTime="3/8">
+							<context/>
+							<voices>
+								<voice>
+									<lyricsSettings lineDist="1.5" firstLine="5">
+										<font height="12" face="Times New Roman"/>
+									</lyricsSettings>
+									<noteObjects>
+										<clefSign clef="bass"/>
+										<keySign fifths="-6"/>
+										<chord>
+											<duration base="1/16"/>
+											<beam group="split"/>
+											<drawObjects>
+												<drawObj>
+													<slur y2="-3.46875" x2="-3" y1="-2.65625" x3="-5.0625" y3="-2.46875" x1="-3.9375" y4="-1.28125" x4="-4.6875"/>
+													<basic noteRange="1"/>
+												</drawObj>
+												<drawObj>
+													<slur y2="-9.375" x2="4.75" y1="-1.15625" x3="0.15625" y3="-5.4375" x1="1.5625" y4="-3.46875" x4="0.71875"/>
+													<basic noteRange="4"/>
+												</drawObj>
+											</drawObjects>
+											<heads>
+												<head pitch="F2"/>
+												<head pitch="F3"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="split"/>
+											<heads>
+												<head pitch="F4"/>
+												<head pitch="A4"/>
+												<head pitch="C5"/>
+												<head pitch="E5">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<beam shift="-8.5"/>
+											<heads>
+												<head pitch="F4"/>
+												<head pitch="A4"/>
+												<head pitch="C5"/>
+												<head pitch="E5">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<heads>
+												<head pitch="E2">
+													<alter step="-1"/>
+												</head>
+												<head pitch="E3">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<heads>
+												<head pitch="E4">
+													<alter step="-1"/>
+												</head>
+												<head pitch="G4">
+													<alter step="-1"/>
+												</head>
+												<head pitch="B4">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<beam group="split"/>
+											<drawObjects>
+												<drawObj>
+													<slur y2="-7.03125" x2="4.125" y1="-2.40625" x3="-1.3125" y3="-6.21875" x1="1.25" y4="-4.53125" x4="0.3125"/>
+													<basic noteRange="3"/>
+												</drawObj>
+											</drawObjects>
+											<heads>
+												<head pitch="A2"/>
+												<head pitch="A3"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<heads>
+												<head pitch="E4">
+													<alter step="-1"/>
+												</head>
+												<head pitch="G4">
+													<alter step="-1"/>
+												</head>
+												<head pitch="A4"/>
+												<head pitch="D5">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<heads>
+												<head pitch="A3"/>
+												<head pitch="E4">
+													<alter step="-1"/>
+												</head>
+												<head pitch="G4">
+													<alter step="-1"/>
+												</head>
+												<head pitch="C5"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/16"/>
+											<display xShift="1"/>
+											<drawObjects>
+												<drawObj>
+													<text y="-4" x="-1">
+														<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+														<content>.</content>
+													</text>
+												</drawObj>
+											</drawObjects>
+											<heads>
+												<head pitch="B3">
+													<alter step="-1"/>
+												</head>
+												<head pitch="D4"/>
+												<head pitch="A4">
+													<alter step="-1"/>
+												</head>
+												<head pitch="B4">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="split"/>
+											<drawObjects>
+												<drawObj>
+													<text y="-4" x="-1">
+														<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+														<content>.</content>
+													</text>
+												</drawObj>
+											</drawObjects>
+											<heads>
+												<head pitch="E4">
+													<alter step="-1"/>
+												</head>
+												<head pitch="G4">
+													<alter step="-1"/>
+												</head>
+												<head pitch="B4">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<stem lengthening="11.5"/>
+											<beam group="split"/>
+											<heads>
+												<head pitch="C3" audioDelay="1/128">
+													<alter step="-1" display="force"/>
+												</head>
+												<head pitch="G3" audioDelay="2/128">
+													<alter step="-1"/>
+												</head>
+												<head pitch="C4" audioDelay="3/128">
+													<alter step="-1" display="force"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<stem lengthening="11.5"/>
+											<heads>
+												<head pitch="C3" audioDelay="1/128">
+													<alter step="-1"/>
+												</head>
+												<head pitch="G3" audioDelay="2/128">
+													<alter step="-1"/>
+												</head>
+												<head pitch="C4" audioDelay="3/128">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<barline type="end"/>
+									</noteObjects>
+								</voice>
+							</voices>
+						</staff>
+					</staves>
+				</system>
+			</systems>
+		</score>
+	</piece>
+</smr>

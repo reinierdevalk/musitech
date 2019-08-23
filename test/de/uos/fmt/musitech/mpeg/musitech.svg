@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   width="210mm"
+   height="297mm"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   id="svg1"
+   sodipodi:version="0.32"
+   inkscape:version="0.40"
+   sodipodi:docbase="/home/collin/Sources/projects/musitech/workspace/musitech/test/de/uos/fmt/musitech/mpeg"
+   sodipodi:docname="musitech.svg"
+   inkscape:export-filename="/home/collin/Sources/projects/musitech/workspace/musitech/test/de/uos/fmt/musitech/mpeg/musitech.png"
+   inkscape:export-xdpi="111.63718"
+   inkscape:export-ydpi="111.63718">
+  <defs
+     id="defs3" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.86831672"
+     inkscape:cx="333.42433"
+     inkscape:cy="412.13971"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="640"
+     inkscape:window-height="538"
+     inkscape:window-x="167"
+     inkscape:window-y="184" />
+  <metadata
+     id="metadata4">
+    <rdf:RDF
+       id="RDF5">
+      <cc:Work
+         rdf:about=""
+         id="Work6">
+        <dc:format
+           id="format7">image/svg+xml</dc:format>
+        <dc:type
+           id="type9"
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:144.00000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#3c21ff;fill-opacity:1.0000000;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;font-family:Trebuchet MS;text-anchor:start;writing-mode:lr;"
+       x="135.31929"
+       y="516.84332"
+       id="text1061"
+       sodipodi:linespacing="100%"
+       transform="translate(-51.82441,-23.03307)"
+       inkscape:export-xdpi="111.64000"
+       inkscape:export-ydpi="111.64000"
+       inkscape:export-filename="/home/collin/Sources/projects/musitech/workspace/musitech/test/de/uos/fmt/musitech/mpeg/musitech.png"><tspan
+         sodipodi:role="line"
+         id="tspan1062"
+         x="135.31929"
+         y="516.84332">musitech</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:144.00000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#e90000;fill-opacity:0.61325967;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;font-family:Georgia;text-anchor:start;writing-mode:lr"
+       x="345.49606"
+       y="747.17401"
+       id="text1067"
+       sodipodi:linespacing="100%"
+       transform="translate(190.0228,-252.3033)"
+       inkscape:export-xdpi="111.64000"
+       inkscape:export-ydpi="111.64000"
+       inkscape:export-filename="/home/collin/Sources/projects/musitech/workspace/musitech/test/de/uos/fmt/musitech/mpeg/musitech.png"><tspan
+         x="345.49606"
+         y="747.17401"
+         sodipodi:role="line"
+         id="tspan2312">X</tspan></text>
+  </g>
+</svg>

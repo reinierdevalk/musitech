@@ -1,0 +1,104 @@
+<html>
+<body>
+<style type="text/css">
+<!--
+dt { font-weight:bold; }
+-->
+</style>
+<br>FloatInputStream Package. <!-- Wenn kein Punkt kommt, geht die overview-seite kaputt. TW -->
+<br>
+<h2>Package Structure:</h2>
+<h3>FloatInputStream - the Interface<h3>
+<h4>implementations:</h4>
+<br>
+<table border = "0">
+<dl>
+<dt>FloatISSimpleAdapter</dt>
+<dd> - only transforms the samples from byte to float, 
+whithout any formatconversion</dd>
+</dl>
+
+<h3>conversion-implementations:</h3>
+<dl>
+<dt>FloatISChannelMultiplexer</dt>
+<dd> - convert to more channels</dd>
+<dt><a href="de.uos.fmt.musitech.audio.floatStream.FloatISChannelMixer.html">FloatISChannelMixer</a></dt>
+<dd> mix channels from more to the contrary</dd>
+<dt>FloatISChannelAdapter</dt>
+<dd>Divide the channels of the source on the target as multiplexer, or mix the channels of the source as mixer.
+If (sourceChannels%targetChannels != 0) && (targetChannels%sourceChannels != 0), disproportions between the the volume of the channels will occure.</dd>
+</dl>
+<br><img src="FloatISChannelAdapter1.gif"> channel multiplexer
+<br><img src="FloatISChannelAdapter2.gif"> channel mixer (add the channels, whithout volumecorrection)
+<table border="0">
+<tr>
+<td>FloatISSampleRateAdapter  </td><td> - </td><td>convert the SampleRate (example: from 44100 to 22050, from 8000 to 96000, etc)</td>
+</tr><tr>
+<td>FlaotISSampleSizeAdapter  </td><td> - </td><td>convert the SampleSize (example: from 8 to 16, from 24 to 8, etc.)</td>
+</tr><tr>
+<td></td>	<td></td>		<td></td>
+</tr><tr>
+<td>FloatISGeneralAdapter     </td><td> - </td><td>compare a default format or a given format with the</td>
+</tr><tr>
+<td></td>	<td></td>		<td>Format of the given FloatInputStream, and use many</td>
+</tr><tr>
+<td></td>	<td></td>		<td>conversion-implementations of FloatInputStream to return</td>
+</tr><tr>
+<td></td>	<td></td>		<td>the new format.</td>
+</tr>
+</table>					   
+							  
+<h3>Encoding/Conversion</h3>
+<dl>
+<dt>FloatMP3InputStream</dt> 
+<dd>convert mp3-files, return the AudioFormat primary decoded
+	from the mp3-file. For the decoding javalayer is used (package javazoom).
+</dd>
+<dt>FloatInputStreamChooser</dt> 
+<dd>gets any type of AudioStream supported (by java-audio, or mp3),
+                          and returns floats
+</dd>
+</dl>
+
+<h3>Other Converters:</h3>
+<dl>
+<dt>FloatInputStreamAdapter</dt> 
+<dd>(in implementation) make all needed conversions (by reading a PCM-file) itself
+
+FloatISSamplesExtractor - (in implementation) make a SampleRateConversion by reading the AudioStream,
+                         useful to extract samples from the source, if not many are needed,
+                         read only the bytes needed, skip the rest.
+</dd>
+</dl>
+<h3>Back to audio:</h3>
+FloatToAudioConverter - receive a FloatInputStream, and return bytes as an AudioInputStream
+                        (it is an AudioInputStream, that converts a FloatInputStream)
+<b>Other useful Classes:</b>
+FloatStreamPlayer - play the given FloatInputStream
+FloatFilterInputStream
+		  
+							  
+<b>How to use:</b>
+If you don't need conversion, use FloatISSimpleAdapter.
+If you don't now what for conversions maybe are necessary, 
+    use the Method AudioUtil.getFloatInputStream(AudioInputStream ais), 
+     it will return a series of FloatInputStream-conversion-implementations, 
+     intercontained, that you can use.
+    OR: use FloatISGeneralAdapter
+If you have an mp3-inputStream, use FloatMP3InputStream, of course.
+And if you don't now the kind of your AudioStream, or file,
+    let AudioSystem.getFloatInputStream (see the number of implemented Methods)
+     get the correct FloatInputStream
+    OR: use FloatInputStreamChooser
+
+<b>Special use:</b>
+If you don't need all samples, 
+    use FloatISSamplesExtractor, so you don't convert all bytes to float, 
+     only the needed for your Samples. It will be faster, maybe.
+     
+To play the FloatInputStream: use FloatStreamPlayer
+
+As AudioInputStream: FloatToAudioConverter
+
+</body>
+</html>

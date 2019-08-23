@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="de.uos.fmt.musitech.data.structure.Note"
+        table="Note"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="uid"
+            column="uid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <many-to-one
+            name="scoreNote"
+            class="de.uos.fmt.musitech.data.score.ScoreNote"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="scoreNote"
+        />
+
+        <many-to-one
+            name="performanceNote"
+            class="de.uos.fmt.musitech.data.performance.PerformanceNote"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="performanceNote"
+        />
+
+        <property
+            name="time"
+            type="long"
+            update="true"
+            insert="true"
+            access="property"
+            column="time"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Note.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.score.ColorNote"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+        <property
+            name="color"
+            type="java.awt.Color"
+            update="true"
+            insert="true"
+            access="property"
+            column="color"
+        />
+
+        </joined-subclass>
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.structure.RenderingNote"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        </joined-subclass>
+
+    </class>
+
+</hibernate-mapping>

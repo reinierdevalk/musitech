@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="de.uos.fmt.musitech.data.audio.AudioFileObject"
+        table="AudioFileObject"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="uid"
+            column="uid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="edited"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="edited"
+        />
+
+        <property
+            name="fis"
+            type="binary"
+            update="true"
+            insert="true"
+            access="property"
+            column="fis"
+        />
+
+        <property
+            name="loaded"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="loaded"
+        />
+
+        <property
+            name="offsetSamples"
+            type="long"
+            update="true"
+            insert="true"
+            access="property"
+            column="offsetSamples"
+        />
+
+        <property
+            name="previewReader"
+            type="binary"
+            update="true"
+            insert="true"
+            access="property"
+            column="previewReader"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <property
+            name="time"
+            type="long"
+            update="true"
+            insert="true"
+            access="property"
+            column="time"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-AudioFileObject.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

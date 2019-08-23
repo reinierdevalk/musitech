@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="de.uos.fmt.musitech.data.structure.lyrics.LyricsSyllable"
+        table="LyricsSyllable"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="uid"
+            column="uid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="text"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="text"
+        />
+
+        <property
+            name="time"
+            type="long"
+            update="true"
+            insert="true"
+            access="property"
+            column="time"
+        />
+
+        <many-to-one
+            name="metricTime"
+            class="de.uos.fmt.musitech.utility.math.Rational"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="metricTime"
+        />
+
+        <many-to-one
+            name="metricDuration"
+            class="de.uos.fmt.musitech.utility.math.Rational"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="id"
+            column="metricDuration"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-LyricsSyllable.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

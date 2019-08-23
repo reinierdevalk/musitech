@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="de.uos.fmt.musitech.data.score.NotationVoice"
+        table="NotationVoice"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="uid"
+            column="uid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <bag
+            name="beamContainers"
+            table="BeamObj_in_NotVoice"
+            lazy="false"
+            inverse="false"
+            cascade="save-update"
+        >
+
+              <key
+                  column="NotationVoice_id"
+              >
+              </key>
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.MObject"
+                  column="MObject_id"
+                  outer-join="auto"
+               />
+
+        </bag>
+
+        <bag
+            name="slurContainers"
+            table="SlurObj_in_NotVoice"
+            lazy="false"
+            inverse="false"
+            cascade="save-update"
+        >
+
+              <key
+                  column="NotationVoice_id"
+              >
+              </key>
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.MObject"
+                  column="MObject_id"
+                  outer-join="auto"
+               />
+
+        </bag>
+
+        <bag
+            name="tupletContainers"
+            table="TupletObj_in_NotVoice"
+            lazy="false"
+            inverse="false"
+            cascade="save-update"
+        >
+
+              <key
+                  column="NotationVoice_id"
+              >
+              </key>
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.MObject"
+                  column="MObject_id"
+                  outer-join="auto"
+               />
+
+        </bag>
+
+        <property
+            name="color"
+            type="java.awt.Color"
+            update="true"
+            insert="true"
+            access="property"
+            column="color"
+        />
+
+        <many-to-one
+            name="parent"
+            class="de.uos.fmt.musitech.data.score.NotationStaff"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="parent"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <many-to-one
+            name="context"
+            class="de.uos.fmt.musitech.data.structure.Context"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="context"
+        />
+
+        <list
+            name="content"
+            table="obj_in_SortedColl"
+            lazy="false"
+            inverse="false"
+            cascade="save-update"
+        >
+
+              <key
+                  column="coll_id"
+              >
+              </key>
+
+              <index
+                  column="position"
+              />
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.MObject"
+                  column="object_id"
+                  outer-join="auto"
+               />
+
+        </list>
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-NotationVoice.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

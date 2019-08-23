@@ -1,0 +1,138 @@
+"interfaces"
+	audio.floatStream.FloatInputStream - read, getAudioFormat, etc
+	audio.floatStream.FISPartReader - position, marker, etc
+	audio.floatStream.ConcateneableFIS - get und set FIS
+
+
+
+"Klassen zum Einlesen von Audiodaten in Floats:"
+	audio.floatStream.FloatISSimpleAdapter - wird auf jeden Fall bei benutzung einer TargetDataLine gebraucht
+	audio.floatStream.FloatISPartReader - funktioniert nur mit Dateien
+	
+	audio.floatStream.FloatMP3InputStream - liest mp3-inputStreams ein, liefert pcm-samples
+	audio.floatStream.FISmp3PartReader - funktioniert nur mit Dateien (wegen FileChannel - Einlesen ab Positionen in Datei. Ob es sich lohnt die positions-methoden deaktivierbar zu machen, um FloatMP3InputStream hier mit zu integrieren? Vielleicht ebensolches bei FloatISPartReader überlegen.)
+
+?	audio.floatStream.DummyFloatStream - tut nichts
+
+*	audio.floatStream.FloatInputStreamChooser - entscheidet selbstständig zwischen obigen Optionen, AudioUtil.getFloatInputStream(. . .) verwendent (es wär eher zu empfehlen, immer AudioUtil zu verwenden, statt dieser Klasse, die mir somit obsolet erscheint)
+
++-d	audio.floatStream.FloatOscillator
++-d	audio.floatStream.NoiseOscillator
++-d	audio.floatStream.SawtoothOscillator
++-d	audio.floatStream.SineOscillator
+
+
+
+
+"Klassen zum Anwenden eines fertig bearbeiteten Audiostreams in Floats"
+d	audio.floatStream.FloatStreamPlayer
+	
+d	audio.floatStream.FloatToAudioConverter - wieder daten in einem bytestream. Zum schreiben einer Datei nötig.
+dd	audio.fft.FloatStreamFFT - FFT analyse der Daten eines FloatInputStreams
+dd	audio.floatfft.FloatISAnalysis - das selbe
+	
+
+"Klassen zur Adaptation des Audioformats"
+	audio.floatStream.FloatInputStreamMerger
+	audio.floatStream.FloatInputStreamMultiplexer
+	audio.floatStream.FloatISChannelAdapter
+	audio.floatStream.FloatISChannelMixer
+	audio.floatStream.FloatISChannelSplitter
+	audio.floatStream.FloatISSampleRateAdapter
+	audio.floatStream.FloatISSampleSizeAdapter
+*	audio.floatStream.FloatISGeneralAdapter - unendliche Kapselung
+
+
+
+"Klassen zur Bearbeitung des Audiostreams"
+-	audio.floatStream.FloatFilterInputStream
+D	audio.filter.FXFloatFilterInputStream
+
+
+
+
+
+
+"Allgemeinnützliche Klassen zum Audiopacket"
+!D	audio.AudioFileObject
+a	audio.AudioUtil
+
+	"zur Representation von Daten:"
+dd		audio.fft.AudioData
+dd		audio.floatfft.AudioData
+
+
+"von oben genannten klassen gebrauchte Klassen"
+
+	audio.floatStream.FormatRangeDescriptor
+dF	audio.floatStream.MultiReaderRingBuffer
+	audio.floatStream.RingBuffer
+	
+dd	audio.fft.FastFourierTransformation
+dd	audio.floatfft.FastFourierTransformation
+	audio.fft.FrequencyPanel
+dd	audio.fft.FrequencyWindow
+dd	audio.floatfft.FrequencyWindow
+	audio.fft.WaveFileAnalysis
+	
+D	audio.filter.Coefficients
+D	audio.filter.models.DLFModel	
+d	audio.filter.models.FilterDesigner
+D	audio.filter.models.GaussHill
+D	audio.filter.models.GaussHillModel	
+	
+
+"anderes"
+!D	audio.floatStream.AudioFormat - was ist denn das?	
+?D	audio.floatStream.FloatISTimeline - tut noch nichts wirklich
+
+
+
+"Testklassen"
+	audio.floatStream.TestFISetc
+d*	audio.MP3Player
+D	audio.filter.FXTestStream
+
+
+"legende"
+
+*	Sinn überprüfen, vielleicht unnötig
+!	Sinn nicht verstanden, tut noch nichts, weis nicht wofür da
+?	Ist noch nichts mit los, was soll draus werden?
+-	Vermutlich in einem anderen unterpackage besser untergebracht
+d	Fehlt Dokumentation
+D	Dokumentation sehr vermisst!!!
++ 	es sollten Methoden hinzugefügt oder erweitert werden
+/	fehlerhafter code
+a	in großen Mengen Überreste alten codes auskommentiert
+dd	doppelt vorhanden (zwei classen mit gleichen Namen)
+F	Fragen vorhanden zur klasse, oder in der Klasse ausgeführt
+
+
+
+
+"TODOs"
+
+Dokumentationen nach Fehlern durchsuchen:
+	- dem code nach nicht mehr aktuelles
+	- unvollständige
+	- Rechtschreibfehler, Grammatik
+	- Begriffsprobleme:
+	  	- Verwechslung von "samples" und "frames", beispielweise
+	- alte nicht mehr gebrauchte auskomentierte Codeteile entfernen, unnütze Kommentare entfernen
+
+
+
+
+
+
+
+
+my tasks
+
+datamanager
+	changemanager
+	selectionmanager
+	editormanager (einführung abwarten)
+delayI. S. . - initial, max-value - problem
+graphische wav-darstellung

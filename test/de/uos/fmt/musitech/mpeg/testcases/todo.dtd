@@ -1,0 +1,25 @@
+<!ELEMENT requirements (requirement+)>
+
+<!ELEMENT requirement (aspect+)>
+<!ATTLIST requirement
+	  id     CDATA   #REQUIRED
+	  name   CDATA   #REQUIRED
+>
+
+<!ELEMENT aspect (test-case+)>
+<!ATTLIST aspect
+	  id     CDATA   #REQUIRED
+	  name   CDATA   #REQUIRED
+>
+
+<!ELEMENT test-case (todo*)>
+<!ATTLIST test-case
+	  id     CDATA   #REQUIRED
+>
+
+
+<!ELEMENT todo (#PCDATA|solution|open-question)*>      
+
+<!ELEMENT solution (#PCDATA)>
+
+<!ELEMENT open-questio (#PCDATA)>

@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="de.uos.fmt.musitech.data.performance.MidiNote"
+        table="MidiNote"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="uid"
+            column="uid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="channel"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="channel"
+        />
+
+        <property
+            name="duration"
+            type="long"
+            update="true"
+            insert="true"
+            access="property"
+            column="duration"
+        />
+
+        <property
+            name="velocity"
+            type="short"
+            update="true"
+            insert="true"
+            access="property"
+            column="velocity"
+        />
+
+        <property
+            name="pitch"
+            type="byte"
+            update="true"
+            insert="true"
+            access="property"
+            column="pitch"
+        />
+
+        <property
+            name="time"
+            type="long"
+            update="true"
+            insert="true"
+            access="property"
+            column="time"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-MidiNote.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+        <joined-subclass
+            name="de.uos.fmt.musitech.data.performance.MidiNoteMulti"
+            dynamic-update="false"
+            dynamic-insert="false"
+        >
+        <key
+            column="uid"
+        />
+
+        <many-to-one
+            name="next"
+            class="de.uos.fmt.musitech.data.performance.PerformanceNote"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="id"
+            column="next"
+        />
+
+        </joined-subclass>
+
+    </class>
+
+</hibernate-mapping>

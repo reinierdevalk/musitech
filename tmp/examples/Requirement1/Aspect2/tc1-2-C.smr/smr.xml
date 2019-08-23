@@ -1,0 +1,1135 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<smr>
+<piece>
+<score>
+	<layout>
+		<pages top="20" right="20" bottom="20" left="20"/>
+		<distances>
+			<staffLines small="1.2" pageObj="1.8" normal="1.4"/>
+			<systems top="0" between="0"/>
+		</distances>
+		<instrumentNames>
+			<font height="12" face="Times New Roman"/>
+		</instrumentNames>
+		<staves>
+			<staffLayout description="1. Violine">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="" name=""/>
+				<sound volume="127" instr="40"/>
+			</staffLayout>
+			<staffLayout description="2. Violine">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="" name=""/>
+				<sound volume="127" instr="40"/>
+			</staffLayout>
+			<staffLayout description="Viola">
+				<notation defaultClef="alto">
+					<barlines to="7" from="3"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="" name=""/>
+				<sound volume="127" instr="41"/>
+			</staffLayout>
+			<staffLayout description="Violoncello">
+				<notation defaultClef="bass">
+					<barlines to="7" from="3" mode="internal"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="" name=""/>
+				<sound volume="127" instr="42"/>
+			</staffLayout>
+		</staves>
+		<brackets>
+			<bracket to="3" from="0"/>
+		</brackets>
+		<spacing abs="16" rel="75"/>
+		<beamFlattening to="29" toMax="55" from="49" fromMax="148"/>
+	</layout>
+	<systems>
+		<system justified="true" instrNotation="short">
+			<context/><staves>
+				<staff layout="1. Violine" defaultTime="3/4">
+					<extraDistance top="10"/>
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<chord>
+									<duration base="1/16"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-2" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>ð</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-8" x="0">
+												<font pitchAndFamily="0" height="12" weight="0" face="Times New Roman"/>
+												<content>molto rit.   _   </content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C6">
+											<tie end="true"/>
+										</head>
+										<head shape="diamond" pitch="F6">
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3.5" x="0">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>Ê</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C6">
+											<tie begin="true"/>
+										</head>
+										<head shape="diamond" pitch="F6">
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<wedge y2="4" lineWidth="0.1" decrescendo="true" x2="13.59375" y1="4" x1="0"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C6">
+											<tie begin="true" end="true"/>
+										</head>
+										<head shape="diamond" pitch="F6">
+											<tie begin="true" end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<heads>
+										<head pitch="C6">
+											<tie end="true"/>
+										</head>
+										<head shape="diamond" pitch="F6">
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-8" x="-3">
+												<font pitchAndFamily="0" height="12" weight="0" face="Times New Roman"/>
+												<content>tempo I</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-3.5" x="-3">
+												<font pitchAndFamily="0" height="12" weight="0" face="Times New Roman"/>
+												<content>(    = 60)</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-8" x="-12.5">
+												<font pitchAndFamily="0" height="12" weight="0" face="Times New Roman"/>
+												<content>(    = 60)</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-8.5" x="-11.5">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>¦</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-4" x="-2">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>¤</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+								</rest>
+								<chord>
+									<duration base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="2.5625" x2="1.25" y1="0.5" x3="-2.1875" y3="3.84375" x1="0.75" y4="3" x4="0.25"/>
+											<basic noteRange="2"/>
+										</drawObj>
+										<drawObj>
+											<text y="4.5" x="-1.5">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>q</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<wedge y1="4" x2="0.5" x1="-1.625" y2="4" lineWidth="0.1"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F6">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="E5">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-2.71875" x2="1.875" y1="-2.5" x3="-0.09375" y3="-1.875" x1="0.75" y4="-1" x4="0.25"/>
+											<basic noteRange="1"/>
+										</drawObj>
+										<drawObj>
+											<text y="4.5" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<wedge y1="4" x2="1.625" x1="1.25" y2="4" lineWidth="0.1"/>
+											<basic noteRange="1"/>
+										</drawObj>
+										<drawObj>
+											<text y="-8" x="-2">
+												<font pitchAndFamily="0" height="12" weight="0" face="Times New Roman"/>
+												<content>accel.   _   rit.          _          _          _          _          _</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E6">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-6.21875" x2="1.875" y1="-6" x3="-0.09375" y3="-5.375" x1="0.75" y4="-4.5" x4="0.25"/>
+											<basic noteRange="1"/>
+										</drawObj>
+										<drawObj>
+											<text y="4.5" x="-1.5">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>j</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<wedge y1="4" x2="2.75" x1="1.90625" y2="4" lineWidth="0.1"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E7">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="B6">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<volta x2="4" y="-8.5" leftBent="false" x1="7.9375" dotted="true"/>
+											<basic noteRange="5"/>
+										</drawObj>
+										<drawObj>
+											<text y="-8.5" x="0">
+												<font height="10" face="Times New Roman"/>
+												<content>am Steg</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+								</rest>
+								<chord>
+									<duration base="1/8"/>
+									<stem tremoloBars="2"/>
+									<drawObjects>
+										<drawObj>
+											<text y="4" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>f</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<wedge y2="3.5" lineWidth="0.1" decrescendo="true" x2="0.25" y1="3.5" x1="1"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D7">
+											<alter display="force"/>
+										</head>
+										<head pitch="A7">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<stem tremoloBars="2"/>
+									<heads>
+										<head pitch="B6">
+											<alter step="-1" display="force"/>
+										</head>
+										<head pitch="F7">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<chord>
+									<duration base="1/8"/>
+									<stem tremoloBars="2"/>
+									<beam shift="-0.5"/>
+									<drawObjects>
+										<drawObj>
+											<text y="4" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<wedge y2="3.5" lineWidth="0.1" decrescendo="true" x2="0.625" y1="3.5" x1="1"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G7">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<stem tremoloBars="2"/>
+									<heads>
+										<head pitch="D7">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="2. Violine" defaultTime="3/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<rest>
+									<duration base="1/16"/>
+								</rest>
+								<chord>
+									<duration base="1/16"/>
+									<articulation><staccato/></articulation>
+									<drawObjects>
+										<drawObj>
+											<text y="3.5" x="-2">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>r</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-3" x="-6">
+												<font height="10" face="Times New Roman"/>
+												<content>pizz.</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C7">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<rest>
+									<duration base="1/16"/>
+								</rest>
+								<chord>
+									<duration base="1/16"/>
+									<drawObjects>
+										<drawObj>
+											<text y="5.5" x="-4">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>r</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<wedge y1="5" x2="3" x1="1.5" y2="5" lineWidth="0.1"/>
+										</drawObj>
+										<drawObj>
+											<text y="-3" x="-1">
+												<font height="10" face="Times New Roman"/>
+												<content>arco</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C5">
+											<alter display="force"/>
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="5.5" x="-1.5">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>q</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<wedge y1="5" x2="0.71875" x1="2.5" y2="5" lineWidth="0.1"/>
+											<basic noteRange="2"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C5">
+											<tie begin="true" end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="C5">
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<heads>
+										<head pitch="D5">
+											<alter step="-1"/>
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="5.5" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<wedge y1="5" x2="0.5" x1="3.53125" y2="5" lineWidth="0.1"/>
+											<basic noteRange="2"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D5">
+											<alter step="-1"/>
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="4.75" x2="1.8125" y1="4" x3="-0.53125" y3="4.53125" x1="0.75" y4="3.5" x4="0.25"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C5">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<heads>
+										<head pitch="D5">
+											<alter step="-1" display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<volta x2="4" y="-5" leftBent="false" x1="3.78125" dotted="true"/>
+											<basic noteRange="5"/>
+										</drawObj>
+										<drawObj>
+											<rectangle y2="-2.75" lineWidth="0" x2="-0.25" fillColor="FFFFFF" y1="-5.625" x1="-2.25" filled="true"/>
+										</drawObj>
+										<drawObj>
+											<text y="-3.5" x="-5">
+												<font height="10" face="Times New Roman"/>
+												<content>am Steg</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+								</rest>
+								<chord>
+									<duration base="1/8"/>
+									<stem tremoloBars="2"/>
+									<beam shift="-0.5"/>
+									<drawObjects>
+										<drawObj>
+											<text y="3" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>f</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<wedge y2="2.5" lineWidth="0.1" decrescendo="true" x2="0.5" y1="2.5" x1="1.375"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B6">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<stem tremoloBars="2"/>
+									<heads>
+										<head pitch="G6">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<chord>
+									<duration base="1/8"/>
+									<stem tremoloBars="2"/>
+									<beam shift="-0.5"/>
+									<drawObjects>
+										<drawObj>
+											<text y="4.5" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<wedge y2="4" lineWidth="0.1" decrescendo="true" x2="0.5" y1="4" x1="1.375"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E6">
+											<alter display="force"/>
+										</head>
+										<head pitch="B6">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<stem tremoloBars="2"/>
+									<heads>
+										<head pitch="B5">
+											<alter display="force"/>
+										</head>
+										<head pitch="F6">
+											<alter step="1" display="force"/>
+										</head>
+									</heads>
+								</chord>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="Viola" defaultTime="3/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="alto"/>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<rest>
+									<duration base="1/16"/>
+								</rest>
+								<chord>
+									<duration base="1/16"/>
+									<articulation><tenuto/></articulation>
+									<drawObjects>
+										<drawObj>
+											<slur y2="5.5" x2="1.75" y1="4" x3="-0.75" y3="5.5" x1="0.75" y4="4" x4="0.25"/>
+											<basic noteRange="4"/>
+										</drawObj>
+										<drawObj>
+											<text y="6.5" x="-2">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>r</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-2.5" x="-3">
+												<font height="10" face="Times New Roman"/>
+												<content>arco</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-4" x="-7">
+												<font height="10" face="Times New Roman"/>
+												<content>col legno</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<volta x2="2.375" y="-4" leftBent="false" x1="2.15625" dotted="true"/>
+											<basic noteRange="4"/>
+										</drawObj>
+										<drawObj>
+											<wedge y2="6" lineWidth="0.1" decrescendo="true" x2="0.5" y1="6" x1="3.40625"/>
+											<basic noteRange="4"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D4">
+											<alter step="-1"/>
+										</head>
+										<head pitch="A4">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/16"/>
+								</rest>
+								<chord>
+									<duration base="1/16"/>
+									<articulation><tenuto/></articulation>
+									<heads>
+										<head pitch="D4">
+											<alter step="-1"/>
+										</head>
+										<head pitch="A4">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/16"/>
+								</rest>
+								<chord>
+									<duration base="1/16"/>
+									<articulation><tenuto/></articulation>
+									<heads>
+										<head pitch="D4">
+											<alter step="-1"/>
+										</head>
+										<head pitch="A4">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="4.5" x="-1.5">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>q</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<wedge y1="4" x2="0.5" x1="2.40625" y2="4" lineWidth="0.1"/>
+											<basic noteRange="2"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G4">
+											<alter step="-1"/>
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="G4">
+											<alter step="-1"/>
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<heads>
+										<head pitch="F4">
+											<alter display="force"/>
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="4.5" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<wedge y1="4" x2="2" x1="1.5" y2="4" lineWidth="0.1"/>
+											<basic noteRange="2"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F4">
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<slur y2="3.53125" x2="1.53125" y1="2.5" x3="-0.8125" y3="3.75" x1="0.75" y4="3" x4="0.25"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G4">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<heads>
+										<head pitch="F4">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<volta x2="4" y="-5" leftBent="false" x1="1.75" dotted="true"/>
+											<basic noteRange="5"/>
+										</drawObj>
+										<drawObj>
+											<rectangle y2="-2.375" lineWidth="0" x2="-0.375" fillColor="FFFFFF" y1="-5.75" x1="-2.375" filled="true"/>
+										</drawObj>
+									</drawObjects>
+								</rest>
+								<chord>
+									<duration base="1/8"/>
+									<stem tremoloBars="2"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-3" x="-10">
+												<font height="10" face="Times New Roman"/>
+												<content>am Steg</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="4.5" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>f</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<wedge y2="4" lineWidth="0.1" decrescendo="true" x2="0.5" y1="4" x1="1.25"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5">
+											<alter display="force"/>
+										</head>
+										<head pitch="F6">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<stem tremoloBars="2"/>
+									<heads>
+										<head pitch="G5">
+											<alter display="force"/>
+										</head>
+										<head pitch="D6">
+											<alter step="1" display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<clefSign clef="treble"/>
+								<chord>
+									<duration base="1/8"/>
+									<stem tremoloBars="2"/>
+									<drawObjects>
+										<drawObj>
+											<text y="6.5" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<wedge y2="6" lineWidth="0.1" decrescendo="true" x2="0.5" y1="6" x1="1.625"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+										<head pitch="A6">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<stem tremoloBars="2"/>
+									<heads>
+										<head pitch="F5">
+											<alter display="force"/>
+										</head>
+										<head pitch="E6">
+											<alter step="-1" display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<clefSign clef="alto"/>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="Violoncello" defaultTime="3/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="bass"/>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<rest>
+									<duration base="1/16"/>
+								</rest>
+								<chord>
+									<duration base="1/16"/>
+									<articulation><tenuto/></articulation>
+									<drawObjects>
+										<drawObj>
+											<text y="4" x="-6.5">
+												<font height="10" face="Times New Roman"/>
+												<content>arco</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="5.5" x="-2">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>r</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<slur y2="4.5" x2="1.75" y1="3" x3="-0.75" y3="4.5" x1="0.75" y4="3" x4="0.25"/>
+											<basic noteRange="4"/>
+										</drawObj>
+										<drawObj>
+											<wedge y2="5" lineWidth="0.1" decrescendo="true" x2="0.5" y1="5" x1="3.40625"/>
+											<basic noteRange="4"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G3">
+											<alter display="force"/>
+										</head>
+										<head pitch="B3">
+											<alter step="-1" display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/16"/>
+								</rest>
+								<chord>
+									<duration base="1/16"/>
+									<articulation><tenuto/></articulation>
+									<heads>
+										<head pitch="G3"/>
+										<head pitch="B3">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/16"/>
+								</rest>
+								<chord>
+									<duration base="1/16"/>
+									<articulation><tenuto/></articulation>
+									<heads>
+										<head pitch="G3"/>
+										<head pitch="B3">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="5.5" x="-1.5">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>q</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<wedge y1="5" x2="0.5" x1="2.65625" y2="5" lineWidth="0.1"/>
+											<basic noteRange="2"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E3">
+											<alter display="force"/>
+											<tie begin="true"/>
+										</head>
+										<head pitch="C4">
+											<alter step="1" display="force"/>
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="E3">
+											<tie end="true"/>
+										</head>
+										<head pitch="C4">
+											<alter step="1"/>
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<heads>
+										<head pitch="F3">
+											<alter step="1"/>
+											<tie begin="true"/>
+										</head>
+										<head pitch="C4">
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<drawObjects>
+										<drawObj>
+											<text y="5.5" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<wedge y1="5" x2="2.65625" x1="2.15625" y2="5" lineWidth="0.1"/>
+											<basic noteRange="2"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="F3">
+											<alter step="1"/>
+											<tie end="true"/>
+										</head>
+										<head pitch="C4">
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="E3">
+											<alter display="force"/>
+										</head>
+										<head pitch="C4">
+											<alter step="1" display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<heads>
+										<head pitch="F3">
+											<alter step="1"/>
+										</head>
+										<head pitch="C4"/>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<text y="5.5" x="-1.5">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>j</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<wedge y2="5" lineWidth="0.1" decrescendo="true" x2="3" y1="5" x1="2.5"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E4">
+											<alter display="force"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<heads>
+										<head pitch="G3">
+											<alter step="1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<text y="5.5" x="-1">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+												<content>p</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<wedge y2="5" lineWidth="0.1" decrescendo="true" x2="5.8125" y1="5" x1="1.5"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E4">
+											<alter display="force"/>
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+			</staves>
+		</system>
+	</systems>
+</score>
+</piece>
+</smr>

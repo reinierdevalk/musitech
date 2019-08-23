@@ -1,0 +1,5 @@
+#!/bin/sh
+# Shell-Script for calling the TestView application
+# $Id: go,v 1.1 2002/09/24 10:22:53 mgieseki Exp $
+
+java -cp ../../../../.. de.uos.fmt.musitech.gin.TestView $1

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TeamTask id="PAF5MW">
+	<TeamTaskMeta>
+		<CreationDate format="yyyy-MM-dd :: HH:mm:ss z">2003-06-03 :: 18:18:23 CEST</CreationDate>
+		<LastModificationDate format="yyyy-MM-dd :: HH:mm:ss z">2003-06-03 :: 18:20:34 CEST</LastModificationDate>
+	</TeamTaskMeta>
+	<Summary>KeyMarker-Accidentals</Summary>
+	<User>tweyde</User>
+	<Module>musitech</Module>
+	<AssignedTo />
+	<State description="New" index="0" />
+	<Severity description="Enhancement" index="0" />
+	<Description>Accidentals need to be calculated and updated depending on
+Root and Mode and vice versa in KeyMarker.</Description>
+	<Notification>
+		<Recipient>tweyde@uos.de</Recipient>
+	</Notification>
+	<LinkList>
+		<Link path="/musitech/de/uos/fmt/musitech/music/KeyMarker.java" type="Associated" />
+	</LinkList>
+	<NoteHistory>
+		<Note user="tweyde" id="1">
+			<NoteMeta>
+				<NoteDate format="yyyy-MM-dd :: HH:mm:ss z">2003-06-03 :: 18:20:28 CEST</NoteDate>
+			</NoteMeta>
+			Wg. Details Tillman fragen.
+		</Note>
+	</NoteHistory>
+</TeamTask>
+

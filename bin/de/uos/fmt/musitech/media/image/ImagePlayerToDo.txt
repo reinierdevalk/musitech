@@ -1,0 +1,21 @@
+
+Synchronisation MP3-MIDI-Image (offsets/drift)
+
+Einfaches Framework (addImage(url,time), addAudioObject(url))
+
+Graphischen Player mit Play/stop/pause/setPosition (buttons mögl. klein)
+
+Image auto-zooming
+
+Relative URLs
+
+Interpretationsvergleich, Marker ?? 
+Adressierung von Positionen in verschiedenen Werken
+
+GUI Eingabe von TimedImages und Markern
+
+Cursor ??
+
+Interaktive Liste mit Markern und Bildern
+
+Vergleich von Positionen/Kontexten/Adressen ?

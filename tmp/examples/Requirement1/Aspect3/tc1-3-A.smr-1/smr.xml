@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<smr>
+<piece>
+<score>
+	<layout>
+		<pages top="20" right="20" bottom="20" left="20"/>
+		<distances>
+			<staffLines small="1.2" pageObj="1.8" normal="1.66"/>
+			<systems top="10" between="5"/>
+		</distances>
+		<instrumentNames>
+			<font height="12" face="Times New Roman"/>
+		</instrumentNames>
+		<staves>
+			<staffLayout description="">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3" mode="internal"/>
+				</notation>
+				<distances top="5" bottom="5"/>
+				<instrument abbrev="" name=""/>
+				<sound volume="80" instr="0"/>
+			</staffLayout>
+			<staffLayout description="unbenannt2">
+				<notation defaultClef="bass">
+					<barlines to="7" from="3" mode="internal"/>
+				</notation>
+				<distances top="8" bottom="5"/>
+				<instrument abbrev="" name=""/>
+				<sound volume="80" instr="0"/>
+			</staffLayout>
+		</staves>
+		<spacing abs="16" rel="75"/>
+		<beamFlattening to="29" toMax="55" from="49" fromMax="148"/>
+	</layout>
+	<pageObjects>
+		<drawObj>
+			<text y="3.65625" x="47.15625" align="center">
+				<font pitchAndFamily="2" height="20" face="MarkerFeltThin-Plain"/>
+				<content>Satin Doll</content>
+			</text>
+		</drawObj>
+		<drawObj>
+			<text y="6.375" x="7.34375">
+				<font pitchAndFamily="2" height="12" face="MarkerFeltThin-Plain"/>
+				<content>Medium Slow    = 100</content>
+			</text>
+		</drawObj>
+		<drawObj>
+			<text y="6.21875" x="81.9375">
+				<font pitchAndFamily="2" height="12" face="MarkerFeltThin-Plain"/>
+				<content>Duke Ellington</content>
+			</text>
+		</drawObj>
+		<drawObj>
+			<text y="5.84375" x="21.90625">
+				<font pitchAndFamily="2" height="18" charSet="2" face="capella-jazzy"/>
+				<content>¢</content>
+			</text>
+		</drawObj>
+	</pageObjects>
+	<barCount y="3.5" x="0">
+		<font pitchAndFamily="2" height="8" face="MarkerFeltThin-Plain"/>
+	</barCount>
+	<systems>
+		<system justified="true" instrNotation="long" leftIndent="8">
+			<context/><staves>
+				<staff layout="" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<timeSign time="C"/>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<text y="4.5" x="-6.5">
+												<font pitchAndFamily="2" height="12" face="MarkerFeltThin-Plain"/>
+												<content>Melody</content>
+											</text>
+										</drawObj>
+										<drawObj>
+											<text y="-4.5" x="-6.5">
+												<font pitchAndFamily="2" height="12" face="MarkerFeltThin-Plain"/>
+												<content>A</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<drawObjects>
+										<drawObj>
+											<rectangle y2="-4.1875" x2="-7.1875" fillColor="FFFFFF" y1="-6.90625" x1="-10" filled="true"/>
+											<basic behindNotes="true"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="G5">
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="G5">
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/4"/>
+								</rest>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/4"/>
+								</rest>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="A5">
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="A5">
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/4"/>
+								</rest>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="A5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="B5"/>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/4"/>
+								</rest>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="unbenannt2" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="-4">
+								<font pitchAndFamily="34" height="12" face="Chord Symbols"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="bass"/>
+								<timeSign time="C"/>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<lyric>
+										<verse i="0" align="left">Dmin7</verse>
+									</lyric>
+									<drawObjects>
+										<drawObj>
+											<text y="4.5" x="-6.5">
+												<font pitchAndFamily="2" height="12" face="MarkerFeltThin-Plain"/>
+												<content>Rhythm</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<lyric>
+										<verse i="0" align="left">G7</verse>
+									</lyric>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-5" x="2">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella-jazzy"/>
+												<content>y</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<lyric>
+										<verse i="0" align="left">Emin7</verse>
+									</lyric>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<lyric>
+										<verse i="0" align="left">A7</verse>
+									</lyric>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-5" x="2">
+												<font pitchAndFamily="2" height="18" charSet="2" face="capella-jazzy"/>
+												<content>y</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+			</staves>
+		</system>
+		<system justified="true" instrNotation="short">
+			<context/><staves>
+				<staff layout="" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="5">
+								<font height="12" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<articulation><accent/></articulation>
+									<heads>
+										<head pitch="D6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="D6"/>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/4"/>
+								</rest>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<articulation><accent/></articulation>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<articulation><staccato/></articulation>
+									<heads>
+										<head pitch="A5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="G5">
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/1"/>
+									<heads>
+										<head pitch="G5">
+											<tie begin="true" end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/1"/>
+									<heads>
+										<head pitch="G5">
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<barline type="end"/>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+				<staff layout="unbenannt2" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="-4">
+								<font pitchAndFamily="34" height="12" face="Chord Symbols"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="bass"/>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<articulation><accent/></articulation>
+									<lyric>
+										<verse i="0" align="left">Amin7</verse>
+									</lyric>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<lyric>
+										<verse i="0" align="left">D7</verse>
+									</lyric>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/4"/>
+								</rest>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<chord>
+									<duration dots="1" base="1/4"/>
+									<articulation><accent/></articulation>
+									<lyric>
+										<verse i="0">Aßmin7</verse>
+									</lyric>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<articulation><staccato/></articulation>
+									<lyric>
+										<verse i="0" align="left">Dß7</verse>
+									</lyric>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<lyric>
+										<verse i="0" align="left">C"</verse>
+									</lyric>
+									<heads>
+										<head pitch="D4">
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<heads>
+										<head pitch="D4">
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<lyric>
+										<verse i="0" align="left">E%</verse>
+									</lyric>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<lyric>
+										<verse i="0" align="left">A7(?9)</verse>
+									</lyric>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<stem invisible="true"/>
+									<heads>
+										<head pitch="D4"/>
+									</heads>
+								</chord>
+								<barline type="end"/>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+			</staves>
+		</system>
+	</systems>
+</score>
+</piece>
+</smr>

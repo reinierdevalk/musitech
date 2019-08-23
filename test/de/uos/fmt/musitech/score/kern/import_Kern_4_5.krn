@@ -1,0 +1,16 @@
+!!!**kern example file two notes with a tie in one bar
+!!!see http://dactyl.som.ohio-state.edu/Humdrum/guide02.html
+**kern	**kern
+*staff2	*staff1
+*clefF4	*clefG2
+*k[]	*k[]
+*M3/4	*M3/4
+=3	=3
+[2C\	[2A\
+4C\]	4A\]
+=4	=4
+4C\	4A\
+4r	4r
+4r	4r
+=5	=5
+*-	*-

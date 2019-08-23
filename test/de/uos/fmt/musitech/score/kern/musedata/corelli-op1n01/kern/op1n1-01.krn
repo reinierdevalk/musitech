@@ -1,0 +1,203 @@
+!!!COM: Corelli, Arcangelo
+!!!OPR: Church Sonata in F Major
+!!!ONM: Opus 1, No. 1
+!!!OTL:
+!!!OMV: 1
+!!!YOR: Chrysander Edition
+!!!EED: Steven Rasmussen
+!!!ENC: Steven Rasmussen
+!!!CDT: 1653/2/17/-1713/1/8/
+!!!OCY: Italia
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved.
+!!!YEM: Refer to licensing agreement for further details.
+!!!YEN: United States of America
+**kern	**dynam	**kern	**dynam	**kern	**dynam
+*I:Violino 1	*I:Violino 1	*I:Violino 2	*I:Violino 2	*I:Violone e Organo.	*I:Violone e Organo.
+*clefG2	*	*clefG2	*	*clefF4	*
+*k[b-]	*	*k[b-]	*	*k[b-]	*
+*F:	*	*F:	*	*F:	*
+*M4/4	*	*M4/4	*	*M4/4	*
+! Grave.	!	! Grave.	!	! Grave.	!
+*tb16	*	*tb16	*	*tb16	*
+=1-	=1-	=1-	=1-	=1-	=1-
+*	*	*	*	*^	*
+4ccc\	.	4aa\	.	4F/	4F\	.
+!	!	!	!	!	! **Bnum:._6	!
+4bb-\	.	4gg\	.	4G/	4G\	.
+!	!	!	!	!	! **Bnum:._6	!
+4.aa\	.	4.ff\	.	8A/L	4.A\	.
+.	.	.	.	8B/	.	.
+.	.	.	.	8c/	.	.
+8ccc\	.	8cc\	.	8A/J	8A\	.
+=2	=2	=2	=2	=2	=2	=2
+*	*	*	*	*v	*v	*
+!	!	!	!	! unis.	!
+!	!	!	!	!	!
+(8bb-\L	.	(16dd\LL	.	8B-\L	.
+.	.	16ee\J)	.	.	.
+8aa\)	.	8ff\J	.	8F\	.
+!	!	!	!	! **Bnum:._5 4	!
+8.gg\	.	8.ff\L	.	8c\	.
+!	!	!	!	! **Bnum:._b 3	!
+.	.	.	.	8C\J	.
+16gg\Jk	.	16ee\Jk	.	.	.
+2ff\	.	2ff\	.	2F\	.
+=3	=3	=3	=3	=3	=3
+4.aa\	.	4.ff\	.	8F\L	.
+.	.	.	.	8G\	.
+!	!	!	!	! **Bnum:._6	!
+.	.	.	.	8A\	.
+8aa\	.	8ff\	.	8Bn\J	.
+!	!	!	!	! **Bnum:4_5	!
+!	!	!	!	! **Bnum:._6	!
+8gg\L	.	4.ee\	.	4.c\	.
+(16aa\L	.	.	.	.	.
+16gg\JJ)	.	.	.	.	.
+[4aa\	.	.	.	.	.
+.	.	(16dd\LL	.	(16B-\LL	.
+.	.	16cc\JJ)	.	16A\JJ)	.
+=4	=4	=4	=4	=4	=4
+!	!	!	!	! **Bnum:4_7	!
+!	!	!	!	! **Bnum:._6	!
+8aa\L]	.	4.dd\	.	4.B-\	.
+(16gg\L	.	.	.	.	.
+16ff\JJ)	.	.	.	.	.
+[4gg\	.	.	.	.	.
+.	.	(16cc\LL	.	(16A\LL	.
+.	.	16bn\JJ)	.	16G\JJ)	.
+!	!	!	!	! **Bnum:4_7	!
+!	!	!	!	! **Bnum:._6	!
+8gg\L]	.	4.cc\	.	4.A\	.
+(16ff\L	.	.	.	.	.
+16ee\JJ)	.	.	.	.	.
+[4ff\	.	.	.	.	.
+.	.	(16b/LL	.	(16G\LL	.
+.	.	16a/JJ)	.	16F\JJ)	.
+=5	=5	=5	=5	=5	=5
+!	!	!	!	! **Bnum:._7 n	!
+4ff\]	.	8bn/L	.	4G\	.
+.	.	8g/J	.	.	.
+!	!	!	!	! **Bnum:._5	!
+4ee\	.	2cc\	.	4A\	.
+!	!	!	!	! **Bnum:._6 5	!
+2dd\	.	.	.	4F\	.
+!	!	!	!	! **Bnum:._n	!
+.	.	4b\	.	4G\	.
+=6	=6	=6	=6	=6	=6
+4ee\	.	2cc\	.	4C/	.
+2ccc\	.	.	.	4AA/	.
+!	!	!	!	! **Bnum:4_9	!
+!	!	!	!	! **Bnum:._8	!
+.	.	2dd\	.	2BB-/	.
+[4bb-\	.	.	.	.	.
+=7	=7	=7	=7	=7	=7
+!	!	!	!	! **Bnum:._7	!
+4bb-\]	.	4ee\	.	4C/	.
+!	!	!	!	! **Bnum:._5	!
+4aa\	.	2ff\	.	4D\	.
+!	!	!	!	! **Bnum:._6 5	!
+2gg\	.	.	.	4BB-/	.
+!	!	!	!	! **Bnum:._6	!
+.	.	[4ee\	.	4GG/	.
+=8	=8	=8	=8	=8	=8
+!	!	!	!	! **Bnum:._6 5	!
+2ff\	.	8ee\L]	.	4AA/	.
+.	.	8a\J	.	.	.
+!	!	!	!	! **Bnum:._6	!
+.	.	2dd\	.	4FF/	.
+!	!	!	!	! **Bnum:._6 5	!
+2ee\	.	.	.	4GG/	.
+!	!	!	!	! **Bnum:._b #	!
+.	.	4cc#\	.	4AA/	.
+=9	=9	=9	=9	=9	=9
+!	!	!	!	! **Bnum:4_5	!
+!	!	!	!	! **Bnum:._6	!
+8dd\L	.	4.dd\	.	4.D\	.
+8ff\J	.	.	.	.	.
+[4bb-\	.	.	.	.	.
+.	.	(16ee\LL	.	(16C/LL	.
+.	.	16dd\JJ)	.	16BB-/JJ)	.
+!	!	!	!	! **Bnum:4_7	!
+!	!	!	!	! **Bnum:._6	!
+8bb-\L]	.	4.ee\	.	4.C/	.
+(16aa\L	.	.	.	.	.
+16gg\JJ)	.	.	.	.	.
+[4aa\	.	.	.	.	.
+.	.	(16dd\LL	.	(16BB-/LL	.
+.	.	16cc\JJ)	.	16AA/JJ)	.
+=10	=10	=10	=10	=10	=10
+!	!	!	!	! **Bnum:._7	!
+8aa\L]	.	4.dd\	.	4BB-/	.
+(16gg\L	.	.	.	.	.
+16ff\JJ)	.	.	.	.	.
+!	!	!	!	! **Bnum:8_6	!
+!	!	!	!	! **Bnum:._&05	!
+8gg\L	.	.	.	4BBn/	.
+8ff\J	.	8dd\	.	.	.
+4ee\	.	8g\L	.	4C/	.
+.	.	8gg\J	.	.	.
+8ccc\L	.	8cc\L	.	8AA/L	.
+8bb-\J	.	(16dd\L	.	16BB-/L	.
+.	.	16ee\JJ)	.	16C/JJ	.
+=11	=11	=11	=11	=11	=11
+(16aa\LL	.	8ff\L	.	8D/L	.
+16gg\)	.	.	.	.	.
+(16bb-\	.	8ff\	.	8BB-/J	.
+16aa\JJ)	.	.	.	.	.
+!	!	!	!	! **Bnum:8._5 4	!
+!	!	!	!	! **Bnum:._b 3	!
+8.gg\L	.	8.ff\	.	4C/	.
+16gg\Jk	.	16ee\Jk	.	.	.
+8ff\L	.	4.ff\	.	4F\	.
+(16gg\L	p	.	.	.	.
+16aa\JJ)	.	.	.	.	.
+!	!	!	!	! **Bnum:._6	!
+[4bb-\	.	.	.	8D/L	p
+.	.	(16ee\LL	p	(16C/L	.
+.	.	16dd\JJ)	.	16BB-/JJ)	.
+=12	=12	=12	=12	=12	=12
+!	!	!	!	! **Bnum:4_7	!
+!	!	!	!	! **Bnum:._6	!
+8bb-\L]	.	4.ee\	.	4.C/	.
+(16aa\L	.	.	.	.	.
+16gg\JJ)	.	.	.	.	.
+[4aa\	.	.	.	.	.
+.	.	(16dd\LL	.	(16BB-/LL	.
+.	.	16cc\JJ)	.	16AA/JJ)	.
+!	!	!	!	! **Bnum:._7	!
+8aa\L]	.	4.dd\	.	4BB-/	.
+(16gg\L	.	.	.	.	.
+16ff\JJ)	.	.	.	.	.
+!	!	!	!	! **Bnum:8_6	!
+!	!	!	!	! **Bnum:._&05	!
+8gg\L	.	.	.	4BBn/	.
+8ff\J	.	8dd\	.	.	.
+=13	=13	=13	=13	=13	=13
+4ee\	.	8g\L	.	4C/	.
+.	.	8gg\J	.	.	.
+8ccc\L	.	8cc\L	.	8AA/L	.
+8bb-\J	.	(16dd\L	.	16BB-/L	.
+.	.	16ee\JJ)	.	16C/JJ	.
+(16aa\LL	.	8ff\L	.	8D/L	.
+16gg\)	.	.	.	.	.
+(16bb-\	.	8ff\	.	8BB-/	.
+16aa\JJ)	.	.	.	.	.
+!	!	!	!	! **Bnum:._5 4	!
+8.gg\L	.	8.ff\	.	8C/	.
+!	!	!	!	! **Bnum:._b 3	!
+.	.	.	.	8CC/J	.
+16gg\Jk	.	16ee\Jk	.	.	.
+=14	=14	=14	=14	=14	=14
+1ff\	.	1ff\	.	1FF/	.
+==|!	==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!GTL: Sonate a tre
+!!!AFT: stage2
+!!!END: 1993/08/16
+!!format changes:
+!!content changes:
+!!public access: complete
+!!!KEY: 1288868359
+!!!EMD: Converted from MuseData to Humdrum Dec 16, 2000, by Andreas Kornstaedt using muse2kern.

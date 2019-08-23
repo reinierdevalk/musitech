@@ -1,0 +1,129 @@
+!!!COM: Corelli, Arcangelo
+!!!OPR: Church Sonata in D Major
+!!!ONM: Opus 5, No. 1
+!!!OTL: Allegro 
+!!!OMV: 1b
+!!!YOR:
+!!!EED: Frances Bennion
+!!!ENC: Frances Bennion
+!!!CDT: 1653/2/17/-1713/1/8/
+!!!OCY: Italia
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved.
+!!!YEM: Refer to licensing agreement for further details.
+!!!YEN: United States of America
+**kern	**kern	**kern
+*k[f#c#]	*k[f#c#]	*k[f#c#]
+*D:	*D:	*D:
+*clefG	*clefG	*clefC
+*M6/8	*M6/8	*M6/8
+*tb16	*tb16	*tb16
+=1	=1	=1
+2.r	2.r	2.r
+=2	=2	=2
+2.r	2.r	2.r
+=3	=3	=3
+16r	2.r	[2.D
+16A	.	.
+16d	.	.
+16f#	.	.
+16a	.	.
+16f#	.	.
+16d	.	.
+16A	.	.
+16d	.	.
+16f#	.	.
+16a	.	.
+16f#	.	.
+=4	=4	=4
+16d	2.r	2.D_
+16d	.	.
+16f#	.	.
+16a	.	.
+16dd	.	.
+16a	.	.
+16f#	.	.
+16d	.	.
+16f#	.	.
+16a	.	.
+16dd	.	.
+16a	.	.
+=5	=5	=5
+16f#	2.r	2.D_
+16a	.	.
+16dd	.	.
+16ff#	.	.
+16aa	.	.
+16ff#	.	.
+16dd	.	.
+16a	.	.
+16dd	.	.
+16ff#	.	.
+16aa	.	.
+16ff#	.	.
+=6	=6	=6
+16dd	2.r	2.D_
+16dd	.	.
+16ff#	.	.
+16aa	.	.
+16ddd	.	.
+16aa	.	.
+16ff#	.	.
+16dd	.	.
+16ff#	.	.
+16aa	.	.
+16ddd	.	.
+16aa	.	.
+=7	=7	=7
+16ff#	2.r	2.D_
+16aa	.	.
+16ddd	.	.
+16aa	.	.
+16ff#	.	.
+16aa	.	.
+16dd	.	.
+16ff#	.	.
+16aa	.	.
+16ff#	.	.
+16dd	.	.
+16ff#	.	.
+=8	=8	=8
+16a	2.r	2.D_
+16dd	.	.
+16ff#	.	.
+16dd	.	.
+16a	.	.
+16dd	.	.
+16f#	.	.
+16a	.	.
+16dd	.	.
+16a	.	.
+16f#	.	.
+16a	.	.
+=9	=9	=9
+16d	2.r	2.D]
+16f#	.	.
+16a	.	.
+16dd	.	.
+16a	.	.
+16f#	.	.
+16d	.	.
+16f#	.	.
+16a	.	.
+16f#	.	.
+16d	.	.
+16f#	.	.
+==	==	==
+*-	*-	*-
+!!!RWG1: This file contains only pitch and duration data.
+!!!RWG2: Transposing instruments are not transposed.
+!!!RWG3: Spines may have incompatible meters.
+!!!RWG4: Durations of rests and tied notes may be interpreted.
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!AFT: stage1
+!!!END: 1997/04/15
+!!format changes:
+!!content changes:
+!!public access: complete
+!!!KEY: 3210732881
+!!!EMD: Converted from MuseData to Humdrum Dec 16, 2000, by Andreas Kornstaedt using muse2kern.

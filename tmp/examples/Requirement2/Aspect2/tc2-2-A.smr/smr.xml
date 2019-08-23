@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!-- edited with XMLSPY v5 rel. 2 U (http://www.xmlspy.com) by Tillman Weyde (Universität Osnabrueck/Forschungsstelle Musik- und Medientechnologie) -->
+<smr>
+	<piece>
+		<score>
+			<layout>
+				<pages top="20" right="20" bottom="20" left="20"/>
+				<distances>
+					<staffLines small="1.16" pageObj="1.8" normal="1.8"/>
+					<systems top="4" between="0"/>
+				</distances>
+				<instrumentNames>
+					<font height="12" face="Times New Roman"/>
+				</instrumentNames>
+				<staves>
+					<staffLayout description="right hand">
+						<notation defaultClef="treble">
+							<barlines to="7" from="3"/>
+						</notation>
+						<distances top="4" bottom="4"/>
+						<instrument abbrev="" name=""/>
+						<sound volume="80" instr="0"/>
+					</staffLayout>
+					<staffLayout description="left hand">
+						<notation defaultClef="bass">
+							<barlines to="7" from="3" mode="internal"/>
+						</notation>
+						<distances top="4" bottom="4"/>
+						<instrument abbrev="" name=""/>
+						<sound volume="80" instr="0"/>
+					</staffLayout>
+				</staves>
+				<spacing abs="16" rel="75"/>
+				<beamFlattening to="29" toMax="55" from="49" fromMax="148"/>
+			</layout>
+			<systems>
+				<system justified="true" instrNotation="long">
+					<context/>
+					<staves>
+						<staff layout="right hand" defaultTime="2/4">
+							<context/>
+							<voices>
+								<voice stemDir="up">
+									<lyricsSettings lineDist="1.5" firstLine="5">
+										<font height="12" face="Times New Roman"/>
+									</lyricsSettings>
+									<noteObjects>
+										<clefSign clef="treble"/>
+										<keySign fifths="-1"/>
+										<timeSign time="2/4"/>
+										<rest>
+											<duration base="1/8"/>
+										</rest>
+										<chord>
+											<duration base="1/8"/>
+											<heads>
+												<head pitch="E5"/>
+												<head pitch="G5"/>
+											</heads>
+										</chord>
+										<rest>
+											<duration base="1/8"/>
+										</rest>
+										<chord>
+											<duration base="1/8"/>
+											<heads>
+												<head pitch="F5"/>
+												<head pitch="A5">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<rest>
+											<duration base="1/8"/>
+										</rest>
+										<chord>
+											<duration base="1/8"/>
+											<heads>
+												<head pitch="E5"/>
+												<head pitch="G5"/>
+											</heads>
+										</chord>
+										<rest>
+											<duration base="1/8"/>
+										</rest>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="split"/>
+											<heads>
+												<head pitch="F5"/>
+												<head pitch="A5">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="force"/>
+											<heads>
+												<head pitch="B5">
+													<alter step="-1"/>
+												</head>
+												<head pitch="D6"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="force"/>
+											<heads>
+												<head pitch="A5"/>
+												<head pitch="C6"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="force"/>
+											<heads>
+												<head pitch="G5"/>
+												<head pitch="B5">
+													<alter step="-1"/>
+												</head>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="split"/>
+											<heads>
+												<head pitch="F5"/>
+												<head pitch="A5"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="force"/>
+											<articulation>
+												<staccato/>
+											</articulation>
+											<heads>
+												<head pitch="E5"/>
+												<head pitch="G5"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<articulation>
+												<staccato/>
+											</articulation>
+											<drawObjects>
+												<drawObj>
+													<text y="-5.5" x="0">
+														<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+														<content>Ê</content>
+													</text>
+													<basic noteRange="1"/>
+												</drawObj>
+											</drawObjects>
+											<heads>
+												<head pitch="F5"/>
+												<head pitch="G5"/>
+												<head pitch="B5"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/4"/>
+											<articulation>
+												<staccato/>
+											</articulation>
+											<drawObjects>
+												<drawObj>
+													<text y="-5.5" x="0">
+														<font pitchAndFamily="2" height="18" charSet="2" face="capella3"/>
+														<content>Ê</content>
+													</text>
+													<basic noteRange="1"/>
+												</drawObj>
+											</drawObjects>
+											<heads>
+												<head pitch="E5"/>
+												<head pitch="G5"/>
+												<head pitch="C6"/>
+											</heads>
+										</chord>
+										<rest>
+											<duration base="1/2"/>
+										</rest>
+										<rest>
+											<duration base="1/2"/>
+										</rest>
+										<rest>
+											<duration base="1/2"/>
+										</rest>
+									</noteObjects>
+								</voice>
+								<voice stemDir="down">
+									<lyricsSettings lineDist="1.5" firstLine="5">
+										<font height="12" face="Times New Roman"/>
+									</lyricsSettings>
+									<noteObjects>
+										<clefSign clef="treble"/>
+										<keySign fifths="-1"/>
+										<timeSign time="2/4"/>
+										<rest>
+											<duration base="1/2"/>
+											<display invisible="true"/>
+										</rest>
+										<rest>
+											<duration base="1/2"/>
+											<display invisible="true"/>
+										</rest>
+										<chord>
+											<duration base="1/2"/>
+											<heads>
+												<head pitch="E5"/>
+											</heads>
+										</chord>
+										<rest>
+											<duration base="1/2"/>
+											<display invisible="true"/>
+										</rest>
+										<rest>
+											<duration base="1/2"/>
+											<display invisible="true"/>
+										</rest>
+										<rest>
+											<duration base="1/2"/>
+											<display invisible="true"/>
+										</rest>
+										<rest>
+											<duration base="1/2"/>
+											<display invisible="true"/>
+										</rest>
+									</noteObjects>
+								</voice>
+							</voices>
+						</staff>
+						<staff layout="left hand" defaultTime="4/4">
+							<context/>
+							<voices>
+								<voice>
+									<lyricsSettings lineDist="1.5" firstLine="5">
+										<font height="12" face="Times New Roman"/>
+									</lyricsSettings>
+									<noteObjects>
+										<clefSign clef="bass"/>
+										<keySign fifths="-1"/>
+										<timeSign time="2/4"/>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="force"/>
+											<heads>
+												<head pitch="C3"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="force"/>
+											<heads>
+												<head pitch="C4"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="force"/>
+											<heads>
+												<head pitch="C3"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="force"/>
+											<heads>
+												<head pitch="C4"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="force"/>
+											<heads>
+												<head pitch="C3"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="force"/>
+											<heads>
+												<head pitch="C4"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="force"/>
+											<heads>
+												<head pitch="C3"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="force"/>
+											<heads>
+												<head pitch="C4"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="force"/>
+											<articulation>
+												<staccato/>
+											</articulation>
+											<heads>
+												<head pitch="C3"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="force"/>
+											<articulation>
+												<staccato/>
+											</articulation>
+											<heads>
+												<head pitch="C4"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="force"/>
+											<articulation>
+												<staccato/>
+											</articulation>
+											<heads>
+												<head pitch="C3"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="force"/>
+											<articulation>
+												<staccato/>
+											</articulation>
+											<heads>
+												<head pitch="C4"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="force"/>
+											<articulation>
+												<staccato/>
+											</articulation>
+											<heads>
+												<head pitch="C3"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="force"/>
+											<articulation>
+												<staccato/>
+											</articulation>
+											<heads>
+												<head pitch="C4"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<beam group="force"/>
+											<articulation>
+												<staccato/>
+											</articulation>
+											<heads>
+												<head pitch="C3"/>
+											</heads>
+										</chord>
+										<chord>
+											<duration base="1/8"/>
+											<articulation>
+												<staccato/>
+											</articulation>
+											<heads>
+												<head pitch="C4"/>
+											</heads>
+										</chord>
+										<rest>
+											<duration base="1/2"/>
+										</rest>
+										<rest>
+											<duration base="1/2"/>
+										</rest>
+										<rest>
+											<duration base="1/2"/>
+										</rest>
+									</noteObjects>
+								</voice>
+							</voices>
+						</staff>
+					</staves>
+				</system>
+			</systems>
+		</score>
+	</piece>
+</smr>

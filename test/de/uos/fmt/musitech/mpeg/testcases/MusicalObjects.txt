@@ -1,0 +1,51 @@
+#this is a list of all objects (or classes) which comprise the
+#containerPool-Hierachy in a piece. This could be a starting point
+#for a format definition
+
+Note
+Voice
+StaffContainer
+Container
+
+Barline
+BarlineContainer
+
+Clef
+ClefContainer
+
+SlurContainer
+BeamContainer
+
+MetricAttachable
+StaffConnector
+
+
+
+#Identification by MPEG types:
+Symbolic Events:
+	Note
+	Voice
+	Barline
+	SlurContainer
+	BeamContainer
+
+Symbolic Qualifiers:
+	MetricAttachable
+	StaffConnector
+	
+Symbolic Selections:
+	Container
+	
+
+#Mapping of the four general aspects:
+Logical aspect:
+	the Container-hierachy under containerPool in Piece
+	
+Audio aspect:
+	the MetricalTimeLine which adds a physical time
+	
+Visual aspect:
+	RenderingHints
+	
+Graphical aspect:
+	possibly RenderingHints as well, but not implemented yet

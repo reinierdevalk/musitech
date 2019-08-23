@@ -1,0 +1,44 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Die Kunst der Fuge
+!!!XEN: The Art of Fugue
+!!!OTL:
+!!!OMV: 2
+!!!SCT: BWV 1080
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxv,1
+!!!EED: Frances Bennion
+!!!ENC: Frances Bennion
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved.
+!!!YEM: Refer to licensing agreement for further details.
+!!!YEN: United States of America
+**kern	**kern	**kern	**kern
+*k[b-]	*k[b-]	*k[b-]	*k[b-]
+*d:	*d:	*d:	*d:
+*clefG	*clefG	*clefC	*clefC
+*M2/2	*M2/2	*M2/2	*M2/2
+=23	=23	=23	=23
+2..r	8.f	4.r	2.r
+4c#	8.A	4E	4AA
+.	16e	.	.
+.	16g	.	.
+.	2a	.	.
+.	.	16A	.
+.	.	8.B	.
+.	.	16c#	.
+==	==	==	==
+*-	*-	*-	*-
+!!!RWG1: This file contains only pitch and duration data.
+!!!RWG2: Transposing instruments are not transposed.
+!!!RWG3: Spines may have incompatible meters.
+!!!RWG4: Durations of rests and tied notes may be interpreted.
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!AFT: stage1
+!!!END: 1997/04/15/
+!!format changes:
+!!content changes:
+!!public access: complete
+!!!KEY: 2585474646
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

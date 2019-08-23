@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<smr>
+<piece>
+<score>
+	<layout>
+		<pages top="20" right="20" bottom="20" left="20"/>
+		<distances>
+			<staffLines small="1.2" pageObj="1.8" normal="1.64"/>
+			<systems top="8" between="0"/>
+		</distances>
+		<instrumentNames>
+			<font height="12" face="Times New Roman"/>
+		</instrumentNames>
+		<staves>
+			<staffLayout description="unbenannt1">
+				<notation defaultClef="treble">
+					<barlines to="7" from="3" mode="internal"/>
+				</notation>
+				<distances top="11" bottom="11"/>
+				<instrument abbrev="" name=""/>
+				<sound volume="80" instr="0"/>
+			</staffLayout>
+		</staves>
+		<spacing abs="16" rel="75"/>
+		<beamFlattening to="29" toMax="55" from="49" fromMax="148"/>
+	</layout>
+	<pageObjects>
+		<drawObj>
+			<text y="66.34375" x="47.1875" align="center">
+				<font height="10" face="Times New Roman"/>
+				<content>© 1962 MPL Communication Ltd.</content>
+			</text>
+		</drawObj>
+		<drawObj>
+			<text y="3.40625" x="47.15625" align="center">
+				<font height="18" weight="700" face="Times New Roman"/>
+				<content>Love Me Do</content>
+			</text>
+		</drawObj>
+		<drawObj>
+			<text y="6.3125" x="9.28125">
+				<font height="10" face="Times New Roman"/>
+				<content>Moderately</content>
+			</text>
+		</drawObj>
+		<drawObj>
+			<text y="6.3125" x="75">
+				<font height="10" weight="700" face="Times New Roman"/>
+				<content>Lennon/McCartney</content>
+			</text>
+		</drawObj>
+	</pageObjects>
+	<barCount y="3.5" x="0">
+		<font height="12" italic="true" face="Times New Roman"/>
+	</barCount>
+	<systems>
+		<system justified="true" instrNotation="long" leftIndent="10">
+			<context/><staves>
+				<staff layout="unbenannt1" defaultTime="4/4">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="6">
+								<font height="8" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<timeSign time="C"/>
+								<barline type="repBegin"/>
+								<chord>
+									<duration base="1/2"/>
+									<lyric>
+										<verse i="0">Love,</verse>
+									</lyric>
+									<heads>
+										<head pitch="D6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<lyric>
+										<verse i="0">love</verse>
+									</lyric>
+									<heads>
+										<head pitch="D6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<lyric>
+										<verse i="0">me</verse>
+									</lyric>
+									<heads>
+										<head pitch="F6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<lyric>
+										<verse i="0" align="left" extender="true">do,</verse>
+									</lyric>
+									<heads>
+										<head pitch="G6">
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<heads>
+										<head pitch="G6">
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/4"/>
+								</rest>
+								<rest>
+									<duration base="1/4"/>
+								</rest>
+								<chord>
+									<duration base="1/4"/>
+									<lyric>
+										<verse i="0">you</verse>
+									</lyric>
+									<heads>
+										<head pitch="F6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<lyric>
+										<verse i="0">know</verse>
+									</lyric>
+									<heads>
+										<head pitch="D6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<lyric>
+										<verse i="0">I</verse>
+									</lyric>
+									<heads>
+										<head pitch="D6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<lyric>
+										<verse i="0">love</verse>
+									</lyric>
+									<heads>
+										<head pitch="F6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<lyric>
+										<verse i="0" align="left" extender="true">you,</verse>
+									</lyric>
+									<heads>
+										<head pitch="G6">
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<heads>
+										<head pitch="G6">
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/4"/>
+								</rest>
+								<rest>
+									<duration base="1/4"/>
+								</rest>
+								<chord>
+									<duration base="1/4"/>
+									<lyric>
+										<verse i="0">I'll</verse>
+									</lyric>
+									<heads>
+										<head pitch="F6"/>
+									</heads>
+								</chord>
+							</noteObjects>
+						</voice>
+						<voice stemDir="down">
+							<lyricsSettings lineDist="1.5" firstLine="-9.5">
+								<font height="10" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<timeSign time="C"/>
+								<barline type="repBegin"/>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="0">G</verse>
+									</lyric>
+									<drawObjects>
+										<drawObj>
+											<guitar y="-8" x="-1" strings="320003" thickNut="true"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="0">C</verse>
+									</lyric>
+									<drawObjects>
+										<drawObj>
+											<guitar y="-8" x="-1" strings="/32010" thickNut="true"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="0">G</verse>
+									</lyric>
+									<drawObjects>
+										<drawObj>
+											<guitar y="-8" x="-1" strings="320003" thickNut="true"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="0">C</verse>
+									</lyric>
+									<drawObjects>
+										<drawObj>
+											<guitar y="-8" x="-1" strings="/32010" thickNut="true"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+			</staves>
+		</system>
+		<system justified="true" instrNotation="short">
+			<context/><staves>
+				<staff layout="unbenannt1" defaultTime="C">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="6">
+								<font height="8" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<chord>
+									<duration base="1/2"/>
+									<lyric>
+										<verse i="0" hyphen="true">al</verse>
+									</lyric>
+									<heads>
+										<head pitch="D6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<lyric>
+										<verse i="0">ways</verse>
+									</lyric>
+									<heads>
+										<head pitch="D6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<lyric>
+										<verse i="0">be</verse>
+									</lyric>
+									<heads>
+										<head pitch="F6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<lyric>
+										<verse i="0" align="left" extender="true">true,</verse>
+									</lyric>
+									<heads>
+										<head pitch="G6">
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<heads>
+										<head pitch="G6">
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/4"/>
+								</rest>
+								<rest>
+									<duration base="1/4"/>
+								</rest>
+								<chord>
+									<duration base="1/4"/>
+									<lyric>
+										<verse i="0">So</verse>
+									</lyric>
+									<heads>
+										<head pitch="D6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<lyric>
+										<verse i="0" hyphen="true">plea</verse>
+									</lyric>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-4" x2="1.75" y1="-2.5" x3="-0.75" y3="-4" x1="0.75" y4="-2.5" x4="0.25"/>
+											<basic noteRange="4"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="E6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<lyric>
+										<verse i="0" hyphen="true"/></lyric>
+									<heads>
+										<head pitch="D6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<lyric>
+										<verse i="0" hyphen="true"/></lyric>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/1"/>
+									<lyric>
+										<verse i="0" align="left" extender="true">ease</verse>
+									</lyric>
+									<heads>
+										<head pitch="E6">
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<heads>
+										<head pitch="E6">
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/4"/>
+								</rest>
+								<chord>
+									<duration base="1/4"/>
+									<lyric>
+										<verse i="0">love</verse>
+									</lyric>
+									<drawObjects>
+										<drawObj>
+											<text y="-5.5" x="0">
+												<font pitchAndFamily="2" height="12" charSet="2" face="capella3"/>
+												<content>K</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<lyric>
+										<verse i="0">me</verse>
+									</lyric>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+							</noteObjects>
+						</voice>
+						<voice stemDir="down">
+							<lyricsSettings lineDist="1.5" firstLine="-9.5">
+								<font height="10" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="0">G</verse>
+									</lyric>
+									<drawObjects>
+										<drawObj>
+											<guitar y="-8" x="-1" strings="320003" thickNut="true"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="0">C</verse>
+									</lyric>
+									<drawObjects>
+										<drawObj>
+											<guitar y="-8" x="-1" strings="/32010" thickNut="true"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-5.5" x="0">
+												<font pitchAndFamily="2" height="12" charSet="2" face="capella3"/>
+												<content>K</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<drawObjects>
+										<drawObj>
+											<text y="-5.5" x="0">
+												<font pitchAndFamily="2" height="12" charSet="2" face="capella3"/>
+												<content>K</content>
+											</text>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+			</staves>
+		</system>
+		<system justified="true" instrNotation="short">
+			<context/><staves>
+				<staff layout="unbenannt1" defaultTime="C">
+					<context/><voices>
+						<voice>
+							<lyricsSettings lineDist="1.5" firstLine="6">
+								<font height="8" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<chord>
+									<duration base="1/8"/>
+									<lyric>
+										<verse i="0" align="left" extender="true">do</verse>
+									</lyric>
+									<drawObjects>
+										<drawObj>
+											<slur y2="2.59375" x2="1.5" y1="1" x3="-0.96875" y3="3.28125" x1="0.75" y4="2" x4="0.25"/>
+											<basic noteRange="2"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<lyric>
+										<verse i="0" align="left" extender="true"/></lyric>
+									<heads>
+										<head pitch="G5">
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration dots="1" base="1/2"/>
+									<heads>
+										<head pitch="G5">
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/4"/>
+								</rest>
+								<chord>
+									<duration base="1/4"/>
+									<lyric>
+										<verse i="0" align="left" extender="true">Oo</verse>
+									</lyric>
+									<drawObjects>
+										<drawObj>
+											<slur y2="-3.4375" x2="1.78125" y1="-2" x3="-0.6875" y3="-3.03125" x1="0.75" y4="-1.5" x4="0.25"/>
+											<basic noteRange="1"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="D6"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<heads>
+										<head pitch="C6"/>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1/8"/>
+								</rest>
+								<chord>
+									<duration base="1/8"/>
+									<lyric>
+										<verse i="0" align="left" extender="true">Love</verse>
+									</lyric>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<heads>
+										<head pitch="B5">
+											<alter step="-1"/>
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<lyric>
+										<verse i="0">me</verse>
+									</lyric>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/8"/>
+									<lyric>
+										<verse i="0" align="left" extender="true">do.</verse>
+									</lyric>
+									<heads>
+										<head pitch="G5">
+											<tie begin="true"/>
+										</head>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/2"/>
+									<heads>
+										<head pitch="G5">
+											<tie end="true"/>
+										</head>
+									</heads>
+								</chord>
+								<rest>
+									<duration base="1"/>
+									<display churchStyle="true"/>
+								</rest>
+								<barline type="repEnd"/>
+							</noteObjects>
+						</voice>
+						<voice stemDir="down">
+							<lyricsSettings lineDist="1.5" firstLine="-9.5">
+								<font height="10" face="Times New Roman"/>
+							</lyricsSettings>
+							<noteObjects>
+								<clefSign clef="treble"/>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="0">G</verse>
+									</lyric>
+									<drawObjects>
+										<drawObj>
+											<guitar y="-8" x="-1" strings="320003" thickNut="true"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="0">C</verse>
+									</lyric>
+									<drawObjects>
+										<drawObj>
+											<guitar y="-8" x="-1" strings="/32010" thickNut="true"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="0">G</verse>
+									</lyric>
+									<drawObjects>
+										<drawObj>
+											<guitar y="-8" x="-1" strings="320003" thickNut="true"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="G5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="0">C</verse>
+									</lyric>
+									<drawObjects>
+										<drawObj>
+											<guitar y="-8" x="-1" strings="/32010" thickNut="true"/>
+										</drawObj>
+									</drawObjects>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<chord>
+									<duration base="1/4"/>
+									<display invisible="true"/>
+									<lyric>
+										<verse i="3">/</verse>
+									</lyric>
+									<heads>
+										<head pitch="C5"/>
+									</heads>
+								</chord>
+								<barline type="repEnd"/>
+							</noteObjects>
+						</voice>
+					</voices>
+				</staff>
+			</staves>
+		</system>
+	</systems>
+</score>
+</piece>
+</smr>

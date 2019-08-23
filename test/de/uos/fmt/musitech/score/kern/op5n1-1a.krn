@@ -1,0 +1,45 @@
+!!!COM: Corelli, Arcangelo
+!!!OPR: Church Sonata in D Major
+!!!ONM: Opus 5, No. 1
+!!!OTL: Grave 
+!!!OMV: 1a
+!!!YOR:
+!!!EED: Frances Bennion
+!!!ENC: Frances Bennion
+!!!CDT: 1653/2/17/-1713/1/8/
+!!!OCY: Italia
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved.
+!!!YEM: Refer to licensing agreement for further details.
+!!!YEN: United States of America
+**kern	**kern	**kern
+*k[f#c#]	*k[f#c#]	*k[f#c#]
+*D:	*D:	*D:
+*clefG	*clefG	*clefC
+*M4/4	*M4/4	*M4/4
+*tb16	*tb16	*tb16
+=1	=1	=1
+[2d	1r	[1D
+8d]	.	.
+8f#	.	.
+8e	.	.
+8d	.	.
+=2	=2	=2
+4b	1r	4D]
+8.a	.	4C#
+16g	.	.
+2f#	.	2D
+=3	=3	=3
+*-	*-	*-
+!!!RWG1: This file contains only pitch and duration data.
+!!!RWG2: Transposing instruments are not transposed.
+!!!RWG3: Spines may have incompatible meters.
+!!!RWG4: Durations of rests and tied notes may be interpreted.
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!AFT: stage1
+!!!END: 1997/04/15
+!!format changes:
+!!content changes:
+!!public access: complete
+!!!KEY: 2464429379
+!!!EMD: Converted from MuseData to Humdrum Dec 16, 2000, by Andreas Kornstaedt using muse2kern.

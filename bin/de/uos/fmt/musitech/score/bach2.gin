@@ -1,0 +1,24 @@
+/* 
+** $Id: bach2.gin,v 1.2 2002/10/04 12:05:39 mgieseki Exp $
+** Anfang aus J.S.Bachs Choral "Wie schön leuchtet der Morgenstern"
+** Script zum Testen des Notenmoduls  
+*/
+
+// Sopran
+Cc:-2 K2+ T(4/4)
+f | ''8[c'bag] 4f''c | ddcc | defe | ddc
+;;
+
+// Alt
+Cc:0 K2+ T(4/4)
+'c | cc 8[de] 4f | fffg | a g 8[fg] 4g | ffe
+;;
+
+// Tenor
+Cc:1 K2+ T(4/4)
+,a | g 8[fg][ab] 4'c | [8c,16ba]8[bb] 4a'c | c,b! 8['cde,g] | [a'd] 4,b! 'c 
+;;
+
+// Bass
+Cf:1 K2+ T(4/4)
+,f|e 8[fe] 4d ,,a | 8[b,cde] 4fe |f g 8[ab!'c,e] | [fd] 4gc

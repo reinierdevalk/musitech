@@ -1,0 +1,53 @@
+!!!COM: Mozart, Wolfgang Amadeus
+!!!OPR: Concerto in B-flat Major
+!!!OTL: Allegro
+!!!OMV: 1
+!!!SCT: K 450
+!!!SCA: Chronologisch-thematisches Verzeichnis sämtlicher Tonwerke Wolfgang Amade Mozarts (L. von Köchel; 1862, 2/1905, 3/1937, 1947)
+!!!YOR: Breitkopf & Härtel Edition
+!!!EED: Frances Bennion
+!!!ENC: Frances Bennion
+!!!CDT: 1756/1/27/-1791/12/5/
+!!!OCY: Österreich
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved.
+!!!YEM: Refer to licensing agreement for further details.
+!!!YEN: United States of America
+**kern	**dynam	**kern	**dynam
+*I:Oboe 1, 2	*I:Oboe 1, 2	*I:Fagotto 1, 2	*I:Fagotto 1, 2
+*clefG2	*	*clefF4	*
+*k[b-e-]	*	*k[b-e-]	*
+*B-:	*	*B-:	*
+*M4/4	*	*M4/4	*
+! Allegro	!	!	!
+! TUTTI	!	!	!
+*	*	*	*
+=0-	=0-	=0-	=0-
+*^	*	*^	*
+2ryy	8b-'\Lxx	.	2ryy
+.	8cc'\Jxx	.	.
+.	2ryy	.	.
+4ryy	.	.	4ryy
+8dd'\Lxx	4ryy	p	8d'\L
+8ee-'\Jxx	.	.	8e-'\J
+=1	=1	=1	=1
+(8een\L	8cc#\L	.	(8en\L
+8ff\)	8dd\	.	8f\)
+8dd'\	8b-\	.	8d'\
+8ee-'\J	8ccn\J	.	8e-'\J
+(8een\L	8cc#\L	.	(8en\L
+8ff\)	8dd\	.	8f\)
+8dd'\	8b-\	.	8d'\
+8ee-'\J	8ccn\J	.	8e-'\J
+==|!	==|!	==|!	==|!	==|!	==|!	==|!	==|!	==|!	==|!	==|!	==|!	==|!	==|!	==|!	==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-	*-	*-	*-	*-	*-	*-	*-	*-	*-	*-	*-	*-	*-	*-	*-
+!!!RWG: Appoggiaturas of spine 'Piano' need manual editing in measures: 59, 72, 87, 111, 136, 193, 195, 283
+!!!RWG: Appoggiaturas of spine 'Violino I' need manual editing in measures: 2, 6, 6
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!AFT: stage2
+!!!END: 1996/03/04
+!!format changes:
+!!content changes:
+!!public access: complete
+!!!KEY: 3086627713
+!!!EMD: Converted from MuseData to Humdrum Dec 16, 2000, by Andreas Kornstaedt using muse2kern.

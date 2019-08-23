@@ -1,0 +1,13 @@
+!!!**kern example file
+!!!COM: Bach, Johann Sebastian
+!!!OTL: Praeambulum BWV 390
+!!!Part of J.S. Bach's Praeambulum BWV 390
+!!!See http://dactyl.som.ohio-state.edu/Humdrum/guide02.html
+**kern	**kern
+*staff2	*staff1
+*clefF4	*clefG2
+*k[b-]	*k[b-]
+*M4/4	*M4/4
+=1-	=1-
+1d/	1c/
+*-	*-

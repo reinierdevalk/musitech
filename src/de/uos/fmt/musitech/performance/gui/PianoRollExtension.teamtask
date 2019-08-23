@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TeamTask>
+	<TeamTaskMeta>
+		<CreationDate format="yyyy-MM-dd :: HH:mm:ss z">2002-12-17 :: 14:08:04 CET</CreationDate>
+		<LastModificationDate format="yyyy-MM-dd :: HH:mm:ss z">2002-12-17 :: 14:20:47 CET</LastModificationDate>
+	</TeamTaskMeta>
+	<Summary>PianoRollExtension</Summary>
+	<User>tweyde</User>
+	<Id>FFFFFFFFF94A78A2</Id>
+	<Module>musitech</Module>
+	<AssignedTo>Alexander.Luedeke@gmx.de</AssignedTo>
+	<State description="Assigned" index="1" />
+	<Severity description="Enhancement" index="0" />
+	<Description>PianoRollDisplay should be extended to display 
+Containers to mark up musical structures based on subsets of notes.</Description>
+	<Notification>
+		<Recipient>aluedeke@uos.de</Recipient>
+		<Recipient>tweyde@uos.de</Recipient>
+	</Notification>
+	<NoteHistory>
+		<Note user="tweyde">
+			<NoteMeta>
+				<NoteDate format="yyyy-MM-dd :: HH:mm:ss z">2002-12-17 :: 14:20:06 CET</NoteDate>
+			</NoteMeta>
+			Some notes
+		</Note>
+	</NoteHistory>
+</TeamTask>
+

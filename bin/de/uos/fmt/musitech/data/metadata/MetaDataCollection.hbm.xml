@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="de.uos.fmt.musitech.data.metadata.MetaDataCollection"
+        table="MetaDataCollection"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="uid"
+            column="uid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <list
+            name="listOfProfiles"
+            table="profiles_in_MDColl"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+        >
+
+              <key
+                  column="coll_id"
+              >
+              </key>
+
+              <index
+                  column="position"
+              />
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.metadata.MetaDataProfile"
+                  column="object_id"
+                  outer-join="auto"
+               />
+
+        </list>
+
+        <many-to-one
+            name="describedObject"
+            class="de.uos.fmt.musitech.data.MObject"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            foreign-key="uid"
+            column="describedObject"
+        />
+
+        <map
+            name="dataMap"
+            table="obj_in_MDColl"
+            lazy="false"
+            sort="unsorted"
+            inverse="false"
+            cascade="all"
+        >
+
+              <key
+                  column="MDColl_id"
+              >
+              </key>
+
+              <index
+                  column="item_id"
+                  type="java.lang.String"
+              />
+
+              <many-to-many
+                  class="de.uos.fmt.musitech.data.metadata.MetaDataItem"
+                  column="MetaDataItem"
+                  outer-join="auto"
+               />
+
+        </map>
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-MetaDataCollection.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

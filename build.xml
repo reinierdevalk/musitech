@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The ant-build-file for the musitech project -->
+<project name="musitech" default="all">
+
+<!-- the base directories -->
+<property name="build.source"    value="src"/>
+<property name="build.bin"     value="bin"/>
+
+<!-- the classpath to use -->
+<!--path id="neumes.class.path">
+	<pathelement path="${classpath}"/>
+		<fileset dir="./lib">
+		<include name="**/*.jar"/>
+	</fileset>
+</path-->
+
+<!-- how to obfuscate -->
+<taskdef name="obfuscate" 
+     classname="com.yworks.yguard.ObfuscatorTask" 
+     classpath="./lib/yguard.jar"/>
+     
+
+<!-- make all the musitech package -->
+<target name="all" description="Build the complete musitech package" 
+	depends="jar,obfuscate">
+	<!-- depends="jar,sign, copy, obfuscate" -->
+</target>
+
+<!-- target name="compile" description="Compile the complete musitech package" 
+	    depends="clean">
+	<javac debug="off" srcdir="${build.source}" />
+</target -->
+
+<target name="clean" description="Delete bin directory">
+   <delete dir="${build.bin}" quiet="true" />
+   <delete dir="./doc" quiet="true" />
+   <delete quiet="true">
+		<fileset dir=".">
+			<include name="*.jar"/>
+		</fileset>
+	</delete>
+   <delete quiet="true">
+		<fileset dir=".">
+			<include name="*log.*"/>
+		</fileset>
+	</delete>
+   <delete quiet="true">
+		<fileset dir=".">
+			<include name="source.zip"/>
+		</fileset>
+	</delete>
+</target>
+
+<target name="jar" description="Make the musitech.jar">
+	<jar destfile="../musitech-jar/lib/musitech.jar" 
+	basedir="${build.bin}" 
+		includes="**/*.class **/RenderingHints.xml **/*.gif **/*.ttf **/*.fmx **/*.png **/*.properties">
+	<!--	includes="**/*.*"-->
+	<!--	includes="**/*.class **/*.gif **/*.jpg **/*.ttf **/*.fmx **/*.png **/*.wav" -->
+	<manifest>
+      	<attribute name="Main-Class" value="de.uos.fmt.musitech.mpeg.FileViewer"/>
+    </manifest>
+	</jar>
+	<!--index="true" update="false"/-->
+</target>
+
+<target name="obfuscate" description="Make an obfuscated version of musitech.jar">
+ 	<obfuscate replaceclassnamestrings="false">
+        <!--logfile="log.xml"-->
+	    <inoutpair in="../musitech-jar/lib/musitech.jar" out="../musitech-jar/lib/mt_ob.jar"/>
+	    <property name="language-conformity" value="illegal"/>
+	    <property name="naming-scheme" value="small"/>
+	    <!-- property name="error-checking" value="pedantic"/ -->
+ 		 <externalclasses>
+	        <pathelement location="lib/junit.jar"/>
+	        <pathelement location="lib/antlr.jar"/>
+	        <pathelement location="lib/jl1.0.jar"/>
+	        <pathelement location="lib/batik.jar"/>
+	    </externalclasses>        
+ 		<expose>
+             <class classes="private" 
+                       methods="private" fields="private">
+                   <patternset>
+                    <include name="**.*"/>
+                    <!--include name="de.uos.fmt.musitech.data.**.*"/>
+                    <include name="de.uos.fmt.musitech.framework.**.*"/>
+                    <include name="de.uos.fmt.musitech.score.**.*"/>
+                    <include name="de.uos.fmt.musitech.metadata.*"/>
+                    <include name="de.uos.fmt.musitech.**.*"/>
+                    <include name="de.uos.fmt.musitech.structure.form.**.*"/>
+                    <include name="de.uos.fmt.musitech.utility.collection.**.*"/>
+                    <include name="de.uos.fmt.musitech.performance.**.*"/-->
+                   </patternset>
+               </class>
+           </expose>
+	</obfuscate>
+</target>
+
+<target name="zipsource">
+	<zip 	destfile="source.zip" 
+			basedir="source"
+			includes="**/*.java,**/*.html">
+	</zip>
+</target>
+
+<!--jarsigner -keystore /musitech.store -storepass PlanSchI musitech.jar musitech-->
+
+<!--target name="sign" depends="obfuscate" description="Sign the jar-files"-->
+<target name="sign" description="Sign the jar-files">
+	<!--signjar keystore="C:\Programme\eclipse3\javasign\musitech.store" jar="../musitech-jar/lib/musitech.jar" alias="musitech" storepass="PlanSchI"/-->
+	<!--signjar 
+		keystore="suresh.store" 
+		jar="DataEntry.jar" 
+		alias="harvard" 
+		storepass="neumes"
+		/>
+	<signjar 
+		keystore="suresh.store" 
+		jar="DataEntryDebug.jar" 
+		alias="harvard" 
+		storepass="neumes"
+		/-->
+	<!-- this does not work becaus for keystore only files are accepted -->
+	<!--exec executable="jarsign" failonerror="true">
+		<arg line=" -keystore http://scribe.fas.harvard.edu/NEUMES/neumes_edit/suresh.store -storepass neumes DataEntry.jar harvard" />
+	</exec-->
+</target>
+	
+<target name="copy" depends="jar,obfuscate" description="Copy jar-files from musitech-jar project to other project.">
+	<copy file="../musitech-jar/lib/musitech.jar" todir="../MTApps/applet"/>	
+	<!--copy file="musitech.jar" todir="../Material/Tutorial"/-->	
+	<!--copy file="musitech.jar" todir="../Material/www/Demos"/-->	
+	<copy file="../musitech-jar/lib/musitech.jar" todir="../GMTH04"/>	
+    <copy file="../musitech-jar/lib/musitech.jar" todir="../musitech-jar/lib"/>
+    <copy file="../musitech-jar/lib/mt_ob.jar" todir="../ExerciseGen/lib"/>
+</target>
+	
+<target name="javadoc">
+    <javadoc access="public" author="true" 
+        classpath="lib/AppleJavaExtensions.jar;lib/smoothmetal.jar;lib/antlr.jar;lib/batik.jar;lib/java_mp3.jar;lib/junit.jar;lib/jl1.0.jar;lib/mp3spi1.9.jar" 
+        destdir="../musitech-jar/doc" 
+        nodeprecated="false" 
+        nodeprecatedlist="false" 
+        noindex="false" 
+        nonavbar="false" 
+        notree="false" 
+        sourcepath="src" 
+        splitindex="true" 
+        use="true" 
+        version="true" />
+</target>
+
+<target name="zipdoc" depends="javadoc">
+    <zip destfile="../musitech-jar/musitech-doc.zip">
+        <fileset dir="../musitech-jar/doc"/>
+    </zip>
+	<delete>
+</delete>
+
+</target>
+
+ 
+</project>
+ 

@@ -1,0 +1,59 @@
+<HTML>
+<BODY>
+The framework for building 
+up and working with editors and on basic concrete editors.
+<br>
+<br> All editors should be subclasses of <code>AbstractEditor</code>.
+<br> There are mainly two types of editors (which are themselves dirct subclasses
+of <code>AbstractEditor</code>): 
+
+<br> i) "Simple editors" (inherited from <code>AbstractSimpleEditor</code>) which have the task to 
+edit a "simple" property of an object. "Simple" basically means that the editor can be displayed on one
+single row i. e. have either a primite or a String to edit. Some "simple" objects
+like <code>de.uos.fmt.musitech.utility.Rational</code> (which has only to properties)
+meight get simple editors as well.
+
+<br> ii) "Complex editors" (inherited from <code>AbstractComplexEditor</code>) which
+have the task to edit more complex objects by using other editors for all
+properties of the object. These other editors are called "children" of the complex editor.
+(This mechanism can be used recursivly of course.) So a complex editor does not
+contain any GUI for user input itself but rather display editors which have a GUI
+for user input - either by being a simple editor or by containing children which
+contain finnally simple editors as children.
+<br>
+
+<br> Another important distinction comes with the field <code>propertyName</code>
+into play. This field contains the name of the <i>property</i> of the object to be edited.
+If this field is null it is assumed that the edior stands for the given object itself.
+These editors - refered to as "outmost editor" - should be the "root" editors 
+which are themselves no children of any other editor. So changes are set to 
+the so called <code>editObj</code> (object to be edited) directly - rather than
+to the property with the name <code>propertyName</code> of <code>editObj</code>.
+<br>
+
+<br> Changes are applyed via reflection access in the simple editors.
+These editors have a local copy of the property they edit (<code>propertyValue</code>)
+and a <i>reference</i> to the object which has this property (<code>editObj</code>).
+Notice that this object meight be a property of a more complex object.
+<br>
+
+<br> There is a panel (<code>EditorPanel</code>) having buttons for 
+"OK", "Cancel" and "Apply" to be used for display of editors. This panel provides
+the neccessary functionlity to react to these buttons. It can be put
+into a <code>EditorWindow</code> which has an <code>EditorPanel</code>
+and methods to set editors to it directly.
+<br>
+
+<br> The <code>EditorFactory</code> provides useful methods to get an instance
+of either <code>AbstractComplexEditor</code> or <code>AbstractSimpleEditor</code>.
+So if you only want to <i>use</i> editors you should not need to bother with
+these <code>propertyName</code> and <code>editObj</code> things: just invoke
+EditorFactory.createEdtior(Object).
+<br>
+
+<br> The interface <code>Editable</code> can be used to specify a specific profile
+for an object. Such a profile is an instance of <code>EditorProfile</code>. 
+<br>The EditorFactory uses these profiles if they exist.
+
+</BODY>
+</HTML>

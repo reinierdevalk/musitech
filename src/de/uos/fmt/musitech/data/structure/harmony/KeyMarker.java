@@ -124,7 +124,7 @@ public class KeyMarker extends TimedMetrical implements Marker{
 
     /**
      * setAccidentalNum Sets number of accidentals and adjusts root and
-     * rootAccidental if necessary while the mode's actual value does not
+     * rootAlteration if necessary while the mode's actual value does not
      * change.
      * 
      * @param i accidentalNum to be set
@@ -135,7 +135,7 @@ public class KeyMarker extends TimedMetrical implements Marker{
         // 6.");
         alterationNum = i;
         ScorePitch tp = determineRootAndAccidental(i, mode);
-        root = tp.getDiatonic();
+        root = Character.toUpperCase(tp.getDiatonic()); // rdv 23.11.22: was root = tp.getDiatonic()
         rootAlteration = tp.getAlteration();
     }
 
@@ -391,7 +391,7 @@ public class KeyMarker extends TimedMetrical implements Marker{
 	public String toString() {
 
         return "KeyMarker  at " + getMetricTime() + ": " + getTime() + "ms, root: " + getRoot()
-               + ", mode: " + modeString(mode) + ", rootAccidental: " + getRootAccidental();
+               + ", mode: " + modeString(mode) + ", rootAccidental: " + getRootAlteration(); // getRootAccidental();
     }
 
     /**

@@ -159,11 +159,7 @@ public class Piece implements MObject, Named, Containable, IMPEGSerializable {
 		selectionPool = new BasicContainer<Container<?>>(context);
 		selectionPool.setName("Selections");
 	}
-	
-	
-	public void doSth(int arg) {
-		System.out.println(arg);
-	}
+
 
 	/**
 	 * @see java.lang.Object#equals(java.lang.Object)

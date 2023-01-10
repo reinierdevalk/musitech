@@ -102,7 +102,7 @@ public class Note implements MObject, java.io.Serializable, Containable, Metrica
     private RenderingHints renderingHints;
 
     /**
-     * Construcor taking a ScoreNote and a ParformanceNote.
+     * Constructor taking a ScoreNote and a PerformanceNote.
      * 	
      * @param argScoreNote The score note.
      * @param srcPerformanceNote The performance note.

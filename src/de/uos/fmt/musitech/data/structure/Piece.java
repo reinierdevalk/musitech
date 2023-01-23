@@ -162,6 +162,28 @@ public class Piece implements MObject, Named, Containable, IMPEGSerializable {
 
 
 	/**
+	 * Copy constructor.
+	 * @param p
+	 * @author Reinier
+	 */
+	public Piece(Piece p) {
+		this.context = p.getContext();
+		this.audioPool = p.getAudioPool();
+		this.harmonyTrack = p.getHarmonyTrack();
+		this.metricalTimeLine = p.getMetricalTimeLine();
+		this.timeLine = p.getTimeLine();
+		this.containerPool = p.getContainerPool();
+		this.selectionPool = p.getSelectionPool();
+
+		this.name = p.getName();
+		this.metaMap = p.getMetaMap();
+		this.score = p.getScore();
+		this.mapKeyList = p.getMapKeyList();
+		this.mapValueList = p.getMapValueList();
+	}
+
+
+	/**
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	public boolean equals(Object obj) {

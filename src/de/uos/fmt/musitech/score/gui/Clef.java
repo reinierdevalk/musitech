@@ -123,7 +123,8 @@ public class Clef extends ScoreObject
 		 throw new IllegalArgumentException("unknown clef type");
 	}
 
-   int arrange (int pass)
+   @Override
+int arrange (int pass)
    {
       if (pass == 0)
       {
@@ -152,7 +153,7 @@ public class Clef extends ScoreObject
    }
    
    int getOctaveShift() {
-   		return -((int)transposition / 12);
+   		return -(transposition / 12);
    }
 	
 	/** Returns the line this Clef sits on. 0 means the bottom line. */
@@ -165,6 +166,7 @@ public class Clef extends ScoreObject
 	 * clef changes inside a staff. */
    public boolean isSmall() {return small;}
 
+	@Override
 	public void paint(Graphics g) 
 	{
 	   if (!isVisible())
@@ -218,14 +220,16 @@ public class Clef extends ScoreObject
 	}
 
 
-   public int rwidth() {
+   @Override
+public int rwidth() {
    		if (!isVisible())
    			return 0;
    	
    		return MusicGlyph.width(staff().getLineDistance(), getGlyph());
    }
    
-   public int height() {
+   @Override
+public int height() {
 		int clefHeight = MusicGlyph.height(staff().getLineDistance(), getGlyph());
 		if (transposition == 12) {
 	   		char eight = 254;
@@ -237,7 +241,8 @@ public class Clef extends ScoreObject
 		return clefHeight;
    }
 
-   public int depth() {
+   @Override
+public int depth() {
    		int clefDepth = MusicGlyph.depth(staff().getLineDistance(), getGlyph());
    		if (transposition == -12) {
 	   		char eight = 254;
@@ -256,7 +261,8 @@ public class Clef extends ScoreObject
    
    public void setShape(char newType) {shape = newType;}
    
-   Class parentClass ()  {return Measure.class;}
+   @Override
+Class parentClass ()  {return Measure.class;}
 
 
    public int optimalSpace()

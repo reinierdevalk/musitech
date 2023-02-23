@@ -50,8 +50,6 @@ above is subject to the following three conditions:
  */
 package de.uos.fmt.musitech.framework.editor;
 
-import javax.swing.JComponent;
-
 /**
  * Interface for JComponents to add possibility of MouseEdits
  * 

@@ -62,6 +62,7 @@ public class MidiToObjectReceiver implements Receiver{
 	/* (non-Javadoc)
 	 * @see javax.sound.midi.Receiver#close()
 	 */
+	@Override
 	public void close() {
 		// Auto-generated method stub
 		
@@ -70,6 +71,7 @@ public class MidiToObjectReceiver implements Receiver{
 	/* (non-Javadoc)
 	 * @see javax.sound.midi.Receiver#send(javax.sound.midi.MidiMessage, long)
 	 */
+	@Override
 	public void send(MidiMessage message, long timeStamp) {
 		// TODO Midireader modifizieren, so dass er online arbeitet
 		

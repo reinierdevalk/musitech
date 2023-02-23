@@ -68,6 +68,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JToggleButton;
+import javax.swing.ScrollPaneConstants;
 
 import de.uos.fmt.musitech.data.structure.Context;
 import de.uos.fmt.musitech.data.structure.Note;
@@ -136,6 +137,7 @@ public class MidiTest extends JFrame {
 		fillVoice(p, voice2);
 		
 		addWindowListener(new WindowAdapter() {
+			@Override
 			public void windowClosing(WindowEvent ev) {
 				System.exit(0);
 			}
@@ -145,7 +147,7 @@ public class MidiTest extends JFrame {
 //		spanel.setSelectionClass("de.uos.fmt.musitech.gui.score.Clef"); not used
 		
 		getContentPane().setLayout(new BorderLayout());
-		getContentPane().add(new JScrollPane(spanel, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER), BorderLayout.CENTER);
+		getContentPane().add(new JScrollPane(spanel, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), BorderLayout.CENTER);
 
 		
 		system.prepareForScore();
@@ -180,6 +182,7 @@ public class MidiTest extends JFrame {
 			score = spanel.getScore();
 		}
 		
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (score.getActivePage() > 0) {
 				score.setActivePage(score.getActivePage() - 1);
@@ -196,6 +199,7 @@ public class MidiTest extends JFrame {
 			score = spanel.getScore();
 		}
 		
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (score.getActivePage() < score.numChildren()) {
 				score.setActivePage(score.getActivePage() + 1);
@@ -210,6 +214,7 @@ public class MidiTest extends JFrame {
 		/* (non-Javadoc)
 		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			Timer timer = new Timer();
 			timer.schedule(new CursorThread(), (long)(0.5 * 1000), (long)(0.5 * 1000));
@@ -221,6 +226,7 @@ public class MidiTest extends JFrame {
 		Rational inc = new Rational(1,10);
 		Rational current = Rational.ZERO;
 		
+		@Override
 		public void run() {
 			spanel.setMetricTime(current);
 			current = current.add(inc);

@@ -137,21 +137,21 @@ public class ChordDegreeDisplay extends ChordSymbolDisplay2 {
                 super.createTextfields();
         //change rootField
         rootField = createChordSymbolTextfield(cds.createDegreeString());
-        rootField.setHorizontalAlignment(JTextField.CENTER);
+        rootField.setHorizontalAlignment(SwingConstants.CENTER);
         rootField.setOpaque(false);
         //set extension fields
         extensionField1 = createChordSymbolTextfield(createExtensions()[0]);
-        extensionField1.setHorizontalAlignment(JTextField.LEFT);
+        extensionField1.setHorizontalAlignment(SwingConstants.LEFT);
         extensionField1.setOpaque(false);
         extensionField2 = createChordSymbolTextfield(createExtensions()[1]);
-        extensionField2.setHorizontalAlignment(JTextField.LEFT);
+        extensionField2.setHorizontalAlignment(SwingConstants.LEFT);
         extensionField2.setOpaque(false);
         //set top and base fields
         topField = createChordSymbolTextfield(cds.getTop()+"");
-        topField.setHorizontalAlignment(JTextField.CENTER);
+        topField.setHorizontalAlignment(SwingConstants.CENTER);
         topField.setOpaque(false);
         baseField = createChordSymbolTextfield(cds.getBase()+"");
-        baseField.setHorizontalAlignment(JTextField.CENTER);
+        baseField.setHorizontalAlignment(SwingConstants.CENTER);
         topField.setOpaque(false);
     }
 

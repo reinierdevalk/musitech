@@ -48,7 +48,6 @@ above is subject to the following three conditions:
 package de.uos.fmt.musitech.framework.user;
 
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -147,6 +146,7 @@ public class User implements java.io.Serializable {
 	 * 
 	 * @see java.lang.Object#toString()
 	 */
+	@Override
 	public String toString() {
 		return getFirstName() + " " + getLastName() + " (" + getLoginName() + ")";
 	}

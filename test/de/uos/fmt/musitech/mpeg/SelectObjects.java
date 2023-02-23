@@ -60,6 +60,7 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.score.ScorePitch;
 import de.uos.fmt.musitech.data.structure.Context;
@@ -140,7 +141,8 @@ public class SelectObjects extends JPanel {
             }
         }
         startButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 if (!transportButtons.getPlayTimer().nextLocator()){
                     transportButtons.getPlayTimer().prevLocator();//TODO notwendig?
                 }
@@ -157,7 +159,8 @@ public class SelectObjects extends JPanel {
             }
         }
         resetButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 if (!transportButtons.getPlayTimer().prevLocator()) {
                     transportButtons.getPlayTimer().reset();
                 }
@@ -213,7 +216,7 @@ public class SelectObjects extends JPanel {
         frame.getContentPane().add(test);
         frame.pack();
         frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
 }

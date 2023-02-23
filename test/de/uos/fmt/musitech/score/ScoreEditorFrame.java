@@ -65,6 +65,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.KeyStroke;
+import javax.swing.WindowConstants;
 import javax.swing.filechooser.FileFilter;
 
 import de.uos.fmt.musitech.data.score.NotationSystem;
@@ -105,6 +106,7 @@ public class ScoreEditorFrame extends JFrame {
 				KeyEvent.VK_O, ActionEvent.CTRL_MASK, true), 'O', "Open");
 		}
 
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			JFileChooser fc = new DirJFileChooser(".");
 			fc.addChoosableFileFilter(mtxFilter); // add the SMR filter
@@ -165,6 +167,7 @@ public class ScoreEditorFrame extends JFrame {
 				KeyEvent.VK_O, ActionEvent.CTRL_MASK, true), 'N', "New");
 		}
 
+		@Override
 		public void actionPerformed(ActionEvent e) {
 
 			try { 
@@ -204,7 +207,7 @@ public class ScoreEditorFrame extends JFrame {
 	 */
 	public ScoreEditorFrame() {
 		this.setSize(new Dimension(640, 480));
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
 		createContentPane();
 		createMenubar();

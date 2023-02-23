@@ -50,13 +50,13 @@ above is subject to the following three conditions:
  */
 package de.uos.fmt.musitech.structure.form.gui;
 
+import java.awt.Adjustable;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.AdjustmentEvent;
@@ -75,6 +75,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JSlider;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingUtilities;
 
 import de.uos.fmt.musitech.data.performance.PerformanceNote;
@@ -184,8 +185,8 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
         JPanel innerPanel = new JPanel(new BorderLayout());
         innerPanel.add(getTimeScale(), BorderLayout.NORTH);
         JScrollPane scrollPane = new JScrollPane(CAD,
-                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
-                JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+                ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
+                ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         innerPanel.add(scrollPane);
         innerPanel.add(getScrollBar(), BorderLayout.SOUTH);
         add(innerPanel, BorderLayout.CENTER);
@@ -196,17 +197,21 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
     private ComponentListener getComponentListener() {
         if (compList == null) {
             compList = new ComponentListener() {
-                public void componentHidden(ComponentEvent e) {
+                @Override
+				public void componentHidden(ComponentEvent e) {
                 }
 
-                public void componentMoved(ComponentEvent e) {
+                @Override
+				public void componentMoved(ComponentEvent e) {
                 }
 
-                public void componentResized(ComponentEvent e) {
+                @Override
+				public void componentResized(ComponentEvent e) {
                     initialize();
                 }
 
-                public void componentShown(ComponentEvent e) {
+                @Override
+				public void componentShown(ComponentEvent e) {
                     initialize();
                 }
             };
@@ -227,13 +232,13 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
 
     public JScrollBar getScrollBar() {
         if (scrollBar == null) {
-            scrollBar = new JScrollBar(JScrollBar.HORIZONTAL, 0, 10, 0, 500);
+            scrollBar = new JScrollBar(Adjustable.HORIZONTAL, 0, 10, 0, 500);
             lastChangeTime = System.currentTimeMillis();
             // calculates the new value of the scrollbar
             int newValue = (int) Math.min(Math.round(500 * (double) winBegin
-                    / (double) CAD.container.getDuration()), 500);
+                    / CAD.container.getDuration()), 500);
             int extent = (int) Math.min(Math.round(500 * (double) winDuration
-                    / (double) (CAD.container.getDuration() + 1000)), 500);
+                    / (CAD.container.getDuration() + 1000)), 500);
             if (extent + newValue > 500) {
                 newValue = 500 - extent;
                 scrollBar.setValue(newValue);
@@ -241,7 +246,8 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
             model = new DefaultBoundedRangeModel(newValue, extent, 0, 500);
             scrollBar.setModel(model);
             scrollBar.addAdjustmentListener(new AdjustmentListener() {
-                public void adjustmentValueChanged(AdjustmentEvent e) {
+                @Override
+				public void adjustmentValueChanged(AdjustmentEvent e) {
 
                     if (System.currentTimeMillis() - lastChangeTime > 100) {
                         lastChangeTime = System.currentTimeMillis();
@@ -267,7 +273,7 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
      * Redraw all containing containers
      */
     private void updateWindow() {
-        CAD.setWindowRecursive((java.awt.Container) CAD, winBegin, winDuration);
+        CAD.setWindowRecursive(CAD, winBegin, winDuration);
     }
 
     public JPanel getSouthPanel() {
@@ -291,7 +297,8 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
 	        zoomInButton.setToolTipText("zoom in");
 	        zoomInButton.setMaximumSize(new Dimension(30, 30));
 	        zoomInButton.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent arg0) {
+                @Override
+				public void actionPerformed(ActionEvent arg0) {
                     setMicrosPPix(getMicrosPPix()/1.5);
                 }
             });
@@ -305,7 +312,8 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
 	        zoomOutButton.setText("out");
 	        zoomOutButton.setToolTipText("zoom Out");
 	        zoomOutButton.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent arg0) {
+                @Override
+				public void actionPerformed(ActionEvent arg0) {
                     setMicrosPPix(getMicrosPPix()*1.5);
                 }
             });
@@ -334,19 +342,24 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
             zoomSlider = new JSlider(1, 300);
 
             zoomSlider.addMouseListener(new MouseListener() {
-                public void mouseClicked(MouseEvent e) {
+                @Override
+				public void mouseClicked(MouseEvent e) {
                 }
 
-                public void mouseEntered(MouseEvent e) {
+                @Override
+				public void mouseEntered(MouseEvent e) {
                 }
 
-                public void mouseExited(MouseEvent e) {
+                @Override
+				public void mouseExited(MouseEvent e) {
                 }
 
-                public void mousePressed(MouseEvent e) {
+                @Override
+				public void mousePressed(MouseEvent e) {
                 }
 
-                public void mouseReleased(MouseEvent e) {
+                @Override
+				public void mouseReleased(MouseEvent e) {
 
                     // f(x) : microsPPix
                     // x : SliderValue
@@ -365,17 +378,18 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
         return zoomSlider;
     }
 
-    public void updateDisplay() {
+    @Override
+	public void updateDisplay() {
         getTimeScale().setMicrosPerPix(microsPPix);
-        CAD.setAllMillisPerPix((java.awt.Container) CAD, microsPPix);
+        CAD.setAllMillisPerPix(CAD, microsPPix);
         winDuration = Math.round(CAD.getWidth() * microsPPix);
         updateWindow();
         updateDurLabel(winDuration);
 
         int newBegin = (int) Math.min(Math.round(500 * (double) winBegin
-                / (double) CAD.container.getDuration()), 500);
+                / CAD.container.getDuration()), 500);
         int extent = (int) Math.min(Math.round(500 * (double) winDuration
-                / (double) (CAD.container.getDuration() + 1000)), 500);
+                / (CAD.container.getDuration() + 1000)), 500);
         if (extent + newBegin > 500) {
             newBegin = 500 - extent;
             scrollBar.setValue(newBegin);
@@ -414,30 +428,35 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
     /**
      * @see de.uos.fmt.musitech.framework.time.Player#start()
      */
-    public void start() {
+    @Override
+	public void start() {
     }
 
     /**
      * @see de.uos.fmt.musitech.framework.time.Player#stop()
      */
-    public void stop() {
+    @Override
+	public void stop() {
     }
 
     /**
      * @see de.uos.fmt.musitech.framework.time.Player#reset()
      */
-    public void reset() {
+    @Override
+	public void reset() {
     }
 
     /**
      * @see de.uos.fmt.musitech.framework.time.Player#setTimePosition(long)
      */
-    public void setTimePosition(long time) {
+    @Override
+	public void setTimePosition(long time) {
 
         lastTime = playTime;
         playTime = time;
         SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
+            @Override
+			public void run() {
                 paintCursor(false);
             }
         });
@@ -448,7 +467,8 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
     /**
      * @see de.uos.fmt.musitech.framework.time.Player#setPlayTimer(de.uos.fmt.musitech.framework.time.PlayTimer)
      */
-    public void setPlayTimer(PlayTimer timer) {
+    @Override
+	public void setPlayTimer(PlayTimer timer) {
         playTimer = timer;
         playTimer.registerForPush(this);
     }
@@ -476,7 +496,8 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
     /**
      * @see de.uos.fmt.musitech.framework.time.Player#getEndTime()
      */
-    public long getEndTime() {
+    @Override
+	public long getEndTime() {
         return container.getDuration();
     }
 
@@ -548,7 +569,8 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
     /**
      * @see java.awt.Component#paint(java.awt.Graphics)
      */
-    public void paint(Graphics g) {
+    @Override
+	public void paint(Graphics g) {
         createOffscreenImage();
         if (offscreenGraphics != null) {
             super.paint(offscreenGraphics);
@@ -566,14 +588,16 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
     /**
      * @see de.uos.fmt.musitech.framework.editor.Display#externalChanges()
      */
-    public boolean externalChanges() {
+    @Override
+	public boolean externalChanges() {
         return dataChanged;
     }
 
     /**
      * @see de.uos.fmt.musitech.framework.editor.Display#destroy()
      */
-    public void destroy() {
+    @Override
+	public void destroy() {
         SelectionManager selMan = SelectionManager.getManager();
         selMan.removeListener(this);
         IDataChangeManager datMan = DataChangeManager.getInstance();
@@ -583,7 +607,8 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
     /**
      * @see de.uos.fmt.musitech.framework.editor.Display#focusReceived()
      */
-    public void focusReceived() {
+    @Override
+	public void focusReceived() {
         System.out.println("Arrangement Panel: Focus Received");
         if (dataChanged) {
             dataChanged = false;
@@ -594,21 +619,24 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
     /**
      * @see de.uos.fmt.musitech.framework.editor.Display#getEditingProfile()
      */
-    public EditingProfile getEditingProfile() {
+    @Override
+	public EditingProfile getEditingProfile() {
         return editProfile;
     }
 
     /**
      * @see de.uos.fmt.musitech.framework.editor.Display#getEditObj()
      */
-    public Object getEditObj() {
+    @Override
+	public Object getEditObj() {
         return container;
     }
 
     /**
      * @see de.uos.fmt.musitech.framework.editor.Display#isFocused()
      */
-    public boolean isFocused() {
+    @Override
+	public boolean isFocused() {
 
         return isFocusOwner();
     }
@@ -618,7 +646,8 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
      *      de.uos.fmt.musitech.framework.editor.EditingProfile,
      *      de.uos.fmt.musitech.framework.editor.Display)
      */
-    public void init(Object editObject, EditingProfile profile, Display root) {
+    @Override
+	public void init(Object editObject, EditingProfile profile, Display root) {
         this.editObj = editObject;
         //		System.out.println("ArrangementPanel.init() cont.start(): " +
         // ((Container) editObj).getTime());
@@ -666,7 +695,8 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
     /**
      * @see de.uos.fmt.musitech.framework.editor.Display#getRootDisplay()
      */
-    public Display getRootDisplay() {
+    @Override
+	public Display getRootDisplay() {
         return this;
     }
 
@@ -675,13 +705,15 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
     /** 
      * @see java.awt.Component#getPreferredSize()
      */
-    public Dimension getPreferredSize() {
+    @Override
+	public Dimension getPreferredSize() {
         return new Dimension(10, 10);
     }
     /**
      * @see de.uos.fmt.musitech.framework.change.DataChangeListener#dataChanged(de.uos.fmt.musitech.framework.change.DataChangeEvent)
      */
-    public void dataChanged(DataChangeEvent e) {
+    @Override
+	public void dataChanged(DataChangeEvent e) {
         //		System.out.println("ArragementPanel: Data Changed");
         dataChanged = true;
         DataChangeManager.getInstance().interestExpandElements(this, container);
@@ -691,7 +723,8 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
     /**
      * @see de.uos.fmt.musitech.framework.selection.SelectionListener#selectionChanged(de.uos.fmt.musitech.framework.selection.SelectionChangeEvent)
      */
-    public void selectionChanged(SelectionChangeEvent e) {
+    @Override
+	public void selectionChanged(SelectionChangeEvent e) {
     }
 
     /**
@@ -719,6 +752,7 @@ public class ArrangementPanel extends JPanel implements Player, Timeable,
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.Display#asComponent()
 	 */
+	@Override
 	public Component asComponent() {
 		return this;
 	}

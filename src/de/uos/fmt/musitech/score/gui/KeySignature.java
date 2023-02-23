@@ -102,6 +102,7 @@ public class KeySignature extends ScoreObject {
       positions = new int[Math.abs(type)];
    }
 
+	@Override
 	int arrange(int pass) {
 		if (pass == 0) {
 			int[] borders = type < 0 ? flatBorders : sharpBorders;
@@ -133,6 +134,7 @@ public class KeySignature extends ScoreObject {
 		return 3;
 	}
 
+	@Override
 	Class parentClass() {
 		return Measure.class;
 	}
@@ -143,6 +145,7 @@ public class KeySignature extends ScoreObject {
 	}
 
 	static int counter = 0;
+	@Override
 	public void paint(Graphics g) {
 		if(!isVisible()) return;
 		char glyph = type < 0 ? MusicGlyph.FLAT : MusicGlyph.SHARP;
@@ -156,6 +159,7 @@ public class KeySignature extends ScoreObject {
 		restoreFont(g);
 	}
 
+	@Override
 	public int rwidth() {
 		char glyph = type < 0 ? MusicGlyph.FLAT : MusicGlyph.SHARP;
 		int num = Math.abs(type);

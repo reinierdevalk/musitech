@@ -97,7 +97,7 @@ public class PieceUtils {
 				NotationVoice nv2 = new NotationVoice(nst2);
 				Map<Note, Note> noteMap = new HashMap<Note, Note>();
 				for (int l = 0; l < nv1.size(); l++) {
-					NotationChord nc1 = (NotationChord) nv1.get(l);
+					NotationChord nc1 = nv1.get(l);
 					if (nc1.getMetricTime().isGreaterOrEqual(start)
 						&& nc1.getMetricTime().isLess(end)) {
 						NotationChord nc2 = new NotationChord(nv2.getContext());
@@ -160,7 +160,7 @@ public class PieceUtils {
 					NotationVoice nv2 = new NotationVoice( nst2);
 					Map<Note, Note> noteMap = new HashMap<Note, Note>();
 					for (int l = 0; l < nv1.size(); l++) {
-						NotationChord nc1 = (NotationChord) nv1.get(l);
+						NotationChord nc1 = nv1.get(l);
 						NotationChord nc2 = new NotationChord(nv2.getContext());
 						for (Note note : notes) {
 							if (nc1.contains(note)) {
@@ -228,10 +228,10 @@ public class PieceUtils {
 				if (nv.isEmpty())
 					j.remove();
 				else {
-					NotationChord nc = (NotationChord) nv.get(0);
+					NotationChord nc = nv.get(0);
 					if (nc.getMetricTime().isLess(min))
 						min = nc.getMetricTime();
-					nc = (NotationChord) nv.get(nv.size() - 1);
+					nc = nv.get(nv.size() - 1);
 					if (nc.getMetricTime().isGreater(max))
 						max = nc.getMetricTime();
 				}
@@ -327,8 +327,8 @@ public class PieceUtils {
 				Rational systemEndTime = pieces[i].getMetricalTimeLine()
 						.getNextOrSameMeasure(nsys_o.getEndTime());
 				for (int j = 0; j < nsys_o.size(); j++) {
-					NotationStaff nst_o = (NotationStaff) nsys_o.get(j);
-					NotationStaff nst_n = (NotationStaff) score.get(j);
+					NotationStaff nst_o = nsys_o.get(j);
+					NotationStaff nst_n = score.get(j);
 					if (nst_o.getClefTrack() != null) {
 						for (Clef o : nst_o.getClefTrack()) {
 							Clef c = ObjectCopy.copyObject(o);
@@ -348,7 +348,7 @@ public class PieceUtils {
 						}
 						NotationVoice nv_n = nst_n.get(k);
 						for (int l = 0; l < nv_o.size(); l++) {
-							NotationChord nc_o = (NotationChord) nv_o.get(l);
+							NotationChord nc_o = nv_o.get(l);
 							NotationChord nc_n = new NotationChord(p
 									.getContext());
 							for (int m = 0; m < nc_o.size(); m++) {
@@ -413,7 +413,7 @@ public class PieceUtils {
 			for (int i = 0; i < pieces.length; i++) {
 				NotationSystem nsys = pieces[i].getScore();
 				for (int j = 0; j < nsys.size(); j++)
-					size[j] = Math.max(size[j], ((NotationStaff) nsys.get(j))
+					size[j] = Math.max(size[j], nsys.get(j)
 							.size());
 			}
 			return size;

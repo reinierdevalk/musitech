@@ -53,6 +53,7 @@ public class LinearInterpolator extends Interploator {
 		timeValSeq = argTSV;
 	}
 
+	@Override
 	public float getValue(long argTime) {
 		int pos = timeValSeq.findTime(argTime);
 		if (pos > 0)

@@ -67,7 +67,8 @@ public class LocatorTest extends TestCase{
     /**
      * @see junit.framework.TestCase#setUp()
      */
-    protected void setUp() throws Exception {
+    @Override
+	protected void setUp() throws Exception {
         loc1 = new Locator(0, "eins");
         loc2 = new Locator(100000, "zwei");
         loc3 = new Locator(200000, "drei");

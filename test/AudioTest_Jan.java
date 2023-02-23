@@ -53,6 +53,7 @@ import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.audio.AudioUtil;
 import de.uos.fmt.musitech.audio.floatStream.FISChannelMixer;
@@ -135,7 +136,7 @@ public class AudioTest_Jan {
 
 		JPanel jp = new JPanel();
 		JFrame jf = new JFrame();
-				jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				jf.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 				jf.getContentPane().setLayout(new BorderLayout());
 		
 		

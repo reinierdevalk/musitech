@@ -111,6 +111,7 @@ public class ImageSequencePlayer implements Timeable {
 	 * Implements the Timeable interface, switching the displayed image when necessary.  
 	 * @see de.uos.fmt.musitech.data.time.Timeable#setTimePosition(long)
 	 */
+	@Override
 	public void setTimePosition(long timeMillis) {
 //		System.out.println("timeMillis: " + timeMillis);
 		imageComp.paintCursor(false, timeMillis);
@@ -169,6 +170,7 @@ public class ImageSequencePlayer implements Timeable {
 	/**
 	 * @see de.uos.fmt.musitech.data.time.Timeable#getEndTime()
 	 */
+	@Override
 	public long getEndTime() {
 		return timedISC.getEndTime();
 	}

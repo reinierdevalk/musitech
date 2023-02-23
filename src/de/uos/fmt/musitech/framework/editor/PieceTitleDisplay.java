@@ -96,7 +96,8 @@ public class PieceTitleDisplay extends AbstractDisplay {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractDisplay#createGUI()
      */
-    public void createGUI() {
+    @Override
+	public void createGUI() {
         determinePiece();
         //init textArea
         textArea.setEnabled(false);

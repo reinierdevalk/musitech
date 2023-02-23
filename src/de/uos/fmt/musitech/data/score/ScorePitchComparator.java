@@ -49,11 +49,6 @@ package de.uos.fmt.musitech.data.score;
 
 import java.util.Comparator;
 
-import de.uos.fmt.musitech.data.structure.Note;
-import de.uos.fmt.musitech.data.structure.Piece;
-import de.uos.fmt.musitech.data.time.MetricalTimeLine;
-import de.uos.fmt.musitech.utility.math.Rational;
-
 
 /**
  * Compares two ScorePitches (including ScoreNotes) by their pitch, ignoring enharmonics (i.e. G# == Ab)
@@ -81,6 +76,7 @@ public class ScorePitchComparator implements Comparator<ScorePitch> {
 	 * Returns the Pitch of two notes using getMidiPitch.  
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 	 */
+	@Override
 	public int compare(ScorePitch o1, ScorePitch o2) {
 		int p1, p2;
 		p1 = o1.getPerformancePitch();

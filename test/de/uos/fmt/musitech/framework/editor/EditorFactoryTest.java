@@ -57,8 +57,6 @@ import java.util.HashSet;
 import java.util.List;
 
 import javax.swing.JComponent;
-import javax.swing.JFrame;
-
 import junit.framework.TestCase;
 import de.uos.fmt.musitech.data.media.image.ImageURL;
 import de.uos.fmt.musitech.data.metadata.MetaDataCollection;
@@ -77,7 +75,6 @@ import de.uos.fmt.musitech.data.structure.lyrics.LyricsSyllableSequence;
 import de.uos.fmt.musitech.framework.editor.EditorFactory.EditorConstructionException;
 import de.uos.fmt.musitech.metadata.MetaDataEditor;
 import de.uos.fmt.musitech.metadata.MetaDataItemEditor;
-import de.uos.fmt.musitech.score.NotationDisplay;
 import de.uos.fmt.musitech.structure.harmony.gui.ChordSymbSeqDisplay;
 import de.uos.fmt.musitech.structure.harmony.gui.ChordSymbolDisplay2;
 import de.uos.fmt.musitech.structure.text.LyricsDisplay;
@@ -511,6 +508,7 @@ public class EditorFactoryTest extends TestCase {
 		 * Getter for <code>profile</code>. 
 		 * @see de.uos.fmt.musitech.framework.editor.Editable#getEditingProfile()
 		 */
+		@Override
 		public EditingProfile getEditingProfile() {
 			profile = new EditingProfile();
 			profile.setEditortype(new String[] { "Panel", "PopUp", "Expand" });

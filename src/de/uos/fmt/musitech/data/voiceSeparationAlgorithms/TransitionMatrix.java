@@ -39,8 +39,8 @@ public class TransitionMatrix {
 				for (int k=0; k<p.getScore().getContent().get(i).getContent().get(j).size()-1; k++)
 				{
 					// get the actual note k and the following note for the voice j
-					Note actualNote = (Note)p.getScore().getContent().get(i).getContent().get(j).get(k).get(0);
-					Note followingNote = (Note)p.getScore().getContent().get(i).getContent().get(j).get(k+1).get(0);
+					Note actualNote = p.getScore().getContent().get(i).getContent().get(j).get(k).get(0);
+					Note followingNote = p.getScore().getContent().get(i).getContent().get(j).get(k+1).get(0);
 					// Now that we have two successive notes for a voice, increment the matrix
 					int row = actualNote.getMidiPitch();
 					int column = followingNote.getMidiPitch();
@@ -85,7 +85,7 @@ public class TransitionMatrix {
 				p.getScore().getContent().get(i).getContent().get(j); // get the voice j for the staff i
 				for (int k=0; k<p.getScore().getContent().get(i).getContent().get(j).size(); k++)
 				{
-					Note actualNote = (Note)p.getScore().getContent().get(i).getContent().get(j).get(k).get(0);
+					Note actualNote = p.getScore().getContent().get(i).getContent().get(j).get(k).get(0);
 					int row = actualNote.getMidiPitch();
 					matProbVoice[row][voice]++;
 				}

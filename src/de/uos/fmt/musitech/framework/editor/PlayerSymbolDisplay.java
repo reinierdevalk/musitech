@@ -102,7 +102,8 @@ public class PlayerSymbolDisplay extends AbstractDisplay  //TODO
     /**
      * @see de.uos.fmt.musitech.framework.editor.Display#updateDisplay()
      */
-    public void updateDisplay() {
+    @Override
+	public void updateDisplay() {
         // TODO Auto-generated method stub
     }
 
@@ -112,7 +113,8 @@ public class PlayerSymbolDisplay extends AbstractDisplay  //TODO
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractDisplay#createGUI()
      */
-    public void createGUI() {
+    @Override
+	public void createGUI() {
         setLayout(new BorderLayout());
         //upper part of display
         Icon icon = null;
@@ -143,7 +145,8 @@ public class PlayerSymbolDisplay extends AbstractDisplay  //TODO
         listenButton.setEnabled(true);
         listenButton.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent ae) {
+            @Override
+			public void actionPerformed(ActionEvent ae) {
                 playback();
             }
         });
@@ -207,14 +210,16 @@ public class PlayerSymbolDisplay extends AbstractDisplay  //TODO
         if (interactive) {
             listenButton.addMouseListener(new MouseAdapter() {
 
-                public void mouseClicked(MouseEvent me) {
+                @Override
+				public void mouseClicked(MouseEvent me) {
                     playback();
                 }
             });
             listenButton.requestFocus();
             listenButton.addKeyListener(new KeyAdapter() {
 
-                public void keyTyped(KeyEvent ke) {
+                @Override
+				public void keyTyped(KeyEvent ke) {
                     playback();
                 }
             });
@@ -234,7 +239,8 @@ public class PlayerSymbolDisplay extends AbstractDisplay  //TODO
      * Overwrites <code>setOpaque</code> in order to set the
      * <code>listenButton</code> opaque (resp. not) as well.
      */
-    public void setOpaque(boolean opaque) {
+    @Override
+	public void setOpaque(boolean opaque) {
         super.setOpaque(opaque);
         if (listenButton != null)
             listenButton.setOpaque(opaque);

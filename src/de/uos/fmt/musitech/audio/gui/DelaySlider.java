@@ -55,6 +55,7 @@ import java.util.Dictionary;
 
 import javax.swing.JLabel;
 import javax.swing.JSlider;
+import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -78,7 +79,7 @@ public class DelaySlider extends JSlider {
 	public DelaySlider(final DelayInputStream fis,  String ToolText) {
 
 		
-		super(JSlider.HORIZONTAL, 0, 1200, 600);
+		super(SwingConstants.HORIZONTAL, 0, 1200, 600);
 		
 		this.fis = fis;
 
@@ -106,6 +107,7 @@ public class DelaySlider extends JSlider {
 		
 
 		addChangeListener(new ChangeListener() {
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				int delay;
 				JSlider slider = (JSlider) (e.getSource());

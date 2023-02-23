@@ -87,7 +87,8 @@ public class WaveFileAnalysis {
   public static void ShowAnalysisWindow(double[][] d, int width, int height) {
     FrequencyWindow frame = new FrequencyWindow(d);
     frame.addWindowListener(new WindowAdapter() {
-      public void windowClosing(WindowEvent ev) {
+      @Override
+	public void windowClosing(WindowEvent ev) {
         System.exit(0);
       } // windowClosing(WindowEvent ev)
     } // inner class
@@ -233,7 +234,7 @@ public class WaveFileAnalysis {
         double[][] d = analyseWaveFile(argv[0], start_sec, fft_length, true);
         // logarithmic plot of data gets a better graph
         for (int i = 0; i < d.length; i++) {
-          d[i][1] = Math.log(d[i][1] / (double)fft_length);
+          d[i][1] = Math.log(d[i][1] / fft_length);
         } // for
         ShowAnalysisWindow(d);
       } // else
@@ -269,7 +270,7 @@ public class WaveFileAnalysis {
 			double[][] d = analyseWaveFile(filename, start_sec, fft_length, true);
 			// logarithmic plot of data gets a better graph
 			for (int i = 0; i < d.length; i++) {
-			  d[i][1] = Math.log(d[i][1] / (double)fft_length);
+			  d[i][1] = Math.log(d[i][1] / fft_length);
 			} // for
 			ShowAnalysisWindow(d);
 		  } // else

@@ -341,9 +341,9 @@ public class SpokenMusic {
 
 			int j = 0;
 			for (int iter_nsys = nsys.size() - 1; iter_nsys >= 0; iter_nsys--) {
-	            NotationStaff staff = (NotationStaff) nsys.get(iter_nsys);
+	            NotationStaff staff = nsys.get(iter_nsys);
 	            for (int iter_staff = staff.size() - 1; iter_staff>= 0; iter_staff--) {
-	                NotationVoice voice = (NotationVoice) staff.get(iter_staff);
+	                NotationVoice voice = staff.get(iter_staff);
 	                int bb = voice.find(bar_begin);
 	                int be = voice.find(bar_end);
 	                if (be < 0) {
@@ -356,7 +356,7 @@ public class SpokenMusic {
 	                		result += "in agreement with\n";
 	                	}
 	                	for (int k = bb; k<be; k++) {
-	                		NotationChord chord = (NotationChord) voice.get(k);
+	                		NotationChord chord = voice.get(k);
 	                		int chord_size = chord.size();
 	                		if (chord_size <= 0) {
 	                			System.out.println("Problem: Chord without Note");
@@ -370,7 +370,7 @@ public class SpokenMusic {
 	                		
 	                		// print octave
 	                		int iter_chord = 0;
-	                		Note n = (Note) chord.get(iter_chord);
+	                		Note n = chord.get(iter_chord);
 	                		ScoreNote sn = n.getScoreNote();
 	                		char note_name = sn.getDiatonic();
 	                		int oct = sn.getOctave() + OCTAVE_SHIFT;
@@ -403,13 +403,13 @@ public class SpokenMusic {
 	                		if (chord_size > 1) {
 	                			iter_chord++;
 	                			result += " with";
-	                			Note n2 = (Note) chord.get(iter_chord);
+	                			Note n2 = chord.get(iter_chord);
 	                			ScoreNote sn2 = n2.getScoreNote();
 	                			int base2 = calcBase(sn2.getDiatonic(), sn2.getOctave() + OCTAVE_SHIFT);
 	                			result += " " + convertOrdinalToString(base2-base+1);
 	                			result += " " + getAccidental(acc, base2 % 7, sn2.getAlteration());
 	                			for (iter_chord++; iter_chord < chord_size; iter_chord++) {
-									n2 = (Note) chord.get(iter_chord);
+									n2 = chord.get(iter_chord);
 		                			sn2 = n2.getScoreNote();
 		                			base2 = calcBase(sn2.getDiatonic(), sn2.getOctave() + OCTAVE_SHIFT);
 		                			result += " and " + convertOrdinalToString(base2-base+1);

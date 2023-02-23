@@ -55,9 +55,11 @@ public class TestFrame extends JFrame
    public TestFrame ()
    {
  		addWindowListener(new java.awt.event.WindowAdapter() {
-   	   public void windowClosing (java.awt.event.WindowEvent ev) {System.exit(0);}
+   	   @Override
+	public void windowClosing (java.awt.event.WindowEvent ev) {System.exit(0);}
    	});
    }
+	@Override
 	public void paint (java.awt.Graphics g)
 	{
 	   super.paint(g);

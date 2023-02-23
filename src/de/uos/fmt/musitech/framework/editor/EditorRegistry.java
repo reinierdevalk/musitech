@@ -254,7 +254,7 @@ public class EditorRegistry {
         for (Iterator iter = classesAndInterfaces.iterator(); iter.hasNext();) {
             String name = (String) iter.next();
             if (classToEditortypeMap.get(name) != null) {
-                EditorType[] mapValues = (EditorType[]) classToEditortypeMap.get(name);
+                EditorType[] mapValues = classToEditortypeMap.get(name);
                 for (int i = 0; i < mapValues.length; i++) {
                     if (mapValues[i] != null)
                         types.add(mapValues[i]);
@@ -324,7 +324,7 @@ public class EditorRegistry {
                     displayTypes.add(editorTypes[i]);
             }
         }
-        EditorType[] types = (EditorType[]) displayTypes.toArray(new EditorType[]{});
+        EditorType[] types = displayTypes.toArray(new EditorType[]{});
         return types;
     }
 
@@ -431,8 +431,8 @@ public class EditorRegistry {
             return false;
         }
         if (classToEditortypeMap.containsKey(className)) {
-            EditorType[] types = (EditorType[]) classToEditortypeMap.get(className);
-            EditorType[] newTypes = new EditorType[((EditorType[]) types).length + 1];
+            EditorType[] types = classToEditortypeMap.get(className);
+            EditorType[] newTypes = new EditorType[types.length + 1];
             for (int i = 0; i < types.length; i++) {
                 newTypes[i] = types[i];
             }
@@ -464,7 +464,7 @@ public class EditorRegistry {
      */
     public static boolean isAssociatedEditortype(String className, String editortypeName) {
         if (classToEditortypeMap.containsKey(className)) {
-            EditorType[] value = (EditorType[]) classToEditortypeMap.get(className);
+            EditorType[] value = classToEditortypeMap.get(className);
             for (int i = 0; i < value.length; i++) {
                 if (value[i].getTypeName().equals(editortypeName))
                     return true;
@@ -581,7 +581,7 @@ public class EditorRegistry {
         if (editorType == null)
             return;
         if (classToEditortypeMap.containsKey(className)) {
-            EditorType[] values = (EditorType[]) classToEditortypeMap.get(className);
+            EditorType[] values = classToEditortypeMap.get(className);
             List typesAsList = Arrays.asList(values);
             if (typesAsList.contains(editorType))
                 typesAsList.remove(editorType);
@@ -605,7 +605,7 @@ public class EditorRegistry {
         if (typeName == null)
             return;
         if (classToEditortypeMap.containsKey(className)) {
-            EditorType[] values = (EditorType[]) classToEditortypeMap.get(className);
+            EditorType[] values = classToEditortypeMap.get(className);
             List typesAsList = new ArrayList();
             for (int i = 0; i < values.length; i++) {
                 if (!values[i].getTypeName().equals(typeName)) {

@@ -101,37 +101,44 @@ public class FmxEditor extends JFrame implements GlyphCanvasOwner {
 			}
 		});
 		newButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent ev) {
 				newFont();
 			}
 		});
 		openButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent ev) {
 				openFile();
 			}
 		});
 		saveButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent ev) {
 				saveFile(false);
 			}
 		});
 		saveAsButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent ev) {
 				saveFile(true);
 			}
 		});
 		resizeButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent ev) {
 				resizeMetrics();
 			}
 		});
 
 		glyphEdit.addPropertyChangeListener("value", new PropertyChangeListener() {
+			@Override
 			public void propertyChange(PropertyChangeEvent ev) {
 				updateGlyph();
 			}
 		});
 		heightEdit.addPropertyChangeListener("value", new PropertyChangeListener() {
+			@Override
 			public void propertyChange(PropertyChangeEvent ev) {
 				int height = heightEdit.getValue();
 				glyphCanvas.setGlyphHeight(height);
@@ -139,6 +146,7 @@ public class FmxEditor extends JFrame implements GlyphCanvasOwner {
 			}
 		});
 		depthEdit.addPropertyChangeListener("value", new PropertyChangeListener() {
+			@Override
 			public void propertyChange(PropertyChangeEvent ev) {
 				int depth = depthEdit.getValue();
 				glyphCanvas.setGlyphDepth(depth);
@@ -146,6 +154,7 @@ public class FmxEditor extends JFrame implements GlyphCanvasOwner {
 			}
 		});
 		widthEdit.addPropertyChangeListener("value", new PropertyChangeListener() {
+			@Override
 			public void propertyChange(PropertyChangeEvent ev) {
 				int width = widthEdit.getValue();
 				glyphCanvas.setGlyphWidth(width);
@@ -153,6 +162,7 @@ public class FmxEditor extends JFrame implements GlyphCanvasOwner {
 			}
 		});
 		xOffsetEdit.addPropertyChangeListener("value", new PropertyChangeListener() {
+			@Override
 			public void propertyChange(PropertyChangeEvent ev) {
 				glyphCanvas.setXOffset(xOffsetEdit.getValue());
 			}
@@ -312,6 +322,7 @@ public class FmxEditor extends JFrame implements GlyphCanvasOwner {
 	 * displayed glyph. These metrics can only be obtained by a Graphics object
 	 * that seems only be alive inside the related paint method. 
 	 * @see GlyphCanvasOwner */
+	@Override
 	public void glyphCanvasChangedDefaults() {
 		char glyph = (char) glyphEdit.getValue();
 		if (metrics.getWidth(glyph) == 0) {

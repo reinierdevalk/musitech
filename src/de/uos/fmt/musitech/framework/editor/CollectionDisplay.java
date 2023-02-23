@@ -114,7 +114,8 @@ public class CollectionDisplay extends AbstractComplexDisplay {
      *      de.uos.fmt.musitech.framework.editor.EditingProfile,
      *      de.uos.fmt.musitech.framework.editor.Display)
      */
-    public void init(Object editObj, EditingProfile profile, Display root) {
+    @Override
+	public void init(Object editObj, EditingProfile profile, Display root) {
         //set arguments
         this.editObj = editObj;
         this.profile = profile;
@@ -156,7 +157,7 @@ public class CollectionDisplay extends AbstractComplexDisplay {
         if (elementDisplays.size()>0)
             elementDisplays.clear();
         for (Iterator iter = collection.iterator(); iter.hasNext();) {
-            Object element = (Object) iter.next();
+            Object element = iter.next();
             Display elementDisplay = null;
             try {
                 elementDisplay = EditorFactory.createDisplay(element, null, "Preview", rootDisplay);
@@ -172,7 +173,8 @@ public class CollectionDisplay extends AbstractComplexDisplay {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractDisplay#createGUI()
      */
-    public void createGUI() {
+    @Override
+	public void createGUI() {
         //panel for labels
 		JPanel labelPanel = new JPanel();
 		labelPanel.setLayout(new GridLayout(0, 1));
@@ -231,7 +233,8 @@ public class CollectionDisplay extends AbstractComplexDisplay {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#destroy()
      */
-    public void destroy(){
+    @Override
+	public void destroy(){
         super.destroy();
         if (!elementDisplays.isEmpty())
             for (Iterator iter = elementDisplays.iterator(); iter.hasNext();) {

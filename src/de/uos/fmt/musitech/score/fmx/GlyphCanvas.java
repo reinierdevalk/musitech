@@ -115,6 +115,7 @@ public class GlyphCanvas extends JComponent implements Serializable
 	}
 	
 	/** Changes the used font. */
+	@Override
 	public void setFont (Font f)	
 	{
 	   font = f;
@@ -134,6 +135,7 @@ public class GlyphCanvas extends JComponent implements Serializable
 	}
 	
 	/** Returns the currently used font. */
+	@Override
 	public Font getFont ()			
 	{
 	   return font;
@@ -145,6 +147,7 @@ public class GlyphCanvas extends JComponent implements Serializable
 	   return new Dimension(300,300);
 	}*/
 	
+	@Override
 	public void paint (Graphics g)
 	{
 	   super.paint(g);
@@ -158,10 +161,10 @@ public class GlyphCanvas extends JComponent implements Serializable
 	   	java.awt.FontMetrics fm = graphics.getFontMetrics();
 	   	GlyphVector gv = font.createGlyphVector(graphics.getFontRenderContext(), c);
 	   	Rectangle2D r = gv.getGlyphMetrics(0).getBounds2D();
-	   	defDepth  = (int)fm.getDescent();
+	   	defDepth  = fm.getDescent();
 	   	defHeight = (int)r.getHeight();
 	   	defHeight -= depth;
-	   	defWidth  = (int)fm.charWidth(glyph);
+	   	defWidth  = fm.charWidth(glyph);
 			updateDefaultMetrics = false;
 			owner.glyphCanvasChangedDefaults();
 	   }

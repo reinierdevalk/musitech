@@ -273,14 +273,17 @@ class Lexer implements Parser.yyInput {
    //private int    commentCount = 0;
    private Stack  includeStack = new Stack(); // stores the included filenames
    
-   public boolean advance () throws java.io.IOException 
+   @Override
+public boolean advance () throws java.io.IOException 
    {
       token = yylex();
       return token != YYEOF; // gets true if reached end of input stream
    }
 
-   public int token ()    {return token;}   
-   public Object value () {return value;}    
+   @Override
+public int token ()    {return token;}   
+   @Override
+public Object value () {return value;}    
    public int line ()     {return yyline+1;}
    public int column ()   {return yycolumn+1;}
 

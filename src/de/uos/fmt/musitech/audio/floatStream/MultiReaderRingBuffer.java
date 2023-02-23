@@ -145,7 +145,8 @@ public class MultiReaderRingBuffer extends RingBuffer {
     /**
      * Do not use this method, it will allways return -1 !
      */
-    public synchronized int read(float[][] data, int start, int len) {
+    @Override
+	public synchronized int read(float[][] data, int start, int len) {
         return -1;
     }
 
@@ -185,7 +186,8 @@ public class MultiReaderRingBuffer extends RingBuffer {
      * 
      * @throws IOException
      */
-    public synchronized void reset() throws IOException {
+    @Override
+	public synchronized void reset() throws IOException {
         super.reset();
         lastReaderPos = 0;
         loadedSamples = 0;
@@ -210,7 +212,8 @@ public class MultiReaderRingBuffer extends RingBuffer {
     /**
      * @see de.uos.fmt.musitech.audio.floatStream.RingBuffer#load()
      */
-    public synchronized int load() {
+    @Override
+	public synchronized int load() {
         if (noMoreDataLoadable)
             return -1;
         readIndex = (int) (lastReaderPos % buffSize);

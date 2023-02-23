@@ -51,7 +51,6 @@ above is subject to the following three conditions:
  */
 package de.uos.fmt.musitech.metadata;
 
-import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Collection;
@@ -65,7 +64,6 @@ import de.uos.fmt.musitech.data.metadata.MetaDataItem;
 import de.uos.fmt.musitech.data.metadata.MetaDataProfileManager;
 import de.uos.fmt.musitech.data.metadata.MetaDataValue;
 import de.uos.fmt.musitech.framework.change.DataChangeManager;
-import de.uos.fmt.musitech.framework.editor.AbstractComplexEditor;
 import de.uos.fmt.musitech.framework.editor.AbstractEditor;
 import de.uos.fmt.musitech.framework.editor.Display;
 import de.uos.fmt.musitech.framework.editor.EditingProfile;
@@ -140,7 +138,8 @@ public class MetaDataItemEditor extends AbstractEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#createGUI()
      */
-    protected void createGUI() {
+    @Override
+	protected void createGUI() {
         setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
         if (mdItem == null)
             return;
@@ -257,7 +256,8 @@ public class MetaDataItemEditor extends AbstractEditor {
         final JButton createButton = new JButton(BUTTON_TEXT);
         createButton.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent ae) {
+            @Override
+			public void actionPerformed(ActionEvent ae) {
                 createNewValue();
                 createButton.setText("Create");
                 updateGUI();
@@ -326,7 +326,8 @@ public class MetaDataItemEditor extends AbstractEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#applyChanges()
      */
-    public void applyChanges() {
+    @Override
+	public void applyChanges() {
         //		if (isOutmostEditor())
         if (rootDisplay == this)
             sendDataChangeEvent();
@@ -341,7 +342,8 @@ public class MetaDataItemEditor extends AbstractEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#updateDisplay()
      */
-    public void updateDisplay() {
+    @Override
+	public void updateDisplay() {
         dataChanged = false;
         setPropertyValue();
         valueEditor.updateDisplay();
@@ -358,7 +360,8 @@ public class MetaDataItemEditor extends AbstractEditor {
      *      de.uos.fmt.musitech.framework.editor.EditingProfile,
      *      de.uos.fmt.musitech.framework.editor.Editor)
      */
-    public void init(Object editObject, EditingProfile profile, Display rootEditor) {
+    @Override
+	public void init(Object editObject, EditingProfile profile, Display rootEditor) {
         this.editObj = editObject;
         this.profile = profile;
         if (profile != null)
@@ -397,7 +400,8 @@ public class MetaDataItemEditor extends AbstractEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Editor#isFocused()
      */
-    public boolean isFocused() {
+    @Override
+	public boolean isFocused() {
         return valueEditor.isFocused();
     }
 
@@ -418,7 +422,8 @@ public class MetaDataItemEditor extends AbstractEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Editor#getEditedData()
      */
-    public Collection getEditedData() {
+    @Override
+	public Collection getEditedData() {
         Vector data = new Vector();
         if (valueEditor != null && valueEditor instanceof Editor) {
             data.addAll(((Editor) valueEditor).getEditedData());
@@ -434,7 +439,8 @@ public class MetaDataItemEditor extends AbstractEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#registerAtChangeManager()
      */
-    public void registerAtChangeManager() {
+    @Override
+	public void registerAtChangeManager() {
         Vector objsToChange = new Vector();
         MetaDataItem item = getMetaDataItem();
         objsToChange.add(item);

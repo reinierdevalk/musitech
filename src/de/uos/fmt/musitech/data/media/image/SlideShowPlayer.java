@@ -52,6 +52,7 @@ above is subject to the following three conditions:
 
 package de.uos.fmt.musitech.data.media.image;
 import java.awt.BorderLayout;
+import java.awt.Frame;
 import java.awt.Rectangle;
 import java.io.File;
 import java.io.IOException;
@@ -59,6 +60,7 @@ import java.net.MalformedURLException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.audio.AFOPlayer;
 import de.uos.fmt.musitech.data.audio.AudioFileObject;
@@ -66,7 +68,6 @@ import de.uos.fmt.musitech.data.media.image.ImageSequenceContainer;
 import de.uos.fmt.musitech.data.media.image.StaffPosition;
 import de.uos.fmt.musitech.data.structure.container.BasicContainer;
 import de.uos.fmt.musitech.data.structure.container.Container;
-import de.uos.fmt.musitech.data.time.Timeable;
 import de.uos.fmt.musitech.framework.time.PlayTimer;
 import de.uos.fmt.musitech.framework.time.TransportButtons;
 import de.uos.fmt.musitech.media.image.ImageSequencePlayer;
@@ -106,10 +107,10 @@ public class SlideShowPlayer extends JPanel{
 		frame.getContentPane().add(tb,BorderLayout.SOUTH);
 		
 
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setLocation(200, 150);
 		frame.setSize(500, 400);
-		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		frame.setExtendedState(Frame.MAXIMIZED_BOTH);
 		frame.show();
 	}
 

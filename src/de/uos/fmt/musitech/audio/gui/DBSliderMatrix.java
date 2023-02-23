@@ -81,6 +81,7 @@ public class DBSliderMatrix extends JPanel{
 			for(int j=0; j<fMatrix[i].length; j++){
 				final int ii = i, jj = j; 
 				GainChanger gChanger = new GainChanger(){
+					@Override
 					public void setGain(float value){
 						fMatrix[ii][jj] = value;
 					}

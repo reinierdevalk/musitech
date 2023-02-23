@@ -66,6 +66,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSlider;
 import javax.swing.JToggleButton;
+import javax.swing.WindowConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -103,18 +104,22 @@ public class ImageScroller extends JPanel {
 		jScrollPane = new JScrollPane(imgComp);
 		setupScroller();
 		addComponentListener(new ComponentListener() {
+			@Override
 			public void componentHidden(ComponentEvent e) {
 			}
 
+			@Override
 			public void componentMoved(ComponentEvent e) {
 			}
 
+			@Override
 			public void componentResized(ComponentEvent e) {
 				if (fitToComp) {
 					imgComp.setZoomfactor(computeFactor());
 				}
 			}
 
+			@Override
 			public void componentShown(ComponentEvent e) {
 				if (true) {
 					imgComp.setZoomfactor(1.0);
@@ -203,6 +208,7 @@ public class ImageScroller extends JPanel {
 		button.setFont(new Font("SansSerif", Font.PLAIN, 9));
 		button.setMargin(new Insets(0, 0, 0, 0));
 		button.addItemListener(new ItemListener() {
+			@Override
 			public void itemStateChanged(ItemEvent e) {
 				if (e.getStateChange() == ItemEvent.SELECTED) {
 					imaScrol.setFitToComp(false);
@@ -225,6 +231,7 @@ public class ImageScroller extends JPanel {
 		slider.setPaintLabels(true);
 		
 		slider.addChangeListener(new ChangeListener() {
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				imaScrol.setZoom((float) slider.getValue()/100);
 				
@@ -235,7 +242,7 @@ public class ImageScroller extends JPanel {
 		frame.getContentPane().add(button, BorderLayout.NORTH);
 		frame.getContentPane().add(imaScrol, BorderLayout.CENTER);
 		frame.getContentPane().add(slider, BorderLayout.SOUTH);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setLocation(200, 150);
 		frame.pack();
 		frame.setSize(300, 200);

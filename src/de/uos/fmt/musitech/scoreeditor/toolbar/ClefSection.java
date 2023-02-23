@@ -69,18 +69,21 @@ public class ClefSection extends AbstractToolbarSection {
 	@Override
 	public void addItems(JToolBar tb) {
 		tb.add(new AbstractAction(Messages.getString("ClefSection.TrebleClef"), Icons.getIcon("g.png")) { //$NON-NLS-1$ //$NON-NLS-2$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				getScoreEditor().getScoreManipulator().setClef('g', -1, 0);
 			}
 		});
 
 		tb.add(new AbstractAction(Messages.getString("ClefSection.AltoClef"), Icons.getIcon("c.png")) { //$NON-NLS-1$ //$NON-NLS-2$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				getScoreEditor().getScoreManipulator().setClef('c', 0, 0);
 			}
 		});
 
 		tb.add(new AbstractAction(Messages.getString("ClefSection.BassClef"), Icons.getIcon("f.png")) { //$NON-NLS-1$ //$NON-NLS-2$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				getScoreEditor().getScoreManipulator().setClef('f', 1, 0);
 			}

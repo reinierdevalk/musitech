@@ -68,6 +68,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.JSpinner;
+import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -117,8 +118,10 @@ public class KeyPiano
 	public KeyPiano(Component component) {
 		// dummy Receiver
 		receiver = new Receiver() {
+			@Override
 			public void close() {
 			}
+			@Override
 			public void send(MidiMessage message, long timeStamp) {
 			}
 		};
@@ -128,8 +131,10 @@ public class KeyPiano
 	public KeyPiano() {
 		// dummy Receiver
 		receiver = new Receiver() {
+			@Override
 			public void close() {
 			}
+			@Override
 			public void send(MidiMessage message, long timeStamp) {
 			}
 		};
@@ -210,6 +215,7 @@ public class KeyPiano
 		}
 	}
 
+	@Override
 	public void keyReleased(KeyEvent e) {
 		if (keyToNote(e) != -1) {
 			if (isPressed[keyToNote(e)]) {
@@ -353,10 +359,11 @@ public class KeyPiano
 	private JSlider getVelocitySlider() {
 		if (velocitySlider == null)
 			velocitySlider = new JSlider();
-		velocitySlider.setOrientation(JSlider.VERTICAL);
+		velocitySlider.setOrientation(SwingConstants.VERTICAL);
 		velocitySlider.setSnapToTicks(true);
 		velocitySlider.addChangeListener(new ChangeListener() {
 
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				getEditVel().setValue(velocitySlider.getValue());
 			}
@@ -424,18 +431,21 @@ public class KeyPiano
 	/**
 	 * @see javax.sound.midi.Transmitter#close()
 	 */
+	@Override
 	public void close() {
 	}
 
 	/** 
 	 * @see javax.sound.midi.Transmitter#getReceiver()
 	 */
+	@Override
 	public Receiver getReceiver() {
 		return receiver;
 	}
 	/** 
 	 * @see javax.sound.midi.Transmitter#setReceiver(javax.sound.midi.Receiver)
 	 */
+	@Override
 	public void setReceiver(Receiver newReceiver) {
 		if (newReceiver != null)
 			receiver = newReceiver;
@@ -444,6 +454,7 @@ public class KeyPiano
 	/** 
 	 * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
 	 */
+	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
 		if (evt.getPropertyName() == editPanTrans.getText()) {
 			if (DebugState.DEBUG)

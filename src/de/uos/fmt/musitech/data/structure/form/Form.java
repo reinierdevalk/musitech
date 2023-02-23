@@ -109,6 +109,7 @@ public class Form extends BasicContainer {
 		 * @see de.uos.fmt.musitech.data.Named#getName()
 		 * @hibernate.property
 		 */
+		@Override
 		public String getName() {
 			return name;
 		}
@@ -118,6 +119,7 @@ public class Form extends BasicContainer {
 		 * 
 		 * @see de.uos.fmt.musitech.data.Named#setName(java.lang.String)
 		 */
+		@Override
 		public void setName(String name) {
 			this.name = name;
 		}
@@ -157,6 +159,7 @@ public class Form extends BasicContainer {
 		 * @see de.uos.fmt.musitech.data.MObject#getUid()
 		 * @hibernate.id generator-class="native"
 		 */
+		@Override
 		public Long getUid() {
 			return uid;
 		}
@@ -165,6 +168,7 @@ public class Form extends BasicContainer {
 		 * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String,
 		 *      java.lang.Object)
 		 */
+		@Override
 		public boolean isValidValue(String propertyName, Object value) {
 			// TODO Auto-generated method stub
 			return true; // default
@@ -173,6 +177,7 @@ public class Form extends BasicContainer {
 		/**
 		 * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
 		 */
+		@Override
 		public void setUid(Long uid) {
 			this.uid = uid;
 		}

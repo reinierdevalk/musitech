@@ -78,6 +78,7 @@ public class Attachable implements Containable, IAttachable {
 	/**
 	 * @see de.uos.fmt.musitech.data.MObject#getUid()
 	 */
+	@Override
 	public Long getUid() {
 		return id;
 	}
@@ -85,6 +86,7 @@ public class Attachable implements Containable, IAttachable {
 	/**
 	 * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
 	 */
+	@Override
 	public void setUid(Long uid) {
 		id = uid;
 
@@ -93,6 +95,7 @@ public class Attachable implements Containable, IAttachable {
 	/**
 	 * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String, java.lang.Object)
 	 */
+	@Override
 	public boolean isValidValue(String propertyName, Object value) {
 		return true;
 	}

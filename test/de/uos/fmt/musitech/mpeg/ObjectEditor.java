@@ -58,7 +58,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Vector;
@@ -79,11 +78,9 @@ import javax.swing.event.ListSelectionListener;
 
 import de.uos.fmt.musitech.data.MObject;
 import de.uos.fmt.musitech.data.metadata.MetaDataCollection;
-import de.uos.fmt.musitech.data.rendering.RenderingHints;
 import de.uos.fmt.musitech.data.score.NotationStaff;
 import de.uos.fmt.musitech.data.score.NotationSystem;
 import de.uos.fmt.musitech.data.score.NotationVoice;
-import de.uos.fmt.musitech.data.structure.Note;
 import de.uos.fmt.musitech.data.structure.Piece;
 import de.uos.fmt.musitech.data.structure.container.BasicContainer;
 import de.uos.fmt.musitech.data.structure.container.Container;
@@ -165,7 +162,8 @@ public class ObjectEditor extends JPanel implements ActionListener {
 		list.setCellRenderer(new NotationCellRenderer());
 		//Erg. K.N. 11.01.05
 		list.addListSelectionListener(new ListSelectionListener(){
-            public void valueChanged(ListSelectionEvent e) {
+            @Override
+			public void valueChanged(ListSelectionEvent e) {
                 clearMarkUp(display);
                 setSelectedObj(list.getSelectedValue());
 //                updateMarkUp();
@@ -193,7 +191,8 @@ public class ObjectEditor extends JPanel implements ActionListener {
 		showButton.setText("Open Metadata");
 		showButton.setToolTipText("Shows the metadata for the selected note or structure.");
 		showButton.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 openMetaData();
             }});
 		showButton.setEnabled(false);
@@ -215,11 +214,12 @@ public class ObjectEditor extends JPanel implements ActionListener {
 	    }
 	}
 
+	@Override
 	public void actionPerformed(ActionEvent event) {
 		String command = event.getActionCommand();
 		
 		if ("edit".equals(command)) {
-			MetaDataCollection mdc = (MetaDataCollection)piece.getMetaMap().get(list.getSelectedValue());
+			MetaDataCollection mdc = piece.getMetaMap().get(list.getSelectedValue());
 			mdc = showMetaDataEditor(mdc);
 			piece.getMetaMap().put((MObject)list.getSelectedValue(), mdc);
 		}
@@ -227,7 +227,7 @@ public class ObjectEditor extends JPanel implements ActionListener {
 	
 	private void openMetaData(){
 	    //get MetaDataCollection for selectedObj
-	    MetaDataCollection mdc = (MetaDataCollection)piece.getMetaMap().get(selectedObj);
+	    MetaDataCollection mdc = piece.getMetaMap().get(selectedObj);
 	    //display metadata
 	    mdc = showMetaDataEditor(mdc);
 		piece.getMetaMap().put((MObject)selectedObj, mdc);
@@ -298,6 +298,7 @@ public class ObjectEditor extends JPanel implements ActionListener {
 	}
 	
 	class NotationCellRenderer extends JLabel implements ListCellRenderer {
+			@Override
 			public Component getListCellRendererComponent(JList list, Object value,
 														  int index, boolean isSelected, boolean hasFocus) {
 				setText((String)map.get(value));
@@ -329,6 +330,7 @@ public class ObjectEditor extends JPanel implements ActionListener {
 	        return notationDisplay;
 	    }
 		
+		@Override
 		public void mouseClicked(MouseEvent event) {
 			Pitch pitch = (Pitch)score.catchScoreObject(event.getX(), event.getY(), Pitch.class);
 			if (pitch!=null && pitch.getNote()!=null){

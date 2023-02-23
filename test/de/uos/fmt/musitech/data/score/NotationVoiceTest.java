@@ -106,8 +106,8 @@ public class NotationVoiceTest extends TestCase {
 			duration = duration.add(element.getMetricDuration());
 		}
 
-		NotationChord beginning = (NotationChord) voice.get(0);
-		NotationChord end = (NotationChord) voice.get(voice.size() - 1);
+		NotationChord beginning = voice.get(0);
+		NotationChord end = voice.get(voice.size() - 1);
 		Rational globalDuration = end.getMetricTime().add(end.getMetricDuration()).sub(beginning.getMetricTime());
 
 		assertEquals(globalDuration.toDouble(), duration.toDouble(), 0.0);
@@ -182,6 +182,7 @@ public class NotationVoiceTest extends TestCase {
 
 		JFrame jframe = new JFrame();
 		jframe.addWindowListener(new WindowAdapter() {
+			@Override
 			public void windowClosing(WindowEvent ev) {
 				System.exit(0);
 			}
@@ -210,6 +211,7 @@ public class NotationVoiceTest extends TestCase {
 		System.out.println(voice.getContext().getPiece().getMetricalTimeLine().get(0));
 		JFrame jframe = new JFrame();
 		jframe.addWindowListener(new WindowAdapter() {
+			@Override
 			public void windowClosing(WindowEvent ev) {
 				System.exit(0);
 			}

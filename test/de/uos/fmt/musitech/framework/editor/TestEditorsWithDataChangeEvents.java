@@ -236,7 +236,7 @@ public class TestEditorsWithDataChangeEvents extends TestCase {
 		//get table of DataChangeManager
 		Map table = DataChangeManager.getInstance().getTable();
 		for (Iterator iter = table.keySet().iterator(); iter.hasNext();) {
-			Object key = (Object) iter.next();
+			Object key = iter.next();
 			if (table.get(key) instanceof AbstractList) {
 				AbstractList listOfViews = (AbstractList) table.get(key);
 				int errors = 0;

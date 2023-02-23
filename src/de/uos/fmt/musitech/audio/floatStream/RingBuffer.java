@@ -207,7 +207,7 @@ public class RingBuffer implements FISReader {
 			return 0;
 		int floor = (int) Math.floor(buffPos);
 		int ceil = (int) Math.ceil(buffPos);
-		float ratio = (float) floor - (float) buffPos;
+		float ratio = floor - (float) buffPos;
 		for (int channel = 0; channel < buffer.length; channel++) {
 			float value = buffer[channel][floor] * ratio + buffer[channel][ceil] * (1.0f - ratio);
 			data[channel][dataPos] = value;
@@ -236,6 +236,7 @@ public class RingBuffer implements FISReader {
 	 * Returns the floatInputStream.
 	 * @return FloatInputStream
 	 */
+	@Override
 	public FloatInputStream getFloatInputStream() {
 		return fis;
 	}
@@ -274,6 +275,7 @@ public class RingBuffer implements FISReader {
 	 * @@bitte überprüfen
 	 * @param fis the FloatInputStream
 	 */
+	@Override
 	public FISReader setFloatInputStream(FloatInputStream fis) {
 		this.fis = fis;
 		if(fis != null)

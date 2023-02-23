@@ -248,6 +248,7 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 			metronomToggle.setToolTipText("Metronome");
 			metronomToggle.addItemListener(new ItemListener() {
 
+				@Override
 				public void itemStateChanged(ItemEvent e) {
 					if (e.getStateChange() == ItemEvent.DESELECTED) {
 						playTimer.setMetronome(false);
@@ -265,6 +266,7 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 			preCountToggle.setToolTipText("PreCount");
 			preCountToggle.addItemListener(new ItemListener() {
 
+				@Override
 				public void itemStateChanged(ItemEvent e) {
 					if (e.getStateChange() == ItemEvent.DESELECTED) {
 						playTimer.setPreCount(false);
@@ -295,6 +297,7 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 //				playButton.setIcon(createImageIcon("pict/Play24.gif", "play"));
 				playButton.addActionListener(new ActionListener() {
 
+					@Override
 					public void actionPerformed(ActionEvent arg0) {
 						if (DebugState.DEBUG)
 							System.out.println("TransButton: play pressed");
@@ -317,6 +320,7 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 				recButton.setText("rec");
 				recButton.addActionListener(new ActionListener() {
 
+					@Override
 					public void actionPerformed(ActionEvent arg0) {
 						System.out.println("TransButton: rec pressPoint");
 						// playTimer.start(getRecButton());
@@ -344,6 +348,7 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 				playStopButton.setOpaque(false);
 //				playStopButton.setIcon(createImageIcon("pict/Stop24.gif", "stop"));
 				playStopButton.addActionListener(new ActionListener() {
+					@Override
 					public void actionPerformed(ActionEvent arg1) {
 						if(psb_state) { // stop play back
 							System.out.println("TransButton: playstop pressPoint");
@@ -387,6 +392,7 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 //				stopButton.setIcon(createImageIcon("pict/Stop24.gif", "stop"));
 				stopButton.addActionListener(new ActionListener() {
 
+					@Override
 					public void actionPerformed(ActionEvent arg1) {
 						System.out.println("TransButton: stop pressPoint");
 						playTimer.stop();
@@ -420,6 +426,7 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 				timeSlider.setOpaque(false);
 				timeSlider.addMouseListener(new MouseAdapter() {
 
+					@Override
 					public void mousePressed(MouseEvent arg0) {
 						sliderDragging = true;
 						timeSlider.setMaximum((int) (getPlayTimer().getEndOfAllPlayer() / 1000));
@@ -427,6 +434,7 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 						// player.stop();
 					}
 
+					@Override
 					public void mouseReleased(MouseEvent arg0) {
 						setTimeToSlider();
 						sliderDragging = false;
@@ -434,6 +442,7 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 				});
 				timeSlider.addChangeListener(new ChangeListener() {
 
+					@Override
 					public void stateChanged(ChangeEvent event) {
 						// if(!sliderDragging){
 						// sliderDragging = true;
@@ -481,22 +490,27 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 				forwardButton.setText("forward");
 				forwardButton.addMouseListener(new MouseListener() {
 
+					@Override
 					public void mouseClicked(MouseEvent arg0) {
 					}
 
+					@Override
 					public void mouseEntered(MouseEvent arg0) {
 					}
 
+					@Override
 					public void mouseExited(MouseEvent arg0) {
 						pressed = false;
 					}
 
+					@Override
 					public void mousePressed(MouseEvent arg0) {
 						pressed = true;
 						wind(FORWARD);
 						// playTimer.setTempoInBPM(200);
 					}
 
+					@Override
 					public void mouseReleased(MouseEvent arg0) {
 						pressed = false;
 						// playTimer.enableExternalTempoChanges();
@@ -504,6 +518,7 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 				});
 				forwardButton.addActionListener(new ActionListener() {
 
+					@Override
 					public void actionPerformed(ActionEvent arg0) {
 						System.out.println("TransButton: forward pressPoint");
 					}
@@ -529,21 +544,26 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 				// });
 				rewindButton.addMouseListener(new MouseListener() {
 
+					@Override
 					public void mouseClicked(MouseEvent e) {
 					}
 
+					@Override
 					public void mouseEntered(MouseEvent e) {
 					}
 
+					@Override
 					public void mouseExited(MouseEvent e) {
 						pressed = false;
 					}
 
+					@Override
 					public void mousePressed(MouseEvent e) {
 						pressed = true;
 						wind(REWIND);
 					}
 
+					@Override
 					public void mouseReleased(MouseEvent e) {
 						pressed = false;
 					}
@@ -590,6 +610,7 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 //				resetButton.setIcon(createImageIcon("pict/StepBack24.gif", "reset"));
 				resetButton.addActionListener(new ActionListener() {
 
+					@Override
 					public void actionPerformed(ActionEvent arg0) {
 						System.out.println("TransButton: reset pressPoint");
 						playTimer.reset();
@@ -614,6 +635,7 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 	/**
 	 * @param timer
 	 */
+	@Override
 	public void setPlayTimer(PlayTimer timer) {
 		// timer.unRegisterForPush(this);
 		// timer.unRegisterPlayer(this);
@@ -625,6 +647,7 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 	/**
 	 * @see de.uos.fmt.musitech.data.time.Timeable#setTimePosition(long)
 	 */
+	@Override
 	public void setTimePosition(long timeMicros) {
 		if (!sliderDragging)
 			updateTimeSlider(timeMicros, playTimer.getEndOfAllPlayer());
@@ -635,6 +658,7 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 	 * 
 	 * @see de.uos.fmt.musitech.data.time.Timeable#getEndTime()
 	 */
+	@Override
 	public long getEndTime() {
 		return -1;
 	}
@@ -644,6 +668,7 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.time.Player#start()
 	 */
+	@Override
 	public void start() {
 		getStopButton().setEnabled(true);
 		getPlayButton().setEnabled(false);
@@ -660,6 +685,7 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.time.Player#stop()
 	 */
+	@Override
 	public void stop() {
 		getStopButton().setEnabled(false);
 		getPlayButton().setEnabled(true);
@@ -692,6 +718,7 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.time.Player#reset()
 	 */
+	@Override
 	public void reset() {
 		stopButton.setEnabled(false);
 		playButton.setEnabled(true);
@@ -714,6 +741,7 @@ public class TransportButtons extends JPanel implements Timeable, Recorder {
 	/**
 	 * @see de.uos.fmt.musitech.framework.time.Recorder#setRecord(boolean)
 	 */
+	@Override
 	public void setRecord(boolean record) {
 		getRecButton().setEnabled(recording);
 		getStopButton().setEnabled(true);

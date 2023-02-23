@@ -70,10 +70,12 @@ public class CustomCharScoreObject extends CustomScoreObject {
 		c = symbol.getSymbol();
 	}
 	
+	@Override
 	public int rwidth() {
 		return MusicGlyph.width(master.staff().getLineDistance(), c);
 	}
 	
+	@Override
 	public int height() {
 		return MusicGlyph.height(master.staff().getLineDistance(), c);
 	}
@@ -81,6 +83,7 @@ public class CustomCharScoreObject extends CustomScoreObject {
 	/* (non-Javadoc)
 	 * @see java.awt.Component#paint(java.awt.Graphics)
 	 */
+	@Override
 	public void paint(Graphics g) {
 		int x = absX();
 		if (getAttachable().getAlignment() == MetricAttachable.CENTER) {

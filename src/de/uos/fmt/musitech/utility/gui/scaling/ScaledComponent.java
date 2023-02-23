@@ -141,6 +141,7 @@ public class ScaledComponent extends JLayeredPane {
 		
 		// create frontpanel which paints the scaled comp) and add it to the palette-layer.
 		frontpanel = new JPanel(){
+			@Override
 			public void paint(Graphics g) {
 //				super.paint(g);
 				g.clearRect(0,0,getWidth(),getHeight());
@@ -176,6 +177,7 @@ public class ScaledComponent extends JLayeredPane {
 		frontpanel.addMouseMotionListener(m);
 		
 		addComponentListener(new ComponentAdapter() {
+			@Override
 			public void componentResized(ComponentEvent e) {
 				frontpanel.setSize(getSize());
 			}
@@ -198,6 +200,7 @@ public class ScaledComponent extends JLayeredPane {
 	/**
 	 * Sets the size of frontpanel to this.getSize() and calls super.paint().
 	 */
+	@Override
 	public void paint(Graphics g) {
 //		g.clearRect(0,0,getWidth(),getHeight());
 		frontpanel.paint(g);
@@ -225,6 +228,7 @@ public class ScaledComponent extends JLayeredPane {
 	 * and returns the scaled preferred size.
 	 * @return scaled preferred size of comp
 	 */
+	@Override
 	public Dimension getPreferredSize() {
 		vWidth = (int)(comp.getPreferredSize().width * zoom);
 		vHeight = (int)(comp.getPreferredSize().height * zoom);
@@ -256,6 +260,7 @@ public class ScaledComponent extends JLayeredPane {
 	 */
 	class MouseEventRedispatcher implements MouseListener, MouseMotionListener {
 
+		@Override
 		public void mouseClicked(MouseEvent e) {
 			redispatchMouseEvent(e);
 		}
@@ -263,6 +268,7 @@ public class ScaledComponent extends JLayeredPane {
 		/**
 		 * Forward event to <code>comp</code>.
 		 */
+		@Override
 		public void mousePressed(MouseEvent e) {
 			redispatchMouseEvent(e);
 			frontpanel.repaint();						
@@ -271,6 +277,7 @@ public class ScaledComponent extends JLayeredPane {
 		/**
 		 * Forward event to <code>comp</code>.
 		 */
+		@Override
 		public void mouseReleased(MouseEvent e) {
 			redispatchMouseEvent(e);
 			frontpanel.repaint();		
@@ -279,6 +286,7 @@ public class ScaledComponent extends JLayeredPane {
 		/**
 		 * Forward event to <code>comp</code>.
 		 */
+		@Override
 		public void mouseEntered(MouseEvent e) {
 			redispatchMouseEvent(e);
 			frontpanel.repaint();		
@@ -287,6 +295,7 @@ public class ScaledComponent extends JLayeredPane {
 		/**
 		 * Forward event to <code>comp</code>.
 		 */
+		@Override
 		public void mouseExited(MouseEvent e) {
 			redispatchMouseEvent(e);
 			frontpanel.repaint();			
@@ -295,6 +304,7 @@ public class ScaledComponent extends JLayeredPane {
 		/**
 		 * Forward event to <code>comp</code>.
 		 */
+		@Override
 		public void mouseDragged(MouseEvent e) {
 			redispatchMouseEvent(e);
 			frontpanel.repaint();		
@@ -303,6 +313,7 @@ public class ScaledComponent extends JLayeredPane {
 		/**
 		 * Forward event to <code>comp</code>.
 		 */
+		@Override
 		public void mouseMoved(MouseEvent e) {
 			redispatchMouseEvent(e);			
 		}
@@ -386,7 +397,8 @@ public class ScaledComponent extends JLayeredPane {
 		  * Repaint all registered clients every <code>repaintingTime</code> milliseconds.
 		  * Runs while <code>running</code> is true. 
 		  */
-		 public void run(){
+		 @Override
+		public void run(){
 			 while(running){
 			 	 if ((clients == null)||(clients.size() == 0)) {
 			 	 	synchronized(this) {
@@ -539,6 +551,7 @@ public class ScaledComponent extends JLayeredPane {
 	 */	
 	class KeyPainter implements KeyListener {
 		
+		@Override
 		public void keyPressed(KeyEvent e) {
 			frontpanel.repaint();
 		}
@@ -546,9 +559,11 @@ public class ScaledComponent extends JLayeredPane {
 		/**
 		 * Empty.
 		 */
+		@Override
 		public void keyTyped(KeyEvent e) {
 		}
 
+		@Override
 		public void keyReleased(KeyEvent e) {
 			frontpanel.repaint();
 		}
@@ -559,10 +574,12 @@ public class ScaledComponent extends JLayeredPane {
 	 */
 	class FocusPainter implements FocusListener {
 
+		@Override
 		public void focusGained(FocusEvent e) {		
 			frontpanel.repaint();
 		}
 
+		@Override
 		public void focusLost(FocusEvent e) {
 			frontpanel.repaint();
 		} 
@@ -573,6 +590,7 @@ public class ScaledComponent extends JLayeredPane {
 	 */	
 	class ChangePainter implements ChangeListener {
 
+		@Override
 		public void stateChanged(ChangeEvent e) {
 //			System.out.println("repaint in changeListener");
 			frontpanel.repaint();			
@@ -584,6 +602,7 @@ public class ScaledComponent extends JLayeredPane {
 		/**
 		 * Invoked when the component has been made visible.
 		 */
+		@Override
 		public void componentShown(ComponentEvent e) {
 			addToRepaintingThread();
 		}
@@ -591,6 +610,7 @@ public class ScaledComponent extends JLayeredPane {
 		/**
 		 * Invoked when the component has been made invisible.
 		 */
+		@Override
 		public void componentHidden(ComponentEvent e) {
 			removeFromRepaintingThread();
 		}

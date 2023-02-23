@@ -69,6 +69,7 @@ public class FXTestStream extends FXFloatFilterInputStream {
 //		// TODO: add the coefficients
 //	};
 
+	@Override
 	public String toString(){
 		StringBuilder s = new StringBuilder();
 		for (int i = 0; i < coefficients.getXCoefficients().length; i++) {

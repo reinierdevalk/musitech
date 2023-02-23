@@ -56,6 +56,7 @@ public class JavaClock implements MTimer {
 	public JavaClock() {
 	}
 
+	@Override
 	public long getTimeMicros() {
 		return System.currentTimeMillis()*1000;
 	}

@@ -85,10 +85,12 @@ public class FIStoAIS extends AudioInputStream implements FISReader {
 		frameSize = floatInput.getFormat().getFrameSize();
 	} 
 
+	@Override
 	public int read(byte[] data) throws IOException {
 		return read(data, 0, data.length);
 	}
 
+	@Override
 	public int read(byte[] data, int start, int len) throws IOException {
 		assert start + len >= data.length;
 		// float[][] floats =
@@ -126,18 +128,22 @@ public class FIStoAIS extends AudioInputStream implements FISReader {
 	 * 
 	 * @see java.io.InputStream#skip(long)
 	 */
+	@Override
 	public long skip(long n) throws IOException {
 		return floatInput.skip(n / frameSize);
 	}
 
+	@Override
 	public void reset() throws IOException {
 		floatInput.reset();
 	}
 
+	@Override
 	public FloatInputStream getFloatInputStream() {
 		return floatInput;
 	}
 
+	@Override
 	public FISReader setFloatInputStream(FloatInputStream floatInputStream) {
 		floatInput = floatInputStream;
 		return this;

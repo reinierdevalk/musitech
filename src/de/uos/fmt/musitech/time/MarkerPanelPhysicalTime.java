@@ -72,6 +72,7 @@ public class MarkerPanelPhysicalTime extends MarkerPanel implements LinearDispla
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.time.gui.LinearDisplay#setMicrosPerPix(double)
 	 */
+	@Override
 	public void setMicrosPerPix(double microsPPix) {
 		// TODO Auto-generated method stub
 		
@@ -80,6 +81,7 @@ public class MarkerPanelPhysicalTime extends MarkerPanel implements LinearDispla
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.time.gui.LinearDisplay#setOffset(long)
 	 */
+	@Override
 	public void setOffset(long micros) {
 		// TODO Auto-generated method stub
 		
@@ -88,6 +90,7 @@ public class MarkerPanelPhysicalTime extends MarkerPanel implements LinearDispla
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.time.gui.LinearDisplay#updateDisplay()
 	 */
+	@Override
 	public void updateDisplay() {
 		revalidate();
 	}
@@ -95,6 +98,7 @@ public class MarkerPanelPhysicalTime extends MarkerPanel implements LinearDispla
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.time.gui.LinearDisplay#getEndTime()
 	 */
+	@Override
 	public long getEndTime() {
 		return getMetricalTimeLine().getEndMarker().getTime(); // 20
 	}

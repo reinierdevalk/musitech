@@ -90,6 +90,7 @@ public class PCMFloatIS implements FloatInputStream {
 	 * read a frame 
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float[][])
 	 */
+	@Override
 	public int read(float[][] data) throws IOException {
 		return read(data, 0, data[0].length);
 	}
@@ -98,6 +99,7 @@ public class PCMFloatIS implements FloatInputStream {
 	 * read an number of frames  
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float[][], int, int)
 	 */
+	@Override
 	public int read(float[][] data, int start, int len) throws IOException {
 		len = AudioUtil.readSamples(data, start, len, inputStream, normalised);
 		samplesRead += len; 
@@ -122,6 +124,7 @@ public class PCMFloatIS implements FloatInputStream {
 	 */ 
 	 // (not more) * @return long Frames skipped, if the end of stream is reached, the returned number negative and equals -(skipedFrames+1).
 	 
+	@Override
 	public long skip(long n) throws IOException {
 		int frameSize = inputStream.getFormat().getFrameSize();
 //		long skipBytes = n * frameSize;
@@ -149,6 +152,7 @@ public class PCMFloatIS implements FloatInputStream {
 	 * 
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#reset()
 	 */
+	@Override
 	public void reset() throws IOException {
 		inputStream.reset();
 	}
@@ -162,6 +166,7 @@ public class PCMFloatIS implements FloatInputStream {
 	 * The other infomation can be used when converting to byte streams. 
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getFormat()
 	 */
+	@Override
 	public AudioFormat getFormat() {
 		AudioFormat in = inputStream.getFormat();
 		AudioFormat out = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, in.getSampleRate(), normalised?1:in.getSampleSizeInBits(), in.getChannels(), in.getFrameSize(), in.getFrameRate(), true);
@@ -185,6 +190,7 @@ public class PCMFloatIS implements FloatInputStream {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
 	 */
+	@Override
 	public long remainingSamples() {
 		return inputStream.getFrameLength() - samplesRead;
 	}
@@ -192,6 +198,7 @@ public class PCMFloatIS implements FloatInputStream {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public long getPositionInSamples() {
 		return samplesRead;
 	}
@@ -199,6 +206,7 @@ public class PCMFloatIS implements FloatInputStream {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#setPositionInSamples(long)
 	 */
+	@Override
 	public void setPositionInSamples(long newPos) throws IOException {
 		reset();
 		skip(newPos);

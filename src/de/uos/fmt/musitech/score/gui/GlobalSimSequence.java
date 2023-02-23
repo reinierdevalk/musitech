@@ -101,6 +101,7 @@ public class GlobalSimSequence {
 	}
 
 	/** Returns a string representation of this sequence. */
+	@Override
 	public String toString() {
 		String res = "";
 		for (int i = 0; i < globalSims.size(); i++)

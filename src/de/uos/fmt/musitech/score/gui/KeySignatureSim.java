@@ -67,20 +67,25 @@ public class KeySignatureSim implements SpringAttacher
  		rwidth = Math.max(rwidth, keySignature.rwidth());
    }
    
-   public int lwidth()             {return 0;}   
-   public int rwidth ()            {return rwidth;}
+   @Override
+public int lwidth()             {return 0;}   
+   @Override
+public int rwidth ()            {return rwidth;}
    public int size ()              {return keySignatures.size();}
-   public Rational attackTime()    {return null;}
+   @Override
+public Rational attackTime()    {return null;}
 
 
-   public int optimalSpace(SpringAttacher successor)       
+   @Override
+public int optimalSpace(SpringAttacher successor)       
    {
       return optimalSpace;
    }
   
    /** Sets the x-Position of all KeySignatures in this sim to
     * a given value. */
-   public void setXPos(int x)
+   @Override
+public void setXPos(int x)
    {
       for (int i=0; i < keySignatures.size(); i++)
       {
@@ -89,7 +94,8 @@ public class KeySignatureSim implements SpringAttacher
       }
    }
 
-   public void setParentXPos(int x)
+   @Override
+public void setParentXPos(int x)
    {
       for (int i=0; i < keySignatures.size(); i++)
       {
@@ -99,7 +105,8 @@ public class KeySignatureSim implements SpringAttacher
       }
    }
    
-   public void setMeasureRWidth(int width)
+   @Override
+public void setMeasureRWidth(int width)
    {
       for (int i=0; i < keySignatures.size(); i++)
       {

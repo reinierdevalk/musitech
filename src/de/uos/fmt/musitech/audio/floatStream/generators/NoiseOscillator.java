@@ -85,6 +85,7 @@ public class NoiseOscillator extends FloatOscillator {
 	/** Returns a single sample. 
 	 * @return a single random value.
 	 * */
+	@Override
 	public float read() {
 		return ((float) Math.random() * 2 - 1) * amplitude + mean ;
 	}
@@ -92,6 +93,7 @@ public class NoiseOscillator extends FloatOscillator {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#skip(long)
 	 */
+	@Override
 	public long skip(long n) throws IOException {
 		return n;
 	}
@@ -99,6 +101,7 @@ public class NoiseOscillator extends FloatOscillator {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#reset()
 	 */
+	@Override
 	public void reset() throws IOException {
 	}
 	/**

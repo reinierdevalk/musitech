@@ -59,7 +59,7 @@ public class TestNote extends TestCase {
 		Context context = new Context(new Piece());
 		NoteList list1 = new NoteList(context, "8c4d8e4f8g4g");
 		NoteList list2 = new NoteList(context, "8c4d8e4f8g4g");
-		boolean check = ((Note)list1.get(0)).isEquivalent( (Note)list2.get(0) );
+		boolean check = list1.get(0).isEquivalent( list2.get(0) );
 		assertTrue(check);
 	}
 	
@@ -67,7 +67,7 @@ public class TestNote extends TestCase {
 		Context context = new Context(new Piece());
 		NoteList list1 = new NoteList(context, "8c4d8e4f8g4g");
 		NoteList list2 = new NoteList(context, "8c4d8e4f8g4g");
-		boolean check = ((Note)list1.get(0)).isEquivalent( (Note)list2.get(1) );
+		boolean check = list1.get(0).isEquivalent( list2.get(1) );
 		assertFalse(check);
 	}
 	

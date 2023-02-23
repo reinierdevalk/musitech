@@ -134,6 +134,7 @@ public class FISChannelSplitter {
 		/**
 		 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float)
 		 */
+		@Override
 		public int read(float[][] data) throws IOException {
 			return read(data, 0, data[0].length);
 		}
@@ -141,6 +142,7 @@ public class FISChannelSplitter {
 		/**
 		 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float, int, int)
 		 */
+		@Override
 		public int read(float[][] data, int start, int len) throws IOException {
 			int didRead = mrRingBuff.read(data, start, len, this, channelRepart);
 			if(didRead == 0)
@@ -155,6 +157,7 @@ public class FISChannelSplitter {
 		/**
 		 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getFormat()
 		 */
+		@Override
 		public AudioFormat getFormat() {
 			return mrRingBuff.getFormat();
 		}
@@ -162,6 +165,7 @@ public class FISChannelSplitter {
 		/**
 		 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#skip(long)
 		 */
+		@Override
 		public long skip(long n) throws IOException {
 			long didSkip = mrRingBuff.skip(n, this);
 			if(didSkip == 0)
@@ -175,6 +179,7 @@ public class FISChannelSplitter {
 		/**
 		 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#reset()
 		 */
+		@Override
 		public void reset() throws IOException {
 			mrRingBuff.reset();
 		}
@@ -191,6 +196,7 @@ public class FISChannelSplitter {
 		/**
 		 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
 		 */
+		@Override
 		public long remainingSamples() {
 			return getFloatInputStream().remainingSamples()+getFloatInputStream().getPositionInSamples()-samplesRead;
 		}
@@ -199,6 +205,7 @@ public class FISChannelSplitter {
 		 * 
 		 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 		 */
+		@Override
 		public long getPositionInSamples() {
 			return mrRingBuff.getPositionInSamples(this);
 		}
@@ -206,6 +213,7 @@ public class FISChannelSplitter {
 		/**
 		 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 		 */
+		@Override
 		public void setPositionInSamples(long newPos) throws IOException {
 			mrRingBuff.setPositionInSamples(newPos);
 			samplesRead = (int) mrRingBuff.getPositionInSamples(this);

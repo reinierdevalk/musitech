@@ -77,6 +77,7 @@ public class IrregularDuration extends Duration {
 	}
 
 	/** Returns the total duration (including augmentation dots). */
+	@Override
 	public Rational toRational() {
 		// vgl. Gieseking, S. 68
 		int exp = (int) MyMath.log(2, tuplet.getTupletSize() / tuplet.getDuration().toDouble());

@@ -156,10 +156,12 @@ public class EditorPanel extends JPanel implements ActionListener {
 		//					editor = newEditor;
 		//				}
 
+	@Override
 	public void focusGained(FocusEvent e) {
 					editor.focusReceived();
 				}
 
+				@Override
 				public void focusLost(FocusEvent e) {
 				}
 
@@ -215,6 +217,7 @@ public class EditorPanel extends JPanel implements ActionListener {
 	 * <br> A new ActionEvent is propagated to all registered ActionListeners
 	 * (done by the method <code>propagateAction(String)</code> of this class).
 	 */
+	@Override
 	public void actionPerformed(ActionEvent event) {
 		if (event.getActionCommand().equals("OK")) {
 			if (allInputsAreValid()) {

@@ -61,6 +61,7 @@ import de.uos.fmt.musitech.utility.math.Rational;
  */
 public class Crescendo extends ScoreObject {
 	
+	@Override
 	Class parentClass() {
 		return Staff.class;
 	}
@@ -82,6 +83,7 @@ public class Crescendo extends ScoreObject {
 		forkDistance = parent.getLineDistance() * 2;
 	}
 	
+	@Override
 	public void paint(Graphics g) {
 		if(!isVisible()) return;
 		int startX = staff().getXForMetricTime(leftMetricTime);

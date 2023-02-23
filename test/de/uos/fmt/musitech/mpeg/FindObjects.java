@@ -145,7 +145,7 @@ public class FindObjects extends JPanel implements ActionListener {
 		long id = 0;
 		Collection musicalObjects = piece.getContainerPool().getContentsRecursiveList(null);
 		for (Iterator iter = musicalObjects.iterator(); iter.hasNext();) {
-			Object element = (Object) iter.next();
+			Object element = iter.next();
 			if (element instanceof MObject) {
 				MObject musicalObject = (MObject)element;
 				musicalObject.setUid(new Long(id++));
@@ -167,14 +167,16 @@ public class FindObjects extends JPanel implements ActionListener {
 	    final JComboBox comboBox = new JComboBox(returnOptions());
 	    comboBox.setEditable(true);
 	    comboBox.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 selectID((String)comboBox.getSelectedItem());
             }});
 	    box.add(comboBox);
 	    box.add(Box.createHorizontalStrut(50));
 	    JButton searchButton = new JButton("Search");
 	    searchButton.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 markUpSelected();
             }});
 	    box.add(searchButton);
@@ -214,7 +216,7 @@ public class FindObjects extends JPanel implements ActionListener {
 	    MObject found = null;
 		Collection musicalObjects = piece.getContainerPool().getContentsRecursiveList(null);
 		for (Iterator iter = musicalObjects.iterator(); iter.hasNext();) {
-			Object element = (Object) iter.next();
+			Object element = iter.next();
 			if (element instanceof MObject) {
 				MObject musicalObject = (MObject)element;
 				if (musicalObject.getUid().equals(id)) {
@@ -233,6 +235,7 @@ public class FindObjects extends JPanel implements ActionListener {
 	        display.addMarkup(markup);
 	}
 	
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		String command = e.getActionCommand();
 		if ("search".equals(command)) {
@@ -246,7 +249,7 @@ public class FindObjects extends JPanel implements ActionListener {
 			MObject found = null;
 			Collection musicalObjects = piece.getContainerPool().getContentsRecursiveList(null);
 			for (Iterator iter = musicalObjects.iterator(); iter.hasNext();) {
-				Object element = (Object) iter.next();
+				Object element = iter.next();
 				if (element instanceof MObject) {
 					MObject musicalObject = (MObject)element;
 					if (musicalObject.getUid().equals(id)) {
@@ -268,7 +271,7 @@ public class FindObjects extends JPanel implements ActionListener {
 			
 			Collection musicalObjects = piece.getContainerPool().getContentsRecursiveList(null);
 			for (Iterator iter = musicalObjects.iterator(); iter.hasNext();) {
-				Object element = (Object) iter.next();
+				Object element = iter.next();
 				if (element instanceof MObject) {
 					MObject musicalObject = (MObject)element;
 					list += "<li>" + musicalObject.getUid();

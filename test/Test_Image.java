@@ -51,6 +51,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.audio.AFOPlayer;
 import de.uos.fmt.musitech.data.audio.AudioFileObject;
@@ -145,7 +146,7 @@ public class Test_Image {
 		TransportButtons tb = new TransportButtons(playTimer);
 		frame.getContentPane().add(tb,BorderLayout.SOUTH);
 		
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setLocation(200, 150);
 		frame.setSize(300,200);
 		frame.show();

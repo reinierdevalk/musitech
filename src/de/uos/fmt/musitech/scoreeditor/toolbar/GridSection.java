@@ -83,6 +83,7 @@ public class GridSection extends AbstractToolbarSection {
 		raster = new AbstractAction[5];
 		raster[0] = new AbstractAction(Messages.getString("GridSection.WholeNoteGrid"), Icons //$NON-NLS-1$
 				.getIcon("ganze-raster.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				for (AbstractAction as : raster) {
 					as.setEnabled(true);
@@ -94,6 +95,7 @@ public class GridSection extends AbstractToolbarSection {
 
 		raster[1] = new AbstractAction(Messages.getString("GridSection.HalfNoteGrid"), Icons //$NON-NLS-1$
 				.getIcon("halbe-raster.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				for (AbstractAction as : raster) {
 					as.setEnabled(true);
@@ -105,6 +107,7 @@ public class GridSection extends AbstractToolbarSection {
 
 		raster[2] = new AbstractAction(Messages.getString("GridSection.QuarterNoteGrid"), Icons //$NON-NLS-1$
 				.getIcon("viertel-raster.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				for (AbstractAction as : raster) {
 					as.setEnabled(true);
@@ -116,6 +119,7 @@ public class GridSection extends AbstractToolbarSection {
 
 		raster[3] = new AbstractAction(Messages.getString("GridSection.EigthNoteGrid"), Icons //$NON-NLS-1$
 				.getIcon("achtel-raster.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				for (AbstractAction as : raster) {
 					as.setEnabled(true);
@@ -127,6 +131,7 @@ public class GridSection extends AbstractToolbarSection {
 
 		raster[4] = new AbstractAction(Messages.getString("GridSection.SixteenthNoteGrid"), Icons //$NON-NLS-1$
 				.getIcon("sechzehntel-raster.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				for (AbstractAction as : raster) {
 					as.setEnabled(true);

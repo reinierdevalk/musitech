@@ -77,6 +77,7 @@ public class TriadMode {
 		return mode;
 	}
 	
+	@Override
 	public String toString(){
 		switch (mode) {
 		case MODE_MAJOR:

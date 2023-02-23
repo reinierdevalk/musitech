@@ -51,7 +51,6 @@ above is subject to the following three conditions:
  */
 package de.uos.fmt.musitech.score.gui;
 
-import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;
@@ -59,6 +58,7 @@ import java.awt.image.BufferedImage;
 import de.uos.fmt.musitech.data.score.MetricAttachable;
 import de.uos.fmt.musitech.data.score.SVGSymbol;
 
+import org.apache.batik.transcoder.SVGAbstractTranscoder;
 import org.apache.batik.transcoder.TranscoderException;
 import org.apache.batik.transcoder.TranscoderInput;
 import org.apache.batik.transcoder.TranscoderOutput;
@@ -80,8 +80,8 @@ public class CustomSVGScoreObject extends CustomScoreObject {
 		TranscoderInput ti = new TranscoderInput(sym.getUri());
 		AWTImageTranscoder t = new AWTImageTranscoder();
 
-		t.addTranscodingHint(AWTImageTranscoder.KEY_WIDTH, new Float(10));
-		t.addTranscodingHint(AWTImageTranscoder.KEY_HEIGHT, new Float(10));
+		t.addTranscodingHint(SVGAbstractTranscoder.KEY_WIDTH, new Float(10));
+		t.addTranscodingHint(SVGAbstractTranscoder.KEY_HEIGHT, new Float(10));
 		
 		try {
 			t.transcode(ti, null);
@@ -91,10 +91,12 @@ public class CustomSVGScoreObject extends CustomScoreObject {
 		rasteredImage = t.image;
 	}
 	
+	@Override
 	public int height() {
 		return 10;
 	}
 
+	@Override
 	public void paint(Graphics g) {
 		g.drawImage(rasteredImage, absX(), absY(), this);
 	}
@@ -102,10 +104,12 @@ public class CustomSVGScoreObject extends CustomScoreObject {
 	class AWTImageTranscoder extends ImageTranscoder {
 		BufferedImage image = null;
 
+		@Override
 		public BufferedImage createImage(int arg0, int arg1) {
 			return new BufferedImage(arg0, arg1, ColorSpace.TYPE_RGB);
 		}
 		
+		@Override
 		public void writeImage(BufferedImage arg0, TranscoderOutput arg1)
 				throws TranscoderException {
 			image = arg0;

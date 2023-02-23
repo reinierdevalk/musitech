@@ -58,6 +58,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.structure.container.BasicContainer;
 import de.uos.fmt.musitech.data.structure.container.Container;
@@ -101,7 +102,8 @@ public class TestPianoRoll_PersManager {
         
         JButton update1 = new JButton("update 1");
         update1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 try {
                     persManager.update(cont1);
                 } catch (PersistenceException e1) {
@@ -111,7 +113,8 @@ public class TestPianoRoll_PersManager {
         });
         JButton update2 = new JButton("update 2");
         update2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 try {
                     persManager.update(cont2);
                 } catch (PersistenceException e1) {
@@ -121,7 +124,8 @@ public class TestPianoRoll_PersManager {
         });
         JButton store1 = new JButton("store 1");
         store1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 try {
                     idCont1 = persManager.store(cont1);
                 } catch (PersistenceException e1) {
@@ -131,7 +135,8 @@ public class TestPianoRoll_PersManager {
         });
         JButton store2 = new JButton("store 2");
         store2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 try {
                     persManager.store(cont2);
                     
@@ -142,7 +147,8 @@ public class TestPianoRoll_PersManager {
         });
         JButton storebyName1 = new JButton("str by Name 1");
         storebyName1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 try {
                     persManager.storeByName(cont1, "container");
                 } catch (PersistenceException e1) {
@@ -152,7 +158,8 @@ public class TestPianoRoll_PersManager {
         });
         JButton storebyName2 = new JButton("str by Name 2");
         storebyName2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 try {
                     persManager.storeByName(cont2, "container");
                 } catch (PersistenceException e1) {
@@ -162,7 +169,8 @@ public class TestPianoRoll_PersManager {
         });
         JButton read2 = new JButton("read for 2");
         read2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 try {
                     cont2 = (Container) persManager.read(idCont1);
                     editor2.setContainer(cont2);
@@ -173,14 +181,16 @@ public class TestPianoRoll_PersManager {
         });
         JButton get1 = new JButton("get for 1");
         get1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                     cont1 = (Container) persManager.getByName("container");
                     editor1.setContainer(cont1);
             }
         });
         JButton get2 = new JButton("get 'cont' for 2");
         get2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                     cont2 = (Container) persManager.getByName("container");
                     editor2.setContainer(cont2);
             }
@@ -195,7 +205,7 @@ public class TestPianoRoll_PersManager {
         buttons.add(update1);
         buttons.add(update2);
         JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(new BorderLayout());
         frame.getContentPane().add(splitPane);
         frame.getContentPane().add(buttons, BorderLayout.SOUTH);

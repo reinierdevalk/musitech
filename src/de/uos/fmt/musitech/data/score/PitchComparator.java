@@ -50,9 +50,6 @@ package de.uos.fmt.musitech.data.score;
 import java.util.Comparator;
 
 import de.uos.fmt.musitech.data.structure.Note;
-import de.uos.fmt.musitech.data.structure.Piece;
-import de.uos.fmt.musitech.data.time.MetricalTimeLine;
-import de.uos.fmt.musitech.utility.math.Rational;
 
 
 /**
@@ -81,6 +78,7 @@ public class PitchComparator implements Comparator<Note> {
 	 * Returns the Pitch of two notes using getMidiPitch.  
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 	 */
+	@Override
 	public int compare(Note o1, Note o2) {
 		int p1, p2;
 		if(o1.getPerformanceNote() == null)

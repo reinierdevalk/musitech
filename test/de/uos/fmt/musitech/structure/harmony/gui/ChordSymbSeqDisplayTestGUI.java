@@ -164,6 +164,7 @@ public class ChordSymbSeqDisplayTestGUI {
 			final ChordSymbSeqDisplay d = display;
 			JButton selectButton = new JButton("Select");
 			selectButton.addActionListener(new ActionListener() {
+				@Override
 				public void actionPerformed(ActionEvent e) {
 					Selection sel =
 						SelectionManager.getManager().getSelection();

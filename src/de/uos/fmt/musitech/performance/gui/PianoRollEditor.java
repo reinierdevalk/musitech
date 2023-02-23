@@ -119,7 +119,8 @@ public class PianoRollEditor extends PianoRollPanel implements Editor {
                     "Create Note"));
         }
 
-        public void actionPerformed(ActionEvent e) {
+        @Override
+		public void actionPerformed(ActionEvent e) {
             //            pianoRoll.removeMouseListener();
             //            pianoRoll.addMouseEditableListener();
             editMode = CREATE_PERFNOTE;
@@ -141,7 +142,8 @@ public class PianoRollEditor extends PianoRollPanel implements Editor {
                     "Delete Note"));
         }
 
-        public void actionPerformed(ActionEvent e) {
+        @Override
+		public void actionPerformed(ActionEvent e) {
             //          pianoRoll.removeMouseListener();
             editMode = DELETE_PERFNOTE;
 
@@ -163,7 +165,8 @@ public class PianoRollEditor extends PianoRollPanel implements Editor {
                     "Pointer"));
         }
 
-        public void actionPerformed(ActionEvent e) {
+        @Override
+		public void actionPerformed(ActionEvent e) {
             editMode = NOTHING;
             pianoRoll.setEditMode(editMode);
             setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
@@ -183,7 +186,8 @@ public class PianoRollEditor extends PianoRollPanel implements Editor {
                     "Velocity Change"));
         }
 
-        public void actionPerformed(ActionEvent e) {
+        @Override
+		public void actionPerformed(ActionEvent e) {
             editMode = VELOCITY_CHANGE;
             pianoRoll.setEditMode(editMode);
             setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
@@ -203,7 +207,8 @@ public class PianoRollEditor extends PianoRollPanel implements Editor {
                     "Edit Note"));
         }
 
-        public void actionPerformed(ActionEvent e) {
+        @Override
+		public void actionPerformed(ActionEvent e) {
             //            pianoRoll.removeSelectionMouseListener();
             //            pianoRoll.addMouseEditableListener();
             editMode = EDIT_PERFNOTE;
@@ -216,33 +221,38 @@ public class PianoRollEditor extends PianoRollPanel implements Editor {
     /**
      * @see de.uos.fmt.musitech.framework.editor.Editor#applyChanges()
      */
-    public void applyChanges() {
+    @Override
+	public void applyChanges() {
     }
 
     /**
      * @see de.uos.fmt.musitech.framework.editor.Editor#inputIsValid()
      */
-    public boolean inputIsValid() {
+    @Override
+	public boolean inputIsValid() {
         return false;
     }
 
     /**
      * @see de.uos.fmt.musitech.framework.editor.Editor#getEditedData()
      */
-    public Collection getEditedData() {
+    @Override
+	public Collection getEditedData() {
         return null;
     }
 
     /**
      * @see de.uos.fmt.musitech.framework.editor.Editor#setPromptUpdate(boolean)
      */
-    public void setPromptUpdate(boolean promptUpdate) {
+    @Override
+	public void setPromptUpdate(boolean promptUpdate) {
     }
 
     /**
      * @see de.uos.fmt.musitech.framework.editor.Editor#setDirty(boolean)
      */
-    public void setDirty(boolean dirty) {
+    @Override
+	public void setDirty(boolean dirty) {
 
     }
 
@@ -379,25 +389,31 @@ public class PianoRollEditor extends PianoRollPanel implements Editor {
     /**
      * @see de.uos.fmt.musitech.performance.gui.PianoRollPanel#createGUI()
      */
-    public void createGUI() {
+    @Override
+	public void createGUI() {
         super.createGUI();
         if (showTools = true) {
             add(getToolBar(), BorderLayout.WEST);
             pianoRoll.addMouseListener(new MouseListener() {
-                public void mouseClicked(MouseEvent e) {
+                @Override
+				public void mouseClicked(MouseEvent e) {
                 }
 
-                public void mouseEntered(MouseEvent e) {
+                @Override
+				public void mouseEntered(MouseEvent e) {
                 }
 
-                public void mouseExited(MouseEvent e) {
+                @Override
+				public void mouseExited(MouseEvent e) {
                 }
 
-                public void mousePressed(MouseEvent e) {
+                @Override
+				public void mousePressed(MouseEvent e) {
                     pressed = e.getPoint();
                 }
 
-                public void mouseReleased(MouseEvent e) {
+                @Override
+				public void mouseReleased(MouseEvent e) {
                     released = e.getPoint();
                     if (editMode == CREATE_PERFNOTE) {
                         Rectangle rec = MouseEditorUtils
@@ -435,7 +451,8 @@ public class PianoRollEditor extends PianoRollPanel implements Editor {
     /**
      * @see de.uos.fmt.musitech.performance.gui.PianoRollPanel#setContainer(de.uos.fmt.musitech.data.structure.container.Container)
      */
-    public void setContainer(Container container) {
+    @Override
+	public void setContainer(Container container) {
         super.setContainer(container);
         DataChangeManager.getInstance().interestExpandObject(this, container);
         DataChangeManager.getInstance().interestExpandElements(this, container);

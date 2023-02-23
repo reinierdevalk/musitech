@@ -112,7 +112,8 @@ public class ContainerEditor extends TypedCollectionEditor {
      *            Display being the top of the display hierarchy this
      *            ContainerEditor is situated in
      */
-    public void init(Object editObject, EditingProfile profile,
+    @Override
+	public void init(Object editObject, EditingProfile profile,
             Display rootEditor) {
         this.editObj = editObject;
         this.profile = profile;
@@ -134,7 +135,8 @@ public class ContainerEditor extends TypedCollectionEditor {
      * <code>editObj</code> or the <code>propertyValue</code> are copied to
      * the <code>containerCopy</code>.
      */
-    protected void determineLocalObj() {
+    @Override
+	protected void determineLocalObj() {
         if (editObj instanceof Container && ((Container) editObj).size() >= 0) {  
             writeToCopy((Container) editObj);
         } else if (propertyValue != null && propertyValue instanceof Container
@@ -175,7 +177,8 @@ public class ContainerEditor extends TypedCollectionEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.CollectionMapEditor#writeCopyBackToEditObj()
      */
-    protected void writeCopyBackToEditObj() {
+    @Override
+	protected void writeCopyBackToEditObj() {
         //        if (editObj instanceof Container) {
         //            clearContainer((Container)editObj);
         //            if (containerCopy!=null && containerCopy.size()>0){
@@ -237,7 +240,8 @@ public class ContainerEditor extends TypedCollectionEditor {
      * Creates editors for the elements of <code>workingCopy</code> and adds
      * them to the Vector <code>elementEditors</code>.
      */
-    protected void createElementEditors() {
+    @Override
+	protected void createElementEditors() {
         int count = 0;
         //for all elements in workingCopy: create an editor and add it to the
         // elementEditors
@@ -302,7 +306,7 @@ public class ContainerEditor extends TypedCollectionEditor {
         Collection objectsInContext = getObjectsInContext();
         if (objectsInContext != null && objectsInContext.size() > 0) {
             for (Iterator iter = objectsInContext.iterator(); iter.hasNext();) {
-                Object element = (Object) iter.next();
+                Object element = iter.next();
                 if (containerCopy != null && !containerCopy.contains(element)) {
                     objects.add(element);
                 }
@@ -352,7 +356,8 @@ public class ContainerEditor extends TypedCollectionEditor {
         return newElements.toArray();
     }
     
-    protected Object getNewElement(){
+    @Override
+	protected Object getNewElement(){
         return getNewElements()[0];
     }
     
@@ -388,7 +393,8 @@ public class ContainerEditor extends TypedCollectionEditor {
         panel.add((JComponent)display);
         JButton selectButton = new JButton("Select and close");
         selectButton.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 //for testing:
                 Selection debugSelection = selection;
                 System.out.println(debugSelection);
@@ -397,7 +403,8 @@ public class ContainerEditor extends TypedCollectionEditor {
         });
         JButton cancelButton = new JButton("Cancel");
         cancelButton.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 selection.clear(null);
                 selection.addAll(selectionBefore.getAll(), null);
                 dialog.dispose();
@@ -446,7 +453,8 @@ public class ContainerEditor extends TypedCollectionEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.CollectionEditor#addElement()
      */
-    void addElement() {
+    @Override
+	void addElement() {
 		Object[] newElements = getNewElements();
 		if (newElements!=null && newElements.length>0){
 		    for (int i = 0; i < newElements.length; i++) {
@@ -467,11 +475,13 @@ public class ContainerEditor extends TypedCollectionEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.CollectionEditor#createButtonPane()
      */
-    protected JPanel createButtonPane() {
+    @Override
+	protected JPanel createButtonPane() {
 		JPanel buttonPane = new JPanel();
 
 		JButton addElement = new JButton("Add Element");
 		addElement.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent ae) {
 				addElement();
 			}
@@ -479,6 +489,7 @@ public class ContainerEditor extends TypedCollectionEditor {
 
 		JButton deleteElement = new JButton("Delete Element");
 		deleteElement.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent ae) {
 				deleteElement();
 			}
@@ -486,6 +497,7 @@ public class ContainerEditor extends TypedCollectionEditor {
 
 		JButton replaceElement = new JButton("Replace Element");
 		replaceElement.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent ae) {
 				replaceElement();
 			}
@@ -507,7 +519,8 @@ public class ContainerEditor extends TypedCollectionEditor {
 		return buttonPane;
 	}
     
-    void deleteElement() {
+    @Override
+	void deleteElement() {
 		Object elementToDelete = getElementToDelete();
 		if (elementToDelete != null) {
 			containerCopy.remove(elementToDelete);
@@ -527,11 +540,12 @@ public class ContainerEditor extends TypedCollectionEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.CollectionEditor#getElementTypeAndValues()
      */
-    protected Object getElementTypeAndValues() {
+    @Override
+	protected Object getElementTypeAndValues() {
 		Object newElement = null;
 		String type = "";
 		type =
-			((String) JOptionPane
+			(JOptionPane
 				.showInputDialog(
 					this,
 					"Please type the object type of the new element.\nThe exact package is required."));

@@ -84,6 +84,7 @@ public class ScoreChord extends BasicContainer<Note> implements Metrical {
 	/** 
 	 * @see de.uos.fmt.musitech.data.time.Metrical#getMetricTime()
 	 */
+	@Override
 	public Rational getMetricTime() {
 		return metricTime;
 	}
@@ -91,6 +92,7 @@ public class ScoreChord extends BasicContainer<Note> implements Metrical {
 	/** 
 	 * @see de.uos.fmt.musitech.data.time.Metrical#getMetricDuration()
 	 */
+	@Override
 	public Rational getMetricDuration() {
 		return metricDuration;
 	}

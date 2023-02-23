@@ -106,6 +106,7 @@ public class PCMFPreviewReader extends PCMFileFloatIS implements FloatPreviewRea
 	 * @param chan = inputchannels for the respektiv outpuchannels
 	 * @return true if the param is coherent whith in- and output
 	 */
+	@Override
 	public synchronized boolean setChannels(int[] chan) {
 		int cDisp = source.getAudioFormat().getChannels();
 		for (int i = 0; i < chan.length; i++) {
@@ -121,6 +122,7 @@ public class PCMFPreviewReader extends PCMFileFloatIS implements FloatPreviewRea
 	 * 
 	 * @return number of channels
 	 */
+	@Override
 	public synchronized int setAllChannels() {
 		int chan = source.getAudioFormat().getChannels();
 		channels = new int[chan];
@@ -138,6 +140,7 @@ public class PCMFPreviewReader extends PCMFileFloatIS implements FloatPreviewRea
 	 * 
 	 * @return
 	 */
+	@Override
 	public int channelsDisponible() {
 		return channels.length;
 	}
@@ -148,22 +151,26 @@ public class PCMFPreviewReader extends PCMFileFloatIS implements FloatPreviewRea
 	 * 
 	 * @param iPo - samples coming in for any sample going out
 	 */
+	@Override
 	public void setSampleRateRatio(float iPo) {
 		sInPerSOut = iPo;
 	}
 
+	@Override
 	public float getSampleRateRatio() {
 		return sInPerSOut;
 	}
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#previewRead(float[][], int)
 	 */
+	@Override
 	public int previewRead(float[][] data,  int firstSampleToRead){
 		return previewRead(data, 0, data[0].length, firstSampleToRead);
 	}
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#previewRead(float[][], int, int, int)
 	 */
+	@Override
 	public int previewRead(float[][] data, int start, int len, int firstSampleToRead){
 		try {
 			position(firstSampleToRead);
@@ -176,6 +183,7 @@ public class PCMFPreviewReader extends PCMFileFloatIS implements FloatPreviewRea
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#previewRead(float[][])
 	 */
+	@Override
 	public int previewRead(float[][] data) {
 		return previewRead(data, 0, data[0].length);
 	}
@@ -192,6 +200,7 @@ public class PCMFPreviewReader extends PCMFileFloatIS implements FloatPreviewRea
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#previewRead(float[][],
 	 *      int, int)
 	 */
+	@Override
 	public synchronized int previewRead(float[][] data, int start, int len) {
 		reading = true;
 		stopPreviewRead = false;
@@ -231,6 +240,7 @@ public class PCMFPreviewReader extends PCMFileFloatIS implements FloatPreviewRea
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#stopPreviewRead()
 	 * @return true if reading was active, false if it was not.
 	 */
+	@Override
 	public boolean stopPreviewRead(){
 		if(reading){
 			stopPreviewRead = true;
@@ -242,6 +252,7 @@ public class PCMFPreviewReader extends PCMFileFloatIS implements FloatPreviewRea
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#getPositionableFIS()
 	 */
+	@Override
 	public PositionableFIS getPositionableFIS() {
 		return source.getPositionableFIS();
 	}
@@ -249,6 +260,7 @@ public class PCMFPreviewReader extends PCMFileFloatIS implements FloatPreviewRea
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#availableMikroseconds()
 	 */
+	@Override
 	public long availableMikroseconds() {
 		return (long) (available() / getFormat().getFrameRate() * 1000000);
 	}

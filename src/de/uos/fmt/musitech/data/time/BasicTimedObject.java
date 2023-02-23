@@ -47,14 +47,7 @@ above is subject to the following three conditions:
 **********************************************/
 package de.uos.fmt.musitech.data.time;
 
-import java.util.Hashtable;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-
 import de.uos.fmt.musitech.data.MObject;
-import de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer;
 import de.uos.fmt.musitech.utility.DebugState;
 
 /**
@@ -98,7 +91,8 @@ public class BasicTimedObject implements Timed, MObject {
      * 
      * @hibernate.property
      */
-    public long getTime() {
+    @Override
+	public long getTime() {
         return beginTime;
     }
 
@@ -123,7 +117,8 @@ public class BasicTimedObject implements Timed, MObject {
      * 
      *  
      */
-    public long getDuration() {
+    @Override
+	public long getDuration() {
         return 0;
     }
 
@@ -131,7 +126,8 @@ public class BasicTimedObject implements Timed, MObject {
      * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String,
      *      java.lang.Object)
      */
-    public boolean isValidValue(String propertyName, Object value) {
+    @Override
+	public boolean isValidValue(String propertyName, Object value) {
         // TODO Auto-generated method stub
         return true; //default
     }
@@ -141,14 +137,16 @@ public class BasicTimedObject implements Timed, MObject {
      * 
      * @hibernate.id generator-class="native"
      */
-    public Long getUid() {
+    @Override
+	public Long getUid() {
         return uId;
     }
 
     /**
      * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
      */
-    public void setUid(Long uid) {
+    @Override
+	public void setUid(Long uid) {
         this.uId = uid;
     }
 }

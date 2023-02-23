@@ -54,9 +54,9 @@ import java.util.List;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.performance.MidiNoteSequence;
-import de.uos.fmt.musitech.data.score.Clef;
 import de.uos.fmt.musitech.data.score.NotationStaff;
 import de.uos.fmt.musitech.data.score.NotationSystem;
 import de.uos.fmt.musitech.data.score.NotationVoice;
@@ -71,7 +71,6 @@ import de.uos.fmt.musitech.framework.editor.EditorFactory.EditorConstructionExce
 import de.uos.fmt.musitech.framework.time.ObjectPlayer;
 import de.uos.fmt.musitech.framework.time.TransportButtons;
 import de.uos.fmt.musitech.score.gui.Accent;
-import de.uos.fmt.musitech.utility.math.MyMath;
 
 
 public class NotationTest {
@@ -116,7 +115,7 @@ public class NotationTest {
             frame.getContentPane().add((JComponent)display);
             frame.getContentPane().add(trans,BorderLayout.NORTH);
             frame.pack();
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
             frame.setVisible(true);
         } catch (EditorConstructionException e) {
             e.printStackTrace();

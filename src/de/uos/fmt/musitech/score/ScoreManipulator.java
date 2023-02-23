@@ -158,10 +158,10 @@ public class ScoreManipulator {
 
 	private void expandTo(Rational endTime) {
 		for (int i = 0; i < scoreEditor.getNotationSystem().size(); i++) {
-			NotationStaff ns = (NotationStaff) scoreEditor.getNotationSystem()
+			NotationStaff ns = scoreEditor.getNotationSystem()
 					.get(i);
 			for (int j = 0; j < ns.size(); j++) {
-				NotationVoice nv = (NotationVoice) ns.get(j);
+				NotationVoice nv = ns.get(j);
 				List<Note> rests = new ArrayList<Note>();
 				Rational pos = nv.getEndTime();
 				if (pos.isLess(endTime)) {
@@ -184,13 +184,13 @@ public class ScoreManipulator {
 	public Rational trim() {
 		Rational endTime = getNotationSystem().getEndTime();
 		for (int i = 0; i < scoreEditor.getNotationSystem().size(); i++) {
-			NotationStaff ns = (NotationStaff) scoreEditor.getNotationSystem()
+			NotationStaff ns = scoreEditor.getNotationSystem()
 					.get(i);
 			for (int j = 0; j < ns.size(); j++) {
-				NotationVoice nv = (NotationVoice) ns.get(j);
+				NotationVoice nv = ns.get(j);
 				List<NotationChord> rests = new ArrayList<NotationChord>();
 				for (int k = 0; k < nv.size(); k++) {
-					NotationChord nc = (NotationChord) nv.get(k);
+					NotationChord nc = nv.get(k);
 					if (nc.isRest())
 						rests.add(nc);
 				}
@@ -258,9 +258,9 @@ public class ScoreManipulator {
 	public boolean insertNote(Note n, boolean check) {
 		if (check && (!canInsert(n.getMetricTime(), n.getMetricDuration())))
 			return false;
-		NotationStaff ns = (NotationStaff) scoreEditor.getNotationSystem().get(
+		NotationStaff ns = scoreEditor.getNotationSystem().get(
 				scoreEditor.getSelectedStaff());
-		NotationVoice nv = (NotationVoice) ns.get(scoreEditor
+		NotationVoice nv = ns.get(scoreEditor
 				.getSelectedVoice());
 		Rational position = n.getMetricTime();
 		Rational length = n.getMetricDuration();
@@ -358,12 +358,12 @@ public class ScoreManipulator {
 
 	public void deleteNote(Note n, boolean fillWithRest) {
 		for (int i = 0; i < scoreEditor.getNotationSystem().size(); i++) {
-			NotationStaff ns = (NotationStaff) scoreEditor.getNotationSystem()
+			NotationStaff ns = scoreEditor.getNotationSystem()
 					.get(i);
 			for (int j = 0; j < ns.size(); j++) {
-				NotationVoice nv = (NotationVoice) ns.get(j);
+				NotationVoice nv = ns.get(j);
 				for (int k = 0; k < nv.size(); k++) {
-					NotationChord nc = (NotationChord) nv.get(k);
+					NotationChord nc = nv.get(k);
 					if (nc.contains(n)) {
 						nc.remove(n);
 						if (nc.isEmpty()) {
@@ -483,8 +483,8 @@ public class ScoreManipulator {
 		Rational barLength = tsm.getTimeSignature().getMeasureDuration();
 		barLength.reduce();
 		for (int i = 0; i < getNotationSystem().size(); i++) {
-			NotationVoice nv = (NotationVoice) ((NotationStaff) getNotationSystem()
-					.get(i)).get(0);
+			NotationVoice nv = getNotationSystem()
+					.get(i).get(0);
 			ScoreNote sn = new ScoreNote(new ScorePitch('r', 0, 0), barLength);
 			sn.setMetricTime(endPoint);
 			nv.add(new Note(sn, null));
@@ -494,7 +494,7 @@ public class ScoreManipulator {
 	}
 
 	public void setClef(char clef, int line, int shift) {
-		NotationStaff ns = (NotationStaff) scoreEditor.getNotationSystem().get(
+		NotationStaff ns = scoreEditor.getNotationSystem().get(
 				scoreEditor.getSelectedStaff());
 		ns.setClefType(clef, line, shift);
 		notationSystemChanged();
@@ -558,6 +558,7 @@ public class ScoreManipulator {
 		if (notes.size() == 0)
 			return;
 		Collections.sort(notes, new Comparator<Note>() {
+			@Override
 			public int compare(Note o1, Note o2) {
 				return o1.getMetricTime().compare(o2.getMetricTime());
 			}

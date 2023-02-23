@@ -69,7 +69,8 @@ public class BinToAscInputStream extends FilterInputStream
    }
    
    
-   public int read() throws IOException
+   @Override
+public int read() throws IOException
    {
    	if (leftBits < 6)
    	   return map(encode(super.read())+'0');
@@ -77,7 +78,8 @@ public class BinToAscInputStream extends FilterInputStream
    }
    
    
-   public int read(byte[] b, int off, int len) throws IOException
+   @Override
+public int read(byte[] b, int off, int len) throws IOException
    {
 /*      byte[] source = new byte[3*len/4]; 
       int numBytes = super.read(source);
@@ -89,7 +91,8 @@ public class BinToAscInputStream extends FilterInputStream
    }
 
 
-   public int read(byte[] b) throws IOException
+   @Override
+public int read(byte[] b) throws IOException
    {
       return 0;//read(b, 0, b.length);
    }

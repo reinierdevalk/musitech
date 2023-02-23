@@ -124,6 +124,7 @@ public class TextEditorTestWithGUI {
 		if (editor != null) {
 			EditorWindow w = new EditorWindow("TextEditor for property");
 			w.addWindowListener(new WindowAdapter(){
+				@Override
 				public void windowIconified(WindowEvent e){
 					printPropertyValueForTesting(editObj, profile.getPropertyName());
 				}

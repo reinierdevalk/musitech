@@ -80,7 +80,8 @@ public class yyAnim extends Frame implements yyDebug {
       Menu m = new Menu("yyAnim");
         MenuItem mi = new MenuItem("Quit");
           mi.addActionListener(new ActionListener() {
-            public void actionPerformed (ActionEvent ae) {
+            @Override
+			public void actionPerformed (ActionEvent ae) {
 	      System.exit(0);
             }
           });
@@ -101,7 +102,8 @@ public class yyAnim extends Frame implements yyDebug {
 	  String ct = (io&IN) != 0 ? "terminal i/o" : "terminal output";
           p.add(c = new Checkbox(ct, outputBreak), "North");
             c.addItemListener(new ItemListener() {
-	      public void itemStateChanged (ItemEvent ie) {
+	      @Override
+		public void itemStateChanged (ItemEvent ie) {
 	        eventThread = Thread.currentThread();
 	        outputBreak = ie.getStateChange() == ItemEvent.SELECTED;
               }
@@ -120,8 +122,10 @@ public class yyAnim extends Frame implements yyDebug {
 
 	  if ((io&OUT) != 0) {
             System.setOut(new yyPrintStream() {	// PrintStream into TextArea
-	      public void close () { }
-	      public void write (byte b[], int off, int len) {
+	      @Override
+		public void close () { }
+	      @Override
+		public void write (byte b[], int off, int len) {
 	        String s = new String(b, off, len);
 	        t.append(s); t.setCaretPosition(t.getText().length());
 	        if (outputBreak && s.indexOf("\n") >= 0 && eventThread != null
@@ -130,7 +134,8 @@ public class yyAnim extends Frame implements yyDebug {
 	            synchronized (panel) { panel.wait(); }
 	          } catch (InterruptedException ie) { }
 	      }
-	      public void write (int b) {
+	      @Override
+		public void write (int b) {
 	        write(new byte[] { (byte)b }, 0, 1);
 	      }
             });
@@ -140,7 +145,8 @@ public class yyAnim extends Frame implements yyDebug {
     }
 
     addWindowListener(new WindowAdapter() {
-      public void windowClosing (WindowEvent we) {
+      @Override
+	public void windowClosing (WindowEvent we) {
 	dispose();
         if (-- nFrames <= 0) System.exit(0);
       }
@@ -165,43 +171,53 @@ public class yyAnim extends Frame implements yyDebug {
     c.setLocation(x, y);
   }
 
-  public synchronized void lex (int state, int token, String name, Object value)
+  @Override
+public synchronized void lex (int state, int token, String name, Object value)
   { panel.lex(state, token, name, value);
   }
 
-  public void shift (int from, int to, int errorFlag) {
+  @Override
+public void shift (int from, int to, int errorFlag) {
     panel.shift(from, to, errorFlag);
   }
 
-  public void discard (int state, int token, String name, Object value) {
+  @Override
+public void discard (int state, int token, String name, Object value) {
     panel.discard(state, token, name, value);
   }
 
-  public void shift (int from, int to) {
+  @Override
+public void shift (int from, int to) {
     panel.shift(from, to);
   }
 
-  public synchronized void accept (Object value) {
+  @Override
+public synchronized void accept (Object value) {
     panel.accept(value);
   }
 
-  public void error (String message) {
+  @Override
+public void error (String message) {
     panel.error(message);
   }
 
-  public void reject () {
+  @Override
+public void reject () {
     panel.reject();
   }
 
-  public synchronized void push (int state, Object value) {
+  @Override
+public synchronized void push (int state, Object value) {
     panel.push(state, value);
   }
 
-  public synchronized void pop (int state) {
+  @Override
+public synchronized void pop (int state) {
     panel.pop(state);
   }
 
-  public synchronized void reduce (int from, int to, int rule, String text,
+  @Override
+public synchronized void reduce (int from, int to, int rule, String text,
 								int len) {
     panel.reduce(from, to, rule, text, len);
   }

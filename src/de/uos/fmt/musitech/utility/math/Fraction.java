@@ -128,7 +128,8 @@ public class Fraction implements java.io.Serializable, IMPEGSerializable{
      * 
      * @see java.lang.Object#hashCode()
      */
-    public int hashCode() {
+    @Override
+	public int hashCode() {
         if (numer == 0)
             return 0;
         // calculate a normalized representation
@@ -359,7 +360,7 @@ public class Fraction implements java.io.Serializable, IMPEGSerializable{
     }
 
     public Rational div(int n) {
-        return new Rational((long) numer, (long) denom * n);
+        return new Rational(numer, (long) denom * n);
     }
 
     public Rational mod(Fraction r) {
@@ -389,7 +390,7 @@ public class Fraction implements java.io.Serializable, IMPEGSerializable{
      * @see java.lang.Comparable#compareTo(Object)
      */
     public int compareTo(Fraction o) {
-        return compare((Fraction) o);
+        return compare(o);
     }
 
     /**
@@ -807,7 +808,8 @@ public class Fraction implements java.io.Serializable, IMPEGSerializable{
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#toMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Node, java.lang.Object, java.lang.String)
      */
-    public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
+    @Override
+	public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
         // TODO Auto-generated method stub
         return false;
     }
@@ -816,7 +818,8 @@ public class Fraction implements java.io.Serializable, IMPEGSerializable{
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#fromMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Element)
      */
-    public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
+    @Override
+	public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
         this.setNumer(Integer.parseInt(node.getAttribute("numerator")));
         this.setDenom(Integer.parseInt(node.getAttribute("denominator")));
         return this;

@@ -53,6 +53,7 @@ package de.uos.fmt.musitech.framework.editor;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 
@@ -194,11 +195,14 @@ public class RationalEditorTest {
      */
     private void addTestOutput(final Editor editor){
         ((JComponent)editor).addAncestorListener(new AncestorListener(){
-            public void ancestorAdded(AncestorEvent event) {
+            @Override
+			public void ancestorAdded(AncestorEvent event) {
             }
-            public void ancestorMoved(AncestorEvent event) {
+            @Override
+			public void ancestorMoved(AncestorEvent event) {
             }
-            public void ancestorRemoved(AncestorEvent event) {
+            @Override
+			public void ancestorRemoved(AncestorEvent event) {
                 if (editor instanceof AbstractSimpleEditor){
                     ((AbstractSimpleEditor)editor).applyChangesToPropertyValue();
                 } else {
@@ -225,7 +229,7 @@ public class RationalEditorTest {
      */
     private void closeTestWindows(){
         JFrame frame = new JFrame("Closing frame");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
 

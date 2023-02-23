@@ -92,12 +92,14 @@ public class CollectionEditor extends CollectionMapEditor {
 	 * 
 	 * @return JPanel containing JButtons
 	 */
+	@Override
 	protected JPanel createButtonPane() {
 		JPanel buttonPane = new JPanel();
 
 		JButton addElement = new JButton("Add Element");
 		addElement.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent ae) {
 				addElement();
 			}
@@ -106,6 +108,7 @@ public class CollectionEditor extends CollectionMapEditor {
 		JButton deleteElement = new JButton("Delete Element");
 		deleteElement.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent ae) {
 				deleteElement();
 			}
@@ -114,6 +117,7 @@ public class CollectionEditor extends CollectionMapEditor {
 		JButton replaceElement = new JButton("Replace Element");
 		replaceElement.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent ae) {
 				replaceElement();
 			}
@@ -393,10 +397,11 @@ public class CollectionEditor extends CollectionMapEditor {
 	 * @deprecated not elegant; TODO remove or replace by better method
 	 * @return Object new element to be specified by the user, or null
 	 */
+	@Deprecated
 	protected Object getElementTypeAndValues() {
 		Object newElement = null;
 		String type = "";
-		type = ((String) JOptionPane
+		type = (JOptionPane
 				.showInputDialog(
 					this,
 					"Please type the object type of the new element.\nThe exact package is required."));
@@ -477,6 +482,7 @@ public class CollectionEditor extends CollectionMapEditor {
 	 *      de.uos.fmt.musitech.framework.editor.EditingProfile,
 	 *      de.uos.fmt.musitech.framework.editor.Editor)
 	 */
+	@Override
 	public void init(Object editObject, EditingProfile profile,
 						Display rootEditor) {
 		this.editObj = editObject;
@@ -553,6 +559,7 @@ public class CollectionEditor extends CollectionMapEditor {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Editor#updateEditor()
 	 */
+	@Override
 	public void updateDisplay() {
 		dataChanged = false;
 		setValueCreated(false);
@@ -584,6 +591,7 @@ public class CollectionEditor extends CollectionMapEditor {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.CollectionMapEditor#writeCopyBackToEditObj()
 	 */
+	@Override
 	protected void writeCopyBackToEditObj() {
 		if (editObj instanceof Collection) {
 			((Collection) editObj).clear();
@@ -608,6 +616,7 @@ public class CollectionEditor extends CollectionMapEditor {
 	 * @return Collcetion containing changed objects
 	 * @see de.uos.fmt.musitech.framework.editor.Editor#getEditedData()
 	 */
+	@Override
 	public Collection getEditedData() {
 		ArrayList changedData = new ArrayList();
 		// add editObj and its properties if properties have been changed
@@ -637,6 +646,7 @@ public class CollectionEditor extends CollectionMapEditor {
 	 * Prints the collection's elements to the command line. This method is for
 	 * control in testing only.
 	 */
+	@Override
 	public void printCollectionDataForTesting() {
 		Vector coll = new Vector();
 		if (propertyValue instanceof Collection)
@@ -656,6 +666,7 @@ public class CollectionEditor extends CollectionMapEditor {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.CollectionMapEditor#printCopyForTesting()
 	 */
+	@Override
 	protected void printCopyForTesting() {
 		System.out.println("Print editCollCopy for testing:");
 		for (Iterator iter = editCollCopy.iterator(); iter.hasNext();) {

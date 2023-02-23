@@ -118,6 +118,7 @@ public class FISChannelMixer  implements FloatInputStream, FISReader {
 	/**
 	 * @param fis
 	 */
+	@Override
 	public FISReader setFloatInputStream(FloatInputStream fis)
 	{
 		sourceStream = fis;
@@ -181,6 +182,7 @@ public class FISChannelMixer  implements FloatInputStream, FISReader {
 	}
 	
 	
+	@Override
 	public int read(float[][] data) throws IOException
 	{
 		return read(data, 0, data[0].length);
@@ -189,6 +191,7 @@ public class FISChannelMixer  implements FloatInputStream, FISReader {
 	 * Can not read more than "getBufferSize()" Samples at time.
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float[][], int, int)
 	 */
+	@Override
 	public synchronized int read(float[][] data, int start, int len) throws IOException
 	{
 		int available = sourceStream.read(buffer, 0, len);
@@ -207,6 +210,7 @@ public class FISChannelMixer  implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getFormat()
 	 */
+	@Override
 	public AudioFormat getFormat()
 	{
 		AudioFormat in = sourceStream.getFormat();
@@ -222,6 +226,7 @@ public class FISChannelMixer  implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#skip(long)
 	 */
+	@Override
 	public long skip(long n) throws IOException
 	{
 		return sourceStream.skip(n);
@@ -229,11 +234,13 @@ public class FISChannelMixer  implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#reset()
 	 */
+	@Override
 	public void reset() throws IOException
 	{
 		sourceStream.reset();		
 	}
 
+	@Override
 	public FloatInputStream getFloatInputStream() {
 		return sourceStream;
 	}
@@ -242,6 +249,7 @@ public class FISChannelMixer  implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
 	 */
+	@Override
 	public long remainingSamples() {
 		return sourceStream.remainingSamples();
 	}
@@ -249,6 +257,7 @@ public class FISChannelMixer  implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public long getPositionInSamples() {
 		return sourceStream.getPositionInSamples();
 	}
@@ -256,6 +265,7 @@ public class FISChannelMixer  implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public void setPositionInSamples(long newPos) throws IOException {
 		sourceStream.setPositionInSamples(newPos);
 	}

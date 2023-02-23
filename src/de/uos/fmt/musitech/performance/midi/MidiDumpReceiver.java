@@ -447,6 +447,7 @@ public class MidiDumpReceiver implements Receiver {
 	 *            ticks
 	 * @see javax.sound.midi.Receiver#send(MidiMessage message, long lTimeStamp)
 	 */
+	@Override
 	public void send(MidiMessage message, long lTimeStamp) {
 		String strMessage = null;
 
@@ -1264,8 +1265,8 @@ public class MidiDumpReceiver implements Receiver {
 				TimeSignatureMarker tsm =
 					new TimeSignatureMarker(
 						new TimeSignature(
-							(int) abData[0],
-							(int) 1 << abData[1]),
+							abData[0],
+							1 << abData[1]),
 						ticksToRational(ticks));
 				//Add it to the MetricalTimeLine
 				metricalTimeLine.add(tsm);
@@ -1405,9 +1406,9 @@ public class MidiDumpReceiver implements Receiver {
 	 */
 	private static int signedByteToUnsigned(byte b) {
 		if (b >= 0) {
-			return (int) b;
+			return b;
 		} else {
-			return 256 + (int) b;
+			return 256 + b;
 		}
 	}
 
@@ -1446,6 +1447,7 @@ public class MidiDumpReceiver implements Receiver {
 	/**
 	 * Empty method. This class implements Receiver so there must be the method close.
 	 */
+	@Override
 	public void close() {
 		//
 	}

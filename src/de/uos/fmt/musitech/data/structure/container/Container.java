@@ -73,6 +73,7 @@ public interface Container<Type> extends Named, MObject, Containable, Timed, Ren
 	 * Set the RenderingHints for this container
 	 * @param rh The RenderingHints to set.
 	 */
+	@Override
 	void setRenderingHints(RenderingHints rh);
 	
 	/**
@@ -107,6 +108,7 @@ public interface Container<Type> extends Named, MObject, Containable, Timed, Ren
 	 * 
 	 * @return the Iterator
 	 */
+	@Override
 	public Iterator<Type> iterator();
 
 	/**

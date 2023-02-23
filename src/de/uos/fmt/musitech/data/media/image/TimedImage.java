@@ -96,6 +96,7 @@ public class TimedImage extends ImageURL implements Timed {
 	 * @hibernate.property
 	 * 
 	 */
+	@Override
 	public long getTime() {
 		return time;
 	}
@@ -104,6 +105,7 @@ public class TimedImage extends ImageURL implements Timed {
 	 * @see de.uos.fmt.musitech.data.time.Timed#getDuration()
 	 * return default value 0
 	 */
+	@Override
 	public long getDuration() {
 		return 0;
 	}
@@ -118,11 +120,13 @@ public class TimedImage extends ImageURL implements Timed {
 	 * column = "uid" 
 	 * 
      */
-    public Long getUid() {
+    @Override
+	public Long getUid() {
         return uid;
     }
 
-    public void setUid(Long uid) {
+    @Override
+	public void setUid(Long uid) {
         this.uid = uid;
     }
 

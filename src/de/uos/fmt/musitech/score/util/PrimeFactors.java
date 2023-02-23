@@ -85,7 +85,7 @@ public class PrimeFactors {
 
 	/** Gets the n-th factor. */
 	public int get(int n) {
-		return ((Integer) factors.get(n)).intValue();
+		return factors.get(n).intValue();
 	}
 
 	/** Returns the biggest factor of this sequence */

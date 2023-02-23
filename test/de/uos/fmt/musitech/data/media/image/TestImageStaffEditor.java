@@ -51,6 +51,7 @@ above is subject to the following three conditions:
 package de.uos.fmt.musitech.data.media.image;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.framework.editor.TimedImageStaffEditor;
 
@@ -63,7 +64,7 @@ public class TestImageStaffEditor {
     public static void main(String[] args) {
         JFrame jframe = new JFrame();
         TimedImageStaffEditor editor = new TimedImageStaffEditor();
-        jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         jframe.getContentPane().add(editor);
         jframe.setBounds(200, 100, 300, 200);
         jframe.show();

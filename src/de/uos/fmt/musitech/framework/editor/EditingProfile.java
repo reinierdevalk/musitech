@@ -406,6 +406,7 @@ public class EditingProfile implements IEquivalence {
 	/**
 	 * Returns a String representation of the profile.
 	 */
+	@Override
 	public String toString() {
 
 		String s = "EditingProfile: '" + label + "'";
@@ -422,6 +423,7 @@ public class EditingProfile implements IEquivalence {
 		return s;
 	}
 
+	@Override
 	public boolean isEquivalent(IEquivalence object) {
 		// if( !(object instanceof EditingProfile) ) return false;
 		// TODO implement editing profile method if needed

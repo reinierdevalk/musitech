@@ -129,10 +129,12 @@ public abstract class ScoreObject extends JComponent implements Comparable, Metr
 		}
 	}
 	
+	@Override
 	public Rational getMetricTime() {
 		return Rational.ZERO;
 	}
 	
+	@Override
 	public Rational getMetricDuration() {
 		return getMetricEndPoint().sub(getMetricTime());
 	}
@@ -182,7 +184,7 @@ public abstract class ScoreObject extends JComponent implements Comparable, Metr
 	/** Returns the absolute x-coordinate of the object's reference point 
 	 * in pixel units. */
 	public int absX() {
-		int x = (int) Math.round(xpos);
+		int x = Math.round(xpos);
 		if (scoreParent != null)
 			x += scoreParent.absX();
 		return x;
@@ -191,7 +193,7 @@ public abstract class ScoreObject extends JComponent implements Comparable, Metr
 	/** Returns the absolute y-coordinate of the object's reference point 
 	 * in pixel units. */
 	public int absY() {
-		int y = (int) Math.round(ypos);
+		int y = Math.round(ypos);
 		if (scoreParent != null)
 			y += scoreParent.absY();
 		return y;
@@ -251,6 +253,7 @@ public abstract class ScoreObject extends JComponent implements Comparable, Metr
 		}
 	}
 	
+	@Override
 	public int compareTo(Object obj) {
 		return 0;
 	}
@@ -268,6 +271,7 @@ public abstract class ScoreObject extends JComponent implements Comparable, Metr
 	}
 
 	/** Returns true if this object is visible. */
+	@Override
 	public final boolean isVisible() {
 		return visible;
 	}
@@ -330,6 +334,7 @@ public abstract class ScoreObject extends JComponent implements Comparable, Metr
 		g.setColor(oldColor);
 	}
 	
+	@Override
 	public void paint(Graphics g) {
 		for (Iterator<CustomScoreObject> i = customScoreObjects.iterator(); i.hasNext();) {
 			i.next().paint(g);
@@ -382,6 +387,7 @@ public abstract class ScoreObject extends JComponent implements Comparable, Metr
 
 	/** Changes the visibility of this object.
 	 * @param v true, if object is visible */
+	@Override
 	public void setVisible(boolean v) {
 		visible = v;
 	}
@@ -578,11 +584,13 @@ public abstract class ScoreObject extends JComponent implements Comparable, Metr
 			this.parent = parent;
 		}
 		
+		@Override
 		public void mouseClicked(MouseEvent e) {
 			
 		}
 	}
 	
+	@Override
 	public Point getLocation() { // TODO check this !
 	    Point point = super.getLocation();
 	    point.x += getLeftPadding(); // does this change the position permanently ?

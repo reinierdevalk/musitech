@@ -63,7 +63,6 @@ import org.w3c.dom.NodeList;
 
 import de.uos.fmt.musitech.data.structure.Context;
 import de.uos.fmt.musitech.data.structure.Note;
-import de.uos.fmt.musitech.data.structure.Piece;
 import de.uos.fmt.musitech.data.structure.container.BasicContainer;
 import de.uos.fmt.musitech.data.structure.container.Containable;
 import de.uos.fmt.musitech.data.structure.container.SortedContainer;
@@ -151,7 +150,8 @@ public class NotationChord extends BasicContainer<Note> implements Metrical, Con
 
 
     // TODO check this
-    public Object clone() {
+    @Override
+	public Object clone() {
         NotationChord c = (NotationChord) super.clone();
 
         c.clear();
@@ -172,14 +172,15 @@ public class NotationChord extends BasicContainer<Note> implements Metrical, Con
      * 
      * @return Rational
      */
-    public Rational getMetricDuration() {
+    @Override
+	public Rational getMetricDuration() {
         if (trueDuration != null)
             return trueDuration;
         if (size() == 0)
             return Rational.ZERO;
         assert size() >= 0;
         Rational duration = new Rational();
-        ScoreNote scoreNote = ((Note) get(0)).getScoreNote();
+        ScoreNote scoreNote = get(0).getScoreNote();
         do {
             duration = duration.add(scoreNote.getMetricDuration());
             scoreNote = scoreNote.getTiedNote();
@@ -197,7 +198,7 @@ public class NotationChord extends BasicContainer<Note> implements Metrical, Con
     public Rational getSingleMetricDuration() {
         if (trueDuration != null)
             return trueDuration;
-        return ((Note) get(0)).getScoreNote().getMetricDuration();
+        return get(0).getScoreNote().getMetricDuration();
     }
 
     /**
@@ -208,7 +209,7 @@ public class NotationChord extends BasicContainer<Note> implements Metrical, Con
      * @return Rational
      */
     public void setMetricDuration(Rational newDuration) {
-        Note n[] = (Note[]) toArray(new Note[] {});
+        Note n[] = toArray(new Note[] {});
         for (int i = 0; i < n.length; i++) {
             n[i].getScoreNote().setMetricDuration(newDuration);
         }
@@ -219,13 +220,14 @@ public class NotationChord extends BasicContainer<Note> implements Metrical, Con
      * 
      * @see de.uos.fmt.musitech.data.time.Metrical#getMetricTime()
      */
-    public Rational getMetricTime() {
+    @Override
+	public Rational getMetricTime() {
         assert size() > 0;
-        return ((Note) get(0)).getScoreNote().getMetricTime();
+        return get(0).getScoreNote().getMetricTime();
     }
 
     public void setMetricTime(Rational newOnset) {
-        Note n[] = (Note[]) toArray(new Note[] {});
+        Note n[] = toArray(new Note[] {});
         for (int i = 0; i < n.length; i++) {
             n[i].getScoreNote().setMetricTime(newOnset);
         }
@@ -281,7 +283,7 @@ public class NotationChord extends BasicContainer<Note> implements Metrical, Con
     }
 
     boolean testUniformity() {
-        Note n[] = (Note[]) toArray(new Note[] {});
+        Note n[] = toArray(new Note[] {});
         Note firstNote = null;
         if (n.length > 0)
             firstNote = n[0];
@@ -306,7 +308,8 @@ public class NotationChord extends BasicContainer<Note> implements Metrical, Con
      * 
      * @see de.uos.fmt.musitech.data.score.NotationContainer#prepareForScore()
      */
-    public void prepareForScore(int pass) {
+    @Override
+	public void prepareForScore(int pass) {
         // Nothing to do yet.
     }
 
@@ -398,7 +401,8 @@ public class NotationChord extends BasicContainer<Note> implements Metrical, Con
         //construct a duration comparator (descending)
         Comparator<Metrical> durationComparer = new Comparator<Metrical>() {
 
-            public int compare(Metrical n1, Metrical n2) {
+            @Override
+			public int compare(Metrical n1, Metrical n2) {
                 return n2.getMetricDuration().compare(n1.getMetricDuration());
             }
         };
@@ -517,7 +521,8 @@ public class NotationChord extends BasicContainer<Note> implements Metrical, Con
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#toMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Node, java.lang.Object, java.lang.String)
      */
-    public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
+    @Override
+	public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
         //commons----------------------------------
         // create element representing this object
         NotationChord chord = (NotationChord) object;
@@ -754,7 +759,8 @@ public class NotationChord extends BasicContainer<Note> implements Metrical, Con
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#fromMPEG(org.w3c.dom.Element,
      *      java.util.Hashtable, java.lang.Object)
      */
-    public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
+    @Override
+	public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
         //commons----------------------------------
         // reference-handling
         Object reference = instance.getReferenced(node, this);
@@ -964,7 +970,7 @@ public class NotationChord extends BasicContainer<Note> implements Metrical, Con
      */
     private void setAccent(byte type) {
         if (this.size() > 0) {
-            ((Note) getContent().get(0)).getScoreNote().addAccent(type);
+            getContent().get(0).getScoreNote().addAccent(type);
         }
     }
 
@@ -974,7 +980,7 @@ public class NotationChord extends BasicContainer<Note> implements Metrical, Con
      * @author Jens
      */
     public boolean isRest() {
-        return ((Note) get(0)).getScoreNote().getDiatonic() == 'r';
+        return get(0).getScoreNote().getDiatonic() == 'r';
     }
 
     /**
@@ -1025,10 +1031,10 @@ public class NotationChord extends BasicContainer<Note> implements Metrical, Con
         int highestPitch = -1;
         Note highest = null;
         for (int i = 0; i < size(); i++) {
-            int pitch = ((Note) get(i)).getMidiPitch();
+            int pitch = get(i).getMidiPitch();
             if (pitch > highestPitch) {
                 highestPitch = pitch;
-                highest = (Note) get(i);
+                highest = get(i);
             }
         }
         return highest;
@@ -1043,10 +1049,10 @@ public class NotationChord extends BasicContainer<Note> implements Metrical, Con
         int lowestPitch = Integer.MAX_VALUE;
         Note lowest = null;
         for (int i = 0; i < size(); i++) {
-            int pitch = ((Note) get(i)).getMidiPitch();
+            int pitch = get(i).getMidiPitch();
             if (pitch < lowestPitch) {
                 lowestPitch = pitch;
-                lowest = (Note) get(i);
+                lowest = get(i);
             }
         }
         return lowest;

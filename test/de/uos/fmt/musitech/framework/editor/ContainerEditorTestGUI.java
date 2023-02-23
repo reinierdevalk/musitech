@@ -51,8 +51,8 @@ above is subject to the following three conditions:
  */
 package de.uos.fmt.musitech.framework.editor;
 
-import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.structure.Context;
 import de.uos.fmt.musitech.data.structure.Piece;
@@ -89,7 +89,7 @@ public class ContainerEditorTestGUI {
 
     private static Editor createContainerEditor(Piece piece) {
         Editor editor = null;
-        Container container = (Container) piece.getContainerPool().get(0);
+        Container container = piece.getContainerPool().get(0);
         if (container != null) {
             try {
                 editor = EditorFactory.createEditor(container, null,
@@ -111,7 +111,7 @@ public class ContainerEditorTestGUI {
     
     private static void forClosing(){
         JFrame frame = new JFrame("For closing");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
 

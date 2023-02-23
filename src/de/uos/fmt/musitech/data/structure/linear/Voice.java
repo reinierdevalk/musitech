@@ -48,7 +48,6 @@ above is subject to the following three conditions:
 package de.uos.fmt.musitech.data.structure.linear;
 
 import de.uos.fmt.musitech.data.structure.Context;
-import de.uos.fmt.musitech.data.structure.Note;
 import de.uos.fmt.musitech.data.structure.container.BasicContainer;
 import de.uos.fmt.musitech.data.structure.container.Containable;
 

@@ -76,11 +76,12 @@ public class MusicCollection extends TypedCollection implements MObject, Named  
 	//	Unique ID for this object.
 	private Long uid;
 	
-	private int hashCode = (int) HashCodeGenerator.getHashCode();
+	private int hashCode = HashCodeGenerator.getHashCode();
 	
 	/** 
 	 * @see java.lang.Object#hashCode()
 	 */
+	@Override
 	public int hashCode() {
 		return hashCode;
 	}
@@ -105,6 +106,7 @@ public class MusicCollection extends TypedCollection implements MObject, Named  
 	 * 
 	 * @hibernate.property
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -112,6 +114,7 @@ public class MusicCollection extends TypedCollection implements MObject, Named  
 	/**
 	 * @see de.uos.fmt.musitech.data.Named#setName(java.lang.String)
 	 */
+	@Override
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -124,6 +127,7 @@ public class MusicCollection extends TypedCollection implements MObject, Named  
 	 * 		generator-class="native" 
 	 * 
 	 */
+	@Override
 	public Long getUid() {
 		return uid;
 	}
@@ -131,13 +135,15 @@ public class MusicCollection extends TypedCollection implements MObject, Named  
 	/**
 	 * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
 	 */
-	 public void setUid(Long uid) {
+	 @Override
+	public void setUid(Long uid) {
 	     this.uid = uid;
 	}
 
 	/** 
 	 * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String, java.lang.Object)
 	 */
+	@Override
 	public boolean isValidValue(String propertyName, Object value) {
 		// TODO Auto-generated method stub
 		return true; //default
@@ -159,7 +165,8 @@ public class MusicCollection extends TypedCollection implements MObject, Named  
      * column="object_id"
      * 
      */
-    public List getContent() {
+    @Override
+	public List getContent() {
         // TODO Auto-generated method stub
         return super.getContent();
     }

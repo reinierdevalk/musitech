@@ -598,7 +598,7 @@ public class FastFourierTransformation {
     double wr, wi, wpr, wpi, wtemp, theta;
                                         // Double precision for the
                                         // trigonometric recurrences.
-    theta=Math.PI / (double)(n >> 1);   // Initialize the recurrence.
+    theta=Math.PI / (n >> 1);   // Initialize the recurrence.
     if (isign == 1) {
       c2 = -0.5;
       four1(data, n >> 1, 1);

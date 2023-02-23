@@ -54,6 +54,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.structure.Context;
 import de.uos.fmt.musitech.data.structure.Piece;
@@ -105,6 +106,7 @@ public class Test_wolf extends JFrame{
 
 		quitButton = new JButton("Quit");
 		quitButton.addActionListener(new ActionListener(){
+			@Override
 			public void actionPerformed(ActionEvent event){
 				if ( event.getSource()==quitButton ){
 					System.exit(0);
@@ -116,7 +118,7 @@ public class Test_wolf extends JFrame{
 		cp.add(quitButton, BorderLayout.SOUTH);
 
 		cp.setBackground(Color.black);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		
 		setLocation(super.getWidth(), super.getHeight());
 		pack();

@@ -77,19 +77,23 @@ public class TabulaturMeasure extends Measure implements ContentChangeListener {
 		}
 	}
 	
+	@Override
 	public int absX() {
 		return shadowCaster.absX();
 	}
 
+	@Override
 	public Clef activeClef() {
 		return shadowCaster.activeClef();
 	}
 	
+	@Override
 	public void contentAdded(Object newContent) {
 		add(new TabulaturLocalSim((LocalSim)newContent, graphicalToNotation));
 		//add((LocalSim)newContent);
 	}
 
+	@Override
 	public int arrange(int pass) {
 		if (pass == 0) {
 			clearCustomScoreObjects();
@@ -140,6 +144,7 @@ public class TabulaturMeasure extends Measure implements ContentChangeListener {
 		return super.arrange(pass);
 	}
 	
+	@Override
 	public void contentRemoved(Object content) {
 		
 	}

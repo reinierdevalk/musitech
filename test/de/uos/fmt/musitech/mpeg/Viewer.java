@@ -88,7 +88,6 @@ import de.uos.fmt.musitech.mpeg.testcases.BaroqueAlignmentTest;
 import de.uos.fmt.musitech.mpeg.testcases.TestCase2_1;
 import de.uos.fmt.musitech.mpeg.testcases.TestCase2_6_a;
 import de.uos.fmt.musitech.mpeg.testcases.TestCase2_8;
-import de.uos.fmt.musitech.performance.ScoreToPerfomance;
 import de.uos.fmt.musitech.score.NotationDisplay;
 import de.uos.fmt.musitech.structure.text.LyricsDisplay;
 import de.uos.fmt.musitech.time.gui.HorizontalPositioningCoordinator;
@@ -210,6 +209,7 @@ public class Viewer extends JFrame implements ActionListener {
 		setTitle("Viewer");
 		
 		addWindowListener(new WindowAdapter() {
+			@Override
 			public void windowClosing(WindowEvent ev) {
 				System.exit(0);
 			}
@@ -217,6 +217,7 @@ public class Viewer extends JFrame implements ActionListener {
 	}
 	
 	private final JFileChooser fileChooser = new JFileChooser();
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		String command = e.getActionCommand();
 		
@@ -262,7 +263,7 @@ public class Viewer extends JFrame implements ActionListener {
 			NotationSystem system = display.getScorePanel().getNotationSystem();
 			TestCase2_8.fillNotationSystem(system);
 			Collection systems = system.splitAtLineBreaks();
-			Collection lyrics = ((LyricsSyllableSequence)((NotationVoice)((NotationStaff)system.get(0)).get(0)).getLyrics().getVerse((byte)0)).splitAtLinebreaks(system.getLinebreaks());
+			Collection lyrics = system.get(0).get(0).getLyrics().getVerse((byte)0).splitAtLinebreaks(system.getLinebreaks());
 			
 			//Box vBox = new Box(BoxLayout.Y_AXIS);
 			JPanel vBox = new JPanel();

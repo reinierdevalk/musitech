@@ -85,6 +85,7 @@ public class FISSampleRateConverter implements FloatInputStream, FISReader {
 		setFloatInputStream(inputStream);
 	}
 	
+	@Override
 	public int read(float[][] data) throws IOException {
 		return read(data, 0, data[0].length);		
 	}
@@ -95,6 +96,7 @@ public class FISSampleRateConverter implements FloatInputStream, FISReader {
 	 * @see de.uos.fmt.musitech.audio.AudioUtil#arrayResamplert(float[][], int, float[][], int, int, float)
 	 * @see FloatInputStream#read(float[][], int, int)
 	 */
+	@Override
 	public int read(float[][] data, int start, int len) throws IOException {
 	//	if(sourceSR_by_targetSR==1)  // TODO: activate this line?
 	//		return fis.read(data, start, len);
@@ -160,6 +162,7 @@ public class FISSampleRateConverter implements FloatInputStream, FISReader {
 		return ta_sampleI-start;
 	}
 
+	@Override
 	public FISReader setFloatInputStream(FloatInputStream inputStream)
 	{
 		fis = inputStream;
@@ -168,6 +171,7 @@ public class FISSampleRateConverter implements FloatInputStream, FISReader {
 		buffer = new float[fis.getFormat().getChannels()][4096 + 1];
 		return this;
 	}
+	@Override
 	public FloatInputStream getFloatInputStream()
 	{
 		return fis;
@@ -185,6 +189,7 @@ public class FISSampleRateConverter implements FloatInputStream, FISReader {
 	/**
 	 * @see FloatInputStream#skip(long)
 	 */
+	@Override
 	public long skip(long n) throws IOException {
 		long sourceN = (long) (n / sourceSR_by_targetSR);
 		long sourceSkipped = fis.skip(sourceN); 
@@ -193,6 +198,7 @@ public class FISSampleRateConverter implements FloatInputStream, FISReader {
 	/**
 	 * @see FloatInputStream#reset()
 	 */
+	@Override
 	public void reset() throws IOException {
 		sa_exactSampleI = 0;
 		fis.reset();
@@ -200,6 +206,7 @@ public class FISSampleRateConverter implements FloatInputStream, FISReader {
 	/**
 	 * @see FloatInputStream#getFormat()
 	 */
+	@Override
 	public AudioFormat getFormat() {
 		AudioFormat in = fis.getFormat();
 //		float targetSampleRate = sourceSampleRate / sourceSR_by_targetSR;
@@ -210,6 +217,7 @@ public class FISSampleRateConverter implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
 	 */
+	@Override
 	public long remainingSamples() {
 		return (long) (fis.remainingSamples() / sourceSR_by_targetSR);
 	}
@@ -217,6 +225,7 @@ public class FISSampleRateConverter implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public long getPositionInSamples() {
 		return (long) (fis.getPositionInSamples() / sourceSR_by_targetSR);
 	}
@@ -224,6 +233,7 @@ public class FISSampleRateConverter implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#setPositionInSamples(long)
 	 */
+	@Override
 	public void setPositionInSamples(long newPos) throws IOException {
 		fis.setPositionInSamples((long) (newPos * sourceSR_by_targetSR));		
 	}

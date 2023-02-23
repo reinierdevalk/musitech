@@ -80,7 +80,8 @@ public class TestScoreToPerf extends TestCase{
     /**
      * @see junit.framework.TestCase#setUp()
      */
-    protected void setUp() throws Exception {
+    @Override
+	protected void setUp() throws Exception {
 
         
     }

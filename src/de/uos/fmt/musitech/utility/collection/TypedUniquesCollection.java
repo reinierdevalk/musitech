@@ -78,6 +78,7 @@ public class TypedUniquesCollection extends TypedCollection {
 	 * @see java.util.List#add(int, java.lang.Object)
 	 * @throws UnsupportedOperationException
 	 */
+	@Override
 	public void add(int index, Object o) {
 		throw new UnsupportedOperationException();
 //		if (o == null)
@@ -93,6 +94,7 @@ public class TypedUniquesCollection extends TypedCollection {
 	 * Accpets only non-null and not previously contained arguments.
 	 * @see java.util.Collection#add(java.lang.Object)
 	 */
+	@Override
 	public boolean add(Object o) {
 		if (o == null)
 			throw new IllegalArgumentException(this.getClass() + " does not allow null elements.");
@@ -106,6 +108,7 @@ public class TypedUniquesCollection extends TypedCollection {
 	 * Uses add. Same constraints apply.
 	 * @see java.util.Collection#addAll(java.util.Collection)
 	 */
+	@Override
 	public boolean addAll(Collection c) {
 		boolean result = false;
 		for (Iterator iter = c.iterator(); iter.hasNext();) {
@@ -118,6 +121,7 @@ public class TypedUniquesCollection extends TypedCollection {
 	 * Not supported.
 	 * @see java.util.List#addAll(int, java.util.Collection)
 	 */
+	@Override
 	public boolean addAll(int index, Collection c) {
 		throw new UnsupportedOperationException(
 			this.getClass() + " does not support add(int,Collection).");

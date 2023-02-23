@@ -70,6 +70,7 @@ public class InternalWindowMenu extends javax.swing.JMenu implements java.awt.ev
 	 * Adds a component.
 	 * @param e java.awt.event.ContainerEvent
 	 */
+	@Override
 	public void componentAdded(java.awt.event.ContainerEvent e) {
 		createMenuItems();
 	}
@@ -78,10 +79,12 @@ public class InternalWindowMenu extends javax.swing.JMenu implements java.awt.ev
 	 * Removes a component.
 	 * @param e java.awt.event.ContainerEvent
 	 */
+	@Override
 	public void componentRemoved(java.awt.event.ContainerEvent e) {
 		createMenuItems();
 	}
 
+	@Override
 	public void actionPerformed(java.awt.event.ActionEvent e) {
 		Object source = e.getSource();
 		if (source != null && source instanceof JMenuItem) {
@@ -108,6 +111,7 @@ public class InternalWindowMenu extends javax.swing.JMenu implements java.awt.ev
 			return;
 		JInternalFrame[] intFrames = desktop.getAllFrames();
 		Arrays.sort(intFrames, new Comparator() {
+			@Override
 			public int compare(Object o1, Object o2) {
 				JInternalFrame j1 = (JInternalFrame) o1;
 				JInternalFrame j2 = (JInternalFrame) o2;
@@ -117,6 +121,7 @@ public class InternalWindowMenu extends javax.swing.JMenu implements java.awt.ev
 					return 1;
 				return j1.getTitle().compareTo(j2.getTitle());
 			}
+			@Override
 			public boolean equals(Object obj) {
 				return this == obj;
 			}

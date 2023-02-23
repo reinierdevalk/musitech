@@ -71,9 +71,6 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import com.sun.image.codec.jpeg.JPEGCodec;
-import com.sun.image.codec.jpeg.JPEGImageEncoder;
-
 import de.uos.fmt.musitech.data.audio.AudioFileObject;
 import de.uos.fmt.musitech.data.media.image.ImageURL;
 import de.uos.fmt.musitech.framework.persistence.IMPEGSerializable;
@@ -407,7 +404,8 @@ public class MetaDataValue implements java.io.Serializable, IMPEGSerializable {
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#toMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Node, java.lang.Object, java.lang.String)
      */
-    public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
+    @Override
+	public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
         Element metaValue = XMLHelper.addElement(parent, "metaDataValue");
         if (instance.knowsObject(metaValue, object))
             return true;
@@ -452,7 +450,8 @@ public class MetaDataValue implements java.io.Serializable, IMPEGSerializable {
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#fromMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Element)
      */
-    public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
+    @Override
+	public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
         // reference-handling
         Object reference = instance.getReferenced(node, this);
         if (reference != null)

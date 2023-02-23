@@ -74,9 +74,11 @@ public class PopUpDisplay extends AbstractComplexDisplay implements Wrapper {
 	/** 
 	 * @see de.uos.fmt.musitech.framework.editor.AbstractDisplay#createGUI()
 	 */
+	@Override
 	public void createGUI() {
 		JButton displayButton = new JButton("Display...");
 		displayButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				showDisplayToPopUp();
 			}
@@ -151,6 +153,7 @@ public class PopUpDisplay extends AbstractComplexDisplay implements Wrapper {
 	/**
 	 * @param display
 	 */
+	@Override
 	public void setWrappedView(Display display) {
 		displayToPopUp = display;
 		this.editObj = display.getEditObj();
@@ -163,6 +166,7 @@ public class PopUpDisplay extends AbstractComplexDisplay implements Wrapper {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#updateDisplay()
 	 */
+	@Override
 	public void updateDisplay(){
 	    //as the PopUpDisplay does only show a button
 	    //its GUI need not be updated when data changes

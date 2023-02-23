@@ -104,6 +104,7 @@ public class MP3FPreviewReader extends MP3FileFloatIS implements FloatPreviewRea
 	 * @param chan = inputchannels for the respektiv outpuchannels
 	 * @return true if the param is coherent whith in- and output
 	 */
+	@Override
 	public synchronized boolean setChannels(int[] chan) {
 		int cDisp = getFormat().getChannels();
 		for (int i = 0; i < chan.length; i++) {
@@ -121,6 +122,7 @@ public class MP3FPreviewReader extends MP3FileFloatIS implements FloatPreviewRea
 	 * 
 	 * @return number of channels
 	 */
+	@Override
 	public synchronized int setAllChannels() {
 		int chan = getFormat().getChannels();
 		channels = new int[chan];
@@ -138,6 +140,7 @@ public class MP3FPreviewReader extends MP3FileFloatIS implements FloatPreviewRea
 	 * 
 	 * @return
 	 */
+	@Override
 	public int channelsDisponible() {
 		return channels.length;
 	}
@@ -148,6 +151,7 @@ public class MP3FPreviewReader extends MP3FileFloatIS implements FloatPreviewRea
 	 * 
 	 * @param iPo - samples coming in for any sample going out
 	 */
+	@Override
 	public void setSampleRateRatio(float iPo) {
 		if (iPo == sInPerSOut)
 			return;
@@ -155,6 +159,7 @@ public class MP3FPreviewReader extends MP3FileFloatIS implements FloatPreviewRea
 		sInPerSOut = iPo;
 	}
 
+	@Override
 	public float getSampleRateRatio() {
 		return sInPerSOut;
 	}
@@ -162,6 +167,7 @@ public class MP3FPreviewReader extends MP3FileFloatIS implements FloatPreviewRea
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#previewRead(float[][])
 	 */
+	@Override
 	public int previewRead(float[][] data) {
 		return previewRead(data, 0, data[0].length, position());
 	}
@@ -175,6 +181,7 @@ public class MP3FPreviewReader extends MP3FileFloatIS implements FloatPreviewRea
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#previewRead(float[][],
 	 *      int)
 	 */
+	@Override
 	public int previewRead(float[][] data, int firstSampleToRead) {
 		return previewRead(data, 0, data[0].length, firstSampleToRead);
 	}
@@ -183,6 +190,7 @@ public class MP3FPreviewReader extends MP3FileFloatIS implements FloatPreviewRea
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#previewRead(float[][],
 	 *      int, int, int)
 	 */
+	@Override
 	public int previewRead(float[][] data, int start, int len, int firstSampleToRead) {
 		// try {
 		// position(firstSampleToRead);
@@ -202,6 +210,7 @@ public class MP3FPreviewReader extends MP3FileFloatIS implements FloatPreviewRea
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#previewRead(float[][],
 	 *      int, int)
 	 */
+	@Override
 	public int previewRead(float[][] data, int start, int len) {
 		return previewRead(data, start, len, position());
 	}
@@ -272,6 +281,7 @@ public class MP3FPreviewReader extends MP3FileFloatIS implements FloatPreviewRea
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#stopPreviewRead()
 	 * @return true if stop preview-read, false if it do not was running.
 	 */
+	@Override
 	public boolean stopPreviewRead() {
 		if (reading) {
 			stopPreviewRead = true;
@@ -285,6 +295,7 @@ public class MP3FPreviewReader extends MP3FileFloatIS implements FloatPreviewRea
 	 * 
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#getPositionableFIS()
 	 */
+	@Override
 	public PositionableFIS getPositionableFIS() {
 		return null;
 	}
@@ -292,6 +303,7 @@ public class MP3FPreviewReader extends MP3FileFloatIS implements FloatPreviewRea
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#available()
 	 */
+	@Override
 	public int available() {
 		return (int) (remainingSamples() + getPositionInSamples());
 	}
@@ -301,6 +313,7 @@ public class MP3FPreviewReader extends MP3FileFloatIS implements FloatPreviewRea
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#availableMikroseconds()
 	 */
+	@Override
 	public long availableMikroseconds() {
 		return mikrosecondsAvailable;
 	}

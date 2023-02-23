@@ -58,9 +58,7 @@ import javax.swing.Icon;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JTree;
-import javax.swing.ListCellRenderer;
 import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.TreeCellRenderer;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 
@@ -75,6 +73,7 @@ class EditorCellRenderer
 	 * @see javax.swing.tree.TreeCellRenderer#getTreeCellRendererComponent(javax.swing.JTree,
 	 *      java.lang.Object, boolean, boolean, boolean, int, boolean)
 	 */
+	@Override
 	public Component getTreeCellRendererComponent(
 		JTree tree,
 		Object value,
@@ -119,6 +118,7 @@ class EditorCellRenderer
 	 * @see javax.swing.ListCellRenderer#getListCellRendererComponent(javax.swing.JList,
 	 *      java.lang.Object, int, boolean, boolean)
 	 */
+	@Override
 	public Component getListCellRendererComponent(
 		JList list,
 		Object value,

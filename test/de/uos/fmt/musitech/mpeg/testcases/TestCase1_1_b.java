@@ -62,7 +62,6 @@ import de.uos.fmt.musitech.data.score.NotationVoice;
 import de.uos.fmt.musitech.data.score.SlurContainer;
 import de.uos.fmt.musitech.data.structure.form.NoteList;
 import de.uos.fmt.musitech.data.structure.harmony.KeyMarker;
-import de.uos.fmt.musitech.data.time.TimeSignatureMarker;
 import de.uos.fmt.musitech.utility.math.Rational;
 
 /**
@@ -325,6 +324,7 @@ public class TestCase1_1_b extends TestCase {
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.mpeg.testcases.TestCase#createNotationSystem()
 	 */
+	@Override
 	public NotationSystem createNotationSystem() {
 		//context.getPiece().getMetricalTimeLine().add(new TimeSignatureMarker(3, 4, Rational.ZERO));
 		KeyMarker marker = new KeyMarker(Rational.ZERO, 0);

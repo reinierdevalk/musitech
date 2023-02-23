@@ -81,6 +81,7 @@ public class FISMerger implements FloatInputStream {
 	private void notifyStreamListeners(final FloatInputStream fis) {
 		new Thread() {
 
+			@Override
 			public void run() {
 				for (Iterator<StreamEndListener> iter = streamEndListeners.iterator(); iter.hasNext();) {
 					StreamEndListener listener = iter.next();
@@ -99,6 +100,7 @@ public class FISMerger implements FloatInputStream {
 	 * 
 	 * @see FloatInputStream#getFormat()
 	 */
+	@Override
 	public AudioFormat getFormat() {
 		if (streamList.fis == null) {
 			return FloatInputStream.DefaultFormat;
@@ -121,6 +123,7 @@ public class FISMerger implements FloatInputStream {
 	/**
 	 * @see FloatInputStream#reset()
 	 */
+	@Override
 	public synchronized void reset() throws IOException {
 		streamList.reset();
 		streamList.setLoadToZero();
@@ -171,6 +174,7 @@ public class FISMerger implements FloatInputStream {
 	 * 
 	 * @see de.uos.fmt.musitech.audio.FloatInputStream#read(float)
 	 */
+	@Override
 	public int read(float[][] data) throws IOException {
 		return read(data, 0, data[0].length);
 	}
@@ -192,6 +196,7 @@ public class FISMerger implements FloatInputStream {
 	 * @see de.uos.fmt.musitech.audio.FloatInputStream#read(float, int, int)
 	 */
 //	public synchronized int read(float[][] data, int start, int len) throws IOException {
+	@Override
 	public int read(float[][] data, int start, int len) throws IOException {
 		if (streamList.fis == null)
 			return -1; // if the List is empty
@@ -244,6 +249,7 @@ public class FISMerger implements FloatInputStream {
 	 * 
 	 * @see de.uos.fmt.musitech.audio.FloatInputStream#skip(long)
 	 */
+	@Override
 	public synchronized long skip(long n) throws IOException {
 		if (streamList.fis == null)
 			return -1; // if the List is empty
@@ -255,6 +261,7 @@ public class FISMerger implements FloatInputStream {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
 	 */
+	@Override
 	public long remainingSamples() {
 		return streamList.remainingSamples();
 	}
@@ -262,6 +269,7 @@ public class FISMerger implements FloatInputStream {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public long getPositionInSamples() {
 		return readSamples;
 	}
@@ -269,6 +277,7 @@ public class FISMerger implements FloatInputStream {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public void setPositionInSamples(long newPos) throws IOException {
 		reset();
 		streamList.setPositionInSamples(newPos);
@@ -283,7 +292,7 @@ public class FISMerger implements FloatInputStream {
 		// StreamEndListener[] listeners = new
 		// StreamEndListeners[streamEndListeners.size()];
 		// return listeners;
-		return (StreamEndListener[]) streamEndListeners.toArray(new StreamEndListener[]{});
+		return streamEndListeners.toArray(new StreamEndListener[]{});
 	}
 
 	/**

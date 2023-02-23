@@ -72,7 +72,8 @@ public class DisplayTest extends JFrame {
         super();
         addWindowListener(new WindowAdapter() {
 
-            public void windowClosing(WindowEvent ev) {
+            @Override
+			public void windowClosing(WindowEvent ev) {
                 System.exit(0);
             }
         });

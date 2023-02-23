@@ -73,7 +73,8 @@ public class MidiEventTimeComparator implements Comparator {
      * @throws NullPointerException
      *             If the one of the arguments is <code>null</code>.
      */
-    public int compare(Object arg1, Object arg2) {
+    @Override
+	public int compare(Object arg1, Object arg2) {
         MidiEvent midiEvent1 = (MidiEvent) arg1, midiEvent2 = (MidiEvent) arg2;
         if (midiEvent1.getTick() < midiEvent2.getTick())
             return -1;

@@ -159,6 +159,7 @@ public class LocalSim extends ScoreContainer implements Metrical {
 		return column;
 	}
 	
+	@Override
 	public int arrange(int pass) {
 		int numPasses = 3;
 		numPasses = Math.max(numPasses, super.arrange(pass));
@@ -258,6 +259,7 @@ public class LocalSim extends ScoreContainer implements Metrical {
 		this.attack = attack;
 	}
 
+	@Override
 	public LocalSim localSim() {
 		return this;
 	}
@@ -303,17 +305,20 @@ public class LocalSim extends ScoreContainer implements Metrical {
 	}
 
 	/** Returns the parent class of a LocalSim class (it's always a Measure.class) */
+	@Override
 	Class parentClass() {
 		return Measure.class;
 	}
 
 	/** Returns a string representation of this LocalSim. */
+	@Override
 	public String toString() {
 		String res = "LocalSim at " + attack + " with duration " + minDuration + " ";
 		return res;
 		//return res + super.toString();
 	}
 
+	@Override
 	public int rwidth() {
 		int res = 0;
 		for (int i = 0; i < numChildren(); i++)
@@ -321,6 +326,7 @@ public class LocalSim extends ScoreContainer implements Metrical {
 		return res;
 	}
 	
+	@Override
 	public int lwidth() {
 		int res = 0;
 		for (int i = 0; i < numChildren(); i++)
@@ -328,6 +334,7 @@ public class LocalSim extends ScoreContainer implements Metrical {
 		return res + getLeftPadding();
 	}
 	
+	@Override
 	public int depth() { //TODO: incorporate the position of the chord; not only the depth
 		int lowestPoint = 0;
 		for (int i = 0; i < numChildren(); i++)
@@ -335,6 +342,7 @@ public class LocalSim extends ScoreContainer implements Metrical {
 		return lowestPoint - absY();
 	}
 
+	@Override
 	public int height() {
 		int res = 0;
 		for (int i = 0; i < numChildren(); i++)
@@ -342,14 +350,17 @@ public class LocalSim extends ScoreContainer implements Metrical {
 		return res;
 	}
 	
+	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
 	}
 	
+	@Override
 	public Rational getMetricDuration() {
 		return maxDuration();
 	}
 	
+	@Override
 	public Rational getMetricTime() {
 		return getAttack();
 	}

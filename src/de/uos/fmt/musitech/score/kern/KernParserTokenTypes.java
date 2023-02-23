@@ -49,19 +49,6 @@ above is subject to the following three conditions:
 **********************************************/
 package de.uos.fmt.musitech.score.kern;
 
-import de.uos.fmt.musitech.data.performance.*;
-import de.uos.fmt.musitech.data.structure.*;
-import de.uos.fmt.musitech.data.structure.container.*;
-import de.uos.fmt.musitech.data.structure.harmony.*;
-import de.uos.fmt.musitech.data.structure.linear.*;
-import de.uos.fmt.musitech.data.score.*;
-import de.uos.fmt.musitech.data.score.Barline;
-import de.uos.fmt.musitech.data.time.*;
-import de.uos.fmt.musitech.utility.math.*;
-
-import java.util.List;
-import java.util.ArrayList;
-
 public interface KernParserTokenTypes {
 	int EOF = 1;
 	int NULL_TREE_LOOKAHEAD = 3;

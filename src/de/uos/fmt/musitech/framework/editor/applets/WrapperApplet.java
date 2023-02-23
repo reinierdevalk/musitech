@@ -52,6 +52,7 @@ above is subject to the following three conditions:
 package de.uos.fmt.musitech.framework.editor.applets;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.Container;
 import java.net.URL;
 
@@ -96,7 +97,8 @@ public class WrapperApplet extends JApplet {
      *  
      * @see java.applet.Applet#init()
      */
-    public void init() {
+    @Override
+	public void init() {
         try {
             super.init();
             createWrappers();
@@ -164,7 +166,7 @@ public class WrapperApplet extends JApplet {
         panel.setBorder(BorderFactory
                 .createEmptyBorder(10,10,10,10));
         label.setBorder(BorderFactory.createEmptyBorder(0,0,5,0));
-        label.setAlignmentX(JLabel.LEFT_ALIGNMENT);
+        label.setAlignmentX(Component.LEFT_ALIGNMENT);
         panel.add(label, BorderLayout.NORTH);
         panel.add(wrapper);
         return panel;

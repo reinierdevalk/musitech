@@ -120,6 +120,7 @@ public class IntMouseEditor extends JPanel {
 	Point startPoint;
 
 	MouseListener mouseListener = new MouseListener() {
+		@Override
 		public void mouseClicked(MouseEvent e) {
 				// increase value 
 	if (e.getButton() == MouseEvent.BUTTON1) {
@@ -135,12 +136,15 @@ public class IntMouseEditor extends JPanel {
 			}
 		}
 
+		@Override
 		public void mouseEntered(MouseEvent e) {
 		}
 
+		@Override
 		public void mouseExited(MouseEvent e) {
 		}
 
+		@Override
 		public void mousePressed(MouseEvent e) {
 			startPoint = e.getPoint();
 			System.out.println("startPoint: " + e.getY());
@@ -148,6 +152,7 @@ public class IntMouseEditor extends JPanel {
 
 		}
 
+		@Override
 		public void mouseReleased(MouseEvent e) {
 			notifyListener(value, calculateNewValue(changevalue));
 			value = calculateNewValue(changevalue);
@@ -160,6 +165,7 @@ public class IntMouseEditor extends JPanel {
 	};
 
 	MouseMotionListener mouseMotion = new MouseMotionListener() {
+		@Override
 		public void mouseDragged(MouseEvent e) {
 			changevalue = (int) - (e.getY() - startPoint.getY()) / 2;
 			System.out.println("point: " + changevalue);
@@ -167,6 +173,7 @@ public class IntMouseEditor extends JPanel {
 			// Listeners will be notified when mouse is released
 			updateValueLabel(calculateNewValue(changevalue));
 		}
+		@Override
 		public void mouseMoved(MouseEvent e) {
 
 		}

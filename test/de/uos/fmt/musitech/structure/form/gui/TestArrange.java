@@ -55,6 +55,7 @@ import java.awt.Component;
 import java.util.Iterator;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.performance.PerformanceNote;
 import de.uos.fmt.musitech.data.rendering.RenderingHints;
@@ -82,7 +83,7 @@ public class TestArrange {
 	
 	static public void showWindow() {
 		frame.getContentPane().setLayout(new BorderLayout());
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.getContentPane().add(arrPanel);
 		frame.setLocation(200, 150);
 		frame.pack();
@@ -180,7 +181,7 @@ public class TestArrange {
 		ScorePanel scorePanel = new ScorePanel();
 		JFrame frame3 = new JFrame();
 		frame3.getContentPane().setLayout(new BorderLayout());
-		frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame3.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame3.getContentPane().add(scorePanel);
 		frame3.setLocation(400, 450);
 		frame3.pack();

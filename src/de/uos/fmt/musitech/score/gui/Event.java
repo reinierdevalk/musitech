@@ -115,6 +115,7 @@ public abstract class Event extends ScoreObject {
 		return inBeam;
 	}
 
+	@Override
 	Class parentClass() {
 		return LocalSim.class;
 	}
@@ -158,6 +159,7 @@ public abstract class Event extends ScoreObject {
 			optimalSpaceFactor() * MusicGlyph.width(staff.getLineDistance(), MusicGlyph.HEAD_BLACK));
 	}
 
+	@Override
 	public Event event() {
 		return this;
 	}
@@ -167,12 +169,14 @@ public abstract class Event extends ScoreObject {
 		return accent;
 	}
 
+	@Override
 	int arrange(int pass) {
 		if (accent != null)//if (pass == 0 && accent != null)
 			accent.arrange(pass);
 		return 0;
 	}
 
+	@Override
 	public void paint(Graphics g) {
 		if(!isVisible()) return;
 		if (accent != null)

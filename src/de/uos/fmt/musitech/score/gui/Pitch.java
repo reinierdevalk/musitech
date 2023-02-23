@@ -92,6 +92,7 @@ public class Pitch extends ScoreObject {
 	/**
 	 * @see de.uos.fmt.musitech.score.gui.ScoreObject#setScale(float)
 	 */
+	@Override
 	public void setScale(final float argScale) {
 		super.setScale(argScale);
 		if (head != null)
@@ -103,6 +104,7 @@ public class Pitch extends ScoreObject {
 	/**
 	 * @see de.uos.fmt.musitech.score.gui.ScoreObject#getMetricEndPoint()
 	 */
+	@Override
 	public Rational getMetricEndPoint() {
 		if (note == null)
 			return super.getMetricEndPoint();
@@ -113,6 +115,7 @@ public class Pitch extends ScoreObject {
 	/**
 	 * @see de.uos.fmt.musitech.score.gui.ScoreObject#getMetricTime()
 	 */
+	@Override
 	public Rational getMetricTime() {
 		if (note == null)
 			return super.getMetricTime();
@@ -128,6 +131,7 @@ public class Pitch extends ScoreObject {
 	/**
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
+	@Override
 	public boolean equals (Object o) {
 		if (!(o instanceof Pitch))
 			return false;
@@ -141,6 +145,7 @@ public class Pitch extends ScoreObject {
 		return res;
 	}
 
+	@Override
 	public void registerComponent(Class[] classes) {
 		super.registerComponent(classes);
 		/*
@@ -150,6 +155,7 @@ public class Pitch extends ScoreObject {
 		*/
 	}
 
+	@Override
 	int arrange(int pass) {
 		int max = 2;
 		if (pass == 0) {
@@ -176,6 +182,7 @@ public class Pitch extends ScoreObject {
 		return max;
 	}
 
+	@Override
 	public int compareTo(Object p) {
 		int line1 = trebleLine();
 		int line2 = ((Pitch) p).trebleLine();
@@ -211,6 +218,7 @@ public class Pitch extends ScoreObject {
 	}
 
    /** Draws the pitch onto the given graphics context. */
+	@Override
 	public void paint(Graphics g) {
 		if(isVisible()){
 			paintBackground(g);
@@ -226,6 +234,7 @@ public class Pitch extends ScoreObject {
 		}
 	}
 	
+	@Override
 	public int lwidth() {
 		int lwidth = 0;
 		if (head != null) {
@@ -243,6 +252,7 @@ public class Pitch extends ScoreObject {
 		return lwidth + getLeftPadding();
 	}
 	
+	@Override
 	public int rwidth() {
 		int w;
 		if (head != null)
@@ -252,6 +262,7 @@ public class Pitch extends ScoreObject {
 		return w;
 	}
 	
+	@Override
 	public int height() {
 		int height = 0;
 		if (head != null) {
@@ -269,6 +280,7 @@ public class Pitch extends ScoreObject {
 			return super.height();
 	}
 	
+	@Override
 	public int depth() {
 		int depth = 0;
 		if (head != null) {
@@ -287,15 +299,18 @@ public class Pitch extends ScoreObject {
 	}
 	
 	
+	@Override
 	public Pitch pitch() {
 		return this;
 	}
 
    /** Returns a string representation of this pitch. */
+	@Override
 	public String toString() {
 		return "Pitch: " + base + accidental + " o" + octave;
 	}
 
+	@Override
 	Class parentClass() {
 		return Chord.class;
 	}
@@ -399,10 +414,12 @@ public class Pitch extends ScoreObject {
 			head.unShift();
 	}
 	
+	@Override
 	public void remove(Component comp) {
 		super.remove(comp);
 	}
 	
+	@Override
 	public boolean contains(int x, int y) {
 		Point loc = getLocation();
 		Dimension dim = getSize();

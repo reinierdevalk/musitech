@@ -236,7 +236,8 @@ public class FISFilter implements FloatInputStream, FISReader {
      * 
      * @return FloatInputStream
      */
-    public FloatInputStream getFloatInputStream() {
+    @Override
+	public FloatInputStream getFloatInputStream() {
         return floatInputStream;
     }
 
@@ -245,7 +246,8 @@ public class FISFilter implements FloatInputStream, FISReader {
      * 
      * @param floatInputStream The floatInputStream to set
      */
-    public FISReader setFloatInputStream(FloatInputStream fis) {
+    @Override
+	public FISReader setFloatInputStream(FloatInputStream fis) {
         this.floatInputStream = fis;
         if (fis != null) {
             inBuffer = new float[floatInputStream.getFormat().getChannels()][buffSize + aCoefficients.length];
@@ -280,7 +282,8 @@ public class FISFilter implements FloatInputStream, FISReader {
      * 
      * @see de.uos.fmt.musitech.audio.FloatInputStream#read(float, int, int)
      */
-    public int read(float[][] data, int start, int len) {
+    @Override
+	public int read(float[][] data, int start, int len) {
         int samplesRead=0;
         int dataWritePos = start;
         int toRead = len;
@@ -317,43 +320,50 @@ public class FISFilter implements FloatInputStream, FISReader {
     /**
      * @see de.uos.fmt.musitech.audio.FloatInputStream#read(float)
      */
-    public int read(float[][] data) {
+    @Override
+	public int read(float[][] data) {
         return read(data, 0, data[0].length);
     }
 
-    public long skip(long n) throws IOException {
+    @Override
+	public long skip(long n) throws IOException {
         return floatInputStream.skip(n);
     }
 
-    public void reset() throws IOException {
+    @Override
+	public void reset() throws IOException {
         floatInputStream.reset();
     }
 
     /**
      * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getFormat()
      */
-    public AudioFormat getFormat() {
+    @Override
+	public AudioFormat getFormat() {
         return floatInputStream.getFormat();
     }
 
     /**
      * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
      */
-    public long remainingSamples() {
+    @Override
+	public long remainingSamples() {
         return floatInputStream.remainingSamples();
     }
 
     /**
      * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
      */
-    public long getPositionInSamples() {
+    @Override
+	public long getPositionInSamples() {
         return floatInputStream.getPositionInSamples();
     }
 
     /**
      * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
      */
-    public void setPositionInSamples(long newPos) throws IOException {
+    @Override
+	public void setPositionInSamples(long newPos) throws IOException {
         floatInputStream.setPositionInSamples(newPos);
     }
 

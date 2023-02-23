@@ -73,7 +73,8 @@ public class RenderingHintsEditor extends AbstractEditor {
     /**
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#applyChanges()
      */
-    public void applyChanges() {
+    @Override
+	public void applyChanges() {
         if (profile.isReadOnly())
             return;
         if (mapEditor != null) {
@@ -92,7 +93,8 @@ public class RenderingHintsEditor extends AbstractEditor {
     /**
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#updateDisplay()
      */
-    public void updateDisplay() {
+    @Override
+	public void updateDisplay() {
         if (mapEditor != null) {
             mapEditor.updateDisplay();
             revalidate();
@@ -102,7 +104,8 @@ public class RenderingHintsEditor extends AbstractEditor {
     /**
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#createGUI()
      */
-    protected void createGUI() {
+    @Override
+	protected void createGUI() {
         if (hintsMap != null) {
             try {
                 mapEditor = (MapEditor) EditorFactory.createEditor(hintsMap, this, "Map");
@@ -118,14 +121,16 @@ public class RenderingHintsEditor extends AbstractEditor {
     /**
      * @see de.uos.fmt.musitech.framework.editor.Editor#getEditedData()
      */
-    public Collection getEditedData() {
+    @Override
+	public Collection getEditedData() {
         return mapEditor.getEditedData();
     }
 
     /**
      * @see de.uos.fmt.musitech.framework.editor.Display#isFocused()
      */
-    public boolean isFocused() {
+    @Override
+	public boolean isFocused() {
         boolean mapEditorFocused = false;
         if (mapEditor!=null)
             mapEditorFocused = mapEditor.isFocused();
@@ -137,7 +142,8 @@ public class RenderingHintsEditor extends AbstractEditor {
      *      de.uos.fmt.musitech.framework.editor.EditingProfile,
      *      de.uos.fmt.musitech.framework.editor.Display)
      */
-    public void init(Object editObject, EditingProfile profile, Display rootDisplay) {
+    @Override
+	public void init(Object editObject, EditingProfile profile, Display rootDisplay) {
         this.editObj = editObject;
         this.profile = profile;
         if (profile != null) {

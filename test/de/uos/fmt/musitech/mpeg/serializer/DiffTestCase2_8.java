@@ -68,7 +68,8 @@ public class DiffTestCase2_8 extends MPEGDiffViewer {
     /**
      * @see de.uos.fmt.musitech.mpeg.serializer.MPEGDiffViewer#createNotationSystem()
      */
-    public NotationSystem createNotationSystem() {
+    @Override
+	public NotationSystem createNotationSystem() {
 		TestCase2_8.fillPiece(context.getPiece());
 		NotationDisplay display = null;
 		try {
@@ -80,7 +81,7 @@ public class DiffTestCase2_8 extends MPEGDiffViewer {
 		NotationSystem system = display.getScorePanel().getNotationSystem();
 		TestCase2_8.fillNotationSystem(system);
 		Collection systems = system.splitAtLineBreaks();
-		Collection lyrics = ((LyricsSyllableSequence)((NotationVoice)((NotationStaff)system.get(0)).get(0)).getLyrics().getVerse((byte)0)).splitAtLinebreaks(system.getLinebreaks());
+		Collection lyrics = system.get(0).get(0).getLyrics().getVerse((byte)0).splitAtLinebreaks(system.getLinebreaks());
 		
 		/*
 		Box vBox = new Box(BoxLayout.Y_AXIS);

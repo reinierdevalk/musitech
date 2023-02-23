@@ -278,6 +278,7 @@ public abstract class AbstractConfig implements java.beans.VetoableChangeListene
 	 * @exception PropertyVetoException if the recipient wishes the property
 	 *              change to be rolled back.
 	 */
+	@Override
 	public void vetoableChange(java.beans.PropertyChangeEvent pce) throws java.beans.PropertyVetoException {
 		if (!isProperty(pce.getPropertyName()))
 			return;
@@ -375,7 +376,7 @@ public abstract class AbstractConfig implements java.beans.VetoableChangeListene
 	 */
 	public void setMap(java.util.Map newMap) {
 		map = newMap;
-		tmpMap = (java.util.Map) ObjectCopy.copyObject(map);
+		tmpMap = ObjectCopy.copyObject(map);
 		return;
 	}
 

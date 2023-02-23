@@ -138,11 +138,13 @@ public class XMLStorageFacade extends StorageSystemFacadeBase {
     ObjectCopy.writeXML(theObjects, file);
   }
 
-  protected Object getData(long id, boolean locking) throws StorageSystemException {
+  @Override
+protected Object getData(long id, boolean locking) throws StorageSystemException {
     return getData(id);
   }
 
-  protected Object getData(long id) throws StorageSystemException {
+  @Override
+protected Object getData(long id) throws StorageSystemException {
     Object o;
     o = theObjects.get(new Long(id));
     if (o == null)
@@ -155,7 +157,8 @@ public class XMLStorageFacade extends StorageSystemFacadeBase {
     }
   }
 
-  protected synchronized void setData(long id, Object data) throws StorageSystemException {
+  @Override
+protected synchronized void setData(long id, Object data) throws StorageSystemException {
     Object o;
     if ((o = theObjects.get(new Long(id))) == null) {
       if (id > 0) {
@@ -178,7 +181,8 @@ public class XMLStorageFacade extends StorageSystemFacadeBase {
     }
   }
 
-  protected synchronized long setData(Object o, boolean locking) throws StorageSystemException {
+  @Override
+protected synchronized long setData(Object o, boolean locking) throws StorageSystemException {
     long id = nextID--;
 
     try {
@@ -189,7 +193,8 @@ public class XMLStorageFacade extends StorageSystemFacadeBase {
     return id;
   }
 
-  public void remove(long id) throws StorageSystemException {
+  @Override
+public void remove(long id) throws StorageSystemException {
     try {
       if (theObjects.remove(new Long(id)) == null)
         throw new StorageSystemException("ID not Found: " + id);
@@ -198,45 +203,57 @@ public class XMLStorageFacade extends StorageSystemFacadeBase {
     }
   }
 
-  public String getClassName(long id) throws StorageSystemException {
+  @Override
+public String getClassName(long id) throws StorageSystemException {
     Object o;
     if ((o = theObjects.get(new Long(id))) == null)
       throw new StorageSystemException("No object with id " + id + " found");
     return o.getClass().getName();
   }
 
-  public void setLocking(boolean locking) throws StorageSystemException {
+  @Override
+public void setLocking(boolean locking) throws StorageSystemException {
   }
-  public void unlock(long id) {
+  @Override
+public void unlock(long id) {
   }
-  public void unlockAll() {
+  @Override
+public void unlockAll() {
   }
-  public boolean isLocked(long id) {
+  @Override
+public boolean isLocked(long id) {
     return false;
   }
 
-  public String getOwner(long id) throws StorageSystemException {
+  @Override
+public String getOwner(long id) throws StorageSystemException {
     return "xml";
   }
 
-  public void setOwner(long id, String name) throws StorageSystemException {
+  @Override
+public void setOwner(long id, String name) throws StorageSystemException {
   }
 
-  public String getReadGroup(long id) throws StorageSystemException {
+  @Override
+public String getReadGroup(long id) throws StorageSystemException {
     return "xml";
   }
 
-  public void setReadGroup(long id, String name) throws StorageSystemException {
+  @Override
+public void setReadGroup(long id, String name) throws StorageSystemException {
   }
 
-  public String getWriteGroup(long id) throws StorageSystemException {
+  @Override
+public String getWriteGroup(long id) throws StorageSystemException {
     return "xml";
   }
 
-  public void setWriteGroup(long id, String name) {
+  @Override
+public void setWriteGroup(long id, String name) {
   }
 
-  protected void releaseResources() {
+  @Override
+protected void releaseResources() {
     if (file == null)
       return;
     Hashtable dbs = getDataBases();

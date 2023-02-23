@@ -65,6 +65,7 @@ public class Rest extends Event {
 		this.note = note;
 	}
 
+	@Override
 	public int arrange(int pass) {
 		int passes = super.arrange(pass);
 		
@@ -75,6 +76,7 @@ public class Rest extends Event {
 		return passes;
 	}
 	
+	@Override
 	public void paint(Graphics g) {
 		if (!isVisible())
 			return;
@@ -144,14 +146,17 @@ public class Rest extends Event {
 		return glyphs[MyMath.ilog2(denom)];
 	}
 
+	@Override
 	public String toString() {
 		return "Rest of voice " + getVoice() + " with duration " + getDuration().toRational();
 	}
 
+	@Override
 	Pair regressionPoint() {
 		return new Pair(absX(), absY());
 	}
 
+	@Override
 	Pair slurPoint(boolean left, boolean above, boolean atStem) {
 		int x, y;
 		int top = staff().absY() + staff().hsToPixel(0) - height();
@@ -167,6 +172,7 @@ public class Rest extends Event {
 		return new Pair(x, y);
 	}
 
+	@Override
 	Pair beamPoint() {
 		return new Pair(absX(), absY()); // @@
 	}
@@ -185,34 +191,42 @@ public class Rest extends Event {
 		return 0;
 	}
 
+	@Override
 	public int extraRSpace() {
 		   return MusicGlyph.width(staff().getLineDistance(), getFlagGlyph());
 	}
 	
+	@Override
 	public int rwidth() {
 		return MusicGlyph.width(staff().getLineDistance(), getGlyph());
 	}
 
+	@Override
 	public int lwidth() {
 		return getLeftPadding();
 	}
 	
+	@Override
 	Pair highestPoint() {
 		return new Pair(absX() + rwidth() / 2, absY() + height());
 	}
 
+	@Override
 	Pair lowestPoint() {
 		return new Pair(absX() + rwidth() / 2, absY() + depth());
 	}
 
+	@Override
 	public int depth() {
 		return MusicGlyph.depth(staff().getLineDistance(), getGlyph());
 	}
 
+	@Override
 	public int height() {
 		return MusicGlyph.height(staff().getLineDistance(), getGlyph());
 	}
 
+	@Override
 	public Rational getMetricEndPoint() {
 		if (note == null)
 			return super.getMetricEndPoint();

@@ -107,6 +107,7 @@ public class MapEditor extends CollectionMapEditor {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Editor#init(java.lang.Object, de.uos.fmt.musitech.framework.editor.EditingProfile, de.uos.fmt.musitech.framework.editor.Editor)
 	 */
+	@Override
 	public void init(
 		Object editObject,
 		EditingProfile profile,
@@ -177,6 +178,7 @@ public class MapEditor extends CollectionMapEditor {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Editor#updateEditor()
 	 */
+	@Override
 	public void updateDisplay() {
 		dataChanged = false;
 		setValueCreated(false);
@@ -203,6 +205,7 @@ public class MapEditor extends CollectionMapEditor {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.CollectionMapEditor#writeCopyBackToEditObj()
 	 */
+	@Override
 	protected void writeCopyBackToEditObj() {
 		if (editObj instanceof Map) {
 			((Map) editObj).clear();
@@ -228,6 +231,7 @@ public class MapEditor extends CollectionMapEditor {
 	 * @return Collection containing changed objects
 	 * @see de.uos.fmt.musitech.framework.editor.Editor#getEditedData()
 	 */
+	@Override
 	public Collection getEditedData() {
 		ArrayList changedData = new ArrayList();
 		//add editObj and its non-primitive properties if properties have been changed
@@ -245,7 +249,7 @@ public class MapEditor extends CollectionMapEditor {
 	 * @return true if entries in the map have been added, deleted or replaced, false otherwise
 	 */
 	protected boolean hasMapChanged() {
-		if (editMapCopy.equals((Map) editObj))
+		if (editMapCopy.equals(editObj))
 			return false;
 		return true;
 	}
@@ -315,11 +319,13 @@ public class MapEditor extends CollectionMapEditor {
 	 * 
 	 * @return
 	 */
+	@Override
 	protected JPanel createButtonPane() {
 		JPanel buttonPane = new JPanel();
 
 		JButton addElement = new JButton("Add Element");
 		addElement.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent ae) {
 				addElement();
 			}
@@ -327,6 +333,7 @@ public class MapEditor extends CollectionMapEditor {
 
 		JButton deleteElement = new JButton("Delete Element");
 		deleteElement.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent ae) {
 				deleteElement();
 			}
@@ -334,6 +341,7 @@ public class MapEditor extends CollectionMapEditor {
 
 		JButton replaceKey = new JButton("Replace Key");
 		replaceKey.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent ae) {
 				replaceKey();
 			}
@@ -341,6 +349,7 @@ public class MapEditor extends CollectionMapEditor {
 
 		JButton replaceValue = new JButton("Replace Value");
 		replaceValue.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent ae) {
 				replaceValue();
 			}
@@ -460,7 +469,7 @@ public class MapEditor extends CollectionMapEditor {
 	 */
 	private Object getKeyOfElementToAdd() {
 		String newKey =
-			((String) JOptionPane
+			(JOptionPane
 				.showInputDialog(
 					this,
 					"Please type the key of the new element."));
@@ -495,7 +504,7 @@ public class MapEditor extends CollectionMapEditor {
 	private Object getValueOfElementToAdd() {
 		Object value = null;
 		String type =
-			((String) JOptionPane
+			(JOptionPane
 				.showInputDialog(
 					this,
 					"Please type the object type of the element you want do add.\nThe exact package is required."));
@@ -530,7 +539,7 @@ public class MapEditor extends CollectionMapEditor {
 	 */
 	private Object getKeyOfElementToDelete() {
 		String key =
-			((String) JOptionPane
+			(JOptionPane
 				.showInputDialog(
 					this,
 					"Please type the key of the element you want to delete."));
@@ -558,7 +567,7 @@ public class MapEditor extends CollectionMapEditor {
 	 */
 	private Object getKeyOfElementToReplace() {
 		String key =
-			((String) JOptionPane
+			(JOptionPane
 				.showInputDialog(
 					this,
 					"Please type the key of the element you want to replace."));
@@ -584,7 +593,7 @@ public class MapEditor extends CollectionMapEditor {
 	 */
 	private Object getNewKeyForElement() {
 		String newKey =
-			((String) JOptionPane
+			(JOptionPane
 				.showInputDialog(this, "Please type the new key."));
 		if (newKey != null) {
 			newKey = newKey.trim();
@@ -611,7 +620,7 @@ public class MapEditor extends CollectionMapEditor {
 	private Object getNewValueForElement() {
 		Object value = null;
 		String type =
-			((String) JOptionPane
+			(JOptionPane
 				.showInputDialog(
 					this,
 					"Please type the object type of the element you want do replace.\nThe exact package is required."));
@@ -642,6 +651,7 @@ public class MapEditor extends CollectionMapEditor {
 	 * Prints the map's elements to the command line.
 	 * This method is for control in testing only.
 	 */
+	@Override
 	public void printCollectionDataForTesting() {
 		HashMap coll = new HashMap();
 		if (propertyValue instanceof Map)

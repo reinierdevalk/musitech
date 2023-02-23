@@ -53,12 +53,12 @@ package de.uos.fmt.musitech.performance.gui;
 import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.performance.PerformanceNote;
 import de.uos.fmt.musitech.data.structure.Note;
 import de.uos.fmt.musitech.data.structure.container.BasicContainer;
 import de.uos.fmt.musitech.data.structure.container.Container;
-import de.uos.fmt.musitech.data.structure.form.NoteList;
 import de.uos.fmt.musitech.framework.time.ObjectPlayer;
 import de.uos.fmt.musitech.framework.time.TransportButtons;
 
@@ -109,7 +109,7 @@ public class TestPianoRoll {
         frame.getContentPane().setLayout(new BorderLayout());
         frame.getContentPane().add(pianoRoll, BorderLayout.CENTER);
         frame.getContentPane().add(transBut, BorderLayout.SOUTH);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();
         frame.show();
     }

@@ -139,7 +139,8 @@ abstract public class SimpleTextfieldEditor extends AbstractSimpleEditor {
      * @author Tobias Widdra
      */
     public class MyFocusListener extends FocusAdapter {
-        public void focusLost(FocusEvent arg0) {
+        @Override
+		public void focusLost(FocusEvent arg0) {
             //Modif040604
             if (textfield.getText().equals("") && isEmptyDisplayOptionSet()) {
                 if (propertyName != null && propertyValue == null)
@@ -163,7 +164,8 @@ abstract public class SimpleTextfieldEditor extends AbstractSimpleEditor {
      * <br> where <code>FocusListener</code> is an instance of the inner class
      * <code>MyFocusListener</code> of this class.
      */
-    protected void createGUI() {
+    @Override
+	protected void createGUI() {
         setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
         if (propertyName != null && propertyValue == null) {
             displayCreateButton();
@@ -184,13 +186,16 @@ abstract public class SimpleTextfieldEditor extends AbstractSimpleEditor {
         textfield.addFocusListener(focusListener);
         //add DocumentListener which sets the dirty flag when data is changed
         textfield.getDocument().addDocumentListener(new DocumentListener() {
-            public void changedUpdate(DocumentEvent e) {
+            @Override
+			public void changedUpdate(DocumentEvent e) {
                 setDirty(true);
             }
-            public void insertUpdate(DocumentEvent e) {
+            @Override
+			public void insertUpdate(DocumentEvent e) {
                 setDirty(true);
             }
-            public void removeUpdate(DocumentEvent e) {
+            @Override
+			public void removeUpdate(DocumentEvent e) {
                 setDirty(true);
             }
         }); 
@@ -238,7 +243,8 @@ abstract public class SimpleTextfieldEditor extends AbstractSimpleEditor {
         createButton.setLocation(location);
         createButton.setPreferredSize(size);
         createButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent ae) {
+            @Override
+			public void actionPerformed(ActionEvent ae) {
                 propertyValue = createNewValue("New propertyValue");
                 updateGUI();
             }
@@ -259,7 +265,8 @@ abstract public class SimpleTextfieldEditor extends AbstractSimpleEditor {
             createButton.setEnabled(false);
         else
             createButton.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent ae) {
+                @Override
+				public void actionPerformed(ActionEvent ae) {
                     //				propertyValue = createNewPropertyValue("New
                     // propertyValue");
                     propertyValue = createNewValue("New propertyValue");
@@ -336,7 +343,8 @@ abstract public class SimpleTextfieldEditor extends AbstractSimpleEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#updateEditor()
      */
-    public void updateDisplay() {
+    @Override
+	public void updateDisplay() {
         dataChanged = false;
         setValueCreated(false);
         setPropertyValue();
@@ -371,7 +379,8 @@ abstract public class SimpleTextfieldEditor extends AbstractSimpleEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Editor#inputIsValid()
      */
-    public boolean inputIsValid() {
+    @Override
+	public boolean inputIsValid() {
         //		if (getInputValue()==null)
         //			return false; //auch Fälle, wo null-input möglich?
     	//System.out.println("in inputIsvalid()");
@@ -404,14 +413,15 @@ abstract public class SimpleTextfieldEditor extends AbstractSimpleEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractSimpleEditor#applyChangesToPropertyValue()
      */
-    public boolean applyChangesToPropertyValue() {
+    @Override
+	public boolean applyChangesToPropertyValue() {
     	//Author: Amir Obertinca - checks is the <code>editObj</code> is primitive, and instance of String
     	//if so, returns true, and gets the input value and passes into the editObj
         if (editObj.getClass().isPrimitive() || ObjectCopy.isElementaryClass(editObj.getClass())
                 || editObj instanceof String) {
     			//System.out.println("STE The editObj = " + editObj);
-    			propertyValue = (Object) getInputValue();
-        		editObj = (Object) getInputValue();
+    			propertyValue = getInputValue();
+        		editObj = getInputValue();
          		//System.out.println("STE The editObj = " + editObj);
         		return true;
         }

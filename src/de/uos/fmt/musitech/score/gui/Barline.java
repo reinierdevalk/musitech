@@ -64,7 +64,8 @@ public abstract class Barline extends ScoreObject implements SpringAttacher
 //   public Barline(Measure measure) {super(measure);}
    public Barline () {}
    
-   Class parentClass () {return Measure.class;}
+   @Override
+Class parentClass () {return Measure.class;}
    
 //   public int getLength () {return length;}	   
 
@@ -94,15 +95,18 @@ public abstract class Barline extends ScoreObject implements SpringAttacher
    		}
    }
    
-   int arrange (int pass) {
+   @Override
+int arrange (int pass) {
    		if (timeSignaturePreview != null)
    			return timeSignaturePreview.arrange(pass);
    		return 0;
    }
 
-   public Rational attackTime()  {return null;}
+   @Override
+public Rational attackTime()  {return null;}
    
-   public int optimalSpace(SpringAttacher successor)
+   @Override
+public int optimalSpace(SpringAttacher successor)
    {
       int space = rwidth();
       Staff staff = staff();
@@ -111,14 +115,16 @@ public abstract class Barline extends ScoreObject implements SpringAttacher
       return space + successor.lwidth();
    }
    
-   public final void setParentXPos (int x)
+   @Override
+public final void setParentXPos (int x)
    {
       //if (getScoreParent() != null)
    	System.err.println(getScoreParent().getClass());
       	getScoreParent().setXPos(x);
    }
  
-   public final void setMeasureRWidth (int width)
+   @Override
+public final void setMeasureRWidth (int width)
    {
       Measure measure = measure();
       if (measure != null)
@@ -146,7 +152,8 @@ public abstract class Barline extends ScoreObject implements SpringAttacher
     */
    abstract int barlineRwidth();
    
-   public int rwidth() {
+   @Override
+public int rwidth() {
    		int rwidth = barlineRwidth();
    		if (preview != null) {
    			int ld = staff().getLineDistance();
@@ -158,7 +165,8 @@ public abstract class Barline extends ScoreObject implements SpringAttacher
    		return rwidth;
    }
    
-   void movePropertiesTo(ScoreObject so) {
+   @Override
+void movePropertiesTo(ScoreObject so) {
    		super.movePropertiesTo(so);
    		Barline target = (Barline)so;
    		target.setPreview(preview);

@@ -91,9 +91,11 @@ public class BeamContainer extends SortedContainer<Note> {
 		super(new Context(), Note.class, new MetricalComparator());
 	}
 	
+	@Override
 	public RenderingHints getRenderingHints() {
 		return renderingHints;
 	}
+	@Override
 	public void setRenderingHints(RenderingHints renderingHints) {
 		this.renderingHints = renderingHints;
 	}
@@ -102,7 +104,8 @@ public class BeamContainer extends SortedContainer<Note> {
 	 * @deprecated
 	 * @param nc
 	 */
+	@Deprecated
 	public void add(NotationChord nc) {
-		super.add((Note)nc.get(0));
+		super.add(nc.get(0));
 	}
 }

@@ -55,6 +55,7 @@ import java.util.ArrayList;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.score.ScorePitch;
 import de.uos.fmt.musitech.data.structure.form.NoteList;
@@ -80,7 +81,7 @@ public class CollectionDisplayTestGUI {
      */
     private static void provideClosingFrame(){
         JFrame frame = new JFrame("For closing all running frames");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
     
     /**

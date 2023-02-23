@@ -69,7 +69,6 @@ import de.uos.fmt.musitech.data.structure.Piece;
 import de.uos.fmt.musitech.data.structure.container.Containable;
 import de.uos.fmt.musitech.data.structure.container.Container;
 import de.uos.fmt.musitech.data.structure.container.SortedContainer;
-import de.uos.fmt.musitech.data.structure.form.NoteList;
 import de.uos.fmt.musitech.data.structure.harmony.KeyMarker;
 import de.uos.fmt.musitech.data.structure.lyrics.LyricsContainer;
 import de.uos.fmt.musitech.data.time.Marker;
@@ -162,6 +161,7 @@ public class NotationVoice extends SortedContainer<NotationChord> implements
 	 * 
 	 * @param pass TODO
 	 */
+	@Override
 	public void prepareForScore(int pass) {
 		if (getContext() == null && getParent() != null)
 			setContext(getParent().getContext());
@@ -183,13 +183,13 @@ public class NotationVoice extends SortedContainer<NotationChord> implements
 		Barline lastBarline = null;
 		assert parent != null;
 		if (parent.getBarlines() != null && parent.getBarlines().size() > 0) {
-			lastBarline = (Barline) parent.getBarlines().get(
+			lastBarline = parent.getBarlines().get(
 				parent.getBarlines().size() - 1);
 		}
 
 		NotationChord lastChord = null;
 		if (size() > 0) {
-			lastChord = (NotationChord) get(size() - 1);
+			lastChord = get(size() - 1);
 		}
 		// TODO check what this was meant to do
 		// else {
@@ -297,7 +297,7 @@ public class NotationVoice extends SortedContainer<NotationChord> implements
 	public int belongsToBeam(NotationChord chord) {
 		for (int i = 0; i < beamContainers.size(); i++) {
 			for (int j = 0; j < chord.size(); j++) {
-				Note note = (Note) chord.get(j);
+				Note note = chord.get(j);
 				if (beamContainers.get(i).contains(note)) {
 					return i;
 				}
@@ -365,7 +365,7 @@ public class NotationVoice extends SortedContainer<NotationChord> implements
 	public boolean beginOfSlur(NotationChord chord) {
 		List<SlurContainer> cont = belongsToSlurContainer(chord);
 		for (int i = 0; i < cont.size(); i++) {
-			SlurContainer sc = (SlurContainer) cont.get(i);
+			SlurContainer sc = cont.get(i);
 			boolean res = true;
 			for (Iterator<Note> iter = sc.iterator(); iter.hasNext();) {
 				Note n = iter.next();
@@ -589,6 +589,7 @@ public class NotationVoice extends SortedContainer<NotationChord> implements
 	 * @see java.util.List
 	 * @see de.uos.fmt.musitech.data.score.NotationVoice#getSlurContainers()
 	 */
+	@Deprecated
 	public List generateSlurContainers() {
 		for (Iterator iter = this.iterator(); iter.hasNext();) {
 			Object element = iter.next();
@@ -650,7 +651,7 @@ public class NotationVoice extends SortedContainer<NotationChord> implements
 					// why
 					// this
 					// isnecessary
-					tupletContainers.get(i).contains((Note) chord.get(j))) {
+					tupletContainers.get(i).contains(chord.get(j))) {
 					return i;
 				}
 			}
@@ -671,14 +672,14 @@ public class NotationVoice extends SortedContainer<NotationChord> implements
 		for (int i = 0; i < tupletContainers.size(); i++) {
 			boolean found = false;
 			for (int j = 0; j < chord.size(); j++) {
-				found |= ((TupletContainer) tupletContainers.get(i))
-						.contains((Note) chord.get(j));
+				found |= tupletContainers.get(i)
+						.contains(chord.get(j));
 			}
 			if (found) {
 				// if (((TupletContainer)
 				// tupletContainers.get(i)).contains((Note)
 				// chord.get(0))) {
-				return (TupletContainer) tupletContainers.get(i);
+				return tupletContainers.get(i);
 			}
 		}
 		return null;
@@ -716,14 +717,14 @@ public class NotationVoice extends SortedContainer<NotationChord> implements
 	 * @author collin
 	 */
 	Barline getLastBarline() {
-		return (Barline) parent.getBarlines().get(
+		return parent.getBarlines().get(
 			parent.getBarlines().size() - 1);
 	}
 
 	Collection getSiblings() {
 		ArrayList sibs = new ArrayList();
 
-		for (Iterator iter = ((NotationStaff) getParent()).iterator(); iter
+		for (Iterator iter = getParent().iterator(); iter
 				.hasNext();) {
 			NotationVoice element = (NotationVoice) iter.next();
 			if (element != this)
@@ -827,7 +828,7 @@ public class NotationVoice extends SortedContainer<NotationChord> implements
 	 * @param restQuantum The smallest divisor allowed for rest times.
 	 */
 	public void quantize(Rational onsetQuantum, Rational restQuantum) {
-		NotationChord nc[] = (NotationChord[]) toArray(new NotationChord[] {});
+		NotationChord nc[] = toArray(new NotationChord[] {});
 		for (int i = 0; i < nc.length; i++) {
 		}
 	}
@@ -1061,6 +1062,7 @@ public class NotationVoice extends SortedContainer<NotationChord> implements
 	 * @return a <code>boolean</code> value
 	 * @see java.util.Collection#add(java.lang.Object)
 	 */
+	@Override
 	public boolean add(NotationChord nc) {
 		if (nc != null) {
 			if (entryChords.containsKey(nc.getMetricTime())) {
@@ -1217,8 +1219,8 @@ public class NotationVoice extends SortedContainer<NotationChord> implements
 			if ((get(i) instanceof NotationChord)
 				&& (get(i + 1) instanceof NotationChord)) {
 
-				NotationChord left = (NotationChord) get(i);
-				NotationChord right = (NotationChord) get(i + 1);
+				NotationChord left = get(i);
+				NotationChord right = get(i + 1);
 
 				if (belongsToTuplet(left) < 0
 					&& left.getMetricTime().add(left.getMetricDuration())
@@ -1238,8 +1240,8 @@ public class NotationVoice extends SortedContainer<NotationChord> implements
 			return false;
 		}
 
-		NotationChord firstChord = (NotationChord) get(0);
-		NotationChord lastChord = (NotationChord) get(size() - 1);
+		NotationChord firstChord = get(0);
+		NotationChord lastChord = get(size() - 1);
 
 		if (firstChord.getMetricTime().isLessOrEqual(metricTime)
 			&& lastChord.getMetricTime().add(lastChord.getMetricDuration())
@@ -1250,6 +1252,7 @@ public class NotationVoice extends SortedContainer<NotationChord> implements
 		return false;
 	}
 
+	@Override
 	public String toString() {
 		String s = "";
 
@@ -1319,6 +1322,7 @@ public class NotationVoice extends SortedContainer<NotationChord> implements
 	 * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#toMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
 	 *      org.w3c.dom.Node, java.lang.Object, java.lang.String)
 	 */
+	@Override
 	public boolean toMPEG(MusiteXMLSerializer instance, Node parent,
 							Object object, String fieldname) {
 		// commons----------------------------------
@@ -1346,8 +1350,8 @@ public class NotationVoice extends SortedContainer<NotationChord> implements
 				if (lastBeamIndex != beamIndex) {
 					// first note in beam => serialize beam rendering hints (as
 					// hints in chord)
-					RenderingHints rhints = ((BeamContainer) beamContainers
-							.get(beamIndex)).getRenderingHints();
+					RenderingHints rhints = beamContainers
+							.get(beamIndex).getRenderingHints();
 					if (rhints != null)
 						for (Iterator iterator = rhints.getKeySet().iterator(); iterator
 								.hasNext();) {
@@ -1422,6 +1426,7 @@ public class NotationVoice extends SortedContainer<NotationChord> implements
 	 * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#fromMPEG(org.w3c.dom.Element,
 	 *      java.util.Hashtable, java.lang.Object)
 	 */
+	@Override
 	public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
 		// commons----------------------------------
 		// reference-handling

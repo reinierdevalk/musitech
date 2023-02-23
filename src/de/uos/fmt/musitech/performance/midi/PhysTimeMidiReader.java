@@ -54,7 +54,6 @@ import javax.sound.midi.Sequence;
 
 import de.uos.fmt.musitech.data.score.NotationStaff;
 import de.uos.fmt.musitech.data.structure.Piece;
-import de.uos.fmt.musitech.data.structure.linear.Part;
 
 /**
  * Is used for sequences, containing Midi Events with

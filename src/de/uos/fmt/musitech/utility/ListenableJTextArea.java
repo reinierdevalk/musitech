@@ -70,6 +70,7 @@ public class ListenableJTextArea extends javax.swing.JTextArea implements Docume
 	/**
 	 * Sends a notfiy document changed.
 	 */
+	@Override
 	public void changedUpdate(DocumentEvent e) {
 		notifyChange();
 	}
@@ -102,6 +103,7 @@ public class ListenableJTextArea extends javax.swing.JTextArea implements Docume
 		// user code end
 	}
 
+	@Override
 	public void insertUpdate(DocumentEvent e) {
 		notifyChange();
 	}
@@ -118,6 +120,7 @@ public class ListenableJTextArea extends javax.swing.JTextArea implements Docume
 			frame.setContentPane(aListenableJTextField);
 			frame.setSize(aListenableJTextField.getSize());
 			frame.addWindowListener(new java.awt.event.WindowAdapter() {
+				@Override
 				public void windowClosing(java.awt.event.WindowEvent e) {
 					System.exit(0);
 				};
@@ -135,6 +138,7 @@ public class ListenableJTextArea extends javax.swing.JTextArea implements Docume
 		lastText = newText;
 	}
 
+	@Override
 	public void removeUpdate(DocumentEvent e) {
 		notifyChange();
 	}
@@ -144,6 +148,7 @@ public class ListenableJTextArea extends javax.swing.JTextArea implements Docume
 	 * @date (18.07.00 19:17:02)
 	 * @param doc javax.swing.text.Document
 	 */
+	@Override
 	public void setDocument(javax.swing.text.Document doc) {
 		//	getDocument().removeDocumentListener(this);
 		super.setDocument(doc);
@@ -155,6 +160,7 @@ public class ListenableJTextArea extends javax.swing.JTextArea implements Docume
 	 * @date (18.07.00 18:15:43)
 	 * @param b boolean
 	 */
+	@Override
 	public void setEditable(boolean b) {
 		if (isEditable())
 			colorEdit = getBackground();
@@ -178,6 +184,7 @@ public class ListenableJTextArea extends javax.swing.JTextArea implements Docume
 	 * @param listenableText The new value for the property.
 	 * @see #getListenableText
 	 */
+	@Override
 	public void setText(java.lang.String newText) {
 		String oldText = getText();
 		if (getText().equals(newText))

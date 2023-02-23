@@ -58,6 +58,7 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
+import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -77,6 +78,7 @@ public class JMultiSlider extends JPanel implements MultiSlider {
 	/**
 	 * @see de.uos.fmt.musitech.audio.proc.filter.MultiSlider#getRows()
 	 */
+	@Override
 	public int getRows() {
 		return getMatrix().length;
 	}
@@ -84,6 +86,7 @@ public class JMultiSlider extends JPanel implements MultiSlider {
 	/**
 	 * @see de.uos.fmt.musitech.audio.proc.filter.MultiSlider#getColumns()
 	 */
+	@Override
 	public int getColumns() {
 		return getMatrix()[0].length;
 	}
@@ -113,6 +116,7 @@ public class JMultiSlider extends JPanel implements MultiSlider {
 	/**
 	 * @see de.uos.fmt.musitech.audio.proc.filter.MultiSlider#getSliders()
 	 */
+	@Override
 	public Object[][] getSliders() {
 		if (sliders == null)
 			sliders = new JSlider[getColumns()][getRows()];
@@ -120,6 +124,7 @@ public class JMultiSlider extends JPanel implements MultiSlider {
 		return sliders;
 	}
 	
+	@Override
 	public void addSlider(final int r, final int c, final SliderPrototype slider){
 	
 		getSliders()[c][r]= slider;
@@ -130,6 +135,7 @@ public class JMultiSlider extends JPanel implements MultiSlider {
 		);
 		
 		((JSlider)slider).addChangeListener(new ChangeListener(){
+			@Override
 			public void stateChanged(ChangeEvent e){
 				JSlider slider = (JSlider)(e.getSource());
 				getModel().getMatrix()[c][r] = (float)slider.getValue()/(float)slider.getMaximum();
@@ -156,16 +162,18 @@ public class JMultiSlider extends JPanel implements MultiSlider {
 	public static void main(String[] args){
 	
 		MultiSliderFactory msf = MultiSliderFactory.newInstance(
-			new JSliderPrototypeImpl( JSlider.VERTICAL, 0, 100, 0));
+			new JSliderPrototypeImpl( SwingConstants.VERTICAL, 0, 100, 0));
 			
 		final float[][] matrix = new float[3][5];	
 			
 		MultiSlider ms = msf.newMultiSlider(
 			new MultiSliderModel(){
+				@Override
 				public float[][] getMatrix(){
 					return matrix;
 				}
 				
+				@Override
 				public void addPropertyChangeListener(PropertyChangeListener l){}
 			}
 		);
@@ -179,6 +187,7 @@ public class JMultiSlider extends JPanel implements MultiSlider {
 		frame.setVisible(true);
 		
 		frame.addWindowListener(new WindowAdapter(){
+			@Override
 			public void windowClosing(WindowEvent e){
 				System.exit(0);
 			}
@@ -186,6 +195,7 @@ public class JMultiSlider extends JPanel implements MultiSlider {
 		
 	}
 	
+	@Override
 	public float[][] getMatrix(){
 		return model.getMatrix();
 	}
@@ -202,6 +212,7 @@ public class JMultiSlider extends JPanel implements MultiSlider {
 	 * Sets the model.
 	 * @param model The model to set
 	 */
+	@Override
 	public void setModel(MultiSliderModel model) {
 		this.model = model;
 		setLayout(new GridLayout(getRows(), getColumns()));
@@ -209,6 +220,7 @@ public class JMultiSlider extends JPanel implements MultiSlider {
 	/**
 	 * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
 	 */
+	@Override
 	public void propertyChange(PropertyChangeEvent arg0) {
 //		for (int i = 0; i < sliders.length; i++) {
 //			for (int j = 0; j < sliders[0].length; j++) {

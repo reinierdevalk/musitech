@@ -76,6 +76,7 @@ public class HorizontalTimedLayout implements LayoutManager {
 	 * 
 	 * @see java.awt.LayoutManager#addLayoutComponent(java.lang.String, java.awt.Component)
 	 */
+	@Override
 	public void addLayoutComponent(String arg0, Component arg1) {
 		// XXX Auto-generated method stub
 		System.out.println("" + arg1 + " added to LM");
@@ -85,6 +86,7 @@ public class HorizontalTimedLayout implements LayoutManager {
 	/* (non-Javadoc)
 	 * @see java.awt.LayoutManager#removeLayoutComponent(java.awt.Component)
 	 */
+	@Override
 	public void removeLayoutComponent(Component arg0) {
 		// XXX Auto-generated method stub
 
@@ -94,6 +96,7 @@ public class HorizontalTimedLayout implements LayoutManager {
 	 * Get the preferred size
 	 * @see java.awt.LayoutManager#preferredLayoutSize(java.awt.Container)
 	 */
+	@Override
 	public Dimension preferredLayoutSize(Container arg0) {
 		// TODO implement 
 		return null;
@@ -103,6 +106,7 @@ public class HorizontalTimedLayout implements LayoutManager {
 	 * Return the minimal size of this layout.
 	 * @see java.awt.LayoutManager#minimumLayoutSize(java.awt.Container)
 	 */
+	@Override
 	public Dimension minimumLayoutSize(Container arg0) {
 		// TODO implement this
 		return null;
@@ -111,6 +115,7 @@ public class HorizontalTimedLayout implements LayoutManager {
 	/* (non-Javadoc)
 	 * @see java.awt.LayoutManager#layoutContainer(java.awt.Container)
 	 */
+	@Override
 	public void layoutContainer(Container arg0) {
 
 		if (!(arg0 instanceof HorizontalTimedDisplay))

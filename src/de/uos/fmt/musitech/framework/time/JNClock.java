@@ -137,6 +137,7 @@ public class JNClock implements MTimer
 	/** 
 	 * @see de.uos.fmt.musitech.framework.time.MTimer#getTimeMicros()
 	 */
+	@Override
 	public long getTimeMicros() {
 		
 		return TimeGetTime()*1000;

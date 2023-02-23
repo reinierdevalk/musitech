@@ -307,6 +307,7 @@ public class FrequencyPanel extends JPanel{
 	 * @version 1.0
 	 * @param g the graphics object to draw to
 	 */
+	@Override
 	public void paint(Graphics g) {
 	  Dimension d = getSize();
 	  if (d.width < minWidth) {
@@ -345,15 +346,15 @@ public class FrequencyPanel extends JPanel{
 		g.setColor(graphColor);
 		int x1, x2, y1, y2;
 		x2 = spaceLeft;
-		y2 = (int)Math.round((double)h * (double)(max - frequencyTable[0][1]) /
-							 (double)(max - min)) + spaceTop;
+		y2 = (int)Math.round(h * (max - frequencyTable[0][1]) /
+							 (max - min)) + spaceTop;
 		for (int i = 1; i < frequencyTable.length; i++) {
 		  x1 = x2;
 		  x2 = (int)Math.round((double)(i * w) /
 							   (double)(frequencyTable.length - 1)) + spaceLeft;
 		  y1 = y2;
-		  y2 = (int) Math.round((double) h * (double) (max - frequencyTable[i][1]) /
-							   (double)(max - min)) + spaceTop;
+		  y2 = (int) Math.round(h * (max - frequencyTable[i][1]) /
+							   (max - min)) + spaceTop;
 		  g.drawLine(x1, y1, x2, y2);
 		} // for
 	  } // if

@@ -198,7 +198,7 @@ public class ScoreMapper {
         }
 
         for (int i = 0; i < nsys.size(); i++) {
-            NotationStaff nstaff = (NotationStaff) nsys.get(i);
+            NotationStaff nstaff = nsys.get(i);
             if (!currentAttackTimes.containsKey(nstaff)) {
                 currentAttackTimes.put(nstaff, Rational.ZERO);
             }
@@ -238,9 +238,9 @@ public class ScoreMapper {
 
     private boolean doneWithLayout(int[][] currentChordInVoices) {
         for (int i = 0; i < nsys.size(); i++) {
-            NotationStaff nstaff = (NotationStaff) nsys.get(i);
+            NotationStaff nstaff = nsys.get(i);
             for (int j = 0; j < nstaff.size(); j++) {
-                if (currentChordInVoices[i][j] < ((NotationVoice) nstaff.get(j)).size()) {
+                if (currentChordInVoices[i][j] < nstaff.get(j).size()) {
                     return false;
                 }
             }
@@ -289,8 +289,8 @@ public class ScoreMapper {
         TiedChord[][] openTies = new TiedChord[nsys.size()][]; //one (possible) open tie
         // for every voice
         for (int i = 0; i < nsys.size(); i++) {
-            currentChordInVoices[i] = new int[((NotationStaff) nsys.get(i)).size()];
-            openTies[i] = new TiedChord[((NotationStaff) nsys.get(i)).size()];
+            currentChordInVoices[i] = new int[nsys.get(i).size()];
+            openTies[i] = new TiedChord[nsys.get(i).size()];
         }
 
         SSystem currentSystem = createSystem(nsys);
@@ -304,7 +304,7 @@ public class ScoreMapper {
             Barline measureEnd = null;
             int staffCounter = 0;
             for (int i = 0; i < nsys.size(); i++) {
-                NotationStaff nstaff = (NotationStaff) nsys.get(i);
+                NotationStaff nstaff = nsys.get(i);
 
                 Staff currentStaff;
 
@@ -373,7 +373,7 @@ public class ScoreMapper {
                         int lastChild = staff.numChildren() - 1;
                         leftOverMeasures[i] = (Measure) staff.child(lastChild);
                         staff.removeScoreObject(lastChild);
-                        initializeMeasure(leftOverMeasures[i], (NotationStaff) nsys
+                        initializeMeasure(leftOverMeasures[i], nsys
                                 .get(i));
                         undoAuxiliaries(currentSystem, staff);
                     }
@@ -473,7 +473,7 @@ public class ScoreMapper {
                 List v = new ArrayList();
                 slurs.put(slurIndexI, v);
                 Slur s = new Slur();
-                SlurContainer sc = (SlurContainer) voice.getSlurContainers().get(
+                SlurContainer sc = voice.getSlurContainers().get(
                         slurIndexI.intValue());
                 if (sc.hasHint("dotted")
                     && ((Boolean) sc.getHint("dotted")).booleanValue()) {
@@ -493,7 +493,7 @@ public class ScoreMapper {
         if (tupletIndex >= 0) {
             Integer tupletIndexI = new Integer(tupletIndex);
             if (!tuplets.containsKey(tupletIndexI)) {
-                TupletContainer tc = (TupletContainer) voice.getTupletContainers().get(
+                TupletContainer tc = voice.getTupletContainers().get(
                         tupletIndex);
                 tuplets.put(tupletIndexI, new Tuplet(tc.getArity(), tc
                         .getMetricDuration()));
@@ -557,15 +557,15 @@ public class ScoreMapper {
             else
                 clef = new Clef((char) 0, 0, 0);
         } else {
-            Rational currentAttackTime = (Rational) currentAttackTimes.get(nstaff);
+            Rational currentAttackTime = currentAttackTimes.get(nstaff);
             int index = clefTrack.find(currentAttackTime);
             if (index >= 0) {
-                clef = (Clef) clefTrack.get(index);
+                clef = clefTrack.get(index);
             } else if (index <= -2) {
                 index += 2; //look at Collections.binarySearch in the Java API doc for an
                 // explanation
                 index *= -1;
-                clef = (Clef) clefTrack.get(index);
+                clef = clefTrack.get(index);
                 if (!firstMeasureInStaff
                     && !clef.getMetricTime().equals(currentAttackTimes.get(nstaff))) {
                     clef = new Clef((char) 0, 0, 0);
@@ -596,7 +596,7 @@ public class ScoreMapper {
         }
 
         if (meterTrack != null) {
-            Rational currentAttackTime = (Rational) currentAttackTimes.get(nstaff);
+            Rational currentAttackTime = currentAttackTimes.get(nstaff);
             TimeSignatureMarker tsm = meterTrack.getTimeSignatureMarker(currentAttackTime);
             if (nsys.getRenderingHints() == null
                 || nsys.getRenderingHints().getValue("time signature") == null
@@ -653,11 +653,11 @@ public class ScoreMapper {
         boolean firstChord = true;
 
         VOICES: for (int voiceNo = 0; voiceNo < nstaff.size(); voiceNo++) {
-            NotationVoice voice = (NotationVoice) nstaff.get(voiceNo);
+            NotationVoice voice = nstaff.get(voiceNo);
 
             Map currentSlurHash;
             if (slurs.containsKey(nstaff)) {
-                currentSlurHash = (Map) slurs.get(nstaff);
+                currentSlurHash = slurs.get(nstaff);
             } else {
                 currentSlurHash = new HashMap();
                 slurs.put(nstaff, currentSlurHash);
@@ -671,7 +671,7 @@ public class ScoreMapper {
             }
 
             for (int chordNo = currentChordInVoice[voiceNo]; chordNo < voice.size(); chordNo++) {
-                NotationChord nchord = (NotationChord) voice.get(chordNo);
+                NotationChord nchord = voice.get(chordNo);
                 if (firstChord) {
                     measure.setMetricTime(nchord.getMetricTime());
                     firstChord = false;
@@ -762,16 +762,16 @@ public class ScoreMapper {
 
                 if ((nchord.getRenderingHint("tabulatur note") != null && ((TablatureNote) nchord
                         .getRenderingHint("tabulatur note")).getPullUp() != null)
-                    || (((Note) nchord.get(0)).getRenderingHint("tabulatur note") != null
-                        && ((TablatureNote) ((Note) nchord.get(0))
-                                .getRenderingHint("tabulatur note")).getPullUp() != null && ((TablatureNote) ((Note) nchord
-                            .get(0)).getRenderingHint("tabulatur note"))
+                    || (nchord.get(0).getRenderingHint("tabulatur note") != null
+                        && ((TablatureNote) nchord.get(0)
+                                .getRenderingHint("tabulatur note")).getPullUp() != null && ((TablatureNote) nchord
+                            .get(0).getRenderingHint("tabulatur note"))
                             .getPullUpTarget() != null)) {
 
                     TablatureNote tn = (TablatureNote) nchord
                             .getRenderingHint("tabulatur note");
                     if (tn == null) {
-                        tn = (TablatureNote) ((Note) nchord.get(0))
+                        tn = (TablatureNote) nchord.get(0)
                                 .getRenderingHint("tabulatur note");
                     }
                     NotationChord entryChord = new NotationChord(nchord.getContext());
@@ -784,7 +784,7 @@ public class ScoreMapper {
                     if (tn.getPullDownTarget() == null && tn.getPullDownTargetInt() != -1) {
                         int index = voice.indexOf(nchord);
                         index += tn.getPullDownTargetInt();
-                        tn.setPullDownTarget((Note) ((NotationChord) voice.get(index))
+                        tn.setPullDownTarget(voice.get(index)
                                 .get(0));
                     }
 
@@ -883,11 +883,11 @@ public class ScoreMapper {
                 graphicalToNotation.put(event, nchord);
                 
                 for (int pitchNo = 0; pitchNo < nchord.size(); pitchNo++) {
-                    ScoreNote note = ((Note) nchord.get(pitchNo)).getScoreNote();
+                    ScoreNote note = nchord.get(pitchNo).getScoreNote();
                     if (note.getDiatonic() >= 'a' && note.getDiatonic() <= 'h') {
                         Pitch pitch = new Pitch(dur, note.getDiatonic(), 
                         	(byte)note.getAlteration(), false, (byte)note.getOctave(), 
-                        	(Note) nchord.get(pitchNo));
+                        	nchord.get(pitchNo));
 
                         chord.add(pitch);
 
@@ -917,28 +917,28 @@ public class ScoreMapper {
 									.booleanValue());
 						}
                         
-                        if (((Note) nchord.get(pitchNo)).getRenderingHints() != null
-							&& ((Note) nchord.get(pitchNo)).getRenderingHints()
+                        if (nchord.get(pitchNo).getRenderingHints() != null
+							&& nchord.get(pitchNo).getRenderingHints()
 									.containsKey("visible")) {
-							pitch.setVisible(((Boolean) ((Note) nchord
-									.get(pitchNo)).getRenderingHint("visible"))
+							pitch.setVisible(((Boolean) nchord
+									.get(pitchNo).getRenderingHint("visible"))
 									.booleanValue());
 						}
 
-                        hashtable.put((Note) nchord.get(pitchNo), pitch);
+                        hashtable.put(nchord.get(pitchNo), pitch);
                     } else { // non-diatonic characters interpreted as rests
                         if (nchord.getMetricDuration().isGreater(new Rational(1, 1))) {
                             dur = new Duration(nchord.getMetricDuration(), 0);
                         }
 
-                        event = new Rest(dur, voiceNo, (Note) nchord.get(pitchNo));
-                        hashtable.put((Note) nchord.get(pitchNo), event);
+                        event = new Rest(dur, voiceNo, nchord.get(pitchNo));
+                        hashtable.put(nchord.get(pitchNo), event);
                         if (nchord.getRenderingHints() != null
                             && nchord.getRenderingHints().containsKey("visible")) {
                             event.setVisible(((Boolean) nchord
                                     .getRenderingHint("visible")).booleanValue());
                         }
-                        Note n = (Note) nchord.get(pitchNo);
+                        Note n = nchord.get(pitchNo);
                         if (n.getRenderingHints() != null
                             && n.getRenderingHints().containsKey("visible")) {
                             event.setVisible(((Boolean) n.getRenderingHint("visible"))
@@ -1003,7 +1003,7 @@ public class ScoreMapper {
 
                 Rational correctDuration;
                 if (currentTupletIndex != -1) {
-                    TupletContainer tuplet = (TupletContainer) voice
+                    TupletContainer tuplet = voice
                             .getTupletContainers().get(currentTupletIndex);
                     correctDuration = tuplet.getMetricDuration().div(tuplet.size(), 1);
                 } else {
@@ -1011,7 +1011,7 @@ public class ScoreMapper {
                 }
                 event.setCorrectDuration(correctDuration);
 
-                Rational currentAttackTime = (Rational) currentAttackTimes.get(nstaff);
+                Rational currentAttackTime = currentAttackTimes.get(nstaff);
                 if ((nsys.getBarlines().hasBarlineAt(
                         currentAttackTime.add(correctDuration)) && measure.numChildren() > 0)
                     || nsys.hasHardBreakAt(new Barline(currentAttackTime
@@ -1123,7 +1123,7 @@ public class ScoreMapper {
 
     void undoAuxiliaries(SSystem system, Staff staff) {
         int i = 0;
-        for (Iterator iter = ((List) undoBeams.get(system)).iterator(); iter.hasNext();) {
+        for (Iterator iter = undoBeams.get(system).iterator(); iter.hasNext();) {
             Beam beam = (Beam) iter.next();
             system.removeBeam(beam);
             beams.put(new Integer(++i), beam);
@@ -1226,7 +1226,7 @@ public class ScoreMapper {
                     List undo2 = new ArrayList();
                     undoSlurs.put(system, undo2);
                 }
-                ((List) undoSlurs.get(system)).add(slur);
+                undoSlurs.get(system).add(slur);
             } else {
                 Beam beam = new Beam();
                 element.setBeam(beam);
@@ -1240,7 +1240,7 @@ public class ScoreMapper {
                     List undo2 = new ArrayList();
                     undoBeams.put(system, undo2);
                 }
-                ((List) undoBeams.get(system)).add(beam);
+                undoBeams.get(system).add(beam);
             }
         }
         tuplets.clear();

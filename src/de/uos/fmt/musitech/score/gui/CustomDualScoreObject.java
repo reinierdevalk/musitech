@@ -72,6 +72,7 @@ public class CustomDualScoreObject extends CustomScoreObject {
 		super(master, ma);
 	}
 
+	@Override
 	public void paint(Graphics g) {
 		int ld = master.staff().getLineDistance();
 		

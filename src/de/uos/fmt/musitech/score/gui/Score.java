@@ -50,15 +50,11 @@ package de.uos.fmt.musitech.score.gui;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Insets;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
 import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -120,6 +116,7 @@ public class Score extends ScoreContainer {
 	
 	//public Score (String code)  {}  
 	public Dimension prefSize = new Dimension(); 
+	@Override
 	public void arrange() {
 		//setXPos(20); // @@
 		
@@ -151,6 +148,7 @@ public class Score extends ScoreContainer {
 	}
 	
 	
+	@Override
 	public Dimension getPreferredSize(){
 		return prefSize;
 	}
@@ -159,6 +157,7 @@ public class Score extends ScoreContainer {
 		((ChangeListener)component).stateChanged(new ChangeEvent(this));
 	}
 	
+	@Override
 	public int rwidth() {
 	    ScoreObject scoreObject = child(activePage);
 	    if(scoreObject != null)
@@ -169,6 +168,7 @@ public class Score extends ScoreContainer {
 	}
 
 
+	@Override
 	public void paint(Graphics g) {
 		// Changed by Jan-H. Kramer, because child could be return null
 	    ScoreObject object = child(activePage);
@@ -232,6 +232,7 @@ public class Score extends ScoreContainer {
 	}
 
 	//protected int grade () {return 0;}
+	@Override
 	public Score score() {
 		return this;
 	}
@@ -241,6 +242,7 @@ public class Score extends ScoreContainer {
 	}
 
 	/** Always returns null because a score doesn't have a parent. */
+	@Override
 	Class parentClass() {
 		return null;
 	}
@@ -265,10 +267,12 @@ public class Score extends ScoreContainer {
 				System.out.println(notes.get(i));
 	}
 	
+	@Override
 	public int depth() {
 		return ((Page)child(activePage)).depth();
 	}
 	
+	@Override
 	public int height() {
 		return ((Page)child(activePage)).height();
 	}

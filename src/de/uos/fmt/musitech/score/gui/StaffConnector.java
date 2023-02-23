@@ -60,6 +60,7 @@ public abstract class StaffConnector extends ScoreObject {
 		this.lastStaff = last;
 	}
 
+	@Override
 	final Class parentClass() {
 		return SSystem.class;
 	}

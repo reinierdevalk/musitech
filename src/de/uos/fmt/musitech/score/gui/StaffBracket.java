@@ -68,12 +68,14 @@ public class StaffBracket extends StaffConnector {
 		super(first, last);
 	}
 
+	@Override
 	public void paint(Graphics g) {
 		if(!isVisible()) return;
 		new Graphix(g).fillPolygon(bracketPoints);
 		//drawFrame(g);
 	}
 	
+	@Override
 	public int arrange(int pass) {
 		if (pass >= 1) {
 			int ld = getFirstStaff().getLineDistance();
@@ -119,6 +121,7 @@ public class StaffBracket extends StaffConnector {
 		return 3;
 	}
 	
+	@Override
 	public int rwidth() {
 		return maxX - minX;
 	}

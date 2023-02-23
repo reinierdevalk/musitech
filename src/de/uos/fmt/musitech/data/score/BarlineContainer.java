@@ -148,6 +148,7 @@ public class BarlineContainer extends SortedContainer<Barline> {
 	 * different voices and call addBarline, but only get one set of barlines.
 	 * @param b the barline to be added
 	 */
+	@Override
 	public boolean add(Barline b) {
 		if (!hasBarlineAt(b.getMetricTime())) {
 			return super.add(b);

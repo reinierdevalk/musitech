@@ -79,7 +79,8 @@ public class ExpandDisplay extends AbstractComplexDisplay implements Wrapper {
     /**
      * @see de.uos.fmt.musitech.framework.editor.AbstractDisplay#createGUI()
      */
-    public void createGUI() {
+    @Override
+	public void createGUI() {
         setLayout(new BorderLayout());
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
@@ -102,7 +103,8 @@ public class ExpandDisplay extends AbstractComplexDisplay implements Wrapper {
     /**
      * @see de.uos.fmt.musitech.framework.editor.Wrapper#setWrappedView(de.uos.fmt.musitech.framework.editor.Display)
      */
-    public void setWrappedView(Display view) {
+    @Override
+	public void setWrappedView(Display view) {
         this.displayToExpand = view;
         this.editObj = view.getEditObj();
     }
@@ -139,7 +141,8 @@ public class ExpandDisplay extends AbstractComplexDisplay implements Wrapper {
             expandCollapseButton.setText("Expand");
         }
         expandCollapseButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent ce) {
+            @Override
+			public void actionPerformed(ActionEvent ce) {
                 changeState();
             }
         });

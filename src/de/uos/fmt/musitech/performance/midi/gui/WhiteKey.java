@@ -67,7 +67,8 @@ public class WhiteKey extends Keys {
         super(midiNote, mousePiano);
     }
 
-    public void paint(Graphics g) {
+    @Override
+	public void paint(Graphics g) {
         g.clearRect(0, 0, getWidth(), getHeight());
         if (pressed) {
             g.setColor(new Color(color[channel][0] + 5, color[channel][1] + 5,

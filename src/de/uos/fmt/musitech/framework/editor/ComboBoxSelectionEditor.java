@@ -101,6 +101,7 @@ public class ComboBoxSelectionEditor extends AbstractSimpleEditor {
 			comboBox.setSelectedItem(value);
 		comboBox.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				applyChangesToPropertyValue();
 				applyChanges();
@@ -149,6 +150,7 @@ public class ComboBoxSelectionEditor extends AbstractSimpleEditor {
 		else
 			createButton.addActionListener(new ActionListener() {
 
+				@Override
 				public void actionPerformed(ActionEvent e) {
 					createNewBooleanValue();
 				}

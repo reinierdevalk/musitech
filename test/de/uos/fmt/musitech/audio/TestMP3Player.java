@@ -70,6 +70,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
+import javax.swing.WindowConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -132,14 +133,15 @@ public class TestMP3Player {
         JFrame frame = new JFrame("volume");
         final JSlider volumeSlider = new JSlider();
         final JLabel volumeLabel = new JLabel(String
-                .valueOf((float) volumeSlider.getValue() / 10000.0f));
+                .valueOf(volumeSlider.getValue() / 10000.0f));
         volumeSlider.setMinimum(1);
         volumeSlider.setMaximum(15000);
         volumeSlider.addChangeListener(new ChangeListener() {
 
-            public void stateChanged(ChangeEvent arg0) {
-                volume.setGain((float) volumeSlider.getValue() / 10000.0f);
-                volumeLabel.setText(String.valueOf((float) volumeSlider.getValue() / 10000.0f));
+            @Override
+			public void stateChanged(ChangeEvent arg0) {
+                volume.setGain(volumeSlider.getValue() / 10000.0f);
+                volumeLabel.setText(String.valueOf(volumeSlider.getValue() / 10000.0f));
             }
         });
         volumeSlider.setValue(5000);
@@ -178,7 +180,8 @@ public class TestMP3Player {
 
         byte debugForce = 1;
 
-        public int read(float[][] data) throws IOException {
+        @Override
+		public int read(float[][] data) throws IOException {
             if (debugForce > 1)
                 System.out.println("FIS debug: read(data[" + data.length + "][" + data[0].length
                                    + "])");
@@ -193,7 +196,8 @@ public class TestMP3Player {
             return read;
         }
 
-        public int read(float[][] data, int start, int len) throws IOException {
+        @Override
+		public int read(float[][] data, int start, int len) throws IOException {
             if (debugForce > 1)
                 System.out.println("FIS debug: read(data[" + data.length + "][" + data[0].length
                                    + "], " + start + ", " + len + ")");
@@ -208,19 +212,22 @@ public class TestMP3Player {
             return read;
         }
 
-        public AudioFormat getFormat() {
+        @Override
+		public AudioFormat getFormat() {
             if (debugForce > 0)
                 System.out.println("FIS debug: getFormat() return: <" + fis.getFormat() + ">");
             return fis.getFormat();
         }
 
-        public long skip(long n) throws IOException {
+        @Override
+		public long skip(long n) throws IOException {
             if (debugForce > 0)
                 System.out.println("FIS debug: skip(" + n + ")");
             return fis.skip(n);
         }
 
-        public void reset() throws IOException {
+        @Override
+		public void reset() throws IOException {
             if (debugForce > 0)
                 System.out.println("FIS debug: reset()");
             fis.reset();
@@ -229,7 +236,8 @@ public class TestMP3Player {
         /**
          * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
          */
-        public long remainingSamples() {
+        @Override
+		public long remainingSamples() {
             // TODO Auto-generated method stub
             return 0;
         }
@@ -237,7 +245,8 @@ public class TestMP3Player {
         /**
          * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
          */
-        public long getPositionInSamples() {
+        @Override
+		public long getPositionInSamples() {
             // TODO Auto-generated method stub
             return 0;
         }
@@ -245,7 +254,8 @@ public class TestMP3Player {
         /**
          * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#setPositionInSamples(long)
          */
-        public void setPositionInSamples(long newPos) throws IOException {
+        @Override
+		public void setPositionInSamples(long newPos) throws IOException {
             // TODO Auto-generated method stub
 
         }
@@ -477,7 +487,8 @@ public class TestMP3Player {
 
         playButton.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 play = !play;
                 AudioUtil.initialiseSourceDataLine(reader.getFormat());
                 if (reader.getFormat().getChannels() != array.length)
@@ -488,12 +499,13 @@ public class TestMP3Player {
 
         secSlider.addChangeListener(new ChangeListener() {
 
-            public void stateChanged(ChangeEvent e) {
+            @Override
+			public void stateChanged(ChangeEvent e) {
                 secs = secSlider.getValue();
             }
         });
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         frame.getContentPane().setLayout(new BorderLayout());
         frame.getContentPane().add(playButton, BorderLayout.CENTER);
@@ -508,7 +520,8 @@ public class TestMP3Player {
 
         new Thread() {
 
-            public void run() {
+            @Override
+			public void run() {
                 System.out.println("Thread beginning to run.");
                 int read;
                 while (true) {

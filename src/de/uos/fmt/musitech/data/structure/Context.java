@@ -121,7 +121,7 @@ public class Context implements Serializable{
     }
 
     public MObject[] getAll() {
-        return (MObject[])list.toArray(new MObject[]{});
+        return list.toArray(new MObject[]{});
     }
 
     

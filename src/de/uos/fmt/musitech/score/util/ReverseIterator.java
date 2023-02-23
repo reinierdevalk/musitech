@@ -51,8 +51,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-import de.uos.fmt.musitech.score.gui.ScoreObject;
-
 /** A ReverseIterator is an Iterator that starts at the end of
  * the related Collection. Every call of method next() moves it 
  * one position towards the Collection's first element.
@@ -71,17 +69,20 @@ public class ReverseIterator<T> implements Iterator<T>
 		listIterator = list.listIterator(list.size());
    }
    
-   public boolean hasNext()
+   @Override
+public boolean hasNext()
    {
       return listIterator.hasPrevious();
    }
 
-   public T next()
+   @Override
+public T next()
    {
       return listIterator.previous();
    }
 
-   public void remove()
+   @Override
+public void remove()
    {
       listIterator.remove();
    }

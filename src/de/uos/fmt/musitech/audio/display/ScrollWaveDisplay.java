@@ -50,6 +50,7 @@ above is subject to the following three conditions:
  */
 package de.uos.fmt.musitech.audio.display;
 
+import java.awt.Adjustable;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -90,7 +91,7 @@ public class ScrollWaveDisplay extends JPanel implements Timeable {
 		setLayout(new BorderLayout());
 		displayWave = new WaveDisplay();
 		scrollBar = new JScrollBar();
-		scrollBar.setOrientation(JScrollBar.HORIZONTAL);
+		scrollBar.setOrientation(Adjustable.HORIZONTAL);
 		barPosLabel = new JLabel("BarPos");
 		barPosLabel.setPreferredSize(new Dimension(150, scrollBar.getHeight()));
 //		scrollBar.setBlockIncrement(50000);
@@ -111,6 +112,7 @@ public class ScrollWaveDisplay extends JPanel implements Timeable {
 	 */
 	private void setListeners(){
 		scrollBar.addAdjustmentListener(new AdjustmentListener(){
+			@Override
 			public void adjustmentValueChanged(AdjustmentEvent e) {
 ////				displayWave.setDataStartPos((int) (scrollBar.getValue()*proportion));
 //				displayWave.setDataStartPos(scrollBar.getValue());
@@ -126,15 +128,20 @@ public class ScrollWaveDisplay extends JPanel implements Timeable {
 				barPosLabel.setText(String.valueOf((int)(scrollBar.getValue() * displayWave.getDisplayScale())));
 			}});
 		scrollBar.addMouseListener(new MouseListener() {
+			@Override
 			public void mouseClicked(MouseEvent arg0) {
 			}
+			@Override
 			public void mouseEntered(MouseEvent arg0) {
 			}
+			@Override
 			public void mouseExited(MouseEvent arg0) {
 			}
+			@Override
 			public void mousePressed(MouseEvent arg0) {
 //				mousePressScrb = true;
 			}
+			@Override
 			public void mouseReleased(MouseEvent arg0) {
 //System.out.println("ScrollWaveDisplay.setListeners: mouseReleased: scrollbarvalue = "+scrollBar.getValue());
 				//displayWave.setDataStartPos(scrollBar.getValue());
@@ -148,6 +155,7 @@ public class ScrollWaveDisplay extends JPanel implements Timeable {
 		});
 	}
 	
+	@Override
 	public void paintComponent(Graphics g) {
 		if(width != getWidth()){
 			width = getWidth();
@@ -272,7 +280,7 @@ public class ScrollWaveDisplay extends JPanel implements Timeable {
 //			pos = (int) ((pos/(int)displayWave.getDisplayScale()) * displayWave.getDisplayScale());
 			pos -= (int) (pos%displayWave.getDisplayScale());
 			if(pos+displayWave.getSamplesWidth()>displayWave.getFloatPreviewReader().available())
-				pos = (int) (displayWave.getFloatPreviewReader().available() - displayWave.getSamplesWidth());
+				pos = displayWave.getFloatPreviewReader().available() - displayWave.getSamplesWidth();
 			if(pos<0) pos = 0;
 //System.out.println("ScrollWaveDisplay.scrollTo(int): value to set: "+pos);
 		}
@@ -358,6 +366,7 @@ public class ScrollWaveDisplay extends JPanel implements Timeable {
 	/**
 	 * @see de.uos.fmt.musitech.data.time.Timeable#setTimePosition(long)
 	 */
+	@Override
 	public void setTimePosition(long timeMicros) {
 		displayWave.setCursorPosTime(timeMicros);
 //		scrollToCursorPos(2);
@@ -369,6 +378,7 @@ public class ScrollWaveDisplay extends JPanel implements Timeable {
 	 * Get the end of the wave data.
 	 * @see de.uos.fmt.musitech.data.time.Timeable#getEndTime()
 	 */
+	@Override
 	public long getEndTime() {
 		return displayWave.getEndInMikroseconds();
 	}	

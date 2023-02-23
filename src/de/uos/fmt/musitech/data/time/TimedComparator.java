@@ -63,6 +63,7 @@ public class TimedComparator implements java.util.Comparator, java.io.Serializab
 	 *         argument is less than, equal to, or greater than the second.
 	 * @throws ClassCastException if the arguments are not Timed.
 	 */
+	@Override
 	public int compare(Object o1, Object o2) {
 		long t1 = ((Timed) o1).getTime();
 		long t2 = ((Timed) o2).getTime();

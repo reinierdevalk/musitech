@@ -79,6 +79,7 @@ public class TimeLine extends SortedContainer<Timed> {
 	 * 
 	 * @hibernate.property
 	 */
+	@Override
 	public java.lang.String getName() {
 		return name;
 	}
@@ -87,6 +88,7 @@ public class TimeLine extends SortedContainer<Timed> {
 	 * Sets the name.
 	 * @param name java.lang.String
 	 */
+	@Override
 	public void setName(java.lang.String name) {
 		this.name = name;
 	}
@@ -131,10 +133,11 @@ public class TimeLine extends SortedContainer<Timed> {
 	 * @param to de.uos.fmt.musitech.data.structure.Timed
 	 * @see java.util.Collection#add(Object)
 	 */
+	@Override
 	public synchronized boolean add(Timed o) throws ClassCastException {
 		if (o == null)
 			return false;
-		Timed to = (Timed) o;
+		Timed to = o;
 		return super.add(to);
 	}
 
@@ -160,6 +163,7 @@ public class TimeLine extends SortedContainer<Timed> {
 	 *
 	 * @see #add(Object)
 	 */
+	@Override
 	public synchronized boolean addAll(java.util.Collection<Timed> c) throws ClassCastException {
 		boolean retVal = false;
 		Iterator<Timed> iter = c.iterator();
@@ -195,7 +199,7 @@ public class TimeLine extends SortedContainer<Timed> {
 		}
 		int pos1 = findFirst(ts1);
 		int pos2 = pos1;
-		while (pos2+1 < size() && !(((Timed) get(pos2+1)).getTime()>ts2) ) {
+		while (pos2+1 < size() && !(get(pos2+1).getTime()>ts2) ) {
 			pos2++;
 		}
 		return new int[]{pos1,pos2};
@@ -219,6 +223,7 @@ public class TimeLine extends SortedContainer<Timed> {
 	/**
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
+	@Override
 	public boolean equals(Object obj) {
 		return this==obj;
 	}
@@ -226,6 +231,7 @@ public class TimeLine extends SortedContainer<Timed> {
 	/**
 	 * @see de.uos.fmt.musitech.data.structure.container.Container#getContents()
 	 */
+	@Override
 	public Containable[] getContentsRecursive() {
 		Collection vec = new ArrayList();
 		for(int i=0; i<size();i++){
@@ -244,6 +250,7 @@ public class TimeLine extends SortedContainer<Timed> {
 	/**
 	 * @see de.uos.fmt.musitech.data.structure.container.Container#containsRecursive(de.uos.fmt.musitech.data.structure.Containable)
 	 */
+	@Override
 	public boolean containsRecursive(Containable containable) {
 		for(int i=0; i<size(); i++){
 			Object obj = get(i);

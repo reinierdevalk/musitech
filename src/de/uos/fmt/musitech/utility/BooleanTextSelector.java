@@ -77,6 +77,7 @@ public class BooleanTextSelector extends javax.swing.JComboBox {
 	/**
 	 * Fires a PropertyChange eveent.
 	 */
+	@Override
 	protected void selectedItemChanged() {
 		Object selectedItem = getSelectedItem();
 		if (selectedItem != null && selectedItem.equals(lastSelectedItem))

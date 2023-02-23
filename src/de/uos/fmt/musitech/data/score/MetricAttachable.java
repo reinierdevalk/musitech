@@ -192,14 +192,16 @@ public class MetricAttachable implements Containable, IAttachable {
      * 
      * @hibernate.id generator-class="native"
      */
-    public Long getUid() {
+    @Override
+	public Long getUid() {
         return uid;
     }
 
     /**
      * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
      */
-    public void setUid(Long uid) {
+    @Override
+	public void setUid(Long uid) {
         this.uid = uid;
     }
     
@@ -207,7 +209,8 @@ public class MetricAttachable implements Containable, IAttachable {
      * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String,
      *      java.lang.Object)
      */
-    public boolean isValidValue(String propertyName, Object value) {
+    @Override
+	public boolean isValidValue(String propertyName, Object value) {
         // TODO Auto-generated method stub
         return true; //default
     }

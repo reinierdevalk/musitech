@@ -113,7 +113,8 @@ public class MapDisplay extends AbstractComplexDisplay {
      *      de.uos.fmt.musitech.framework.editor.EditingProfile,
      *      de.uos.fmt.musitech.framework.editor.Display)
      */
-    public void init(Object editObj, EditingProfile profile, Display root) {
+    @Override
+	public void init(Object editObj, EditingProfile profile, Display root) {
         //set arguments
         this.editObj = editObj;
         this.profile = profile;
@@ -157,7 +158,7 @@ public class MapDisplay extends AbstractComplexDisplay {
         if (elementDisplays.size()>0)
             elementDisplays.clear();
         for (Iterator iter = map.keySet().iterator(); iter.hasNext();) {
-            Object key = (Object) iter.next();
+            Object key = iter.next();
             Object element = map.get(key);
             Display elementDisplay = null;
             try {
@@ -176,7 +177,8 @@ public class MapDisplay extends AbstractComplexDisplay {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractDisplay#createGUI()
      */
-    public void createGUI() {
+    @Override
+	public void createGUI() {
         //panel for labels
 		JPanel labelPanel = new JPanel();
 		labelPanel.setLayout(new GridLayout(0, 1));
@@ -232,7 +234,8 @@ public class MapDisplay extends AbstractComplexDisplay {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#destroy()
      */
-    public void destroy(){
+    @Override
+	public void destroy(){
         super.destroy();
         if (!elementDisplays.isEmpty())
             for (Iterator iter = elementDisplays.iterator(); iter.hasNext();) {

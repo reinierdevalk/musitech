@@ -55,6 +55,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.audio.AudioFileObject;
 import de.uos.fmt.musitech.data.media.image.ImageSequenceContainer;
@@ -152,7 +153,7 @@ public class TestAudioPlayer {
 		frame.getContentPane().add(imageSeq.getImageComp());
 
 
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setLocation(200, 150);
 		frame.setSize(300,200);
 		frame.show();

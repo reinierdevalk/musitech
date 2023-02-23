@@ -76,7 +76,7 @@ public class GlobalSimFactory {
 			ready = true;
 			Rational minAttack = Rational.MAX_VALUE;
 			for (int i = 0; i < currentLSimInStaff.length; i++) {
-				Measure measure = (Measure) globalMeasure.getMeasure(i);
+				Measure measure = globalMeasure.getMeasure(i);
 				if (measure == null)
 					break; // XXX darf das passieren ?
 				LocalSim lsim = (LocalSim) measure.child(currentLSimInStaff[i]);

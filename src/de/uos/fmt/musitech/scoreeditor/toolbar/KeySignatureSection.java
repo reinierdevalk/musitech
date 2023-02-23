@@ -79,6 +79,7 @@ public class KeySignatureSection extends AbstractToolbarSection {
 			final int key = i - 6;
 			JMenuItem jmi = new JMenuItem(keys[i]);
 			jmi.addActionListener(new ActionListener() {
+				@Override
 				public void actionPerformed(ActionEvent e) {
 					getScoreEditor().getScoreManipulator().setKey(key);
 				}
@@ -86,6 +87,7 @@ public class KeySignatureSection extends AbstractToolbarSection {
 			keypop.add(jmi);
 		}
 		keybutton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				keypop.show(keybutton, 0, 0);
 			}
@@ -101,6 +103,7 @@ public class KeySignatureSection extends AbstractToolbarSection {
 			final int index = i;
 			JMenuItem jmi = new JMenuItem(times[i]);
 			jmi.addActionListener(new ActionListener() {
+				@Override
 				public void actionPerformed(ActionEvent e) {
 					getScoreEditor().getScoreManipulator().setTimeSignature(
 							timesR[index]);
@@ -109,6 +112,7 @@ public class KeySignatureSection extends AbstractToolbarSection {
 			timepop.add(jmi);
 		}
 		timebutton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				timepop.show(timebutton, 0, 0);
 			}

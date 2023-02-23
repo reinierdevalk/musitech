@@ -96,12 +96,15 @@ public class NicolaisAudioPlayerTest {
 		AFOReceiver receiver = new AFOReceiver() {
 			URL url;
 			boolean end = false;
+			@Override
 			public void rememberURL(URL u) {
 				url = u;
 			}
+			@Override
 			public URL rememberURL() {
 				return url;
 			}
+			@Override
 			public void setAFO(AudioFileObject afo) {
 				player.addAudioFileObject(afo);
 				System.out
@@ -110,9 +113,11 @@ public class NicolaisAudioPlayerTest {
 								+ " and URL: "
 								+ afo.getSourceURL());
 			}
+			@Override
 			public void finalise() {
 				end = true;
 			}
+			@Override
 			public boolean finalized() {
 				return end;
 			}
@@ -122,6 +127,7 @@ public class NicolaisAudioPlayerTest {
 		JPanel samplePanel = new JPanel();
 		final JLabel sampleLabel = new JLabel("0");
 		new Thread() {
+			@Override
 			public void run() {
 				while (true) {
 					try {
@@ -139,6 +145,7 @@ public class NicolaisAudioPlayerTest {
 			}
 		}.start();
 		sampleFrame.addWindowListener(new WindowAdapter() {
+			@Override
 			public void windowClosing(WindowEvent ev) {
 				System.exit(0);
 			}
@@ -179,12 +186,15 @@ public class NicolaisAudioPlayerTest {
 		AFOReceiver receiver = new AFOReceiver() {
 			URL url;
 			boolean containerFull = false;
+			@Override
 			public void rememberURL(URL u) {
 				url = u;
 			}
+			@Override
 			public URL rememberURL() {
 				return url;
 			}
+			@Override
 			public void setAFO(AudioFileObject afo) {
 				container.add(afo);
 				System.out
@@ -193,9 +203,11 @@ public class NicolaisAudioPlayerTest {
 								+ " and URL: "
 								+ afo.getSourceURL());
 			}
+			@Override
 			public void finalise() {
 				containerFull = true;
 			}
+			@Override
 			public boolean finalized() {
 				return containerFull;
 			}
@@ -254,6 +266,7 @@ public class NicolaisAudioPlayerTest {
 
 		// textField.setPreferredSize(new Dimension(800, 100));
 		fileChooserButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				String fileName = TestMP3Player.getFile();
 				File file = new File(fileName);
@@ -267,6 +280,7 @@ public class NicolaisAudioPlayerTest {
 		});
 
 		sendAFOButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				URL url = receiver.rememberURL();
 				if (url == null)
@@ -305,6 +319,7 @@ public class NicolaisAudioPlayerTest {
 
 		frame.addWindowListener(new WindowAdapter() {
 
+			@Override
 			public void windowClosing(WindowEvent ev) {
 				receiver.finalise();
 				frame.removeAll();

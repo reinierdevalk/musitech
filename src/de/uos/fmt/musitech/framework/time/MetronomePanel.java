@@ -57,6 +57,7 @@ import java.awt.GridLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.structure.Context;
 import de.uos.fmt.musitech.data.structure.Piece;
@@ -154,6 +155,7 @@ public class MetronomePanel extends JPanel implements Player {
 	/** 
 	 * @see de.uos.fmt.musitech.framework.time.Player#start()
 	 */
+	@Override
 	public void start() {
 		prefBeatMicros =
 			getTimeLine().getPreviousBeat(playTimer.getPlayTimeMicros());
@@ -170,6 +172,7 @@ public class MetronomePanel extends JPanel implements Player {
 	/** 
 	 * @see de.uos.fmt.musitech.framework.time.Player#stop()
 	 */
+	@Override
 	public void stop() {
 		playing = false;
 		for (int i = 0; i < numerator; i++) {
@@ -180,12 +183,14 @@ public class MetronomePanel extends JPanel implements Player {
 	/** 
 	 * @see de.uos.fmt.musitech.framework.time.Player#reset()
 	 */
+	@Override
 	public void reset() {
 	}
 
 	/** 
 	 * @see de.uos.fmt.musitech.framework.time.Player#setTimePosition(long)
 	 */
+	@Override
 	public void setTimePosition(long time) {
 		nextBeatMicros = getTimeLine().getNextOrSameBeat(time);
 		// used for start to know which button to active
@@ -199,6 +204,7 @@ public class MetronomePanel extends JPanel implements Player {
 	/** 
 	 * @see de.uos.fmt.musitech.framework.time.Player#setPlayTimer(de.uos.fmt.musitech.framework.time.PlayTimer)
 	 */
+	@Override
 	public void setPlayTimer(PlayTimer timer) {
 		playTimer = timer;
 		//		context = playTimer.getContext();
@@ -208,6 +214,7 @@ public class MetronomePanel extends JPanel implements Player {
 	/** 
 	 * @see de.uos.fmt.musitech.framework.time.Player#getEndTime()
 	 */
+	@Override
 	public long getEndTime() {
 		return 0;
 	}
@@ -247,6 +254,7 @@ public class MetronomePanel extends JPanel implements Player {
 		/** 
 		 * @see java.lang.Thread#run()
 		 */
+		@Override
 		public void run() {
 			if(DebugState.DEBUG_AUDIO)
 				System.out.println("MetronomePanel enter run");
@@ -341,6 +349,7 @@ public class MetronomePanel extends JPanel implements Player {
 		/** 
 		 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
 		 */
+		@Override
 		protected void paintComponent(Graphics g) {
 			super.paintComponent(g);
 			graphics = g;
@@ -384,7 +393,7 @@ public class MetronomePanel extends JPanel implements Player {
 		MetronomePanel metroPanel = new MetronomePanel();
 		JFrame frame = new JFrame();
 		frame.getContentPane().setLayout(new BorderLayout());
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.getContentPane().add(metroPanel, BorderLayout.CENTER);
 		frame.setLocation(200, 450);
 		frame.pack();

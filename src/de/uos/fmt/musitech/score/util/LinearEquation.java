@@ -131,7 +131,8 @@ public class LinearEquation
    }
    
    /** Returns a string representation of this LinearEquation. */
-   public String toString ()
+   @Override
+public String toString ()
    {
       String res = "";
       for (int i=0; i < coeff.length; i++)

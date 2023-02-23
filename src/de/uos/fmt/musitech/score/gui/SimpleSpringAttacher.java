@@ -61,24 +61,31 @@ public class SimpleSpringAttacher implements SpringAttacher {
 		this.space = space;
 	}
 
+	@Override
 	public int optimalSpace(SpringAttacher successor) {
 		return space / 2; // constant space, successor doesn't matter
 	}
 
+	@Override
 	public int rwidth() {
 		return 0;
 	}
 
+	@Override
 	public int lwidth() {
 		return 0;
 	}
 
+	@Override
 	public void setXPos(int x) {}
 
+	@Override
 	public void setParentXPos(int x) {}
 
+	@Override
 	public void setMeasureRWidth(int width) {}
 
+	@Override
 	public Rational attackTime() {
 		return null;
 	}

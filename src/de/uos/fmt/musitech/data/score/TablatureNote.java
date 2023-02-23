@@ -214,7 +214,8 @@ public class TablatureNote implements IMPEGSerializable {
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#toMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Node, java.lang.Object, java.lang.String)
      */
-    public boolean toMPEG(MusiteXMLSerializer instance, Node head, Object object, String fieldname) {
+    @Override
+	public boolean toMPEG(MusiteXMLSerializer instance, Node head, Object object, String fieldname) {
         Element tab = XMLHelper.addElement(head, "tablature");
         tab.setAttribute("instrString", "" + getInstrString());
         tab.setAttribute("fret", "" + getFret());
@@ -236,7 +237,8 @@ public class TablatureNote implements IMPEGSerializable {
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#fromMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Element)
      */
-    public Object fromMPEG(MusiteXMLSerializer instance, Element tablature) {
+    @Override
+	public Object fromMPEG(MusiteXMLSerializer instance, Element tablature) {
         if (tablature.getAttribute("instrString") != null)
             this.setInstrString(Integer.parseInt(tablature.getAttribute("instrString")));
         if (tablature.getAttribute("fret") != null)

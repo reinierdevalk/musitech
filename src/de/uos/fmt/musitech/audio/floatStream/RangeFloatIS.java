@@ -85,6 +85,7 @@ public interface RangeFloatIS extends FloatInputStream {
 	 * Reset the read-position to the begin-mark. 
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#reset()
 	 */
+	@Override
 	public void reset() throws IOException;
 	/**
 	 * The total number of samples available without consider marked positions. 

@@ -66,6 +66,7 @@ public class MSyncTimer implements MTimer {
 	 * To start the MSyncTimer, call start().
 	 * @see de.uos.fmt.musitech.framework.time.MTimer#getTimeMicros()
 	 */
+	@Override
 	public long getTimeMicros() {
 		if(isRunning)
 			return timer.getTimeMicros() - timeOffset;

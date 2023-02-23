@@ -179,7 +179,8 @@ public class GraphPlot extends Canvas {
     repaint();
   }
 
-  public void paint(Graphics g) {
+  @Override
+public void paint(Graphics g) {
 
     int x, y;
     int top = vertSpace;

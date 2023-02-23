@@ -129,6 +129,7 @@ public class LyricsSyllable extends TimedMetrical implements Editable {
 	 * 
 	 * @see de.uos.fmt.musitech.data.time.Timed#getTime()
 	 */
+	@Override
 	public long getTime(){
 	    if (super.getTime() != Timed.INVALID_TIME)
 	        return super.getTime();
@@ -142,7 +143,8 @@ public class LyricsSyllable extends TimedMetrical implements Editable {
     /** 
      * @see de.uos.fmt.musitech.framework.editor.Editable#getEditingProfile()
      */
-    public EditingProfile getEditingProfile() {
+    @Override
+	public EditingProfile getEditingProfile() {
         return new EditingProfile("Lyrics Syllable", new EditingProfile[] {
 				new EditingProfile("Text", "String", "text"),
 				new EditingProfile("Time", "PhysicalTime", "time"), 

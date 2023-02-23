@@ -144,6 +144,7 @@ implements Display {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#externalChanges()
 	 */
+	@Override
 	public boolean externalChanges() {
 		return dataChanged;
 	}
@@ -153,6 +154,7 @@ implements Display {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#destroy()
 	 */
+	@Override
 	public void destroy() {
 		DataChangeManager.getInstance().removeListener(this);
 	}
@@ -166,6 +168,7 @@ implements Display {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#focusReceived()
 	 */
+	@Override
 	public void focusReceived() {
 		if (externalChanges())
 			updateDisplay();
@@ -177,6 +180,7 @@ implements Display {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#getEditingProfile()
 	 */
+	@Override
 	public EditingProfile getEditingProfile() {
 		return profile;
 	}
@@ -189,6 +193,7 @@ implements Display {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#getEditObj()
 	 */
+	@Override
 	public Object getEditObj() {
 		return editObj;
 	}
@@ -209,6 +214,7 @@ implements Display {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#isFocused()
 	 */
+	@Override
 	public boolean isFocused() {
 		return isFocusOwner();
 	}
@@ -225,6 +231,7 @@ implements Display {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#init(java.lang.Object, de.uos.fmt.musitech.framework.editor.EditingProfile, de.uos.fmt.musitech.framework.editor.Display)
 	 */
+	@Override
 	public void init(Object editObject, EditingProfile profile, Display root) {
 		if (editObject != null)
 			this.editObj = editObject;
@@ -283,6 +290,7 @@ implements Display {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#updateDisplay()
 	 */
+	@Override
 	public void updateDisplay() {
 		removeAll();
 		createGUI();
@@ -293,6 +301,7 @@ implements Display {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#getRootDisplay()
 	 */
+	@Override
 	public Display getRootDisplay() {
 		return rootDisplay;
 	}
@@ -307,6 +316,7 @@ implements Display {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.change.DataChangeListener#dataChanged(de.uos.fmt.musitech.framework.change.DataChangeEvent)
 	 */
+	@Override
 	public void dataChanged(DataChangeEvent e) {
 		dataChanged = true;
 	}
@@ -322,6 +332,7 @@ implements Display {
 		setText(syllable.getText());
 		setFocusable(true);
 		addFocusListener(new FocusAdapter() {
+			@Override
 			public void focusGained(FocusEvent e) {
 				focusReceived();
 			}
@@ -366,6 +377,7 @@ implements Display {
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.Display#asComponent()
 	 */
+	@Override
 	public Component asComponent() {
 		return this;
 	}

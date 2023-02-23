@@ -56,22 +56,15 @@ package de.uos.fmt.musitech.mpeg.testcases;
 import de.uos.fmt.musitech.data.rendering.RenderingHints;
 import de.uos.fmt.musitech.data.score.Barline;
 import de.uos.fmt.musitech.data.score.BeamContainer;
-import de.uos.fmt.musitech.data.score.CharSymbol;
-import de.uos.fmt.musitech.data.score.MetricAttachable;
 import de.uos.fmt.musitech.data.score.NotationChord;
 import de.uos.fmt.musitech.data.score.NotationStaff;
 import de.uos.fmt.musitech.data.score.NotationSystem;
 import de.uos.fmt.musitech.data.score.NotationVoice;
-import de.uos.fmt.musitech.data.score.ScoreNote;
 import de.uos.fmt.musitech.data.score.ScorePitch;
 import de.uos.fmt.musitech.data.score.SlurContainer;
-import de.uos.fmt.musitech.data.score.StackSymbol;
-import de.uos.fmt.musitech.data.score.StringSymbol;
 import de.uos.fmt.musitech.data.structure.Note;
 import de.uos.fmt.musitech.data.structure.form.NoteList;
 import de.uos.fmt.musitech.data.structure.harmony.KeyMarker;
-import de.uos.fmt.musitech.data.time.TimeSignatureMarker;
-import de.uos.fmt.musitech.score.gui.Accent;
 import de.uos.fmt.musitech.utility.math.Rational;
 
 /**
@@ -121,8 +114,8 @@ public class TestCase1_2_b extends TestCase {
 		
 		onset = addnext(voice, onset, new ScorePitch[]{g(0).flat()}, r8());
 		onset = addnext(voice, onset, new ScorePitch[]{g(0).flat(), e(0).flat()}, new Rational(3,16));
-		((Note)((NotationChord)voice.get(voice.size() - 2)).get(0)).getScoreNote()
-			.setTiedNote(((Note)((NotationChord)voice.get(voice.size() - 1)).get(0)).getScoreNote());
+		voice.get(voice.size() - 2).get(0).getScoreNote()
+			.setTiedNote(voice.get(voice.size() - 1).get(0).getScoreNote());
 		onset = addnext(voice, onset, new ScorePitch[]{f(0), d(0)}, r16());
 		onset = addnext(voice, onset, new ScorePitch[]{e(0).flat(), g(0).flat()}, r16());
 		onset = addnext(voice, onset, new ScorePitch[]{f(0), d(0).flat()}, r16());
@@ -139,6 +132,7 @@ public class TestCase1_2_b extends TestCase {
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.mpeg.testcases.TestCase#createNotationSystem()
 	 */
+	@Override
 	public NotationSystem createNotationSystem() {
 		KeyMarker marker = new KeyMarker(Rational.ZERO, 0);
 		marker.setAccidentalNum(-6);

@@ -95,7 +95,8 @@ public class NoteList extends SortedContainer<Note> implements Cloneable, Render
      * 
      * @see java.lang.Object#toString()
      */
-    public String toString() {
+    @Override
+	public String toString() {
         return size() + " note(s) in " + super.toString();
     }
 
@@ -133,7 +134,7 @@ public class NoteList extends SortedContainer<Note> implements Cloneable, Render
     public int removeRests(){
         int count=0;
         for (int i=0; i < size() ; i++) {
-            Note note = (Note) get(i);
+            Note note = get(i);
             if(note.getPerformanceNote() == null){
                 remove(note);
                 count++;
@@ -184,7 +185,7 @@ public class NoteList extends SortedContainer<Note> implements Cloneable, Render
         Rational onset;
 
         if (size() > 0) {
-            Note previous = (Note) get(size() - 1);
+            Note previous = get(size() - 1);
             onset = previous.getScoreNote().getMetricTime().add(previous.getScoreNote().getMetricDuration());
         } else {
             onset = new Rational(0);
@@ -220,7 +221,7 @@ public class NoteList extends SortedContainer<Note> implements Cloneable, Render
     public void addAnother(ScorePitch pitch, Rational duration) {
     	Rational onset;
     	if (size() > 0) {
-    		onset = ((Note)get(size() - 1)).getMetricTime();
+    		onset = get(size() - 1).getMetricTime();
     	}
     	else {
     		onset = Rational.ZERO;
@@ -239,7 +240,7 @@ public class NoteList extends SortedContainer<Note> implements Cloneable, Render
     
     public void addnext(ScorePitch pitch, Rational duration, byte accent) {
     	addnext(pitch, duration);
-    	((Note)get(size() - 1)).getScoreNote().addAccent(accent);
+    	get(size() - 1).getScoreNote().addAccent(accent);
     }
 
     public void add(ScorePitch pitch, Rational onset, Rational duration, byte accent) {
@@ -270,7 +271,7 @@ public class NoteList extends SortedContainer<Note> implements Cloneable, Render
         int size = size();
         for (int i = 0; i < times; i++) {
             for (int j = 0; j < size; j++) {
-                ScoreNote scorenote = (ScoreNote) ObjectCopy.copyObject(((Note) get(j)).getScoreNote());
+                ScoreNote scorenote = ObjectCopy.copyObject(get(j).getScoreNote());
                 this.addnext(scorenote.getPitch(), scorenote.getMetricDuration());
             }
         }
@@ -399,7 +400,7 @@ public class NoteList extends SortedContainer<Note> implements Cloneable, Render
      * @return The note.
      */
     public Note getNoteAt(int i) {
-        return (Note) get(i);
+        return get(i);
     }
 
     /**
@@ -456,7 +457,8 @@ public class NoteList extends SortedContainer<Note> implements Cloneable, Render
      * 
      * @see de.uos.fmt.musitech.utility.collection.TypedCollection#clone()
      */
-    public Object clone() {
+    @Override
+	public Object clone() {
         NoteList klon = (NoteList) super.clone();
         for (int i = 0; i < size(); i++) {
             try {
@@ -481,7 +483,8 @@ public class NoteList extends SortedContainer<Note> implements Cloneable, Render
      * 
      * @see de.uos.fmt.musitech.data.rendering.RenderingSupported#getRenderingHints()
      */
-    public RenderingHints getRenderingHints() {
+    @Override
+	public RenderingHints getRenderingHints() {
         return renderingHints;
     }
 
@@ -499,7 +502,8 @@ public class NoteList extends SortedContainer<Note> implements Cloneable, Render
      * 
      * @see de.uos.fmt.musitech.data.rendering.RenderingSupported#setRenderingHints(de.uos.fmt.musitech.data.rendering.RenderingHints)
      */
-    public void setRenderingHints(RenderingHints renderingHints) {
+    @Override
+	public void setRenderingHints(RenderingHints renderingHints) {
         this.renderingHints = renderingHints;
     }
 
@@ -517,7 +521,8 @@ public class NoteList extends SortedContainer<Note> implements Cloneable, Render
      * @param IEquivalence o the NoteList to compare on equivalence
      * @return boolean specifying if the NoteLists are equivalent
      */
-    public boolean isEquivalent(IEquivalence o) {
+    @Override
+	public boolean isEquivalent(IEquivalence o) {
     	if(!(o instanceof NoteList))
     		return false;
     	NoteList nl = (NoteList)o; 

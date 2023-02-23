@@ -135,7 +135,8 @@ public class SelectionController implements MouseListener, MouseMotionListener {
      */
     class SelectionAdapter extends MouseAdapter {
 
-        public void mouseClicked(MouseEvent e) {
+        @Override
+		public void mouseClicked(MouseEvent e) {
             /*
              * Problem: der SelectionManager kann nur mit MObjects arbeiten. Wir
              * muessen an das Datenobjekt der angeklickten graphischen
@@ -167,7 +168,8 @@ public class SelectionController implements MouseListener, MouseMotionListener {
          * Implementation of MouseListener method.
          * @see java.awt.event.MouseListener#mousePressed(java.awt.event.MouseEvent)
          */
-        public void mousePressed(MouseEvent e) {
+        @Override
+		public void mousePressed(MouseEvent e) {
             mouseClicked(e);
         }
     }
@@ -186,7 +188,8 @@ public class SelectionController implements MouseListener, MouseMotionListener {
      * 
      * @see java.awt.event.MouseListener#mouseClicked(MouseEvent)
      */
-    public void mouseClicked(MouseEvent e) {
+    @Override
+	public void mouseClicked(MouseEvent e) {
         if (!e.isPopupTrigger()) {
             selection.clear(selectingEditor);
         }
@@ -198,7 +201,8 @@ public class SelectionController implements MouseListener, MouseMotionListener {
      * 
      * @see java.awt.event.MouseListener#mousePressed(MouseEvent)
      */
-    public void mousePressed(MouseEvent e) {
+    @Override
+	public void mousePressed(MouseEvent e) {
         dragStart = e.getPoint();
         setDragging(true);
     }
@@ -206,7 +210,8 @@ public class SelectionController implements MouseListener, MouseMotionListener {
     /** 
      * @see java.awt.event.MouseListener#mouseReleased(java.awt.event.MouseEvent)
      */
-    public void mouseReleased(MouseEvent e) {
+    @Override
+	public void mouseReleased(MouseEvent e) {
         if (isDragging()) {
             Point p = e.getPoint();
             int x = dragStart.x;
@@ -234,19 +239,22 @@ public class SelectionController implements MouseListener, MouseMotionListener {
     /**
      * @see java.awt.event.MouseListener#mouseEntered(MouseEvent)
      */
-    public void mouseEntered(MouseEvent arg0) {
+    @Override
+	public void mouseEntered(MouseEvent arg0) {
     }
 
     /**
      * @see java.awt.event.MouseListener#mouseExited(MouseEvent)
      */
-    public void mouseExited(MouseEvent arg0) {
+    @Override
+	public void mouseExited(MouseEvent arg0) {
     }
 
     /**
      * @see java.awt.event.MouseMotionListener#mouseMoved(MouseEvent)
      */
-    public void mouseMoved(MouseEvent arg0) {
+    @Override
+	public void mouseMoved(MouseEvent arg0) {
     }
 
     /**
@@ -254,7 +262,8 @@ public class SelectionController implements MouseListener, MouseMotionListener {
      * 
      * @see java.awt.event.MouseMotionListener#mouseDragged(java.awt.event.MouseEvent)
      */
-    public void mouseDragged(MouseEvent e) {
+    @Override
+	public void mouseDragged(MouseEvent e) {
 
         if (isDragging()) {
             Point p = e.getPoint();

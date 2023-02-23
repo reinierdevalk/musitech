@@ -50,7 +50,6 @@ above is subject to the following three conditions:
  */
 package de.uos.fmt.musitech.framework.editor;
 
-import java.awt.Component;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -59,7 +58,6 @@ import java.awt.event.MouseMotionAdapter;
 import java.awt.event.MouseMotionListener;
 
 import javax.swing.JComponent;
-import javax.swing.SwingUtilities;
 
 /**
  * This can be used to add possibility of MouseEdits to JComponents i.e.
@@ -110,32 +108,39 @@ public class MouseEditableAdapter {
      */
     public class MouseEditableListener extends MouseAdapter {
 
-        public void mouseClicked(MouseEvent e) {
+        @Override
+		public void mouseClicked(MouseEvent e) {
         }
 
-        public void mouseEntered(MouseEvent e) {
+        @Override
+		public void mouseEntered(MouseEvent e) {
         }
 
-        public void mousePressed(MouseEvent e) {
+        @Override
+		public void mousePressed(MouseEvent e) {
             pressed = e.getPoint();
             mousePosition = getMousePosition(e.getPoint());
         }
 
-        public void mouseReleased(MouseEvent e) {
+        @Override
+		public void mouseReleased(MouseEvent e) {
             released = e.getPoint();
             mouseEdit.mouseAction(mousePosition, released.x - pressed.x,
                     released.y - pressed.y);
         }
 
-        public void mouseExited(MouseEvent e) {
+        @Override
+		public void mouseExited(MouseEvent e) {
         }
     };
 
     private class MouseEditableMotionListern extends MouseMotionAdapter {
-        public void mouseDragged(MouseEvent e) {
+        @Override
+		public void mouseDragged(MouseEvent e) {
         }
 
-        public void mouseMoved(MouseEvent e) {
+        @Override
+		public void mouseMoved(MouseEvent e) {
             mousePosition = getMousePosition(e.getPoint());
             //            Point convertPoint = SwingUtilities.convertPoint((JComponent)
             // e.getSource(), e.getPoint(), null);

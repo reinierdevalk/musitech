@@ -62,6 +62,7 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.structure.lyrics.LyricsSyllable;
 import de.uos.fmt.musitech.data.structure.lyrics.LyricsSyllableSequence;
@@ -112,7 +113,8 @@ public class LyricsDisplayTestGUI {
         JButton selectButton = new JButton("Select");
         selectButton.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 Selection selection = SelectionManager.getManager().getSelection();
                 selection.add(lyrics.get(1), display);
                 SelectionManager.getManager().selectionChanged(new SelectionChangeEvent(null));
@@ -270,7 +272,7 @@ public class LyricsDisplayTestGUI {
     
     private static void forClosing(){
         JFrame frame = new JFrame("Closing");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
 

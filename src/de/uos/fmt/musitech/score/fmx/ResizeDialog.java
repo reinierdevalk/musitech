@@ -75,10 +75,12 @@ public class ResizeDialog extends JDialog
    {
       super(owner, "Enter new size", true);      
 		okButton.addActionListener(new ActionListener() {
-		   public void actionPerformed(ActionEvent ev) {okButtonPressed();}
+		   @Override
+		public void actionPerformed(ActionEvent ev) {okButtonPressed();}
 		});
 		cancelButton.addActionListener(new ActionListener() {
-		   public void actionPerformed(ActionEvent ev) {dispose();}
+		   @Override
+		public void actionPerformed(ActionEvent ev) {dispose();}
 		});
 			
       JPanel upperPanel = new JPanel();      

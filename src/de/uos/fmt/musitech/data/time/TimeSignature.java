@@ -222,7 +222,8 @@ public class TimeSignature implements VetoableChangeListener, Serializable {
      * 
      * @return String
      */
-    public String toString() {
+    @Override
+	public String toString() {
         return "(TimeSignature) " + getNumerator() + "/" + getDenominator();
     }
 
@@ -232,7 +233,8 @@ public class TimeSignature implements VetoableChangeListener, Serializable {
      * @param evt java.beans.PropertyChangeEvent
      * @exception java.beans.PropertyVetoException The exception description.
      */
-    public void vetoableChange(PropertyChangeEvent evt)
+    @Override
+	public void vetoableChange(PropertyChangeEvent evt)
             throws java.beans.PropertyVetoException {
 //        try {
             int iNew = Integer.parseInt(evt.getNewValue().toString());
@@ -256,7 +258,8 @@ public class TimeSignature implements VetoableChangeListener, Serializable {
      * 
      * @see java.lang.Object#equals(java.lang.Object)
      */
-    public boolean equals(Object obj) {
+    @Override
+	public boolean equals(Object obj) {
         if(obj == null || !(this.getClass().isInstance(obj)))
             return false;
         TimeSignature tsmObj = (TimeSignature) obj;

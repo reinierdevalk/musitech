@@ -842,6 +842,7 @@ public class DiffTestCase1_1_a extends MPEGDiffViewer {
 		cont.add(voice);
 	}
 	
+	@Override
 	public NotationSystem createNotationSystem() {
 		context.getPiece().getMetricalTimeLine().add(new TimeSignatureMarker(3, 4, Rational.ZERO));
 		KeyMarker marker = new KeyMarker(Rational.ZERO, 0);

@@ -67,6 +67,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
+import javax.swing.SwingConstants;
+import javax.swing.WindowConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -92,7 +94,7 @@ public class TestShowWave extends JFrame {
 	
 	public TestShowWave(){
 		super("Wave");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		
 		initSW();
 		
@@ -113,6 +115,7 @@ public class TestShowWave extends JFrame {
 		JButton pauseButton = new JButton("||");
 		JButton stopButton = new JButton("[]");
 		playButton.addActionListener(new ActionListener(){
+			@Override
 			public void actionPerformed(ActionEvent e) {
 System.out.println("Play pressed");
 					long mikrosec = sw.getWaveDisplay().getCursorMicrosec();
@@ -125,6 +128,7 @@ System.out.println("Play pressed");
 					playing = true;
 			}});
 		pauseButton.addActionListener(new ActionListener(){
+			@Override
 			public void actionPerformed(ActionEvent e) {
 System.out.println("Pressing pause, pause = "+pause);
 				if(!playing)
@@ -140,6 +144,7 @@ System.out.println("Pressing pause, pause = "+pause);
 				pause = !pause;
 			}});
 		stopButton.addActionListener(new ActionListener(){
+			@Override
 			public void actionPerformed(ActionEvent e) {
 System.out.println("Stop pressed");
 				if(playing){
@@ -200,6 +205,7 @@ System.out.println("Stop pressed");
 		}
 		
 		sw.getWaveDisplay().addMouseListener(new MouseListener(){
+			@Override
 			public void mouseClicked(MouseEvent e) {
 System.out.println("Setting Time");
 				sw.getWaveDisplay().setCursorInDisplay(e.getX());
@@ -210,41 +216,53 @@ System.out.println("Setting Time");
 				pt.setPlayTimeMicros(mikrosec);
 				player.setTimePosition(mikrosec);
 			}
+			@Override
 			public void mousePressed(MouseEvent e) {
 				selector = e.getX();
 			}
+			@Override
 			public void mouseReleased(MouseEvent e) {
 				sw.getWaveDisplay().finalizeSelection(selector, e.getX());
 			}
+			@Override
 			public void mouseEntered(MouseEvent e) {}
+			@Override
 			public void mouseExited(MouseEvent e) {}
 		});
 		sw.getWaveDisplay().addMouseMotionListener(new MouseMotionListener(){
 
+			@Override
 			public void mouseDragged(MouseEvent e) {
 				sw.getWaveDisplay().makingSelection(selector, e.getX());
 			}
 
+			@Override
 			public void mouseMoved(MouseEvent e) {}
 		});
 		
-		vZoomSlider.setOrientation(JSlider.HORIZONTAL);
+		vZoomSlider.setOrientation(SwingConstants.HORIZONTAL);
 		vZoomSlider.setMaximum(1000);
 		vZoomSlider.setMinimum(100);
 		vZoomSlider.addMouseListener(new MouseListener(){
+			@Override
 			public void mouseClicked(MouseEvent e) {}
+			@Override
 			public void mouseEntered(MouseEvent e) {}
+			@Override
 			public void mouseExited(MouseEvent e) {}
+			@Override
 			public void mousePressed(MouseEvent e) {}
+			@Override
 			public void mouseReleased(MouseEvent e) {
 				vZoomSlider.setValue((int) (sw.setVerticalZoom(vZoomSlider.getValue()/100.0f)*100.0));	
 			}});
 		vZoomSlider.addChangeListener(new ChangeListener(){
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				vLabel.setText("Vert. Zoom "+String.valueOf(vZoomSlider.getValue()/100.0f));
 			}});
 			
-		hZoomSlider.setOrientation(JSlider.HORIZONTAL);
+		hZoomSlider.setOrientation(SwingConstants.HORIZONTAL);
 //		double maxFactor = (double)availableSamples
 //							/ width;
 //		hZoomSlider.setMaximum((int)maxFactor+1);	// +1 um Stellen hinter dem Komma auszugleichen
@@ -254,24 +272,32 @@ System.out.println("Setting Time");
 		hZoomSlider.setMinimum(0);
 		hZoomSlider.setValue(0);
 		hZoomSlider.addMouseListener(new MouseListener(){
+			@Override
 			public void mouseClicked(MouseEvent e) {}
+			@Override
 			public void mouseEntered(MouseEvent e) {}
+			@Override
 			public void mouseExited(MouseEvent e) {}
+			@Override
 			public void mousePressed(MouseEvent e) {}
+			@Override
 			public void mouseReleased(MouseEvent e) {
 				hZoomSlider.setValue((int) (Math.log(sw.setHorizontalZoom(1<<hZoomSlider.getValue()))/Math.log(2)));	
 			}});
 		hZoomSlider.addChangeListener(new ChangeListener(){
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				hLabel.setText("Horz. Zoom "+String.valueOf(1<<hZoomSlider.getValue()));
 			}});
 			
 		toCursorButton.addActionListener(new ActionListener(){
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				sw.scrollToCursorPos(2);
 			}});
 			
 		toSelectButton.addActionListener(new ActionListener(){
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				sw.displaySelection();
 				hZoomSlider.setValue((int) (Math.log(sw.getWaveDisplay().getDisplayScale())/Math.log(2)));	

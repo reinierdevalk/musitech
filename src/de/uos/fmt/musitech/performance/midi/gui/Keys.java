@@ -144,30 +144,35 @@ public abstract class Keys extends JPanel {
         midiNotePitch = newMidiNote;
         this.addMouseListener(new MouseListener() {
 
-            public void mouseClicked(MouseEvent e) {
+            @Override
+			public void mouseClicked(MouseEvent e) {
             }
 
-            public void mouseEntered(MouseEvent e) {
+            @Override
+			public void mouseEntered(MouseEvent e) {
                 if (isGlissando()) {
                     setPressed(true);
                     playNote(midiNotePitch, ShortMessage.NOTE_ON);
                 }
             }
 
-            public void mouseExited(MouseEvent e) {
+            @Override
+			public void mouseExited(MouseEvent e) {
                 if (isGlissando() || pressed) {
                     setPressed(false);
                     playNote(midiNotePitch, ShortMessage.NOTE_OFF);
                 }
             }
 
-            public void mousePressed(MouseEvent e) {
+            @Override
+			public void mousePressed(MouseEvent e) {
                 //setGlissando(true);
                 setPressed(true);
                 playNote(midiNotePitch, ShortMessage.NOTE_ON);
             }
 
-            public void mouseReleased(MouseEvent e) {
+            @Override
+			public void mouseReleased(MouseEvent e) {
                 //setGlissando(false);
                 setPressed(false);
                 playNote(midiNotePitch, ShortMessage.NOTE_OFF);
@@ -198,7 +203,8 @@ public abstract class Keys extends JPanel {
      * @see javax.swing.JComponent#paint(java.awt.Graphics) subclasses overwrite
      *      paint, to get the look of a piano
      */
-    abstract public void paint(Graphics g);
+    @Override
+	abstract public void paint(Graphics g);
 
     /**
      * @return

@@ -64,6 +64,7 @@ import java.util.Iterator;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.media.image.StaffPosition;
 
@@ -81,21 +82,25 @@ public class ImageComponent extends JComponent {
      */
     public ImageComponent() {
         addComponentListener(new ComponentListener() {
-            public void componentHidden(ComponentEvent e) {
+            @Override
+			public void componentHidden(ComponentEvent e) {
                 // TODO Auto-generated method stub
 
             }
 
-            public void componentMoved(ComponentEvent e) {
+            @Override
+			public void componentMoved(ComponentEvent e) {
                 // TODO Auto-generated method stub
 
             }
 
-            public void componentResized(ComponentEvent e) {
+            @Override
+			public void componentResized(ComponentEvent e) {
                 adjustZoom();
             }
 
-            public void componentShown(ComponentEvent e) {
+            @Override
+			public void componentShown(ComponentEvent e) {
                 // TODO Auto-generated method stub
 
             }
@@ -131,7 +136,8 @@ public class ImageComponent extends JComponent {
         setPreferredSize(new Dimension(getImage().getWidth(this), getImage()
                 .getHeight(this)));
         Thread imageThread = new Thread() {
-            public void run() {
+            @Override
+			public void run() {
                 try {
                     // Wait until the image has been loaded
                     mt.waitForAll();
@@ -166,7 +172,8 @@ public class ImageComponent extends JComponent {
      * 
      * @see java.awt.Component#getPreferredSize()
      */
-    public Dimension getPreferredSize() {
+    @Override
+	public Dimension getPreferredSize() {
         synchronized (this) {
             if (image.getWidth(this) == -1 || image.getHeight(this) == -1)
                 try {
@@ -179,13 +186,15 @@ public class ImageComponent extends JComponent {
         return new Dimension(image.getWidth(this), image.getHeight(this));
     }
 
-    public Dimension getMinimumSize() {
+    @Override
+	public Dimension getMinimumSize() {
         return new Dimension(image.getWidth(this), image.getHeight(this));
     }
 
     public double zoomFactor = 1.0;
 
-    public void paintComponent(Graphics g) {
+    @Override
+	public void paintComponent(Graphics g) {
 //        super.paintComponent(g);
         if (image != null) {
             adjustZoom();
@@ -211,7 +220,8 @@ public class ImageComponent extends JComponent {
     /**
      * @see java.awt.Component#paint(java.awt.Graphics)
      */
-    public void paint(Graphics g) {
+    @Override
+	public void paint(Graphics g) {
         createOffscreenImage();
         super.paint(offscreenGraphics);
 
@@ -251,7 +261,7 @@ public class ImageComponent extends JComponent {
             e.printStackTrace();
         }
         JFrame frame = new JFrame("Test the image component.");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(new BorderLayout());
         frame.getContentPane().add(imgComp, BorderLayout.CENTER);
         frame.pack();

@@ -128,7 +128,7 @@ public class XsmWriter implements Elements, Attributes {
 			for (int i = 0; i < partNames.length; i++) {
 				partNames[i] = (i + 1) + "." + xsmBaseName + ".xml";
 				PartExporter e = new PartExporter(
-					new NotationStaff[] {((NotationStaff) p.getScore().get(i))});
+					new NotationStaff[] {(p.getScore().get(i))});
 				Document doc = e.export();
 				addressMaps[i] = e.getAddressMap();
 				try {
@@ -279,6 +279,7 @@ public class XsmWriter implements Elements, Attributes {
 				.getNamespace("urn:mpeg:mpeg-4:schema:smr:smxf-mainscore:2007");
 		Iterator<Element> it = mainDoc.getDescendants(new Filter() {
 
+			@Override
 			public boolean matches(Object obj) {
 				if (obj instanceof Element)
 					return true;

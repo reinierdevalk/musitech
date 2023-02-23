@@ -95,28 +95,32 @@ public class DynamicsLevelMarker implements Marker {
      * 
      * @see de.uos.fmt.musitech.data.time.Metrical#getMetricTime()
      */
-    public Rational getMetricTime() {
+    @Override
+	public Rational getMetricTime() {
         return metricTime;
     }
 
     /**
      * @see de.uos.fmt.musitech.data.time.Metrical#getMetricDuration()
      */
-    public Rational getMetricDuration() {
+    @Override
+	public Rational getMetricDuration() {
         return Rational.ZERO;
     }
 
     /**
      * @see de.uos.fmt.musitech.data.MObject#getUid()
      */
-    public Long getUid() {
+    @Override
+	public Long getUid() {
         return id;
     }
 
     /**
      * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
      */
-    public void setUid(Long uid) {
+    @Override
+	public void setUid(Long uid) {
         this.id = uid;
 
     }
@@ -125,7 +129,8 @@ public class DynamicsLevelMarker implements Marker {
      * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String,
      *      java.lang.Object)
      */
-    public boolean isValidValue(String propertyName, Object value) {
+    @Override
+	public boolean isValidValue(String propertyName, Object value) {
         return true;
     }
 

@@ -64,6 +64,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -167,11 +168,12 @@ public class ChordSymbolDisplayTestGUI {
 			final ChordSymbolDisplay display = (ChordSymbolDisplay) display1;
 			JFrame frame =
 				new JFrame("A double flat maj with top 1, base 10, extension 7");
-			frame.getContentPane().add((JComponent) display);
-			JSlider slider = new JSlider(JSlider.VERTICAL, 1, 100, 50);
+			frame.getContentPane().add(display);
+			JSlider slider = new JSlider(SwingConstants.VERTICAL, 1, 100, 50);
 			display.setScale((slider.getValue() * 2.0 / 100.0));
 			slider.addChangeListener(new ChangeListener() {
 
+				@Override
 				public void stateChanged(ChangeEvent arg0) {
 					display.setScale(
 						(float) (((JSlider) arg0.getSource()).getValue()
@@ -311,12 +313,14 @@ public class ChordSymbolDisplayTestGUI {
 			final ChordSymbolDisplay d = display;
 			JButton selectButton = new JButton("Select");
 			selectButton.addActionListener(new ActionListener() {
+				@Override
 				public void actionPerformed(ActionEvent e) {
 					d.markSelected(true);
 				}
 			});
 			JButton unselectButton = new JButton("Reset");
 			unselectButton.addActionListener(new ActionListener() {
+				@Override
 				public void actionPerformed(ActionEvent e) {
 					d.markSelected(false);
 				}
@@ -405,6 +409,7 @@ public class ChordSymbolDisplayTestGUI {
 //			d.createGUI2();
 			JButton updateButton = new JButton("Update");
 			updateButton.addActionListener(new ActionListener() {
+				@Override
 				public void actionPerformed(ActionEvent e) {
 					((ChordSymbol) d.getEditObj()).setRoot('F');
 					d.updateGUI();

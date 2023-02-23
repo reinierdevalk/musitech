@@ -47,8 +47,6 @@ above is subject to the following three conditions:
 **********************************************/
 package de.uos.fmt.musitech.utility;
 
-import javax.sound.midi.MidiEvent;
-
 /**
  * This class implements a ring buffer.
  * @author Jan Kramer & Tillman 

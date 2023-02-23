@@ -98,6 +98,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 	 * This is necessary as a Chord may not only be hold by a LocalSim, but
 	 * also by another Chord (for entryChords).
 	 */
+	@Override
 	Class parentClass() {
 		return ScoreObject.class;
 	}
@@ -105,31 +106,37 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 	/** This is the same implementation as in ScoreContainer. But as Chord does
 	 * not extend ScoreContainer we have to suply it manually.
 	 */
+	@Override
 	public Rational getMetricEndPoint() {
 		return child(-1).getMetricEndPoint();
 	}
 
    /** Returns an iterator that can be used to successively step through the pitches
     * starting with the lowest one. */
- 	public Iterator iterator() {
+ 	@Override
+	public Iterator iterator() {
 		return children.iterator();
 	}
 
    /** Returns an iterator that can be used to successively step through the pitches
      * starting with the highest one. */
- 	public Iterator reverseIterator() {
+ 	@Override
+	public Iterator reverseIterator() {
 		return new ReverseIterator(children);
 	}
 
    /** Removes all pitches from this chord. */
+	@Override
 	public void clear() {
 		children.clear();
 	}
 
+	@Override
 	public boolean contains(ScoreObject o) {
 		return children.contains(o);
 	}
 	
+	@Override
 	public Rational getMetricTime() {
 		return child(0).getMetricTime();
 	}
@@ -138,6 +145,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 	 * beginning of the container, the highest at the end. 
 	 * @param obj ScoreObject to be added (must be of type Pitch) 
 	 * @throws ClassCastException if obj is no Pitch. */
+	@Override
 	public boolean add(ScoreObject obj) {
 		obj.setParent(this);
 		Pitch pitch = (Pitch) obj;
@@ -153,6 +161,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
       return true;
 	}
 
+	@Override
 	public int depth() {
 		if (drawStem) {
 			if (stemUp) { 
@@ -167,6 +176,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 		}
 	}
 	
+	@Override
 	public int height() {
 		int height;
 		if (drawStem) {
@@ -203,6 +213,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 	}
 	*/
 	
+	@Override
 	public int lwidth() {
 		int max = 0;
 		
@@ -218,6 +229,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 		return max;
 	}
 
+	@Override
 	public int rwidth() {
 		int max = 0;
 		
@@ -231,6 +243,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 		return max;
 	}
 
+	@Override
 	public int arrange(int pass) {
 		if(pass==0){
 			boolean draw = false;
@@ -389,12 +402,13 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 	/** Returns the n-th pitch of this Chord. The lowest pitch is located at 
 	 *  index 0. A negative index indicates a reverse lookup: -1 denotes the 
 	 *  last (highest) pitch. */
+	@Override
 	public ScoreObject child(int n) {
 		if (n < -children.size() || n >= children.size())
 			return null;
 		if (n < 0)
 			n += children.size();
-		return (Pitch) children.get(n);
+		return children.get(n);
 	}
 
 	public Pitch getPitch(int n) {
@@ -465,6 +479,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 	}
 
 	/** Returns number of pitches assigned to this chord. */
+	@Override
 	public int numChildren() {
 		return children.size();
 	}
@@ -484,6 +499,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 	}
 
 	/** Draws this Chord onto the given Graphics object. */
+	@Override
 	public void paint(Graphics g) {
 		if (!isVisible())
 			return;
@@ -545,10 +561,11 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 		}*/
 
 	/** Returns a string representation of this Chord. */
+	@Override
 	public String toString() {
 		String res = "Chord of voice " + getVoice() + " with duration " + getDuration().toRational() + " {";
 		for (int i = 0; i < children.size(); i++) {
-			res += ((ScoreObject) children.get(i));
+			res += (children.get(i));
          if (i < children.size()-1)
             res += ", ";
       }
@@ -557,17 +574,20 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 	}
 
 	/** Line position that is used to compute the beam direction. */
+	@Override
 	int beamDirectionLine() {
 		return farthestPitch().line();
 	}
 
 	/** Returns a 2D point that should be used in the regression subroutine 
 	 * to calculate the beam slope. */
+	@Override
 	Pair regressionPoint() {
 		return new Pair(absX(), topPitch().absY());
 	}
 
 	/** Returns the 2D point where a potential beam will be attached. */
+	@Override
 	Pair beamPoint() {
 		int ld = staff().getLineDistance();
 		Head head = ((Pitch) child(0)).getHead();
@@ -581,6 +601,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 	 * @param left  true if point of left slur endpoint should be returned, 
 	 *              right endpoint otherwise
 	 * @param above true if slur lies abobe the noteheads */
+	@Override
 	Pair slurPoint(boolean left, boolean above, boolean atStem) {
 		int ld = staff().getLineDistance();
 		Pair bp = beamPoint();
@@ -654,7 +675,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 			spaces = Math.max(7, Math.abs(pivot)); // lengthened stem
 		
 		if (getDuration().toRational().getDenom() >= 32) {
-			spaces += (int)(getDuration().toRational().getDenom() / 64 * 5); 
+			spaces += getDuration().toRational().getDenom() / 64 * 5; 
 		}
 		
 		if (staff().getScale() == 1) { //only the chord is scaled
@@ -692,6 +713,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 	*/
 
 	/** Returns the topmost visible point of this Chord. */
+	@Override
 	public Pair highestPoint() {
 		if (stemUp)
 			return beamPoint();
@@ -700,6 +722,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 	}
 
 	/** Returns the bottommost visible point of this Chord. */
+	@Override
 	public Pair lowestPoint() {
 		if (!stemUp)
 			return beamPoint();
@@ -722,6 +745,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 		c.stemUp = stemUp;
 	}
 	
+	@Override
 	public ScoreObject catchScoreObject(int x, int y, Class objectClass) {
 		//the Chord matches if one of its pitches matches:
 		if (this.getClass().equals(objectClass)) {
@@ -741,6 +765,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 		return null;
 	}
 
+	@Override
 	public void setColor(Color c) {
 		super.setColor(c);
 		
@@ -749,6 +774,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 		}
 	}
 	
+	@Override
 	public void setScale(float s) {
 		super.setScale(s);
 		for (int i = 0; i < numChildren(); i++) { 
@@ -778,6 +804,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 		}
 	}
 	
+	@Override
 	public Chord chord() {
 		return this;
 	}
@@ -797,6 +824,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 		entryChord.isEntryChord = true;
 	}
 	
+	@Override
 	public void setVisible(boolean v) {
 		super.setVisible(v);
 		if (entryChord != null) {
@@ -819,6 +847,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 		this.forcedStemDirection = forcedStemDirection;
 	}
 	
+	@Override
 	public void addListener(ContentChangeListener listener) {
 		if (listeners == null) {
 			listeners = new ArrayList();
@@ -826,6 +855,7 @@ public class Chord extends Event implements ScoreContainerBase, Cloneable {
 		listeners.add(listener);
 	}
 	
+	@Override
 	public void removeListener(ContentChangeListener listener) {
 		listeners.remove(listener);
 	}

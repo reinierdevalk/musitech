@@ -240,7 +240,8 @@ public class NotesEpecExtendedEditor extends NotesEpecEditor {
      *  
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#createGUI()
      */
-    public void createGUI() {
+    @Override
+	public void createGUI() {
         setLayout(new BorderLayout());
         Box menuBox = Box.createVerticalBox();
         //        int strut = 5;
@@ -290,7 +291,8 @@ public class NotesEpecExtendedEditor extends NotesEpecEditor {
                 "tenor", "baritone", "percussion" };
         final JComboBox clefList = new JComboBox(clefs);
         clefList.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 recordClef(clefList.getSelectedIndex());
             }
         });
@@ -489,7 +491,8 @@ public class NotesEpecExtendedEditor extends NotesEpecEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.translating.AbstractTranslatingEditor#determineLocalObjs()
      */
-    protected void determineLocalObjs() {
+    @Override
+	protected void determineLocalObjs() {
         //set epec
         if (propertyValue != null && propertyValue instanceof String) {
             epec = (String) propertyValue;
@@ -511,7 +514,8 @@ public class NotesEpecExtendedEditor extends NotesEpecEditor {
      * <code>notes</code> according to the <code>startTime</code> if
      * necessary and to insert the clef which is selected.
      */
-    protected void updatePreview() {
+    @Override
+	protected void updatePreview() {
         if (epecArea.getText().equals(""))
             return;
         epec = insertClef(epecArea.getText()); //TODO einkommentieren

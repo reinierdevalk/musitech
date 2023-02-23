@@ -48,6 +48,7 @@ above is subject to the following three conditions:
 package de.uos.fmt.musitech.time.gui;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 import de.uos.fmt.musitech.data.time.TimeSignature;
 /**
@@ -68,6 +69,7 @@ public class TimeSignatureDisplay extends JPanel {
 	private boolean ivjConnPtoP2Aligning = false;
 	IvjEventHandler ivjEventHandler = new IvjEventHandler();
 	private TimeSignature ivjTimeSignature = null;	class IvjEventHandler implements java.beans.PropertyChangeListener {
+		@Override
 		public void propertyChange(java.beans.PropertyChangeEvent evt) {
 			if (evt.getSource() == TimeSignatureDisplay.this.getTimeSignature() && (evt.getPropertyName().equals("denominator")))
 				connPtoP2SetTarget();
@@ -371,6 +373,7 @@ public class TimeSignatureDisplay extends JPanel {
 			frame.add("Center", aTimesignatureDisplay);
 			frame.setSize(aTimesignatureDisplay.getSize());
 			frame.addWindowListener(new java.awt.event.WindowAdapter() {
+				@Override
 				public void windowClosing(java.awt.event.WindowEvent e) {
 					System.exit(0);
 				};
@@ -427,7 +430,7 @@ public class TimeSignatureDisplay extends JPanel {
 			try {
 				ivjNumaratorField = new de.uos.fmt.musitech.utility.VetoListenableJTextField();
 				ivjNumaratorField.setName("NumaratorField");
-				ivjNumaratorField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+				ivjNumaratorField.setHorizontalAlignment(SwingConstants.RIGHT);
 				ivjNumaratorField.setColumns(2);
 				// user code begin {1}
 				ivjNumaratorField.addVetoableChangeListener(getTimeSignature());
@@ -453,7 +456,7 @@ public class TimeSignatureDisplay extends JPanel {
 			try {
 				ivjDenominatorField = new de.uos.fmt.musitech.utility.VetoListenableJTextField();
 				ivjDenominatorField.setName("DenominatorField");
-				ivjDenominatorField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+				ivjDenominatorField.setHorizontalAlignment(SwingConstants.RIGHT);
 				ivjDenominatorField.setColumns(2);
 				// user code begin {1}
 				ivjDenominatorField.addVetoableChangeListener(getTimeSignature());

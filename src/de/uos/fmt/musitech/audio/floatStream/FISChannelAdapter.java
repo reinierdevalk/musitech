@@ -124,12 +124,14 @@ public class FISChannelAdapter implements FloatInputStream, FISReader {
 		this.targetChannels = (byte) targetChannels;
 	}
 	
+	@Override
 	public FISReader setFloatInputStream(FloatInputStream inputStream)
 	{
 		fis = inputStream;
 		sourceChannels = (byte) fis.getFormat().getChannels();
 		return this;
 	}
+	@Override
 	public FloatInputStream getFloatInputStream()
 	{
 		return fis;
@@ -139,12 +141,14 @@ public class FISChannelAdapter implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.FloatInputStream#read(float[][])
 	 */
+	@Override
 	public int read(float[][] data) throws IOException {
 		return read(data, 0, data[0].length);
 	}
 	/**
 	 * @see de.uos.fmt.musitech.audio.FloatInputStream#read(float[][], int, int)
 	 */
+	@Override
 	public int read(float[][] data, int start, int len) throws IOException {
 		if(targetChannels==sourceChannels)
 			return fis.read(data, start, len);
@@ -230,6 +234,7 @@ public class FISChannelAdapter implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.FloatInputStream#getFormat()
 	 */
+	@Override
 	public AudioFormat getFormat() {
 		AudioFormat in = fis.getFormat();
 		AudioFormat out = new AudioFormat(in.getEncoding(), in.getSampleRate(), in.getSampleSizeInBits(), targetChannels, (in.getSampleSizeInBits()/8)*targetChannels, in.getFrameRate(), in.isBigEndian());
@@ -238,12 +243,14 @@ public class FISChannelAdapter implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.FloatInputStream#skip(long)
 	 */
+	@Override
 	public long skip(long n) throws IOException {
 		return fis.skip(n);
 	}
 	/**
 	 * @see de.uos.fmt.musitech.audio.FloatInputStream#reset()
 	 */
+	@Override
 	public void reset() throws IOException {
 		fis.reset();
 	}
@@ -251,6 +258,7 @@ public class FISChannelAdapter implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
 	 */
+	@Override
 	public long remainingSamples() {
 		return fis.remainingSamples();
 	}
@@ -258,6 +266,7 @@ public class FISChannelAdapter implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public long getPositionInSamples() {
 		return fis.getPositionInSamples();
 	}
@@ -265,6 +274,7 @@ public class FISChannelAdapter implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public void setPositionInSamples(long newPos) throws IOException {
 		fis.setPositionInSamples(newPos);
 	}

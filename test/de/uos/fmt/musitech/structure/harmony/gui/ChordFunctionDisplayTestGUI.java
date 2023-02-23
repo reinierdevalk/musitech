@@ -56,6 +56,7 @@ package de.uos.fmt.musitech.structure.harmony.gui;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.structure.harmony.*;
 import de.uos.fmt.musitech.data.structure.harmony.ChordFunctionSymbol.FUNCTION;
@@ -148,7 +149,7 @@ public class ChordFunctionDisplayTestGUI {
     
     private static void provideClosingFrame(){
         JFrame frame = new JFrame("For closing");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
     

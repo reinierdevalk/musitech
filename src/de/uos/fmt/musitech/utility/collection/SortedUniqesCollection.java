@@ -128,7 +128,8 @@ public class SortedUniqesCollection<T> extends SortedCollection<T> {
     /**
      * @see java.util.Collection#add(java.lang.Object)
      */
-    public boolean add(T obj) {
+    @Override
+	public boolean add(T obj) {
         if (obj == null)
             return false;
         typeCheck(obj);
@@ -142,7 +143,8 @@ public class SortedUniqesCollection<T> extends SortedCollection<T> {
     /**
      * @see java.util.Collection#addAll(java.util.Collection)
      */
-    public boolean addAll(Collection<T> c) {
+    @Override
+	public boolean addAll(Collection<T> c) {
         Iterator<T> iter = c.iterator();
 
         while (iter.hasNext()) {
@@ -170,7 +172,8 @@ public class SortedUniqesCollection<T> extends SortedCollection<T> {
         return true;
     }
 
-    public T[] toArray(T[] array) {
+    @Override
+	public T[] toArray(T[] array) {
         return list.toArray(array);
     }
 

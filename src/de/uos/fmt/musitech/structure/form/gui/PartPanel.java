@@ -223,6 +223,7 @@ public class PartPanel extends JPanel {
 	/**
 	 * @see java.awt.Component#getPreferredSize()
 	 */
+	@Override
 	public Dimension getPreferredSize() {
 		Dimension prefSize = super.getPreferredSize();
 		prefSize.height = maxHeight;

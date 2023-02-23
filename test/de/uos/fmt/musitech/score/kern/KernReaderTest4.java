@@ -60,8 +60,6 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 
 import de.uos.fmt.musitech.data.score.*;
-import de.uos.fmt.musitech.data.structure.Piece;
-import de.uos.fmt.musitech.data.structure.Context;
 import de.uos.fmt.musitech.score.gui.ScoreMapper;
 import de.uos.fmt.musitech.score.gui.ScorePanel;
 import de.uos.fmt.musitech.score.kern.KernReader;
@@ -111,6 +109,7 @@ public class KernReaderTest4 extends JFrame {
 		
 		// Add a listener to the JFrame
 		addWindowListener(new WindowAdapter() {
+			@Override
 			public void windowClosing(WindowEvent ev) {
 				System.exit(0);
 			}
@@ -148,6 +147,7 @@ public class KernReaderTest4 extends JFrame {
 			this.scorePanel = scorePanel;
 		}
 		
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			scoreMapper.createView(scorePanel);
 			((JComponent)getContentPane()).revalidate();

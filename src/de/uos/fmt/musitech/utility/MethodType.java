@@ -238,7 +238,8 @@ public class MethodType
      * @throws ClassCastException if the specified object's type prevents it from being
      *         compared to this object.
      */
-    public int compareTo(Object other)
+    @Override
+	public int compareTo(Object other)
     {
         if (other == this)
         {
@@ -275,7 +276,8 @@ public class MethodType
      *
      * @return a string representation of this type.
      */
-    public String toString()
+    @Override
+	public String toString()
     {
         return _name;
     }

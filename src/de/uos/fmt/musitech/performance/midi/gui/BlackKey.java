@@ -70,7 +70,8 @@ public class BlackKey extends Keys {
     /**
      * @see de.uos.fmt.musitech.performance.midi.gui.Keys#paint(java.awt.Graphics)
      */
-    public void paint(Graphics g) {
+    @Override
+	public void paint(Graphics g) {
         if (true) {
             g.clearRect(0, 0, getWidth(), getHeight());
             // to void graphic mistakes

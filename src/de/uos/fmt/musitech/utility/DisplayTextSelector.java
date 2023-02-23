@@ -78,6 +78,7 @@ public class DisplayTextSelector extends javax.swing.JComboBox {
 	/**
 	 * Fires a PropertyChange event.
 	 */
+	@Override
 	protected void selectedItemChanged() {
 		Object selectedItem = getSelectedItem();
 		if (selectedItem != null && selectedItem.equals(lastSelectedItem))

@@ -61,8 +61,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Vector;
-
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -186,7 +184,8 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
      * 
      * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#getMinimalPositionForTime(long,de.uos.fmt.musitech.utility.math.Rational)
      */
-    public int getMinimalPositionForTime(long t, Rational m)
+    @Override
+	public int getMinimalPositionForTime(long t, Rational m)
             throws WrongArgumentException {
         if (t == Timed.INVALID_TIME && m == null)
             throw new WrongArgumentException(
@@ -252,7 +251,8 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
      * 
      * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#setMinimalPositionForTime(long, Rational, int)
      */
-    public boolean setMinimalPositionForTime(long t, Rational m, int position)
+    @Override
+	public boolean setMinimalPositionForTime(long t, Rational m, int position)
             throws WrongArgumentException {
 
         if ((t == Timed.INVALID_TIME && m == null) || position < 0)
@@ -311,7 +311,8 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
      * 
      * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#doInitialLayout()
      */
-    public void doInitialLayout() {
+    @Override
+	public void doInitialLayout() {
         removeAll(); // Remove old displays first
         setBackground(Color.WHITE);
         if (!syllableDisplays.isEmpty())
@@ -368,7 +369,8 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
      * 
      * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#getNextPositioningTime(long)
      */
-    public long getNextPositioningTime(long startTime) {
+    @Override
+	public long getNextPositioningTime(long startTime) {
 
         if (lyricsContainer.size() == 0)
             return Timed.INVALID_TIME;
@@ -419,7 +421,8 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#externalChanges()
      */
-    public boolean externalChanges() {
+    @Override
+	public boolean externalChanges() {
         return dataChanged;
     }
 
@@ -429,7 +432,8 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#destroy()
      */
-    public void destroy() {
+    @Override
+	public void destroy() {
         DataChangeManager.getInstance().removeListener(this);
         SelectionManager.getManager().removeListener(this);
     }
@@ -440,7 +444,8 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#focusReceived()
      */
-    public void focusReceived() {
+    @Override
+	public void focusReceived() {
         if (externalChanges())
             updateDisplay();
         if (rootDisplay != this)
@@ -452,7 +457,8 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#getEditingProfile()
      */
-    public EditingProfile getEditingProfile() {
+    @Override
+	public EditingProfile getEditingProfile() {
         return profile;
     }
 
@@ -463,7 +469,8 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#getEditObj()
      */
-    public Object getEditObj() {
+    @Override
+	public Object getEditObj() {
         //		return lyricsContainer;
         return editObj;
     }
@@ -474,7 +481,8 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#isFocused()
      */
-    public boolean isFocused() {
+    @Override
+	public boolean isFocused() {
         if (isFocusOwner())
             return true;
         for (LyricsSyllableDisplay element : syllableDisplays) {
@@ -498,7 +506,8 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
      *      de.uos.fmt.musitech.framework.editor.EditingProfile,
      *      de.uos.fmt.musitech.framework.editor.Display)
      */
-    public void init(Object editObject, EditingProfile profile1, Display root) {
+    @Override
+	public void init(Object editObject, EditingProfile profile1, Display root) {
         //		if (editObject != null && editObject instanceof
         // LyricsSyllableSequence)
         //			lyricsContainer = (LyricsSyllableSequence) editObject;
@@ -563,7 +572,8 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#updateDisplay()
      */
-    public void updateDisplay() {
+    @Override
+	public void updateDisplay() {
         for (LyricsSyllableDisplay element : syllableDisplays) {
             element.updateDisplay();
         }
@@ -576,7 +586,8 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#getRootDisplay()
      */
-    public Display getRootDisplay() {
+    @Override
+	public Display getRootDisplay() {
         return rootDisplay;
     }
 
@@ -589,7 +600,8 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
      * 
      * @see de.uos.fmt.musitech.framework.change.DataChangeListener#dataChanged(de.uos.fmt.musitech.framework.change.DataChangeEvent)
      */
-    public void dataChanged(DataChangeEvent e) {
+    @Override
+	public void dataChanged(DataChangeEvent e) {
         dataChanged = true;
     }
 
@@ -659,7 +671,7 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
         int x = 0;
         int y = 0;
         if (!syllableDisplays.isEmpty()) {
-            LyricsSyllableDisplay lastDisplay = (LyricsSyllableDisplay) syllableDisplays
+            LyricsSyllableDisplay lastDisplay = syllableDisplays
                     .get(syllableDisplays.size() - 1);
             x = lastDisplay.getX() + lastDisplay.getWidth();
             //			y = lastDisplay.getHeight();
@@ -684,7 +696,8 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
         populateTestFrame(frame);
 
         frame.addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent e) {
+            @Override
+			public void windowClosing(java.awt.event.WindowEvent e) {
                 System.exit(0);
             };
         });
@@ -772,7 +785,8 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
      * 
      * @see de.uos.fmt.musitech.framework.selection.SelectionListener#selectionChanged(de.uos.fmt.musitech.framework.selection.SelectionChangeEvent)
      */
-    public void selectionChanged(SelectionChangeEvent e) {
+    @Override
+	public void selectionChanged(SelectionChangeEvent e) {
         Selection selection = SelectionManager.getManager().getSelection();
         for (Iterator iter = syllableDisplays.iterator(); iter.hasNext();) {
             LyricsSyllableDisplay syllableDisplay = (LyricsSyllableDisplay) iter
@@ -839,10 +853,12 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
      * 
      * @see de.uos.fmt.musitech.data.time.Timeable#setTimePosition(long)
      */
-    public void setTimePosition(long timeMicros) {
+    @Override
+	public void setTimePosition(long timeMicros) {
         currentTime = timeMicros;
         Thread thread = new Thread() {
-            public void run() {
+            @Override
+			public void run() {
                 if (cursorOption) {
                     moveCursor();
                 } else {
@@ -862,9 +878,10 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
      * 
      * @see de.uos.fmt.musitech.data.time.Timeable#getEndTime()
      */
-    public long getEndTime() {
+    @Override
+	public long getEndTime() {
         if (lyricsContainer != null && lyricsContainer.size() > 0) {
-            LyricsSyllable lastSyllable = (LyricsSyllable) lyricsContainer
+            LyricsSyllable lastSyllable = lyricsContainer
                     .get(lyricsContainer.size() - 1);
             if (lastSyllable.getTime() != Timed.INVALID_TIME) {
                 return lastSyllable.getTime() + lastSyllable.getDuration();
@@ -959,7 +976,7 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
             int i = lyricsContainer.indexOf(currentSyllable);
             if (lyricsContainer.size() > i + 1
                     && lyricsContainer.get(i + 1) != null) {
-                endTime = ((LyricsSyllable) lyricsContainer.get(i + 1))
+                endTime = lyricsContainer.get(i + 1)
                         .getTime();
             } else {
                 endTime = beginTime + currentSyllable.getDuration();
@@ -1003,8 +1020,8 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
                 int index = syllableDisplays.indexOf(currentDisplay);
                 if (syllableDisplays.size() > index + 1
                         && syllableDisplays.get(index + 1) != null) {
-                    endX = ((LyricsSyllableDisplay) syllableDisplays
-                            .get(index + 1)).getX();
+                    endX = syllableDisplays
+                            .get(index + 1).getX();
                 } else {
                     endX = beginX + currentDisplay.getWidth();
                 }
@@ -1022,7 +1039,8 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
      * 
      * @see java.awt.Component#paint(java.awt.Graphics)
      */
-    public void paint(Graphics g) {
+    @Override
+	public void paint(Graphics g) {
         super.paint(g);
         Color color = g.getColor();
         g.setColor(Color.RED);
@@ -1033,6 +1051,7 @@ public class LyricsDisplay extends JPanel implements HorizontalTimedDisplay,
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.Display#asComponent()
 	 */
+	@Override
 	public Component asComponent() {
 		return null;
 	}

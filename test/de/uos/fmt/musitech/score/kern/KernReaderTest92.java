@@ -57,12 +57,9 @@ import java.net.URL;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 
 import de.uos.fmt.musitech.data.score.*;
-import de.uos.fmt.musitech.data.structure.Piece;
-import de.uos.fmt.musitech.data.structure.Context;
 import de.uos.fmt.musitech.score.gui.Score;
 import de.uos.fmt.musitech.score.gui.ScoreMapper;
 import de.uos.fmt.musitech.score.gui.ScorePanel;
@@ -120,6 +117,7 @@ public class KernReaderTest92 extends JFrame {
 		
 		// Add a listener to the JFrame
 		addWindowListener(new WindowAdapter() {
+			@Override
 			public void windowClosing(WindowEvent ev) {
 				System.exit(0);
 			}
@@ -154,6 +152,7 @@ public class KernReaderTest92 extends JFrame {
 			score = scorePanel.getScore();
 		}
 		
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			if ((score.getActivePage()+1 < score.numChildren() && direction == 1)
 			        || (score.getActivePage() >0 && direction == -1)) {

@@ -109,6 +109,7 @@ public class MP3FileFloatIS extends MP3FloatIS implements PositionableFIS
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.PositionableFIS#position(long)
 	 */
+	@Override
 	public void position(int n) throws IOException{
 //System.out.println("  >-FIS-<   MP3FileFloatIS.position("+n+");");
 //		if(n>getSamplesRead() && n<samplesAvailableWithoutBlocking()+getSamplesRead()){
@@ -148,6 +149,7 @@ public class MP3FileFloatIS extends MP3FloatIS implements PositionableFIS
 	 * each mp3-frame
 	 * @see de.uos.fmt.musitech.audio.floatStream.PositionableFIS#position(long)
 	 */
+	@Override
 	public int position(){
 		return getSamplesRead();
 //		int bytePos;
@@ -181,6 +183,7 @@ public class MP3FileFloatIS extends MP3FloatIS implements PositionableFIS
 	 * 
 	 * @see de.uos.fmt.musitech.audio.floatStream.PositionableFIS#getFloatPreviewReader()
 	 */
+	@Override
 	public FloatPreviewReader getFloatPreviewReader() {
 		try {
 			return new MP3FPreviewReader(file);
@@ -230,6 +233,7 @@ System.out.println("  >--<   ChannelInputStream.setFile("+file+");");
 			position(header);
 		}
 
+		@Override
 		public int read(byte[] b) throws IOException
 		{
 			return read(b, 0, b.length);
@@ -241,6 +245,7 @@ System.out.println("  >--<   ChannelInputStream.setFile("+file+");");
 		 * @return
 		 * @throws IOException
 		 */
+		@Override
 		public int read(byte[] b, int off, int len) throws IOException
 		{
 //			int available = available();
@@ -298,6 +303,7 @@ System.out.println("  >--<   ChannelInputStream.setFile("+file+");");
 //			byteBufferPos = 0;
 //		}
 
+		@Override
 		public long skip(long n) throws IOException
 		{
 //System.out.println("  >--<   ChannelInputStream.skip("+n+");");
@@ -366,6 +372,7 @@ System.out.println("  >--<   ChannelInputStream.setFile("+file+");");
 			}
 		}
 
+		@Override
 		public void reset() throws IOException
 		{
 //System.out.println("  >--<   ChannelInputStream.reset();");
@@ -382,17 +389,20 @@ System.out.println("  >--<   ChannelInputStream.setFile("+file+");");
 
 
 
+		@Override
 		public int available() throws IOException{
 			//int out = (int)(readLimit-position()) + (byteBuffer.length-byteBufferPos);
 //System.out.println("  >--<   ChannelInputStream.available(); return: "+out);
-			return (int)(readLimit-position());
+			return readLimit-position();
 		}
 
+		@Override
 		public boolean markSupported(){
 //System.out.println("  >--<   ChannelInputStream.available(); return: true");			
 			return true;
 		}
 
+		@Override
 		public int read() throws IOException
 		{
 			//System.err.println("Warning: MP3FileFloatIS.ChannelInputStream.read() is not implemented, and return 0.");
@@ -423,7 +433,7 @@ System.out.println("  >--<   ChannelInputStream.setFile("+file+");");
 			int majorVersion = id3header[0];
 			int revision = id3header[1];
 			in.read(id3header,0,4);
-			size = (int) (id3header[0] << 21) + (id3header[1] << 14) + (id3header[2] << 7) + (id3header[3]);
+			size = (id3header[0] << 21) + (id3header[1] << 14) + (id3header[2] << 7) + (id3header[3]);
 		}
 		return (size+10);
 	}

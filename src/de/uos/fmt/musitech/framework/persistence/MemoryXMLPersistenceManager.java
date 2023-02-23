@@ -135,6 +135,7 @@ public class MemoryXMLPersistenceManager implements PersistenceManager {
 	 * @throws PersistenceException
 	 * @see de.uos.fmt.musitech.framework.persistence.PersistenceManager#store(MObject)
 	 */
+	@Override
 	public synchronized Long store(MObject mobject) throws PersistenceException {
 		// assign an ID and store in DB
 		if (entryMap.containsKey(mobject.getUid()))
@@ -152,6 +153,7 @@ public class MemoryXMLPersistenceManager implements PersistenceManager {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.persistence.PersistenceManager#update(MObject)
 	 */
+	@Override
 	public synchronized void update(MObject mobject) throws PersistenceException {
 		// nothing to do here, we keep objects only in memory.
 	}
@@ -161,8 +163,9 @@ public class MemoryXMLPersistenceManager implements PersistenceManager {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.persistence.PersistenceManager#read(long)
 	 */
+	@Override
 	public MObject read(Long id) throws PersistenceException {
-		return (MObject) entryMap.get(id);
+		return entryMap.get(id);
 	}
 
 	/**
@@ -171,8 +174,9 @@ public class MemoryXMLPersistenceManager implements PersistenceManager {
 	 * @return The object associated with the name, or null if there is none.
 	 * @see de.uos.fmt.musitech.framework.persistence.PersistenceManager#getByName(java.lang.String)
 	 */
+	@Override
 	public MObject getByName(String name) {
-		return (MObject) nameMap.get(name);
+		return nameMap.get(name);
 	}
 
 	/**
@@ -180,6 +184,7 @@ public class MemoryXMLPersistenceManager implements PersistenceManager {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.persistence.PersistenceManager#getNames()
 	 */
+	@Override
 	public Collection getNames() {
 		return nameMap.keySet();
 	}
@@ -188,6 +193,7 @@ public class MemoryXMLPersistenceManager implements PersistenceManager {
 	 * @see de.uos.fmt.musitech.framework.persistence.PersistenceManager#storeByName(de.uos.fmt.musitech.data.MObject,
 	 *      java.lang.String)
 	 */
+	@Override
 	public void storeByName(MObject object, String name) throws PersistenceException {
 		nameMap.put(name, object);
 		if (object != null)
@@ -199,6 +205,7 @@ public class MemoryXMLPersistenceManager implements PersistenceManager {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.persistence.PersistenceManager#writeDirty()
 	 */
+	@Override
 	public void writeDirty() {
 		// write data to file
 		if (!dbFile.exists()) {
@@ -214,6 +221,7 @@ public class MemoryXMLPersistenceManager implements PersistenceManager {
 	/**
 	 * Close the database, write in-memory-data to db-file
 	 */
+	@Override
 	public void close() {
 		// delete instance
 		writeDirty();
@@ -226,6 +234,7 @@ public class MemoryXMLPersistenceManager implements PersistenceManager {
 	 */
 	MObjectProcessor fillEntryProcessor = new MObjectProcessor() {
 
+		@Override
 		public boolean processMObject(MObject obj) {
 			Long id = obj.getUid();
 			Object existing = entryMap.get(id);
@@ -289,6 +298,7 @@ public class MemoryXMLPersistenceManager implements PersistenceManager {
 	 * 
 	 * @see java.lang.Object#finalize()
 	 */
+	@Override
 	protected void finalize() throws Throwable {
 		close();
 		super.finalize();
@@ -360,6 +370,7 @@ public class MemoryXMLPersistenceManager implements PersistenceManager {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.persistence.PersistenceManager#export(java.io.File)
 	 */
+	@Override
 	public void export(File file) throws IOException {
 		// TODO Auto-generated method stub
 

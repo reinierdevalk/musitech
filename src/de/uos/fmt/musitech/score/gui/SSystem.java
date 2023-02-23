@@ -97,6 +97,7 @@ public class SSystem extends ScoreContainer {
 		}
 	}
 	
+	@Override
 	int arrange(int pass) {
 		int numPasses = 3;
 		int max = Math.max(numPasses, super.arrange(pass));
@@ -246,6 +247,7 @@ public class SSystem extends ScoreContainer {
 	}
 
 	/** Returns the depth of this System (in pixel units). */
+	@Override
 	public int depth() {
 		int depth = 0;
 		for (int i = 0; i < numChildren(); i++) {
@@ -258,6 +260,7 @@ public class SSystem extends ScoreContainer {
 		return depth;
 	}
 
+	@Override
 	public int height() {
 		return height;
 	}
@@ -306,6 +309,7 @@ public class SSystem extends ScoreContainer {
 	}
 
 	/** Draws this System onto the given graphics device. */
+	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
 		if (numChildren() == 0)
@@ -363,10 +367,12 @@ public class SSystem extends ScoreContainer {
 	}
 
 	/** Returns the parent class of this System (it's always Page.class) */
+	@Override
 	Class<Page> parentClass() {
 		return Page.class;
 	}
 
+	@Override
 	public SSystem system() {
 		return this;
 	}
@@ -390,6 +396,7 @@ public class SSystem extends ScoreContainer {
 		return maxLineDist;
 	}
 
+	@Override
 	public int rwidth() {
 		int width = 0;
 		for (int i = 0; i < numChildren(); i++)
@@ -434,6 +441,7 @@ public class SSystem extends ScoreContainer {
 		return ((Staff) child(0)).attackTime();
 	}
 
+	@Override
 	public String toString() {
       return "System " + systemNo;      
 	}
@@ -442,6 +450,7 @@ public class SSystem extends ScoreContainer {
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.gui.score.ScoreObject#catchScoreObject(int, int, java.lang.Class)
 	 */
+	@Override
 	public ScoreObject catchScoreObject(int x, int y, Class objectClass) {
 		if (objectClass.equals(Beam.class) && beams != null) {
 			Beam caughtBeam = null;
@@ -467,6 +476,7 @@ public class SSystem extends ScoreContainer {
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.gui.score.ScoreContainerBase#add(de.uos.fmt.musitech.gui.score.ScoreObject)
 	 */
+	@Override
 	public boolean add(ScoreObject obj) {
 		assert obj instanceof Staff;
 		if (staffSize == 0)

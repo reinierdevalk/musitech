@@ -93,11 +93,13 @@ public class ToolBarPanel extends JPanel implements SectionController {
 				getScoreEditor().getNotationSystem());
 	}
 
+	@Override
 	public void update() {
 		for (AbstractToolbarSection ats : sections)
 			ats.update();
 	}
 
+	@Override
 	public ScoreEditor getScoreEditor() {
 		return ed;
 	}
@@ -158,6 +160,7 @@ public class ToolBarPanel extends JPanel implements SectionController {
 
 		center.add(new AbstractAction(Messages.getString("ToolBarPanel.DeleteSelection"), Icons //$NON-NLS-1$
 				.getIcon("radierer.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				ed.getScoreManipulator().deleteSelection();
 			}
@@ -235,6 +238,7 @@ public class ToolBarPanel extends JPanel implements SectionController {
 		upper.add(new JPanel());
 	}
 
+	@Override
 	public void dataChanged(DataChangeEvent e) {
 		update();
 	}

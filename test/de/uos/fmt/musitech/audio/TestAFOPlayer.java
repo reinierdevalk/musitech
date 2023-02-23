@@ -57,6 +57,7 @@ import java.io.IOException;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 
 /**
  * created 15.07.2004 to test the AFOPlayer
@@ -77,7 +78,7 @@ public class TestAFOPlayer extends JFrame {
 		getContentPane().add(afoPlayButtons, BorderLayout.SOUTH);
 		getContentPane().add(afoProvider, BorderLayout.NORTH);
 		getContentPane().add(new TimeShower(), BorderLayout.CENTER);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		pack();
 		setVisible(true);
 	}
@@ -86,6 +87,7 @@ public class TestAFOPlayer extends JFrame {
 		JLabel timeLabel = new JLabel("time");
 		TimeShower(){
 			new Thread(){
+				@Override
 				public void run(){
 					try {
 						sleep(500);

@@ -151,7 +151,7 @@ public class TimedContainer<T extends Timed> extends SortedContainer<T> {
         if (position < 0)
             return null;
 
-        return (Timed) get(position);
+        return get(position);
 
     }
 
@@ -162,7 +162,7 @@ public class TimedContainer<T extends Timed> extends SortedContainer<T> {
         if (element.getTime() == time) {
             int index = indexOf(element);
             if (index > 0)
-                return (TimedMetrical) get(index - 1);
+                return get(index - 1);
             return null;
         } else
             return element;

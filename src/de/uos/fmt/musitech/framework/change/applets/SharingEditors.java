@@ -78,7 +78,8 @@ public class SharingEditors extends JApplet {
      *  
      * @see java.applet.Applet#init()
      */
-    public void init(){
+    @Override
+	public void init(){
         try {
             super.init();
             createGUI();
@@ -115,7 +116,8 @@ public class SharingEditors extends JApplet {
     private void createGUI(){
         JButton startButton = new JButton("Start applet");
         startButton.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 openEditors();
             }            
         });

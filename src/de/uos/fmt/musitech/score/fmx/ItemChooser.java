@@ -143,6 +143,7 @@ public class ItemChooser extends JPanel {
 	
 	// Handle state changes
 	list.addListSelectionListener(new ListSelectionListener() {
+		@Override
 		public void valueChanged(ListSelectionEvent e) {
 		    ItemChooser.this.select(list.getSelectedIndex());
 		}
@@ -161,6 +162,7 @@ public class ItemChooser extends JPanel {
 	
 	// Handle changes to the state
 	combobox.addItemListener(new ItemListener() {
+		@Override
 		public void itemStateChanged(ItemEvent e) {
 		    ItemChooser.this.select(combobox.getSelectedIndex());
 		}
@@ -178,6 +180,7 @@ public class ItemChooser extends JPanel {
 	radiobuttons = new JRadioButton[labels.length];   // the array
 	ButtonGroup radioButtonGroup = new ButtonGroup(); // used for exclusion
 	ChangeListener listener = new ChangeListener() {  // A shared listener
+		@Override
 		public void stateChanged(ChangeEvent e) {
 		    JRadioButton b = (JRadioButton)e.getSource();
 		    if (b.isSelected()) {
@@ -212,7 +215,8 @@ public class ItemChooser extends JPanel {
     // These simple property accessor methods just return field values
     // These are read-only properties.  The values are set by the constructor
     // and may not be changed.
-    public String getName() { return name; }
+    @Override
+	public String getName() { return name; }
     public int getPresentation() { return presentation; }
     public String[] getLabels() { return labels; }
     public Object[] getValues() { return values; }
@@ -300,7 +304,8 @@ public class ItemChooser extends JPanel {
 	    // Create a window, arrange to handle close requests
 	    final JFrame frame = new JFrame("ItemChooser Demo");
 	    frame.addWindowListener(new WindowAdapter() {
-		    public void windowClosing(WindowEvent e) {System.exit(0);}
+		    @Override
+			public void windowClosing(WindowEvent e) {System.exit(0);}
 		});
 
 	    // A "message line" to display results in
@@ -317,7 +322,8 @@ public class ItemChooser extends JPanel {
 	    
 	    // An event listener that displays changes on the message line
 	    ItemChooser.Listener l = new ItemChooser.Listener() {
-		    public void itemChosen(ItemChooser.Event e) {
+		    @Override
+			public void itemChosen(ItemChooser.Event e) {
 			msgline.setText(e.getItemChooser().getName() + ": " +
 					e.getSelectedIndex() + ": " +
 					e.getSelectedValue());
@@ -332,7 +338,8 @@ public class ItemChooser extends JPanel {
 	    // they need it.  Here's a button that does that.
 	    JButton report = new JButton("Report");
 	    report.addActionListener(new ActionListener() {
-		    public void actionPerformed(ActionEvent e) {
+		    @Override
+			public void actionPerformed(ActionEvent e) {
 			// Note the use of multi-line italic HTML text
 			// with the JOptionPane message dialog box.
 			String msg = "<html><i>" +

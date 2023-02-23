@@ -54,13 +54,6 @@ above is subject to the following three conditions:
 package de.uos.fmt.musitech.framework.editor;
 
 import java.awt.BorderLayout;
-import java.net.URL;
-
-import javax.swing.BorderFactory;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-
 import de.uos.fmt.musitech.data.audio.AudioFileObject;
 import de.uos.fmt.musitech.framework.time.ObjectPlayer;
 import de.uos.fmt.musitech.framework.time.TransportButtons;
@@ -82,7 +75,8 @@ public class ObjectPlayerDisplay extends AbstractDisplay {
     /** 
      * @see de.uos.fmt.musitech.framework.editor.AbstractDisplay#createGUI()
      */
-    public void createGUI() {
+    @Override
+	public void createGUI() {
         if (editObj instanceof AudioFileObject){
             afo = (AudioFileObject) editObj;
         } else {

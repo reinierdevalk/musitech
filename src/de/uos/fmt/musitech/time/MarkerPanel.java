@@ -151,11 +151,12 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 
 	// this component's MouseMotionListener
 	private MouseMotionListener mml = new MouseMotionAdapter() {
+		@Override
 		public void mouseMoved(MouseEvent e) {
 			boolean debug = false;
 			//boolean debug = true;
 
-			long pixelpos = (long) (e.getX() - spaceX);
+			long pixelpos = e.getX() - spaceX;
 			long timeMillisRealTime = 0;
 			Rational timeMillisMetricTime = Rational.ZERO;
 			Rational currentTimeSignature = Rational.ZERO;
@@ -170,14 +171,14 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 
 			//measures	
 				int measures = (int) (pixelpos / scaleX);
-				double beatsRemainder = (double) (pixelpos % scaleX);
+				double beatsRemainder = pixelpos % scaleX;
 
 			//beats
 				Rational thisMeasureMetricalTime = metricalTimeLine.fromMeasureBeatRemainder(new int[] {measures ,0,0,1});
 				currentTimeSignature = metricalTimeLine.getCurrentTimeSignature(thisMeasureMetricalTime);
-				double distanceBeatRealTime = (double) (scaleX / currentTimeSignature.getNumer());
+				double distanceBeatRealTime = scaleX / currentTimeSignature.getNumer();
 				int beats = (int) ( beatsRemainder / distanceBeatRealTime);
-				double remainderRealTime = (double)  ( beatsRemainder % distanceBeatRealTime);
+				double remainderRealTime = beatsRemainder % distanceBeatRealTime;
 
 			//remainder
 				int remainderReal = (int) (remainderRealTime / scaleX);
@@ -225,11 +226,13 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 		// renew markers, if componentRezised or componentShown
 		addComponentListener(new ComponentAdapter() {
 
+			@Override
 			public void componentResized(ComponentEvent e) {
 				if (!markers.isEmpty())
 					layoutMarkers(); //	renew markers
 			}
 
+			@Override
 			public void componentShown(ComponentEvent e) {
 				if (!markers.isEmpty())
 					layoutMarkers(); // renew markers
@@ -252,6 +255,7 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 		*/
 
 		SelectionManager.getManager().addListener(new SelectionListener() {
+			@Override
 			public void selectionChanged(SelectionChangeEvent event) {
 
 				for (Iterator iter = event.addedObjects.iterator(); iter.hasNext();) {
@@ -297,6 +301,7 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 		if (debug) System.out.println();
 	}
 
+	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		setValuesForPaint(); // halfY, scaleValue, scaleX
@@ -304,8 +309,8 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 		paintAxis(g); // draw axis
 		if (cursorPosition != -1) {
 			paintCursor(g, new TimedMetrical(
-				(long)cursorPosition,
-				new Rational(metricalTimeLine.getMetricTime((long)cursorPosition)))
+				cursorPosition,
+				new Rational(metricalTimeLine.getMetricTime(cursorPosition)))
 			); // draw cursor
 		}
 		super.paintChildren(g);
@@ -391,12 +396,12 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 		Rational currentTimeSignature = metricalTimeLine.getCurrentTimeSignature(thisMetricTime);
 
 		if (realTimeIsSet) {
-			double xPosPixels =  (double) (metricalTimeLine.getTime(thisMetricTime) * scaleX);
-			double newXPosPixels = (double) (metricalTimeLine.getTime(nextMeasure) * scaleX);
-			abstand = (double) ((newXPosPixels - xPosPixels) / currentTimeSignature.getNumer());
+			double xPosPixels =  metricalTimeLine.getTime(thisMetricTime) * scaleX;
+			double newXPosPixels = metricalTimeLine.getTime(nextMeasure) * scaleX;
+			abstand = (newXPosPixels - xPosPixels) / currentTimeSignature.getNumer();
 		}
 		else {
-			abstand = (double) (scaleX / currentTimeSignature.getNumer());
+			abstand = scaleX / currentTimeSignature.getNumer();
 		}
 
 		if (debug) System.out.println("MarkerPanel.calculateNextXStep: abstand = "+abstand);
@@ -447,7 +452,7 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 							g.setColor(metricaltimeBarLine_ColourDark);
 						}
 						g.drawLine(spaceX + (int) xPosPixels, halfY, spaceX + (int) xPosPixels, height-fontHeight);
-						xPosPixels = (double) (xPosPixels + abstand);
+						xPosPixels = xPosPixels + abstand;
 					}
 			}
 
@@ -465,7 +470,7 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 							g.setColor(metricaltimeBarLine_ColourDark);
 						}
 						g.drawLine(spaceX + (int) xPosPixels, halfY, spaceX + (int) xPosPixels, height-fontHeight);
-						xPosPixels = (double) (xPosPixels + abstand);
+						xPosPixels = xPosPixels + abstand;
 					}
 				}
 			}
@@ -485,15 +490,15 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 		double beats = 0;
 
 		if (realTimeIsSet)
-			posX = (double) (tm.getTime() * scaleX);
+			posX = tm.getTime() * scaleX;
 		else {
 			preWert = metricalTimeLine.toMeasureBeatRemainder(tm.getMetricTime());
 			measures = preWert[0]-1;
-			remainder = (double) (preWert[2] / preWert[3]);
+			remainder = preWert[2] / preWert[3];
 			abstand = calculateNextXStep(tm.getMetricTime());
-			beats = (double) ((preWert[1]-1) * abstand);
+			beats = (preWert[1]-1) * abstand;
 				
-			posX = (double)( ((measures  + remainder) * scaleX)+ beats);
+			posX = ((measures  + remainder) * scaleX)+ beats;
 		}
 
 		return posX;
@@ -518,9 +523,9 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 
 		preWert = metricalTimeLine.toMeasureBeatRemainder(tm);
 		measures = preWert[0]-1;
-		remainder = (double) (preWert[2] / preWert[3]);
+		remainder = preWert[2] / preWert[3];
 		abstand = calculateNextXStep(tm);
-		beats = (double) ((preWert[1]-1) * abstand);
+		beats = (preWert[1]-1) * abstand;
 				
 		posX = (long)( ((measures  + remainder) * scaleX)+ beats);
 
@@ -550,7 +555,7 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 			if (realTimeIsSet) {
 				xPosPixels = (long) (realDisplayTime * scaleX);
 			} else {
-				tm = new Rational( metricalTimeLine.getMetricTime((long) realDisplayTime) );
+				tm = new Rational( metricalTimeLine.getMetricTime(realDisplayTime) );
 				xPosPixels = calculateXPosition(tm);
 
 				if (debug) System.out.println("MarkerPanel.paintRealtimeBarLines: realDisplayTime = "+realDisplayTime);
@@ -769,9 +774,11 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 	 * This affects processFocusEvent().
 	 * @see de.uos.fmt.musitech.framework.change.DataChangeListener#dataChanged(de.uos.fmt.musitech.framework.change.DataChangeEvent)
 	 */
+	@Override
 	public void dataChanged(DataChangeEvent e) {
 		dataChanged = true;
 		SwingUtilities.invokeLater(new Thread() {
+			@Override
 			public void run() {
 				revalidate();
 			}
@@ -786,6 +793,7 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 	 * If the data has changed (dataChanged=true), redraw everything.
 	 * @see java.awt.Component#processFocusEvent(java.awt.event.FocusEvent)
 	 */
+	@Override
 	protected void processFocusEvent(FocusEvent e) {
 		super.processFocusEvent(e);
 		if (dataChanged) {
@@ -801,6 +809,7 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 	 * revalidate
 	 * gets new values and redraws the whole panel
 	 */
+	@Override
 	public void revalidate() {
 		layoutMarkers();
 		super.revalidate();
@@ -845,6 +854,7 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#getMinimalPositionForTime(long, de.uos.fmt.musitech.utility.math.Rational)
 	 */
+	@Override
 	public int getMinimalPositionForTime(long t, Rational m) throws WrongArgumentException {
 		// TODO Auto-generated method stub
 		return 0;
@@ -853,6 +863,7 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#setMinimalPositionForTime(long, de.uos.fmt.musitech.utility.math.Rational, int)
 	 */
+	@Override
 	public boolean setMinimalPositionForTime(long t, Rational m, int position) throws WrongArgumentException {
 		// TODO Auto-generated method stub
 		return false;
@@ -861,6 +872,7 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#getNextPositioningTime(long)
 	 */
+	@Override
 	public long getNextPositioningTime(long startTime) {
 		// TODO Auto-generated method stub
 		return 0;
@@ -869,6 +881,7 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#doInitialLayout()
 	 */
+	@Override
 	public void doInitialLayout() {
 		// TODO Auto-generated method stub
 		
@@ -884,6 +897,7 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.data.time.Timeable#setTimePosition(long)
 	 */
+	@Override
 	public void setTimePosition(long timeMicros) {
 		cursorPosition = timeMicros;
 		repaint();
@@ -892,6 +906,7 @@ public class MarkerPanel extends JPanel implements HorizontalTimedDisplay, DataC
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.data.time.Timeable#getEndTime()
 	 */
+	@Override
 	public long getEndTime() {
 		// we are only displaying and therefore not interested...
 		return -1;

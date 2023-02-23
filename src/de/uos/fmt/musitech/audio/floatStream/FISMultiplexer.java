@@ -94,12 +94,14 @@ public class FISMultiplexer implements FISReader {
         // mrRingBuff.addReader(this); - not more.
     }
 
-    public FISReader setFloatInputStream(FloatInputStream fis) {
+    @Override
+	public FISReader setFloatInputStream(FloatInputStream fis) {
         mrRingBuff.setFloatInputStream(fis);
         return this;
     }
 
-    public FloatInputStream getFloatInputStream() {
+    @Override
+	public FloatInputStream getFloatInputStream() {
         return mrRingBuff.getFloatInputStream();
     }
 
@@ -148,7 +150,8 @@ public class FISMultiplexer implements FISReader {
          * 
          * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float)
          */
-        public int read(float[][] data) throws IOException {
+        @Override
+		public int read(float[][] data) throws IOException {
             return read(data, 0, data[0].length);
         }
 
@@ -160,7 +163,8 @@ public class FISMultiplexer implements FISReader {
          * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float,
          *      int, int)
          */
-        public int read(float[][] data, int start, int len) throws IOException {
+        @Override
+		public int read(float[][] data, int start, int len) throws IOException {
             if (len < 1)
                 return len;
             int didRead = mrRingBuff.read(data, start, len, this);
@@ -175,14 +179,16 @@ public class FISMultiplexer implements FISReader {
         /**
          * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getFormat()
          */
-        public AudioFormat getFormat() {
+        @Override
+		public AudioFormat getFormat() {
             return mrRingBuff.getFormat();
         }
 
         /**
          * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#skip(long)
          */
-        public long skip(long n) throws IOException {
+        @Override
+		public long skip(long n) throws IOException {
             long didSkip = mrRingBuff.skip(n, this);
             if (didSkip == 0) {
                 mrRingBuff.load();
@@ -194,7 +200,8 @@ public class FISMultiplexer implements FISReader {
         /**
          * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#reset()
          */
-        public void reset() throws IOException {
+        @Override
+		public void reset() throws IOException {
             mrRingBuff.reset();
         }
 
@@ -207,7 +214,8 @@ public class FISMultiplexer implements FISReader {
          * 
          * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
          */
-        public long remainingSamples() {
+        @Override
+		public long remainingSamples() {
             return getFloatInputStream().remainingSamples();
         }
 
@@ -216,7 +224,8 @@ public class FISMultiplexer implements FISReader {
          * 
          * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
          */
-        public long getPositionInSamples() {
+        @Override
+		public long getPositionInSamples() {
             return getFloatInputStream().getPositionInSamples();
         }
 
@@ -225,7 +234,8 @@ public class FISMultiplexer implements FISReader {
          * 
          * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
          */
-        public void setPositionInSamples(long newPos) throws IOException {
+        @Override
+		public void setPositionInSamples(long newPos) throws IOException {
             getFloatInputStream().setPositionInSamples(newPos);
         }
 

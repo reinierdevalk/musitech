@@ -70,6 +70,7 @@ public class ListenableJTextField extends javax.swing.JTextField implements Docu
 	/**
 	 * Sends a notify document changed.
 	 */
+	@Override
 	public void changedUpdate(DocumentEvent e) {
 		notifyChange();
 	}
@@ -103,6 +104,7 @@ public class ListenableJTextField extends javax.swing.JTextField implements Docu
 		// user code end
 	}
 
+	@Override
 	public void insertUpdate(DocumentEvent e) {
 		notifyChange();
 	}
@@ -119,6 +121,7 @@ public class ListenableJTextField extends javax.swing.JTextField implements Docu
 			frame.setContentPane(aListenableJTextField);
 			frame.setSize(aListenableJTextField.getSize());
 			frame.addWindowListener(new java.awt.event.WindowAdapter() {
+				@Override
 				public void windowClosing(java.awt.event.WindowEvent e) {
 					System.exit(0);
 				};
@@ -136,6 +139,7 @@ public class ListenableJTextField extends javax.swing.JTextField implements Docu
 		lastText = newText;
 	}
 
+	@Override
 	public void removeUpdate(DocumentEvent e) {
 		notifyChange();
 	}
@@ -145,6 +149,7 @@ public class ListenableJTextField extends javax.swing.JTextField implements Docu
 	 * @date (18.07.00 19:17:02)
 	 * @param doc javax.swing.text.Document
 	 */
+	@Override
 	public void setDocument(javax.swing.text.Document doc) {
 		//	getDocument().removeDocumentListener(this);
 		super.setDocument(doc);
@@ -156,6 +161,7 @@ public class ListenableJTextField extends javax.swing.JTextField implements Docu
 	 * @date (18.07.00 18:15:43)
 	 * @param b boolean
 	 */
+	@Override
 	public void setEditable(boolean b) {
 		if (isEditable())
 			colorEdit = getBackground();
@@ -179,6 +185,7 @@ public class ListenableJTextField extends javax.swing.JTextField implements Docu
 	 * @param listenableText The new value for the property.
 	 * @see #getListenableText
 	 */
+	@Override
 	public void setText(java.lang.String newText) {
 		String oldText = getText();
 		if (getText().equals(newText))

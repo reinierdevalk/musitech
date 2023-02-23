@@ -66,16 +66,12 @@ import de.uos.fmt.musitech.data.structure.Note;
 import de.uos.fmt.musitech.data.structure.Piece;
 import de.uos.fmt.musitech.data.structure.container.BasicContainer;
 import de.uos.fmt.musitech.data.structure.container.Container;
-import de.uos.fmt.musitech.data.time.MetricalTimeLine;
-import de.uos.fmt.musitech.framework.editor.EditingProfile;
 import de.uos.fmt.musitech.framework.editor.EditorFactory;
 import de.uos.fmt.musitech.framework.editor.EditorFactory.EditorConstructionException;
 import de.uos.fmt.musitech.mpeg.testcases.BaroqueAlignmentTest;
-import de.uos.fmt.musitech.mpeg.testcases.TestCase1_1_a;
 import de.uos.fmt.musitech.performance.ScoreToPerfomance;
 import de.uos.fmt.musitech.performance.midi.MidiWriter;
 import de.uos.fmt.musitech.score.NotationDisplay;
-import de.uos.fmt.musitech.score.gui.Accent;
 import de.uos.fmt.musitech.utility.math.Rational;
 
 /**
@@ -91,7 +87,8 @@ public class ObjectToMidiTest extends TestCase{
     /** 
      * @see junit.framework.TestCase#setUp()
      */
-    protected void setUp() throws Exception {
+    @Override
+	protected void setUp() throws Exception {
         container = new BasicContainer();
         testSystem = new NotationSystem();
         testPiece = new Piece();

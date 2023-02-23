@@ -74,6 +74,7 @@ public class CustomStringScoreObject extends CustomScoreObject {
 		s = symbol.getString();
 	}
 
+	@Override
 	public void paint(Graphics g) {
 		Font old = g.getFont();
 		g.setFont(new Font("Serif", Font.ITALIC, old.getSize() / 3));

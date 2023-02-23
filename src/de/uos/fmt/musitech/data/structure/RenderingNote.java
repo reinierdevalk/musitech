@@ -91,10 +91,12 @@ public class RenderingNote extends Note implements Colored, RenderingSupported {
 	 * 
 	 * @hibenate.property
 	 */
+	@Override
 	public Color getColor() {
 		return color;
 	}
 
+	@Override
 	public void setColor(Color color) {
 		this.color = color;
 	}
@@ -121,7 +123,8 @@ public class RenderingNote extends Note implements Colored, RenderingSupported {
      * Get the rendering hints.
      * @see de.uos.fmt.musitech.data.rendering.RenderingSupported#getRenderingHints()
      */
-    public RenderingHints getRenderingHints() {
+    @Override
+	public RenderingHints getRenderingHints() {
         return renderingHints;
     }
 
@@ -129,7 +132,8 @@ public class RenderingNote extends Note implements Colored, RenderingSupported {
      * Sets the rendering hints.
      * @see de.uos.fmt.musitech.data.rendering.RenderingSupported#setRenderingHints(de.uos.fmt.musitech.data.rendering.RenderingHints)
      */
-    public void setRenderingHints(RenderingHints renderingHints) {
+    @Override
+	public void setRenderingHints(RenderingHints renderingHints) {
         this.renderingHints = renderingHints;
         
     }

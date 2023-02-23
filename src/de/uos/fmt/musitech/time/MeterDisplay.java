@@ -51,7 +51,6 @@ import java.awt.Dimension;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JViewport;
@@ -136,13 +135,17 @@ implements Timeable
 		}
 
 		ComponentListener componentListener = new ComponentListener() {
+			@Override
 			public void componentResized (ComponentEvent e) {
 				splitPane.setDividerLocation(splitPane.getHeight()/2);
 			}
+			@Override
 			public void componentHidden (ComponentEvent e) {
 			}
+			@Override
 			public void componentShown (ComponentEvent e) {
 			}
+			@Override
 			public void componentMoved (ComponentEvent e) {
 			}
 		};
@@ -162,6 +165,7 @@ implements Timeable
 
 		ChangeListener changeListener = new ChangeListener() {
 
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				/* 
 				 * TODO: Nachdem TempoPanel und MarkerPanel in ein JSplitPane gepackt wurden,
@@ -198,7 +202,8 @@ implements Timeable
     /** 
      * @see de.uos.fmt.musitech.data.time.Timeable#setTimePosition(long)
      */
-    public void setTimePosition(long timeMicros) {
+    @Override
+	public void setTimePosition(long timeMicros) {
         markerPanel.setTimePosition(timeMicros);
         tempoPanel.setTimePosition(timeMicros);
     }
@@ -215,7 +220,8 @@ implements Timeable
     /** 
      * @see de.uos.fmt.musitech.data.time.Timeable#getEndTime()
      */
-    public long getEndTime() {
+    @Override
+	public long getEndTime() {
         if (markerPanel.getEndTime() >= tempoPanel.getEndTime())	//should be equal
             return markerPanel.getEndTime();
         else
@@ -224,7 +230,8 @@ implements Timeable
     /** 
      * @see de.uos.fmt.musitech.framework.editor.AbstractDisplay#createGUI()
      */
-    public void createGUI() {
+    @Override
+	public void createGUI() {
         determineMetricalTimeLine();
         if (metricalTimeLine==null)
             return;
@@ -249,13 +256,17 @@ implements Timeable
 //		}
 
 		ComponentListener componentListener = new ComponentListener() {
+			@Override
 			public void componentResized (ComponentEvent e) {
 				splitPane.setDividerLocation(splitPane.getHeight()/2);
 			}
+			@Override
 			public void componentHidden (ComponentEvent e) {
 			}
+			@Override
 			public void componentShown (ComponentEvent e) {
 			}
+			@Override
 			public void componentMoved (ComponentEvent e) {
 			}
 		};
@@ -275,6 +286,7 @@ implements Timeable
 
 		ChangeListener changeListener = new ChangeListener() {
 
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				/* 
 				 * TODO: Nachdem TempoPanel und MarkerPanel in ein JSplitPane gepackt wurden,

@@ -53,13 +53,13 @@ package de.uos.fmt.musitech.framework.editor.translating;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.structure.form.NoteList;
 import de.uos.fmt.musitech.framework.editor.Display;
 import de.uos.fmt.musitech.framework.editor.EditingProfile;
 import de.uos.fmt.musitech.framework.editor.EditorFactory;
 import de.uos.fmt.musitech.framework.editor.EditorFactory.EditorConstructionException;
-import de.uos.fmt.musitech.score.NotationDisplay;
 
 /**
  * For testing the NotesEpecExtendedEditor, its layout and user interaction.
@@ -118,7 +118,7 @@ public class NotesEpecExtendedEditorTestGUI {
     
     private static void closing(){
         JFrame closingFrame = new JFrame("For closing");
-        closingFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        closingFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         closingFrame.setVisible(true);
      }
 

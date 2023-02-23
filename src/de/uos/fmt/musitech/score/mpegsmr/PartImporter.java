@@ -134,6 +134,7 @@ public class PartImporter extends Mappings {
 	public PartImporter(Document partDoc) {
 		Namespace ns = Namespace.getNamespace("", "");
 		Iterator<Element> it = partDoc.getDescendants(new Filter() {
+			@Override
 			public boolean matches(Object obj) {
 				if (obj instanceof Element) {
 					return true;
@@ -229,6 +230,7 @@ public class PartImporter extends Mappings {
 			}
 		}
 		Collections.sort(tclist, new Comparator<TupletContainer>() {
+			@Override
 			public int compare(TupletContainer t1, TupletContainer t2) {
 				return t1.getMetricTime().compare(t2.getMetricTime());
 			}
@@ -242,7 +244,7 @@ public class PartImporter extends Mappings {
 			v.addTuplet(tc);
 			System.out.println(tc.getContent());
 			for (int j = 0; j < v.size(); j++) {
-				NotationChord nc = (NotationChord) v.get(j);
+				NotationChord nc = v.get(j);
 				if (nc.getMetricTime().isGreaterOrEqual(oldEndtime)) {
 					nc.setMetricTime(nc.getMetricTime().sub(diff));
 					NotationChord[] ecs = nc.getEntryChord();
@@ -259,7 +261,7 @@ public class PartImporter extends Mappings {
 		NotationVoice v = voices[getVoice(n1)];
 		boolean add = false;
 		for (int i = 0; i < v.size(); i++) {
-			NotationChord nc = (NotationChord) v.get(i);
+			NotationChord nc = v.get(i);
 			if (nc.contains(n1))
 				add = true;
 			if (add) {
@@ -276,7 +278,7 @@ public class PartImporter extends Mappings {
 	private int getVoice(Note n) {
 		for (int i = 0; i < voices.length; i++) {
 			for (int j = 0; j < voices[i].size(); j++) {
-				NotationChord nc = (NotationChord) voices[i].get(j);
+				NotationChord nc = voices[i].get(j);
 				if (nc.contains(n))
 					return i;
 				NotationChord[] ec = nc.getEntryChord();
@@ -396,10 +398,10 @@ public class PartImporter extends Mappings {
 				parentChord = o;
 				int staff = getStaffIndex(voiceNumber);
 				for (int i = 0; i < nc.size(); i++) {
-					Note n = (Note) nc.get(i);
+					Note n = nc.get(i);
 					correctAlteration(n, chordNotes.get(i).getChildren(
 							ACCIDENTAL), staff);
-					notes.add((Note) n);
+					notes.add(n);
 					putNote(n, chordNotes.get(i).getAttribute(NOTE_ID)
 							.getIntValue());
 				}

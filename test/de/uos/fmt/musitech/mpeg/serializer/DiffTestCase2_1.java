@@ -61,7 +61,8 @@ public class DiffTestCase2_1 extends MPEGDiffViewer {
     /**
      * @see de.uos.fmt.musitech.mpeg.serializer.MPEGDiffViewer#createNotationSystem()
      */
-    public NotationSystem createNotationSystem() {
+    @Override
+	public NotationSystem createNotationSystem() {
         TestCase2_1.fillPiece(context.getPiece());
         return system;
     }

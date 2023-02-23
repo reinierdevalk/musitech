@@ -192,6 +192,7 @@ public class Staff extends ScoreContainer {
 	}
 	*/
 
+	@Override
 	int arrange(int pass) {
 		int numPasses = 3;
 		if (pass == 0) {
@@ -252,6 +253,7 @@ public class Staff extends ScoreContainer {
 	}
 	
 	/** Paints this staff onto the given graphics context. */
+	@Override
 	public void paint(Graphics g) {
 		if (isVisible()) {
 			g.setFont(musicFont);
@@ -319,15 +321,18 @@ public class Staff extends ScoreContainer {
 	}
 
    /** Returns the parent class of this staff (it's always SSystem.class) */
+	@Override
 	Class parentClass() {
 		return SSystem.class;
 	}
 
+	@Override
 	public Staff staff() {
 		return this;
 	}
 
 	/** Returns the height of this Staff in pixel units. */
+	@Override
 	public int height() {
 		Clef[] clefs = getClefs();
 		int maxHeight = 0;
@@ -359,6 +364,7 @@ public class Staff extends ScoreContainer {
 	/**
 	 * returns the depth of this staff (line distance * number of auxiliary lines below the staff)
 	 */
+	@Override
 	public int depth() {
 		int high = 0;
 		for (int i = 0; i < numChildren(); i++) {
@@ -383,6 +389,7 @@ public class Staff extends ScoreContainer {
 		return lineDistance * (numLines - 1);
 	}
 
+	@Override
 	public int rwidth() {
 		int res = 0;
 		// 		if (clef != null)
@@ -397,6 +404,7 @@ public class Staff extends ScoreContainer {
 	}
 
 
+	@Override
 	public boolean add(ScoreObject obj) {
 		Measure measure = (Measure) obj;
 		measure.setNumber(numChildren());
@@ -471,10 +479,12 @@ public class Staff extends ScoreContainer {
 		return lsim;
 	}
 
+	@Override
 	public String toString() {
 		return "Staff with " + numLines + " lines\n" + super.toString();
 	}
 	
+	@Override
 	public ScoreObject catchScoreObject(int x, int y, Class objectClass) {
 		ScoreObject so = super.catchScoreObject(x, y, objectClass);
 		if (so != null)
@@ -491,6 +501,7 @@ public class Staff extends ScoreContainer {
 		return null;
 	}
 	
+	@Override
 	public void removeScoreObject(int measure) {
 		Head[] heads = ((Measure)child(measure)).getHeads();
 		for (int i = 0; i < heads.length; i++) {
@@ -509,6 +520,7 @@ public class Staff extends ScoreContainer {
 		this.rhythmStaff = rhythmStaff;
 	}
 	
+	@Override
 	public void setScale(float scale) {
 		super.setScale(scale);
 		lineDistance = (int)(scale * DEFAULT_LINE_DISTANCE);

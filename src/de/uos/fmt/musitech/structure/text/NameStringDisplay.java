@@ -66,7 +66,8 @@ public class NameStringDisplay extends AbstractDisplay {
     /**
      * @see de.uos.fmt.musitech.framework.editor.AbstractDisplay#createGUI()
      */
-    public void createGUI() {
+    @Override
+	public void createGUI() {
         if(super.getEditObj() instanceof Named){
             String name = ((Named)getEditObj()).getName();
             this.label = new JLabel(name);

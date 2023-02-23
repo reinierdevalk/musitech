@@ -82,6 +82,7 @@ public class NoteLengthSection extends AbstractToolbarSection {
 	protected void createItems() {
 		length = new AbstractAction[5];
 		length[0] = new AbstractAction(Messages.getString("NoteLengthSection.Whole"), Icons.getIcon("ganze.png")) { //$NON-NLS-1$ //$NON-NLS-2$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				for (AbstractAction as : length) {
 					as.setEnabled(true);
@@ -92,6 +93,7 @@ public class NoteLengthSection extends AbstractToolbarSection {
 		};
 
 		length[1] = new AbstractAction(Messages.getString("NoteLengthSection.Half"), Icons.getIcon("halbe.png")) { //$NON-NLS-1$ //$NON-NLS-2$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				for (AbstractAction as : length) {
 					as.setEnabled(true);
@@ -102,6 +104,7 @@ public class NoteLengthSection extends AbstractToolbarSection {
 		};
 
 		length[2] = new AbstractAction(Messages.getString("NoteLengthSection.Quarter"), Icons.getIcon("viertel.png")) { //$NON-NLS-1$ //$NON-NLS-2$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				for (AbstractAction as : length) {
 					as.setEnabled(true);
@@ -112,6 +115,7 @@ public class NoteLengthSection extends AbstractToolbarSection {
 		};
 
 		length[3] = new AbstractAction(Messages.getString("NoteLengthSection.Eighth"), Icons.getIcon("achtel.png")) { //$NON-NLS-1$ //$NON-NLS-2$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				for (AbstractAction as : length) {
 					as.setEnabled(true);
@@ -123,6 +127,7 @@ public class NoteLengthSection extends AbstractToolbarSection {
 
 		length[4] = new AbstractAction(Messages.getString("NoteLengthSection.Sixteenth"), Icons //$NON-NLS-1$
 				.getIcon("sechzehntel.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				for (AbstractAction as : length) {
 					as.setEnabled(true);

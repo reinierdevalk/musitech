@@ -76,7 +76,8 @@ public class PropertyNameApplet3 extends JApplet {
      *  
      * @see java.applet.Applet#init()
      */
-    public void init(){
+    @Override
+	public void init(){
         try {
             super.init();
             createGUI();

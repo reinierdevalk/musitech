@@ -54,28 +54,22 @@ import java.awt.FlowLayout;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.Vector;
-
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 import javax.swing.filechooser.FileFilter;
 
 import de.uos.fmt.musitech.data.structure.Note;
-import de.uos.fmt.musitech.score.epec.EpecParser;
 import de.uos.fmt.musitech.score.util.FileUtils;
 import de.uos.fmt.musitech.utility.math.Rational;
 
@@ -98,7 +92,8 @@ public class TestView extends JFrame {
 
     class PlayThread extends Thread {
 
-        public void run() {
+        @Override
+		public void run() {
             while (isPlaying) {
                 scorePanel.getScoreCursor().setToTime(cursorPos);
                 cursorPos = cursorPos.add(tickDistance).mod(3, 1);
@@ -120,14 +115,16 @@ public class TestView extends JFrame {
             this.extension = extension;
         }
 
-        public boolean accept(File f) {
+        @Override
+		public boolean accept(File f) {
             if (f.isDirectory())
                 return true;
             String ext = FileUtils.getExtension(f);
             return ext != null && (ext.equalsIgnoreCase(extension));
         }
 
-        public String getDescription() {
+        @Override
+		public String getDescription() {
             if (extension.equalsIgnoreCase("mid"))
                 return "MIDI files (*.mid)";
             if (extension.equalsIgnoreCase("gin"))
@@ -138,24 +135,27 @@ public class TestView extends JFrame {
 
     public TestView() {
         super("ScoreDisplay");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         openButton.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent ev) {
+            @Override
+			public void actionPerformed(ActionEvent ev) {
                 openFile();
             }
         });
 
         askButton.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent ev) {
+            @Override
+			public void actionPerformed(ActionEvent ev) {
                 scorePanel.askForCode();
             }
         });
 
         playButton.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent ev) {
+            @Override
+			public void actionPerformed(ActionEvent ev) {
                 if (scorePanel.isEmpty())
                     return;
                 boolean play = playButton.getText().equals("Play");
@@ -169,7 +169,8 @@ public class TestView extends JFrame {
 
         colorizeButton.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent ev) {
+            @Override
+			public void actionPerformed(ActionEvent ev) {
                 colorizeNotes();
             }
         });

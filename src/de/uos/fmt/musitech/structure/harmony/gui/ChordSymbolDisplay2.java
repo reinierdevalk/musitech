@@ -581,20 +581,20 @@ public class ChordSymbolDisplay2 extends JPanel implements Display {
         if (cs == null)
             return;
         rootField = createChordSymbolTextfield(createRootSymbol());
-        rootField.setHorizontalAlignment(JTextField.CENTER);
+        rootField.setHorizontalAlignment(SwingConstants.CENTER);
         accidentalField = createChordSymbolTextfield(createAccidentalSymbol());
-        accidentalField.setHorizontalAlignment(JTextField.LEFT);
+        accidentalField.setHorizontalAlignment(SwingConstants.LEFT);
         topField = createChordSymbolTextfield(createTopSymbol());
-        topField.setHorizontalAlignment(JTextField.CENTER);
+        topField.setHorizontalAlignment(SwingConstants.CENTER);
         baseField = createChordSymbolTextfield(createBaseSymbol());
-        baseField.setHorizontalAlignment(JTextField.CENTER);
+        baseField.setHorizontalAlignment(SwingConstants.CENTER);
         String extensions = "";
         if (cs.getExtensions() != null)
             extensions = cs.getExtensions();
         extensionsField = createChordSymbolTextfield(extensions);
-        extensionsField.setHorizontalAlignment(JTextField.LEFT);
+        extensionsField.setHorizontalAlignment(SwingConstants.LEFT);
         modeField = createChordSymbolTextfield(createModeSymbol());
-        modeField.setHorizontalAlignment(JTextField.LEFT);
+        modeField.setHorizontalAlignment(SwingConstants.LEFT);
         String comment = "";
         if (cs.getComment() != null)
             comment = cs.getComment();
@@ -754,7 +754,7 @@ public class ChordSymbolDisplay2 extends JPanel implements Display {
             JFrame frame = new JFrame("Test scaling");
             frame.getContentPane().setLayout(new BorderLayout());
             frame.getContentPane().add(display3);
-            JSlider slider = new JSlider(JSlider.VERTICAL, 1, 100, 50);
+            JSlider slider = new JSlider(SwingConstants.VERTICAL, 1, 100, 50);
             display3.setScale((slider.getValue() * 2.0 / 100.0));
             slider.addChangeListener(new ChangeListener() {
 
@@ -795,7 +795,7 @@ public class ChordSymbolDisplay2 extends JPanel implements Display {
         try {
             csDisplay = (ChordSymbolDisplay2) EditorFactory.createDisplay(symbol5, null);
             final ScaledComponent decorator = new ScaledComponent(csDisplay);
-            JSlider slider = new JSlider(JSlider.VERTICAL, 1, 100, 50);
+            JSlider slider = new JSlider(SwingConstants.VERTICAL, 1, 100, 50);
             slider.addChangeListener(new ChangeListener() {
 
                 @Override

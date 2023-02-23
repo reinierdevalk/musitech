@@ -67,7 +67,6 @@ import javax.swing.tree.TreeSelectionModel;
 import de.uos.fmt.musitech.data.MObject;
 import de.uos.fmt.musitech.data.Named;
 import de.uos.fmt.musitech.data.audio.AudioFileObject;
-import de.uos.fmt.musitech.data.audio.AudioObject;
 import de.uos.fmt.musitech.data.structure.MusicCollection;
 import de.uos.fmt.musitech.data.structure.Note;
 import de.uos.fmt.musitech.data.structure.Piece;
@@ -582,10 +581,11 @@ public class MusicTreeView extends JPanel implements javax.swing.event.TreeSelec
      * @param e the event that characterizes the change.
      * @see javax.swing.event.TreeSelectionListener#valueChanged(javax.swing.event.TreeSelectionEvent)
      */
-    public void valueChanged(javax.swing.event.TreeSelectionEvent e) {
+    @Override
+	public void valueChanged(javax.swing.event.TreeSelectionEvent e) {
 
         TreeSelectionModel treeModel = (TreeSelectionModel) e.getSource();
-        TreePath path = (TreePath) treeModel.getSelectionPath();
+        TreePath path = treeModel.getSelectionPath();
         if (path == null)
             return;
         DefaultMutableTreeNode node = (DefaultMutableTreeNode) path.getLastPathComponent();
@@ -613,7 +613,7 @@ public class MusicTreeView extends JPanel implements javax.swing.event.TreeSelec
                     if (containerPool!=null){
                         Collection contents = containerPool.getContentsRecursiveList(null);
                         for (Iterator iter = contents.iterator(); iter.hasNext();) {
-                            Object element = (Object) iter.next();
+                            Object element = iter.next();
                             if (element instanceof Note){
                                 container.add(element);
                             }
@@ -693,7 +693,8 @@ public class MusicTreeView extends JPanel implements javax.swing.event.TreeSelec
 
         frame.addWindowListener(new WindowAdapter() {
 
-            public void windowClosing(WindowEvent e) {
+            @Override
+			public void windowClosing(WindowEvent e) {
                 System.exit(0);
             }
         });

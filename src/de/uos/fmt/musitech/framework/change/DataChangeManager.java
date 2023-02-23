@@ -56,8 +56,6 @@ import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-import java.util.Vector;
-
 import de.uos.fmt.musitech.data.structure.container.Container;
 import de.uos.fmt.musitech.framework.editor.Editor;
 
@@ -96,7 +94,8 @@ public class DataChangeManager implements IDataChangeManager {
     /**
      * @see java.lang.Object#toString()
      */
-    public String toString() {
+    @Override
+	public String toString() {
         StringBuffer result = new StringBuffer("");
 
         for (Iterator it = data2ViewSetMap.keySet().iterator(); it.hasNext();) {
@@ -113,7 +112,8 @@ public class DataChangeManager implements IDataChangeManager {
      * @param view The view expanding its interest.
      * @param it The interesting Objects.
      */
-    public synchronized void interestExpandMulti(DataChangeListener view, Iterator it) {
+    @Override
+	public synchronized void interestExpandMulti(DataChangeListener view, Iterator it) {
         // für jedes Objekt der Collection:
         // - schon vorhanden?
         //   ja: view mit in das HashSet hängen, ggf. neuen erzeugen
@@ -150,7 +150,8 @@ public class DataChangeManager implements IDataChangeManager {
      * @see de.uos.fmt.musitech.framework.change.IDataChangeManager#interestExpandElements(de.uos.fmt.musitech.framework.change.DataChangeListener,
      *      java.util.Collection)
      */
-    public synchronized void interestExpandElements(DataChangeListener view, Collection newData) {
+    @Override
+	public synchronized void interestExpandElements(DataChangeListener view, Collection newData) {
         Iterator it = newData.iterator();
         interestExpandMulti(view, it);
     }
@@ -159,7 +160,8 @@ public class DataChangeManager implements IDataChangeManager {
      * @see de.uos.fmt.musitech.framework.change.IDataChangeManager#interestExpandElements(de.uos.fmt.musitech.framework.change.DataChangeListener,
      *      de.uos.fmt.musitech.data.structure.container.Container)
      */
-    public synchronized void interestExpandElements(DataChangeListener view, Container newData) {
+    @Override
+	public synchronized void interestExpandElements(DataChangeListener view, Container newData) {
         Iterator it = newData.iterator();
         interestExpandMulti(view, it);
     }
@@ -168,7 +170,8 @@ public class DataChangeManager implements IDataChangeManager {
      * @see de.uos.fmt.musitech.framework.change.IDataChangeManager#interestReduceElements(de.uos.fmt.musitech.framework.change.DataChangeListener,
      *      java.util.Collection)
      */
-    public synchronized void interestReduceElements(DataChangeListener view, Collection oldData) {
+    @Override
+	public synchronized void interestReduceElements(DataChangeListener view, Collection oldData) {
         // für jedes Objekt der Collection:
         // falls schon vorhanden:
         //    view aus dem HashSet nehmen, ggf. neuen erzeugen
@@ -197,7 +200,8 @@ public class DataChangeManager implements IDataChangeManager {
      * @see de.uos.fmt.musitech.framework.change.IDataChangeManager#interestReduceObject(de.uos.fmt.musitech.framework.change.DataChangeListener,
      *      java.util.Collection)
      */
-    public void interestReduceObject(DataChangeListener view, Object dataObject) {
+    @Override
+	public void interestReduceObject(DataChangeListener view, Object dataObject) {
         if (data2ViewSetMap.containsKey(dataObject)) {
             Object value = data2ViewSetMap.get(dataObject);
             if (value instanceof Collection) {
@@ -218,7 +222,8 @@ public class DataChangeManager implements IDataChangeManager {
      * @param changedObjects Collection of changed objects.
      * @param changeEvent Details about the changes.
      */
-    public synchronized void changed(Collection changedObjects, DataChangeEvent changeEvent) {
+    @Override
+	public synchronized void changed(Collection changedObjects, DataChangeEvent changeEvent) {
         // Markierungen an die Datenobjekte setzen (changed = true...)
 
         // gather all interested views.
@@ -274,7 +279,8 @@ public class DataChangeManager implements IDataChangeManager {
      * 
      * @param listener DataChangeListener to be removed from the data2ViewSetMap
      */
-    public void removeListener(DataChangeListener listener) {
+    @Override
+	public void removeListener(DataChangeListener listener) {
         for (Iterator iter = data2ViewSetMap.entrySet().iterator(); iter.hasNext();) {
             try {
                 Map.Entry entry = (Map.Entry)iter.next();
@@ -302,7 +308,8 @@ public class DataChangeManager implements IDataChangeManager {
      * @return An unmodifiable copy of the map.
      */
     //for use in testing (cf. class TestEditorsWithDataChangeEvents)
-    public Map getTable() {
+    @Override
+	public Map getTable() {
         return Collections.unmodifiableMap(data2ViewSetMap);
     }
 
@@ -316,7 +323,8 @@ public class DataChangeManager implements IDataChangeManager {
      * @return true if the data2ViewSetMap contains the specified
      *         <code>editor</code>
      */
-    public boolean tableContainsEditor(Editor editor) {
+    @Override
+	public boolean tableContainsEditor(Editor editor) {
         boolean editorContained = false;
         Set keys = data2ViewSetMap.keySet();
         for (Iterator iter = keys.iterator(); iter.hasNext();) {
@@ -334,7 +342,8 @@ public class DataChangeManager implements IDataChangeManager {
      * for clearing the <code>data2ViewSetMap</code> at the end of a test
      * method to avoid interferences between test methods.
      */
-    public void clearTable() {
+    @Override
+	public void clearTable() {
         if (data2ViewSetMap != null && !data2ViewSetMap.isEmpty())
             data2ViewSetMap.clear();
     }
@@ -352,7 +361,8 @@ public class DataChangeManager implements IDataChangeManager {
      * @see de.uos.fmt.musitech.framework.change.IDataChangeManager#interestExpandObject(de.uos.fmt.musitech.framework.change.DataChangeListener,
      *      java.lang.Object)
      */
-    public void interestExpandObject(DataChangeListener view, Object dataObject) {
+    @Override
+	public void interestExpandObject(DataChangeListener view, Object dataObject) {
         if (data2ViewSetMap.containsKey(dataObject)) {
             Object value = data2ViewSetMap.get(dataObject);
             try {

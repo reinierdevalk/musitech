@@ -90,6 +90,7 @@ abstract public class AbstractComplexDisplay extends AbstractDisplay {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#init(java.lang.Object, de.uos.fmt.musitech.framework.editor.EditingProfile, de.uos.fmt.musitech.framework.editor.Display)
 	 */
+	@Override
 	public void init(Object editObj, EditingProfile profile, Display root) {
 		//set arguments
 	    this.editObj = editObj;
@@ -175,6 +176,7 @@ abstract public class AbstractComplexDisplay extends AbstractDisplay {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#destroy()
 	 */
+	@Override
 	public void destroy(){
 	    super.destroy();
 	    if (children!=null && children.length>0)

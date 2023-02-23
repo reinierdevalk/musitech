@@ -174,7 +174,7 @@ public class ChordSymbolSequence extends TimedContainer<ChordSymbol> {
 //            return (ChordSymbol) nextSymbol;
 //        return null;
         for (int i = 0; i < size(); i++) {
-            ChordSymbol symbol = (ChordSymbol)get(i);
+            ChordSymbol symbol = get(i);
             Rational metricTime = symbol.getMetricTime();
             if (metricTime!=null){
                 MetricalTimeLine mtl = getContext().getPiece().getMetricalTimeLine();

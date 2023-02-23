@@ -87,6 +87,7 @@ class Accidental extends ScoreObject {
 		this.type = type;
 	}
 
+	@Override
 	public boolean equals (Object o) {
 		if (!(o instanceof Accidental)) 
 			return false;
@@ -111,6 +112,7 @@ class Accidental extends ScoreObject {
 		return glyphs[type + 2];
 	}
 
+	@Override
 	public void paint(Graphics g) {
 		if (isVisible()) {
 			setScaledFont(g);
@@ -127,10 +129,12 @@ class Accidental extends ScoreObject {
 		return shiftAmount;
 	}
 
+	@Override
 	Class parentClass() {
 		return Pitch.class;
 	}
 
+	@Override
 	public String toString() {
 		String res = "";
 		for (int i = Math.abs(type); i > 0; i--)
@@ -138,16 +142,19 @@ class Accidental extends ScoreObject {
 		return res;
 	}
 
+	@Override
 	public int lwidth() {
 		int ld = staff().getLineDistance();
 		int gap = ld / 3; // gap between accidental and head
 		return MusicGlyph.width(ld, getGlyph()) + gap;
 	}
 
+	@Override
 	public int depth() {
 		return MusicGlyph.depth(staff().getLineDistance(), getGlyph());
 	}
 	
+	@Override
 	public int height() {
 		return MusicGlyph.height(staff().getLineDistance(), getGlyph());
 	}
@@ -164,6 +171,7 @@ class Accidental extends ScoreObject {
 			setVisible(true);
 	}
 
+	@Override
 	int arrange(int pass) {
 		if (pass == 0) {
 			computeVisibility();

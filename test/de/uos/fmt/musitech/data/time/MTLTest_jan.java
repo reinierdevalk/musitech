@@ -65,7 +65,8 @@ public class MTLTest_jan extends TestCase{
 		/** 
      * @see junit.framework.TestCase#setUp()
      */
-    protected void setUp() throws Exception {
+    @Override
+	protected void setUp() throws Exception {
         MTL = new MetricalTimeLine();
 		MTL.setTempo(new Rational(0, 1), 120, 4);
 		addMTS();

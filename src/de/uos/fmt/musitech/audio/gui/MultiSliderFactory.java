@@ -95,12 +95,14 @@ public abstract class MultiSliderFactory {
 			this.sliderPrototype = sliderPrototype;
 		}
 		
+		@Override
 		public Class getMultiSliderClass(){// MultiSliderClass wird ermittelt
 			if (sliderPrototype instanceof JSlider)
 				return JMultiSlider.class;
 			return null; 
 		}	
 		
+		@Override
 		protected SliderPrototype newClonedSlider(){
 			try {
 				return this.sliderPrototype.newInstance();

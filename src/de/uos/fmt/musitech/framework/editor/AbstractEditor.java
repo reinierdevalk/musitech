@@ -89,10 +89,12 @@ public abstract class AbstractEditor extends JPanel implements Editor {
 	 */
 	protected FocusListener focusListener = new FocusListener() {
 
+		@Override
 		public void focusGained(FocusEvent e) {
 			AbstractEditor.this.focusReceived();
 		}
 
+		@Override
 		public void focusLost(FocusEvent e) {
 		}
 	};
@@ -192,6 +194,7 @@ public abstract class AbstractEditor extends JPanel implements Editor {
 	 * the changes done by the editor should be applied to the
 	 * <code>editObj</code>.
 	 */
+	@Override
 	abstract public void applyChanges();
 
 	/**
@@ -202,6 +205,7 @@ public abstract class AbstractEditor extends JPanel implements Editor {
 	 * the last input was invalid so you want to prevent the editor to be closed
 	 * by a "OK" button.
 	 */
+	@Override
 	public boolean inputIsValid() {
 		return true;
 	}
@@ -213,6 +217,7 @@ public abstract class AbstractEditor extends JPanel implements Editor {
 	 * 
 	 * @return
 	 */
+	@Override
 	public Object getEditObj() {
 		return editObj;
 	}
@@ -250,6 +255,7 @@ public abstract class AbstractEditor extends JPanel implements Editor {
 	 * 
 	 * @return Editing Profile
 	 */
+	@Override
 	public EditingProfile getEditingProfile() {
 		return profile;
 	}
@@ -278,6 +284,7 @@ public abstract class AbstractEditor extends JPanel implements Editor {
 	 * 
 	 * @return boolean
 	 */
+	@Override
 	public boolean externalChanges() {
 		return dataChanged;
 	}
@@ -296,6 +303,7 @@ public abstract class AbstractEditor extends JPanel implements Editor {
 	 * 
 	 * @return AbstractEditor <code>rootEditor</code> of this editor
 	 */
+	@Override
 	public Display getRootDisplay() {
 		return rootDisplay;
 	}
@@ -305,6 +313,7 @@ public abstract class AbstractEditor extends JPanel implements Editor {
 	 * 
 	 * @param promptUpdate boolean
 	 */
+	@Override
 	public void setPromptUpdate(boolean promptUpdate) {
 		this.promptUpdate = promptUpdate;
 	}
@@ -323,6 +332,7 @@ public abstract class AbstractEditor extends JPanel implements Editor {
 	 * @param dirty boolean to be set as <code>dirty</code> of this editor
 	 * @see de.uos.fmt.musitech.framework.editor.Editor#setDirty(boolean)
 	 */
+	@Override
 	public void setDirty(boolean dirty) {
 		this.dirty = dirty;
 		if (rootDisplay != this && rootDisplay instanceof Editor) // when the
@@ -390,6 +400,7 @@ public abstract class AbstractEditor extends JPanel implements Editor {
 	/**
 	 * Updates the editor.
 	 */
+	@Override
 	abstract public void updateDisplay();
 
 	/**
@@ -438,6 +449,7 @@ public abstract class AbstractEditor extends JPanel implements Editor {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.change.DataChangeListener#dataChanged(de.uos.fmt.musitech.datamanager.DataChangeEvent)
 	 */
+	@Override
 	public void dataChanged(DataChangeEvent e) {
 		Object eventSource = null;
 		try {
@@ -493,6 +505,7 @@ public abstract class AbstractEditor extends JPanel implements Editor {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Editor#focusReceived()
 	 */
+	@Override
 	public void focusReceived() {
 		if (rootDisplay != this)
 			rootDisplay.focusReceived();
@@ -521,6 +534,7 @@ public abstract class AbstractEditor extends JPanel implements Editor {
 		if (this instanceof Editor && (dirty || promptUpdate)) {
 			SwingUtilities.invokeLater(new Thread() {
 
+				@Override
 				public void run() {
 					showChangedObjectsDialog();
 				}
@@ -528,6 +542,7 @@ public abstract class AbstractEditor extends JPanel implements Editor {
 		} else {
 			SwingUtilities.invokeLater(new Thread() {
 
+				@Override
 				public void run() {
 					updateDisplay();
 				}
@@ -540,6 +555,7 @@ public abstract class AbstractEditor extends JPanel implements Editor {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Editor#destroy()
 	 */
+	@Override
 	public void destroy() {
 		DataChangeManager.getInstance().removeListener(this);
 	}
@@ -614,7 +630,7 @@ public abstract class AbstractEditor extends JPanel implements Editor {
 		if (index != -1)
 			type = type.substring(index + 1);
 		// ask for value
-		String input = ((String) JOptionPane.showInputDialog(this,
+		String input = (JOptionPane.showInputDialog(this,
 			"Please enter a new value (of type " + type + ")."));
 		/*String input = (String) JOptionPane.showInputDialog(
             this,
@@ -773,6 +789,7 @@ public abstract class AbstractEditor extends JPanel implements Editor {
 			this.dialog = dialog;
 		}
 
+		@Override
 		public void actionPerformed(ActionEvent ae) {
 			String command = ae.getActionCommand();
 			if (command.equals("cancel")) {
@@ -872,6 +889,7 @@ public abstract class AbstractEditor extends JPanel implements Editor {
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.Display#asComponent()
 	 */
+	@Override
 	public Component asComponent() {
 		return this;
 	}

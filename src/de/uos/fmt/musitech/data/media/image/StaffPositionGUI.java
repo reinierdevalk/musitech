@@ -120,7 +120,8 @@ public class StaffPositionGUI extends JComponent implements MouseEditable{
     /**
      * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
      */
-    protected void paintComponent(Graphics g) {
+    @Override
+	protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         
         paintTime(g);
@@ -160,7 +161,8 @@ public class StaffPositionGUI extends JComponent implements MouseEditable{
         
     }
 
-    public void setCursor(int mousePosition) {
+    @Override
+	public void setCursor(int mousePosition) {
 
         if (changeCursor) {
             switch (mousePosition) {
@@ -240,7 +242,8 @@ public class StaffPositionGUI extends JComponent implements MouseEditable{
      * @see de.uos.fmt.musitech.framework.editor.MouseEditable#mouseAction(int,
      *      int, int)
      */
-    public void mouseAction(int type, int dx, int dy) {
+    @Override
+	public void mouseAction(int type, int dx, int dy) {
         System.out.println(MouseEditableAdapter.mousePositionToString(type)
                 + " x: " + dx + " y: " + dy);
         dx = (int) (dx / zoomFactor);
@@ -308,7 +311,8 @@ public class StaffPositionGUI extends JComponent implements MouseEditable{
     /** 
      * @see de.uos.fmt.musitech.framework.editor.MouseEditable#selected(javax.swing.JComponent)
      */
-    public void selected() {
+    @Override
+	public void selected() {
         
     }
 

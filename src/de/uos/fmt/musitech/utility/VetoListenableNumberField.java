@@ -55,12 +55,15 @@ public class VetoListenableNumberField extends VetoListenableJTextField {
 	IvjEventHandler ivjEventHandler = new IvjEventHandler();
 	boolean notifying = false;
 	double number = 0.0;	class IvjEventHandler implements java.awt.event.ActionListener, java.awt.event.FocusListener {
+		@Override
 		public void actionPerformed(java.awt.event.ActionEvent e) {
 			if (e.getSource() == VetoListenableNumberField.this)
 				connEtoC1(e);
 		};
+		@Override
 		public void focusGained(java.awt.event.FocusEvent e) {
 		};
+		@Override
 		public void focusLost(java.awt.event.FocusEvent e) {
 			if (e.getSource() == VetoListenableNumberField.this)
 				connEtoC2(e);
@@ -187,6 +190,7 @@ public class VetoListenableNumberField extends VetoListenableJTextField {
 			frame.setContentPane(aVetoListenableJTextField);
 			frame.setSize(aVetoListenableJTextField.getSize());
 			frame.addWindowListener(new java.awt.event.WindowAdapter() {
+				@Override
 				public void windowClosing(java.awt.event.WindowEvent e) {
 					System.exit(0);
 				};
@@ -201,6 +205,7 @@ public class VetoListenableNumberField extends VetoListenableJTextField {
 	/**
 	 * Notifies a listeners of a vetoable change.
 	 */
+	@Override
 	protected void notifyVetoableChange() {
 		synchronized (this) {
 			if (!notifying)

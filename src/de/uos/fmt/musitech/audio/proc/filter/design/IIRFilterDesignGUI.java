@@ -68,6 +68,7 @@ import java.awt.event.TextEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 
 public class IIRFilterDesignGUI extends JPanel {
 
@@ -556,7 +557,7 @@ public class IIRFilterDesignGUI extends JPanel {
 		JFrame jFrame = new JFrame("Filter Design");
 		IIRFilterDesignGUI filterDesign = new IIRFilterDesignGUI();
 		jFrame.getContentPane().add(filterDesign);
-		jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		jFrame.pack();
 		jFrame.show();		
 	} // end main
@@ -605,6 +606,7 @@ class IIRFilterDesign_cbChebyshev_itemAdapter implements java.awt.event.ItemList
 		this.adaptee = adaptee;
 	}
 
+	@Override
 	public void itemStateChanged(ItemEvent e) {
 		adaptee.cbChebyshev_itemStateChanged();
 	}
@@ -617,6 +619,7 @@ class IIRFilterDesign_cbButterworth_itemAdapter implements java.awt.event.ItemLi
 		this.adaptee = adaptee;
 	}
 
+	@Override
 	public void itemStateChanged(ItemEvent e) {
 		adaptee.cbButterworth_itemStateChanged();
 	}
@@ -629,6 +632,7 @@ class IIRFilterDesign_btnDesign_actionAdapter implements java.awt.event.ActionLi
 		this.adaptee = adaptee;
 	}
 
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		adaptee.btnDesign_actionPerformed(e);
 	}
@@ -641,6 +645,7 @@ class IIRFilterDesign_btnResponse_actionAdapter implements java.awt.event.Action
 		this.adaptee = adaptee;
 	}
 
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		adaptee.btnResponse_actionPerformed(e);
 	}
@@ -653,6 +658,7 @@ class IIRFilterDesign_cbLowPass_itemAdapter implements java.awt.event.ItemListen
 		this.adaptee = adaptee;
 	}
 
+	@Override
 	public void itemStateChanged(ItemEvent e) {
 		adaptee.cbLowPass_itemStateChanged(e);
 	}
@@ -665,6 +671,7 @@ class IIRFilterDesign_cbBandPass_itemAdapter implements java.awt.event.ItemListe
 		this.adaptee = adaptee;
 	}
 
+	@Override
 	public void itemStateChanged(ItemEvent e) {
 		adaptee.cbBandPass_itemStateChanged(e);
 	}
@@ -677,6 +684,7 @@ class IIRFilterDesign_cbHighPass_itemAdapter implements java.awt.event.ItemListe
 		this.adaptee = adaptee;
 	}
 
+	@Override
 	public void itemStateChanged(ItemEvent e) {
 		adaptee.cbHighPass_itemStateChanged(e);
 	}
@@ -689,6 +697,7 @@ class IIRFilterDesign_chMinGain_itemAdapter implements java.awt.event.ItemListen
 		this.adaptee = adaptee;
 	}
 
+	@Override
 	public void itemStateChanged(ItemEvent e) {
 		adaptee.chMinGain_itemStateChanged(e);
 	}
@@ -701,6 +710,7 @@ class IIRFilterDesign_tfFreq1_textAdapter implements java.awt.event.TextListener
 		this.adaptee = adaptee;
 	}
 
+	@Override
 	public void textValueChanged(TextEvent e) {
 		adaptee.tfFreq1_textValueChanged(e);
 	}
@@ -713,6 +723,7 @@ class IIRFilterDesign_tfFreq2_textAdapter implements java.awt.event.TextListener
 		this.adaptee = adaptee;
 	}
 
+	@Override
 	public void textValueChanged(TextEvent e) {
 		adaptee.tfFreq2_textValueChanged(e);
 	}
@@ -725,6 +736,7 @@ class IIRFilterDesign_tfOrder_textAdapter implements java.awt.event.TextListener
 		this.adaptee = adaptee;
 	}
 
+	@Override
 	public void textValueChanged(TextEvent e) {
 		adaptee.tfOrder_textValueChanged(e);
 	}
@@ -737,6 +749,7 @@ class IIRFilterDesign_tfRipple_textAdapter implements java.awt.event.TextListene
 		this.adaptee = adaptee;
 	}
 
+	@Override
 	public void textValueChanged(TextEvent e) {
 		adaptee.tfRipple_textValueChanged(e);
 	}
@@ -749,6 +762,7 @@ class IIRFilterDesign_btnPoleZero_actionAdapter implements java.awt.event.Action
 		this.adaptee = adaptee;
 	}
 
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		adaptee.btnPoleZero_actionPerformed(e);
 	}
@@ -761,6 +775,7 @@ class IIRFilterDesign_btnCoeffs_actionAdapter implements java.awt.event.ActionLi
 		this.adaptee = adaptee;
 	}
 
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		adaptee.btnCoeffs_actionPerformed(e);
 	}

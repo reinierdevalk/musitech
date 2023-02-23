@@ -82,6 +82,7 @@ public class MetaDataProfile extends ArrayList<MetaDataProfileItem> implements N
 	 * @see de.uos.fmt.musitech.data.Named#getName()
 	 * @hibernate.property
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -89,6 +90,7 @@ public class MetaDataProfile extends ArrayList<MetaDataProfileItem> implements N
 	/** 
 	 * @see de.uos.fmt.musitech.data.Named#setName(java.lang.String)
 	 */
+	@Override
 	public void setName(String name) {
 		this.name = name;
 	}

@@ -90,7 +90,7 @@ import de.uos.fmt.musitech.utility.math.Rational;
 public class TestCase2_1 {
 	
 	private static TablatureNote addTablature(NotationChord chord, int instrStr, int fret, Rational pullUp, Note pullUpTarget) {
-		TablatureNote tn = addTablature((Note)chord.get(0), instrStr, fret, pullUp, pullUpTarget);
+		TablatureNote tn = addTablature(chord.get(0), instrStr, fret, pullUp, pullUpTarget);
 		chord.addRenderingHint("tabulatur note", tn);
 		return tn;
 	}
@@ -146,25 +146,25 @@ public class TestCase2_1 {
 		TupletContainer tc1 = new TupletContainer();
 		tc1.setArity((byte)3);
 		tc1.setMetricDuration(new Rational(1, 8));
-		tc1.add((Note)c4.get(0)); 
-		tc1.add((Note)c5.get(0)); 
-		tc1.add((Note)c6.get(0));
+		tc1.add(c4.get(0)); 
+		tc1.add(c5.get(0)); 
+		tc1.add(c6.get(0));
 		voice.addTuplet(tc1);
 		
-		((Note)c6.get(0)).getScoreNote().setTiedNote(((Note)c7.get(0)).getScoreNote());
+		c6.get(0).getScoreNote().setTiedNote(c7.get(0).getScoreNote());
 		
 		NotationChord c8 = newChord(new ScorePitch('c', 3, 0).sharp(), new Rational(96, 24), new Rational(1, 4));
 		voice.add(c8);
 		
-		((Note)c7.get(0)).getScoreNote().setTiedNote(((Note)c8.get(0)).getScoreNote());
+		c7.get(0).getScoreNote().setTiedNote(c8.get(0).getScoreNote());
 		
 		NotationChord c9 = newChord(new ScorePitch('c', 3, 0).sharp(), new Rational(102, 24), new Rational(1, 16));
 		
 		voice.add(c9);
-		((Note)c8.get(0)).getScoreNote().setTiedNote(((Note)c9.get(0)).getScoreNote());
+		c8.get(0).getScoreNote().setTiedNote(c9.get(0).getScoreNote());
 
 		TablatureNote tn2 = addTablature(c6, 1, 19, new Rational(1, 1), new Note(new ScoreNote(new ScorePitch('b', 2, 0), new Rational(1, 4)), null));
-		tn2.setPullDownTarget((Note)c9.get(0));
+		tn2.setPullDownTarget(c9.get(0));
 		tn2.setLongPullDown(true);
 		
 		NotationChord c10 = newChord(new ScorePitch('d', 3, 0), new Rational(69, 16), new Rational(1, 16));
@@ -182,7 +182,7 @@ public class TestCase2_1 {
 		addTablature(c13, 1, 19, null, null).setParanthised(true);
 
 		TablatureNote tn = addTablature(c11, 1, 19, new Rational(1, 1), new Note(new ScoreNote(new ScorePitch('b', 2, 0), new Rational(1, 4)), null));
-		tn.setPullDownTarget((Note)c13.get(0));
+		tn.setPullDownTarget(c13.get(0));
 		tn.setLongPullDown(true);
 		tn.setPullDownShift(1);
 		
@@ -190,14 +190,14 @@ public class TestCase2_1 {
 		voice.add(c14);
 		addTablature(c14, 1, 17, null, null);
 		
-		((Note)c11.get(0)).getScoreNote().setTiedNote(((Note)c12.get(0)).getScoreNote());
+		c11.get(0).getScoreNote().setTiedNote(c12.get(0).getScoreNote());
 
 		TupletContainer tc2 = new TupletContainer();
 		tc2.setArity((byte)3);
 		tc2.setMetricDuration(new Rational(1, 8));
-		tc2.add((Note)c12.get(0)); 
-		tc2.add((Note)c13.get(0)); 
-		tc2.add((Note)c14.get(0));
+		tc2.add(c12.get(0)); 
+		tc2.add(c13.get(0)); 
+		tc2.add(c14.get(0));
 		voice.addTuplet(tc2);
 
 		NotationChord c15 = newChord(new ScorePitch('b', 2, 0), new Rational(114, 24), new Rational(3, 8));
@@ -227,7 +227,7 @@ public class TestCase2_1 {
 		chordSymbol3.setMode(Mode.MODE_SUS);
 //		piece.getHarmonyTrack().add(chordSymbol3);
 
-		MetricAttachable chordAttach3 = new MetricAttachable((Note)c8.get(0), chordSymbol3);
+		MetricAttachable chordAttach3 = new MetricAttachable(c8.get(0), chordSymbol3);
 		chordAttach3.setAlignment(MetricAttachable.NORTH);
 		chordAttach3.setDistance(1);
 		staff.addAttachable(chordAttach3);
@@ -235,9 +235,9 @@ public class TestCase2_1 {
 		TupletContainer tc3 = new TupletContainer();
 		tc3.setArity((byte)3);
 		tc3.setMetricDuration(new Rational(1, 8));
-		tc3.add((Note)c19.get(0)); 
-		tc3.add((Note)c20.get(0)); 
-		tc3.add((Note)c21.get(0));
+		tc3.add(c19.get(0)); 
+		tc3.add(c20.get(0)); 
+		tc3.add(c21.get(0));
 		voice.addTuplet(tc3);
 		
 		BeamContainer bc1 = new BeamContainer();
@@ -282,7 +282,7 @@ public class TestCase2_1 {
 		text5.setRelativePosition(MetricAttachable.SOUTH);
 		text5.setDistance(2);
 		text5.setAlignment(MetricAttachable.CENTER);
-		text5.setAnker((Note)c6.get(0));
+		text5.setAnker(c6.get(0));
 		staff.addAttachable(text5);
 		
 		//system.addRenderingHint("barline", "none");
@@ -349,55 +349,55 @@ public class TestCase2_1 {
 		nl.add(new ScorePitch('c', 3, 0).sharp(), new Rational(93, 24), new Rational(1, 8));
 		*/
 		
-		addTablature((Note)nl.get(0), 2, 15, new Rational(1, 1), new Note(new ScoreNote(new ScorePitch('d', 2, 0), new Rational(1, 4)), null));
-		addTablature((Note)nl.get(1), 2, 15, null, null);
-		addTablature((Note)nl.get(2), 2, 14, null, null);
-		addTablature((Note)nl.get(3), 3, 16, null, null);
-		addTablature((Note)nl.get(4), 2, 14, null, null);
+		addTablature(nl.get(0), 2, 15, new Rational(1, 1), new Note(new ScoreNote(new ScorePitch('d', 2, 0), new Rational(1, 4)), null));
+		addTablature(nl.get(1), 2, 15, null, null);
+		addTablature(nl.get(2), 2, 14, null, null);
+		addTablature(nl.get(3), 3, 16, null, null);
+		addTablature(nl.get(4), 2, 14, null, null);
 		
 		
-		addTablature((Note)nl.get(6), 2, 14, new Rational(1, 2), new Note(new ScoreNote(new ScorePitch('c', 2, 0).sharp(), new Rational(1, 4)), null))
+		addTablature(nl.get(6), 2, 14, new Rational(1, 2), new Note(new ScoreNote(new ScorePitch('c', 2, 0).sharp(), new Rational(1, 4)), null))
 			//.setPullDownTarget((Note)nl.get(7));
 			.setPullDownTargetInt(1);
 
 		
-		addTablature((Note)nl.get(7), 2, 14, null, null).setParanthised(true);
-		addTablature((Note)nl.get(8), 2, 12, null, null);
-		addTablature((Note)nl.get(9), 2, 14, null, null);
-		addTablature((Note)nl.get(10), 2, 15, null, null);
-		addTablature((Note)nl.get(11), 2, 14, null, null);
+		addTablature(nl.get(7), 2, 14, null, null).setParanthised(true);
+		addTablature(nl.get(8), 2, 12, null, null);
+		addTablature(nl.get(9), 2, 14, null, null);
+		addTablature(nl.get(10), 2, 15, null, null);
+		addTablature(nl.get(11), 2, 14, null, null);
 		
-		addTablature((Note)nl.get(12), 2, 12, null, null);
-		addTablature((Note)nl.get(13), 2, 14, null, null);
-		addTablature((Note)nl.get(14), 2, 15, null, null);
-		addTablature((Note)nl.get(15), 2, 14, null, null);
-		addTablature((Note)nl.get(16), 2, 12, null, null);
-		addTablature((Note)nl.get(17), 2, 14, null, null);
-		addTablature((Note)nl.get(18), 2, 15, null, null);
-		addTablature((Note)nl.get(19), 2, 12, null, null);
+		addTablature(nl.get(12), 2, 12, null, null);
+		addTablature(nl.get(13), 2, 14, null, null);
+		addTablature(nl.get(14), 2, 15, null, null);
+		addTablature(nl.get(15), 2, 14, null, null);
+		addTablature(nl.get(16), 2, 12, null, null);
+		addTablature(nl.get(17), 2, 14, null, null);
+		addTablature(nl.get(18), 2, 15, null, null);
+		addTablature(nl.get(19), 2, 12, null, null);
 		
-		addTablature((Note)nl.get(20), 2, 14, null, null);
-		addTablature((Note)nl.get(21), 2, 15, null, null);
-		addTablature((Note)nl.get(22), 2, 17, null, null);
-		addTablature((Note)nl.get(23), 2, 14, null, null);
-		addTablature((Note)nl.get(24), 2, 15, null, null);
-		addTablature((Note)nl.get(25), 2, 17, null, null);
-		addTablature((Note)nl.get(26), 2, 15, null, null);
-		addTablature((Note)nl.get(27), 2, 14, null, null);
-		addTablature((Note)nl.get(28), 2, 14, null, null);
-		addTablature((Note)nl.get(29), 2, 15, null, null);
-		addTablature((Note)nl.get(30), 2, 17, null, null);
-		addTablature((Note)nl.get(31), 3, 16, new Rational(1, 1), new Note(new ScoreNote(new ScorePitch('d', 2, 0), new Rational(1, 4)), null));
-		addTablature((Note)nl.get(32), 2, 17, null, null);
+		addTablature(nl.get(20), 2, 14, null, null);
+		addTablature(nl.get(21), 2, 15, null, null);
+		addTablature(nl.get(22), 2, 17, null, null);
+		addTablature(nl.get(23), 2, 14, null, null);
+		addTablature(nl.get(24), 2, 15, null, null);
+		addTablature(nl.get(25), 2, 17, null, null);
+		addTablature(nl.get(26), 2, 15, null, null);
+		addTablature(nl.get(27), 2, 14, null, null);
+		addTablature(nl.get(28), 2, 14, null, null);
+		addTablature(nl.get(29), 2, 15, null, null);
+		addTablature(nl.get(30), 2, 17, null, null);
+		addTablature(nl.get(31), 3, 16, new Rational(1, 1), new Note(new ScoreNote(new ScorePitch('d', 2, 0), new Rational(1, 4)), null));
+		addTablature(nl.get(32), 2, 17, null, null);
 		
-		addTablature((Note)nl.get(33), 3, 14, null, null);
-		addTablature((Note)nl.get(34), 3, 16, null, null);
-		addTablature((Note)nl.get(35), 5, 17, null, null);
-		addTablature((Note)nl.get(36), 4, 16, null, null);
-		addTablature((Note)nl.get(37), 4, 19, null, null);
-		addTablature((Note)nl.get(38), 3, 16, null, null);
-		addTablature((Note)nl.get(39), 3, 18, null, null);
-		addTablature((Note)nl.get(40), 3, 19, null, null);
+		addTablature(nl.get(33), 3, 14, null, null);
+		addTablature(nl.get(34), 3, 16, null, null);
+		addTablature(nl.get(35), 5, 17, null, null);
+		addTablature(nl.get(36), 4, 16, null, null);
+		addTablature(nl.get(37), 4, 19, null, null);
+		addTablature(nl.get(38), 3, 16, null, null);
+		addTablature(nl.get(39), 3, 18, null, null);
+		addTablature(nl.get(40), 3, 19, null, null);
 		/*
 		addTablature((Note)nl.get(42), 2, 19, null, null);
 		addTablature((Note)nl.get(43), 1, 17, null, null);
@@ -410,13 +410,13 @@ public class TestCase2_1 {
 		for(Note n: nl)
 			voice.add(n);
 
-		((Note)nl.get(22)).addRenderingHint("tremolo", "3");
-		((Note)nl.get(25)).addRenderingHint("tremolo", "3");
+		nl.get(22).addRenderingHint("tremolo", "3");
+		nl.get(25).addRenderingHint("tremolo", "3");
 		
 		ChordSymbol chordSymbol1 = new ChordSymbol(Rational.ZERO, 'F', 1);
 		chordSymbol1.setMode(Mode.MODE_MINOR);
 		chordSymbol1.setExtensions("11");
-		MetricAttachable chordAttach1 = new MetricAttachable((Note)nl.get(20), chordSymbol1);
+		MetricAttachable chordAttach1 = new MetricAttachable(nl.get(20), chordSymbol1);
 		chordAttach1.setAlignment(MetricAttachable.NORTH);
 		chordAttach1.setDistance(5);
 		staff.add(chordAttach1);
@@ -424,7 +424,7 @@ public class TestCase2_1 {
 		ChordSymbol chordSymbol2 = new ChordSymbol(Rational.ZERO, 'D', 0);
 		chordSymbol2.setMode(Mode.MODE_MAJOR);
 		chordSymbol2.setExtensions("6");
-		MetricAttachable chordAttach2 = new MetricAttachable((Note)nl.get(33), chordSymbol2);
+		MetricAttachable chordAttach2 = new MetricAttachable(nl.get(33), chordSymbol2);
 		chordAttach2.setAlignment(MetricAttachable.NORTH);
 		chordAttach2.setDistance(5);
 		staff.add(chordAttach2);
@@ -520,13 +520,13 @@ public class TestCase2_1 {
 		nl3.add(new ScorePitch('a', 0, 0), new Rational(8, 8), new Rational(1,8));
 		nl3.add(new ScorePitch('r', 0, 0), new Rational(9, 8), new Rational(1,8));
 
-		addTablature((Note)nl3.get(1), 4, 2, null, null);
-		addTablature((Note)nl3.get(2), 3, 2, null, null);
-		addTablature((Note)nl3.get(3), 2, 0, null, null);
-		addTablature((Note)nl3.get(4), 3, 2, null, null);
-		addTablature((Note)nl3.get(5), 4, 2, null, null);
-		addTablature((Note)nl3.get(7), 4, 2, null, null);
-		addTablature((Note)nl3.get(8), 3, 2, null, null);
+		addTablature(nl3.get(1), 4, 2, null, null);
+		addTablature(nl3.get(2), 3, 2, null, null);
+		addTablature(nl3.get(3), 2, 0, null, null);
+		addTablature(nl3.get(4), 3, 2, null, null);
+		addTablature(nl3.get(5), 4, 2, null, null);
+		addTablature(nl3.get(7), 4, 2, null, null);
+		addTablature(nl3.get(8), 3, 2, null, null);
 		
 		StaffContainer staff2 = new StaffContainer(context);
 		Voice voice2 = new Voice(context);

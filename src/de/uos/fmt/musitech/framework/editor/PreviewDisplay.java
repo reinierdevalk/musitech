@@ -58,6 +58,7 @@ import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 /**
  * A subclass of PopUpDisplay which offers a text preview on the
@@ -85,16 +86,18 @@ public class PreviewDisplay extends PopUpDisplay {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractComplexEditor#createGUI()
      */
-    public void createGUI() {
+    @Override
+	public void createGUI() {
         JButton displayButton = new JButton("Display...");
         displayButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
+            @Override
+			public void actionPerformed(ActionEvent arg0) {
                 showDisplayToPopUp();
             }
         });
         preview.setEnabled(false);
         preview.setPreferredSize(new Dimension(PREVIEWWIDTH, (int)displayButton.getPreferredSize().getHeight()));
-        preview.setHorizontalAlignment(JTextField.LEADING | JTextField.LEFT);
+        preview.setHorizontalAlignment(SwingConstants.LEADING | SwingConstants.LEFT);
         preview.setText(getPreviewText());
         setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
         add(preview);
@@ -119,7 +122,8 @@ public class PreviewDisplay extends PopUpDisplay {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#updateDisplay()
      */
-    public void updateDisplay(){
+    @Override
+	public void updateDisplay(){
         preview.setText(getPreviewText());
         revalidate();
         repaint();

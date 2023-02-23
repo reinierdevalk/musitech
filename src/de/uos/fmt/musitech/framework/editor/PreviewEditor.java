@@ -59,12 +59,12 @@ import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 import de.uos.fmt.musitech.framework.selection.SelectionController;
 
@@ -103,6 +103,7 @@ public class PreviewEditor extends PopUpEditor {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.AbstractComplexEditor#createGUI()
 	 */
+	@Override
 	public void createGUI() {
 
 		if (editButton == null)
@@ -117,6 +118,7 @@ public class PreviewEditor extends PopUpEditor {
 		if (rootDisplay instanceof CollectionEditor
 			&& (getObjectForEditor().getClass().isPrimitive() || getObjectForEditor() instanceof String)) {
 			editButton.addActionListener(new ActionListener() {
+				@Override
 				public void actionPerformed(ActionEvent e) {
 					CollectionEditor editor = (CollectionEditor) rootDisplay;
 					Object oldObj = getObjectForEditor();
@@ -136,12 +138,14 @@ public class PreviewEditor extends PopUpEditor {
 		} else
 			editButton.addActionListener(new ActionListener() {
 
+				@Override
 				public void actionPerformed(ActionEvent e) {
 					showEditorToPopUp();
 				}
 			});
 		editButton.addFocusListener(new FocusAdapter() {
 
+			@Override
 			public void focusGained(FocusEvent e) {
 				updatePreview();
 			}
@@ -150,7 +154,7 @@ public class PreviewEditor extends PopUpEditor {
 		preview.setDisabledTextColor(Color.BLACK);
 		preview.setPreferredSize(new Dimension(PREVIEWWIDTH, (int) editButton
 				.getPreferredSize().getHeight()));
-		preview.setHorizontalAlignment(JTextField.LEADING | JTextField.LEFT);
+		preview.setHorizontalAlignment(SwingConstants.LEADING | SwingConstants.LEFT);
 		updateGUI();
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		add(preview);
@@ -169,6 +173,7 @@ public class PreviewEditor extends PopUpEditor {
 					.getPreferredSize());
 			deleteButton.addActionListener(new ActionListener() {
 
+				@Override
 				public void actionPerformed(ActionEvent ae) {
 					// System.out.println("The Item '" + profile + "' should be
 					// deleted, with the content '" +editObj+"'.");
@@ -222,6 +227,7 @@ public class PreviewEditor extends PopUpEditor {
 	 * Updates the GUI by adjusting the button's text and setting the preview
 	 * text in the JTextField.
 	 */
+	@Override
 	public void updateGUI() {
 		super.updateGUI();
 		updatePreview();
@@ -240,6 +246,7 @@ public class PreviewEditor extends PopUpEditor {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#updateDisplay()
 	 */
+	@Override
 	public void updateDisplay() {
 		dataChanged = false;
 		updatePreview();
@@ -254,18 +261,21 @@ public class PreviewEditor extends PopUpEditor {
 	 * 
 	 * @see java.awt.Component#addMouseListener(java.awt.event.MouseListener)
 	 */
+	@Override
 	public void addMouseListener(final MouseListener l) {
 		SelectionController sc = new SelectionController(null);
 		Class saClass = sc.getSelectionAdapter().getClass();
 		if (saClass.isAssignableFrom(l.getClass())) {
 			preview.addMouseListener(new MouseAdapter() {
 
+				@Override
 				public void mouseClicked(MouseEvent e) {
 					e.setSource(PreviewEditor.this);
 					l.mouseClicked(e);
 					preview.setBackground(Color.LIGHT_GRAY);
 				}
 
+				@Override
 				public void mousePressed(MouseEvent e) {
 					e.setSource(PreviewEditor.this);
 					l.mousePressed(e);

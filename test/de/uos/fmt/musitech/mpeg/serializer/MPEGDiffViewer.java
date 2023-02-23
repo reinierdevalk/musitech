@@ -172,7 +172,7 @@ public abstract class MPEGDiffViewer extends JFrame {
         ArrayList notes = new ArrayList();
 
         for (int i = from; i <= to; i++) {
-            Note note = (Note) voice.get(i);
+            Note note = voice.get(i);
             notes.add(note);
         }
 
@@ -183,7 +183,7 @@ public abstract class MPEGDiffViewer extends JFrame {
         ArrayList notes = new ArrayList();
 
         for (int i = from; i <= to; i++) {
-            Note note = (Note) voice.get(i);
+            Note note = voice.get(i);
             notes.add(note);
         }
 
@@ -194,7 +194,7 @@ public abstract class MPEGDiffViewer extends JFrame {
         ArrayList notes = new ArrayList();
 
         for (int i = from; i <= to; i++) {
-            NotationChord chord = (NotationChord) voice.get(i);
+            NotationChord chord = voice.get(i);
             notes.add(chord);
         }
 
@@ -237,7 +237,8 @@ public abstract class MPEGDiffViewer extends JFrame {
     synchronized void initGUI() throws EditorConstructionException {
         addWindowListener(new WindowAdapter() {
 
-            public void windowClosing(WindowEvent ev) {
+            @Override
+			public void windowClosing(WindowEvent ev) {
                 System.exit(0);
             }
         });

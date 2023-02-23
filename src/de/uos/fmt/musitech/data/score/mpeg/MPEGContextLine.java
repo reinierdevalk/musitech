@@ -89,7 +89,8 @@ public class MPEGContextLine extends ArrayList<Marker> implements IMPEGSerializa
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#toMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Node, java.lang.Object, java.lang.String)
      */
-    public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
+    @Override
+	public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
         Element contextLine = XMLHelper.getOrCreateElement((Element) parent, "context");
         if (instance.knowsObject(contextLine, object))
             return true;
@@ -151,7 +152,8 @@ public class MPEGContextLine extends ArrayList<Marker> implements IMPEGSerializa
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#fromMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Element)
      */
-    public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
+    @Override
+	public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
         // reference-handling
         Object reference = instance.getReferenced(node, this);
         if (reference != null)

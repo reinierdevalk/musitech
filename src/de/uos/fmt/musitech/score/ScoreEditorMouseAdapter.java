@@ -126,6 +126,7 @@ public class ScoreEditorMouseAdapter implements MouseListener,
 		return draggingRectangle;
 	}
 
+	@Override
 	public void mouseClicked(MouseEvent e) {
 		// System.out.println("mouseClicked " + e);
 		if(e.getButton()!=MouseEvent.BUTTON1)
@@ -166,6 +167,7 @@ public class ScoreEditorMouseAdapter implements MouseListener,
 		}
 	}
 
+	@Override
 	public void mousePressed(MouseEvent e) {
 		// System.out.println("mousePressed " + e);
 		if(e.getButton()!=MouseEvent.BUTTON1)
@@ -223,6 +225,7 @@ public class ScoreEditorMouseAdapter implements MouseListener,
 		}
 	}
 
+	@Override
 	public void mouseDragged(MouseEvent e) {
 		// System.out.println("mouseDragged " + e);
 		if(e.getButton()!=MouseEvent.BUTTON1)
@@ -280,6 +283,7 @@ public class ScoreEditorMouseAdapter implements MouseListener,
 			}
 	}
 
+	@Override
 	public void mouseReleased(MouseEvent e) {
 		// System.out.println("mouseReleased " + e);
 		if(e.getButton()!=MouseEvent.BUTTON1)
@@ -330,6 +334,7 @@ public class ScoreEditorMouseAdapter implements MouseListener,
 		}
 	}
 
+	@Override
 	public void mouseMoved(MouseEvent e) {
 		if (scoreEditor.getModus() == Mode.INSERT) {
 			scoreEditor.getAuxlines().clear();
@@ -396,6 +401,7 @@ public class ScoreEditorMouseAdapter implements MouseListener,
 
 	private Cursor scoreEditorCursor;
 
+	@Override
 	public void mouseEntered(MouseEvent e) {
 		if (scoreEditor.getModus() == Mode.INSERT) {
 			scoreEditorCursor = scoreEditor.getCursor();
@@ -404,6 +410,7 @@ public class ScoreEditorMouseAdapter implements MouseListener,
 		}
 	}
 
+	@Override
 	public void mouseExited(MouseEvent e) {
 		if (scoreEditor.getModus() == Mode.INSERT) {
 			if (scoreEditorCursor != null)

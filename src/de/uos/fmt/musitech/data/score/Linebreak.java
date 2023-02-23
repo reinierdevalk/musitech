@@ -70,6 +70,7 @@ public class Linebreak implements Metrical, Containable {
 	 * returns the metricTime where this linebreak occurs.
 	 * @see de.uos.fmt.musitech.data.time.Metrical#getMetricTime()
 	 */
+	@Override
 	public Rational getMetricTime() {
 		return metricTime;
 	}
@@ -78,6 +79,7 @@ public class Linebreak implements Metrical, Containable {
 	 * returns 0 because a Linebreak has no duration
 	 * @see de.uos.fmt.musitech.data.time.Metrical#getMetricDuration()
 	 */
+	@Override
 	public Rational getMetricDuration() {
 		return Rational.ZERO;
 	}
@@ -85,6 +87,7 @@ public class Linebreak implements Metrical, Containable {
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.data.MObject#getUid()
 	 */
+	@Override
 	public Long getUid() {
 		// TODO Auto-generated method stub
 		return null;
@@ -93,6 +96,7 @@ public class Linebreak implements Metrical, Containable {
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
 	 */
+	@Override
 	public void setUid(Long uid) {
 		// TODO Auto-generated method stub
 
@@ -101,6 +105,7 @@ public class Linebreak implements Metrical, Containable {
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String, java.lang.Object)
 	 */
+	@Override
 	public boolean isValidValue(String propertyName, Object value) {
 		// TODO Auto-generated method stub
 		return false;

@@ -64,10 +64,12 @@ public class NoteSequenceTableModel extends AbstractTableModel {
 	String columnNames[] = {"Number", "begin", "length", "velocity", "pitch", "offset"};
 	String columnHeaders[] = {"Number", "Begin", "Length", "Velocity", "Pitch", "Deviation"};
 
+	@Override
 	public int getColumnCount() {
 		return columnNames.length;
 	}
 
+	@Override
 	public String getColumnName(int col) {
 		return columnNames[col].toString();
 	}
@@ -81,12 +83,14 @@ public class NoteSequenceTableModel extends AbstractTableModel {
 		return noteSequence;
 	}
 
+	@Override
 	public int getRowCount() {
 		if (noteSequence == null)
 			return 0;
 		return noteSequence.size();
 	}
 
+	@Override
 	public Object getValueAt(int row, int col) {
 		MidiNote note = noteSequence.getNoteAt(row);
 		if (col == 0)
@@ -100,6 +104,7 @@ public class NoteSequenceTableModel extends AbstractTableModel {
 		}
 	}
 
+	@Override
 	public boolean isCellEditable(int row, int col) {
 		return true;
 	}
@@ -113,6 +118,7 @@ public class NoteSequenceTableModel extends AbstractTableModel {
 		noteSequence = newNoteSequence;
 	}
 
+	@Override
 	public void setValueAt(Object value, int row, int col) {
 		MidiNote note = noteSequence.getNoteAt(row);
 		if (col == 0) {

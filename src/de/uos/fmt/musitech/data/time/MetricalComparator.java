@@ -63,9 +63,10 @@ public class MetricalComparator implements Comparator<Metrical>, Serializable {
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 	 * @see de.uos.fmt.musitech.utility.Math.Rational#compare(java.lang.Object)
 	 */
+	@Override
 	public int compare(Metrical o1, Metrical o2) {
-		Metrical m1 = (Metrical) o1;
-		Metrical m2 = (Metrical) o2;
+		Metrical m1 = o1;
+		Metrical m2 = o2;
 		return m1.getMetricTime().compare(m2.getMetricTime());
 	}
 

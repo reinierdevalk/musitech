@@ -90,6 +90,7 @@ public class TimeScale extends JPanel {
 	/** 
 	 * @see java.awt.Component#getPreferredSize()
 	 */
+	@Override
 	public Dimension getPreferredSize() {
 		Dimension dim = super.getPreferredSize();
 		dim.setSize(getParent().getWidth(), 20);
@@ -108,6 +109,7 @@ public class TimeScale extends JPanel {
 	/* (non-Javadoc)
 	 * @see javax.swing.JComponent#getMaximumSize()
 	 */
+	@Override
 	public Dimension getMaximumSize() {
 		Dimension dim = new Dimension();
 		dim.setSize(getParent().getWidth(), 50);
@@ -174,6 +176,7 @@ public class TimeScale extends JPanel {
 	/** 
 	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
 	 */
+	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		if (paintMajorTicks)

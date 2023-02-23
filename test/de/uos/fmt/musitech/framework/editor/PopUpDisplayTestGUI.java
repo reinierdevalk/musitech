@@ -53,6 +53,7 @@ package de.uos.fmt.musitech.framework.editor;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.performance.PerformanceNote;
 import de.uos.fmt.musitech.data.score.ScorePitch;
@@ -180,7 +181,7 @@ public class PopUpDisplayTestGUI {
 	 */
 	private static void provideClosingFrame(){
 		JFrame frame = new JFrame("For closing");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 	}
 

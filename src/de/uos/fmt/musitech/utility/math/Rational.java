@@ -137,7 +137,8 @@ public class Rational implements Comparable<Rational>, java.io.Serializable, Clo
      * 
      * @see java.lang.Object#hashCode()
      */
-    public int hashCode() {
+    @Override
+	public int hashCode() {
         if (numer == 0)
             return 0;
         // calculate a normalized representation
@@ -371,7 +372,7 @@ public class Rational implements Comparable<Rational>, java.io.Serializable, Clo
     }
 
     public Rational div(int n) {
-        return new Rational((long) numer, (long) denom * n);
+        return new Rational(numer, (long) denom * n);
     }
 
     public Rational mod(Rational r) {
@@ -400,8 +401,9 @@ public class Rational implements Comparable<Rational>, java.io.Serializable, Clo
     /**
      * @see java.lang.Comparable#compareTo(Object)
      */
-    public int compareTo(Rational o) {
-        return compare((Rational) o);
+    @Override
+	public int compareTo(Rational o) {
+        return compare(o);
     }
 
     /**
@@ -818,7 +820,8 @@ public class Rational implements Comparable<Rational>, java.io.Serializable, Clo
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#toMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Node, java.lang.Object, java.lang.String)
      */
-    public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
+    @Override
+	public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
         // TODO Auto-generated method stub
         return false;
     }
@@ -827,7 +830,8 @@ public class Rational implements Comparable<Rational>, java.io.Serializable, Clo
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#fromMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Element)
      */
-    public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
+    @Override
+	public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
         this.setNumer(Integer.parseInt(node.getAttribute("numerator")));
         this.setDenom(Integer.parseInt(node.getAttribute("denominator")));
         return this;
@@ -936,6 +940,7 @@ public class Rational implements Comparable<Rational>, java.io.Serializable, Clo
 	 * @param o object to compare too.
 	 * @return true if both objects have the same state, false if not.
 	 */
+	@Override
 	public boolean isEquivalent(IEquivalence o) {
 		if(!(o instanceof Rational)) return false;
 		return isEqual((Rational) o);

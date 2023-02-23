@@ -55,6 +55,7 @@ import java.util.Dictionary;
 
 import javax.swing.JLabel;
 import javax.swing.JSlider;
+import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -78,7 +79,7 @@ public class DBSlider extends JSlider{
 	public DBSlider(GainChanger gChange, String ToolText) {
 	
 		
-		super(JSlider.VERTICAL, 0, 1200, 1000);
+		super(SwingConstants.VERTICAL, 0, 1200, 1000);
 	
 		this.gChange = gChange;
 		
@@ -102,6 +103,7 @@ public class DBSlider extends JSlider{
 	
 		addChangeListener(
 			new ChangeListener() {
+				@Override
 				public void stateChanged(ChangeEvent e){
 					double gain; 
 					JSlider slider = (JSlider)(e.getSource());
@@ -113,7 +115,7 @@ public class DBSlider extends JSlider{
 					// convert ticks into dBs
 					if (gain >= 1) { 
 						//	calculate the values logarithmically in the lower part of the scale
-						gain = -5.0 * Math.exp( Math.log(2.0) * ((double)gain-1)); 
+						gain = -5.0 * Math.exp( Math.log(2.0) * (gain-1)); 
 					} else {
 						// linear function is used in upper part 0 wouldnt be reached => 
 						gain = -5.0 * gain; 

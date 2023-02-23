@@ -88,7 +88,8 @@ abstract public class AbstractTranslatingEditor extends AbstractEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#init(java.lang.Object, de.uos.fmt.musitech.framework.editor.EditingProfile, de.uos.fmt.musitech.framework.editor.Display)
      */
-    public void init(Object inputObject, EditingProfile profile, Display rootDisplay) {
+    @Override
+	public void init(Object inputObject, EditingProfile profile, Display rootDisplay) {
         //set parameters of this TranslatingEditor
         if (inputObject==null){	//TODO oder auf default (z.B. "") setzen?
             return;
@@ -126,6 +127,7 @@ abstract public class AbstractTranslatingEditor extends AbstractEditor {
 	 * <br> If you want some different behavior (e. g. do not set propertyValue at all
 	 * for you do not use it) overwrite this method. 
 	 */
+	@Override
 	protected void setPropertyValue() {
 		ReflectionAccess ref = ReflectionAccess.accessForClass(inputObj.getClass());
 		if ((propertyName != null) && (ref.hasPropertyName(propertyName)))
@@ -148,7 +150,8 @@ abstract public class AbstractTranslatingEditor extends AbstractEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Editor#getEditedData()
      */
-    public Collection getEditedData() {
+    @Override
+	public Collection getEditedData() {
         Collection editedData = new ArrayList();
         if (dirty){
             if (propertyValue!=null)	//TODO inputObj oder editObj hinzufügen?
@@ -167,7 +170,8 @@ abstract public class AbstractTranslatingEditor extends AbstractEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#applyChanges()
      */
-    public void applyChanges() {
+    @Override
+	public void applyChanges() {
         if (dirty){
             //write changes to inputObj
             applyChangesToInputObj();
@@ -201,7 +205,8 @@ abstract public class AbstractTranslatingEditor extends AbstractEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#isFocused()
      */
-    public boolean isFocused() {
+    @Override
+	public boolean isFocused() {
         return isFocusOwner();
     }
 }

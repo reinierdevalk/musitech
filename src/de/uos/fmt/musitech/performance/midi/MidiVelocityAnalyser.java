@@ -230,7 +230,8 @@ public class MidiVelocityAnalyser {
     * This method will return some infos about the velocity analyser as a string.
     * @return some infos
     */
-   public String toString() {
+   @Override
+public String toString() {
        // String to return
        String retString = "VeloctyAnalyser: ";
 

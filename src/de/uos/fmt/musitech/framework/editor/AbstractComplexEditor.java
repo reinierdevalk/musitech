@@ -337,7 +337,8 @@ public abstract class AbstractComplexEditor extends AbstractEditor implements
      * DataChangeManager.
      * The flags <code>dataChanged<code> and <code>dirty</code> are reset to false.
      */
-    public void applyChanges() {
+    @Override
+	public void applyChanges() {
         if (profile.isReadOnly())
             return;
         Collection<Object> editedData = getEditedData();
@@ -363,6 +364,7 @@ public abstract class AbstractComplexEditor extends AbstractEditor implements
 	 * If <code>propertyName</code> is null, the children editors are reset if
 	 * necessary.
 	 */
+	@Override
 	protected void resetNullProperty() {
 		if (propertyName != null && propertyValue == null) {
 			ReflectionAccess ref = ReflectionAccess.accessForClass(editObj.getClass());
@@ -383,7 +385,8 @@ public abstract class AbstractComplexEditor extends AbstractEditor implements
     /**
      * Return false if at least one children is invalid.
      */
-    public boolean inputIsValid() {
+    @Override
+	public boolean inputIsValid() {
         if (children == null)
             return true;
         boolean allChildrenValid = true;
@@ -450,7 +453,8 @@ public abstract class AbstractComplexEditor extends AbstractEditor implements
      * or <code>propertyValue</code> from the DataChangeManager's <code>table</code>
      * of views and changed data.
      */
-    public void destroy() {
+    @Override
+	public void destroy() {
         //		Vector objsOfEditor = new Vector();
         //		if (propertyValue != null) {
         //			objsOfEditor.add(propertyValue);
@@ -470,7 +474,8 @@ public abstract class AbstractComplexEditor extends AbstractEditor implements
      * children editors is true. Overwrites method <code>isDataChanged()</code> in class
      * AbstractEditor to check also the children's <code>dataChanged</code>.
      */
-    public boolean externalChanges() {
+    @Override
+	public boolean externalChanges() {
         if (dataChanged)
             return true;
         if (!dataChanged) {
@@ -533,7 +538,8 @@ public abstract class AbstractComplexEditor extends AbstractEditor implements
      *      de.uos.fmt.musitech.framework.editor.EditingProfile,
      *      de.uos.fmt.musitech.framework.editor.Editor)
      */
-    public void init(Object editObject, EditingProfile profile, Display rootEditor) {
+    @Override
+	public void init(Object editObject, EditingProfile profile, Display rootEditor) {
         this.editObj = editObject;
         this.profile = profile;
         if (profile != null)
@@ -553,7 +559,8 @@ public abstract class AbstractComplexEditor extends AbstractEditor implements
      * @return Vector with objects edited by this editor and its children editors
      * @see de.uos.fmt.musitech.framework.editor.Editor#getEditedData()
      */
-    public Collection<Object> getEditedData() {
+    @Override
+	public Collection<Object> getEditedData() {
         ArrayList<Object> changedData = new ArrayList<Object>();
         if (children != null && children.length > 0) {
             for (int i = 0; i < children.length; i++) {
@@ -621,7 +628,8 @@ public abstract class AbstractComplexEditor extends AbstractEditor implements
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#isValueRemoved()
      */
-    protected boolean isValueToRemove() {
+    @Override
+	protected boolean isValueToRemove() {
         String nullPropertyName = null;
         if (propertyName != null && propertyValue == null)
             nullPropertyName = propertyName;
@@ -645,10 +653,11 @@ public abstract class AbstractComplexEditor extends AbstractEditor implements
         return false;
     }
 
-    public void setOpaque(boolean opaque) {
+    @Override
+	public void setOpaque(boolean opaque) {
         Collection comps = CompoundComponentManager.getInnerComponentsRecursive(this);
         for (Iterator iter = comps.iterator(); iter.hasNext();) {
-            Object element = (Object) iter.next();
+            Object element = iter.next();
             if (element instanceof JComponent)
                 ((JComponent) element).setOpaque(opaque);
         }

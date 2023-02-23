@@ -129,16 +129,19 @@ public class GlassPaneMouseListenerTest extends TestCase {
 	}
 
 	static class BorderMouseAdapter extends MouseAdapter {
+		@Override
 		public void mouseClicked(MouseEvent e) {
 			JOptionPane.showMessageDialog(
 				(JComponent) e.getSource(),
 				"Mouse clicked");
 		}
+		@Override
 		public void mouseEntered(MouseEvent e) {
 			JComponent comp = (JComponent) e.getSource();
 			comp.setBorder(BorderFactory.createEtchedBorder());
 			System.out.println("entered " + comp);
 		}
+		@Override
 		public void mouseExited(MouseEvent e) {
 			JComponent comp = (JComponent) e.getSource();
 			comp.setBorder(null);

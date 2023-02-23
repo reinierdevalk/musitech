@@ -136,14 +136,14 @@ public class TempoPanel extends JPanel implements DataChangeListener, Timeable {
         Collection changeInterest = new ArrayList();
         Collection contents = timeLine.getContentsRecursiveList(null);
         for (Iterator iter = contents.iterator(); iter.hasNext();) {
-            Object element = (Object) iter.next();
+            Object element = iter.next();
             if(element instanceof TimedMetrical){
                 changeInterest.add(element);
                 changeInterest.add(((TimedMetrical)element).getMetricTime());
             }
         }
         DataChangeManager.getInstance().interestExpandElements(
-                (DataChangeListener) this, changeInterest);
+                this, changeInterest);
     }
 
 	/**
@@ -238,7 +238,8 @@ public class TempoPanel extends JPanel implements DataChangeListener, Timeable {
      * @author Wolfram Heyer
      * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
      */
-    public void paintComponent(Graphics g) {
+    @Override
+	public void paintComponent(Graphics g) {
         //g.setClip(0,0,getWidth(),getHeight());
         super.paintComponent(g);
         setValuesForPaint();
@@ -246,8 +247,8 @@ public class TempoPanel extends JPanel implements DataChangeListener, Timeable {
         paintCurve(g);
         if (cursorPosition != -1) {
 			paintCursor(g, new TimedMetrical(
-				(long)cursorPosition,
-				new Rational(metricalTimeLine.getMetricTime((long)cursorPosition)))
+				cursorPosition,
+				new Rational(metricalTimeLine.getMetricTime(cursorPosition)))
 			); // draw cursor
 		}
    }
@@ -266,8 +267,8 @@ public class TempoPanel extends JPanel implements DataChangeListener, Timeable {
         g.setColor(java.awt.Color.BLACK);
         g.drawLine(0, spaceTop + widthY, graphMaxX, spaceTop + widthY);
         // draw arrow on X-axis
-		g.drawLine((int)graphMaxX-5, spaceTop+widthY-5, (int) graphMaxX, spaceTop+widthY);
-		g.drawLine((int)graphMaxX-5, spaceTop+widthY+5, (int) graphMaxX, spaceTop+widthY);
+		g.drawLine(graphMaxX-5, spaceTop+widthY-5, graphMaxX, spaceTop+widthY);
+		g.drawLine(graphMaxX-5, spaceTop+widthY+5, graphMaxX, spaceTop+widthY);
 
         if (realTimeIsSet) {
             g.setColor(Color.BLUE);
@@ -309,10 +310,10 @@ public class TempoPanel extends JPanel implements DataChangeListener, Timeable {
 
         steps = 5;
         cnt = steps;
-        for (long y = 0; y < biggestY; y += (long) (biggestY / steps)) {
+        for (long y = 0; y < biggestY; y += biggestY / steps) {
             g.drawLine(spaceX - 5, spaceTop + (int) (widthY - y * scaleY),
                     spaceX, spaceTop + (int) (widthY - y * scaleY));
-            value = (long) y;
+            value = y;
             g.drawString(value + "", spaceX + 5, spaceTop
                     + (int) (widthY - y * scaleY) + 5);
         }
@@ -332,12 +333,12 @@ public class TempoPanel extends JPanel implements DataChangeListener, Timeable {
 		Rational currentTimeSignature = metricalTimeLine.getCurrentTimeSignature(thisMetricTime);
 
 		if (realTimeIsSet) {
-			double xPosPixels =  (double) (metricalTimeLine.getTime(thisMetricTime) * scaleX);
-			double newXPosPixels = (double) (metricalTimeLine.getTime(nextMeasure) * scaleX);
-			abstand = (double) ((newXPosPixels - xPosPixels) / currentTimeSignature.getNumer());
+			double xPosPixels =  metricalTimeLine.getTime(thisMetricTime) * scaleX;
+			double newXPosPixels = metricalTimeLine.getTime(nextMeasure) * scaleX;
+			abstand = (newXPosPixels - xPosPixels) / currentTimeSignature.getNumer();
 		}
 		else {
-			abstand = (double) (scaleX / currentTimeSignature.getNumer());
+			abstand = scaleX / currentTimeSignature.getNumer();
 		}
 
 		if (debug) System.out.println("TempoPanel.calculateNextXStep: abstand = "+abstand);
@@ -442,15 +443,15 @@ public class TempoPanel extends JPanel implements DataChangeListener, Timeable {
 		double beats = 0;
 
 		if (realTimeIsSet)
-			posX = (double) (tm.getTime() * scaleX);
+			posX = tm.getTime() * scaleX;
 		else {
 			preWert = metricalTimeLine.toMeasureBeatRemainder(tm.getMetricTime());
 			measures = preWert[0]-1;
-			remainder = (double) (preWert[2] / preWert[3]);
+			remainder = preWert[2] / preWert[3];
 			abstand = calculateNextXStep(tm.getMetricTime());
-			beats = (double) ((preWert[1]-1) * abstand);
+			beats = (preWert[1]-1) * abstand;
 				
-			posX = (double)( ((measures  + remainder) * scaleX)+ beats);
+			posX = ((measures  + remainder) * scaleX)+ beats;
 		}
 
 		return posX;
@@ -460,11 +461,13 @@ public class TempoPanel extends JPanel implements DataChangeListener, Timeable {
      * 
      * @see de.uos.fmt.musitech.framework.change.DataChangeListener#dataChanged(de.uos.fmt.musitech.datamanager.DataChangeEvent)
      */
-    public void dataChanged(DataChangeEvent e) {
+    @Override
+	public void dataChanged(DataChangeEvent e) {
         //		repaint();
         //	    dataChanged = true;
         SwingUtilities.invokeLater(new Thread() {
-            public void run() {
+            @Override
+			public void run() {
                 revalidate();
                 repaint();
             }
@@ -497,6 +500,7 @@ public class TempoPanel extends JPanel implements DataChangeListener, Timeable {
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.data.time.Timeable#setTimePosition(long)
 	 */
+	@Override
 	public void setTimePosition(long timeMicros) {
 		cursorPosition = timeMicros;
 		repaint();
@@ -505,6 +509,7 @@ public class TempoPanel extends JPanel implements DataChangeListener, Timeable {
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.data.time.Timeable#getEndTime()
 	 */
+	@Override
 	public long getEndTime() {
 		// we are only displaying and therefore not interested...
 		return -1;

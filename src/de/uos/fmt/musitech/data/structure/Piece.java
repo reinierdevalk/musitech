@@ -131,6 +131,7 @@ public class Piece implements MObject, Named, Containable, IMPEGSerializable {
 	/**
 	 * @see java.lang.Object#hashCode()
 	 */
+	@Override
 	public int hashCode() {
 		return hashCode;
 	}
@@ -163,6 +164,7 @@ public class Piece implements MObject, Named, Containable, IMPEGSerializable {
 
 	/**
 	 * Copy constructor.
+	 * 
 	 * @param p
 	 * @author Reinier
 	 */
@@ -186,6 +188,7 @@ public class Piece implements MObject, Named, Containable, IMPEGSerializable {
 	/**
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
+	@Override
 	public boolean equals(Object obj) {
 		return super.equals(obj);
 		// return ObjectCopy.comparePublicProperties( this, obj );
@@ -575,6 +578,7 @@ public class Piece implements MObject, Named, Containable, IMPEGSerializable {
 	 * @return java.lang.String
 	 * @hibernate.property
 	 */
+	@Override
 	public java.lang.String getName() {
 		return name;
 	}
@@ -628,6 +632,7 @@ public class Piece implements MObject, Named, Containable, IMPEGSerializable {
 	 * 
 	 * @param newName java.lang.String
 	 */
+	@Override
 	public void setName(java.lang.String newName) {
 		name = newName;
 	}
@@ -688,6 +693,7 @@ public class Piece implements MObject, Named, Containable, IMPEGSerializable {
 	 * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String,
 	 *      java.lang.Object)
 	 */
+	@Override
 	public boolean isValidValue(String propertyName, Object value) {
 		// TODO Auto-generated method stub
 		return true; // default
@@ -699,6 +705,7 @@ public class Piece implements MObject, Named, Containable, IMPEGSerializable {
 	 * @see de.uos.fmt.musitech.data.MObject#getUid()
 	 * @hibernate.id generator-class="native"
 	 */
+	@Override
 	public Long getUid() {
 		return uid;
 	}
@@ -706,6 +713,7 @@ public class Piece implements MObject, Named, Containable, IMPEGSerializable {
 	/**
 	 * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
 	 */
+	@Override
 	public void setUid(Long argUid) {
 		this.uid = argUid;
 	}
@@ -877,6 +885,7 @@ public class Piece implements MObject, Named, Containable, IMPEGSerializable {
 	 *      java.lang.Object, java.util.Hashtable, org.w3c.dom.Document,
 	 *      java.lang.String)
 	 */
+	@Override
 	public boolean toMPEG(MusiteXMLSerializer instance, Node parent,
 							Object object, String fieldname) {
 
@@ -915,6 +924,7 @@ public class Piece implements MObject, Named, Containable, IMPEGSerializable {
 	 * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#fromMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
 	 *      org.w3c.dom.Element, java.util.Hashtable, java.lang.Object)
 	 */
+	@Override
 	public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
 		// reference-handling
 		Object reference = instance.getReferenced(node, this);

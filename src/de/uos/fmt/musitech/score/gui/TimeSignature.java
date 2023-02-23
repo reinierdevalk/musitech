@@ -81,6 +81,7 @@ public class TimeSignature extends ScoreObject {
 		return denom;
 	}
 
+	@Override
 	int arrange(int pass) {
 		setYPos(staff().absY() + staff().hsToPixel(abbreviated ? 0 : 2));
 		return 1;
@@ -123,6 +124,7 @@ public class TimeSignature extends ScoreObject {
 		return width + (glyphs.length - 1) * interGlyphGap();
 	}
 
+	@Override
 	public void paint(Graphics g) {
 		if (!isVisible())
 			return;
@@ -153,10 +155,12 @@ public class TimeSignature extends ScoreObject {
 		restoreFont(g);
 	}
 
+	@Override
 	Class parentClass() {
 		return Measure.class;
 	}
 
+	@Override
 	public int rwidth() {
 		if (abbreviated)
 			return MusicGlyph.width(staff().getLineDistance(), abbreviationGlyph());

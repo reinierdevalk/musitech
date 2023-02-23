@@ -51,14 +51,11 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Vector;
-
 import de.uos.fmt.musitech.score.util.Angle;
 import de.uos.fmt.musitech.score.util.Bezier;
 import de.uos.fmt.musitech.score.util.Bow;
 import de.uos.fmt.musitech.score.util.Pair;
 import de.uos.fmt.musitech.utility.math.MyMath;
-import de.uos.fmt.musitech.utility.math.Rational;
 
 /** This class represents a musical slur.
  * @author Martin Gieseking
@@ -83,6 +80,7 @@ public class Slur extends EventSpanner {
 	
 	private final int DANGLING_X_VALUE = 23; //@@ TODO: get rid of the constant
 
+	@Override
 	public void add(Event ev) {
 		// avoid leading rests in slur group, so exclude them <= why? we need that for triols with rests
 		//if (ev instanceof Chord || numEvents() > 0)
@@ -117,6 +115,7 @@ public class Slur extends EventSpanner {
 	}
 
 	/** Draws the slur. */
+	@Override
 	public void paint(Graphics g) {
 		if (numEvents() > 0 && isVisible()) {
 			Pair p1 = firstSlurPoint(true, aboveNotes);
@@ -342,6 +341,7 @@ public class Slur extends EventSpanner {
 		return new Bow(p1, p2, height, new Angle(tangentAngle));
 	}
 
+	@Override
 	int arrange(int level) {
 		if (level > 0)
 			return 0;

@@ -93,6 +93,7 @@ public class MultipleSelectionManager implements ISelectionManager {
 	 * Adds a listener that will get notified when the selection changes.
 	 * @see de.uos.fmt.musitech.framework.selection.ISelectionManager#addListener(de.uos.fmt.musitech.framework.selection.SelectionListener)
 	 */
+	@Override
 	public void addListener(SelectionListener l){
 		listeners.add(l);
 	}
@@ -101,6 +102,7 @@ public class MultipleSelectionManager implements ISelectionManager {
 	 * Removes the listener, so that will not get any more messages and can be removed by the change listener. 
 	 * @see de.uos.fmt.musitech.framework.selection.ISelectionManager#removeListener(de.uos.fmt.musitech.framework.selection.SelectionListener)
 	 */
+	@Override
 	public void removeListener(SelectionListener l){
 		listeners.remove(l);
 	}
@@ -109,6 +111,7 @@ public class MultipleSelectionManager implements ISelectionManager {
 	 * Get the current selection.
 	 * @see de.uos.fmt.musitech.framework.selection.ISelectionManager#getSelection()
 	 */
+	@Override
 	public Selection getSelection(){
 		throw new IllegalArgumentException("in the MultipleSelectionManager please use getSelections");
 	}
@@ -121,6 +124,7 @@ public class MultipleSelectionManager implements ISelectionManager {
 	 * Notify this manager of a changed selection.
 	 * @see de.uos.fmt.musitech.framework.selection.ISelectionManager#selectionChanged(de.uos.fmt.musitech.framework.selection.SelectionChangeEvent)
 	 */
+	@Override
 	public synchronized void selectionChanged(SelectionChangeEvent changeEvent){
 		Iterator it = listeners.iterator();
 		while (it.hasNext()) {

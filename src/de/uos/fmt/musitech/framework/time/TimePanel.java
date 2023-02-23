@@ -86,6 +86,7 @@ public class TimePanel extends JPanel implements Timeable {
 	/** 
 	 * @see de.uos.fmt.musitech.framework.time.Player#setTimePosition(long)
 	 */
+	@Override
 	public void setTimePosition(long time) {
 		timeInMillis = time;
 		updateTimeLabel(time);
@@ -130,6 +131,7 @@ public class TimePanel extends JPanel implements Timeable {
 	 * End time ist mot relevant for this.
 	 * @see de.uos.fmt.musitech.data.time.Timeable#getEndTime()
 	 */
+	@Override
 	public long getEndTime() {
 		return -1;
 	}

@@ -428,8 +428,8 @@ public class ScoreToPerfomance {
         message[5] = (byte) 0x00; // tuning preset number: 0-127
         message[6] = (byte) 0x01; // number of changes (1 change = 1 set of [kk
         // xx yy zz])
-        message[7] = (byte) perfNote.getPitch(); // MIDI key number
-        message[8] = (byte) perfNote.getPitch(); // [xx yy zz] frequency data
+        message[7] = perfNote.getPitch(); // MIDI key number
+        message[8] = perfNote.getPitch(); // [xx yy zz] frequency data
         // for that key (repeated 'll'
         // number of times)
         //        message[9] = freqByte1;

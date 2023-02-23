@@ -57,6 +57,7 @@ import javax.swing.JLabel;
 import javax.swing.JSlider;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
+import javax.swing.WindowConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -449,6 +450,7 @@ public class RectOscillator extends FloatOscillator {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#skip(long)
 	 */
+	@Override
 	public long skip(long n) throws IOException {
 		return 0;
 	}
@@ -456,12 +458,14 @@ public class RectOscillator extends FloatOscillator {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#reset()
 	 */
+	@Override
 	public void reset() throws IOException {
 	}
 
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getFormat()
 	 */
+	@Override
 	public AudioFormat getFormat() {
 		return new AudioFormat(getSampleRate(), 16, super.getFormat().getChannels(), true, true);
 	}
@@ -496,6 +500,7 @@ public class RectOscillator extends FloatOscillator {
 		freqLabel.setLabelFor(freqSlider);
 		freqSlider.addChangeListener(new ChangeListener() {
 
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				if (updating)
 					return;
@@ -509,6 +514,7 @@ public class RectOscillator extends FloatOscillator {
 		ampLabel.setLabelFor(ampSlider);
 		ampSlider.addChangeListener(new ChangeListener() {
 
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				if (updating)
 					return;
@@ -521,6 +527,7 @@ public class RectOscillator extends FloatOscillator {
 
 		pwSlider.addChangeListener(new ChangeListener() {
 
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				if (updating)
 					return;
@@ -534,6 +541,7 @@ public class RectOscillator extends FloatOscillator {
 		pitchLabel.setLabelFor(pwSlider);
 		pitchSlider.addChangeListener(new ChangeListener() {
 
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				if (updating)
 					return;
@@ -548,6 +556,7 @@ public class RectOscillator extends FloatOscillator {
 
 		pwSlider.addChangeListener(new ChangeListener() {
 
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				if (updating)
 					return;
@@ -562,6 +571,7 @@ public class RectOscillator extends FloatOscillator {
 		glideLabel.setLabelFor(glideSlider);
 		glideSlider.addChangeListener(new ChangeListener() {
 
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				if (updating)
 					return;
@@ -574,6 +584,7 @@ public class RectOscillator extends FloatOscillator {
 
 		deClickButton.addChangeListener(new ChangeListener() {
 
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				osc.setDeClick(deClickButton.isSelected());
 			}
@@ -581,6 +592,7 @@ public class RectOscillator extends FloatOscillator {
 
 		bandLimitButton.addChangeListener(new ChangeListener() {
 
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				osc.setBandLimited(bandLimitButton.isSelected());
 			}
@@ -591,6 +603,7 @@ public class RectOscillator extends FloatOscillator {
 			float tmpGain;
 			boolean wasSelected;
 
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				boolean isSelected = muteButton.isSelected();
 				if(isSelected && !wasSelected) {
@@ -607,6 +620,7 @@ public class RectOscillator extends FloatOscillator {
 
 		sineButton.addChangeListener(new ChangeListener() {
 
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				if (sineButton.isSelected()) {
 					osc.setSine(true);
@@ -618,7 +632,7 @@ public class RectOscillator extends FloatOscillator {
 			}
 		});
 
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		// 1st row
 		frame.getContentPane().setLayout(new GridLayout(0, 2));
 		frame.getContentPane().add(freqLabel);

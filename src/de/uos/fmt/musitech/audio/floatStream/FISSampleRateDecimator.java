@@ -105,7 +105,8 @@ public class FISSampleRateDecimator implements FloatInputStream, FISReader {
      * @see FISSampleRateDecimator#read(float[][], int, int)
      * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float[][])
      */
-    public int read(float[][] data) throws IOException {
+    @Override
+	public int read(float[][] data) throws IOException {
         return read(data, 0, data[0].length);
     }
 
@@ -153,7 +154,8 @@ public class FISSampleRateDecimator implements FloatInputStream, FISReader {
      * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float[][], int,
      *      int)
      */
-    public int read(float[][] data, int start, int len) throws IOException {
+    @Override
+	public int read(float[][] data, int start, int len) throws IOException {
         // TODO check if direct calculation of src pos would be more efficient than using
         // synch()
         // TODO add additional class for integer ratio resampling
@@ -209,7 +211,8 @@ public class FISSampleRateDecimator implements FloatInputStream, FISReader {
      * 
      * @see de.uos.fmt.musitech.audio.floatStream.FISReader#setFloatInputStream(de.uos.fmt.musitech.audio.floatStream.FloatInputStream)
      */
-    public FISReader setFloatInputStream(FloatInputStream inputStream) {
+    @Override
+	public FISReader setFloatInputStream(FloatInputStream inputStream) {
         fis = inputStream;
         sourceSampleRate = inputStream.getFormat().getSampleRate();
         setFrameRate(targetSampleRate);
@@ -226,7 +229,8 @@ public class FISSampleRateDecimator implements FloatInputStream, FISReader {
      * 
      * @see de.uos.fmt.musitech.audio.floatStream.FISReader#getFloatInputStream()
      */
-    public FloatInputStream getFloatInputStream() {
+    @Override
+	public FloatInputStream getFloatInputStream() {
         return fis;
     }
 
@@ -247,7 +251,8 @@ public class FISSampleRateDecimator implements FloatInputStream, FISReader {
     /**
      * @see de.uos.fmt.musitech.audio.FloatInputStream#skip(long)
      */
-    public long skip(long n) throws IOException {
+    @Override
+	public long skip(long n) throws IOException {
         long sourceN = (long) (n / srcSRbyTrgSR);
         long sourceSkipped = fis.skip(sourceN);
         return (long) (sourceSkipped * srcSRbyTrgSR);
@@ -256,7 +261,8 @@ public class FISSampleRateDecimator implements FloatInputStream, FISReader {
     /**
      * @see de.uos.fmt.musitech.audio.FloatInputStream#reset()
      */
-    public void reset() throws IOException {
+    @Override
+	public void reset() throws IOException {
         srcBuffered = 0;
         fis.reset();
     }
@@ -264,7 +270,8 @@ public class FISSampleRateDecimator implements FloatInputStream, FISReader {
     /**
      * @see de.uos.fmt.musitech.audio.FloatInputStream#getFormat()
      */
-    public AudioFormat getFormat() {
+    @Override
+	public AudioFormat getFormat() {
         AudioFormat in = fis.getFormat();
         float targetSampleRate = sourceSampleRate / srcSRbyTrgSR;
         AudioFormat out = new AudioFormat(in.getEncoding(), targetSampleRate, in
@@ -276,21 +283,24 @@ public class FISSampleRateDecimator implements FloatInputStream, FISReader {
     /**
      * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
      */
-    public long remainingSamples() {
+    @Override
+	public long remainingSamples() {
         return (long) (fis.remainingSamples() / srcSRbyTrgSR);
     }
 
     /**
      * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
      */
-    public long getPositionInSamples() {
+    @Override
+	public long getPositionInSamples() {
         return (long) (fis.getPositionInSamples() / srcSRbyTrgSR);
     }
 
     /**
      * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#setPositionInSamples(long)
      */
-    public void setPositionInSamples(long newPos) throws IOException {
+    @Override
+	public void setPositionInSamples(long newPos) throws IOException {
         fis.setPositionInSamples((long) (newPos * srcSRbyTrgSR));
     }
 

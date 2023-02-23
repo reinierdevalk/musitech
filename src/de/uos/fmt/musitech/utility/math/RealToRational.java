@@ -111,7 +111,7 @@ public class RealToRational {
 			t = m[1][0] * ai + m[1][1]; // extend the denominator
 			m[1][1] = m[1][0]; // 
 			m[1][0] = t; // 
-			x = 1 / (x - (double) ai); // remaining number to be converted
+			x = 1 / (x - ai); // remaining number to be converted
 			i++; // 
 		}
 		System.out.println(i + " iterations ");

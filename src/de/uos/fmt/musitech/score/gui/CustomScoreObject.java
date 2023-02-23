@@ -57,11 +57,7 @@ above is subject to the following three conditions:
 package de.uos.fmt.musitech.score.gui;
 
 import java.awt.Font;
-import java.awt.image.BufferedImage;
-
 import javax.swing.JComponent;
-import javax.swing.JLabel;
-
 import de.uos.fmt.musitech.data.score.Attachable;
 import de.uos.fmt.musitech.data.score.CharSymbol;
 import de.uos.fmt.musitech.data.score.DualMetricAttachable;
@@ -69,11 +65,7 @@ import de.uos.fmt.musitech.data.score.MetricAttachable;
 import de.uos.fmt.musitech.data.score.SVGSymbol;
 import de.uos.fmt.musitech.data.score.StackSymbol;
 import de.uos.fmt.musitech.data.score.StringSymbol;
-import de.uos.fmt.musitech.data.score.SymbolicObject;
 import de.uos.fmt.musitech.data.structure.harmony.ChordSymbol;
-import de.uos.fmt.musitech.framework.editor.Display;
-import de.uos.fmt.musitech.framework.editor.EditorFactory;
-import de.uos.fmt.musitech.structure.harmony.gui.ChordSymbolDisplay;
 import de.uos.fmt.musitech.structure.harmony.gui.ChordSymbolDisplay2;
 
 /*
@@ -94,6 +86,7 @@ public class CustomScoreObject extends ScoreObject {
 		this.master = master;
 	}
 
+	@Override
 	int arrange(int pass) {
 		if (pass == 2) {
 			Measure m = (Measure)master;
@@ -194,7 +187,7 @@ public class CustomScoreObject extends ScoreObject {
 			ChordSymbolDisplay2 symbolDisplay = new ChordSymbolDisplay2();
 			Object o = ma.getSymbol();
 			symbolDisplay.init(ma.getSymbol(), null, null);
-			JComponent jcomp = (JComponent)symbolDisplay;
+			JComponent jcomp = symbolDisplay;
 			cso = new CustomComponentScoreObject(master, jcomp, ma);
 		}
 		else {
@@ -207,10 +200,12 @@ public class CustomScoreObject extends ScoreObject {
 		return cso;
 	}
 	
+	@Override
 	public int absX() {
 		return getXPos();
 	}
 	
+	@Override
 	public int absY() {
 		return getYPos();
 	}
@@ -228,6 +223,7 @@ public class CustomScoreObject extends ScoreObject {
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.score.gui.ScoreObject#parentClass()
 	 */
+	@Override
 	Class parentClass() {
 		return null;
 	}

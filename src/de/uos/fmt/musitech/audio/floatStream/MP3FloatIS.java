@@ -130,6 +130,7 @@ public class MP3FloatIS implements FloatInputStream {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float[][])
 	 */
+	@Override
 	public int read(float[][] data) throws IOException {
 		return read(data, 0, data[0].length);
 	}
@@ -138,6 +139,7 @@ public class MP3FloatIS implements FloatInputStream {
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float[][],
 	 *      int, int)
 	 */
+	@Override
 	public synchronized int read(float[][] data, int start, int len) throws IOException {
 	
 		if (buffer == null) {
@@ -335,6 +337,7 @@ public class MP3FloatIS implements FloatInputStream {
 	 * @param n Samples to be skipped
 	 * @return long Samples skipped
 	 */
+	@Override
 	public synchronized long skip(long n) throws IOException {
 		int sk = 0;
 		int skipped = 0;
@@ -351,6 +354,7 @@ public class MP3FloatIS implements FloatInputStream {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getFormat()
 	 */
+	@Override
 	public AudioFormat getFormat() {
 		AudioFormat in = audioFormat;
 		AudioFormat out = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, in.getSampleRate(), normalised?1:in.getSampleSizeInBits(), in.getChannels(), in.getFrameSize(), in.getFrameRate(), in.isBigEndian());
@@ -362,6 +366,7 @@ public class MP3FloatIS implements FloatInputStream {
 	 * 
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#reset()
 	 */
+	@Override
 	public synchronized void reset() throws IOException {
 //		System.out.println("MP3FloatIS.reset() is starting");
 		inputStream.reset();
@@ -375,6 +380,7 @@ public class MP3FloatIS implements FloatInputStream {
 	/**
 	 * Add to super.toString() the format of the mp3-data read
 	 */
+	@Override
 	public String toString() {
 		return super.toString() + " SourceFormat contained: <" + sourceFormat + ">";
 	}
@@ -414,6 +420,7 @@ public class MP3FloatIS implements FloatInputStream {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
 	 */
+	@Override
 	public long remainingSamples() {
 		if(sampleLength<0)
 				countSamples();
@@ -446,6 +453,7 @@ public class MP3FloatIS implements FloatInputStream {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public long getPositionInSamples() {
 		return samplesRead;
 	}
@@ -453,6 +461,7 @@ public class MP3FloatIS implements FloatInputStream {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#setPositionInSamples(long)
 	 */
+	@Override
 	public void setPositionInSamples(long newPos) throws IOException {
 		if(newPos==getSamplesRead())
 			return;

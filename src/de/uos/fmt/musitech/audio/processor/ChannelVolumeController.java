@@ -93,6 +93,7 @@ public class ChannelVolumeController extends VolumeController {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float)
 	 */
+	@Override
 	public int read(float[][] data) throws IOException {
 		return read(data, 0, data[0].length);
 	}
@@ -102,6 +103,7 @@ public class ChannelVolumeController extends VolumeController {
 	/**
 	 * This method changes the volume of floatInputStream with factor gain
 	 */
+	@Override
 	public int read(float[][] data, int start, int len) throws IOException {
 	
 		int retval = floatInputStream.read(data, start, len);

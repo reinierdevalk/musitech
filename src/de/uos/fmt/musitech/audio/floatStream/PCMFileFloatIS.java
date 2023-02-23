@@ -93,6 +93,7 @@ public class PCMFileFloatIS implements PositionableFIS {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.PositionableFIS#position(long)
 	 */
+	@Override
 	public void position(int n) throws IOException {
 		position = n;		
 	}
@@ -100,6 +101,7 @@ public class PCMFileFloatIS implements PositionableFIS {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.PositionableFIS#position()
 	 */
+	@Override
 	public int position() {
 		return position;
 	}
@@ -107,6 +109,7 @@ public class PCMFileFloatIS implements PositionableFIS {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float[][])
 	 */
+	@Override
 	public int read(float[][] data) throws IOException {
 		return read(data, 0, data[0].length);
 	}
@@ -114,6 +117,7 @@ public class PCMFileFloatIS implements PositionableFIS {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float[][], int, int)
 	 */
+	@Override
 	public int read(float[][] data, int start, int len) throws IOException {
 		int read = source.getSamples(data, start, len, position, normalised);
 		position += read;
@@ -123,6 +127,7 @@ public class PCMFileFloatIS implements PositionableFIS {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getFormat()
 	 */
+	@Override
 	public AudioFormat getFormat() {
 		AudioFormat in = source.getAudioFormat();
 		AudioFormat out = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, in.getSampleRate(), normalised?1:in.getSampleSizeInBits(), in.getChannels(), in.getFrameSize(), in.getFrameRate(), in.isBigEndian());
@@ -132,6 +137,7 @@ public class PCMFileFloatIS implements PositionableFIS {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#skip(long)
 	 */
+	@Override
 	public long skip(long n) throws IOException {
 		int pos = position;
 		position((int) (position+n));
@@ -142,6 +148,7 @@ public class PCMFileFloatIS implements PositionableFIS {
 	 * The some as position(0)
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#reset()
 	 */
+	@Override
 	public void reset() throws IOException {
 		position(0);
 	}
@@ -149,6 +156,7 @@ public class PCMFileFloatIS implements PositionableFIS {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
 	 */
+	@Override
 	public long remainingSamples() {
 		return totalLength - position;
 	}
@@ -157,6 +165,7 @@ public class PCMFileFloatIS implements PositionableFIS {
 	 * The some as position()
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public long getPositionInSamples() {
 		return position();
 	}
@@ -165,6 +174,7 @@ public class PCMFileFloatIS implements PositionableFIS {
 	 * The some as position((int) newPos);
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#setPositionInSamples(long)
 	 */
+	@Override
 	public void setPositionInSamples(long newPos) throws IOException {
 		position((int) newPos);
 	}
@@ -179,6 +189,7 @@ public class PCMFileFloatIS implements PositionableFIS {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.PositionableFIS#getFloatPreviewReader()
 	 */
+	@Override
 	public FloatPreviewReader getFloatPreviewReader() {
 		return source.getFloatPreviewReader();
 	}

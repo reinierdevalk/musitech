@@ -52,6 +52,7 @@ import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JSlider;
+import javax.swing.WindowConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -106,7 +107,8 @@ public class SawtoothOscillator extends FloatOscillator {
      * 
      * @return the next sample.
      */
-    public float read() {
+    @Override
+	public float read() {
         float val = 0;// getTime() * amplitude;
         incPhase(step);
         val += phase * amplitude;
@@ -140,19 +142,21 @@ public class SawtoothOscillator extends FloatOscillator {
         final JSlider slider = new JSlider(1, 20000, 440);
         slider.addChangeListener(new ChangeListener() {
 
-            public void stateChanged(ChangeEvent e) {
+            @Override
+			public void stateChanged(ChangeEvent e) {
                 oszi.setFrequency(slider.getValue());
             }
         });
         final JSlider ampSlider = new JSlider(0, 32768, 10000);
         ampSlider.addChangeListener(new ChangeListener() {
 
-            public void stateChanged(ChangeEvent e) {
+            @Override
+			public void stateChanged(ChangeEvent e) {
                 oszi.setAmplitude(ampSlider.getValue());
                 System.out.println("New amplitude: " + ampSlider.getValue());
             }
         });
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(new FlowLayout());
         frame.getContentPane().add(slider);
         frame.getContentPane().add(ampSlider);
@@ -177,10 +181,12 @@ public class SawtoothOscillator extends FloatOscillator {
         //		}
     }
 
+	@Override
 	public long skip(long n) throws IOException {
 		return 0;
 	}
 
+	@Override
 	public void reset() throws IOException {
 		// TODO Auto-generated method stub
 		

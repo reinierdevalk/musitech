@@ -73,6 +73,7 @@ public class IconDisplay extends PopUpDisplay {
 	 *  
 	 * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#createGUI()
 	 */
+	@Override
 	public void createGUI() {
 		displayIconButton();
 	}
@@ -95,6 +96,7 @@ public class IconDisplay extends PopUpDisplay {
 		}
 		JButton displayButton = new JButton(icon);
 		displayButton.addActionListener(new ActionListener(){
+			@Override
 			public void actionPerformed(ActionEvent e){
 				IconDisplay.this.showDisplayToPopUp();
 			}

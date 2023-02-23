@@ -102,7 +102,7 @@ public class PolyLine
       int[] y = new int[points.size()];
       for (int i=0; i < x.length; i++)
       {
-         Pair p = (Pair)points.get(i);
+         Pair p = points.get(i);
          x[i] = p.getRoundedX();
          y[i] = p.getRoundedY();
       }      
@@ -111,8 +111,8 @@ public class PolyLine
    
    protected double getY (double x, int segment)
    {
-      Pair p1 = (Pair)points.get(segment);  
-      Pair p2 = (Pair)points.get(segment+1);      
+      Pair p1 = points.get(segment);  
+      Pair p2 = points.get(segment+1);      
       // ensure that p1 contains point with minimum x coordinate
       if (p1.getX() > p2.getX())
       {
@@ -145,8 +145,8 @@ public class PolyLine
    
    protected double getX (double y, int segment)
    {
-      Pair p1 = (Pair)points.get(segment);  
-      Pair p2 = (Pair)points.get(segment+1);      
+      Pair p1 = points.get(segment);  
+      Pair p2 = points.get(segment+1);      
       // ensure that p1 contains point with minimum x coordinate
       if (p1.getY() > p2.getY())
       {

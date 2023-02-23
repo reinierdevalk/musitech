@@ -281,7 +281,8 @@ public class RenderingHints implements Serializable, IMPEGSerializable {
 
         private String classname;
 
-        public void startElement(String namespaceURI, String sname, String qname, Attributes attrs) {
+        @Override
+		public void startElement(String namespaceURI, String sname, String qname, Attributes attrs) {
             String name = sname;
             if ("".equals(name))
                 name = qname;
@@ -303,7 +304,8 @@ public class RenderingHints implements Serializable, IMPEGSerializable {
 
         private StringBuffer buf = null;
 
-        public void characters(char[] chars, int offset, int length) {
+        @Override
+		public void characters(char[] chars, int offset, int length) {
             String s = new String(chars, offset, length);
             if (buf == null)
                 buf = new StringBuffer(s);
@@ -313,7 +315,8 @@ public class RenderingHints implements Serializable, IMPEGSerializable {
 
         private String key, value;
 
-        public void endElement(String namespaceURI, String sname, String qname) {
+        @Override
+		public void endElement(String namespaceURI, String sname, String qname) {
             String name = sname;
             if ("".equals(name))
                 name = qname;
@@ -386,7 +389,8 @@ public class RenderingHints implements Serializable, IMPEGSerializable {
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#toMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Node, java.lang.Object, java.lang.String)
      */
-    public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
+    @Override
+	public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
         // create 'piece' element
 
         //if (instance.knowsObject(rhints, object))
@@ -489,7 +493,8 @@ public class RenderingHints implements Serializable, IMPEGSerializable {
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#fromMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Element)
      */
-    public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
+    @Override
+	public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
         // reference-handling
         Object reference = instance.getReferenced(node, this);
         if (reference != null)

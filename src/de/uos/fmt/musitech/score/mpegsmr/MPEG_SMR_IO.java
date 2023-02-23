@@ -70,7 +70,7 @@ public class MPEG_SMR_IO {
 	}
 
 	public static void writeMPEG_SMR(File smrFile, Piece piece) {
-		Document doc = PartExporter.exportStaff((NotationStaff) piece
+		Document doc = PartExporter.exportStaff(piece
 				.getScore().get(0));
 		try {
 			XMLOutputter out = new XMLOutputter(Format.getPrettyFormat());

@@ -83,6 +83,7 @@ public class ShortEditor extends SimpleTextfieldEditor{
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.SimpleTextfieldEditor#getInputValue()
 	 */
+	@Override
 	protected Object getInputValue() {
 		Object inputValue = null;
 		try {

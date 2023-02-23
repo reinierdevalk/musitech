@@ -136,6 +136,7 @@ public class Song extends Piece
 	/**
 	 * Return a string representation of this object
 	 */
+	@Override
 	public String toString()
 	{
 	return "\""+this.get("Title")+"\""+" | "+this.get("Interpret");

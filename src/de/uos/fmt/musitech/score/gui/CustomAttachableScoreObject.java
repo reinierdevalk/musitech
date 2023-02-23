@@ -52,7 +52,6 @@ above is subject to the following three conditions:
 package de.uos.fmt.musitech.score.gui;
 
 import java.awt.Graphics;
-import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;
 
 import org.apache.batik.transcoder.TranscoderException;
@@ -73,6 +72,7 @@ public class CustomAttachableScoreObject extends CustomScoreObject {
 	BufferedImage rasteredImage;
 	Attachable attachable;
 
+	@Override
 	public int arrange(int pass) {
 		return 0;
 	}
@@ -93,6 +93,7 @@ public class CustomAttachableScoreObject extends CustomScoreObject {
 		rasteredImage = t.image;
 	}
 
+	@Override
 	public void paint(Graphics g) {
 		int ld = master.staff().getLineDistance();
 		int x = anker.absX() + (int)(attachable.getX() * ld);
@@ -103,10 +104,12 @@ public class CustomAttachableScoreObject extends CustomScoreObject {
 	class AWTImageTranscoder extends ImageTranscoder {
 		BufferedImage image = null;
 
+		@Override
 		public BufferedImage createImage(int arg0, int arg1) {
 			return new BufferedImage(arg0, arg1, BufferedImage.TYPE_4BYTE_ABGR);
 		}
 		
+		@Override
 		public void writeImage(BufferedImage arg0, TranscoderOutput arg1)
 				throws TranscoderException {
 			image = arg0;

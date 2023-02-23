@@ -99,7 +99,8 @@ public class ContainerNotationFilter implements NotationFilter, Serializable{
      * 
      * @see de.uos.fmt.musitech.structure.container.NotationFilter#includeElement(java.lang.Object)
      */
-    public boolean includeElement(Object element) {
+    @Override
+	public boolean includeElement(Object element) {
         if (container != null) {
             Collection contents = container.getContentsRecursiveList(null);
             return contents.contains(element);

@@ -51,11 +51,7 @@ above is subject to the following three conditions:
  */
 package de.uos.fmt.musitech.score.gui;
 
-import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-
 import javax.swing.JComponent;
 
 import de.uos.fmt.musitech.data.score.MetricAttachable;
@@ -74,14 +70,17 @@ public class CustomComponentScoreObject extends CustomScoreObject {
 		this.symbol = symbol;
 	}
 	
+	@Override
 	public int rwidth() {
 		return symbol.getSize().width;
 	}
 	
+	@Override
 	public int height() {
 		return symbol.getSize().height;
 	}
 	
+	@Override
 	public int arrange(int pass) {
 		int num = super.arrange(pass);
 		if (pass == 2 && master.score() != null) {
@@ -91,6 +90,7 @@ public class CustomComponentScoreObject extends CustomScoreObject {
 	}
 	
 	private boolean firstPaint = true;
+	@Override
 	public void paint(Graphics g) {
 		if (symbol instanceof ChordSymbolDisplay) {
 			((ChordSymbolDisplay)symbol).setScale(master.getScale());

@@ -72,6 +72,7 @@ public class AccentSection extends AbstractToolbarSection {
 		center
 				.add(new AbstractAction("Staccato", Icons //$NON-NLS-1$
 						.getIcon("staccato.png")) { //$NON-NLS-1$
+					@Override
 					public void actionPerformed(ActionEvent e) {
 						getScoreEditor().getScoreManipulator()
 								.setAccentOnSelection(Accent.STACCATO);
@@ -81,6 +82,7 @@ public class AccentSection extends AbstractToolbarSection {
 		center
 				.add(new AbstractAction("Marcarto", Icons //$NON-NLS-1$
 						.getIcon("marcato.png")) { //$NON-NLS-1$
+					@Override
 					public void actionPerformed(ActionEvent e) {
 						getScoreEditor().getScoreManipulator()
 								.setAccentOnSelection(Accent.MARCATO);
@@ -88,6 +90,7 @@ public class AccentSection extends AbstractToolbarSection {
 				});
 
 		center.add(new AbstractAction("Portato", Icons.getIcon("portato.png")) { //$NON-NLS-1$ //$NON-NLS-2$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				getScoreEditor().getScoreManipulator().setAccentOnSelection(
 						Accent.PORTATO);
@@ -95,6 +98,7 @@ public class AccentSection extends AbstractToolbarSection {
 		});
 
 		center.add(new AbstractAction(Messages.getString("AccentSection.Trill"), Icons.getIcon("triller.png")) { //$NON-NLS-1$ //$NON-NLS-2$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				getScoreEditor().getScoreManipulator().setAccentOnSelection(
 						Accent.TRILL);
@@ -103,6 +107,7 @@ public class AccentSection extends AbstractToolbarSection {
 
 		center.add(new AbstractAction(Messages.getString("AccentSection.UpperMordent"), Icons //$NON-NLS-1$
 				.getIcon("mordent1.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				getScoreEditor().getScoreManipulator().setAccentOnSelection(
 						Accent.MORDENT_UP);
@@ -111,12 +116,14 @@ public class AccentSection extends AbstractToolbarSection {
 		center
 				.add(new AbstractAction(Messages.getString("AccentSection.LowerMordent"), Icons //$NON-NLS-1$
 						.getIcon("mordent2.png")) { //$NON-NLS-1$
+					@Override
 					public void actionPerformed(ActionEvent e) {
 						getScoreEditor().getScoreManipulator()
 								.setAccentOnSelection(Accent.MORDENT_DOWN);
 					}
 				});
 		center.add(new AbstractAction(Messages.getString("AccentSection.Turn"), Icons.getIcon("turn.png")) { //$NON-NLS-1$ //$NON-NLS-2$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				getScoreEditor().getScoreManipulator().setAccentOnSelection(
 						Accent.TURN);

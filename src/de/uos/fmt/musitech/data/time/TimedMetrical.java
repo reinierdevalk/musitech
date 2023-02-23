@@ -84,6 +84,7 @@ public class TimedMetrical extends BasicTimedObject implements Marker, MObject {
      * cascade = "all"
 	 *
 	 */
+	@Override
 	public Rational getMetricTime() {
 		return metricTime;
 	}
@@ -96,6 +97,7 @@ public class TimedMetrical extends BasicTimedObject implements Marker, MObject {
 		this.metricTime = metricTime;
 	}
 
+	@Override
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
 		sb.append("TimedMetrical at ");
@@ -135,6 +137,7 @@ public class TimedMetrical extends BasicTimedObject implements Marker, MObject {
      * cascade = "all"
 	 * 
 	 */
+	@Override
 	public Rational getMetricDuration() {
 		return metricDuration;
 	}

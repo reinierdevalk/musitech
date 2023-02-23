@@ -60,6 +60,7 @@ import java.awt.event.WindowEvent;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 
 import junit.framework.TestCase;
 import de.uos.fmt.musitech.data.rendering.RenderingHints;
@@ -80,6 +81,7 @@ public class NotationDisplayTest extends TestCase {
 		JFrame jframe = new JFrame();
 		
 		jframe.addWindowListener(new WindowAdapter() {
+			@Override
 			public void windowClosing(WindowEvent ev) {
 				System.exit(0);
 			}
@@ -132,9 +134,10 @@ public class NotationDisplayTest extends TestCase {
 	
 	public static void testMusicFont(){
 	    JFrame jframe = new JFrame();
-	    jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    jframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	    jframe.setContentPane( new JPanel(){
-	        public void paint(Graphics g){
+	        @Override
+			public void paint(Graphics g){
 	            Graphics2D g2d = (Graphics2D) g;
 	            g2d.setRenderingHint(java.awt.RenderingHints.KEY_ANTIALIASING,java.awt.RenderingHints.VALUE_ANTIALIAS_ON);
 //	            try {

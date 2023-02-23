@@ -97,6 +97,7 @@ public class NoteSequence
 	 *	Sets the name of the NoteSequence
 	 *	@param newName String
 	 */
+	@Override
 	public void setName(String newName) {
 		name = newName;
 	}
@@ -107,6 +108,7 @@ public class NoteSequence
 	 *
 	 * @hibernate.property
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -241,7 +243,7 @@ public class NoteSequence
 	 * @param i int, the index
 	 */
 	public Note getNoteAt(int i) {
-		return (Note) get(i);
+		return get(i);
 	}
 	
 	

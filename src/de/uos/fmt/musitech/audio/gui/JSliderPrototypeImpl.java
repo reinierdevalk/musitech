@@ -62,6 +62,7 @@ public class JSliderPrototypeImpl extends JSlider
 	/**
 	 * @see de.uos.fmt.musitech.audio.proc.filter.SliderPrototype#newInstance()
 	 */
+	@Override
 	public SliderPrototype newInstance() throws CloneNotSupportedException{
 		JSliderPrototypeImpl sp = new JSliderPrototypeImpl(
 			getOrientation(),
@@ -80,6 +81,7 @@ public class JSliderPrototypeImpl extends JSlider
 	/**
 	 * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
 	 */
+	@Override
 	public void propertyChange(PropertyChangeEvent arg0) {
 		setValue((int)(((Float)(arg0.getNewValue())).floatValue()* getMaximum()));
 	}

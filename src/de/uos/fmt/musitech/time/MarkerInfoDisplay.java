@@ -96,6 +96,7 @@ public class MarkerInfoDisplay extends JPanel {
 
 		addMouseListener(new MouseAdapter() {
 
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				paint(getGraphics());
 			}

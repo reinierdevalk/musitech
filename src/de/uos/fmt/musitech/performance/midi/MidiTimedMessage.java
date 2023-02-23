@@ -54,7 +54,6 @@ package de.uos.fmt.musitech.performance.midi;
 
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiEvent;
-import javax.sound.midi.MidiMessage;
 import javax.sound.midi.ShortMessage;
 
 import de.uos.fmt.musitech.data.structure.container.Containable;
@@ -79,6 +78,7 @@ public class MidiTimedMessage extends BasicTimedObject implements Containable {
 		/**
 		 * @see javax.sound.midi.MidiMessage#clone()
 		 */
+		@Override
 		public Object clone() {
 			return new myMidiMessage(data);
 		}

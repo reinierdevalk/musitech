@@ -190,6 +190,7 @@ public class NotationSystem extends BasicContainer<NotationStaff> implements
 	 * Describe <code>prepareForScore</code> method here.
 	 * @param pass The pass number. 
 	 */
+	@Override
 	public void prepareForScore(int pass) {
 		for (NotationContainer nc : this ) {
 			nc.prepareForScore(pass);
@@ -370,12 +371,12 @@ public class NotationSystem extends BasicContainer<NotationStaff> implements
 			throw new IllegalStateException(
 				"You cannot set pagebreaks in an empty system");
 		}
-		NotationStaff staff = (NotationStaff) get(0);
+		NotationStaff staff = get(0);
 		if (staff.size() == 0) {
 			throw new IllegalStateException(
 				"You cannot set pagebreaks in an empty staff");
 		}
-		NotationVoice voice = (NotationVoice) staff.get(0);
+		NotationVoice voice = staff.get(0);
 		if (voice.size() == 0) {
 			throw new IllegalStateException(
 				"You cannot set pagebreaks in an empty voice");
@@ -418,7 +419,7 @@ public class NotationSystem extends BasicContainer<NotationStaff> implements
 			throw new IllegalArgumentException(
 				"There is no linebreak to move at" + linebreak);
 
-		Barline leftBarline = (Barline) barlines.previousElement(barlines
+		Barline leftBarline = barlines.previousElement(barlines
 				.getBarlineAt(linebreak));
 		if (leftBarline == null)
 			return false;
@@ -489,6 +490,7 @@ public class NotationSystem extends BasicContainer<NotationStaff> implements
 	 *                        "de.uos.fmt.musitech.data.structure.Context"
 	 *                        foreign-key = "uid"
 	 */
+	@Override
 	public Context getContext() {
 		return context;
 	}
@@ -592,7 +594,7 @@ public class NotationSystem extends BasicContainer<NotationStaff> implements
 					}
 					if (index < voice.size()) {
 						// TODO hier geht's schief, wenn index == -1 ist
-						NotationChord left = (NotationChord) voice.get(index);
+						NotationChord left = voice.get(index);
 						if (left.getMetricTime().add(left.getMetricDuration())
 								.isGreater(t)
 							&& left.getMetricTime().isLess(t)) {
@@ -605,9 +607,9 @@ public class NotationSystem extends BasicContainer<NotationStaff> implements
 								right.getMetricDuration()).sub(t));
 							voice.add(right);
 							for (int i = 0; i < left.size(); i++) {
-								ScoreNote leftScoreNote = ((Note) left.get(i))
+								ScoreNote leftScoreNote = left.get(i)
 										.getScoreNote();
-								ScoreNote rightScoreNote = ((Note) right.get(i))
+								ScoreNote rightScoreNote = right.get(i)
 										.getScoreNote();
 								leftScoreNote.setTiedNote(rightScoreNote);
 							}
@@ -641,7 +643,7 @@ public class NotationSystem extends BasicContainer<NotationStaff> implements
 			for (Iterator<?> iterator = staff.iterator(); iterator.hasNext();) {
 				NotationVoice voice = (NotationVoice) iterator.next();
 				if (voice.size() > 0) {
-					NotationChord chord = (NotationChord) voice.get(voice
+					NotationChord chord = voice.get(voice
 							.size() - 1);
 					if (chord.getMetricTime().isGreater(lastAttack)) {
 						lastChord = chord;
@@ -747,6 +749,7 @@ public class NotationSystem extends BasicContainer<NotationStaff> implements
 	 *      java.lang.Object, java.util.Hashtable, org.w3c.dom.Document,
 	 *      java.lang.String)
 	 */
+	@Override
 	public synchronized boolean toMPEG(MusiteXMLSerializer instance,
 										Node piece, Object object,
 										String fieldname) {
@@ -890,7 +893,7 @@ public class NotationSystem extends BasicContainer<NotationStaff> implements
 				Marker marker = iter.next();
 				// test if in segment's time slice
 				// if (marker instanceof Marker) {
-				Rational markerTime = ((Marker) marker).getMetricTime();
+				Rational markerTime = marker.getMetricTime();
 				if (begin.isLessOrEqual(markerTime)
 					&& end.isGreater(markerTime)) {
 					// marker is relevant
@@ -906,7 +909,7 @@ public class NotationSystem extends BasicContainer<NotationStaff> implements
 				Marker marker = iter.next();
 				// test if in segment's time slice
 				// if (marker instanceof Marker) {
-				Rational markerTime = ((Marker) marker).getMetricTime();
+				Rational markerTime = marker.getMetricTime();
 				if (begin.isLessOrEqual(markerTime)
 					&& end.isGreater(markerTime)) {
 					// marker is relevant
@@ -940,6 +943,7 @@ public class NotationSystem extends BasicContainer<NotationStaff> implements
 	 * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#fromMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
 	 *      org.w3c.dom.Element, java.util.Hashtable, java.lang.Object)
 	 */
+	@Override
 	public Object fromMPEG(MusiteXMLSerializer instance, Element score) {
 		// commons----------------------------------
 		// reference-handling
@@ -1170,11 +1174,11 @@ public class NotationSystem extends BasicContainer<NotationStaff> implements
 					NotationVoice currentVoice;
 					if (index >= 0) { // the chord starts at a linebreak => we
 						// have to insert it after that
-						currentVoice = (NotationVoice) lookup
+						currentVoice = lookup
 								.get(voice).get(index + 1);
 					} else {
 						int insertionPoint = -(index + 1);
-						currentVoice = (NotationVoice) lookup
+						currentVoice = lookup
 								.get(voice).get(insertionPoint);
 					}
 					currentVoice.add(chord);

@@ -111,6 +111,7 @@ public class TiedChord extends Chord {
 	}
 
 	/** Draws this TiedChord onto the given graphics context. */
+	@Override
 	public void paint(Graphics g) {
 		super.paint(g); 
 		// if no successor is available no tie has to be drawn
@@ -128,7 +129,8 @@ public class TiedChord extends Chord {
 		}
 	}
 	
-   public int arrange(int pass) {
+   @Override
+public int arrange(int pass) {
       int res = super.arrange(pass);
       
       if (ties != null) { //it is possible that our successor are not known, because the following measures have not been rendered yet 

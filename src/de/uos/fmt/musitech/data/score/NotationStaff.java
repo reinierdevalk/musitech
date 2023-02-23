@@ -120,7 +120,8 @@ public class NotationStaff extends BasicContainer<NotationVoice> implements Nota
      * 
      * @see de.uos.fmt.musitech.data.score.NotationContainer#prepareForScore()
      */
-    public void prepareForScore(int pass) {
+    @Override
+	public void prepareForScore(int pass) {
         for (Iterator iter = this.iterator(); iter.hasNext();) {
             Object obj = iter.next();
             if (obj instanceof NotationContainer) {
@@ -248,7 +249,7 @@ public class NotationStaff extends BasicContainer<NotationVoice> implements Nota
         clef.setMetricTime(Rational.ZERO);
         if (clefTrack == null)
             clefTrack = new ClefContainer(context);
-        if (clefTrack.size() > 0 && ((Clef) clefTrack.get(0)).getMetricTime().equals(Rational.ZERO)) {
+        if (clefTrack.size() > 0 && clefTrack.get(0).getMetricTime().equals(Rational.ZERO)) {
             clefTrack.remove(clefTrack.get(0));
         }
         clefTrack.add(clef);
@@ -327,7 +328,7 @@ public class NotationStaff extends BasicContainer<NotationVoice> implements Nota
      */
     public void setClefLine(int clefLine) {
         if (clefTrack != null && clefTrack.size() > 0) {
-            Clef clef = (Clef) clefTrack.get(0);
+            Clef clef = clefTrack.get(0);
             clef.setClefLine(clefLine);
         }
     }
@@ -402,7 +403,8 @@ public class NotationStaff extends BasicContainer<NotationVoice> implements Nota
      *      org.w3c.dom.Node, java.lang.Object, java.util.Hashtable,
      *      java.lang.String)
      */
-    public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
+    @Override
+	public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
         //commons----------------------------------
         Element staff = XMLHelper.addElement(parent, "staff");
         if (instance.knowsObject(staff, object))
@@ -438,7 +440,8 @@ public class NotationStaff extends BasicContainer<NotationVoice> implements Nota
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#fromMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Element, java.util.Hashtable, java.lang.Object)
      */
-    public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
+    @Override
+	public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
         //commons----------------------------------
         // reference-handling
         Object reference = instance.getReferenced(node, this);
@@ -499,7 +502,7 @@ public class NotationStaff extends BasicContainer<NotationVoice> implements Nota
         ClefContainer clefTrk = staff.getClefTrack();
         if (clefTrk != null){
             for (int i = 0; i < clefTrk.size(); i++) {
-                this.addClef((Clef) clefTrk.get(i));
+                this.addClef(clefTrk.get(i));
             }
         }
         // merge context

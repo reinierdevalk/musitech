@@ -80,6 +80,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	 * read Does not really do anything.
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float[][])
 	 */
+	@Override
 	public int read(float[][] data) throws IOException {
 //		switch(state){
 //			case WRITE_ZEROS :
@@ -94,6 +95,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	 * read Does not really do anything.
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float[][], int, int)
 	 */
+	@Override
 	public int read(float[][] data, int start, int len) throws IOException {
 		return len;
 	}
@@ -102,6 +104,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	 * getFormat returns the default format.
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getFormat()
 	 */
+	@Override
 	public AudioFormat getFormat() {
 		return FloatInputStream.DefaultFormat;
 	}
@@ -110,6 +113,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	 * skip Does not really do anything.
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#skip(long)
 	 */
+	@Override
 	public long skip(long n) throws IOException {
 		return n;
 	}
@@ -118,6 +122,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	 * reset Does not really do anything.
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#reset()
 	 */
+	@Override
 	public void reset() throws IOException {
 	}
 
@@ -125,6 +130,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	 * Do nothing.
 	 * So it not will be losed.
 	 */
+	@Override
 	public FISReader setFloatInputStream(FloatInputStream fis) {
 		return this;
 	}
@@ -132,6 +138,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	/** 
 	 * @return null
 	 */
+	@Override
 	public FloatInputStream getFloatInputStream() {
 		return null;
 	}
@@ -141,6 +148,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	 * @return Long.MAX_VALUE
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
 	 */
+	@Override
 	public long remainingSamples() {
 		return Long.MAX_VALUE;
 	}
@@ -149,6 +157,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	 * @return 0
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public long getPositionInSamples() {
 		return 0;
 	}
@@ -158,12 +167,14 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	 * @throws IOException
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public void setPositionInSamples(long newPos) throws IOException {
 	}
 
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#previewRead(float[][])
 	 */
+	@Override
 	public int previewRead(float[][] data) {
 		return data[0].length;
 	}
@@ -171,6 +182,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#previewRead(float[][], int, int)
 	 */
+	@Override
 	public int previewRead(float[][] data, int start, int len) {
 		return len;
 	}
@@ -178,6 +190,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#previewRead(float[][], int)
 	 */
+	@Override
 	public int previewRead(float[][] data, int firstSampleToRead) {
 		return data[0].length;
 	}
@@ -185,6 +198,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#previewRead(float[][], int, int, int)
 	 */
+	@Override
 	public int previewRead(float[][] data, int start, int len, int firstSampleToRead) {
 		return len;
 	}
@@ -192,6 +206,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#setSampleRateRatio(float)
 	 */
+	@Override
 	public void setSampleRateRatio(float s) {
 		
 	}
@@ -199,6 +214,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#getSampleRateRatio()
 	 */
+	@Override
 	public float getSampleRateRatio() {
 		return 1;
 	}
@@ -206,6 +222,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#setAllChannels()
 	 */
+	@Override
 	public int setAllChannels() {
 		return channelnumber;
 	}
@@ -213,6 +230,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#setChannels(int[])
 	 */
+	@Override
 	public boolean setChannels(int[] chan) {
 		channelnumber = chan.length;
 		return false;
@@ -222,6 +240,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#channelsDisponible()
 	 */
+	@Override
 	public int channelsDisponible() {
 		return channelnumber;
 	}
@@ -229,6 +248,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#getPositionableFIS()
 	 */
+	@Override
 	public PositionableFIS getPositionableFIS() {
 		return this;
 	}
@@ -236,6 +256,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#position(int)
 	 */
+	@Override
 	public void position(int n) throws IOException {
 		
 	}
@@ -243,6 +264,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#position()
 	 */
+	@Override
 	public int position() {
 		return 0;
 	}
@@ -250,6 +272,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#available()
 	 */
+	@Override
 	public int available() {
 		return 0;
 	}
@@ -257,6 +280,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#availableMikroseconds()
 	 */
+	@Override
 	public long availableMikroseconds() {
 		return 0;
 	}
@@ -264,6 +288,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#stopPreviewRead()
 	 */
+	@Override
 	public boolean stopPreviewRead() {
 		return false;
 	}
@@ -271,6 +296,7 @@ public class DummyFloatIS implements FloatInputStream, DebugState, FISReader, Fl
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.PositionableFIS#getFloatPreviewReader()
 	 */
+	@Override
 	public FloatPreviewReader getFloatPreviewReader() {
 		return this;
 	}

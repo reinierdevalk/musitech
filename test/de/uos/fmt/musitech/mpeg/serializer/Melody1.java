@@ -75,7 +75,8 @@ public class Melody1 extends MPEGDiffViewer {
     /**
      * @see de.uos.fmt.musitech.mpeg.testcases.TestCase#createNotationSystem()
      */
-    public NotationSystem createNotationSystem() {
+    @Override
+	public NotationSystem createNotationSystem() {
         context.getPiece().getMetricalTimeLine().add(new TimeSignatureMarker(3, 4, Rational.ZERO));
         KeyMarker marker = new KeyMarker(Rational.ZERO, 0);
         marker.setAccidentalNum(1);

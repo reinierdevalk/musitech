@@ -495,7 +495,7 @@ case 4:
   break;
 case 5:
 					// line 233 "Parser.y"
-  {yyVal = ((Staff)yyVals[0+yyTop]);}
+  {yyVal = (yyVals[0+yyTop]);}
   break;
 case 6:
 					// line 234 "Parser.y"
@@ -506,7 +506,7 @@ case 6:
   break;
 case 7:
 					// line 238 "Parser.y"
-  {yyVal = ((Staff)yyVals[0+yyTop]);}
+  {yyVal = (yyVals[0+yyTop]);}
   break;
 case 8:
 					// line 243 "Parser.y"
@@ -518,11 +518,11 @@ case 9:
   break;
 case 10:
 					// line 249 "Parser.y"
-  {yyVal = ((Measure)yyVals[0+yyTop]);}
+  {yyVal = (yyVals[0+yyTop]);}
   break;
 case 11:
 					// line 250 "Parser.y"
-  {yyVal = ((Measure)yyVals[-1+yyTop]);
+  {yyVal = (yyVals[-1+yyTop]);
                                ((Barline)yyVals[0+yyTop]).setParent(((Measure)yyVal));
                                ((Measure)yyVal).setRightBarline(((Barline)yyVals[0+yyTop]));
                                nextMeasure();}
@@ -598,7 +598,7 @@ case 25:
   break;
 case 26:
 					// line 296 "Parser.y"
-  {yyVal = ((Chord)yyVals[0+yyTop]);}
+  {yyVal = (yyVals[0+yyTop]);}
   break;
 case 27:
 					// line 297 "Parser.y"
@@ -610,7 +610,7 @@ case 28:
   break;
 case 29:
 					// line 303 "Parser.y"
-  {yyVal = ((Chord)yyVals[0+yyTop]); 
+  {yyVal = (yyVals[0+yyTop]); 
                                if (context.prevChord instanceof TiedChord)
                                   ((TiedChord)context.prevChord).setSuccessor(((Chord)yyVals[0+yyTop]));
                               }
@@ -636,7 +636,7 @@ case 32:
   break;
 case 33:
 					// line 322 "Parser.y"
-  {context = (ParserContext)contextStack.pop(); yyVal = ((Chord)yyVals[-2+yyTop]);}
+  {context = (ParserContext)contextStack.pop(); yyVal = (yyVals[-2+yyTop]);}
   break;
 case 34:
 					// line 323 "Parser.y"
@@ -676,19 +676,19 @@ case 42:
   break;
 case 43:
 					// line 342 "Parser.y"
-  {yyVal = ((Integer)yyVals[0+yyTop]);}
+  {yyVal = (yyVals[0+yyTop]);}
   break;
 case 44:
 					// line 343 "Parser.y"
-  {yyVal = ((Integer)yyVals[0+yyTop]);}
+  {yyVal = (yyVals[0+yyTop]);}
   break;
 case 45:
 					// line 347 "Parser.y"
-  {yyVal = ((Integer)yyVals[0+yyTop]);}
+  {yyVal = (yyVals[0+yyTop]);}
   break;
 case 46:
 					// line 348 "Parser.y"
-  {yyVal = ((Integer)yyVals[0+yyTop]);}
+  {yyVal = (yyVals[0+yyTop]);}
   break;
 case 47:
 					// line 349 "Parser.y"
@@ -710,7 +710,7 @@ case 50:
   break;
 case 51:
 					// line 365 "Parser.y"
-  {yyVal = ((Character)yyVals[0+yyTop]);}
+  {yyVal = (yyVals[0+yyTop]);}
   break;
 case 52:
 					// line 366 "Parser.y"

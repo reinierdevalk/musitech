@@ -77,6 +77,7 @@ public class CustomMultiFontScoreObject extends CustomScoreObject {
 		this.fonts = fonts;
 	}
 
+	@Override
 	public void paint(Graphics g) {
 		Font old = g.getFont();
 		int x = absX();

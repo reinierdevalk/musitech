@@ -66,6 +66,7 @@ public class PrintHelper {
 			final Font f, final Color c, final int orientation,
 			final Printable printable) {
 		Printable p = new Printable() {
+			@Override
 			public int print(Graphics graphics, PageFormat pageFormat,
 					int pageIndex) throws PrinterException {
 				if (f != null)

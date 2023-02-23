@@ -51,8 +51,6 @@ above is subject to the following three conditions:
  */
 package de.uos.fmt.musitech.score.gui;
 
-import java.awt.Graphics;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -86,6 +84,7 @@ public class TabulaturLocalSim extends LocalSim implements ContentChangeListener
 		shadowCaster.addListener(this);
 	}
 	
+	@Override
 	public void contentAdded(Object object) {
 		if (object instanceof Chord) {
 			Chord chord = (Chord)object;
@@ -100,6 +99,7 @@ public class TabulaturLocalSim extends LocalSim implements ContentChangeListener
 	
 	}
 	
+	@Override
 	public void contentRemoved(Object object) {
 	}
 }

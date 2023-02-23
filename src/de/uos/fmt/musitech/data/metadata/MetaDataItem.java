@@ -83,7 +83,8 @@ public class MetaDataItem implements Containable, Editable, IMPEGSerializable {
      * 
      * @see java.lang.Object#hashCode()
      */
-    public int hashCode() {
+    @Override
+	public int hashCode() {
         return hashCode;
     }
 
@@ -184,7 +185,8 @@ public class MetaDataItem implements Containable, Editable, IMPEGSerializable {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Editable#getEditingProfile()
      */
-    public EditingProfile getEditingProfile() {
+    @Override
+	public EditingProfile getEditingProfile() {
         // TODO make this functional
         //Ergaenzung 09/12/03
         //		if (metaDataValue==null){
@@ -219,7 +221,8 @@ public class MetaDataItem implements Containable, Editable, IMPEGSerializable {
      * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String,
      *      java.lang.Object)
      */
-    public boolean isValidValue(String propertyName, Object value) {
+    @Override
+	public boolean isValidValue(String propertyName, Object value) {
         // TODO Auto-generated method stub
         return true; //default
     }
@@ -231,14 +234,16 @@ public class MetaDataItem implements Containable, Editable, IMPEGSerializable {
      * 
      * @hibernate.id generator-class="native"
      */
-    public Long getUid() {
+    @Override
+	public Long getUid() {
         return uid;
     }
 
     /**
      * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
      */
-    public void setUid(Long argUid) {
+    @Override
+	public void setUid(Long argUid) {
         this.uid = argUid;
     }
 
@@ -258,7 +263,8 @@ public class MetaDataItem implements Containable, Editable, IMPEGSerializable {
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#toMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Node, java.lang.Object, java.lang.String)
      */
-    public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
+    @Override
+	public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
         Node metaDataItem = XMLHelper.addElement(parent, "metaDataItem");
         if (instance.knowsObject(metaDataItem, object))
             return true;
@@ -277,7 +283,8 @@ public class MetaDataItem implements Containable, Editable, IMPEGSerializable {
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#fromMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Element)
      */
-    public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
+    @Override
+	public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
         // reference-handling
         Object reference = instance.getReferenced(node, this);
         if (reference != null)

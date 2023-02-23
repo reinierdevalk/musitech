@@ -59,6 +59,7 @@ import java.net.URL;
 import java.util.Iterator;
 
 import javax.swing.AbstractAction;
+import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -108,7 +109,7 @@ public class SmallTestCase extends JFrame {
 		NoteList nl = new NoteList(context);
 		
 		nl.add(new ScorePitch('a', 0, 0), new Rational(5, 1), new Rational(1,2));
-		Note note = (Note)nl.get(0);
+		Note note = nl.get(0);
 		RenderingHints nrh = new RenderingHints();
 		TablatureNote tn = new TablatureNote();
 		tn.setInstrString(2);
@@ -133,7 +134,7 @@ public class SmallTestCase extends JFrame {
 		tn2.setFret(7);
 		tn2.setPullUp(new Rational(1, 2));
 		nrh2.registerHint("tabulatur note", tn2);
-		((Note)nl.get(1)).setRenderingHints(nrh2);
+		nl.get(1).setRenderingHints(nrh2);
 		
 		NoteList nl2 = new NoteList(context);
 		nl2.add(new ScorePitch('d', 0, 0), new Rational(5, 1), new Rational(1,2));
@@ -228,6 +229,7 @@ public class SmallTestCase extends JFrame {
 	NotationDisplay display = null;
 	public SmallTestCase() {
 		addWindowListener(new WindowAdapter() {
+			@Override
 			public void windowClosing(WindowEvent ev) {
 				System.exit(0);
 			}
@@ -251,13 +253,14 @@ public class SmallTestCase extends JFrame {
 		getContentPane().add(display, BorderLayout.CENTER);
 		MyButtonAction buttonAction = new MyButtonAction();
 		JButton button = new JButton(buttonAction);
-		buttonAction.putValue(AbstractAction.NAME, "mark");
+		buttonAction.putValue(Action.NAME, "mark");
 		getContentPane().add(button, BorderLayout.SOUTH);
 		pack();
 	}
 	
 	class MyButtonAction extends AbstractAction {
 		int action = 0;
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (action) {
 			case 0: display.addMarkup(markup2); break;

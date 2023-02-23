@@ -146,6 +146,7 @@ public class DirJFileChooser extends JFileChooser {
 	private void init() {
 		setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 		addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent ae) {
 				if (ae.getActionCommand().equals(JFileChooser.APPROVE_SELECTION)) {
 					if (getSelectedFile().isDirectory()) {

@@ -70,15 +70,6 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-
-
 import de.uos.fmt.musitech.data.MObject;
 import de.uos.fmt.musitech.data.time.Timed;
 import de.uos.fmt.musitech.framework.selection.SelectingEditor;
@@ -160,7 +151,8 @@ public abstract class CollectionMapEditor extends AbstractComplexEditor
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractComplexEditor#createGUI()
      */
-    protected void createGUI() {
+    @Override
+	protected void createGUI() {
 
         // panel for labels
         JPanel labelPanel = new JPanel();
@@ -195,11 +187,13 @@ public abstract class CollectionMapEditor extends AbstractComplexEditor
             add(createButtonPane(), BorderLayout.SOUTH);
         setFocusable(true);
         addFocusListener(new FocusListener() {
-            public void focusGained(FocusEvent e) {
+            @Override
+			public void focusGained(FocusEvent e) {
                 focusReceived();
             }
 
-            public void focusLost(FocusEvent e) {
+            @Override
+			public void focusLost(FocusEvent e) {
             }
         });
     }
@@ -233,7 +227,7 @@ public abstract class CollectionMapEditor extends AbstractComplexEditor
                     labelPanel.add(new JLabel(((AbstractEditor) children[i])
                             .getLabeltext()));
                     children[i] = EditorFactory
-                            .createPopUpWrapper((AbstractComplexEditor) children[i]);
+                            .createPopUpWrapper(children[i]);
                     textfieldPanel.add((Component) children[i]);
                 }
             }
@@ -294,7 +288,8 @@ public abstract class CollectionMapEditor extends AbstractComplexEditor
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#focusReceived()
      */
-    public void focusReceived() {
+    @Override
+	public void focusReceived() {
         updatePreviews();
         super.focusReceived();
     }
@@ -308,7 +303,8 @@ public abstract class CollectionMapEditor extends AbstractComplexEditor
      * 
      * @see de.uos.fmt.musitech.framework.editor.Editor#isFocused()
      */
-    public boolean isFocused() {
+    @Override
+	public boolean isFocused() {
         Component[] components = getComponents();
         if (components != null)
             for (int i = 0; i < components.length; i++) {
@@ -394,7 +390,8 @@ public abstract class CollectionMapEditor extends AbstractComplexEditor
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#destroy()
      */
-    public void destroy() {
+    @Override
+	public void destroy() {
         super.destroy();
         if (!elementEditors.isEmpty()) {
             for (Iterator iter = elementEditors.iterator(); iter.hasNext();) {
@@ -463,7 +460,8 @@ public abstract class CollectionMapEditor extends AbstractComplexEditor
      * elements of the vector <code>elementEditors</code>, i. e. to all
      * contained editors.
      */
-    public void applyChanges() {
+    @Override
+	public void applyChanges() {
         if (profile.isReadOnly())
             return;
         //gather edited data
@@ -526,7 +524,8 @@ public abstract class CollectionMapEditor extends AbstractComplexEditor
      * 
      * @see de.uos.fmt.musitech.framework.selection.SelectingEditor#setSelectionController(de.uos.fmt.musitech.framework.selection.SelectionController)
      */
-    public void setSelectionController(SelectionController c) {
+    @Override
+	public void setSelectionController(SelectionController c) {
         this.selectionController = c;
         if (elementEditors.size()>0){
             for (int i = 0; i < elementEditors.size(); i++) {
@@ -543,7 +542,8 @@ public abstract class CollectionMapEditor extends AbstractComplexEditor
      * 
      * @see de.uos.fmt.musitech.framework.selection.SelectingEditor#objectAt(java.awt.Point)
      */
-    public MObject objectAt(Point p) {
+    @Override
+	public MObject objectAt(Point p) {
         Component c = getComponentAt(p);
         if (c instanceof Display) {
             if (elementEditors.contains(c)) {
@@ -560,7 +560,8 @@ public abstract class CollectionMapEditor extends AbstractComplexEditor
      * 
      * @see de.uos.fmt.musitech.framework.selection.SelectingEditor#objectsTouched(java.awt.Rectangle)
      */
-    public Collection objectsTouched(Rectangle r){
+    @Override
+	public Collection objectsTouched(Rectangle r){
         Collection objects = new ArrayList();
         int stepX = 10;
         int stepY = 5;
@@ -586,7 +587,8 @@ public abstract class CollectionMapEditor extends AbstractComplexEditor
      * 
      * @see de.uos.fmt.musitech.framework.selection.SelectingEditor#timeCovered(java.awt.Rectangle)
      */
-    public TimeRange timeCovered(Rectangle r){
+    @Override
+	public TimeRange timeCovered(Rectangle r){
         long start = Long.MAX_VALUE;
         long end = Timed.INVALID_TIME;
         Collection objsTouched = objectsTouched(r);
@@ -618,7 +620,8 @@ public abstract class CollectionMapEditor extends AbstractComplexEditor
      *  
      * @see de.uos.fmt.musitech.framework.selection.SelectingEditor#paintDragArea(java.awt.Rectangle)
      */
-    public void paintDragArea(Rectangle r){
+    @Override
+	public void paintDragArea(Rectangle r){
         //TODO highlight selected element editors?
     }
 

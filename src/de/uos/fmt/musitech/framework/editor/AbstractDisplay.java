@@ -125,7 +125,8 @@ abstract public class AbstractDisplay extends JPanel implements Display {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#externalChanges()
      */
-    public boolean externalChanges() {
+    @Override
+	public boolean externalChanges() {
         return dataChanged;
     }
 
@@ -136,7 +137,8 @@ abstract public class AbstractDisplay extends JPanel implements Display {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#destroy()
      */
-    public void destroy() {
+    @Override
+	public void destroy() {
         DataChangeManager.getInstance().removeListener(this);
     }
 
@@ -148,7 +150,8 @@ abstract public class AbstractDisplay extends JPanel implements Display {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#focusReceived()
      */
-    public void focusReceived() {
+    @Override
+	public void focusReceived() {
         if (externalChanges())
             updateDisplay();
         dataChanged = false;
@@ -159,7 +162,8 @@ abstract public class AbstractDisplay extends JPanel implements Display {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#getEditingProfile()
      */
-    public EditingProfile getEditingProfile() {
+    @Override
+	public EditingProfile getEditingProfile() {
         return profile;
     }
 
@@ -168,7 +172,8 @@ abstract public class AbstractDisplay extends JPanel implements Display {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#getEditObj()
      */
-    public Object getEditObj() {
+    @Override
+	public Object getEditObj() {
         return editObj;
     }
 
@@ -177,7 +182,8 @@ abstract public class AbstractDisplay extends JPanel implements Display {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#isFocused()
      */
-    public boolean isFocused() {
+    @Override
+	public boolean isFocused() {
         return isFocusOwner();
     }
 
@@ -195,7 +201,8 @@ abstract public class AbstractDisplay extends JPanel implements Display {
      *      de.uos.fmt.musitech.framework.editor.EditingProfile,
      *      de.uos.fmt.musitech.framework.editor.Display)
      */
-    public void init(Object argEditObject, EditingProfile argProfile, Display root) {
+    @Override
+	public void init(Object argEditObject, EditingProfile argProfile, Display root) {
         this.editObj = argEditObject;
         this.profile = argProfile;
         if (profile != null && profile.getPropertyName() != null) {
@@ -231,7 +238,8 @@ abstract public class AbstractDisplay extends JPanel implements Display {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#updateDisplay()
      */
-    public void updateDisplay() {
+    @Override
+	public void updateDisplay() {
         removeAll();
         createGUI();
         revalidate();
@@ -242,7 +250,8 @@ abstract public class AbstractDisplay extends JPanel implements Display {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#getRootDisplay()
      */
-    public Display getRootDisplay() {
+    @Override
+	public Display getRootDisplay() {
         return rootDisplay;
     }
 
@@ -251,7 +260,8 @@ abstract public class AbstractDisplay extends JPanel implements Display {
      * 
      * @see de.uos.fmt.musitech.framework.change.DataChangeListener#dataChanged(de.uos.fmt.musitech.framework.change.DataChangeEvent)
      */
-    public void dataChanged(DataChangeEvent e) {
+    @Override
+	public void dataChanged(DataChangeEvent e) {
         dataChanged = true;
         if (isFocused())
 			focusReceived();
@@ -296,6 +306,7 @@ abstract public class AbstractDisplay extends JPanel implements Display {
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.Display#asComponent()
 	 */
+	@Override
 	public Component asComponent() {
 		return this;
 	}

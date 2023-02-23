@@ -63,10 +63,8 @@ import de.uos.fmt.musitech.data.score.NotationStaff;
 import de.uos.fmt.musitech.data.score.NotationSystem;
 import de.uos.fmt.musitech.data.score.NotationVoice;
 import de.uos.fmt.musitech.data.score.ScoreNote;
-import de.uos.fmt.musitech.data.score.ScorePitch;
 import de.uos.fmt.musitech.data.score.SlurContainer;
 import de.uos.fmt.musitech.data.score.StackSymbol;
-import de.uos.fmt.musitech.data.score.StringSymbol;
 import de.uos.fmt.musitech.data.structure.Note;
 import de.uos.fmt.musitech.data.structure.form.NoteList;
 import de.uos.fmt.musitech.data.structure.harmony.KeyMarker;
@@ -346,6 +344,7 @@ public class TestCase1_1_c extends TestCase {
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.mpeg.testcases.TestCase#createNotationSystem()
 	 */
+	@Override
 	public NotationSystem createNotationSystem() {
 		context.getPiece().getMetricalTimeLine().add(new TimeSignatureMarker(3, 4, Rational.ZERO));
 		KeyMarker marker = new KeyMarker(Rational.ZERO, 0);
@@ -362,20 +361,20 @@ public class TestCase1_1_c extends TestCase {
 		system.addLinebreak(new Rational(48, 8));
 		system.addLinebreak(new Rational(88, 8));
 
-		int i = ((NotationVoice)staff.get(0)).find(new Rational(15, 1));
+		int i = staff.get(0).find(new Rational(15, 1));
 		
-		MetricAttachable ma = new MetricAttachable(((NotationVoice)staff.get(0)).get(i), new CharSymbol((char)117));
+		MetricAttachable ma = new MetricAttachable(staff.get(0).get(i), new CharSymbol((char)117));
 		ma.setRelativePosition(MetricAttachable.NORTH);
 		ma.setAlignment(MetricAttachable.CENTER);
 		ma.setDistance(0);
 		staff.addAttachable(ma);
 
-		i = ((NotationVoice)staff.get(0)).find(new Rational(31, 2));
+		i = staff.get(0).find(new Rational(31, 2));
 		StackSymbol sa = new StackSymbol();
 		sa.push(new CharSymbol((char)(116)));
 		sa.push(new CharSymbol((char)(117)));
 		
-		MetricAttachable ma2 = new MetricAttachable(((NotationVoice)staff.get(0)).get(i), sa);
+		MetricAttachable ma2 = new MetricAttachable(staff.get(0).get(i), sa);
 		ma2.setRelativePosition(MetricAttachable.NORTH);
 		ma2.setAlignment(MetricAttachable.CENTER);
 		ma2.setDistance(0);

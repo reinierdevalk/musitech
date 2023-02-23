@@ -55,6 +55,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import junit.framework.TestCase;
 import de.uos.fmt.musitech.data.performance.MidiNote;
@@ -162,7 +163,7 @@ public class ObjectPlayerTest extends TestCase {
 	public void showWindow() {
 		JFrame frame = new JFrame();
 		frame.getContentPane().setLayout(new BorderLayout());
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.getContentPane().add(arrPanel, BorderLayout.CENTER);
 		frame.getContentPane().add(transBut, BorderLayout.SOUTH);
 		frame.setLocation(200, 150);
@@ -174,7 +175,7 @@ public class ObjectPlayerTest extends TestCase {
 	public void midiOutSelector() {
 		JFrame frame = new JFrame();
 		frame.getContentPane().setLayout(new BorderLayout());
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.getContentPane().add(
 			objectPlayer.getControlPanel(),
 			BorderLayout.CENTER);
@@ -194,7 +195,7 @@ public class ObjectPlayerTest extends TestCase {
 
 		JFrame frame = new JFrame();
 		frame.getContentPane().setLayout(new BorderLayout());
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.getContentPane().add(piano, BorderLayout.CENTER);
 		frame.setLocation(200, 450);
 		frame.pack();
@@ -202,7 +203,7 @@ public class ObjectPlayerTest extends TestCase {
 		frame.show();
 		JFrame frame2 = new JFrame();
 		frame2.getContentPane().setLayout(new BorderLayout());
-		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame2.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame2.getContentPane().add(
 			piano.getControlPanel(),
 			BorderLayout.CENTER);
@@ -273,7 +274,7 @@ public class ObjectPlayerTest extends TestCase {
 		MetronomePanel metroPanel = objectPlayer.getPlayTimer().getMetronomPanel();
 		JFrame frame = new JFrame();
 		frame.getContentPane().setLayout(new BorderLayout());
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.getContentPane().add(metroPanel, BorderLayout.CENTER);
 		frame.setLocation(150, 450);
 		frame.pack();

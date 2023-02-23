@@ -100,6 +100,7 @@ public class MetricalTimeLineTest extends TestCase {
 	/**
 	 * @see junit.framework.TestCase#setUp()
 	 */
+	@Override
 	protected void setUp() throws Exception {
 		timeLine = new MetricalTimeLine();
 	}

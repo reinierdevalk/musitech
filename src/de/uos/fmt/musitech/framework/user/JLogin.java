@@ -305,6 +305,7 @@ public class JLogin extends JDialog {
 		/**
 		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 		 */
+		@Override
 		public void actionPerformed(java.awt.event.ActionEvent e) {
 			if (e.getSource() == m_passwordField || e.getSource() == m_usernameField) {
 				m_buttonLogin.doClick();

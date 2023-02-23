@@ -80,7 +80,8 @@ public class JExtensionFilter extends javax.swing.filechooser.FileFilter {
      * Returns true if the extension is null, the file is a directory or the file
      * extension ends with .extension.
      */
-    public boolean accept(java.io.File file) {
+    @Override
+	public boolean accept(java.io.File file) {
         if (extension == null || file.isDirectory() || file.getName().endsWith("." + extension))
             return true;
         return false;
@@ -98,7 +99,8 @@ public class JExtensionFilter extends javax.swing.filechooser.FileFilter {
     /**
      * Sets description.
      */
-    public String getDescription() {
+    @Override
+	public String getDescription() {
         if(description == null){
             return extension;
         }

@@ -87,7 +87,8 @@ public class LocalSelection implements Selection {
      * @param source Object source of the selection
      * @return boolean true if the specified <code>selectedObject</code> has been added to <code>selected</code>, false otherwise
      */
-    public boolean add(Object selectedObject, Object source) {
+    @Override
+	public boolean add(Object selectedObject, Object source) {
         return selected.add(selectedObject);
     }
     
@@ -99,7 +100,8 @@ public class LocalSelection implements Selection {
      * @param source Object source of the selection
      * @return boolean true if <code>selected</code> has changed, false otherwise
      */
-    public boolean addAll(Collection selectedObjects, Object source) {
+    @Override
+	public boolean addAll(Collection selectedObjects, Object source) {
         return selected.addAll(selectedObjects);
     }
     
@@ -111,7 +113,8 @@ public class LocalSelection implements Selection {
      * @param newSelectedObjects Collection which is to replace the current selection
      * @param source Object source of the selection
      */
-    public synchronized void replace(Collection newSelectedObjects, Object source) {
+    @Override
+	public synchronized void replace(Collection newSelectedObjects, Object source) {
         selected.clear();
         addAll(newSelectedObjects, source);
     }
@@ -123,7 +126,8 @@ public class LocalSelection implements Selection {
      * @param obj Object which is to replace the current selection
      * @param source Object source of the selection
      */
-    public synchronized void replace(Object obj, Object source) {
+    @Override
+	public synchronized void replace(Object obj, Object source) {
         selected.clear();
         add(obj, source);
     }
@@ -135,7 +139,8 @@ public class LocalSelection implements Selection {
      * @param o Object which is checked if being contained in the selection
      * @return true if the specified Object is contained in the selection, false otherwise
      */
-    public boolean isSelected(Object o) {
+    @Override
+	public boolean isSelected(Object o) {
         return selected.contains(o);
     }
     
@@ -144,7 +149,8 @@ public class LocalSelection implements Selection {
      * 
      * @return Collection the elements of <code>selected</code> as an unmodifiable Collection
      */
-    public Collection getAll() {
+    @Override
+	public Collection getAll() {
         return Collections.unmodifiableCollection(selected);
     }
     
@@ -156,7 +162,8 @@ public class LocalSelection implements Selection {
      * @param source Object source of the selection
      * @return boolean true if <code>selected</code> has changed, false otherwise
      */
-    public boolean remove(Object deselectedObject, Object source) {
+    @Override
+	public boolean remove(Object deselectedObject, Object source) {
         return selected.remove(deselectedObject);
     }
     
@@ -168,7 +175,8 @@ public class LocalSelection implements Selection {
      * @param source Object source of the selection
      * @return boolean true if <code>selected</code> has changed, false otherwise
      */
-    public boolean removeAll(Collection deselectedObjects, Object source) {
+    @Override
+	public boolean removeAll(Collection deselectedObjects, Object source) {
         return selected.removeAll(deselectedObjects);
     }
     
@@ -177,7 +185,8 @@ public class LocalSelection implements Selection {
      * 
      * @param source Object source of the selection
      */
-    public void clear(Object source) {
+    @Override
+	public void clear(Object source) {
         if (!selected.isEmpty()) {         
             selected.clear();        
         }
@@ -189,7 +198,8 @@ public class LocalSelection implements Selection {
      * 
      * @return TimeRange time covered by the selected, or null
      */
-    public TimeRange getTimeRange() {
+    @Override
+	public TimeRange getTimeRange() {
         SortedUniqesCollection timedObjects = getTimedObjects();
         if (timedObjects == null || timedObjects.size() == 0)
             return null;
@@ -205,7 +215,8 @@ public class LocalSelection implements Selection {
      * 
      * @return SortedUniquesCollection containing the timed objects of the selection, or an empty SortedUniquesCollection
      */
-    public SortedUniqesCollection getTimedObjects() {
+    @Override
+	public SortedUniqesCollection getTimedObjects() {
         SortedUniqesCollection setOfTimedObjects = new SortedUniqesCollection(
                                                                               Timed.class,
                                                                               new TimedComparator());

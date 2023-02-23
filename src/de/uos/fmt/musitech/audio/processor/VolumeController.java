@@ -82,6 +82,7 @@ public class VolumeController implements FloatInputStream, GainChanger {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float)
 	 */
+	@Override
 	public int read(float[][] data) throws IOException {
 		return read(data, 0, data[0].length);
 	}
@@ -90,6 +91,7 @@ public class VolumeController implements FloatInputStream, GainChanger {
 	/**
 	 * This method changes the volume of floatInputStream with factor gain
 	 */
+	@Override
 	public int read(float[][] data, int start, int len) throws IOException {
 		
 		int retval = floatInputStream.read(data, start, len);
@@ -107,10 +109,12 @@ public class VolumeController implements FloatInputStream, GainChanger {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getFormat()
 	 */
+	@Override
 	public AudioFormat getFormat() {
 		return floatInputStream.getFormat();
 	}
 
+	@Override
 	public long skip(long n) throws IOException {
 		return floatInputStream.skip(n);
 	}
@@ -120,6 +124,7 @@ public class VolumeController implements FloatInputStream, GainChanger {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#reset()
 	 */
+	@Override
 	public void reset() throws IOException {
 		floatInputStream.reset();
 	}
@@ -127,6 +132,7 @@ public class VolumeController implements FloatInputStream, GainChanger {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
 	 */
+	@Override
 	public long remainingSamples() {
 		return floatInputStream.remainingSamples();
 	}
@@ -134,6 +140,7 @@ public class VolumeController implements FloatInputStream, GainChanger {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public long getPositionInSamples() {
 		return floatInputStream.getPositionInSamples();
 	}
@@ -141,6 +148,7 @@ public class VolumeController implements FloatInputStream, GainChanger {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public void setPositionInSamples(long newPos) throws IOException {
 		floatInputStream.setPositionInSamples(newPos);
 	}
@@ -151,6 +159,7 @@ public class VolumeController implements FloatInputStream, GainChanger {
 	 * negative gain is not allowed
 	 */
 	
+	@Override
 	public void setGain(float gain) {
 		if(gain<0) 
 			throw new IllegalArgumentException("negative gain value is not allowed");

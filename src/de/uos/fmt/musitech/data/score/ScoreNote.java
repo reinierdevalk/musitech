@@ -400,7 +400,8 @@ public class ScoreNote extends ScorePitch implements Metrical, java.io.Serializa
      *                        cascade = "all"
      *  
      */
-    public Rational getMetricTime() {
+    @Override
+	public Rational getMetricTime() {
         return metricTime;
     }
 
@@ -411,6 +412,7 @@ public class ScoreNote extends ScorePitch implements Metrical, java.io.Serializa
 	 *            byte
 	 * @deprecated Use {@link #setAlteration(byte)} instead
 	 */
+	@Deprecated
 	public void setAccidental(byte newAccidental) {
 		setAlteration(newAccidental);
 	}
@@ -421,7 +423,8 @@ public class ScoreNote extends ScorePitch implements Metrical, java.io.Serializa
      * 
      * @param newAccidental 
      */
-    public void setAlteration(int newAccidental) {
+    @Override
+	public void setAlteration(int newAccidental) {
         alteration = newAccidental;
     }
 
@@ -431,7 +434,8 @@ public class ScoreNote extends ScorePitch implements Metrical, java.io.Serializa
      * @param newDiatonic
      *            char a-g or r for rest
      */
-    public void setDiatonic(char newDiatonic) {
+    @Override
+	public void setDiatonic(char newDiatonic) {
         char tmpDia = Character.toLowerCase(newDiatonic);
         if (tmpDia == 'h') {
             tmpDia = 'b';
@@ -586,7 +590,8 @@ public class ScoreNote extends ScorePitch implements Metrical, java.io.Serializa
         return metricTime.add(metricDuration);
     }
 
-    public EditingProfile getEditingProfile() {
+    @Override
+	public EditingProfile getEditingProfile() {
         return new EditingProfile("Score Note",
                                   new EditingProfile[] {new EditingProfile("Diatonic", "char", "diatonic"),
                                                         new EditingProfile("Accidental", "byte", "alteration"),
@@ -863,7 +868,8 @@ public class ScoreNote extends ScorePitch implements Metrical, java.io.Serializa
      * "de.uos.fmt.musitech.utility.math.Rational" cascade = "all"
      *  
      */
-    public Rational getMetricDuration() {
+    @Override
+	public Rational getMetricDuration() {
         return metricDuration;
     }
     
@@ -899,7 +905,8 @@ public class ScoreNote extends ScorePitch implements Metrical, java.io.Serializa
      * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String,
      *      java.lang.Object)
      */
-    public boolean isValidValue(String propertyName, Object value) {
+    @Override
+	public boolean isValidValue(String propertyName, Object value) {
         //check class
         ReflectionAccess ref = ReflectionAccess.accessForClass(this.getClass());
         if (ref.hasPropertyName(propertyName)) {
@@ -1009,14 +1016,16 @@ public class ScoreNote extends ScorePitch implements Metrical, java.io.Serializa
      * 
      * @hibernate.id generator-class="native"
      */
-    public Long getUid() {
+    @Override
+	public Long getUid() {
         return uid;
     }
 
     /**
      * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
      */
-    public void setUid(Long uid) {
+    @Override
+	public void setUid(Long uid) {
         this.uid = uid;
     }
 
@@ -1097,12 +1106,14 @@ public class ScoreNote extends ScorePitch implements Metrical, java.io.Serializa
      * marks note as first in tie
      * @deprecated this is only used during mpeg-(de)serialization and should be deprecated as soon as possible
      */
-    public boolean firstInTie;
+    @Deprecated
+	public boolean firstInTie;
     /**
      * marks note as last in tie
      * @deprecated this is only used during mpeg-(de)serialization and should be deprecated as soon as possible
      */
-    public boolean lastInTie;
+    @Deprecated
+	public boolean lastInTie;
     
     public Rational getAudioDelay() {
         return audioDelay;
@@ -1118,7 +1129,8 @@ public class ScoreNote extends ScorePitch implements Metrical, java.io.Serializa
      * @return boolean
      * @throws Exception 
      */
-    public boolean isEquivalent(IEquivalence object) {
+    @Override
+	public boolean isEquivalent(IEquivalence object) {
     	
     	if( !(object instanceof ScoreNote) ) return false;
     	Method[] cmNote = object.getClass().getMethods();

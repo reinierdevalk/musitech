@@ -67,6 +67,7 @@ public class DynamicsMarker implements Marker {
 	/**
 	 * @see de.uos.fmt.musitech.data.time.Metrical#getMetricTime()
 	 */
+	@Override
 	public Rational getMetricTime() {
 		// TODO Auto-generated method stub
 		return start;
@@ -75,6 +76,7 @@ public class DynamicsMarker implements Marker {
 	/**
 	 * @see de.uos.fmt.musitech.data.time.Metrical#getMetricDuration()
 	 */
+	@Override
 	public Rational getMetricDuration() {
 		return end.sub(start);
 	}
@@ -89,6 +91,7 @@ public class DynamicsMarker implements Marker {
 	/**
 	 * @see de.uos.fmt.musitech.data.MObject#getUid()
 	 */
+	@Override
 	public Long getUid() {
 		return id;
 	}
@@ -96,6 +99,7 @@ public class DynamicsMarker implements Marker {
 	/**
 	 * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
 	 */
+	@Override
 	public void setUid(Long uid) {
 		this.id = uid;
 
@@ -104,6 +108,7 @@ public class DynamicsMarker implements Marker {
 	/**
 	 * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String, java.lang.Object)
 	 */
+	@Override
 	public boolean isValidValue(String propertyName, Object value) {
 		return true;
 	}

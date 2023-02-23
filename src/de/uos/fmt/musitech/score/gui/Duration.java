@@ -143,6 +143,7 @@ public class Duration implements Comparable {
 	}
 
 	/** Returns a string representation of this Duration. */
+	@Override
 	public String toString() {
 		String res = "Duration(" + base;
 		if (dots > 0)
@@ -218,6 +219,7 @@ public class Duration implements Comparable {
 	 * This comparison is consistent
 	 * @see java.lang.Comparable#compareTo(java.lang.Object)
 	 */
+	@Override
 	public int compareTo(Object o) {
 		Rational r1 = toRational();
 		Rational r2 = ((Duration) o).toRational();
@@ -230,6 +232,7 @@ public class Duration implements Comparable {
 		}
 	}
 	
+	@Override
 	public boolean equals(Object o){
 		if(o == null) 
 			return false; 
@@ -238,6 +241,7 @@ public class Duration implements Comparable {
 		return compareTo(o) == 0;
 	}
 	
+	@Override
 	public int hashCode() {
 		return base.mul(851348334, dots).ceil();
 	}

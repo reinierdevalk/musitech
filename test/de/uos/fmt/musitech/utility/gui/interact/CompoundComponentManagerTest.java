@@ -244,7 +244,7 @@ public class CompoundComponentManagerTest extends TestCase {
 		//check removedListeners against tableForChecking
 		assertEquals(removedListeners.keySet(), tableForChecking.keySet());
 		for (Iterator iter = removedListeners.keySet().iterator(); iter.hasNext();) {
-			Object key = (Object) iter.next();
+			Object key = iter.next();
 			MouseListener[] listeners = (MouseListener[]) removedListeners.get(key);
 			assertEquals(listeners[0], tableForChecking.get(key));
 		}
@@ -331,7 +331,7 @@ public class CompoundComponentManagerTest extends TestCase {
 		Map removedListeners = CompoundComponentManager.removeInnerKeyListeners(outerComp);
 		//check removedListeners against origTable
 		for (Iterator iter = origTable.keySet().iterator(); iter.hasNext();) {
-			Object key = (Object) iter.next();
+			Object key = iter.next();
 			KeyListener[] listenersOrig = (KeyListener[]) origTable.get(key);
 			if (removedListeners.keySet().contains(key)) {
 				KeyListener[] listenersRemoved = (KeyListener[]) removedListeners.get(key);

@@ -61,6 +61,7 @@ public abstract class StorageSystemFacadeBase implements StorageSystemFacade {
 
 	public StorageSystemFacadeBase() {
 		Thread t = new Thread() {
+			@Override
 			public void run() {
 				try {
 					close();
@@ -85,15 +86,18 @@ public abstract class StorageSystemFacadeBase implements StorageSystemFacade {
 	protected abstract Object getData(long id) throws StorageSystemException;
 	protected abstract Object getData(long id, boolean locking) throws StorageSystemException;
 
+	@Override
 	public long store(Object data, boolean locking) throws StorageSystemException {
 		System.out.println("In store");
 		return setData(data, locking);
 	}
 	
+	@Override
 	public void store(long id, Object data) throws StorageSystemException {
 		setData(id, data);
 	}
 	
+	@Override
 	public Object load(long id) throws StorageSystemException {
 		Object o = getData(id);
 		if(o instanceof StorageSystemDependend)
@@ -101,6 +105,7 @@ public abstract class StorageSystemFacadeBase implements StorageSystemFacade {
 		return o;
 	}
 	
+	@Override
 	public Object load(long id, boolean locking) throws StorageSystemException {
 		Object o = getData(id, locking);
 		if(o instanceof StorageSystemDependend)
@@ -108,26 +113,39 @@ public abstract class StorageSystemFacadeBase implements StorageSystemFacade {
 		return o;
 	}
 	
+	@Override
 	public abstract void remove(long id) throws StorageSystemException;
 	
+	@Override
 	public abstract String getClassName(long id) throws StorageSystemException;
 
+	@Override
 	public abstract void setLocking(boolean locking) throws StorageSystemException;
+	@Override
 	public abstract void unlock(long id) throws StorageSystemException;
+	@Override
 	public abstract void unlockAll();
+	@Override
 	public abstract boolean isLocked(long id);
 	
+	@Override
 	public abstract String getOwner(long id) throws StorageSystemException;
+	@Override
 	public abstract void setOwner(long id, String name) throws StorageSystemException;
+	@Override
 	public abstract String getReadGroup(long id) throws StorageSystemException;
+	@Override
 	public abstract void setReadGroup(long id, String name) throws StorageSystemException;
+	@Override
 	public abstract String getWriteGroup(long id) throws StorageSystemException;
+	@Override
 	public abstract void setWriteGroup(long id, String name) throws StorageSystemException;
 	
 	
 	
 	protected abstract void releaseResources();
 
+	@Override
 	public final void close() {
 		if(!isClosed) {
 			releaseResources();
@@ -135,6 +153,7 @@ public abstract class StorageSystemFacadeBase implements StorageSystemFacade {
 		}			
 	}
 	
+	@Override
 	protected void finalize() throws StorageSystemException {
 		close();
 	}

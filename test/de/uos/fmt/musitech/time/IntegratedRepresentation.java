@@ -59,7 +59,6 @@ import javax.swing.JComponent;
 import javax.swing.border.Border;
 
 import de.uos.fmt.musitech.data.performance.MidiNoteSequence;
-import de.uos.fmt.musitech.data.structure.Context;
 import de.uos.fmt.musitech.data.structure.Piece;
 import de.uos.fmt.musitech.data.structure.form.NoteList;
 import de.uos.fmt.musitech.data.structure.harmony.KeyMarker;
@@ -98,7 +97,8 @@ public class IntegratedRepresentation extends JApplet {
      * 
      * @see java.applet.Applet#init()
      */
-    public void init() {
+    @Override
+	public void init() {
         try {
             super.init();
 //            createGUI();
@@ -240,19 +240,22 @@ public class IntegratedRepresentation extends JApplet {
         Border buttonBorder = BorderFactory.createEmptyBorder(5,10,5,10);
         JButton playButton = new JButton("Play");
         playButton.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 player.getPlayTimer().start();
             }           
         });
         JButton pauseButton = new JButton("Pause");
         pauseButton.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 player.getPlayTimer().stop();
             }           
         });
         JButton stopButton = new JButton("Stop");
         stopButton.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 player.getPlayTimer().stop();
                 player.getPlayTimer().reset();
             }           

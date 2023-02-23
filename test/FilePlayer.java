@@ -56,6 +56,7 @@ import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.audio.AudioFileObject;
 import de.uos.fmt.musitech.data.structure.Piece;
@@ -82,6 +83,7 @@ public class FilePlayer {
 
 	Action openFileAction = new AbstractAction() {
 
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			loadFile();
 		}
@@ -98,7 +100,7 @@ public class FilePlayer {
 		openFileAction.putValue(Action.NAME, "Open File");
 		frame.getContentPane().add(new JButton(openFileAction), BorderLayout.NORTH);
 		frame.pack();
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 	}
 

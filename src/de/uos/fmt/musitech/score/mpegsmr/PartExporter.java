@@ -136,6 +136,7 @@ public class PartExporter extends Mappings implements Elements, Attributes {
 				.getNamespace("urn:mpeg:mpeg-4:schema:smr:smxf-part:2007");
 		Iterator<Element> it = doc.getDescendants(new Filter() {
 
+			@Override
 			public boolean matches(Object obj) {
 				if (obj instanceof Element)
 					return true;
@@ -181,15 +182,15 @@ public class PartExporter extends Mappings implements Elements, Attributes {
 			for (Iterator<?> i = v.getBeamContainers().iterator(); i.hasNext();) {
 				BeamContainer bc = (BeamContainer) i.next();
 				if (bc.size() > 0) {
-					Note first = (Note) bc.get(0);
-					Note last = (Note) bc.get(bc.size() - 1);
+					Note first = bc.get(0);
+					Note last = bc.get(bc.size() - 1);
 					int pos = 0;
-					while (!((NotationChord) v.get(pos)).contains(first))
+					while (!v.get(pos).contains(first))
 						pos++;
-					beamContainerStarts.add((NotationChord) v.get(pos));
-					while (!((NotationChord) v.get(pos)).contains(last))
+					beamContainerStarts.add(v.get(pos));
+					while (!v.get(pos).contains(last))
 						pos++;
-					beamContainerEnds.add((NotationChord) v.get(pos));
+					beamContainerEnds.add(v.get(pos));
 				}
 			}
 			List<Element> ll = new ArrayList<Element>();
@@ -303,8 +304,8 @@ public class PartExporter extends Mappings implements Elements, Attributes {
 							.toString(horizontalID++));
 					h.setAttribute(HORIZONTAL_UPDOWN, DIRECTION_UP);
 					h.setAttribute(HORIZONTAL_TYPE, HORIZONTAL_TYPE_SLUR);
-					Element a1 = addressMap.getAddress((Note) sc.get(0));
-					Element a2 = addressMap.getAddress((Note) sc
+					Element a1 = addressMap.getAddress(sc.get(0));
+					Element a2 = addressMap.getAddress(sc
 							.get(sc.size() - 1));
 					h.addContent(a1);
 					h.addContent(a2);
@@ -364,7 +365,7 @@ public class PartExporter extends Mappings implements Elements, Attributes {
 					.getSingleMetricDuration()));
 			nt.setAttribute(NOTE_STAFF, Integer.toString(activeStaff));
 			if (!nc.isRest()) {
-				ScoreNote sn = ((Note) nc.get(0)).getScoreNote();
+				ScoreNote sn = nc.get(0).getScoreNote();
 				nt.setAttribute(NOTE_HEIGHT, Integer.toString(Util
 						.scorePitch2height(sn.getPitch(), c)));
 				// TODO untested
@@ -382,13 +383,13 @@ public class PartExporter extends Mappings implements Elements, Attributes {
 								.getAlteration());
 					nt.addContent(acc);
 				}
-				Util.transferAccents((Note) nc.get(0), nt);
+				Util.transferAccents(nc.get(0), nt);
 			}
 			if (inBeam)
-				addressMap.put((Note) nc.get(0), measureID, layerID, figureID,
+				addressMap.put(nc.get(0), measureID, layerID, figureID,
 					id);
 			else
-				addressMap.put((Note) nc.get(0), measureID, layerID, figureID);
+				addressMap.put(nc.get(0), measureID, layerID, figureID);
 			return nt;
 		} else {
 			Element ct = new Element(CHORD);
@@ -403,7 +404,7 @@ public class PartExporter extends Mappings implements Elements, Attributes {
 					.getSingleMetricDuration()));
 			int chordNoteID = 1;
 			for (int i = 0; i < nc.size(); i++) {
-				Note n = (Note) nc.get(i);
+				Note n = nc.get(i);
 				Element cn = new Element(CHORDNOTE);
 				ct.addContent(cn);
 				cn.setAttribute(NOTE_ID, Integer.toString(chordNoteID));
@@ -427,10 +428,10 @@ public class PartExporter extends Mappings implements Elements, Attributes {
 					cn.addContent(acc);
 				}
 				if (inBeam)
-					addressMap.put((Note) nc.get(0), measureID, layerID,
+					addressMap.put(nc.get(0), measureID, layerID,
 						figureID, id, chordNoteID);
 				else
-					addressMap.put((Note) nc.get(0), measureID, layerID,
+					addressMap.put(nc.get(0), measureID, layerID,
 						figureID, chordNoteID);
 			}
 			chordNoteID = 0;

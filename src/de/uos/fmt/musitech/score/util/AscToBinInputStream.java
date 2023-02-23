@@ -65,7 +65,8 @@ public class AscToBinInputStream extends FilterInputStream
       super(source);
    }
    
-   public int read () throws IOException
+   @Override
+public int read () throws IOException
    {
       if (leftBits == 0)
       {
@@ -76,7 +77,8 @@ public class AscToBinInputStream extends FilterInputStream
    }  
 
 
-   public int read (byte[] b, int off, int len) throws IOException
+   @Override
+public int read (byte[] b, int off, int len) throws IOException
    {
 /*      byte[] source = new byte[4*len/3];
       int numBytes = in.read(source);
@@ -94,7 +96,8 @@ public class AscToBinInputStream extends FilterInputStream
       return 0;
    }
 
-   public int read (byte[] b) throws IOException
+   @Override
+public int read (byte[] b) throws IOException
    {
       return 0;//read(b, 0, b.length);
    }

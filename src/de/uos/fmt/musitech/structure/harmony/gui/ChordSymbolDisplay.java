@@ -69,6 +69,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -476,6 +477,7 @@ public class ChordSymbolDisplay extends JPanel implements Display {
 		textfield.setOpaque(false);
 		//Modif
 		textfield.addFocusListener(new FocusAdapter() {
+			@Override
 			public void focusGained(FocusEvent e) {
 				focusReceived();
 			}
@@ -535,10 +537,11 @@ public class ChordSymbolDisplay extends JPanel implements Display {
 		final JFrame frame = new JFrame("Chord symbol test");
 		frame.getContentPane().setLayout(new BorderLayout());
 		frame.getContentPane().add(cd);
-		JSlider slider = new JSlider(JSlider.VERTICAL, 1, 100, 50);
+		JSlider slider = new JSlider(SwingConstants.VERTICAL, 1, 100, 50);
 		cd.setScale((slider.getValue() * 2.0 / 100.0));
 		slider.addChangeListener(new ChangeListener() {
 
+			@Override
 			public void stateChanged(ChangeEvent arg0) {
 				cd.setScale(
 					(float) (((JSlider) arg0.getSource()).getValue()
@@ -552,6 +555,7 @@ public class ChordSymbolDisplay extends JPanel implements Display {
 		frame.setVisible(true);
 		frame.addWindowListener(new WindowAdapter() {
 
+			@Override
 			public void windowClosing(WindowEvent e) {
 				System.exit(0);
 			}
@@ -607,6 +611,7 @@ public class ChordSymbolDisplay extends JPanel implements Display {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#externalChanges()
 	 */
+	@Override
 	public boolean externalChanges() {
 		return dataChanged;
 	}
@@ -616,6 +621,7 @@ public class ChordSymbolDisplay extends JPanel implements Display {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#destroy()
 	 */
+	@Override
 	public void destroy() {
 		DataChangeManager.getInstance().removeListener(this);
 	}
@@ -625,6 +631,7 @@ public class ChordSymbolDisplay extends JPanel implements Display {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#focusReceived()
 	 */
+	@Override
 	public void focusReceived() {
 		if (externalChanges())
 			updateDisplay();
@@ -637,6 +644,7 @@ public class ChordSymbolDisplay extends JPanel implements Display {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#getEditingProfile()
 	 */
+	@Override
 	public EditingProfile getEditingProfile() {
 		return profile;
 	}
@@ -648,6 +656,7 @@ public class ChordSymbolDisplay extends JPanel implements Display {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#getEditObj()
 	 */
+	@Override
 	public Object getEditObj() {
 		return editObj;
 	}
@@ -668,6 +677,7 @@ public class ChordSymbolDisplay extends JPanel implements Display {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#isFocused()
 	 */
+	@Override
 	public boolean isFocused() {
 		return isFocusOwner();
 	}
@@ -686,6 +696,7 @@ public class ChordSymbolDisplay extends JPanel implements Display {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#init(java.lang.Object, de.uos.fmt.musitech.framework.editor.EditingProfile, de.uos.fmt.musitech.framework.editor.Display)
 	 */
+	@Override
 	public void init(Object editObject, EditingProfile profile, Display root) {
 		//set parameters of display
 		//		if (editObject instanceof ChordSymbol)
@@ -757,6 +768,7 @@ public class ChordSymbolDisplay extends JPanel implements Display {
 	//		}
 	//	}
 
+	@Override
 	public void updateDisplay() {
 		if (externalChanges()) {
 //			removeAll();
@@ -776,6 +788,7 @@ public class ChordSymbolDisplay extends JPanel implements Display {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#getRootDisplay()
 	 */
+	@Override
 	public Display getRootDisplay() {
 		return rootDisplay;
 	}
@@ -788,6 +801,7 @@ public class ChordSymbolDisplay extends JPanel implements Display {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.change.DataChangeListener#dataChanged(de.uos.fmt.musitech.framework.change.DataChangeEvent)
 	 */
+	@Override
 	public void dataChanged(DataChangeEvent e) {
 		dataChanged = true;
 	}
@@ -814,6 +828,7 @@ public class ChordSymbolDisplay extends JPanel implements Display {
 
 	private void initGUI() {
 		addFocusListener(new FocusAdapter() {
+			@Override
 			public void focusGained(FocusEvent e) {
 				focusReceived();
 			}
@@ -913,6 +928,7 @@ public class ChordSymbolDisplay extends JPanel implements Display {
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.Display#asComponent()
 	 */
+	@Override
 	public Component asComponent() {
 		return null;
 	}

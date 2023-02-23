@@ -60,7 +60,6 @@ import java.util.Vector;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 import de.uos.fmt.musitech.data.performance.MidiNoteMulti;
-import de.uos.fmt.musitech.data.performance.PerformanceNote;
 import de.uos.fmt.musitech.data.score.ScoreNote;
 import de.uos.fmt.musitech.data.structure.Note;
 import de.uos.fmt.musitech.utility.math.*;
@@ -109,7 +108,7 @@ public class ObjectCopyTest extends TestCase {
 			System.out.print(element + "\t");
 		}
 		//provide collection's copy
-		Collection copy = (Collection) ObjectCopy.copyObject(coll);
+		Collection copy = ObjectCopy.copyObject(coll);
 		//change copy
 		copy.add("New Element");
 		//copy back to coll (given object)
@@ -143,7 +142,7 @@ public class ObjectCopyTest extends TestCase {
 		perfNote.setNext(perfNote);
 		ScoreNote scoreNote = new ScoreNote();
 		Note note = new Note(scoreNote, perfNote);
-		Note copy = (Note) ObjectCopy.copyObject(note);
+		Note copy = ObjectCopy.copyObject(note);
 		System.out.println("\n\nObjectCopyTest.testCopyComplexObject");
 		System.out.println("Object:");
 		System.out.println("note==copy: " + (note == copy));
@@ -159,7 +158,7 @@ public class ObjectCopyTest extends TestCase {
 			System.out.println(
 				"scoreNote equals scoreCopy: " + (scoreNote.equals(scoreCopy)));
 		}
-		Note rCopy = (Note) ObjectCopy.copyObjectRef(note);		
+		Note rCopy = ObjectCopy.copyObjectRef(note);		
 		assertTrue(ObjectCopy.equalValues(note, rCopy));
 		assertTrue(ObjectCopy.comparePublicProperties(note,rCopy));
 	}

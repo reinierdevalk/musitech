@@ -50,6 +50,7 @@ above is subject to the following three conditions:
  */
 package de.uos.fmt.musitech.time.gui;
 
+import java.awt.Adjustable;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -147,18 +148,22 @@ public class LinearDisplayPanel extends JPanel implements Timeable {
 		playTimer = PlayTimer.getInstance();
 //		playTimer.registerForPush(this);
 		addComponentListener(new ComponentListener() {
-            public void componentHidden(ComponentEvent e) {
+            @Override
+			public void componentHidden(ComponentEvent e) {
             }
 
-            public void componentMoved(ComponentEvent e) {
+            @Override
+			public void componentMoved(ComponentEvent e) {
                 repaint();
             }
 
-            public void componentResized(ComponentEvent e) {
+            @Override
+			public void componentResized(ComponentEvent e) {
                 repaint();
             }
 
-            public void componentShown(ComponentEvent e) {
+            @Override
+			public void componentShown(ComponentEvent e) {
                 repaint();
             }
         });
@@ -203,7 +208,7 @@ public class LinearDisplayPanel extends JPanel implements Timeable {
 
 	public JScrollBar getScrollBar() {
 		if (scrollBar == null) {
-			scrollBar = new JScrollBar(JScrollBar.HORIZONTAL, 0, 10, 0, 500);
+			scrollBar = new JScrollBar(Adjustable.HORIZONTAL, 0, 10, 0, 500);
 			lastChangeTime = System.currentTimeMillis();
 			// calculates the new value of the scrollbar 
 			int newValue =
@@ -211,14 +216,14 @@ public class LinearDisplayPanel extends JPanel implements Timeable {
 					Math.round(
 						500
 							* (double) winBegin
-							/ (double) linearDisplayMain.getEndTime()),
+							/ linearDisplayMain.getEndTime()),
 					500);
 			int extent =
 				(int) Math.min(
 					Math.round(
 						500
 							* (double) winSize
-							/ (double) (linearDisplayMain.getEndTime() + 1000)),
+							/ (linearDisplayMain.getEndTime() + 1000)),
 					500);
 			if (extent + newValue > 500) {
 				newValue = 500 - extent;
@@ -227,6 +232,7 @@ public class LinearDisplayPanel extends JPanel implements Timeable {
 			model = new DefaultBoundedRangeModel(newValue, extent, 0, 500);
 			scrollBar.setModel(model);
 			scrollBar.addAdjustmentListener(new AdjustmentListener() {
+				@Override
 				public void adjustmentValueChanged(AdjustmentEvent e) {
 
 					if (System.currentTimeMillis() - lastChangeTime > 100) {
@@ -271,14 +277,14 @@ public class LinearDisplayPanel extends JPanel implements Timeable {
 				Math.round(
 					500
 						* (double) winBegin
-						/ (double) linearDisplayMain.getEndTime()),
+						/ linearDisplayMain.getEndTime()),
 				500);
 		int extent =
 			(int) Math.min(
 				Math.round(
 					500
 						* (double) winSize
-						/ (double) (linearDisplayMain.getEndTime() + 1000)),
+						/ (linearDisplayMain.getEndTime() + 1000)),
 				500);
 		if (extent + newBegin > 500) {
 			newBegin = 500 - extent;
@@ -315,14 +321,19 @@ public class LinearDisplayPanel extends JPanel implements Timeable {
 			zoomSlider = new JSlider(1, 300);
 
 			zoomSlider.addMouseListener(new MouseListener() {
+				@Override
 				public void mouseClicked(MouseEvent e) {
 				}
+				@Override
 				public void mouseEntered(MouseEvent e) {
 				}
+				@Override
 				public void mouseExited(MouseEvent e) {
 				}
+				@Override
 				public void mousePressed(MouseEvent e) {
 				}
+				@Override
 				public void mouseReleased(MouseEvent e) {
 
 					// f(x) : microsPPix
@@ -354,7 +365,8 @@ public class LinearDisplayPanel extends JPanel implements Timeable {
 	        zoomInButton.setToolTipText("zoom in");
 	        zoomInButton.setMaximumSize(new Dimension(30, 30));
 	        zoomInButton.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent arg0) {
+                @Override
+				public void actionPerformed(ActionEvent arg0) {
                     setMicrosPPix(getMicrosPPix()/1.5);
                 }
             });
@@ -369,7 +381,8 @@ public class LinearDisplayPanel extends JPanel implements Timeable {
 	        zoomOutButton.setText("out");
 	        zoomOutButton.setToolTipText("zoom Out");
 	        zoomOutButton.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent arg0) {
+                @Override
+				public void actionPerformed(ActionEvent arg0) {
                     setMicrosPPix(getMicrosPPix()*1.5);
                 }
             });
@@ -478,6 +491,7 @@ public class LinearDisplayPanel extends JPanel implements Timeable {
 	/** 
 		 * @see java.awt.Component#paint(java.awt.Graphics)
 		 */
+	@Override
 	public void paint(Graphics g) {
 		createOffscreenImage();
 		super.paint(offscreenGraphics);
@@ -491,11 +505,13 @@ public class LinearDisplayPanel extends JPanel implements Timeable {
 	/** 
 	 * @see de.uos.fmt.musitech.framework.time.Player#setTimePosition(long)
 	 */
+	@Override
 	public void setTimePosition(long time) {
 		lastTime = playTime;
 		playTime = time;
 		SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
+            @Override
+			public void run() {
                 paintCursor(false);
             }
         });
@@ -522,6 +538,7 @@ public class LinearDisplayPanel extends JPanel implements Timeable {
 	 * TODO comment
 	 * @see de.uos.fmt.musitech.data.time.Timeable#getEndTime()
 	 */
+	@Override
 	public long getEndTime() {
 		if (linearDisplayMain != null)
 			return linearDisplayMain.getEndTime();

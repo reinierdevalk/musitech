@@ -58,10 +58,10 @@ import java.awt.Font;
 import javax.swing.Box;
 import javax.swing.JComponent;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 import de.uos.fmt.musitech.data.structure.harmony.ChordFunctionSymbol;
 import de.uos.fmt.musitech.data.structure.harmony.ChordSymbol;
-import de.uos.fmt.musitech.data.structure.harmony.KeyMarker;
 import de.uos.fmt.musitech.data.structure.harmony.KeyMarker.Mode;
 
 import de.uos.fmt.musitech.data.structure.harmony.ChordFunctionSymbol.FUNCTION;
@@ -94,7 +94,8 @@ public class ChordFunctionDisplay extends ChordSymbolDisplay2 {
      * This may be either the <code>editObj</code> or the
      * <code>propertyValue</code>.<br>
      */
-    protected void setChordSymbol() {
+    @Override
+	protected void setChordSymbol() {
         if (getEditObj() instanceof ChordFunctionSymbol){
 //            cfs = (ChordFunctionSymbol) getEditObj();
             cs = (ChordSymbol) getEditObj();
@@ -112,11 +113,12 @@ public class ChordFunctionDisplay extends ChordSymbolDisplay2 {
      * 
      * @see de.uos.fmt.musitech.structure.harmony.gui.ChordSymbolDisplay2#createTextfields()
      */
-    protected void createTextfields() {
+    @Override
+	protected void createTextfields() {
         super.createTextfields();
         //change rootField
         rootField = createChordSymbolTextfield(createFunctionSymbol());
-        rootField.setHorizontalAlignment(JTextField.CENTER);
+        rootField.setHorizontalAlignment(SwingConstants.CENTER);
         //set empty mode field
         modeField.setText("");
         //use rootField2 for Doppeldominante or verkürzten Dominantseptakkord
@@ -128,10 +130,10 @@ public class ChordFunctionDisplay extends ChordSymbolDisplay2 {
             return;
         if (cfs.getChordFunction() == FUNCTION.DOPPEL_DOMINANTE.getString()){
             rootField2 = createChordSymbolTextfield("D");
-            rootField2.setHorizontalAlignment(JTextField.NORTH_EAST);
+            rootField2.setHorizontalAlignment(SwingConstants.NORTH_EAST);
         } else if (cfs.getChordFunction() == FUNCTION.ZWISCHEN_DOPPEL_DOMINANTE.getString()){
             rootField2 = createChordSymbolTextfield("D");
-            rootField2.setHorizontalAlignment(JTextField.NORTH_EAST);
+            rootField2.setHorizontalAlignment(SwingConstants.NORTH_EAST);
         }
         if (cfs.getChordFunction() == FUNCTION.DOMINANT_VERK.getString()){
             rootField2 = createChordSymbolTextfield("/");
@@ -178,7 +180,8 @@ public class ChordFunctionDisplay extends ChordSymbolDisplay2 {
     /**
      * Adds the textfield which are used to show the ChordFunctionSymbol to the GUI.
      */
-    protected void addTextfields(){
+    @Override
+	protected void addTextfields(){
         //vertical box for root, top and base
 		int topBaseInset = -10 * new Double(scale).intValue();
 		Box left = Box.createVerticalBox();

@@ -388,6 +388,7 @@ public class MetaDataItemEditorTest extends TestCase {
 			name = "TestName";
 			mdItemProperty = mdItem;
 		}
+		@Override
 		public String toString(){
 			StringBuffer objectToString = new StringBuffer();
 			String value = "null"; 

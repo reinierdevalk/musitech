@@ -66,6 +66,7 @@ public class CustomStackScoreObject extends CustomScoreObject {
 	private ArrayList symbols = new ArrayList();
 	private int space = 2;
 	
+	@Override
 	int arrange(int pass) {
 		super.arrange(pass);
 		for (Iterator iter = symbols.iterator(); iter.hasNext();) {
@@ -99,6 +100,7 @@ public class CustomStackScoreObject extends CustomScoreObject {
 		}
 	}
 
+	@Override
 	public void setAnker(ScoreObject anker) {
 		super.setAnker(anker);
 		for (Iterator iter = symbols.iterator(); iter.hasNext();) {
@@ -107,6 +109,7 @@ public class CustomStackScoreObject extends CustomScoreObject {
 		}
 	}
 	
+	@Override
 	public void paint(Graphics g) {
 		for (Iterator iter = symbols.iterator(); iter.hasNext();) {
 			ScoreObject element = (ScoreObject) iter.next();

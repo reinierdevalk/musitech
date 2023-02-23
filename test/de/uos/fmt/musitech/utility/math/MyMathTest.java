@@ -51,10 +51,6 @@ above is subject to the following three conditions:
 
 package de.uos.fmt.musitech.utility.math;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-
 import de.uos.fmt.musitech.utility.collection.Shuffler;
 import de.uos.fmt.musitech.utility.math.MyMath;
 import junit.framework.TestCase;

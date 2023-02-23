@@ -235,7 +235,7 @@ public class IIRFilterDesign {
          // Real and Imaginary parts of low-pass poles
          double t, a = 1.0, r = 1.0, i = 1.0;
          for (int k = n1; k <= n2; k++) {
-           t = 0.5*(2*k + 1 - ir)*Math.PI/(double)n;
+           t = 0.5*(2*k + 1 - ir)*Math.PI/n;
            switch (prototype) {
              case BUTTERWORTH:
                double b3 = 1.0 - 2.0*tanw1*Math.cos(t) + tansqw1;
@@ -245,7 +245,7 @@ public class IIRFilterDesign {
              case CHEBYSHEV:
                double d = 1.0 - Math.exp(-0.05*ripple*ln10);
                double e = 1.0 / Math.sqrt(1.0 / sqr(1.0 - d) - 1.0);
-               double x = Math.pow(Math.sqrt(e*e + 1.0) + e, 1.0/(double)n);
+               double x = Math.pow(Math.sqrt(e*e + 1.0) + e, 1.0/n);
                a = 0.5*(x - 1.0/x);
                double b = 0.5*(x + 1.0/x);
                double c3 = a*tanw1*Math.cos(t);

@@ -79,7 +79,8 @@ public class URLmobject implements MObject {
     /**
      * @see de.uos.fmt.musitech.data.MObject#getUid()
      */
-    public Long getUid() {
+    @Override
+	public Long getUid() {
         // TODO Auto-generated method stub
         return null;
     }
@@ -87,7 +88,8 @@ public class URLmobject implements MObject {
     /**
      * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
      */
-    public void setUid(Long uid) {
+    @Override
+	public void setUid(Long uid) {
         // TODO Auto-generated method stub
 
     }
@@ -96,7 +98,8 @@ public class URLmobject implements MObject {
      * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String,
      *      java.lang.Object)
      */
-    public boolean isValidValue(String propertyName, Object value) {
+    @Override
+	public boolean isValidValue(String propertyName, Object value) {
         // TODO Auto-generated method stub
         return false;
     }

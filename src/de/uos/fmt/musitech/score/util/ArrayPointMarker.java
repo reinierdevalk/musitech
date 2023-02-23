@@ -64,12 +64,14 @@ public class ArrayPointMarker implements PointMarker
       this.points = points;
    }
    
-   public void markFirstPoint(Pair p)
+   @Override
+public void markFirstPoint(Pair p)
    {
       points[numPoints++] = p;   
    }
 
-   public void markPoint(Pair p)
+   @Override
+public void markPoint(Pair p)
    {
       points[numPoints++] = p;
    }

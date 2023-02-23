@@ -131,6 +131,7 @@ public class SpinButton extends JPanel implements ActionListener
 	}
 
 
+	@Override
 	public void actionPerformed (ActionEvent ev)
 	{
 		Class cl = ev.getSource().getClass();   

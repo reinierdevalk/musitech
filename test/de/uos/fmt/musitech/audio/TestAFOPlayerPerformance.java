@@ -85,6 +85,7 @@ public class TestAFOPlayerPerformance {
 	
 	public static void main(String a[]){
 		new ButtonFrame("Button"){
+			@Override
 			public void doByButtonPress() {
 				TestAFOPlayerPerformance.allTest();
 			}};
@@ -98,6 +99,7 @@ public class TestAFOPlayerPerformance {
 			JPanel panel = new JPanel();
 			JButton button = new JButton("Press");
 			button.addActionListener(new ActionListener(){
+				@Override
 				public void actionPerformed(ActionEvent e) {
 					doByButtonPress();
 				}});

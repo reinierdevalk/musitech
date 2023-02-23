@@ -54,6 +54,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JSlider;
 import javax.swing.JTextField;
+import javax.swing.WindowConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -168,6 +169,7 @@ public class SineOscillator extends FloatOscillator {
 		freqLabel.setLabelFor(freqSlider);
 		freqSlider.addChangeListener(new ChangeListener() {
 
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				int f = freqSlider.getValue(); 
 				osc.setFrequency(f);
@@ -182,13 +184,14 @@ public class SineOscillator extends FloatOscillator {
 		ampLabel.setLabelFor(ampSlider);
 		ampSlider.addChangeListener(new ChangeListener() {
 
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				int a = ampSlider.getValue();
 				osc.setAmplitude(a/20000f);
 				ampField.setText(Integer.toString(a));
 			}
 		});
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new GridLayout(3,2));
 		frame.getContentPane().add(freqLabel);
 		frame.getContentPane().add(ampLabel);
@@ -203,11 +206,13 @@ public class SineOscillator extends FloatOscillator {
 		player.play();
 	}
 
+	@Override
 	public long skip(long n) throws IOException {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
+	@Override
 	public void reset() throws IOException {
 		// TODO Auto-generated method stub
 		

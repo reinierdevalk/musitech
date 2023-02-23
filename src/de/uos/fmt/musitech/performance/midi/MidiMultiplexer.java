@@ -67,6 +67,7 @@ public class MidiMultiplexer implements Receiver {
 	 * Does nothing, exists just for compatibility.
 	 * @see javax.sound.midi.Receiver#close()
 	 */
+	@Override
 	public void close() {
 	}
 
@@ -74,6 +75,7 @@ public class MidiMultiplexer implements Receiver {
 	 * Forwards the MidiMessage to the list of receivers. 
 	 * @see javax.sound.midi.Receiver#send(javax.sound.midi.MidiMessage, long)
 	 */
+	@Override
 	public void send(MidiMessage event, long time) {
 		for (Receiver out : outList) {
 			out.send(event, time);							

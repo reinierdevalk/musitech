@@ -115,6 +115,7 @@ public class SpringSystem {
 		}
 	}
 
+	@Override
 	public String toString() {
 		String res = "";
 		for (int i = 0; i < stretchables.size(); i++) {

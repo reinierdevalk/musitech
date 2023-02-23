@@ -54,8 +54,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Vector;
-
 import de.uos.fmt.musitech.data.time.MetricalComparator;
 import de.uos.fmt.musitech.score.util.Pair;
 import de.uos.fmt.musitech.utility.DebugState;
@@ -82,7 +80,8 @@ public class Beam extends EventSpanner {
     private Rational[] linearProgression;
 
     /** Adds an Event to the beam. */
-    public void add(Event ev) {
+    @Override
+	public void add(Event ev) {
         if (ev == null)
             return;
         Rational r = ev.getDuration().toRational();
@@ -114,7 +113,8 @@ public class Beam extends EventSpanner {
         }
     }
 
-    int arrange(int pass) {
+    @Override
+	int arrange(int pass) {
         if (numEvents() < 2 || pass > 0)
             return 1;
 
@@ -334,7 +334,8 @@ public class Beam extends EventSpanner {
         return p.getY() + slope * (x - p.getX());
     }
 
-    public void paint(Graphics g) {
+    @Override
+	public void paint(Graphics g) {
         if (numEvents() < 2 || !isVisible())
             return;
         Event ev = getEvent(0);

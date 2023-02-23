@@ -52,9 +52,6 @@ above is subject to the following three conditions:
 package de.uos.fmt.musitech.framework.editor;
 
 import java.awt.BorderLayout;
-import java.io.File;
-import java.net.MalformedURLException;
-
 import javax.swing.JFrame;
 
 import junit.framework.TestCase;

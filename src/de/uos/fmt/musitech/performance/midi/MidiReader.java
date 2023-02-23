@@ -463,7 +463,7 @@ public class MidiReader {
 
 		System.out.println(">>>terminated. And now for testing:");
 
-		Container aContainerPool = (Container) piece.getContainerPool();
+		Container aContainerPool = piece.getContainerPool();
 	
 		Container currentContainer = null;
 
@@ -499,6 +499,7 @@ public class MidiReader {
 					frame.setLocation(counter * 25 + 10, counter * 25 + 15);
 					frame
 						.addWindowListener(new java.awt.event.WindowAdapter() {
+						@Override
 						public void windowClosing(
 							java.awt.event.WindowEvent e) {
 							System.exit(0);
@@ -535,6 +536,7 @@ public class MidiReader {
 				nPFrame.setSize(nPDisplay.getSize());
 				nPFrame.setLocation(5, 50);
 				nPFrame.addWindowListener(new java.awt.event.WindowAdapter() {
+					@Override
 					public void windowClosing(java.awt.event.WindowEvent e) {
 						System.exit(0);
 					};

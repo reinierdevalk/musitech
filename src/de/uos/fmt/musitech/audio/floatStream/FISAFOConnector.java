@@ -110,10 +110,12 @@ public class FISAFOConnector extends FISSampleCallback implements PositionableFI
 	public FISAFOConnector(Container<?> audioFileObjects) {
 		addSampleReachListener(new SampleReachListener() {
 
+			@Override
 			public void sampleReached() {
 				connectFIS();
 			}
 
+			@Override
 			public void streamReset() {
 				try {
 					position(0);
@@ -142,6 +144,7 @@ public class FISAFOConnector extends FISSampleCallback implements PositionableFI
 
 		fisMerger.addStreamEndListener(new StreamEndListener() {
 
+			@Override
 			public void streamEnded(FloatInputStream fis) {
 				boolean deleted = fisMerger.delete(fis);
 				if (DebugState.DEBUG_AUDIO)
@@ -495,6 +498,7 @@ public class FISAFOConnector extends FISSampleCallback implements PositionableFI
 	 * 
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#reset()
 	 */
+	@Override
 	public synchronized void reset() throws IOException {
 		position(0);
 	}
@@ -544,6 +548,7 @@ public class FISAFOConnector extends FISSampleCallback implements PositionableFI
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.PositionableFIS#position(long)
 	 */
+	@Override
 	public synchronized void position(int n) throws IOException {
 		setSamplesRead(n);
 		// setNextFISToAdd();
@@ -554,6 +559,7 @@ public class FISAFOConnector extends FISSampleCallback implements PositionableFI
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.PositionableFIS#position()
 	 */
+	@Override
 	public int position() {
 		return (int) getSamplesRead();
 	}
@@ -561,6 +567,7 @@ public class FISAFOConnector extends FISSampleCallback implements PositionableFI
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
 	 */
+	@Override
 	public long remainingSamples() {
 		if (DebugState.DEBUG_AUDIO) {
 			System.out.println("FISAFOConnector.remainingSamples() return "
@@ -572,6 +579,7 @@ public class FISAFOConnector extends FISSampleCallback implements PositionableFI
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public long getPositionInSamples() {
 		if (DebugState.DEBUG_AUDIO) {
 			System.out.println("FISAFOConnector.getPositionInSamples() returned "
@@ -583,6 +591,7 @@ public class FISAFOConnector extends FISSampleCallback implements PositionableFI
 	/**
 	 * @see FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public synchronized void setPositionInSamples(long newPos) {
 		if (newPos < 0) {
 			System.err
@@ -604,6 +613,7 @@ public class FISAFOConnector extends FISSampleCallback implements PositionableFI
 	 * 
 	 * @see de.uos.fmt.musitech.audio.floatStream.PositionableFIS#getFloatPreviewReader()
 	 */
+	@Override
 	public FloatPreviewReader getFloatPreviewReader() {
 		return null;
 	}

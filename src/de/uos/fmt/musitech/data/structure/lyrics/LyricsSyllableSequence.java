@@ -125,7 +125,8 @@ public class LyricsSyllableSequence extends TimedContainer<LyricsSyllable> {
      * 
      * @see de.uos.fmt.musitech.utility.collection.TypedCollection#add(java.lang.Object)
      */
-    public boolean add(LyricsSyllable obj) {
+    @Override
+	public boolean add(LyricsSyllable obj) {
         if (context != null) {
             if (( obj).getTime() == Timed.INVALID_TIME
                 && ( obj).getMetricTime() != null) {
@@ -269,7 +270,8 @@ public class LyricsSyllableSequence extends TimedContainer<LyricsSyllable> {
 
     class RationalSyllableComparator implements Comparator {
 
-        public int compare(Object o1, Object o2) {
+        @Override
+		public int compare(Object o1, Object o2) {
             Rational r;
             LyricsSyllable l;
             if (o1 instanceof Rational) {

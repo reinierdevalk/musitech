@@ -52,13 +52,13 @@ above is subject to the following three conditions:
 package de.uos.fmt.musitech.framework.time;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.performance.MidiNoteSequence;
 import de.uos.fmt.musitech.data.structure.Context;
 import de.uos.fmt.musitech.data.structure.Piece;
 import de.uos.fmt.musitech.data.structure.form.NoteList;
 import de.uos.fmt.musitech.data.time.MetricalTimeLine;
-import de.uos.fmt.musitech.data.time.TimeSignature;
 import de.uos.fmt.musitech.data.time.TimeSignatureMarker;
 import de.uos.fmt.musitech.utility.math.Rational;
 
@@ -95,7 +95,7 @@ public class PlayerWithUI {
     private static void forExit(){
         JFrame frame = new JFrame("For exit");
         frame.setSize(200,0);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
     

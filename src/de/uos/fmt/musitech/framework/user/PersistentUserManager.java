@@ -51,17 +51,6 @@ above is subject to the following three conditions:
 
 package de.uos.fmt.musitech.framework.user;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.apache.xerces.dom3.UserDataHandler;
-
 import de.uos.fmt.musitech.data.MObject;
 import de.uos.fmt.musitech.framework.persistence.PersistenceFactory;
 import de.uos.fmt.musitech.framework.persistence.PersistenceManager;
@@ -111,6 +100,7 @@ public class PersistentUserManager extends SimpleUserManager implements MObject 
 	/**
 	 * @see de.uos.fmt.musitech.data.MObject#getUid()
 	 */
+	@Override
 	public Long getUid() {
 		return uid;
 	}
@@ -118,6 +108,7 @@ public class PersistentUserManager extends SimpleUserManager implements MObject 
 	/**
 	 * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
 	 */
+	@Override
 	public void setUid(Long argUid) {
 		uid = argUid;
 	}
@@ -126,6 +117,7 @@ public class PersistentUserManager extends SimpleUserManager implements MObject 
 	 * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String,
 	 *      java.lang.Object)
 	 */
+	@Override
 	public boolean isValidValue(String propertyName, Object value) {
 		return true;
 	}

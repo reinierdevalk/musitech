@@ -121,7 +121,8 @@ public class RationalEditor extends SimpleTextfieldEditor {
      * If <code>propertyName</code> is not null, but <code>propertyValue</code> is,
      * a "Create" button is offered.
      */
-    protected void createGUI() {
+    @Override
+	protected void createGUI() {
         //display a button with text "create" if the value of the property is
         // null
         setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
@@ -170,26 +171,33 @@ public class RationalEditor extends SimpleTextfieldEditor {
             textfield2.setEditable(false);
         }
         textfield2.getDocument().addDocumentListener(new DocumentListener(){
-            public void changedUpdate(DocumentEvent e) {
+            @Override
+			public void changedUpdate(DocumentEvent e) {
                 setDirty(true);
             }
-            public void insertUpdate(DocumentEvent e) {
+            @Override
+			public void insertUpdate(DocumentEvent e) {
                 setDirty(true);
             }
-            public void removeUpdate(DocumentEvent e) {
+            @Override
+			public void removeUpdate(DocumentEvent e) {
                 setDirty(true);
             }           
         }); 
         //add FocusListener for input check
         textfield.addFocusListener(new MyFocusListener() {
-            public void focusGained(FocusEvent e) {}
-            public void focusLost(FocusEvent e) {
+            @Override
+			public void focusGained(FocusEvent e) {}
+            @Override
+			public void focusLost(FocusEvent e) {
                 checkConditionsForTextfield();
             }
         });
         textfield2.addFocusListener(new FocusListener() {
-            public void focusGained(FocusEvent e) {}
-            public void focusLost(FocusEvent e) {
+            @Override
+			public void focusGained(FocusEvent e) {}
+            @Override
+			public void focusLost(FocusEvent e) {
                 checkConditionsForTextfield2();
             }
         });
@@ -210,7 +218,8 @@ public class RationalEditor extends SimpleTextfieldEditor {
      *      de.uos.fmt.musitech.framework.editor.EditingProfile,
      *      de.uos.fmt.musitech.framework.editor.Editor)
      */
-    public void init(Object editObject, EditingProfile profile,
+    @Override
+	public void init(Object editObject, EditingProfile profile,
             Display rootEditor) {
         this.editObj = editObject;
         this.profile = profile;
@@ -252,7 +261,8 @@ public class RationalEditor extends SimpleTextfieldEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Editor#applyChanges()
      */
-    public void applyChanges() {
+    @Override
+	public void applyChanges() {
         if (profile.isReadOnly())
             return;
         //get edited data
@@ -378,7 +388,8 @@ public class RationalEditor extends SimpleTextfieldEditor {
      * 
      * @return true if the input is accepted
      */
-    public boolean applyChangesToPropertyValue() {
+    @Override
+	public boolean applyChangesToPropertyValue() {
         //		try {
         //			int num = Integer.valueOf(textfield.getText()).intValue();
         //			int denom = Integer.valueOf(textfield2.getText()).intValue();
@@ -455,7 +466,8 @@ public class RationalEditor extends SimpleTextfieldEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.SimpleTextfieldEditor#getInputValue()
      */
-    protected Object getInputValue() {
+    @Override
+	protected Object getInputValue() {
         if (textfield == null)
             return null;
         Rational inputValue = null;
@@ -480,7 +492,8 @@ public class RationalEditor extends SimpleTextfieldEditor {
      * As in <code>SimpleTextfieldEditor</code> the user is notified about
      * invalid input.
      */
-    protected void resetInput() {
+    @Override
+	protected void resetInput() {
         //notify user
         showErrorMessage();
         //reset textfields
@@ -497,7 +510,8 @@ public class RationalEditor extends SimpleTextfieldEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#updateDisplay()
      */
-    public void updateDisplay() {
+    @Override
+	public void updateDisplay() {
         dataChanged = false;
         setValueCreated(false);
         if (textfield != null && textfield2 != null) {
@@ -522,7 +536,8 @@ public class RationalEditor extends SimpleTextfieldEditor {
      *  
      * @see de.uos.fmt.musitech.framework.editor.AbstractSimpleEditor#hasDataChanged()
      */
-    protected boolean hasDataChanged() {
+    @Override
+	protected boolean hasDataChanged() {
         //	    return dirty;
         if (workingRational != null) {
             if (editObj instanceof Rational) {
@@ -543,7 +558,8 @@ public class RationalEditor extends SimpleTextfieldEditor {
      *  
      * @see de.uos.fmt.musitech.framework.editor.SimpleTextfieldEditor#updateGUI()
      */
-    protected void updateGUI() {
+    @Override
+	protected void updateGUI() {
         if (textfield==null || textfield2==null){
             removeAll();
             createGUI();

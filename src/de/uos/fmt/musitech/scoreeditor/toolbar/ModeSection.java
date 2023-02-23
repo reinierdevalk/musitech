@@ -81,6 +81,7 @@ public class ModeSection extends AbstractToolbarSection {
 		modus = new AbstractAction[3];
 		modus[0] = new AbstractAction(Messages.getString("ModeSection.ViewingMode"), Icons //$NON-NLS-1$
 				.getIcon("ansichts-modus.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				modus[0].setEnabled(false);
 				modus[1].setEnabled(true);
@@ -91,6 +92,7 @@ public class ModeSection extends AbstractToolbarSection {
 
 		modus[1] = new AbstractAction(Messages.getString("ModeSection.SelectionMode"), Icons //$NON-NLS-1$
 				.getIcon("auswahl-modus.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				modus[0].setEnabled(true);
 				modus[1].setEnabled(false);
@@ -101,6 +103,7 @@ public class ModeSection extends AbstractToolbarSection {
 
 		modus[2] = new AbstractAction(Messages.getString("ModeSection.InsertionMode"), Icons //$NON-NLS-1$
 				.getIcon("einfuege-modus.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				modus[0].setEnabled(true);
 				modus[1].setEnabled(true);

@@ -264,7 +264,7 @@ public class MetaDataProfileManager {
 			iter.hasNext();
 			) {
 			MetaDataProfile tempObject = (MetaDataProfile) iter.next();
-			String profileName = (String) tempObject.getName();
+			String profileName = tempObject.getName();
 			profileNameList[count] = profileName;
 			count++;
 		}

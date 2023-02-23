@@ -47,38 +47,19 @@ above is subject to the following three conditions:
 **********************************************/
 package de.uos.fmt.musitech.score.kern;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.URL;
-import java.util.Vector;
-
-import javax.sound.midi.InvalidMidiDataException;
-import javax.sound.midi.MidiEvent;
-import javax.sound.midi.MidiSystem;
-import javax.sound.midi.Sequence;
-import javax.sound.midi.Track;
-
 import antlr.CharStreamException;
 import antlr.RecognitionException;
-import antlr.Token;
 import antlr.TokenStreamException;
 
-import de.uos.fmt.musitech.data.score.BeamContainer;
-import de.uos.fmt.musitech.data.score.NotationChord;
 import de.uos.fmt.musitech.data.score.NotationStaff;
 import de.uos.fmt.musitech.data.score.NotationSystem;
 import de.uos.fmt.musitech.data.score.NotationVoice;
-import de.uos.fmt.musitech.data.score.SlurContainer;
-import de.uos.fmt.musitech.data.structure.Note;
-import de.uos.fmt.musitech.data.structure.Piece;
 import de.uos.fmt.musitech.data.structure.container.Container;
 import de.uos.fmt.musitech.data.structure.linear.Part;
-import de.uos.fmt.musitech.data.time.MetricalTimeLine;
 import de.uos.fmt.musitech.performance.gui.PianoRollContainerDisplay;
-import de.uos.fmt.musitech.utility.general.WrongArgumentException;
 import de.uos.fmt.musitech.utility.math.Rational;
 
 /**
@@ -271,7 +252,7 @@ public class KernReader {
 		System.out.println(">>>terminated. And now for testing - some infos about"
 		        +" the notation system's container pool:");
 		
-		Container aContainerPool = (Container) notationSystem.getContext().getPiece().getContainerPool();
+		Container aContainerPool = notationSystem.getContext().getPiece().getContainerPool();
 	
 		Container currentContainer = null;
 
@@ -310,6 +291,7 @@ public class KernReader {
 					frame.setLocation(counter * 25 + 10, counter * 25 + 15);
 					frame
 						.addWindowListener(new java.awt.event.WindowAdapter() {
+						@Override
 						public void windowClosing(
 							java.awt.event.WindowEvent e) {
 							System.exit(0);
@@ -349,6 +331,7 @@ public class KernReader {
 				nPFrame.setSize(nPDisplay.getSize());
 				nPFrame.setLocation(5, 50);
 				nPFrame.addWindowListener(new java.awt.event.WindowAdapter() {
+					@Override
 					public void windowClosing(java.awt.event.WindowEvent e) {
 						System.exit(0);
 					};

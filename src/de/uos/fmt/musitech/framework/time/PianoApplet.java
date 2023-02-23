@@ -64,10 +64,12 @@ public class PianoApplet extends JApplet {
 	}
 	
 	
+	@Override
 	public void init() {
 	    try {
 	        javax.swing.SwingUtilities.invokeAndWait(new Runnable() {
-	            public void run() {
+	            @Override
+				public void run() {
 	                createGUI();
 	            }
 	        });

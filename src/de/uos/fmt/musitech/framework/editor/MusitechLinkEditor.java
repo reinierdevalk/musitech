@@ -66,6 +66,7 @@ public class MusitechLinkEditor extends PreviewEditor {
 	 * Returns a String meant to be displayed beside the "Edit"-button.
 	 * @return String text to be displayed as a preview to the object edited by the editor to pop up
 	 */
+	@Override
 	protected String getPreviewText() {
 	    StringBuffer buffer = new StringBuffer();
 	    buffer.append("musitech: ");
@@ -80,6 +81,7 @@ public class MusitechLinkEditor extends PreviewEditor {
 	 * 
 	 * @return Object to be edited in the <code>editorToPopUp</code>
 	 */
+	@Override
 	protected Object getObjectForEditor() {
 	    Object objToEdit = null;
 		if (editObj != null && propertyName == null)

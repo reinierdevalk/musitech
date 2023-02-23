@@ -58,7 +58,6 @@ import org.w3c.dom.Node;
 import de.uos.fmt.musitech.data.rendering.RenderingHints;
 import de.uos.fmt.musitech.data.structure.container.Containable;
 import de.uos.fmt.musitech.data.time.Marker;
-import de.uos.fmt.musitech.data.time.Metrical;
 import de.uos.fmt.musitech.framework.persistence.IMPEGSerializable;
 import de.uos.fmt.musitech.framework.persistence.MPEG_SMR_Tools;
 import de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer;
@@ -167,7 +166,8 @@ public class Barline implements Containable, Marker, IMPEGSerializable {
      * 
      * @hibernate.property
      */
-    public int hashCode() {
+    @Override
+	public int hashCode() {
         return hashCode;
     }
 
@@ -217,7 +217,8 @@ public class Barline implements Containable, Marker, IMPEGSerializable {
      *                        "de.uos.fmt.musitech.utility.math.Rational"
      *                        foreign-key = "uid" cascade = "all"
      */
-    public Rational getMetricTime() {
+    @Override
+	public Rational getMetricTime() {
         return metricTime;
     }
 
@@ -230,7 +231,8 @@ public class Barline implements Containable, Marker, IMPEGSerializable {
      * 
      * @see de.uos.fmt.musitech.data.time.Metrical#getMetricDuration()
      */
-    public Rational getMetricDuration() {
+    @Override
+	public Rational getMetricDuration() {
         return Rational.ZERO;
     }
 
@@ -238,7 +240,8 @@ public class Barline implements Containable, Marker, IMPEGSerializable {
      * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String,
      *      java.lang.Object)
      */
-    public boolean isValidValue(String propertyName, Object value) {
+    @Override
+	public boolean isValidValue(String propertyName, Object value) {
         // TODO Auto-generated method stub
         return true; //default
     }
@@ -252,14 +255,16 @@ public class Barline implements Containable, Marker, IMPEGSerializable {
      * 
      *  
      */
-    public Long getUid() {
+    @Override
+	public Long getUid() {
         return uid;
     }
 
     /**
      * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
      */
-    public void setUid(Long uid) {
+    @Override
+	public void setUid(Long uid) {
         this.uid = uid;
     }
 
@@ -297,7 +302,8 @@ public class Barline implements Containable, Marker, IMPEGSerializable {
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#toMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Node, java.lang.Object, java.lang.String)
      */
-    public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
+    @Override
+	public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
         //commons----------------------------------
         // create element representing this object
         Element barline = XMLHelper.addElement(parent, "barline");
@@ -331,7 +337,8 @@ public class Barline implements Containable, Marker, IMPEGSerializable {
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#fromMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Element)
      */
-    public Object fromMPEG(MusiteXMLSerializer instance, Element clefSign) {
+    @Override
+	public Object fromMPEG(MusiteXMLSerializer instance, Element clefSign) {
         //commons----------------------------------
         // reference-handling
         Object reference = instance.getReferenced(clefSign, this);

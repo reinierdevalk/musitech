@@ -91,12 +91,14 @@ public class LyricsSyllableTestGUI {
 			final LyricsSyllableDisplay lsd = display;
 			JButton selectButton = new JButton("Select");
 			selectButton.addActionListener(new ActionListener(){
+				@Override
 				public void actionPerformed(ActionEvent e){
 					lsd.markSelected(true);
 				}
 			});
 			JButton unselectButton = new JButton("Reset");
 			unselectButton.addActionListener(new ActionListener(){
+				@Override
 				public void actionPerformed(ActionEvent e){
 					lsd.markSelected(false);
 				}

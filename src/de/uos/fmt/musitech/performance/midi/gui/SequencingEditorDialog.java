@@ -87,6 +87,7 @@ public class SequencingEditorDialog extends javax.swing.JDialog {
 	private SequencingXX ivjSequencing = null;
 	private javax.swing.JLabel ivjMidiInLabel = null;
 	private javax.swing.JComboBox ivjMidiInSelector = null;class IvjEventHandler implements java.awt.event.ActionListener, java.awt.event.ItemListener, java.beans.PropertyChangeListener {
+		@Override
 		public void actionPerformed(java.awt.event.ActionEvent e) {
 			if (e.getSource() == SequencingEditorDialog.this.getButtonApply())
 				connEtoM9(e);
@@ -119,6 +120,7 @@ public class SequencingEditorDialog extends javax.swing.JDialog {
 			if (e.getSource() == SequencingEditorDialog.this.getButtonApply())
 				connEtoM20(e);
 		};
+		@Override
 		public void itemStateChanged(java.awt.event.ItemEvent e) {
 			if (e.getSource() == SequencingEditorDialog.this.getSoundChannelSelector())
 				connEtoM5(e);
@@ -131,6 +133,7 @@ public class SequencingEditorDialog extends javax.swing.JDialog {
 			if (e.getSource() == SequencingEditorDialog.this.getMidiThruJCheckBox())
 				connEtoM19(e);
 		};
+		@Override
 		public void propertyChange(java.beans.PropertyChangeEvent evt) {
 			if (evt.getSource() == SequencingEditorDialog.this.getSequencing() && (evt.getPropertyName().equals("clickNoteStrong")))
 				connPtoP3SetTarget();
@@ -182,6 +185,7 @@ public class SequencingEditorDialog extends javax.swing.JDialog {
 			aSequencingEditorDialog = new SequencingEditorDialog();
 			aSequencingEditorDialog.setModal(true);
 			aSequencingEditorDialog.addWindowListener(new java.awt.event.WindowAdapter() {
+				@Override
 				public void windowClosing(java.awt.event.WindowEvent e) {
 					System.exit(0);
 				};

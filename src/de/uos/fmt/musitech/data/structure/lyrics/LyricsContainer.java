@@ -61,7 +61,6 @@ import java.util.Locale;
 import java.util.Set;
 
 import de.uos.fmt.musitech.data.structure.container.BasicContainer;
-import de.uos.fmt.musitech.utility.collection.TypedCollection;
 
 /**
  * @author Jens
@@ -165,7 +164,8 @@ public class LyricsContainer extends BasicContainer<LyricsSyllableSequence> {
                 }
             }
             Collections.sort(verses,new Comparator(){
-                public int compare(Object o1, Object o2) {
+                @Override
+				public int compare(Object o1, Object o2) {
                     return ((LyricsSyllableSequence)o2).getVerseNumber() - ((LyricsSyllableSequence)o1).getVerseNumber();
                 }
                 });

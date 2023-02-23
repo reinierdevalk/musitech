@@ -55,14 +55,7 @@ package de.uos.fmt.musitech.data.media.image;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Hashtable;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-
 import de.uos.fmt.musitech.data.MObject;
-import de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer;
 
 
 /**
@@ -123,6 +116,7 @@ public class ImageURL implements MObject {
 	/** 
 	 * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String, java.lang.Object)
 	 */
+	@Override
 	public boolean isValidValue(String propertyName, Object value) {
 		// TODO Auto-generated method stub
 		return true; //default
@@ -138,13 +132,15 @@ public class ImageURL implements MObject {
 	 * column = "uid" 
 	 * 
      */
-    public Long getUid() {
+    @Override
+	public Long getUid() {
         return uid;
     }
     /**
      * @param uid The uid to set.
      */
-    public void setUid(Long uid) {
+    @Override
+	public void setUid(Long uid) {
         this.uid = uid;
     }
 

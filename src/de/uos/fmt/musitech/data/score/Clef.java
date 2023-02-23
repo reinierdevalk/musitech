@@ -99,14 +99,16 @@ public class Clef implements Metrical, Marker, Containable, IMPEGSerializable {
     /**
      * @see de.uos.fmt.musitech.data.time.Metrical#getMetricTime()
      */
-    public Rational getMetricTime() {
+    @Override
+	public Rational getMetricTime() {
         return metricTime;
     }
 
     /**
      * @see de.uos.fmt.musitech.data.time.Metrical#getMetricDuration()
      */
-    public Rational getMetricDuration() {
+    @Override
+	public Rational getMetricDuration() {
         return Rational.ZERO;
     }
 
@@ -150,14 +152,16 @@ public class Clef implements Metrical, Marker, Containable, IMPEGSerializable {
      * 
      * @hibernate.id generator-class="native"
      */
-    public Long getUid() {
+    @Override
+	public Long getUid() {
         return uid;
     }
 
     /**
      * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
      */
-    public void setUid(Long uid) {
+    @Override
+	public void setUid(Long uid) {
         this.uid = uid;
     }
 
@@ -165,7 +169,8 @@ public class Clef implements Metrical, Marker, Containable, IMPEGSerializable {
      * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String,
      *      java.lang.Object)
      */
-    public boolean isValidValue(String propertyName, Object value) {
+    @Override
+	public boolean isValidValue(String propertyName, Object value) {
         // TODO Auto-generated method stub
         return true; //default
     }
@@ -204,7 +209,8 @@ public class Clef implements Metrical, Marker, Containable, IMPEGSerializable {
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#toMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Node, java.lang.Object, java.lang.String)
      */
-    public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
+    @Override
+	public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
         //commons----------------------------------
         // create element representing this object
         Element clef = XMLHelper.addElement(parent, "clefSign");
@@ -228,7 +234,8 @@ public class Clef implements Metrical, Marker, Containable, IMPEGSerializable {
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#fromMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Element)
      */
-    public Object fromMPEG(MusiteXMLSerializer instance, Element clefSign) {
+    @Override
+	public Object fromMPEG(MusiteXMLSerializer instance, Element clefSign) {
         //commons----------------------------------
         // reference-handling
         Object reference = instance.getReferenced(clefSign, this);

@@ -156,19 +156,22 @@ public class FontChooser extends JDialog {
         // Now register event listeners to handle selections
         families.addItemChooserListener(new ItemChooser.Listener() {
 
-            public void itemChosen(ItemChooser.Event e) {
+            @Override
+			public void itemChosen(ItemChooser.Event e) {
                 setFontFamily((String) e.getSelectedValue());
             }
         });
         styles.addItemChooserListener(new ItemChooser.Listener() {
 
-            public void itemChosen(ItemChooser.Event e) {
+            @Override
+			public void itemChosen(ItemChooser.Event e) {
                 setFontStyle(((Integer) e.getSelectedValue()).intValue());
             }
         });
         sizes.addItemChooserListener(new ItemChooser.Listener() {
 
-            public void itemChosen(ItemChooser.Event e) {
+            @Override
+			public void itemChosen(ItemChooser.Event e) {
                 setFontSize(Integer.parseInt((String) e.getSelectedValue()));
             }
         });
@@ -182,13 +185,15 @@ public class FontChooser extends JDialog {
         cancel = new JButton("Cancel");
         okay.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 setVisible(false);
             }
         });
         cancel.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 selectedFont = null;
                 setVisible(false);
             }
@@ -323,7 +328,8 @@ public class FontChooser extends JDialog {
         // Handle button clicks
         button.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 // Pop up the dialog
                 chooser.setVisible(true);
                 // Get the user's selection

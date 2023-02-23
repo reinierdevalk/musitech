@@ -94,6 +94,7 @@ public class FISGeneralConverter implements FloatInputStream, FISReader {
 		setFloatInputStream(inputStream);
 	}
 	
+	@Override
 	public FISReader setFloatInputStream(FloatInputStream inputStream)
 	{
 		fis = inputStream;
@@ -106,6 +107,7 @@ public class FISGeneralConverter implements FloatInputStream, FISReader {
 		// wie uhralte Stahlindustrie
 		return this;
 	}
+	@Override
 	public FloatInputStream getFloatInputStream()
 	{
 		return fis;
@@ -113,30 +115,35 @@ public class FISGeneralConverter implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.FloatInputStream#read(float[][])
 	 */
+	@Override
 	public int read(float[][] data) throws IOException {
 		return fis.read(data, 0, data.length);
 	}
 	/**
 	 * @see de.uos.fmt.musitech.audio.FloatInputStream#read(float[][], int, int)
 	 */
+	@Override
 	public int read(float[][] data, int start, int len) throws IOException {
 		return fis.read(data, start, len);
 	}
 	/**
 	 * @see de.uos.fmt.musitech.audio.FloatInputStream#getFormat()
 	 */
+	@Override
 	public AudioFormat getFormat() {
 		return targetFormat;
 	}
 	/**
 	 * @see de.uos.fmt.musitech.audio.FloatInputStream#skip(long)
 	 */
+	@Override
 	public long skip(long n) throws IOException {
 		return fis.skip(n);
 	}
 	/**
 	 * @see de.uos.fmt.musitech.audio.FloatInputStream#reset()
 	 */
+	@Override
 	public void reset() throws IOException {
 		fis.reset();
 	}
@@ -144,6 +151,7 @@ public class FISGeneralConverter implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
 	 */
+	@Override
 	public long remainingSamples() {
 		return fis.remainingSamples();
 	}
@@ -151,6 +159,7 @@ public class FISGeneralConverter implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public long getPositionInSamples() {
 		return fis.getPositionInSamples();
 	}
@@ -158,6 +167,7 @@ public class FISGeneralConverter implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public void setPositionInSamples(long newPos) throws IOException {
 		fis.setPositionInSamples(newPos);
 	}

@@ -57,6 +57,7 @@ import java.awt.print.*;
 import java.util.*;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 import javax.swing.border.Border;
 import javax.swing.event.ChangeEvent;
 
@@ -595,7 +596,7 @@ public class NotationDisplay extends AbstractDisplay implements HorizontalTimedD
         NotationDisplay nd = new NotationDisplay();
         nd.init(nl, EditorFactory.getOrCreateProfile(nl), null);
         JFrame frame = new JFrame("Test NotationDisplay");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(new BorderLayout());
         frame.getContentPane().add(nd);
         frame.pack();

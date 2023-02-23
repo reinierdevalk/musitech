@@ -519,7 +519,8 @@ public class MetaDataEditor extends AbstractEditor {
         JButton addProfile = new JButton("Add Profile");
         addProfile.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent ae) {
+            @Override
+			public void actionPerformed(ActionEvent ae) {
                 addProfileInEditor();
             }
         });
@@ -527,7 +528,8 @@ public class MetaDataEditor extends AbstractEditor {
         JButton removeProfile = new JButton("Remove Profile");
         removeProfile.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent ae) {
+            @Override
+			public void actionPerformed(ActionEvent ae) {
                 removeProfileInEditor();
             }
         });
@@ -535,7 +537,8 @@ public class MetaDataEditor extends AbstractEditor {
         JButton addItem = new JButton("Add Item");
         addItem.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent ae) {
+            @Override
+			public void actionPerformed(ActionEvent ae) {
                 addItemInEditor();
             }
         });
@@ -543,7 +546,8 @@ public class MetaDataEditor extends AbstractEditor {
         JButton removeItem = new JButton("Remove Item");
         removeItem.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent ae) {
+            @Override
+			public void actionPerformed(ActionEvent ae) {
                 removeItemInEditor();
             }
         });
@@ -556,7 +560,8 @@ public class MetaDataEditor extends AbstractEditor {
         //Ergänzung 06/01/05
         final JButton languageButton = new JButton("Select Language");
         languageButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 selectLanguage(languageButton);
             }
         });
@@ -585,7 +590,8 @@ public class MetaDataEditor extends AbstractEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#applyChanges()
      */
-    public void applyChanges() {
+    @Override
+	public void applyChanges() {
         dataChanged = false;
         //		if (isOutmostEditor())
         if (rootDisplay == this)
@@ -766,7 +772,8 @@ public class MetaDataEditor extends AbstractEditor {
             buildLayout();
             SwingUtilities.invokeLater(new Thread() {
 
-                public void run() {
+                @Override
+				public void run() {
                     scrollToDataPanel(profileName);
                 }
             });
@@ -892,7 +899,7 @@ public class MetaDataEditor extends AbstractEditor {
     private boolean retainDataWithoutProfile(MetaDataProfile profile) {
         boolean matchesData = false;
         for (int i = 0; i < profile.listOfKeys().length; i++) {
-            MetaDataItem item = (MetaDataItem) collectionCopy.getItemByKey(profile.listOfKeys()[i]);
+            MetaDataItem item = collectionCopy.getItemByKey(profile.listOfKeys()[i]);
             if (item != null) {
                 MetaDataValue metaDataValue = item.getMetaDataValue();
                 if (metaDataValue != null)
@@ -933,7 +940,8 @@ public class MetaDataEditor extends AbstractEditor {
                 buildLayout();
                 SwingUtilities.invokeLater(new Thread() {
 
-                    public void run() {
+                    @Override
+					public void run() {
                         setFocusToTextfield("Additional Data", key);
                         scrollToDataPanel("Additional Data");
                     }
@@ -956,7 +964,7 @@ public class MetaDataEditor extends AbstractEditor {
      *         null if the inserted key is invalid.
      */
     private String getKeyOfNewItem() {
-        String newKey = (String) JOptionPane.showInputDialog(collectionPanel,
+        String newKey = JOptionPane.showInputDialog(collectionPanel,
                                                              "Please give the key for the new MetaDataItem");
         if (newKey != null) {
         	newKey = newKey.trim();
@@ -1029,7 +1037,8 @@ public class MetaDataEditor extends AbstractEditor {
             buildLayout();
             SwingUtilities.invokeLater(new Thread() {
 
-                public void run() {
+                @Override
+				public void run() {
                     setFocusToTextfield(title, newKey);
                     scrollToDataPanel(title);
                 }
@@ -1130,7 +1139,8 @@ public class MetaDataEditor extends AbstractEditor {
                         itemEditors.remove(editorToRemove);
                     SwingUtilities.invokeLater(new Thread() {
 
-                        public void run() {
+                        @Override
+						public void run() {
                             scrollToDataPanel("Additional Data");
                         }
                     });
@@ -1139,7 +1149,8 @@ public class MetaDataEditor extends AbstractEditor {
                     getItemEditor(itemToRemove).updateDisplay();
                     SwingUtilities.invokeLater(new Thread() {
 
-                        public void run() {
+                        @Override
+						public void run() {
                             scrollToDataPanel(MetaDataProfileManager.getMetaDataProfileContainingKey(
                                                                                                      itemToRemove
                                                                                                              .getKey())
@@ -1242,7 +1253,8 @@ public class MetaDataEditor extends AbstractEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Editor#isFocused()
      */
-    public boolean isFocused() {
+    @Override
+	public boolean isFocused() {
         for (Iterator iter = itemEditors.iterator(); iter.hasNext();) {
             Editor itemEditor = (Editor) iter.next();
             if (itemEditor.isFocused())
@@ -1259,7 +1271,8 @@ public class MetaDataEditor extends AbstractEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#updateDisplay()
      */
-    public void updateDisplay() {
+    @Override
+	public void updateDisplay() {
         dataChanged = false;
         ((MetaDataCollection) editObj).copyToMetaDataCollection(collectionCopy);
         createEmptyItemsInCollectionCopy();
@@ -1279,7 +1292,8 @@ public class MetaDataEditor extends AbstractEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#createGUI()
      */
-    protected void createGUI() {
+    @Override
+	protected void createGUI() {
         initLayout();
         buildLayout();
         addFocusListenerToComponent(this);
@@ -1321,12 +1335,14 @@ public class MetaDataEditor extends AbstractEditor {
     private void addFocusListenerToComponent(Component comp) {
         comp.addFocusListener(new FocusListener() {
 
-            public void focusGained(FocusEvent e) {
+            @Override
+			public void focusGained(FocusEvent e) {
                 reactToFocus();
                 //TODO evtl. direkt durch focusReceived() ersetzen
             }
 
-            public void focusLost(FocusEvent e) {
+            @Override
+			public void focusLost(FocusEvent e) {
             }
         });
     }
@@ -1363,7 +1379,8 @@ public class MetaDataEditor extends AbstractEditor {
      *      de.uos.fmt.musitech.framework.editor.EditingProfile,
      *      de.uos.fmt.musitech.framework.editor.Editor)
      */
-    public void init(Object editObject, EditingProfile profile, Display rootEditor) {
+    @Override
+	public void init(Object editObject, EditingProfile profile, Display rootEditor) {
         setEditObj(editObject);
         //includes type check and initializes collectionCopy
         if (editObj == null)
@@ -1385,7 +1402,8 @@ public class MetaDataEditor extends AbstractEditor {
      *         has been changed, an empty List otherwise
      * @see de.uos.fmt.musitech.framework.editor.Editor#getEditedData()
      */
-    public Collection getEditedData() {
+    @Override
+	public Collection getEditedData() {
         List data = new ArrayList();
         //		if (hasMetaDataCollectionChanged())
         //			data.add(getEditObj());
@@ -1436,7 +1454,8 @@ public class MetaDataEditor extends AbstractEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Editor#destroy()
      */
-    public void destroy() {
+    @Override
+	public void destroy() {
         //print for testing:
         //printEditObjForTesting();
         super.destroy();
@@ -1460,7 +1479,8 @@ public class MetaDataEditor extends AbstractEditor {
      *         MetaDataCollection
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#isRemoteEventSource(java.lang.Object)
      */
-    protected boolean isRemoteEventSource(Object eventSource) {
+    @Override
+	protected boolean isRemoteEventSource(Object eventSource) {
         //return false if eventSource is this editor
         if (eventSource == this)
             return false;
@@ -1790,14 +1810,16 @@ public class MetaDataEditor extends AbstractEditor {
             //add ActionListener to button (and define ActionListener)
             expandReduceButton.addActionListener(new ActionListener() {
 
-                public void actionPerformed(ActionEvent ce) {
+                @Override
+				public void actionPerformed(ActionEvent ce) {
                     JButton source = (JButton) ce.getSource();
                     if (source.getText().equals("Expand")) {
                         panelsToExpand.add(title);
                         buildLayout();
                         SwingUtilities.invokeLater(new Thread() {
 
-                            public void run() {
+                            @Override
+							public void run() {
                                 scrollToDataPanel(title);
                             }
                         });

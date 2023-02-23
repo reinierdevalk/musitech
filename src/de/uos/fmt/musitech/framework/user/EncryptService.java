@@ -56,8 +56,6 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import sun.misc.BASE64Encoder;
-
 /**
  * This is an encrypter for passwords using the Java Cryptography Architecture
  * (JCA) as explained in an <a

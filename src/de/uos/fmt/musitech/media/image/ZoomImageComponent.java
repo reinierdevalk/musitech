@@ -107,6 +107,7 @@ public class ZoomImageComponent extends ImageComponent {
 	/** 
 	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
 	 */
+	@Override
 	public void paintComponent(Graphics g) {
 //		super.paintComponent(g);
 		g.clearRect(0, 0, getWidth(), getHeight());
@@ -116,6 +117,7 @@ public class ZoomImageComponent extends ImageComponent {
 	/** 
 	 * @see de.uos.fmt.musitech.media.image.ImageComponent#setImage(java.net.URL)
 	 */
+	@Override
 	public void setImage(URL url) {
 		// TODO repair
 		super.setImage(url);
@@ -135,6 +137,7 @@ public class ZoomImageComponent extends ImageComponent {
 	/** 
 	 * @see java.awt.Component#getPreferredSize()
 	 */
+	@Override
 	public Dimension getPreferredSize() {
 		return new Dimension(imgWidth, imgHeight);
 	}

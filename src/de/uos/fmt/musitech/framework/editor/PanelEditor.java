@@ -90,6 +90,7 @@ public class PanelEditor extends AbstractComplexEditor {
 	 * <br>If at least one child is a simple editor all complex editors are
 	 * "wrapped" in a button editor. 
 	 */
+	@Override
 	protected void createGUI() {
 
 		// if propertyValue is null (but propertyName is not) a create-button is shown
@@ -131,7 +132,7 @@ public class PanelEditor extends AbstractComplexEditor {
 				&& (!(children[i] instanceof PopUpEditor))) {
 				children[i] =
 					EditorFactory.createPopUpWrapper(
-						(AbstractComplexEditor) children[i]);
+						children[i]);
 			}
 		}
 		createGUIForSimple();
@@ -230,6 +231,7 @@ public class PanelEditor extends AbstractComplexEditor {
 		JButton createButton = new JButton("Create...");
 		
 		createButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent ae) {
 //				propertyValue = createNewPropertyValue("New propertyValue");
 				propertyValue = createNewValue("New propertyValue");
@@ -251,6 +253,7 @@ public class PanelEditor extends AbstractComplexEditor {
 	 * Updates the editor.
 	 * This method is invoked after a new propertyValue has been created.
 	 */
+	@Override
 	public void updateDisplay() {	
 //		if (editObjCopy!=null)
 ////			editObjCopy = ObjectCopy.copyObject(editObj);
@@ -288,6 +291,7 @@ public class PanelEditor extends AbstractComplexEditor {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Editor#isFocused()
 	 */
+	@Override
 	public boolean isFocused(){
 		Component[] components = getComponents();
 		for (int i=0; i<components.length; i++){

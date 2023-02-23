@@ -241,7 +241,7 @@ public class AudioPreviewReader {
 		s_si = 0.0f;
 		int t_i = 0; // target index (float-array)
 		int endAt = (int) (bLen - (frameSize * sInPerSOut));
-		for (int s_i = 0, channel = 0; s_i <= endAt && t_i < data[0].length; t_i++, s_i = (int) ((int) s_si * frameSize)) {
+		for (int s_i = 0, channel = 0; s_i <= endAt && t_i < data[0].length; t_i++, s_i = (int) s_si * frameSize) {
 			for (channel = 0; channel < channelMap.length; channel++) {
 				chOfs = channelMap[channel] * bytesPerSample;
 

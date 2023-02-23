@@ -82,6 +82,7 @@ public class Cursor extends JComponent {
 	/**
 	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
 	 */
+	@Override
 	protected void paintComponent(Graphics g) {
 		Color oldColor = g.getColor();
 		g.setColor(color);

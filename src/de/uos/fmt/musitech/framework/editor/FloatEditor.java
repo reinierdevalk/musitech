@@ -90,6 +90,7 @@ SimpleTextfieldEditor
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.SimpleTextfieldEditor#getInputValue()
 	 */
+	@Override
 	protected Object getInputValue() {
 		Float inputValue = null;
 		try{

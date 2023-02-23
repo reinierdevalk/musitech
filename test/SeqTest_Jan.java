@@ -49,6 +49,7 @@ import java.awt.BorderLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.performance.MidiNoteSequence;
 import de.uos.fmt.musitech.data.score.NotationStaff;
@@ -92,7 +93,7 @@ public class SeqTest_Jan {
 //			// user code end
 //
 //		}
-		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jf.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		jf.setSize(100,200);
 		jf.getContentPane().setLayout(new BorderLayout());
 		jf.getContentPane().add(jp, BorderLayout.SOUTH);

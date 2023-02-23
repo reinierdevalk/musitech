@@ -213,7 +213,7 @@ public class ScoreEditor extends ScorePanel implements DataChangeListener {
 		KeyMarker km = null;
 		for (Iterator i = getNotationSystem().getContext().getPiece()
 				.getHarmonyTrack().iterator(); i.hasNext();) {
-			Object o = (Object) i.next();
+			Object o = i.next();
 			if (o instanceof KeyMarker) {
 				KeyMarker k = (KeyMarker) o;
 				if (k.getMetricTime().isLessOrEqual(n.getMetricTime()))
@@ -365,11 +365,11 @@ public class ScoreEditor extends ScorePanel implements DataChangeListener {
 	}
 
 	public NotationChord getNotationChordAt(Rational time) {
-		NotationStaff ns = (NotationStaff) getNotationSystem().get(
+		NotationStaff ns = getNotationSystem().get(
 			selectedStaff);
-		NotationVoice nv = (NotationVoice) ns.get(selectedVoice);
+		NotationVoice nv = ns.get(selectedVoice);
 		for (int i = 0; i < nv.size(); i++) {
-			NotationChord nc = (NotationChord) nv.get(i);
+			NotationChord nc = nv.get(i);
 			if (nc.getMetricTime().equals(time))
 				return nc;
 		}
@@ -381,7 +381,7 @@ public class ScoreEditor extends ScorePanel implements DataChangeListener {
 		NotationVoice nv = ns.get(selectedVoice);
 		NotationChord before = null;
 		for (int i = 0; i < nv.size(); i++) {
-			NotationChord nc = (NotationChord) nv.get(i);
+			NotationChord nc = nv.get(i);
 			if (nc.getMetricTime().isGreaterOrEqual(time))
 				return before;
 			before = nc;
@@ -393,13 +393,14 @@ public class ScoreEditor extends ScorePanel implements DataChangeListener {
 		NotationStaff ns = getNotationSystem().get(selectedStaff);
 		NotationVoice nv = ns.get(selectedVoice);
 		for (int i = 0; i < nv.size(); i++) {
-			NotationChord nc = (NotationChord) nv.get(i);
+			NotationChord nc = nv.get(i);
 			if (nc.getMetricTime().isGreater(time))
 				return nc;
 		}
 		return null;
 	}
 
+	@Override
 	public void paint(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
@@ -488,7 +489,7 @@ public class ScoreEditor extends ScorePanel implements DataChangeListener {
 			for (int j = 0; j < ns.size(); j++) {
 				NotationVoice nv = ns.get(j);
 				for (int k = 0; k < nv.size(); k++) {
-					NotationChord nc = (NotationChord) nv.get(k);
+					NotationChord nc = nv.get(k);
 					for (int l = 0; l < nc.size(); l++) {
 						notes.add(nc.get(l));
 					}
@@ -504,7 +505,7 @@ public class ScoreEditor extends ScorePanel implements DataChangeListener {
 		for (int j = 0; j < ns.size(); j++) {
 			NotationVoice nv = ns.get(j);
 			for (int k = 0; k < nv.size(); k++) {
-				NotationChord nc = (NotationChord) nv.get(k);
+				NotationChord nc = nv.get(k);
 				for (int l = 0; l < nc.size(); l++) {
 					notes.add(nc.get(l));
 				}
@@ -547,6 +548,7 @@ public class ScoreEditor extends ScorePanel implements DataChangeListener {
 		this.selectedVoice = selectedVoice;
 	}
 
+	@Override
 	public void dataChanged(DataChangeEvent e) {
 		setNotationSystem(getNotationSystem());
 		selectionChanged(new SelectionChangeEvent(this, selectionManager

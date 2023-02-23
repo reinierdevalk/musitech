@@ -160,6 +160,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	 * @uml.associationEnd multiplicity="(1 1)"
 	 */
 	MouseInputListener mouseListener = new MouseInputListener() {
+		@Override
 		public void mouseClicked(MouseEvent e) {
 
 			if (e.getClickCount() >= 2 && e.getButton() == MouseEvent.BUTTON3) {
@@ -183,6 +184,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 				for (int i = 0; i < editor.length; i++) {
 					final String edit = editor[i];
 					ActionListener actionList = new ActionListener() {
+						@Override
 						public void actionPerformed(ActionEvent e) {
 							System.out.println("clicked ");
 							Display thisEditor;
@@ -212,24 +214,30 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 
 		}
 
+		@Override
 		public void mouseEntered(MouseEvent e) {
 
 		}
 
+		@Override
 		public void mouseExited(MouseEvent e) {
 
 		}
 
+		@Override
 		public void mousePressed(MouseEvent e) {
 
 		}
 
+		@Override
 		public void mouseReleased(MouseEvent e) {
 		}
 
+		@Override
 		public void mouseDragged(MouseEvent e) {
 		}
 
+		@Override
 		public void mouseMoved(MouseEvent e) {
 		}
 	};
@@ -480,6 +488,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	 * 
 	 * @uml.property name="preferredSize"
 	 */
+	@Override
 	public Dimension getPreferredSize() {
 		return preferredSize;
 	}
@@ -489,6 +498,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	private ComponentListener getCompList() {
 		if (compList == null) {
 			compList = new ComponentListener() {
+				@Override
 				public void componentResized(ComponentEvent arg0) {
 					//					System.out.println("CAD resize" + arg0.getSource());
 
@@ -497,17 +507,20 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 
 				}
 
+				@Override
 				public void componentMoved(ComponentEvent arg0) {
 //					System.out.println("CAD moved");
 
 				}
 
+				@Override
 				public void componentShown(ComponentEvent arg0) {
 //					System.out.println("CAD shown and calcMPP");
 					//					calculateMPP();
 
 				}
 
+				@Override
 				public void componentHidden(ComponentEvent arg0) {
 					System.out.println("CAD hidden");
 
@@ -705,6 +718,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	/**
 	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
 	 */
+	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		//		g.setPaintMode();
@@ -763,6 +777,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	/**
 	 * @see de.uos.fmt.musitech.framework.selection.SelectionListener#selectionChanged(de.uos.fmt.musitech.framework.selection.SelectionChangeEvent)
 	 */
+	@Override
 	public void selectionChanged(SelectionChangeEvent e) {
 		//		Component[] children = getComponents();
 		if (e.removedObjects.contains(container)) {
@@ -793,6 +808,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	/**
 	 * @see de.uos.fmt.musitech.framework.selection.SelectingEditor#setSelectionController(de.uos.fmt.musitech.framework.selection.SelectionController)
 	 */
+	@Override
 	public void setSelectionController(SelectionController c) {
 		this.selectionController = c;
 		CADMouseListener CADMouse = new CADMouseListener(getTopLevelCAD());
@@ -803,6 +819,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	/**
 	 * @see de.uos.fmt.musitech.framework.selection.SelectingEditor#objectAt(java.awt.Point)
 	 */
+	@Override
 	public MObject objectAt(Point p) {
 		Component c = getComponentAt(p);
 		if (c instanceof ContainerArrangeDisplay) {
@@ -815,6 +832,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	/**
 	 * @see de.uos.fmt.musitech.framework.selection.SelectingEditor#objectsTouched(java.awt.Rectangle)
 	 */
+	@Override
 	public Collection objectsTouched(Rectangle r) {
 		return null;
 	}
@@ -822,6 +840,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	/**
 	 * @see de.uos.fmt.musitech.framework.selection.SelectingEditor#timeCovered(java.awt.Rectangle)
 	 */
+	@Override
 	public TimeRange timeCovered(Rectangle r) {
 		return null;
 	}
@@ -837,6 +856,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	/**
 	 * @see de.uos.fmt.musitech.framework.selection.SelectingEditor#paintDragArea(java.awt.Rectangle)
 	 */
+	@Override
 	public void paintDragArea(Rectangle r) {
 		Graphics g = getGraphics();
 		g.setXORMode(Color.DARK_GRAY);
@@ -862,6 +882,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.Display#externalChanges()
 	 */
+	@Override
 	public boolean externalChanges() {
 		return dataChanged;
 	}
@@ -869,6 +890,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.Display#destroy()
 	 */
+	@Override
 	public void destroy() {
 		SelectionManager selMan = SelectionManager.getManager();
 		selMan.removeListener(this);
@@ -879,6 +901,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.Display#focusReceived()
 	 */
+	@Override
 	public void focusReceived() {
 //		System.out.println("Focus Received");
 		if (dataChanged) {
@@ -890,6 +913,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.Display#getEditingProfile()
 	 */
+	@Override
 	public EditingProfile getEditingProfile() {
 		return editProfile;
 	}
@@ -897,6 +921,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.Display#getEditObj()
 	 */
+	@Override
 	public Object getEditObj() {
 		return container;
 	}
@@ -904,6 +929,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.Display#isFocused()
 	 */
+	@Override
 	public boolean isFocused() {
 		return isFocusOwner();
 	}
@@ -913,6 +939,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	 *      de.uos.fmt.musitech.framework.editor.EditingProfile,
 	 *      de.uos.fmt.musitech.framework.editor.Display)
 	 */
+	@Override
 	public void init(Object editObject, EditingProfile profile, Display root) {
 		this.editObj = editObject;
 		this.editProfile = profile;
@@ -956,14 +983,15 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.Display#updateDisplay()
 	 */
+	@Override
 	public void updateDisplay() {
 //		System.out.print("ContainerArrangeDisplay.update Display(): ");
 		ContainerArrangeDisplay cad = getTopLevelCAD();
 //		System.out.println(" thisCAD: " + container.getName()
 //				+ ",  TopLevelCAD: " + getTopLevelCAD().container.getName());
 
-		cad.setAllMillisPerPix((java.awt.Container) cad, getMicrosPerPix());
-		cad.setWindowRecursive((java.awt.Container) cad, getWinBegin(),
+		cad.setAllMillisPerPix(cad, getMicrosPerPix());
+		cad.setWindowRecursive(cad, getWinBegin(),
 				getWinDuration());
 
 	}
@@ -971,6 +999,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.Display#getRootDisplay()
 	 */
+	@Override
 	public Display getRootDisplay() {
 		return getTopLevelCAD();
 	}
@@ -978,6 +1007,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	/**
 	 * @see de.uos.fmt.musitech.framework.change.DataChangeListener#dataChanged(de.uos.fmt.musitech.framework.change.DataChangeEvent)
 	 */
+	@Override
 	public void dataChanged(DataChangeEvent e) {
 		dataChanged = true;
 		// Display update in focusReceived()
@@ -1006,6 +1036,7 @@ public class ContainerArrangeDisplay extends JPanel implements Display,
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.Display#asComponent()
 	 */
+	@Override
 	public Component asComponent() {
 		return this;
 	}

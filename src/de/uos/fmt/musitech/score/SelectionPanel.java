@@ -194,9 +194,11 @@ public class SelectionPanel extends NotationDisplay {
 			stopP = null;
 		}
 
+		@Override
 		public void mouseMoved(MouseEvent e) {
 		}
 
+		@Override
 		public void mouseDragged(MouseEvent e) {
 			stopP = e.getPoint();
 			calculateSelectionBounds();

@@ -56,13 +56,13 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.audio.AudioFileObject;
 import de.uos.fmt.musitech.data.structure.container.BasicContainer;
 import de.uos.fmt.musitech.data.structure.container.Container;
 import de.uos.fmt.musitech.framework.time.ObjectPlayer;
 import de.uos.fmt.musitech.framework.time.TransportButtons;
-import de.uos.fmt.musitech.performance.midi.MidiReader;
 
 /**
  * @author Nicolai Strauch, Tillman Weyde
@@ -94,7 +94,7 @@ public class TestObjectPlayer extends JFrame {
 		getContentPane().setLayout(new BorderLayout());
 		getContentPane().add(objectPlayer.getControlPanel(), BorderLayout.EAST);
 		getContentPane().add(transportButtons, BorderLayout.SOUTH);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		pack();
 		setVisible(true);
 	}

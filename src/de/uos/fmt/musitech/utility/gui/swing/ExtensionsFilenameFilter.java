@@ -67,6 +67,7 @@ public class ExtensionsFilenameFilter implements FilenameFilter {
 	/**
 	 * @see java.io.FilenameFilter#accept(java.io.File, java.lang.String)
 	 */
+	@Override
 	public boolean accept(File arg0, String arg1) {
 		if (arg1.endsWith(extension)) {
 			return true;

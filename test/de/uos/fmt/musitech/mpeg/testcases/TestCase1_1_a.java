@@ -843,6 +843,7 @@ public class TestCase1_1_a extends TestCase {
 		cont.add(voice);
 	}
 	
+	@Override
 	public NotationSystem createNotationSystem() {
 		context.getPiece().getMetricalTimeLine().add(new TimeSignatureMarker(3, 4, new Rational(1,4)));
 		KeyMarker marker = new KeyMarker(Rational.ZERO, 0);

@@ -61,7 +61,8 @@ public class DiffTestCase2_5 extends MPEGDiffViewer {
     /**
      * @see de.uos.fmt.musitech.mpeg.serializer.MPEGDiffViewer#createNotationSystem()
      */
-    public NotationSystem createNotationSystem() {
+    @Override
+	public NotationSystem createNotationSystem() {
         BaroqueAlignmentTest.fillPiece(context.getPiece());
         return system;
     }

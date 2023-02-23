@@ -86,6 +86,7 @@ public class Accent extends ScoreObject {
 		this.type = type;
 	}
 
+	@Override
 	Class parentClass() {
 		return Chord.class;
 	}
@@ -124,6 +125,7 @@ public class Accent extends ScoreObject {
 		return 0;
 	}
 
+	@Override
 	int arrange(int pass) {
 		Event ev = event();
 		int width = 0;
@@ -171,11 +173,13 @@ public class Accent extends ScoreObject {
 		return 0;
 	}
 
+	@Override
 	public int absY() {
 		return ypos;
 	}
 
 	/** Draws the this Accent onto the given graphics context. */
+	@Override
 	public void paint(Graphics g) {
 		if (!isVisible() && type > 0)
 			return;
@@ -189,6 +193,7 @@ public class Accent extends ScoreObject {
 		return type;
 	}
 
+	@Override
 	public int rwidth() {
 		return MusicGlyph.width(getScoreParent().staff().getLineDistance(),
 			getGlyph());

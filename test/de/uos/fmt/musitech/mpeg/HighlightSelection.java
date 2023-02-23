@@ -54,7 +54,6 @@ package de.uos.fmt.musitech.mpeg;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.RenderingHints;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -69,6 +68,7 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListCellRenderer;
+import javax.swing.WindowConstants;
 import javax.swing.border.Border;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -83,7 +83,6 @@ import de.uos.fmt.musitech.data.structure.container.StaffContainer;
 import de.uos.fmt.musitech.data.structure.form.NoteList;
 import de.uos.fmt.musitech.data.structure.linear.Voice;
 import de.uos.fmt.musitech.framework.editor.EditorFactory;
-import de.uos.fmt.musitech.mpeg.ObjectEditor.NotationCellRenderer;
 import de.uos.fmt.musitech.score.NotationDisplay;
 import de.uos.fmt.musitech.score.gui.Score;
 import de.uos.fmt.musitech.utility.math.Rational;
@@ -147,7 +146,8 @@ public class HighlightSelection extends JPanel {
             //Erg. K.N. 11.01.05
             list.addListSelectionListener(new ListSelectionListener() {
 
-                public void valueChanged(ListSelectionEvent e) {
+                @Override
+				public void valueChanged(ListSelectionEvent e) {
                     highlightSelection();
                 }
             });
@@ -182,7 +182,7 @@ public class HighlightSelection extends JPanel {
                 Container markUp = new BasicContainer();
                 Collection contents = ((Container) selectedObjs[i]).getContentsRecursiveList(null);
                 for (Iterator iter = contents.iterator(); iter.hasNext();) {
-                    Object element = (Object) iter.next();
+                    Object element = iter.next();
                     if (element instanceof Note) {
                         markUp.add(element);
                     }
@@ -198,7 +198,8 @@ public class HighlightSelection extends JPanel {
 
     class NotationCellRenderer extends JLabel implements ListCellRenderer {
 
-        public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected,
+        @Override
+		public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected,
                                                       boolean hasFocus) {
             setText(((Container) value).getName());
             if (isSelected) {
@@ -259,7 +260,7 @@ public class HighlightSelection extends JPanel {
         frame.getContentPane().add(test);
         frame.pack();
         frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
 }

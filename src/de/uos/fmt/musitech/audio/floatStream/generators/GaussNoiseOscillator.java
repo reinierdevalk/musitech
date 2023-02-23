@@ -89,6 +89,7 @@ public class GaussNoiseOscillator extends FloatOscillator {
 	 * 
 	 * @return one gaussian value.
 	 */
+	@Override
 	public float read() {
 		return (float) MyMath.gaussRand(stdDev, mean);
 	}
@@ -96,6 +97,7 @@ public class GaussNoiseOscillator extends FloatOscillator {
 	/** always successful, but does nothing
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#skip(long)
 	 */
+	@Override
 	public long skip(long n) throws IOException {
 		return n;
 	}
@@ -103,6 +105,7 @@ public class GaussNoiseOscillator extends FloatOscillator {
 	/** do nothing
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#reset()
 	 */
+	@Override
 	public void reset() throws IOException {
 	}
 	

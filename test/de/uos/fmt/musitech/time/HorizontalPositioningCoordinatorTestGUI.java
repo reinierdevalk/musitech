@@ -54,6 +54,7 @@ import java.awt.Component;
 
 import javax.swing.Box;
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.score.ScorePitch;
 import de.uos.fmt.musitech.data.structure.Context;
@@ -226,7 +227,7 @@ public class HorizontalPositioningCoordinatorTestGUI {
     
     private static void forClosing(){
         JFrame frame = new JFrame("For closing");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
 

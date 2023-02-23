@@ -57,7 +57,6 @@ import java.awt.Dimension;
 
 import de.uos.fmt.musitech.data.media.image.ImageURL;
 import de.uos.fmt.musitech.framework.editor.AbstractDisplay;
-import de.uos.fmt.musitech.framework.editor.AbstractSimpleEditor;
 
 /**
  * TODO add class coment
@@ -78,6 +77,7 @@ extends AbstractDisplay{
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#createGUI()
 	 */
+	@Override
 	public void createGUI() {
 	    ImageURL imageUrl;
 	    if(getEditObj() instanceof ImageURL){
@@ -96,6 +96,7 @@ extends AbstractDisplay{
 	/**
 	 * @see java.awt.Component#getPreferredSize()
 	 */
+	@Override
 	public Dimension getPreferredSize() {
 		return imgComp.getPreferredSize();
 	}

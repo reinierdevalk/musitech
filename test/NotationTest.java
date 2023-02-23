@@ -2,6 +2,7 @@
 import java.io.IOException;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.score.NotationSystem;
 import de.uos.fmt.musitech.data.structure.Piece;
@@ -36,7 +37,7 @@ public class NotationTest {
 		}
 		ScoreEditor ed = new ScoreEditor(nsys);
 		JFrame jFrame = new JFrame();
-		jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		jFrame.getContentPane().add(ed);
 		jFrame.pack();
 		jFrame.setVisible(true);

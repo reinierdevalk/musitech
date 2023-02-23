@@ -53,7 +53,6 @@ package de.uos.fmt.musitech.score.gui;
 
 import java.awt.Font;
 import java.awt.Graphics;
-import java.sql.Savepoint;
 import java.util.HashMap;
 
 import de.uos.fmt.musitech.data.score.TablatureNote;
@@ -87,6 +86,7 @@ public class TabulaturPitch extends Pitch {
 		
 	}
 
+	@Override
 	public int absY() {
 		TablatureNote tn = getTabulaturNote();
 		
@@ -132,6 +132,7 @@ public class TabulaturPitch extends Pitch {
 		return getPullUpYs(tn)[3];
 	}
 	
+	@Override
 	public void paint(Graphics g) {
 
 		setScaledFont(g);

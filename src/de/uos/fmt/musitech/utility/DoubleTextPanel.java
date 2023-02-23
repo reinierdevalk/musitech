@@ -229,6 +229,7 @@ public class DoubleTextPanel extends javax.swing.JPanel {
 			frame.setContentPane(aTestPanel);
 			frame.setSize(aTestPanel.getSize());
 			frame.addWindowListener(new java.awt.event.WindowAdapter() {
+				@Override
 				public void windowClosing(java.awt.event.WindowEvent e) {
 					System.exit(0);
 				};
@@ -250,6 +251,7 @@ public class DoubleTextPanel extends javax.swing.JPanel {
 	 * @param type int
 	 * @param size int
 	 */
+	@Override
 	public void setFont(java.awt.Font f) {
 		getJTextArea1().setFont(f);
 		getJTextArea2().setFont(f);

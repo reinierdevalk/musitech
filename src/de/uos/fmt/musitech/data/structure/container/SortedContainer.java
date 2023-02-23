@@ -52,8 +52,6 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
-
 import de.uos.fmt.musitech.data.MObject;
 import de.uos.fmt.musitech.data.rendering.RenderingHints;
 import de.uos.fmt.musitech.data.score.NotationSystem;
@@ -116,6 +114,7 @@ public class SortedContainer<T> extends SortedUniqesCollection<T> implements
 	 * 
 	 */
 	
+	@Override
 	public int hashCode() {
 		return hashCode;
 	}
@@ -132,7 +131,8 @@ public class SortedContainer<T> extends SortedUniqesCollection<T> implements
          * 
          * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
          */
-        public int compare(Object o1, Object o2) {
+        @Override
+		public int compare(Object o1, Object o2) {
             return 0;
         }
     }
@@ -236,7 +236,8 @@ public class SortedContainer<T> extends SortedUniqesCollection<T> implements
      * 
      * @hibernate.property
      */
-    public String getName() {
+    @Override
+	public String getName() {
         return name;
     }
 
@@ -246,21 +247,24 @@ public class SortedContainer<T> extends SortedUniqesCollection<T> implements
      * @param name
      *            The name to set
      */
-    public void setName(String name) {
+    @Override
+	public void setName(String name) {
         this.name = name;
     }
 
     /**
      * @see java.lang.Object#equals(java.lang.Object)
      */
-    public boolean equals(Object obj) {
+    @Override
+	public boolean equals(Object obj) {
         return this == obj;
     }
 
     /**
      * @see de.uos.fmt.musitech.data.structure.container.Container#getContentsRecursiveList()
      */
-    public Collection getContentsRecursiveList(Collection list) {
+    @Override
+	public Collection getContentsRecursiveList(Collection list) {
         if (list == null)
             list = new HashSet();
         for (int i = 0; i < size(); i++) {
@@ -278,7 +282,8 @@ public class SortedContainer<T> extends SortedUniqesCollection<T> implements
     /**
      * @see de.uos.fmt.musitech.data.structure.container.Container#getContents()
      */
-    public Containable[] getContentsRecursive() {
+    @Override
+	public Containable[] getContentsRecursive() {
         Collection list = getContentsRecursiveList(null);
         return (Containable[]) list.toArray(new Containable[list.size()]);
     }
@@ -286,7 +291,8 @@ public class SortedContainer<T> extends SortedUniqesCollection<T> implements
     /**
      * @see de.uos.fmt.musitech.data.structure.container.Container#containsRecursive(de.uos.fmt.musitech.data.structure.Containable)
      */
-    public boolean containsRecursive(Containable containable) {
+    @Override
+	public boolean containsRecursive(Containable containable) {
         for (int i = 0; i < size(); i++) {
             Object obj = get(i);
             if (obj == containable)
@@ -310,7 +316,8 @@ public class SortedContainer<T> extends SortedUniqesCollection<T> implements
      * foreign-key = "uid"     
      */
     
-    public Context getContext() {
+    @Override
+	public Context getContext() {
         if (context == null)
             // TODO adapt when context concept is done.
             setContext(new Piece().getContext());
@@ -420,6 +427,7 @@ public class SortedContainer<T> extends SortedUniqesCollection<T> implements
 	 * 		generator-class="native" 
 	 *  	 
 	 */
+	@Override
 	public Long getUid() {
 		return uid;
 	}
@@ -427,14 +435,16 @@ public class SortedContainer<T> extends SortedUniqesCollection<T> implements
 	/**
 	 * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
 	 */
-	 public void setUid(Long uid) {
+	 @Override
+	public void setUid(Long uid) {
 	     this.uid = uid;
 	}
 
     /**
      * @see de.uos.fmt.musitech.data.time.Timed#getTime()
      */
-    public long getTime() {
+    @Override
+	public long getTime() {
         long thisTime = Long.MAX_VALUE;
         for (Iterator iter = iterator(); iter.hasNext();) {
             Object obj = iter.next();
@@ -453,7 +463,8 @@ public class SortedContainer<T> extends SortedUniqesCollection<T> implements
     /**
      * @see de.uos.fmt.musitech.data.time.Timed#getDuration()
      */
-    public long getDuration() {
+    @Override
+	public long getDuration() {
         long lastEnd = getTime();
         if(lastEnd == Timed.INVALID_TIME)
             return 0;
@@ -475,7 +486,8 @@ public class SortedContainer<T> extends SortedUniqesCollection<T> implements
      * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String,
      *      java.lang.Object)
      */
-    public boolean isValidValue(String propertyName, Object value) {
+    @Override
+	public boolean isValidValue(String propertyName, Object value) {
         // TODO Auto-generated method stub
         return true; //default
     }
@@ -498,7 +510,8 @@ public class SortedContainer<T> extends SortedUniqesCollection<T> implements
      * column="object_id"
      * 
      */
-    public List<T> getContent() {
+    @Override
+	public List<T> getContent() {
         return super.getContent();
     }
 
@@ -506,7 +519,8 @@ public class SortedContainer<T> extends SortedUniqesCollection<T> implements
      * TODO add comment
      * @see de.uos.fmt.musitech.data.rendering.RenderingSupported#getRenderingHints()
      */
-    public RenderingHints getRenderingHints() {
+    @Override
+	public RenderingHints getRenderingHints() {
         return renderingHints;
     }
 
@@ -514,18 +528,21 @@ public class SortedContainer<T> extends SortedUniqesCollection<T> implements
      * TODO add comment
      * @see de.uos.fmt.musitech.data.rendering.RenderingSupported#setRenderingHints(de.uos.fmt.musitech.data.rendering.RenderingHints)
      */
-    public void setRenderingHints(RenderingHints renderingHints) {
+    @Override
+	public void setRenderingHints(RenderingHints renderingHints) {
         this.renderingHints = renderingHints;
         
     }
     
-    public void addRenderingHint(String key, Object value) {
+    @Override
+	public void addRenderingHint(String key, Object value) {
     	if (renderingHints == null)
     		renderingHints = new RenderingHints();
     	renderingHints.registerHint(key, value);
     }
     
-    public Object getRenderingHint(String key) {
+    @Override
+	public Object getRenderingHint(String key) {
     	if (renderingHints == null)
     		return null;
     	else 
@@ -551,7 +568,8 @@ public class SortedContainer<T> extends SortedUniqesCollection<T> implements
      * 
      * @see de.uos.fmt.musitech.data.structure.container.Container#getScore()
      */
-    public NotationSystem getScore() {
+    @Override
+	public NotationSystem getScore() {
         if (notationFilter!=null){
             notationFilter = new ContainerNotationFilter();
         }

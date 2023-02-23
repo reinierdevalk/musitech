@@ -53,6 +53,7 @@ package de.uos.fmt.musitech.performance.gui;
 import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.performance.PerformanceNote;
 import de.uos.fmt.musitech.data.structure.container.BasicContainer;
@@ -92,7 +93,7 @@ public class TestPianoRollContainer {
 	public void showWindow(){
 		JFrame frame = new JFrame();
 		frame.getContentPane().setLayout(new BorderLayout());
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.getContentPane().add(pianoRoll, BorderLayout.CENTER);
 		frame.getContentPane().add(transBut, BorderLayout.SOUTH);
 		frame.setLocation(200, 150);

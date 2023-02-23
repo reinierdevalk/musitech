@@ -294,6 +294,7 @@ public class MidiNote extends PerformanceNote implements Serializable, Cloneable
 	 * 
 	 * @return the string
 	 */
+	@Override
 	public String toString() {
 		String retString = "MIDI " + getPitch() + " (pitch) from " + getTime() + " for "
 							+ getDuration();
@@ -307,6 +308,7 @@ public class MidiNote extends PerformanceNote implements Serializable, Cloneable
 	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
+	@Override
 	public boolean equals(Object obj) {
 		if (obj == null || obj.getClass() != this.getClass())
 			return false;
@@ -324,6 +326,7 @@ public class MidiNote extends PerformanceNote implements Serializable, Cloneable
 	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
+	@Override
 	public int hashCode() {
 		int hash = super.hashCode();
 		hash ^= channel;

@@ -70,6 +70,7 @@ public class AlterationSection extends AbstractToolbarSection {
 	public void addItems(JToolBar tb) {
 		tb.add(new AbstractAction(Messages.getString("AlterationSection.AddDoubleFlat"), Icons //$NON-NLS-1$
 				.getIcon("doppel-b.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				getScoreEditor().getScoreManipulator()
 						.setAlterationlOnSelection((byte) -2);
@@ -77,6 +78,7 @@ public class AlterationSection extends AbstractToolbarSection {
 		});
 
 		tb.add(new AbstractAction(Messages.getString("AlterationSection.AddFlat"), Icons.getIcon("b.png")) { //$NON-NLS-1$ //$NON-NLS-2$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				getScoreEditor().getScoreManipulator()
 						.setAlterationlOnSelection((byte) -1);
@@ -85,6 +87,7 @@ public class AlterationSection extends AbstractToolbarSection {
 
 		tb.add(new AbstractAction(Messages.getString("AlterationSection.AddNatural"), Icons //$NON-NLS-1$
 				.getIcon("aufloesungszeichen.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				getScoreEditor().getScoreManipulator()
 						.setAlterationlOnSelection((byte) 0);
@@ -93,6 +96,7 @@ public class AlterationSection extends AbstractToolbarSection {
 
 		tb.add(new AbstractAction(Messages.getString("AlterationSection.AddSharp"), Icons //$NON-NLS-1$
 				.getIcon("kreuz.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				getScoreEditor().getScoreManipulator()
 						.setAlterationlOnSelection((byte) 1);
@@ -101,6 +105,7 @@ public class AlterationSection extends AbstractToolbarSection {
 
 		tb.add(new AbstractAction(Messages.getString("AlterationSection.AddDoubleSharp"), Icons //$NON-NLS-1$
 				.getIcon("doppel-kreuz.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				getScoreEditor().getScoreManipulator()
 						.setAlterationlOnSelection((byte) 2);

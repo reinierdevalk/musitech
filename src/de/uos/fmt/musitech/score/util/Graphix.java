@@ -49,7 +49,6 @@ package de.uos.fmt.musitech.score.util;
 
 import java.awt.Graphics;
 import java.util.List;
-import java.util.Vector;
 
 /** Wrapper graphics class that provides some drawing methods for Pair parameters.
  *  It is used to simlpify things.

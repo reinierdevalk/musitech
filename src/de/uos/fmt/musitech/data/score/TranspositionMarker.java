@@ -70,7 +70,8 @@ public class TranspositionMarker implements Marker {
      * TODO add comment
      * @see de.uos.fmt.musitech.data.time.Metrical#getMetricTime()
      */
-    public Rational getMetricTime() {
+    @Override
+	public Rational getMetricTime() {
         return metricTime;
     }
 
@@ -78,7 +79,8 @@ public class TranspositionMarker implements Marker {
      * TODO add comment
      * @see de.uos.fmt.musitech.data.time.Metrical#getMetricDuration()
      */
-    public Rational getMetricDuration() {
+    @Override
+	public Rational getMetricDuration() {
         // TODO Auto-generated method stub
         return null;
     }
@@ -87,7 +89,8 @@ public class TranspositionMarker implements Marker {
      * 
      * @see de.uos.fmt.musitech.data.MObject#getUid()
      */
-    public Long getUid() {
+    @Override
+	public Long getUid() {
         return uid;
     }
 
@@ -95,7 +98,8 @@ public class TranspositionMarker implements Marker {
      * TODO add comment
      * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
      */
-    public void setUid(Long _uid) {
+    @Override
+	public void setUid(Long _uid) {
         this.uid = _uid;
 
     }
@@ -104,7 +108,8 @@ public class TranspositionMarker implements Marker {
      * TODO add comment
      * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String, java.lang.Object)
      */
-    public boolean isValidValue(String propertyName, Object value) {
+    @Override
+	public boolean isValidValue(String propertyName, Object value) {
         // TODO Auto-generated method stub
         return false;
     }

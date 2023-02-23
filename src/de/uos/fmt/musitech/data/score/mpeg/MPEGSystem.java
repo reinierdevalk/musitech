@@ -52,8 +52,6 @@ package de.uos.fmt.musitech.data.score.mpeg;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
-
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
@@ -89,7 +87,8 @@ public class MPEGSystem extends ArrayList<NotationStaff> implements IMPEGSeriali
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#toMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Node, java.lang.Object, java.lang.String)
      */
-    public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
+    @Override
+	public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
 
         // create 'system' element (parent-node: //piece/score/)
 
@@ -121,7 +120,7 @@ public class MPEGSystem extends ArrayList<NotationStaff> implements IMPEGSeriali
          */
         Element staves = XMLHelper.addElement(system, "staves");
         for (Iterator<NotationStaff> iter = iterator(); iter.hasNext();) {
-            NotationStaff mtNotationStaff = (NotationStaff) iter.next();
+            NotationStaff mtNotationStaff = iter.next();
             if (!instance.writeXML(staves, mtNotationStaff, null, null))
                 return false;
         }
@@ -135,7 +134,7 @@ public class MPEGSystem extends ArrayList<NotationStaff> implements IMPEGSeriali
     private Rational getMetricTime() {
         Rational start = null;
         for (Iterator<NotationStaff> iter = iterator(); iter.hasNext();) {
-            NotationStaff staff = (NotationStaff) iter.next();
+            NotationStaff staff = iter.next();
             Rational staffStart = staff.getMetricTime();
             if (start == null)
                 start = staffStart;
@@ -149,7 +148,8 @@ public class MPEGSystem extends ArrayList<NotationStaff> implements IMPEGSeriali
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#fromMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Element)
      */
-    public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
+    @Override
+	public Object fromMPEG(MusiteXMLSerializer instance, Element node) {
         // TODO Auto-generated method stub
         return null;
     }

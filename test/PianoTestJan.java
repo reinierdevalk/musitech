@@ -52,6 +52,7 @@ import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Receiver;
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.performance.midi.MidiTee;
 import de.uos.fmt.musitech.performance.midi.gui.KeyPiano;
@@ -98,7 +99,7 @@ public class PianoTestJan {
 		JFrame frame2 = new JFrame();
 
 		frame.getContentPane().setLayout(new BorderLayout());
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setSize(600, 300);
 		frame.setLocation(300, 150);
 		//frame.show();
@@ -106,7 +107,7 @@ public class PianoTestJan {
 		
 
 		frame2.getContentPane().setLayout(new BorderLayout());
-		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame2.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame2.setSize(150, 150);
 		frame2.setLocation(150, 150);
 		frame2.getContentPane().add(keyPiano.getControlPanel());

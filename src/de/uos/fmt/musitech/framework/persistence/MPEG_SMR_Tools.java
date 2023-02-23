@@ -197,7 +197,7 @@ public class MPEG_SMR_Tools {
         int prevIndex = voice.size() - 1;
         NotationChord prevChord = null;
         if (prevIndex >= 0 && prevIndex < voice.size()) {
-            prevChord = (NotationChord) voice.get(prevIndex);
+            prevChord = voice.get(prevIndex);
         }
         TupletContainer tupCont = voice.belongsToTupletContainer(prevChord);
         String groupStr = tupElem.getAttribute("count");
@@ -210,7 +210,7 @@ public class MPEG_SMR_Tools {
         // add the first not of the cord to the TupletContainer.
         tupCont.add(chord.get(0));
         for (int i = 0; i < chord.size(); i++) {
-            Note note = (Note) chord.get(i);
+            Note note = chord.get(i);
             note.getScoreNote().setTupletDivision(tupletRatio);
         }
         tupCont.calcMetricDuration();
@@ -392,7 +392,8 @@ public class MPEG_SMR_Tools {
      * @param firstOnset
      *            the onset of the first NotationChord in a voice
      */
-    public static void calculateOnsets(NotationStaff musitechStaff, Rational firstOnset) {
+    @Deprecated
+	public static void calculateOnsets(NotationStaff musitechStaff, Rational firstOnset) {
         List voiceList = musitechStaff.getContent();
         for (int v = 0; v < voiceList.size(); v++) {
             NotationVoice voice = (NotationVoice) voiceList.get(v);

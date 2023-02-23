@@ -97,6 +97,7 @@ public class Tuplet extends EventSpanner {
 	}
 	
 	/** Adds an event to this tuplet group. */
+	@Override
 	public void add(Event ev) {
 		super.add(ev);
 		needsBracket |= ev.getDuration().toRational().isGreaterOrEqual(1, 4); // @@ auf Balken pr?fen
@@ -113,12 +114,14 @@ public class Tuplet extends EventSpanner {
 		return size;
 	}
 
+	@Override
 	int arrange(int pass) {
 		super.arrange(pass);
 
 		return 1;
 	}
 
+	@Override
 	public int height() {
 		char glyph = (char) (MusicGlyph.TUPLET_ZERO + size);
 		int ld = getEvent(0).staff().getLineDistance();
@@ -156,6 +159,7 @@ public class Tuplet extends EventSpanner {
 	
 	/** Draws all additional elements of this tuplet (numer, bracket) onto the
 	 * given graphics device. */
+	@Override
 	public void paint(Graphics g) {
 		if(!isVisible()) return;
 		/*
@@ -214,10 +218,12 @@ public class Tuplet extends EventSpanner {
 	}
 
 	/** Returns the parent class of this Tuplet (always Staff.class) */
+	@Override
 	Class parentClass() {
 		return Staff.class;
 	}
 	
+	@Override
 	public void setColor(Color c) {
 		super.setColor(c);
 		if (beam != null)

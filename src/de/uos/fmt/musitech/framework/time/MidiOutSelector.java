@@ -195,6 +195,7 @@ public class MidiOutSelector extends JPanel {
 
 			}
 			outDeviceCombo.addActionListener(new ActionListener() {
+				@Override
 				public void actionPerformed(ActionEvent e) {
 					setOutDeviceInfo(
 						(javax.sound.midi.MidiDevice.Info) outDeviceCombo

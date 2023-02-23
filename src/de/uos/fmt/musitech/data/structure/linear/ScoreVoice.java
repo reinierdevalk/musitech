@@ -68,6 +68,7 @@ public class ScoreVoice extends NoteList {
 		super(context, epec);
 	}
 	
+	@Override
 	public String toString(){
 		if (super.getName()!=null && super.getName().length()>0){
 			return super.getName();

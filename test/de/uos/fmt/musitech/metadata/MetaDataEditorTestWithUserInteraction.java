@@ -58,7 +58,6 @@ import java.net.URL;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
-import de.uos.fmt.musitech.audio.AFOPlayer;
 import de.uos.fmt.musitech.data.audio.AudioFileObject;
 import de.uos.fmt.musitech.data.media.image.ImageURL;
 import de.uos.fmt.musitech.data.metadata.MetaDataCollection;
@@ -68,8 +67,6 @@ import de.uos.fmt.musitech.framework.editor.Editor;
 import de.uos.fmt.musitech.framework.editor.EditorFactory;
 import de.uos.fmt.musitech.framework.editor.EditorWindow;
 import de.uos.fmt.musitech.framework.editor.EditorFactory.EditorConstructionException;
-import de.uos.fmt.musitech.framework.time.ObjectPlayer;
-import de.uos.fmt.musitech.framework.time.Player;
 
 /**
  * @author Kerstin Neubarth
@@ -120,6 +117,7 @@ public class MetaDataEditorTestWithUserInteraction {
 			super("I exist for you to exit the program :o)");
 			setSize(350, 0);
 			addWindowListener(new java.awt.event.WindowAdapter() {
+				@Override
 				public void windowClosing(java.awt.event.WindowEvent e) {
 					System.exit(0);
 				}

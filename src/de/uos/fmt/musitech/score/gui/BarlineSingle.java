@@ -57,6 +57,7 @@ class BarlineSingle extends Barline
 {
  //  public BarlineSingle(Measure measure) {super(measure);}
 	
+	@Override
 	public void paint(Graphics g, int x, int y1, int y2) 
 	{
 		if(!isVisible()) return;
@@ -68,11 +69,13 @@ class BarlineSingle extends Barline
 	   g.drawLine(x, y, x, y+getLength()); */
 	}
 	
+	@Override
 	public Barline create ()
 	{
 	   return new BarlineSingle();
 	}
 	
+	@Override
 	public int barlineRwidth ()
 	{
 	   return 1;

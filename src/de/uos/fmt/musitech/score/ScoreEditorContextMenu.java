@@ -87,18 +87,21 @@ public class ScoreEditorContextMenu extends MouseAdapter implements
 		insert = new JMenuItem("Insert");
 		view.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				editor.setModus(Mode.VIEW);
 			}
 		});
 		select.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				editor.setModus(Mode.SELECT_AND_EDIT);
 			}
 		});
 		insert.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				editor.setModus(Mode.INSERT);
 			}
@@ -123,6 +126,7 @@ public class ScoreEditorContextMenu extends MouseAdapter implements
 		grid.add(g_1_16);
 		ActionListener gridListener = new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource() == g_empty)
 					editor.setGrid(null);
@@ -159,6 +163,7 @@ public class ScoreEditorContextMenu extends MouseAdapter implements
 		nDuration.add(nd_1_16);
 		ActionListener ndListener = new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource() == nd_1_1)
 					editor.setNoteLength(new Rational(1, 1));
@@ -196,6 +201,7 @@ public class ScoreEditorContextMenu extends MouseAdapter implements
 			showMenu(e.getX(), e.getY());
 	}
 
+	@Override
 	public void scoreEditorChanged(ScoreEditorEvent e, Object oldValue,
 									Object newValue) {
 		switch (e) {

@@ -56,6 +56,7 @@ import java.util.Collection;
 import java.util.Vector;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.media.image.ImageURL;
 import de.uos.fmt.musitech.data.score.ScoreNote;
@@ -220,7 +221,7 @@ public class TestEditor {
 		ExitWindow() {
 			super("I exist for you to exit the program :o)");
 			setSize(350, 0);
-			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		}
 	}
 

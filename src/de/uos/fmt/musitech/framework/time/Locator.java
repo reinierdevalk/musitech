@@ -124,7 +124,8 @@ public class Locator implements Containable{
     /**
      * @see de.uos.fmt.musitech.data.MObject#getUid()
      */
-    public Long getUid() {
+    @Override
+	public Long getUid() {
         
         return null;
     }
@@ -132,13 +133,15 @@ public class Locator implements Containable{
     /**
      * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
      */
-    public void setUid(Long uid) {
+    @Override
+	public void setUid(Long uid) {
     }
 
     /**
      * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String, java.lang.Object)
      */
-    public boolean isValidValue(String propertyName, Object value) {
+    @Override
+	public boolean isValidValue(String propertyName, Object value) {
         
         return false;
     }

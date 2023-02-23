@@ -76,6 +76,7 @@ public class Tie extends ScoreObject {
 		this.rightHead = rightHead;
 	}
 
+	@Override
 	Class parentClass() {
 		return Pitch.class;
 	}
@@ -84,6 +85,7 @@ public class Tie extends ScoreObject {
 		return leftHead.staff() != rightHead.staff();
 	}
 	
+	@Override
 	int arrange(int pass) {
 		if (pass != 1)
 			return 2;
@@ -169,6 +171,7 @@ public class Tie extends ScoreObject {
 	}
 
 	/** Draws this Tie onto the given graphics context. */
+	@Override
 	public void paint(Graphics g) {
 		if(!isVisible()) return;
 		Pair left = leftHead.tiePoint(true, height > 0);

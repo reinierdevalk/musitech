@@ -49,9 +49,6 @@ package de.uos.fmt.musitech.data.audio;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
-
-import de.uos.fmt.musitech.utility.math.MyMath;
 
 /**
  * A class for values, that change over time. It contains time stamps and

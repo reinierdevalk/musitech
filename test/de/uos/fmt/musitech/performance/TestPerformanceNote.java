@@ -49,7 +49,6 @@ package de.uos.fmt.musitech.performance;
 
 import junit.framework.TestCase;
 
-import de.uos.fmt.musitech.data.performance.PerformanceNote;
 import de.uos.fmt.musitech.data.structure.Context;
 import de.uos.fmt.musitech.data.structure.Note;
 import de.uos.fmt.musitech.data.structure.Piece;
@@ -62,7 +61,7 @@ public class TestPerformanceNote extends TestCase {
 		Context context = new Context(new Piece());
 		NoteList list1 = new NoteList(context, "8c4d8e4f8g4g");
 		NoteList list2 = new NoteList(context, "8c4d8e4f8g4g");
-		boolean check = ((Note)list1.get(0)).getPerformanceNote().isEquivalent( ((Note)list2.get(0)).getPerformanceNote() );
+		boolean check = list1.get(0).getPerformanceNote().isEquivalent( list2.get(0).getPerformanceNote() );
 		assertTrue(check);
 	}
 	
@@ -70,7 +69,7 @@ public class TestPerformanceNote extends TestCase {
 		Context context = new Context(new Piece());
 		NoteList list1 = new NoteList(context, "8c4d8e4f8g4g");
 		NoteList list2 = new NoteList(context, "8c4d8e4f8g4g");
-		boolean check = ((Note)list1.get(0)).getPerformanceNote().isEquivalent( ((Note)list2.get(1)).getPerformanceNote() );
+		boolean check = list1.get(0).getPerformanceNote().isEquivalent( list2.get(1).getPerformanceNote() );
 		assertFalse(check);
 	}
 

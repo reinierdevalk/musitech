@@ -82,6 +82,7 @@ public class ByteEditor extends SimpleTextfieldEditor {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.SimpleTextfieldEditor#getInputValue()
 	 */
+	@Override
 	protected Object getInputValue() {
 		Byte inputValue = null;
 		try {

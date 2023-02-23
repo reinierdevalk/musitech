@@ -58,6 +58,7 @@ import java.util.Collection;
 import java.util.Iterator;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 /**
  * This class provides a window (a JFrame) for displaying editors
@@ -93,14 +94,16 @@ public class EditorWindow extends JFrame implements ActionListener {
 	public EditorWindow(String title) {
 		super(title);
 		addWindowFocusListener(new WindowFocusListener(){
-            public void windowGainedFocus(WindowEvent e) {
+            @Override
+			public void windowGainedFocus(WindowEvent e) {
                 focusEditor();
             }
-            public void windowLostFocus(WindowEvent e) { 
+            @Override
+			public void windowLostFocus(WindowEvent e) { 
             } 
 		});
 		setEditorPanel(new EditorPanel());
-		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);		
+		setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);		
 	}
 	
 	/**
@@ -137,6 +140,7 @@ public class EditorWindow extends JFrame implements ActionListener {
 	/**
 	 * Hides the window.
 	 */
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		//Author: Amir Obertinca: The <code>dispose</code> method is called,
 		//when the user clicks ADD or Apply

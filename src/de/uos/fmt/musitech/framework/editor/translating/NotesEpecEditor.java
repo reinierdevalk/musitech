@@ -102,7 +102,8 @@ public class NotesEpecEditor extends AbstractTranslatingEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#updateDisplay()
      */
-    public void updateDisplay() {
+    @Override
+	public void updateDisplay() {
         //update epec and notes
         determineLocalObjs();
         //update epecEditor and notesPreview
@@ -122,7 +123,8 @@ public class NotesEpecEditor extends AbstractTranslatingEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#createGUI()
      */
-    protected void createGUI() {
+    @Override
+	protected void createGUI() {
         setLayout(new BorderLayout());
         //add epecArea
         epecArea.setBorder(BorderFactory.createTitledBorder("Input in epec"));
@@ -162,7 +164,8 @@ public class NotesEpecEditor extends AbstractTranslatingEditor {
     protected JComponent createPreviewButton() {
         JButton previewButton = new JButton("Update Preview");
         previewButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 updatePreview();
             }
         });
@@ -200,7 +203,8 @@ public class NotesEpecEditor extends AbstractTranslatingEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.translating.AbstractTranslatingEditor#applyChangesToInputObj()
      */
-    protected void applyChangesToInputObj() {
+    @Override
+	protected void applyChangesToInputObj() {
         if (propertyValue != null) {
             propertyValue = epec;
             ReflectionAccess ref = ReflectionAccess.accessForClass(inputObj
@@ -220,7 +224,8 @@ public class NotesEpecEditor extends AbstractTranslatingEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.translating.AbstractTranslatingEditor#applyChangesToEditObj()
      */
-    protected void applyChangesToEditObj() {
+    @Override
+	protected void applyChangesToEditObj() {
         //read from inputObj
         String code = "";
         if (propertyValue != null && propertyValue instanceof String) {
@@ -247,7 +252,8 @@ public class NotesEpecEditor extends AbstractTranslatingEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.translating.AbstractTranslatingEditor#determineLocalObjs()
      */
-    protected void determineLocalObjs() {
+    @Override
+	protected void determineLocalObjs() {
         //set epec
         if (propertyValue != null && propertyValue instanceof String) {
             epec = (String) propertyValue;

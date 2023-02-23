@@ -99,6 +99,7 @@ public class MidiNoteMulti extends MidiNote implements Serializable {
      *  foreign-key = "id"
 	 * 
 	 */
+	@Override
 	public PerformanceNote getNext() {
 		return next;
 	}

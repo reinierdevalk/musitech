@@ -147,14 +147,17 @@ public class Coefficients {
 			this.fireTableChanged(new TableModelEvent(this));
 		}
 
+		@Override
 		public int getColumnCount() {
 			return 3;
 		}
 
+		@Override
 		public int getRowCount() {
 			return (isSparse)?sparseRowIndices.length:getOrder();
 		}
 
+		@Override
 		public Object getValueAt(int arg0, int arg1) {
 
 			switch(arg1){
@@ -173,6 +176,7 @@ public class Coefficients {
 		}
 		
 
+		@Override
 		public boolean isCellEditable(int arg0, int arg1) {
 			return true;
 		}
@@ -193,6 +197,7 @@ public class Coefficients {
 			return indices;	
 		}
 
+		@Override
 		public void setValueAt(Object arg0, int y, int x) {
 			
 			switch(x){
@@ -206,7 +211,7 @@ public class Coefficients {
 					break;
 					
 				case 2:
-					int newIndex = (int)((Float)arg0).intValue();
+					int newIndex = ((Float)arg0).intValue();
 					cutRowToNewRow(y, newIndex);
 					break;
 					
@@ -226,10 +231,12 @@ public class Coefficients {
 			getYCoefficients()[getRowIndices()[y]] = 0; 
 		}
 
+		@Override
 		public Class getColumnClass(int column) {
 			return Float.class;
 		}
 
+		@Override
 		public String getColumnName(int arg0) {
 			return super.getColumnName(arg0);
 		}

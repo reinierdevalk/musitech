@@ -49,11 +49,8 @@ package de.uos.fmt.musitech.data.structure.container;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
-
 import de.uos.fmt.musitech.data.Named;
 import de.uos.fmt.musitech.data.rendering.RenderingHints;
 import de.uos.fmt.musitech.data.score.NotationSystem;
@@ -99,14 +96,16 @@ public class CollectionContainer<Type extends Containable> extends ArrayList<Typ
     /**
      * @see java.lang.Object#equals(java.lang.Object)
      */
-    public boolean equals(Object obj) {
+    @Override
+	public boolean equals(Object obj) {
         return this == obj;
     }
 
     /**
      * @see de.uos.fmt.musitech.data.structure.container.Container#getContents()
      */
-    public Collection<Containable> getContentsRecursiveList(Collection<Containable> list) {
+    @Override
+	public Collection<Containable> getContentsRecursiveList(Collection<Containable> list) {
         if (list == null)
             list = new ArrayList<Containable>();
         for (int i = 0; i < size(); i++) {
@@ -122,7 +121,8 @@ public class CollectionContainer<Type extends Containable> extends ArrayList<Typ
     /**
      * @see de.uos.fmt.musitech.data.structure.container.Container#containsRecursive(de.uos.fmt.musitech.data.structure.Containable)
      */
-    public boolean containsRecursive(Containable containable) {
+    @Override
+	public boolean containsRecursive(Containable containable) {
         for (int i = 0; i < size(); i++) {
             Object obj = get(i);
             if (obj == containable)
@@ -140,14 +140,16 @@ public class CollectionContainer<Type extends Containable> extends ArrayList<Typ
      * @see de.uos.fmt.musitech.data.Named#getName()
      * @hibernate.property
      */
-    public String getName() {
+    @Override
+	public String getName() {
         return name;
     }
 
     /**
      * @see de.uos.fmt.musitech.data.Named#setName(java.lang.String)
      */
-    public void setName(String name) {
+    @Override
+	public void setName(String name) {
         this.name = name;
     }
 
@@ -161,7 +163,8 @@ public class CollectionContainer<Type extends Containable> extends ArrayList<Typ
      *                        foreign-key = "uid" cascade = "all"
      *  
      */
-    public Context getContext() {
+    @Override
+	public Context getContext() {
         if (context == null)
             // TODO adapt when context concept is done.
             setContext(Context.getDefaultContext());
@@ -199,7 +202,8 @@ public class CollectionContainer<Type extends Containable> extends ArrayList<Typ
     /**
      * @see de.uos.fmt.musitech.data.time.Timed#getTime()
      */
-    public long getTime() {
+    @Override
+	public long getTime() {
         long thisTime = Long.MAX_VALUE;
         for (Iterator<Type> iter = iterator(); iter.hasNext();) {
             Type obj = iter.next();
@@ -220,7 +224,8 @@ public class CollectionContainer<Type extends Containable> extends ArrayList<Typ
     /**
      * @see de.uos.fmt.musitech.data.time.Timed#getDuration()
      */
-    public long getDuration() {
+    @Override
+	public long getDuration() {
         long lastEnd = getTime();
         if (lastEnd == Timed.INVALID_TIME)
             return 0;
@@ -242,7 +247,8 @@ public class CollectionContainer<Type extends Containable> extends ArrayList<Typ
      * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String,
      *      java.lang.Object)
      */
-    public boolean isValidValue(String propertyName, Object value) {
+    @Override
+	public boolean isValidValue(String propertyName, Object value) {
         // TODO Auto-generated method stub
         return true; //default
     }
@@ -252,7 +258,8 @@ public class CollectionContainer<Type extends Containable> extends ArrayList<Typ
      * 
      * @see de.uos.fmt.musitech.data.structure.container.Container#getContentsRecursiveList()
      */
-    public Containable[] getContentsRecursive() {
+    @Override
+	public Containable[] getContentsRecursive() {
         Collection list = getContentsRecursiveList(null);
         return (Containable[]) list.toArray(new Containable[list.size()]);
     }
@@ -264,14 +271,16 @@ public class CollectionContainer<Type extends Containable> extends ArrayList<Typ
      * 
      * @hibernate.id generator-class="native"
      */
-    public Long getUid() {
+    @Override
+	public Long getUid() {
         return uid;
     }
 
     /**
      * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
      */
-    public void setUid(Long uid) {
+    @Override
+	public void setUid(Long uid) {
         this.uid = uid;
     }
 
@@ -291,7 +300,8 @@ public class CollectionContainer<Type extends Containable> extends ArrayList<Typ
      *                                    "de.uos.fmt.musitech.data.MObject"
      *                                    column="object_id"
      */
-    public List<Type> getContent() {
+    @Deprecated
+	public List<Type> getContent() {
         return this;
     }
 
@@ -299,7 +309,8 @@ public class CollectionContainer<Type extends Containable> extends ArrayList<Typ
      * 
      * @see de.uos.fmt.musitech.data.rendering.RenderingSupported#getRenderingHints()
      */
-    public RenderingHints getRenderingHints() {
+    @Override
+	public RenderingHints getRenderingHints() {
         return renderingHints;
     }
 
@@ -307,19 +318,22 @@ public class CollectionContainer<Type extends Containable> extends ArrayList<Typ
      * 
      * @see de.uos.fmt.musitech.data.rendering.RenderingSupported#setRenderingHints(de.uos.fmt.musitech.data.rendering.RenderingHints)
      */
-    public void setRenderingHints(RenderingHints renderingHints) {
+    @Override
+	public void setRenderingHints(RenderingHints renderingHints) {
         this.renderingHints = renderingHints;
         if (renderingHints != null)
             renderingHints.setParentClass(this.getClass());
     }
 
-    public void addRenderingHint(String key, Object value) {
+    @Override
+	public void addRenderingHint(String key, Object value) {
         if (renderingHints == null)
             renderingHints = new RenderingHints();
         renderingHints.registerHint(key, value);
     }
 
-    public Object getRenderingHint(String key) {
+    @Override
+	public Object getRenderingHint(String key) {
         if (renderingHints == null)
             return null;
         return renderingHints.getValue(key);
@@ -351,7 +365,8 @@ public class CollectionContainer<Type extends Containable> extends ArrayList<Typ
      * 
      * @see de.uos.fmt.musitech.data.structure.container.Container#getScore()
      */
-    public NotationSystem getScore() {
+    @Override
+	public NotationSystem getScore() {
         if (score == null) {
             if (notationFilter == null) {
                 notationFilter = new ContainerNotationFilter(this);
@@ -374,7 +389,8 @@ public class CollectionContainer<Type extends Containable> extends ArrayList<Typ
      * TODO this should be removed from the Container interface.
      * @see de.uos.fmt.musitech.data.structure.container.Container#addAll(de.uos.fmt.musitech.data.structure.container.Container)
      */
-    @SuppressWarnings("unchecked")
+    @Override
+	@SuppressWarnings("unchecked")
 	public boolean addAll(Container<? extends Type> c) {
     	for (Type object : c) {
     		

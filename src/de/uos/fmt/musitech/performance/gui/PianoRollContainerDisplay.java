@@ -92,7 +92,6 @@ import de.uos.fmt.musitech.framework.change.DataChangeListener;
 import de.uos.fmt.musitech.framework.change.DataChangeManager;
 import de.uos.fmt.musitech.framework.editor.Display;
 import de.uos.fmt.musitech.framework.editor.EditingProfile;
-import de.uos.fmt.musitech.framework.editor.MouseEditable;
 import de.uos.fmt.musitech.framework.editor.MouseEditableAdapter;
 import de.uos.fmt.musitech.framework.selection.SelectingEditor;
 import de.uos.fmt.musitech.framework.selection.Selection;
@@ -211,7 +210,8 @@ public class PianoRollContainerDisplay extends JPanel implements
         setSelectionController(new SelectionController(this));
         addMouseListener(new MouseAdapter() {
 
-            public void mouseClicked(MouseEvent e) {
+            @Override
+			public void mouseClicked(MouseEvent e) {
                 System.out.println("Clicked");
                 if (e.isPopupTrigger()) {
                     Object source = e.getSource();
@@ -345,17 +345,17 @@ public class PianoRollContainerDisplay extends JPanel implements
                         w = 4;
                     h = (int) vScale + 1;
                     x = Math.round(x / microsPPix);
-                    y = (int) ((double) jPHeight + (displayRangeMin - 1 - n
+                    y = (int) (jPHeight + (displayRangeMin - 1 - n
                             .getPitch())
                             * vScale);
                 }
             }
             if (displayType == VELOCITY) {
                 w = Math.max(1,
-                        (int) ((double) n.getDuration() * getMicrosPPix()));
-                h = (int) ((double) n.getVelocity() * vScale / 5);
+                        (int) (n.getDuration() * getMicrosPPix()));
+                h = (int) (n.getVelocity() * vScale / 5);
                 //We shift the NoteDisplays about vScale + 1 to the right side.
-                x = (int) ((double) n.getTime() * getMicrosPPix())
+                x = (int) (n.getTime() * getMicrosPPix())
                         + (int) vScale + 1;
                 y = jPHeight - 10 - h;
             }
@@ -770,7 +770,8 @@ public class PianoRollContainerDisplay extends JPanel implements
      * 
      * @return the preferred size
      */
-    public java.awt.Dimension getPreferredSize() {
+    @Override
+	public java.awt.Dimension getPreferredSize() {
         return new Dimension(500, 300);
     }
 
@@ -814,7 +815,8 @@ public class PianoRollContainerDisplay extends JPanel implements
      * @param g
      *            java.awt.Graphics
      */
-    public void paintComponent(java.awt.Graphics g) {
+    @Override
+	public void paintComponent(java.awt.Graphics g) {
 
         super.paintComponent(g);
 
@@ -923,7 +925,8 @@ public class PianoRollContainerDisplay extends JPanel implements
      * 
      * @see de.uos.fmt.musitech.data.time.Timeable#setTimePosition(long)
      */
-    public void setTimePosition(long timeMillis) {
+    @Override
+	public void setTimePosition(long timeMillis) {
         Rectangle bounds = getBounds();
         ////paintCursor(getGraphics(), bounds);
         time = timeMillis;
@@ -983,7 +986,7 @@ public class PianoRollContainerDisplay extends JPanel implements
         int leftX = (int) (tr.getStart() * getMicrosPPix());
         int rightX = (int) (tr.getEnd() * getMicrosPPix());
 
-        int breite = (int) ((rightX - leftX));
+        int breite = ((rightX - leftX));
 
         g.setXORMode(Color.BLUE);
         g.fillRect(leftX, 0, breite, this.getHeight());
@@ -1019,7 +1022,8 @@ public class PianoRollContainerDisplay extends JPanel implements
 
             frame.addWindowListener(new java.awt.event.WindowAdapter() {
 
-                public void windowClosing(java.awt.event.WindowEvent e) {
+                @Override
+				public void windowClosing(java.awt.event.WindowEvent e) {
                     System.exit(0);
                 };
             });
@@ -1031,7 +1035,8 @@ public class PianoRollContainerDisplay extends JPanel implements
         }
         Thread t = new Thread() {
 
-            public void run() {
+            @Override
+			public void run() {
                 long time = 1;
                 while (true) {
                     pRCDisplay.setTimePosition(time);
@@ -1056,7 +1061,8 @@ public class PianoRollContainerDisplay extends JPanel implements
     /**
      * @see de.uos.fmt.musitech.gui.display.selection.SelectingEditor#objectAt(Point)
      */
-    public MObject objectAt(Point p) {
+    @Override
+	public MObject objectAt(Point p) {
 
         Component c = getComponentAt(p);
         if (c instanceof PianoRollNoteDisplay) {
@@ -1073,7 +1079,8 @@ public class PianoRollContainerDisplay extends JPanel implements
         return null;
     }
 
-    public void setSelectionController(SelectionController c) {
+    @Override
+	public void setSelectionController(SelectionController c) {
         if (this.selectionController == c) {
             return;
         }
@@ -1087,7 +1094,8 @@ public class PianoRollContainerDisplay extends JPanel implements
     /**
      * @see de.uos.fmt.musitech.framework.selection.SelectionListener#selectionChanged(SelectionChangeEvent)
      */
-    public void selectionChanged(SelectionChangeEvent e) {
+    @Override
+	public void selectionChanged(SelectionChangeEvent e) {
         Component[] children = getComponents();
 
         for (int i = 0; i < children.length; i++) {
@@ -1109,7 +1117,8 @@ public class PianoRollContainerDisplay extends JPanel implements
     /**
      * @see de.uos.fmt.musitech.gui.display.selection.SelectingEditor#objectsTouched(Rectangle)
      */
-    public Collection objectsTouched(Rectangle r) {
+    @Override
+	public Collection objectsTouched(Rectangle r) {
 
         Vector v = new Vector();
         for (Iterator it = noteDisplays.iterator(); it.hasNext();) {
@@ -1125,7 +1134,8 @@ public class PianoRollContainerDisplay extends JPanel implements
     /**
      * @see de.uos.fmt.musitech.gui.display.selection.SelectingEditor#paintDragArea(Rectangle)
      */
-    public void paintDragArea(Rectangle r) {
+    @Override
+	public void paintDragArea(Rectangle r) {
 
         Graphics g = getGraphics();
         g.setXORMode(Color.DARK_GRAY);
@@ -1151,7 +1161,8 @@ public class PianoRollContainerDisplay extends JPanel implements
     /**
      * @see de.uos.fmt.musitech.gui.display.selection.SelectingEditor#timeCovered(Rectangle)
      */
-    public TimeRange timeCovered(Rectangle r) {
+    @Override
+	public TimeRange timeCovered(Rectangle r) {
         return null;
     }
 
@@ -1182,7 +1193,8 @@ public class PianoRollContainerDisplay extends JPanel implements
 
         menuItem1.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent arg0) {
+            @Override
+			public void actionPerformed(ActionEvent arg0) {
 
                 BasicContainer bc = new BasicContainer();
 
@@ -1194,9 +1206,10 @@ public class PianoRollContainerDisplay extends JPanel implements
 
         menuItem2.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent arg0) {
+            @Override
+			public void actionPerformed(ActionEvent arg0) {
                 if ((!hashtable.isEmpty())) {
-                    Container c = (Container) (hashtable.keys().nextElement());
+                    Container c = (hashtable.keys().nextElement());
                     rmDisplayGroup(c);
                 }
             }
@@ -1228,7 +1241,7 @@ public class PianoRollContainerDisplay extends JPanel implements
 
                     if (groupElement.equals(gotnote)) {
 
-                        display.rmColor((Color) hashtable.get(container));
+                        display.rmColor(hashtable.get(container));
 
                     }
                 }
@@ -1339,7 +1352,8 @@ public class PianoRollContainerDisplay extends JPanel implements
      * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#getPositionForTime(de.uos.fmt.musitech.data.structure.Timed,
      *      de.uos.fmt.musitech.data.structure.Metrical)
      */
-    public int getMinimalPositionForTime(long time, Rational m)
+    @Override
+	public int getMinimalPositionForTime(long time, Rational m)
             throws WrongArgumentException {
         if (time == Timed.INVALID_TIME) {
             MetricalTimeLine timeLine = container.getContext().getPiece()
@@ -1365,7 +1379,8 @@ public class PianoRollContainerDisplay extends JPanel implements
      * 
      * @see de.uos.fmt.musitech.gui.display.HorizontalTimedDisplay#getNextPositioningTime(long)
      */
-    public long getNextPositioningTime(long startTime) {
+    @Override
+	public long getNextPositioningTime(long startTime) {
         long nextTime = 0;
         for (int i = 0; i < noteDisplays.size(); i++) {
             PianoRollNoteDisplay nd = (PianoRollNoteDisplay) noteDisplays
@@ -1387,7 +1402,8 @@ public class PianoRollContainerDisplay extends JPanel implements
      * @see de.uos.fmt.musitech.gui.display.HorizontalTimedDisplay#setMinimalPositionForTime(de.uos.fmt.musitech.data.structure.Timed,
      *      de.uos.fmt.musitech.data.structure.Metrical, int)
      */
-    public boolean setMinimalPositionForTime(long t, Rational m, int position)
+    @Override
+	public boolean setMinimalPositionForTime(long t, Rational m, int position)
             throws WrongArgumentException {
         if (t == Timed.INVALID_TIME) {
             MetricalTimeLine timeLine = container.getContext().getPiece()
@@ -1421,7 +1437,8 @@ public class PianoRollContainerDisplay extends JPanel implements
      * 
      * @see de.uos.fmt.musitech.gui.display.HorizontalTimedDisplay#doInitialLayout()
      */
-    public void doInitialLayout() {
+    @Override
+	public void doInitialLayout() {
         // XXX Auto-generated method stub
 
     }
@@ -1448,7 +1465,8 @@ public class PianoRollContainerDisplay extends JPanel implements
     /**
      * @see de.uos.fmt.musitech.framework.change.DataChangeListener#dataChanged(de.uos.fmt.musitech.framework.change.DataChangeEvent)
      */
-    public void dataChanged(DataChangeEvent e) {
+    @Override
+	public void dataChanged(DataChangeEvent e) {
         System.out.println("****PCD: dataChanged");
         dataChanged = true;
         createGUI();
@@ -1463,7 +1481,8 @@ public class PianoRollContainerDisplay extends JPanel implements
     /**
      * @see de.uos.fmt.musitech.framework.editor.Display#destroy()
      */
-    public void destroy() {
+    @Override
+	public void destroy() {
         DataChangeManager.getInstance().removeListener(this);
     }
 
@@ -1472,7 +1491,8 @@ public class PianoRollContainerDisplay extends JPanel implements
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#focusReceived()
      */
-    public void focusReceived() {
+    @Override
+	public void focusReceived() {
         if (externalChanges())
             updateDisplay();
     }
@@ -1480,28 +1500,32 @@ public class PianoRollContainerDisplay extends JPanel implements
     /**
      * @see de.uos.fmt.musitech.framework.editor.Display#conflictingChanges()
      */
-    public boolean externalChanges() {
+    @Override
+	public boolean externalChanges() {
         return dataChanged;
     }
 
     /**
      * @see de.uos.fmt.musitech.framework.editor.Display#getEditingProfile()
      */
-    public EditingProfile getEditingProfile() {
+    @Override
+	public EditingProfile getEditingProfile() {
         return profile;
     }
 
     /**
      * @see de.uos.fmt.musitech.framework.editor.Display#getEditObj()
      */
-    public Object getEditObj() {
+    @Override
+	public Object getEditObj() {
         return noteSequence;
     }
 
     /**
      * @see de.uos.fmt.musitech.framework.editor.Display#isFocused()
      */
-    public boolean isFocused() {
+    @Override
+	public boolean isFocused() {
         return isFocusOwner(); //TODO prüfen
     }
 
@@ -1518,7 +1542,8 @@ public class PianoRollContainerDisplay extends JPanel implements
      *      de.uos.fmt.musitech.framework.editor.EditingProfile,
      *      de.uos.fmt.musitech.framework.editor.Editor)
      */
-    public void init(Object editObject, EditingProfile profile,
+    @Override
+	public void init(Object editObject, EditingProfile profile,
             Display rootDisplay) {
         //        if (editObject instanceof MidiNoteSequence) {
         //            setNoteSequence((MidiNoteSequence) editObject);
@@ -1573,7 +1598,8 @@ public class PianoRollContainerDisplay extends JPanel implements
     /**
      * @see de.uos.fmt.musitech.framework.editor.Display#updateEditor()
      */
-    public void updateDisplay() {
+    @Override
+	public void updateDisplay() {
         if (container != null) {
 
             calculateNoteDisplays();
@@ -1583,7 +1609,8 @@ public class PianoRollContainerDisplay extends JPanel implements
     /**
      * @see de.uos.fmt.musitech.framework.editor.Display#getRootEditor()
      */
-    public Display getRootDisplay() {
+    @Override
+	public Display getRootDisplay() {
         return rootDisplay;
     }
 
@@ -1592,7 +1619,8 @@ public class PianoRollContainerDisplay extends JPanel implements
     /**
      * @see de.uos.fmt.musitech.time.gui.LinearDisplay#setMicrosPerPix(double)
      */
-    public void setMicrosPerPix(double microsPPix) {
+    @Override
+	public void setMicrosPerPix(double microsPPix) {
         this.microsPPix = microsPPix;
         majorTickSpace = (TimeScale.getScaleValueX(1 / microsPPix, 60))
                 / microsPPix;
@@ -1602,7 +1630,8 @@ public class PianoRollContainerDisplay extends JPanel implements
     /**
      * @see de.uos.fmt.musitech.time.gui.LinearDisplay#setOffset(long)
      */
-    public void setOffset(long micros) {
+    @Override
+	public void setOffset(long micros) {
         offset_us = micros;
         calculateNoteDisplays();
     }
@@ -1614,7 +1643,8 @@ public class PianoRollContainerDisplay extends JPanel implements
     /**
      * @see de.uos.fmt.musitech.time.gui.LinearDisplay#getEndTime()
      */
-    public long getEndTime() {
+    @Override
+	public long getEndTime() {
         if (container != null)
             return container.getDuration();
         else
@@ -1823,6 +1853,7 @@ public void setMouseListenerDisable(boolean mouseListenerDisable) {
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.Display#asComponent()
 	 */
+	@Override
 	public Component asComponent() {
 		return this;
 	}

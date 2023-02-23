@@ -76,6 +76,7 @@ public class PhysicalTimeEditor extends LongEditor {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.SimpleTextfieldEditor#getInputValue()
 	 */
+	@Override
 	protected Object getInputValue() {
 		Object inputValue = null;
 		if (textfield.getText().equalsIgnoreCase(INVALID_TEXT)){
@@ -97,6 +98,7 @@ public class PhysicalTimeEditor extends LongEditor {
 	 *  
 	 * @see de.uos.fmt.musitech.framework.editor.SimpleTextfieldEditor#updateGUI()
 	 */
+	@Override
 	protected void updateGUI() {
 	    super.updateGUI();
 	    if (textfield!=null){

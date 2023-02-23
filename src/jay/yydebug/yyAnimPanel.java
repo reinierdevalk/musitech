@@ -88,7 +88,8 @@ public class yyAnimPanel extends Panel implements yyDebug {
     p = new Panel(new BorderLayout());
       p.add(c = new Checkbox("token ", tokenBreak), "West");
         c.addItemListener(new ItemListener() {
-	  public void itemStateChanged (ItemEvent ie) {
+	  @Override
+	public void itemStateChanged (ItemEvent ie) {
 	    tokenBreak = ie.getStateChange() == ItemEvent.SELECTED;
           }
         });
@@ -102,7 +103,8 @@ public class yyAnimPanel extends Panel implements yyDebug {
       p.add(q, "Center");
       p.add(b = new Button(" continue "), "East");
         b.addActionListener(new ActionListener() {
-	  public void actionPerformed (ActionEvent ae) {
+	  @Override
+	public void actionPerformed (ActionEvent ae) {
 	    synchronized (yyAnimPanel.this) {
 	      yyAnimPanel.this.notify();
 	    }
@@ -114,7 +116,8 @@ public class yyAnimPanel extends Panel implements yyDebug {
       q = new Panel(new BorderLayout());
         q.add(c = new Checkbox("stack", stackBreak), "North");
           c.addItemListener(new ItemListener() {
-	    public void itemStateChanged (ItemEvent ie) {
+	    @Override
+		public void itemStateChanged (ItemEvent ie) {
 	      stackBreak = ie.getStateChange() == ItemEvent.SELECTED;
             }
           });
@@ -123,7 +126,8 @@ public class yyAnimPanel extends Panel implements yyDebug {
       q = new Panel(new BorderLayout());
         q.add(c = new Checkbox("comments", commentsBreak), "North");
           c.addItemListener(new ItemListener() {
-	    public void itemStateChanged (ItemEvent ie) {
+	    @Override
+		public void itemStateChanged (ItemEvent ie) {
 	      commentsBreak = ie.getStateChange() == ItemEvent.SELECTED;
             }
           });
@@ -185,7 +189,8 @@ public class yyAnimPanel extends Panel implements yyDebug {
       } catch (InterruptedException ie) { }
   }
 
-  public synchronized void lex (int state, int token, String name, Object value)
+  @Override
+public synchronized void lex (int state, int token, String name, Object value)
   { this.token.setText(name);
     this.value.setText(value == null ? "" : value.toString());
     explain("read "+name);
@@ -195,7 +200,8 @@ public class yyAnimPanel extends Panel implements yyDebug {
       } catch (InterruptedException ie) { }
   }
 
-  public void shift (int from, int to, int errorFlag) {
+  @Override
+public void shift (int from, int to, int errorFlag) {
     switch (errorFlag) {
     default:				// normally
       explain("shift to "+to);
@@ -208,15 +214,18 @@ public class yyAnimPanel extends Panel implements yyDebug {
     }
   }
 
-  public void discard (int state, int token, String name, Object value) {
+  @Override
+public void discard (int state, int token, String name, Object value) {
     explain("discard token "+name+", value "+value);
   }
 
-  public void shift (int from, int to) {
+  @Override
+public void shift (int from, int to) {
     explain("go to "+to);
   }
 
-  public synchronized void accept (Object value) {
+  @Override
+public synchronized void accept (Object value) {
     explain("accept, value "+value);
     stack.pop();
     if (stackBreak)
@@ -225,11 +234,13 @@ public class yyAnimPanel extends Panel implements yyDebug {
       } catch (InterruptedException ie) { }
   }
 
-  public void error (String message) {
+  @Override
+public void error (String message) {
     explain("error message");
   }
 
-  public void reject () {
+  @Override
+public void reject () {
     explain("reject");
     stack.pop();
     if (stackBreak)
@@ -238,7 +249,8 @@ public class yyAnimPanel extends Panel implements yyDebug {
       } catch (InterruptedException ie) { }
   }
 
-  public synchronized void push (int state, Object value) {
+  @Override
+public synchronized void push (int state, Object value) {
     stack.push(state, value);
     if (stackBreak)
       try {
@@ -246,7 +258,8 @@ public class yyAnimPanel extends Panel implements yyDebug {
       } catch (InterruptedException ie) { }
   }
 
-  public synchronized void pop (int state) {
+  @Override
+public synchronized void pop (int state) {
     explain("pop "+state+" on error");
     stack.pop(1);
     if (stackBreak)
@@ -255,7 +268,8 @@ public class yyAnimPanel extends Panel implements yyDebug {
       } catch (InterruptedException ie) { }
   }
 
-  public synchronized void reduce (int from, int to, int rule, String text,
+  @Override
+public synchronized void reduce (int from, int to, int rule, String text,
 								int len) {
     explain("reduce ("+rule+"), uncover "+to+"\n("+rule+") "+ text);
     stack.pop(len);

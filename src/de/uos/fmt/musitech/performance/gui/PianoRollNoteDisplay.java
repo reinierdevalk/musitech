@@ -55,10 +55,8 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 
-import javax.swing.JComponent;
 import javax.swing.JPanel;
 
-import de.uos.fmt.musitech.data.performance.MidiNote;
 import de.uos.fmt.musitech.data.performance.PerformanceNote;
 import de.uos.fmt.musitech.framework.change.DataChangeEvent;
 import de.uos.fmt.musitech.framework.change.DataChangeManager;
@@ -67,7 +65,6 @@ import de.uos.fmt.musitech.framework.editor.EditingProfile;
 import de.uos.fmt.musitech.framework.editor.MouseEditable;
 import de.uos.fmt.musitech.framework.editor.MouseEditableAdapter;
 import de.uos.fmt.musitech.framework.selection.SelectionManager;
-import de.uos.fmt.musitech.structure.form.gui.ContainerArrangeDisplay;
 import de.uos.fmt.musitech.utility.Highlightable;
 
 /**
@@ -189,7 +186,8 @@ public class PianoRollNoteDisplay extends javax.swing.JPanel implements
      * @date (06.07.00 23:22:37)
      * @return java.awt.Color
      */
-    public java.awt.Color getDefaultColor() {
+    @Override
+	public java.awt.Color getDefaultColor() {
         return defaultColor;
     }
 
@@ -210,7 +208,8 @@ public class PianoRollNoteDisplay extends javax.swing.JPanel implements
      * @date (06.07.00 23:23:35)
      * @return java.awt.Color
      */
-    public java.awt.Color getHighlightColor() {
+    @Override
+	public java.awt.Color getHighlightColor() {
         return highlightColor;
     }
 
@@ -268,7 +267,8 @@ public class PianoRollNoteDisplay extends javax.swing.JPanel implements
             frame.setContentPane(aNoteDisplay);
             frame.setSize(aNoteDisplay.getSize());
             frame.addWindowListener(new java.awt.event.WindowAdapter() {
-                public void windowClosing(java.awt.event.WindowEvent e) {
+                @Override
+				public void windowClosing(java.awt.event.WindowEvent e) {
                     System.exit(0);
                 };
             });
@@ -286,7 +286,8 @@ public class PianoRollNoteDisplay extends javax.swing.JPanel implements
      * @param g
      *            java.awt.Graphics
      */
-    public void paint(java.awt.Graphics g) {
+    @Override
+	public void paint(java.awt.Graphics g) {
         super.paint(g);
     }
 
@@ -297,7 +298,8 @@ public class PianoRollNoteDisplay extends javax.swing.JPanel implements
      * @param newDefaultColor
      *            java.awt.Color
      */
-    public void setDefaultColor(java.awt.Color newDefaultColor) {
+    @Override
+	public void setDefaultColor(java.awt.Color newDefaultColor) {
         defaultColor = newDefaultColor;
     }
 
@@ -326,7 +328,8 @@ public class PianoRollNoteDisplay extends javax.swing.JPanel implements
      * @param newHighlightColor
      *            java.awt.Color
      */
-    public void setHighlightColor(java.awt.Color newHighlightColor) {
+    @Override
+	public void setHighlightColor(java.awt.Color newHighlightColor) {
         highlightColor = newHighlightColor;
     }
 
@@ -371,14 +374,16 @@ public class PianoRollNoteDisplay extends javax.swing.JPanel implements
     /**
      * @see de.uos.fmt.musitech.utility.Highlightable#doDefault()
      */
-    public void doDefault() {
+    @Override
+	public void doDefault() {
         setHighlight(false);
     }
 
     /**
      * @see de.uos.fmt.musitech.utility.Highlightable#doHighlight()
      */
-    public void doHighlight() {
+    @Override
+	public void doHighlight() {
         setHighlight(true);
     }
 
@@ -419,7 +424,8 @@ public class PianoRollNoteDisplay extends javax.swing.JPanel implements
     /**
      * @see de.uos.fmt.musitech.framework.editor.Display#getEditObj()
      */
-    public Object getEditObj() {
+    @Override
+	public Object getEditObj() {
         return note;
     }
 
@@ -428,7 +434,8 @@ public class PianoRollNoteDisplay extends javax.swing.JPanel implements
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#destroy()
      */
-    public void destroy() {
+    @Override
+	public void destroy() {
 
     }
 
@@ -437,7 +444,8 @@ public class PianoRollNoteDisplay extends javax.swing.JPanel implements
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#focusReceived()
      */
-    public void focusReceived() {
+    @Override
+	public void focusReceived() {
 
     }
 
@@ -446,7 +454,8 @@ public class PianoRollNoteDisplay extends javax.swing.JPanel implements
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#getEditingProfile()
      */
-    public EditingProfile getEditingProfile() {
+    @Override
+	public EditingProfile getEditingProfile() {
         return null;
     }
 
@@ -455,7 +464,8 @@ public class PianoRollNoteDisplay extends javax.swing.JPanel implements
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#isFocused()
      */
-    public boolean isFocused() {
+    @Override
+	public boolean isFocused() {
         return false;
     }
 
@@ -466,7 +476,8 @@ public class PianoRollNoteDisplay extends javax.swing.JPanel implements
      *      de.uos.fmt.musitech.framework.editor.EditingProfile,
      *      de.uos.fmt.musitech.framework.editor.Editor)
      */
-    public void init(Object editObject, EditingProfile profile,
+    @Override
+	public void init(Object editObject, EditingProfile profile,
             Display rootEditor) {
 
     }
@@ -476,7 +487,8 @@ public class PianoRollNoteDisplay extends javax.swing.JPanel implements
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#updateEditor()
      */
-    public void updateDisplay() {
+    @Override
+	public void updateDisplay() {
         // TODO Auto-generated method stub
 
     }
@@ -486,6 +498,7 @@ public class PianoRollNoteDisplay extends javax.swing.JPanel implements
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#getRootEditor()
      */
+@Override
 public Display getRootDisplay() {
         if (getParent() instanceof PianoRollContainerDisplay) {
             return (PianoRollContainerDisplay) getParent();
@@ -504,14 +517,16 @@ public Display getRootDisplay() {
     /**
      * @see de.uos.fmt.musitech.framework.editor.Display#conflictingChanges()
      */
-    public boolean externalChanges() {
+    @Override
+	public boolean externalChanges() {
         return false;
     }
 
     /**
      * @see de.uos.fmt.musitech.framework.change.DataChangeListener#dataChanged(de.uos.fmt.musitech.framework.change.DataChangeEvent)
      */
-    public void dataChanged(DataChangeEvent e) {
+    @Override
+	public void dataChanged(DataChangeEvent e) {
 
     }
 
@@ -519,7 +534,8 @@ public Display getRootDisplay() {
      * @see de.uos.fmt.musitech.framework.editor.MouseEditable#mouseAction(int,
      *      int, int)
      */
-    public void mouseAction(int mousePosition, int dx, int dy) {
+    @Override
+	public void mouseAction(int mousePosition, int dx, int dy) {
 //        System.out.println("PRND: mouseAction: " + MouseEditableAdapter.mousePositionToString(mousePosition) + "editMode: " + getEditMode());
         switch (getEditMode()) {
         case PianoRollEditor.DELETE_PERFNOTE:
@@ -635,7 +651,8 @@ public Display getRootDisplay() {
     /**
      * @see de.uos.fmt.musitech.framework.editor.MouseEditable#setCursor(int)
      */
-    public void setCursor(int mousePosition) {
+    @Override
+	public void setCursor(int mousePosition) {
         switch (getEditMode()) {
         case PianoRollEditor.DELETE_PERFNOTE:
             setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -684,7 +701,8 @@ public Display getRootDisplay() {
     /**
      * @see de.uos.fmt.musitech.framework.editor.MouseEditable#selected()
      */
-    public void selected() {
+    @Override
+	public void selected() {
     }
 
     public int getEditMode() {
@@ -697,6 +715,7 @@ public Display getRootDisplay() {
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.Display#asComponent()
 	 */
+	@Override
 	public Component asComponent() {
 		return this;
 	}

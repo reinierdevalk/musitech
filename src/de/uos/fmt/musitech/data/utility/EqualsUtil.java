@@ -47,9 +47,6 @@ above is subject to the following three conditions:
 **********************************************/
 package de.uos.fmt.musitech.data.utility;
 
-
-import java.util.Arrays;
-
 /**
 * Collected methods which allow easy implementation of <code>equals</code>.
 *

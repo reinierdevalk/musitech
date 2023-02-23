@@ -128,6 +128,7 @@ public class PoleZeroPlot extends Canvas {
 		repaint();
 	}
 
+	@Override
 	public void paint(Graphics g) {
 		int x, y;
 		int xc = getSize().width / 2;

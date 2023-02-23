@@ -49,15 +49,9 @@ package de.uos.fmt.musitech.structure.container;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.List;
-
-import javax.swing.JButton;
 import javax.swing.JComponent;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
@@ -69,15 +63,10 @@ import de.uos.fmt.musitech.data.MObject;
 import de.uos.fmt.musitech.data.time.MetricTimeable;
 import de.uos.fmt.musitech.data.time.Timeable;
 import de.uos.fmt.musitech.framework.editor.DisplayTypeFilter;
-import de.uos.fmt.musitech.framework.editor.Editor;
 import de.uos.fmt.musitech.framework.editor.EditorFactory;
-import de.uos.fmt.musitech.framework.editor.EditorWindow;
 import de.uos.fmt.musitech.framework.editor.EditorFactory.EditorConstructionException;
-import de.uos.fmt.musitech.framework.time.Metronome;
-import de.uos.fmt.musitech.framework.time.MidiRecorder;
 import de.uos.fmt.musitech.framework.time.ObjectPlayer;
 import de.uos.fmt.musitech.framework.time.Player;
-import de.uos.fmt.musitech.framework.time.TransportButtons;
 
 /**
  * This class displays a editor for a musical object. This object is responsible
@@ -189,7 +178,8 @@ class MultiDisplayPanel extends JPanel {
         // Clear the jTabbedPane
         jTabbedPane.removeAll();
         jTabbedPane.addChangeListener(new ChangeListener() {
-            public void stateChanged(ChangeEvent e) {
+            @Override
+			public void stateChanged(ChangeEvent e) {
                 //System.out.println("Selected index:
                 // "+jTabbedPane.getSelectedIndex());
                 registerAtPlayTimer();

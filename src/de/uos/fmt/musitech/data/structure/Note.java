@@ -112,7 +112,8 @@ public class Note implements MObject, java.io.Serializable, Containable, Metrica
         this.performanceNote = srcPerformanceNote;
     }
 
-    public Object clone() throws CloneNotSupportedException {
+    @Override
+	public Object clone() throws CloneNotSupportedException {
         Note c = (Note) super.clone();
         if (scoreNote != null) {
             c.scoreNote = (ScoreNote) scoreNote.clone();
@@ -229,14 +230,16 @@ public class Note implements MObject, java.io.Serializable, Containable, Metrica
     /**
      * @see de.uos.fmt.musitech.data.time.Metrical#getMetricTime()
      */
-    public Rational getMetricTime() {
+    @Override
+	public Rational getMetricTime() {
         if (getScoreNote() == null)
             return Rational.ZERO;
         else
             return getScoreNote().getMetricTime();
     }
 
-    public String toString() {
+    @Override
+	public String toString() {
         //return scoreNote.toString() + "\t" + performanceNote.toString();
         //		return scoreNote.toString() + " " + (performanceNote == null ? "" :
         // performanceNote.toString());
@@ -268,7 +271,8 @@ public class Note implements MObject, java.io.Serializable, Containable, Metrica
 //        return scoreEquals && perfEquals;
 //    }
 
-    public EditingProfile getEditingProfile() {
+    @Override
+	public EditingProfile getEditingProfile() {
 
         EditingProfile scoreNoteProfile = new ScoreNote().getEditingProfile();
         scoreNoteProfile.setPropertyName("scoreNote");
@@ -283,7 +287,8 @@ public class Note implements MObject, java.io.Serializable, Containable, Metrica
     /**
      * @see de.uos.fmt.musitech.data.time.Timed#getTime()
      */
-    public long getTime() {
+    @Override
+	public long getTime() {
         if (getPerformanceNote() == null) {
             return Timed.INVALID_TIME;
         }
@@ -313,7 +318,8 @@ public class Note implements MObject, java.io.Serializable, Containable, Metrica
      * 
      * @see de.uos.fmt.musitech.data.time.Metrical#getMetricDuration()
      */
-    public Rational getMetricDuration() {
+    @Override
+	public Rational getMetricDuration() {
         return scoreNote.getMetricDuration();
     }
 
@@ -345,7 +351,8 @@ public class Note implements MObject, java.io.Serializable, Containable, Metrica
      * 
      * @see de.uos.fmt.musitech.data.time.Timed#getDuration()
      */
-    public long getDuration() {
+    @Override
+	public long getDuration() {
         if (getPerformanceNote() != null) {
             return getPerformanceNote().getDuration();
         } else
@@ -353,11 +360,13 @@ public class Note implements MObject, java.io.Serializable, Containable, Metrica
 
     }
 
-    public RenderingHints getRenderingHints() {
+    @Override
+	public RenderingHints getRenderingHints() {
         return renderingHints;
     }
 
-    public void setRenderingHints(RenderingHints renderingHints) {
+    @Override
+	public void setRenderingHints(RenderingHints renderingHints) {
         this.renderingHints = renderingHints;
         if(renderingHints != null	)
         renderingHints.setParentClass(this.getClass());
@@ -386,14 +395,16 @@ public class Note implements MObject, java.io.Serializable, Containable, Metrica
      */
     private Long uid;
 
-    public Long getUid() {
+    @Override
+	public Long getUid() {
         return uid;
     }
 
     /**
      * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
      */
-    public void setUid(Long uid) {
+    @Override
+	public void setUid(Long uid) {
         this.uid = uid;
     }
 
@@ -401,7 +412,8 @@ public class Note implements MObject, java.io.Serializable, Containable, Metrica
      * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String,
      *      java.lang.Object)
      */
-    public boolean isValidValue(String propertyName, Object value) {
+    @Override
+	public boolean isValidValue(String propertyName, Object value) {
         // TODO Auto-generated method stub
         return false;
     }
@@ -410,7 +422,8 @@ public class Note implements MObject, java.io.Serializable, Containable, Metrica
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#toMPEG(de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer,
      *      org.w3c.dom.Node, java.lang.Object, java.lang.String)
      */
-    public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
+    @Override
+	public boolean toMPEG(MusiteXMLSerializer instance, Node parent, Object object, String fieldname) {
         Note note = (Note) object;
         //TODO ??? Unterschiedliche Serialisierung Note wenn Kind von (1.)
         // /piece/score oder (2.) und /piece/selections ...
@@ -469,7 +482,8 @@ public class Note implements MObject, java.io.Serializable, Containable, Metrica
      * @see de.uos.fmt.musitech.framework.persistence.IMPEGSerializable#fromMPEG(org.w3c.dom.Element,
      *      java.util.Hashtable, java.lang.Object)
      */
-    public Object fromMPEG(MusiteXMLSerializer instance, Element head) {
+    @Override
+	public Object fromMPEG(MusiteXMLSerializer instance, Element head) {
         // reference-handling
         Object reference = instance.getReferenced(head, this);
         if (reference != null)
@@ -551,7 +565,8 @@ public class Note implements MObject, java.io.Serializable, Containable, Metrica
      * @return boolean
      * @throws Exception 
      */
-    public boolean isEquivalent(IEquivalence object) {
+    @Override
+	public boolean isEquivalent(IEquivalence object) {
     	if( !(object instanceof Note) ) return false;
     	Method[] cmNote = object.getClass().getMethods();
     	for(int i=0; i < cmNote.length; ++i) {

@@ -85,6 +85,7 @@ public class PlayerSection extends AbstractToolbarSection {
 				new DecimalFormat("###")); //$NON-NLS-1$
 		tempo.setValue(new Integer(120));
 		upper.add(new AbstractAction(Messages.getString("PlayerSection.Start"), Icons.getIcon("play.png")) { //$NON-NLS-1$ //$NON-NLS-2$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
 					int t = Integer.parseInt(tempo.getText());
@@ -104,6 +105,7 @@ public class PlayerSection extends AbstractToolbarSection {
 		});
 
 		upper.add(new AbstractAction(Messages.getString("PlayerSection.Pause"), Icons.getIcon("pause.png")) { //$NON-NLS-1$ //$NON-NLS-2$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				PlayTimer p = ObjectPlayer.getInstance().getPlayTimer();
 				p.stop();
@@ -111,6 +113,7 @@ public class PlayerSection extends AbstractToolbarSection {
 		});
 
 		upper.add(new AbstractAction(Messages.getString("PlayerSection.Stop"), Icons.getIcon("stop.png")) { //$NON-NLS-1$ //$NON-NLS-2$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				PlayTimer p = ObjectPlayer.getInstance().getPlayTimer();
 				p.reset();
@@ -119,6 +122,7 @@ public class PlayerSection extends AbstractToolbarSection {
 
 		upper.add(tempo);
 		tempo.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
 					int t = Integer.parseInt(((JFormattedTextField) e
@@ -136,6 +140,7 @@ public class PlayerSection extends AbstractToolbarSection {
 		});
 
 		upper.add(new AbstractAction(Messages.getString("PlayerSection.MidiOut")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (midiOutSelector == null) {
 					midiOutSelector = new JPopupMenu();
@@ -148,6 +153,7 @@ public class PlayerSection extends AbstractToolbarSection {
 						final int I = i;
 						JMenuItem mi = new JMenuItem(ainfos[i].toString());
 						mi.addActionListener(new ActionListener() {
+							@Override
 							public void actionPerformed(ActionEvent e) {
 								mos.setOutDeviceInfo(ainfos[I]);
 							}

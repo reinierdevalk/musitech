@@ -73,10 +73,12 @@ public class Page extends ScoreContainer {
 		this.explicitRwidth = explicitWidth;
 	}
 
+	@Override
 	public Page page() {
 		return this;
 	}
 
+	@Override
 	Class parentClass() {
 		return Score.class;
 	}
@@ -103,6 +105,7 @@ public class Page extends ScoreContainer {
 		return null;
 	}
 	
+	@Override
 	int arrange(int pass) {
 		int numPasses = 3;
 		int max = Math.max(numPasses, super.arrange(pass));
@@ -134,11 +137,13 @@ public class Page extends ScoreContainer {
 
 	}
 	
+	@Override
 	public void paint(Graphics g) {
 		//drawFrame(g);
 		super.paint(g);
 	}
 	
+	@Override
 	public int rwidth() {
 		if (explicitRwidth != -1)
 			return explicitRwidth;
@@ -150,6 +155,7 @@ public class Page extends ScoreContainer {
 		return biggest + 20;
 	}
 	
+	@Override
 	public int depth() {
 		int depth = 0;
 		for (int i = 0; i < numChildren(); i++) {
@@ -161,6 +167,7 @@ public class Page extends ScoreContainer {
 		return depth + 30;
 	}
 	
+	@Override
 	public int height() {
 		return 30;
 		/*

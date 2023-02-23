@@ -114,9 +114,9 @@ public class ScorePanelWithLinebreaks extends ScorePanel {
 			if (hints != null && hints.getValue("gaps") != null
 				&& !hints.getValue("gaps").equals("none"))
 				for (int i = 0; i < processSystem.size(); i++) {
-					NotationStaff staff = (NotationStaff) processSystem.get(i);
+					NotationStaff staff = processSystem.get(i);
 					for (int j = 0; j < staff.size(); j++) {
-						NotationVoice voice = (NotationVoice) staff.get(j);
+						NotationVoice voice = staff.get(j);
 						voice.fillGaps();
 					}
 				}

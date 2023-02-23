@@ -93,6 +93,7 @@ public class ObjectPlayer implements Player, PropertyChangeListener, DataChangeL
 	 */
 	private Thread midiPlayThread = new Thread("midiPlayThread") {
 
+		@Override
 		public void run() {
 			while (!finalized) {
 				o2MProcessor.fillRingbuffer();
@@ -237,6 +238,7 @@ public class ObjectPlayer implements Player, PropertyChangeListener, DataChangeL
 	/**
 	 * @see de.uos.fmt.musitech.framework.time.Player#setTimePosition(long)
 	 */
+	@Override
 	public void setTimePosition(long millis) {
 		if (o2MProcessor != null)
 			;
@@ -300,6 +302,8 @@ public class ObjectPlayer implements Player, PropertyChangeListener, DataChangeL
 	 * @see de.uos.fmt.musitech.framework.time.Player#start()
 	 * @deprecated TODO use this.getPlayTimer().start() instead
 	 */
+	@Deprecated
+	@Override
 	public void start() {
 		// o2MProcessor.fillRingbuffer();
 		if (DebugState.DEBUG)
@@ -311,12 +315,15 @@ public class ObjectPlayer implements Player, PropertyChangeListener, DataChangeL
 	 * @see de.uos.fmt.musitech.framework.time.Player#stop()
 	 * @deprecated TODO use this.getPlayTimer().stop() instead
 	 */
+	@Deprecated
+	@Override
 	public void stop() {
 	}
 
 	/**
 	 * @see de.uos.fmt.musitech.framework.time.Player#reset()
 	 */
+	@Override
 	public void reset() {
 		if (o2MProcessor != null)
 			o2MProcessor.setTimeMicros(0);
@@ -326,6 +333,7 @@ public class ObjectPlayer implements Player, PropertyChangeListener, DataChangeL
 	/**
 	 * @see de.uos.fmt.musitech.framework.time.Player#setPlayTimer(de.uos.fmt.musitech.framework.time.PlayTimer)
 	 */
+	@Override
 	public void setPlayTimer(PlayTimer timer) {
 		playTimer = timer;
 	}
@@ -333,6 +341,7 @@ public class ObjectPlayer implements Player, PropertyChangeListener, DataChangeL
 	/**
 	 * @see de.uos.fmt.musitech.framework.time.Player#getEndTime()
 	 */
+	@Override
 	public long getEndTime() {
 		if (container != null) {
 			// return container.getDuration();
@@ -352,6 +361,7 @@ public class ObjectPlayer implements Player, PropertyChangeListener, DataChangeL
 	/**
 	 * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
 	 */
+	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
 		if (evt.getPropertyName() == "newMidiOut") {
 			receiver = (Receiver) evt.getNewValue();
@@ -364,6 +374,7 @@ public class ObjectPlayer implements Player, PropertyChangeListener, DataChangeL
 	 * 
 	 * @see java.lang.Object#finalize()
 	 */
+	@Override
 	protected void finalize() throws Throwable {
 		finalized = true;
 		super.finalize();
@@ -401,6 +412,7 @@ public class ObjectPlayer implements Player, PropertyChangeListener, DataChangeL
 	/**
 	 * @see de.uos.fmt.musitech.framework.change.DataChangeListener#dataChanged(de.uos.fmt.musitech.framework.change.DataChangeEvent)
 	 */
+	@Override
 	public void dataChanged(DataChangeEvent e) {
 		System.out.println("ObjectPlayer: dataChanged");
 		DataChangeManager.getInstance().interestExpandElements(this, container);

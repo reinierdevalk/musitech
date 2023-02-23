@@ -148,6 +148,7 @@ public class Metronome implements Player {
 	/** 
 	 * @see de.uos.fmt.musitech.framework.time.Player#start()
 	 */
+	@Override
 	public void start() {
 
 	}
@@ -201,6 +202,7 @@ public class Metronome implements Player {
 		 * Is used to fill ring buffer while playing
 		 * @see de.uos.fmt.musitech.data.time.Timeable#setTimePosition(long)
 		 */
+		@Override
 		public void setTimePosition(long timeMicros) {
 			if (playMetronom)
 				fillBuffer();
@@ -210,6 +212,7 @@ public class Metronome implements Player {
 		/** 
 		 * @see de.uos.fmt.musitech.data.time.Timeable#getEndTime()
 		 */
+		@Override
 		public long getEndTime() {
 			return 0;
 		}
@@ -219,18 +222,21 @@ public class Metronome implements Player {
 	/** 
 	 * @see de.uos.fmt.musitech.framework.time.Player#stop()
 	 */
+	@Override
 	public void stop() {
 	}
 
 	/** 
 	 * @see de.uos.fmt.musitech.framework.time.Player#reset()
 	 */
+	@Override
 	public void reset() {
 	}
 
 	/** 
 	 * @see de.uos.fmt.musitech.framework.time.Player#setTimePosition(long)
 	 */
+	@Override
 	public void setTimePosition(long time) {
 		if (playMetronom) {
 
@@ -263,6 +269,7 @@ public class Metronome implements Player {
 	/** 
 	 * @see de.uos.fmt.musitech.framework.time.Player#setPlayTimer(de.uos.fmt.musitech.framework.time.PlayTimer)
 	 */
+	@Override
 	public void setPlayTimer(PlayTimer timer) {
 		this.playTimer = timer;
 		MetronomTimeable timeable = new MetronomTimeable();
@@ -289,6 +296,7 @@ public class Metronome implements Player {
 	/** 
 	 * @see de.uos.fmt.musitech.framework.time.Player#getEndTime()
 	 */
+	@Override
 	public long getEndTime() {
 		return 0;
 	}

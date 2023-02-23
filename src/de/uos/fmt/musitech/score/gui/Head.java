@@ -101,6 +101,7 @@ public class Head extends ScoreObject {
 	}
 
 	
+	@Override
 	int arrange(int pass) {
 		if (pass == 0) {
 			Pitch pitch = pitch();
@@ -131,6 +132,7 @@ public class Head extends ScoreObject {
 	 * Erstellungsdatum: (06.11.2001 15:41:19)
 	 * @param g java.awt.Graphics
 	 */
+	@Override
 	public void paint(Graphics g) {
 		if(!isVisible()) return;
 		int ld = staff().getLineDistance();
@@ -249,6 +251,7 @@ public class Head extends ScoreObject {
 		return "";
 	}
 
+	@Override
 	public int rwidth() {
 		int width;
 		Staff staff = staff();
@@ -278,10 +281,12 @@ public class Head extends ScoreObject {
 		}	
 	}
 
+	@Override
 	Class parentClass() {
 		return Pitch.class;
 	}
 
+	@Override
 	public int height() {
 		int height;
 		Staff staff = staff();
@@ -297,10 +302,11 @@ public class Head extends ScoreObject {
 			return (int)(height * scale);
 		}
 		else { //the staff is scaled => disregard own scale
-			return (int)(height / 2);
+			return height / 2;
 		}
 	}
 
+	@Override
 	public int depth() {
 		if (customHead != null)
 			return 0;

@@ -90,6 +90,7 @@ public interface TranslatingEditor extends Editor {
      *  
      * @see de.uos.fmt.musitech.framework.editor.Display#init(java.lang.Object, de.uos.fmt.musitech.framework.editor.EditingProfile, de.uos.fmt.musitech.framework.editor.Display)
      */
-    public void init(Object inputObj, EditingProfile profile, Display root);
+    @Override
+	public void init(Object inputObj, EditingProfile profile, Display root);
 
 }

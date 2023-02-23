@@ -63,6 +63,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
+import javax.swing.WindowConstants;
 import javax.swing.filechooser.FileFilter;
 
 import de.uos.fmt.musitech.data.structure.Piece;
@@ -171,7 +172,7 @@ public class SmrViewer extends JFrame {
 		this.piece = piece;
 		createNotationDisplay(zoom);
 		createSelectionBox();
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		if (notationDisplay.getPreferredSize().width > 800
 			|| notationDisplay.getPreferredSize().height > 600)
 			setSize(
@@ -204,6 +205,7 @@ public class SmrViewer extends JFrame {
 		selectionBox = new JComboBox(selections.toArray());
 		selectionBox.setRenderer(new DefaultListCellRenderer() {
 
+			@Override
 			public Component getListCellRendererComponent(JList list,
 															Object value,
 															int index,
@@ -222,6 +224,7 @@ public class SmrViewer extends JFrame {
 		});
 		selectionBox.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				Selection s = selections.get(selectionBox.getSelectedIndex());
 				SelectionManager.getManager().getSelection().clear(

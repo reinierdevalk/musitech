@@ -136,21 +136,24 @@ abstract class ScoreContainer extends ScoreObject implements ScoreContainerBase 
     /** Returns a forward iterator for this ScoreContainer. 
      * @return The iterator. 
      * */
-    public Iterator<ScoreObject> iterator() {
+    @Override
+	public Iterator<ScoreObject> iterator() {
         return children.iterator();
     }
 
     /** Returns a reverse (backward) iterator for this ScoreContainer. 
      * @return The iterator. 
      */
-    public Iterator<ScoreObject> reverseIterator() {
+    @Override
+	public Iterator<ScoreObject> reverseIterator() {
         return new ReverseIterator<ScoreObject>(children);
     }
 
     /** Adds a ScoreObject to this ScoreContainer. 
      * @param obj 
      * @return true if the object has been added succesfully */
-    public boolean add(ScoreObject obj) {
+    @Override
+	public boolean add(ScoreObject obj) {
         if (obj == null)
             throw new IllegalArgumentException("obj must not be null");
         children.add(obj);
@@ -240,7 +243,8 @@ abstract class ScoreContainer extends ScoreObject implements ScoreContainerBase 
      *            last child.
      * @return The ScoreObject.
      */
-    public ScoreObject child(int n) {
+    @Override
+	public ScoreObject child(int n) {
         if (n < -children.size() || n >= children.size())
             return null;
         if (n < 0)
@@ -251,7 +255,8 @@ abstract class ScoreContainer extends ScoreObject implements ScoreContainerBase 
     /** Returns the number of elements in this container. 
      * @return The number of elements.
      */
-    public int numChildren() {
+    @Override
+	public int numChildren() {
         return children.size();
     }
 
@@ -263,10 +268,12 @@ abstract class ScoreContainer extends ScoreObject implements ScoreContainerBase 
         super.paint(g);
     }
 
+	@Override
 	public void clear() {
 		children.clear();
 	}
 
+	@Override
 	public boolean contains(ScoreObject o) {
 		return children.contains(o);
 	}
@@ -287,14 +294,16 @@ abstract class ScoreContainer extends ScoreObject implements ScoreContainerBase 
     }
 
     /** Returns a string representation of this ScoreContainer. */
-    public String toString() {
+    @Override
+	public String toString() {
         String res = "";
         for (int i = 0; i < children.size(); i++)
             res += children.get(i) + "\n";
         return res;
     }
 
-    public void setColor(Color c) {
+    @Override
+	public void setColor(Color c) {
         super.setColor(c);
 
         for (int i = 0; i < numChildren(); i++) {
@@ -352,11 +361,13 @@ abstract class ScoreContainer extends ScoreObject implements ScoreContainerBase 
         return new int[] {minX, maxX};
     }
     
-    public void addListener(ContentChangeListener l) {
+    @Override
+	public void addListener(ContentChangeListener l) {
     	listeners.add(l);
     }
     
-    public void removeListener(ContentChangeListener l) {
+    @Override
+	public void removeListener(ContentChangeListener l) {
     	listeners.remove(l);
     }
 

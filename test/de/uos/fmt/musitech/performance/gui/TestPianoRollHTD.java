@@ -71,7 +71,8 @@ public class TestPianoRollHTD extends TestCase{
     /** 
      * @see junit.framework.TestCase#setUp()
      */
-    protected void setUp() throws Exception {
+    @Override
+	protected void setUp() throws Exception {
         MNS = new MidiNoteSequence();
         MidiNote note1 = new MidiNote(0, 100);
         MidiNote note2 = new MidiNote(200, 100);

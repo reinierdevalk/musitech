@@ -77,13 +77,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JToolBar;
-import javax.swing.filechooser.FileFilter;
-
-import org.mozilla.javascript.tools.shell.JSConsole;
-
+import javax.swing.ScrollPaneConstants;
 import de.uos.fmt.musitech.data.audio.AudioFileObject;
 import de.uos.fmt.musitech.data.media.image.ImageSequenceContainer;
 import de.uos.fmt.musitech.data.media.image.SlideShowPlayer;
@@ -92,7 +88,6 @@ import de.uos.fmt.musitech.data.media.image.StaffPositionGUI;
 import de.uos.fmt.musitech.data.media.image.StaffPositionInfoPanel;
 import de.uos.fmt.musitech.data.structure.container.BasicContainer;
 import de.uos.fmt.musitech.data.structure.container.Container;
-import de.uos.fmt.musitech.media.image.ImageScroller;
 import de.uos.fmt.musitech.media.image.ZoomImageComponent;
 
 /**
@@ -143,17 +138,21 @@ public class TimedImageStaffEditor extends AbstractSimpleEditor implements
     private void init() {
         
         addComponentListener(new ComponentListener() {
-            public void componentHidden(ComponentEvent e) {
+            @Override
+			public void componentHidden(ComponentEvent e) {
             }
 
-            public void componentMoved(ComponentEvent e) {
+            @Override
+			public void componentMoved(ComponentEvent e) {
             }
 
-            public void componentResized(ComponentEvent e) {
+            @Override
+			public void componentResized(ComponentEvent e) {
                 imagePane.setSize(getCenter().getWidth(), getCenter().getHeight());
             }
 
-            public void componentShown(ComponentEvent e) {
+            @Override
+			public void componentShown(ComponentEvent e) {
                 setZoomFactor(zoomFactor);
                 imagePane.setSize(getCenter().getWidth(), getCenter().getHeight());
             }
@@ -166,12 +165,13 @@ public class TimedImageStaffEditor extends AbstractSimpleEditor implements
     /**
      *  
      */
-    public void createGUI() {
+    @Override
+	public void createGUI() {
 
         
         //        createStaffGUI();
         setLayout(new BorderLayout());
-        JScrollPane scrollPane = new JScrollPane(getCenter(), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        JScrollPane scrollPane = new JScrollPane(getCenter(), ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         StaffPositionInfoPanel infoPanel = new StaffPositionInfoPanel();
         add(infoPanel, BorderLayout.WEST);
         add(getToolBar(), BorderLayout.NORTH);
@@ -214,7 +214,8 @@ public class TimedImageStaffEditor extends AbstractSimpleEditor implements
 
             center = new JLayeredPane();
             center.addMouseMotionListener(new MouseMotionListener() {
-                public void mouseDragged(MouseEvent e) {
+                @Override
+				public void mouseDragged(MouseEvent e) {
                     dragPoint = e.getPoint();
                     updateInfoLabel("MouseDragged ", e.getPoint().x, e.getPoint().y);
                     dragging = true;
@@ -222,30 +223,36 @@ public class TimedImageStaffEditor extends AbstractSimpleEditor implements
                     //                repaint();
                 }
 
-                public void mouseMoved(MouseEvent e) {
+                @Override
+				public void mouseMoved(MouseEvent e) {
                     updateInfoLabel("MouseMoved ", e.getPoint().x, e.getPoint().y);
                 }
             });
             center.addMouseListener(new MouseListener() {
-                public void mouseClicked(MouseEvent e) {
+                @Override
+				public void mouseClicked(MouseEvent e) {
                     updateInfoLabel("Clicked " + e.getSource());
                     if (e.getSource() instanceof StaffPositionGUI) {
                         updateInfoLabel("STAFF GUI !!");
                     }
                 }
 
-                public void mouseEntered(MouseEvent e) {
+                @Override
+				public void mouseEntered(MouseEvent e) {
                 }
 
-                public void mouseExited(MouseEvent e) {
+                @Override
+				public void mouseExited(MouseEvent e) {
                 }
 
-                public void mousePressed(MouseEvent e) {
+                @Override
+				public void mousePressed(MouseEvent e) {
                     updateInfoLabel("MousePressed ", e.getPoint().x, e.getPoint().y);
                     pressPoint = e.getPoint();
                 }
 
-                public void mouseReleased(MouseEvent e) {
+                @Override
+				public void mouseReleased(MouseEvent e) {
                     updateInfoLabel("MouseReleased ", e.getPoint().x,
                             e.getPoint().y);
                     releasePoint = e.getPoint();
@@ -350,7 +357,8 @@ public class TimedImageStaffEditor extends AbstractSimpleEditor implements
         /**
          * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
          */
-        public void actionPerformed(ActionEvent e) {
+        @Override
+		public void actionPerformed(ActionEvent e) {
             create = RECTANGLE;
             setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
         }
@@ -372,7 +380,8 @@ public class TimedImageStaffEditor extends AbstractSimpleEditor implements
         /**
          * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
          */
-        public void actionPerformed(ActionEvent e) {
+        @Override
+		public void actionPerformed(ActionEvent e) {
             JFileChooser chooser = new JFileChooser();
 //            ExampleFileFilter filter = new ExampleFileFilter();
 //            filter.addExtension("jpg");
@@ -409,7 +418,8 @@ public class TimedImageStaffEditor extends AbstractSimpleEditor implements
         /**
          * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
          */
-        public void actionPerformed(ActionEvent e) {
+        @Override
+		public void actionPerformed(ActionEvent e) {
             zoomFactor *= 1.1;
             setZoomFactor(zoomFactor);
         }
@@ -431,7 +441,8 @@ public class TimedImageStaffEditor extends AbstractSimpleEditor implements
         /**
          * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
          */
-        public void actionPerformed(ActionEvent e) {
+        @Override
+		public void actionPerformed(ActionEvent e) {
             zoomFactor *= 0.9;
             setZoomFactor(zoomFactor);
         }
@@ -482,7 +493,8 @@ public class TimedImageStaffEditor extends AbstractSimpleEditor implements
         /**
          * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
          */
-        public void actionPerformed(ActionEvent e) {
+        @Override
+		public void actionPerformed(ActionEvent e) {
             slidePlayer = new SlideShowPlayer(createAudioContainer(), createSequenceContainer());
         }
 
@@ -537,14 +549,16 @@ public class TimedImageStaffEditor extends AbstractSimpleEditor implements
     /**
      * @see de.uos.fmt.musitech.framework.editor.AbstractSimpleEditor#applyChangesToPropertyValue()
      */
-    public boolean applyChangesToPropertyValue() {
+    @Override
+	public boolean applyChangesToPropertyValue() {
         return false;
     }
 
     /**
      * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
      */
-    public void propertyChange(PropertyChangeEvent evt) {
+    @Override
+	public void propertyChange(PropertyChangeEvent evt) {
         System.out.println("Property Changed: repaint()");
         updateStaffGUI();
         repaint();

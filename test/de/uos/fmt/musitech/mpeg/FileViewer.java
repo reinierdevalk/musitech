@@ -63,9 +63,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.Locale;
 import java.util.Set;
@@ -79,7 +77,6 @@ import javax.swing.JComponent;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -88,6 +85,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JToolBar;
+import javax.swing.SwingConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -257,8 +255,8 @@ public class FileViewer extends JFrame implements ActionListener {
     void showSystemSplit(Piece piece) {
         NotationSystem system = piece.getScore();
         Collection systems = system.splitAtLineBreaks();
-        NotationStaff staff = (NotationStaff) system.get(0);
-        NotationVoice voice = (NotationVoice) staff.get(0);
+        NotationStaff staff = system.get(0);
+        NotationVoice voice = staff.get(0);
         LyricsContainer lyricsCont = voice.getLyrics();
         if(language == null)
             language = lyricsCont.getDefaultLanguage();
@@ -366,7 +364,8 @@ public class FileViewer extends JFrame implements ActionListener {
         bg.add(notationButton);
         notationButton.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 showNotation(piece);
             }
         });
@@ -379,7 +378,8 @@ public class FileViewer extends JFrame implements ActionListener {
         bg.add(metadataButton);
         metadataButton.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 showMetadata(piece);
             }
         });
@@ -389,7 +389,8 @@ public class FileViewer extends JFrame implements ActionListener {
         identificationButton = new JRadioButton("Identification");
         bg.add(identificationButton);
         identificationButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 showIdentification(piece);
             }
         });
@@ -400,7 +401,8 @@ public class FileViewer extends JFrame implements ActionListener {
         bg.add(selectionButton);
         selectionButton.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 showSelections(piece);
             }
         });
@@ -411,7 +413,8 @@ public class FileViewer extends JFrame implements ActionListener {
         bg.add(excerptButton);
         excerptButton.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 showExcerpts(piece);
             }
         });
@@ -422,7 +425,8 @@ public class FileViewer extends JFrame implements ActionListener {
         bg.add(spokenMusicButton);
         spokenMusicButton.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 showSpokenMusic(piece);
             }
         });
@@ -442,7 +446,8 @@ public class FileViewer extends JFrame implements ActionListener {
         Set langSet = nsys.getLyricsLanguages();
         final JComboBox jList = new JComboBox(langSet.toArray());
         jList.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 Locale newlocale = (Locale)jList.getSelectedItem();
                 if(!newlocale.equals(language)){
                     language = newlocale;
@@ -452,7 +457,7 @@ public class FileViewer extends JFrame implements ActionListener {
             });
         jList.setSelectedItem(language);
         JPanel panel = new JPanel(new BorderLayout());
-        JLabel label = new JLabel("Lyrics Language :",JLabel.RIGHT);
+        JLabel label = new JLabel("Lyrics Language :",SwingConstants.RIGHT);
         label.setLabelFor(jList);
         panel.add(label,BorderLayout.CENTER);
         panel.add(jList,BorderLayout.EAST);
@@ -464,7 +469,7 @@ public class FileViewer extends JFrame implements ActionListener {
             piece.setScore(NotationDisplay.createNotationSystem(piece));
         }
         NotationSystem system = piece.getScore();
-        if (((NotationVoice) ((NotationStaff) system.get(0)).get(0)).getLyrics() != null)
+        if (system.get(0).get(0).getLyrics() != null)
             showSystemSplit(piece);
         else {
             NotationDisplay display = new NotationDisplay();
@@ -573,7 +578,8 @@ public class FileViewer extends JFrame implements ActionListener {
         tcMenu.add(menuItem);
         final Piece piece = extractPiece(path);
         menuItem.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 switch (viewType) {
                 case VIEW_NOTATION:
                     showNotation(piece);
@@ -625,7 +631,8 @@ public class FileViewer extends JFrame implements ActionListener {
 
         addWindowListener(new WindowAdapter() {
 
-            public void windowClosing(WindowEvent ev) {
+            @Override
+			public void windowClosing(WindowEvent ev) {
                 System.exit(0);
             }
         });
@@ -634,7 +641,8 @@ public class FileViewer extends JFrame implements ActionListener {
     private final JFileChooser fileChooser = new JFileChooser();
     private File currentDir = new File(".");
 
-    public void actionPerformed(ActionEvent e) {
+    @Override
+	public void actionPerformed(ActionEvent e) {
         String command = e.getActionCommand();
 
         Piece piece = new Piece();

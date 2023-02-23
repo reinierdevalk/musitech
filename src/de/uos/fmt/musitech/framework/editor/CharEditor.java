@@ -135,6 +135,7 @@ SimpleTextfieldEditor
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.SimpleTextfieldEditor#getInputValue()
 	 */
+	@Override
 	protected Object getInputValue() {
 		Character inputValue = null;
 		String s = textfield.getText();

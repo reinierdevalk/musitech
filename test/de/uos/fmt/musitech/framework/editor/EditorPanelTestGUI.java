@@ -79,6 +79,7 @@ public class EditorPanelTestGUI {
 			window.pack();
 			window.setVisible(true);
 			window.addWindowListener(new WindowAdapter() {
+				@Override
 				public void windowDeactivated(WindowEvent we) {
 					System.out.println(editor.getEditObj().toString());
 				}
@@ -199,6 +200,7 @@ public class EditorPanelTestGUI {
 			window.pack();
 			window.setVisible(true);
 			window.addWindowListener(new WindowAdapter(){
+				@Override
 				public void windowIconified(WindowEvent we){
 					System.out.println(editor1.getEditObj().toString());
 				}

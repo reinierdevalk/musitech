@@ -67,7 +67,6 @@ import javax.sound.midi.Track;
 import de.uos.fmt.musitech.data.structure.Piece;
 import de.uos.fmt.musitech.data.structure.container.BasicContainer;
 import de.uos.fmt.musitech.data.structure.container.Container;
-import de.uos.fmt.musitech.data.structure.form.NoteList;
 import de.uos.fmt.musitech.performance.midi.PhysTimeMidiReader;
 import de.uos.fmt.musitech.utility.DebugState;
 
@@ -88,6 +87,7 @@ public class MidiRecorder implements Recorder, Receiver {
 	/**
 	 * @see de.uos.fmt.musitech.framework.time.Player#start()
 	 */
+	@Override
 	public void start() {
 
 		try {
@@ -111,6 +111,7 @@ public class MidiRecorder implements Recorder, Receiver {
 	/**
 	 * @see de.uos.fmt.musitech.framework.time.Player#stop()
 	 */
+	@Override
 	public void stop() {
 		PhysTimeMidiReader reader = new PhysTimeMidiReader();
 		if (sequence != null && record)
@@ -127,6 +128,7 @@ public class MidiRecorder implements Recorder, Receiver {
 	/**
 	 * @see de.uos.fmt.musitech.framework.time.Player#reset()
 	 */
+	@Override
 	public void reset() {
 		// Auto-generated method stub
 	}
@@ -134,6 +136,7 @@ public class MidiRecorder implements Recorder, Receiver {
 	/**
 	 * @see de.uos.fmt.musitech.framework.time.Player#setTimePosition(long)
 	 */
+	@Override
 	public void setTimePosition(long time) {
 
 	}
@@ -141,6 +144,7 @@ public class MidiRecorder implements Recorder, Receiver {
 	/**
 	 * @see de.uos.fmt.musitech.framework.time.Player#setPlayTimer(de.uos.fmt.musitech.framework.time.PlayTimer)
 	 */
+	@Override
 	public void setPlayTimer(PlayTimer timer) {
 		playTimer = timer;
 	}
@@ -148,6 +152,7 @@ public class MidiRecorder implements Recorder, Receiver {
 	/**
 	 * @see javax.sound.midi.Receiver#close()
 	 */
+	@Override
 	public void close() {
 		// Auto-generated method stub
 	}
@@ -155,6 +160,7 @@ public class MidiRecorder implements Recorder, Receiver {
 	/**
 	 * @see javax.sound.midi.Receiver#send(javax.sound.midi.MidiMessage, long)
 	 */
+	@Override
 	public void send(MidiMessage message, long timeStamp) {
 				if (record) {
 					MidiEvent event =
@@ -170,6 +176,7 @@ public class MidiRecorder implements Recorder, Receiver {
 	/**
 	 * @param b
 	 */
+	@Override
 	public void setRecord(boolean b) {
 		record = b;
 	}
@@ -184,6 +191,7 @@ public class MidiRecorder implements Recorder, Receiver {
 	/** 
 	 * @see de.uos.fmt.musitech.framework.time.Player#getEndTime()
 	 */
+	@Override
 	public long getEndTime() {
 		return 0;
 	}

@@ -580,7 +580,7 @@ public class EditorFactory {
 	        wrapperType = "PopUp";
 	    }
 	    Editor wrapper = null;
-	    EditingProfile wrapperProfile = (EditingProfile) ObjectCopy.copyObject(editorToWrap.getEditingProfile());
+	    EditingProfile wrapperProfile = ObjectCopy.copyObject(editorToWrap.getEditingProfile());
 	    wrapperProfile.setEditortype(wrapperType);
 	    try {
             wrapper = createEditor(editorToWrap.getEditObj(), wrapperProfile);
@@ -1642,7 +1642,7 @@ public class EditorFactory {
 		String typeName = getEditortypeNameByClass(cla);
 		if (typeName != null && !displayTypeNames.contains(typeName))
 		    displayTypeNames.add(typeName);
-		return (String[]) displayTypeNames.toArray(new String[]{});
+		return displayTypeNames.toArray(new String[]{});
 	}
 
 	/**

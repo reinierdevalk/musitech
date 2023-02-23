@@ -53,8 +53,8 @@ package de.uos.fmt.musitech.structure;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
-import de.uos.fmt.musitech.data.score.Clef;
 import de.uos.fmt.musitech.data.score.NotationStaff;
 import de.uos.fmt.musitech.data.score.NotationSystem;
 import de.uos.fmt.musitech.data.score.NotationVoice;
@@ -63,14 +63,12 @@ import de.uos.fmt.musitech.data.structure.Context;
 import de.uos.fmt.musitech.data.structure.Note;
 import de.uos.fmt.musitech.data.structure.Piece;
 import de.uos.fmt.musitech.data.structure.container.BasicContainer;
-import de.uos.fmt.musitech.data.structure.container.ClefContainer;
 import de.uos.fmt.musitech.data.structure.container.Container;
 import de.uos.fmt.musitech.data.structure.form.NoteList;
 import de.uos.fmt.musitech.data.time.TimeSignatureMarker;
 import de.uos.fmt.musitech.framework.editor.Display;
 import de.uos.fmt.musitech.framework.editor.EditorFactory;
 import de.uos.fmt.musitech.framework.editor.EditorFactory.EditorConstructionException;
-import de.uos.fmt.musitech.performance.midi.NegativeTimeStampException;
 import de.uos.fmt.musitech.utility.math.Rational;
 
 
@@ -196,7 +194,7 @@ public class Score2ScoreTestUI {
     
     private static void forClosing(){
         JFrame frame = new JFrame("Close");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
 

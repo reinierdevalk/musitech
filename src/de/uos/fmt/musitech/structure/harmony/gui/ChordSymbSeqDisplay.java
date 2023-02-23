@@ -47,16 +47,12 @@ above is subject to the following three conditions:
 **********************************************/
 package de.uos.fmt.musitech.structure.harmony.gui;
 
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Vector;
-
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -163,7 +159,8 @@ public class ChordSymbSeqDisplay extends JPanel implements Display,
      * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#getMinimalPositionForTime(long,
      *      de.uos.fmt.musitech.utility.math.Rational)
      */
-    public int getMinimalPositionForTime(long t, Rational m)
+    @Override
+	public int getMinimalPositionForTime(long t, Rational m)
             throws WrongArgumentException {
         if (t == Timed.INVALID_TIME && m == null)
             throw new WrongArgumentException(
@@ -242,7 +239,8 @@ public class ChordSymbSeqDisplay extends JPanel implements Display,
      * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#setMinimalPositionForTime(long,
      *      de.uos.fmt.musitech.utility.math.Rational, int)
      */
-    public boolean setMinimalPositionForTime(long t, Rational m, int position)
+    @Override
+	public boolean setMinimalPositionForTime(long t, Rational m, int position)
             throws WrongArgumentException {
         if ((t == Timed.INVALID_TIME && m == null) || position < 0)
             throw new WrongArgumentException(
@@ -290,7 +288,8 @@ public class ChordSymbSeqDisplay extends JPanel implements Display,
      * 
      * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#getNextPositioningTime(long)
      */
-    public long getNextPositioningTime(long startTime) {
+    @Override
+	public long getNextPositioningTime(long startTime) {
         if (chordsContainer.size() == 0)
             //			return Integer.MAX_VALUE;
             return Timed.INVALID_TIME;
@@ -302,7 +301,7 @@ public class ChordSymbSeqDisplay extends JPanel implements Display,
         ChordSymbol nextSymbol = null;
         do {
             if (pos < chordsContainer.size() - 1)
-                nextSymbol = (ChordSymbol) chordsContainer.get(++pos);
+                nextSymbol = chordsContainer.get(++pos);
             else
                 nextSymbol = null;
         } while (nextSymbol != null && nextSymbol.getTime() <= startTime);
@@ -321,7 +320,8 @@ public class ChordSymbSeqDisplay extends JPanel implements Display,
      * 
      * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#doInitialLayout()
      */
-    public void doInitialLayout() {
+    @Override
+	public void doInitialLayout() {
         //setBackground(Color.WHITE);
     	setOpaque(false);
         //horizontal position for first ChordSymbolDisplay
@@ -489,7 +489,8 @@ public class ChordSymbSeqDisplay extends JPanel implements Display,
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#externalChanges()
      */
-    public boolean externalChanges() {
+    @Override
+	public boolean externalChanges() {
         return dataChanged;
     }
 
@@ -499,7 +500,8 @@ public class ChordSymbSeqDisplay extends JPanel implements Display,
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#destroy()
      */
-    public void destroy() {
+    @Override
+	public void destroy() {
         DataChangeManager.getInstance().removeListener(this);
         SelectionManager.getManager().removeListener(this);
     }
@@ -509,7 +511,8 @@ public class ChordSymbSeqDisplay extends JPanel implements Display,
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#focusReceived()
      */
-    public void focusReceived() {
+    @Override
+	public void focusReceived() {
         if (externalChanges())
             updateDisplay();
         if (root != this)
@@ -521,7 +524,8 @@ public class ChordSymbSeqDisplay extends JPanel implements Display,
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#getEditingProfile()
      */
-    public EditingProfile getEditingProfile() {
+    @Override
+	public EditingProfile getEditingProfile() {
         return profile;
     }
 
@@ -532,7 +536,8 @@ public class ChordSymbSeqDisplay extends JPanel implements Display,
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#getEditObj()
      */
-    public Object getEditObj() {
+    @Override
+	public Object getEditObj() {
         //		return chordsContainer;
         return editObj;
     }
@@ -543,7 +548,8 @@ public class ChordSymbSeqDisplay extends JPanel implements Display,
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#isFocused()
      */
-    public boolean isFocused() {
+    @Override
+	public boolean isFocused() {
         boolean focused = false;
         if (this.isFocusOwner())
             focused = true;
@@ -575,7 +581,8 @@ public class ChordSymbSeqDisplay extends JPanel implements Display,
      *      de.uos.fmt.musitech.framework.editor.EditingProfile,
      *      de.uos.fmt.musitech.framework.editor.Display)
      */
-    public void init(Object editObject, EditingProfile profile, Display root) {
+    @Override
+	public void init(Object editObject, EditingProfile profile, Display root) {
         if (editObject != null)
             this.editObj = editObject;
         else {
@@ -638,7 +645,8 @@ public class ChordSymbSeqDisplay extends JPanel implements Display,
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#updateDisplay()
      */
-    public void updateDisplay() {
+    @Override
+	public void updateDisplay() {
         doInitialLayout();
         revalidate();
         repaint();
@@ -649,7 +657,8 @@ public class ChordSymbSeqDisplay extends JPanel implements Display,
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#getRootDisplay()
      */
-    public Display getRootDisplay() {
+    @Override
+	public Display getRootDisplay() {
         return root;
     }
 
@@ -661,7 +670,8 @@ public class ChordSymbSeqDisplay extends JPanel implements Display,
      * 
      * @see de.uos.fmt.musitech.framework.change.DataChangeListener#dataChanged(de.uos.fmt.musitech.framework.change.DataChangeEvent)
      */
-    public void dataChanged(DataChangeEvent e) {
+    @Override
+	public void dataChanged(DataChangeEvent e) {
         dataChanged = true;
     }
 
@@ -762,7 +772,8 @@ public class ChordSymbSeqDisplay extends JPanel implements Display,
      * 
      * @see de.uos.fmt.musitech.framework.selection.SelectionListener#selectionChanged(de.uos.fmt.musitech.framework.selection.SelectionChangeEvent)
      */
-    public void selectionChanged(SelectionChangeEvent e) {
+    @Override
+	public void selectionChanged(SelectionChangeEvent e) {
         Selection selection = SelectionManager.getManager().getSelection();
         for (Iterator iter = chordSymbolDisplays.iterator(); iter.hasNext();) {
             ChordSymbolDisplay2 symbolDisplay = (ChordSymbolDisplay2) iter
@@ -788,10 +799,12 @@ public class ChordSymbSeqDisplay extends JPanel implements Display,
      * 
      * @see de.uos.fmt.musitech.data.time.Timeable#setTimePosition(long)
      */
-    public void setTimePosition(long timeMicros) {
+    @Override
+	public void setTimePosition(long timeMicros) {
         currentTime = timeMicros;
         Thread thread = new Thread() {
-            public void run() {
+            @Override
+			public void run() {
                 highlightChord();
             }
         };
@@ -807,9 +820,10 @@ public class ChordSymbSeqDisplay extends JPanel implements Display,
      * 
      * @see de.uos.fmt.musitech.data.time.Timeable#getEndTime()
      */
-    public long getEndTime() {
+    @Override
+	public long getEndTime() {
         if (chordsContainer != null && chordsContainer.size() > 0) {
-            ChordSymbol lastChordSymbol = (ChordSymbol) chordsContainer
+            ChordSymbol lastChordSymbol = chordsContainer
                     .get(chordsContainer.size() - 1);
             if (lastChordSymbol.getTime() != Timed.INVALID_TIME) {
                 return lastChordSymbol.getTime()
@@ -863,6 +877,7 @@ public class ChordSymbSeqDisplay extends JPanel implements Display,
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.Display#asComponent()
 	 */
+	@Override
 	public Component asComponent() {
 		return this;
 	}

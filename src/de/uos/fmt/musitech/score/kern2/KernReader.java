@@ -9,6 +9,7 @@ import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.score.NotationStaff;
 import de.uos.fmt.musitech.data.score.NotationSystem;
@@ -377,7 +378,7 @@ public class KernReader {
 			e.printStackTrace();
 		}
 		jFrame.setSize(600, 400);
-		jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		jFrame.setVisible(true);
 	}
 

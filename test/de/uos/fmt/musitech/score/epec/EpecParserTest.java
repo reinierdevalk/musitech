@@ -61,7 +61,6 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 
 import de.uos.fmt.musitech.data.score.*;
-import de.uos.fmt.musitech.data.structure.Note;
 import de.uos.fmt.musitech.data.structure.Piece;
 import de.uos.fmt.musitech.data.structure.Context;
 import de.uos.fmt.musitech.framework.editor.EditorFactory;
@@ -118,6 +117,7 @@ public class EpecParserTest extends JFrame {
 		*/
 		
 		addWindowListener(new WindowAdapter() {
+			@Override
 			public void windowClosing(WindowEvent ev) {
 				System.exit(0);
 			}
@@ -163,6 +163,7 @@ public class EpecParserTest extends JFrame {
 			this.system = system;
 		}
 		
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			mapper.createView(spanel);
 			((JComponent)getContentPane()).revalidate();

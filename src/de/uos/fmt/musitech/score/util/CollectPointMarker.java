@@ -71,7 +71,8 @@ public class CollectPointMarker implements PointMarker
    }
 
    
-   public void markFirstPoint(Pair p)
+   @Override
+public void markFirstPoint(Pair p)
    {
       if (reverse)      
       	points.add(pos, p);
@@ -79,7 +80,8 @@ public class CollectPointMarker implements PointMarker
          points.add(p);
    }
 
-   public void markPoint(Pair p)
+   @Override
+public void markPoint(Pair p)
    {
       if (reverse)
          points.add(pos, p);

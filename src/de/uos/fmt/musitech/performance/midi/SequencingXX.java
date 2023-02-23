@@ -104,10 +104,12 @@ public class SequencingXX implements TimeKeeper {
 		}
 
 		//Closes the recordreceiver
+		@Override
 		public void close() {
 		}
 
 		//Sends a midi-message
+		@Override
 		public void send(javax.sound.midi.MidiMessage message, long time) {
 			long testTime = System.currentTimeMillis();
 			if (!(message instanceof ShortMessage))
@@ -191,6 +193,7 @@ public class SequencingXX implements TimeKeeper {
 			nsq = noteSequence;
 		}
 
+		@Override
 		public void keyPressed(KeyEvent e) {
 			long testTime = System.currentTimeMillis();
 			//			if (e.getKeyCode() != KeyEvent.VK_SHIFT)
@@ -206,6 +209,7 @@ public class SequencingXX implements TimeKeeper {
 			}
 		}
 
+		@Override
 		public void keyReleased(KeyEvent e) {
 			//			if (e.getKeyCode() != KeyEvent.VK_SHIFT)
 			//				return;
@@ -352,7 +356,7 @@ public class SequencingXX implements TimeKeeper {
 	long preCountTicks = 0;
 	long preCountTime = 0;
 	int preCountNum = 0;
-	float tempo = (float) 100;
+	float tempo = 100;
 	protected javax.sound.midi.Sequence sequence = null;
 	protected int resolution = 384;
 	protected javax.sound.midi.Track clickTrack;
@@ -415,6 +419,7 @@ public class SequencingXX implements TimeKeeper {
 		/**
 		 * @see javax.sound.midi.Receiver#send(javax.sound.midi.MidiMessage, long)
 		 */
+		@Override
 		public void send(MidiMessage message, long time) {
 			long millis; // XXX
 			if (message.getStatus() == ShortMessage.TIMING_CLOCK)
@@ -424,6 +429,7 @@ public class SequencingXX implements TimeKeeper {
 		/**
 		 * @see javax.sound.midi.Receiver#close()
 		 */
+		@Override
 		public void close() {
 		}
 	}
@@ -483,6 +489,7 @@ public class SequencingXX implements TimeKeeper {
 	 * @exception java.lang.Throwable The exception description.
 	 */
 
+	@Override
 	protected void finalize() throws java.lang.Throwable {
 		exit();
 		super.finalize();
@@ -1054,7 +1061,7 @@ public class SequencingXX implements TimeKeeper {
 	 * @param millis long
 	 */
 	public long millisToTicks(long millis) {
-		return (long) (ticksPerMillis * (double) millis);
+		return (long) (ticksPerMillis * millis);
 	}
 
 	/**
@@ -1524,6 +1531,7 @@ public class SequencingXX implements TimeKeeper {
 	/**
 	 *	Starts playing a sequence.
 	 */
+	@Override
 	public void startPlaying() {
 		System.out.println(getClass().getName() + ".startPlaying() ");
 		stop();
@@ -1691,6 +1699,7 @@ public class SequencingXX implements TimeKeeper {
 	/**
 	 *	Stops the playing.
 	 */
+	@Override
 	public void stopPlaying() {
 		stop();
 	}
@@ -1750,7 +1759,7 @@ public class SequencingXX implements TimeKeeper {
 	 * @param ticks long
 	 */
 	public long ticksToMillis(long ticks) {
-		return (long) (ticks * (double) millisPerTick);
+		return (long) (ticks * millisPerTick);
 	}
 
 	/**
@@ -1946,6 +1955,7 @@ public class SequencingXX implements TimeKeeper {
 	/**
 	 * @see de.uos.fmt.musitech.time.TimeKeeper#addTimeable(de.uos.fmt.musitech.data.structure.Timeable)
 	 */
+	@Override
 	public void addTimeable(Timeable timeable) {
 		if (timeable != null && timeablesVector.indexOf(timeable) == -1)
 			timeablesVector.add(timeable);
@@ -1954,6 +1964,7 @@ public class SequencingXX implements TimeKeeper {
 	/**
 	 * @see de.uos.fmt.musitech.time.TimeKeeper#removeTimeable(de.uos.fmt.musitech.data.structure.Timeable)
 	 */
+	@Override
 	public void removeTimeable(Timeable timeable) {
 		timeablesVector.remove(timeable);
 	}
@@ -1967,6 +1978,7 @@ public class SequencingXX implements TimeKeeper {
 		/**
 		 * @see java.lang.Runnable#run()
 		 */
+		@Override
 		public void run() {
 			running = true;
 			while (isPlaying()) {
@@ -1990,6 +2002,7 @@ public class SequencingXX implements TimeKeeper {
 	/**
 	 * @see de.uos.fmt.musitech.time.TimeKeeper#getTimePosition()
 	 */
+	@Override
 	public long getTimePosition() {
 		return sequencer.getMicrosecondPosition() / 1000;
 	}
@@ -1997,6 +2010,7 @@ public class SequencingXX implements TimeKeeper {
 	/**
 	 * @see de.uos.fmt.musitech.time.TimeKeeper#setTimePosition(long)
 	 */
+	@Override
 	public void setTimePosition(long timeMillis) {
 		sequencer.setMicrosecondPosition(timeMillis * 1000);
 		sendTime(timeMillis);
@@ -2005,6 +2019,7 @@ public class SequencingXX implements TimeKeeper {
 	/**
 	 * @see de.uos.fmt.musitech.time.TimeKeeper#addContainer(de.uos.fmt.musitech.data.structure.Container)
 	 */
+	@Override
 	public void setContainer(Container cont) {
 		MidiNoteSequence mns = MidiNoteSequence.convert(cont);
 		setSequence(null);

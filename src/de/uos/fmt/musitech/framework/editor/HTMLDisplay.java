@@ -52,14 +52,12 @@ package de.uos.fmt.musitech.framework.editor;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
 import java.io.IOException;
 import java.net.URL;
 
 import javax.swing.JEditorPane;
 import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 import javax.swing.text.Style;
@@ -67,9 +65,6 @@ import javax.swing.text.StyleConstants;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
-
-
-import de.uos.fmt.musitech.utility.DebugState;
 
 /**
  * This class provides a Display to show html documents specified by a URL.
@@ -90,6 +85,7 @@ public class HTMLDisplay extends AbstractDisplay {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.AbstractDisplay#createGUI()
 	 */
+	@Override
 	public void createGUI() {
 		setLocalObject();
 		setLayout(new BorderLayout());
@@ -163,6 +159,7 @@ public class HTMLDisplay extends AbstractDisplay {
 		 * 
 		 * @see javax.swing.event.HyperlinkListener#hyperlinkUpdate(javax.swing.event.HyperlinkEvent)
 		 */
+		@Override
 		public void hyperlinkUpdate(HyperlinkEvent e) {
 			/*
 			 * Get the event type for the link. There could be three types of
@@ -185,6 +182,7 @@ public class HTMLDisplay extends AbstractDisplay {
 		}
 	}
 
+	@Override
 	public Dimension getPreferredSize() {
 		Dimension prefSize = super.getPreferredSize();
 		if (prefSize.width > maxSize.width) {
@@ -203,6 +201,7 @@ public class HTMLDisplay extends AbstractDisplay {
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.AbstractDisplay#updateDisplay()
 	 */
+	@Override
 	public void updateDisplay() {
 		setLocalObject();
 		try {
@@ -219,11 +218,11 @@ public class HTMLDisplay extends AbstractDisplay {
 	 */
 	public void setScrolling(final boolean active) {
 		if (active) {
-			jScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-			jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+			jScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+			jScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		} else {
-			jScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-			jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
+			jScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+			jScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 		}
 	}
 
@@ -234,7 +233,7 @@ public class HTMLDisplay extends AbstractDisplay {
 	 *         are not used at all.
 	 */
 	public boolean isScrolling() {
-		if (jScrollPane.getHorizontalScrollBarPolicy() == JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED)
+		if (jScrollPane.getHorizontalScrollBarPolicy() == ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED)
 			return false;
 		else
 			return true;

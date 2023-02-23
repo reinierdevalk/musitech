@@ -82,6 +82,7 @@ public class IconEditor extends PopUpEditor {
 	 *  
 	 * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#createGUI()
 	 */
+	@Override
 	public void createGUI() {
 		if (propertyName != null && propertyValue == null) {
 			super.createGUI();	//displays "Create"-button
@@ -107,6 +108,7 @@ public class IconEditor extends PopUpEditor {
 		}
 		editButton = new JButton(editIcon);
 		editButton.addActionListener(new ActionListener(){
+			@Override
 			public void actionPerformed(ActionEvent e){
 				IconEditor.this.showEditorToPopUp();
 			}

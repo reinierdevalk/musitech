@@ -56,9 +56,6 @@ import java.awt.Graphics;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import de.uos.fmt.musitech.data.score.DualMetricAttachable;
-import de.uos.fmt.musitech.utility.math.Rational;
-
 /**
  * @author collin
  *
@@ -86,15 +83,18 @@ public class TabulaturStaff extends Staff implements ContentChangeListener {
 		shadowCaster.addListener(this);
 	}
 	
+	@Override
 	public boolean add(ScoreObject obj) {
 		return super.add(obj);
 	}
 
+	@Override
 	public void contentAdded(Object newContent) {
 		Measure measure = (Measure)newContent;
 		add(new TabulaturMeasure(measure, graphicalToNotation, notationToGraphical));
 	}
 	
+	@Override
 	public void contentRemoved(Object content) {
 		System.err.println("contentRemoved called");
 	}
@@ -103,12 +103,14 @@ public class TabulaturStaff extends Staff implements ContentChangeListener {
 		return absY() + ((line - 1) * getLineDistance());
 	}
 
+	@Override
 	public int arrange(int pass) {
 		if (pass == 0) {
 		}
 		return super.arrange(pass);
 	}
 	
+	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
 

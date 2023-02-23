@@ -119,6 +119,7 @@ public class PopUpEditor extends AbstractComplexEditor implements Wrapper {
 	 *      de.uos.fmt.musitech.framework.editor.EditingProfile,
 	 *      de.uos.fmt.musitech.framework.editor.Display)
 	 */
+	@Override
 	public void init(Object editObj, EditingProfile profile, Display root) {
 		this.editObj = editObj;
 		this.profile = profile;
@@ -137,6 +138,7 @@ public class PopUpEditor extends AbstractComplexEditor implements Wrapper {
 	 * <code>CREATE_BUTTON_TEXT</code> or <code>EDIT_BUTTON_TEXT</code>
 	 * appropriatly.
 	 */
+	@Override
 	public void createGUI() {
 		editButton = new JButton();
 		editButton.setPreferredSize((new JButton(CREATE_BUTTON_TEXT))
@@ -147,6 +149,7 @@ public class PopUpEditor extends AbstractComplexEditor implements Wrapper {
 		// editButton.setText(EDIT_BUTTON_TEXT);
 		editButton.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				showEditorToPopUp();
 			}
@@ -188,6 +191,7 @@ public class PopUpEditor extends AbstractComplexEditor implements Wrapper {
 	 * 
 	 * @param editorToPopUp Display to wrap
 	 */
+	@Override
 	public void setWrappedView(Display editorToPopUp) {
 		this.editorToPopUp = (Editor) editorToPopUp;
 		this.editObj = editorToPopUp.getEditObj();
@@ -207,6 +211,7 @@ public class PopUpEditor extends AbstractComplexEditor implements Wrapper {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.change.DataChangeListener#dataChanged(de.uos.fmt.musitech.framework.change.DataChangeEvent)
 	 */
+	@Override
 	public void dataChanged(DataChangeEvent e) {
 		dataChangeEvent = new DataChangeEvent(e.getSource(), e.getChangedData());
 		super.dataChanged(e);
@@ -222,6 +227,7 @@ public class PopUpEditor extends AbstractComplexEditor implements Wrapper {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#isRemoteEventSource(java.lang.Object)
 	 */
+	@Override
 	protected boolean isRemoteEventSource(Object eventSource) {
 		boolean related = false;
 		if (editorToPopUp != null)
@@ -235,6 +241,7 @@ public class PopUpEditor extends AbstractComplexEditor implements Wrapper {
 	 * @return true if this editor has the focus, false otherwise
 	 * @see de.uos.fmt.musitech.framework.editor.Editor#isFocused()
 	 */
+	@Override
 	public boolean isFocused() {
 		return isFocusOwner(); // TODO welche Komponenten fragen?
 	}
@@ -359,6 +366,7 @@ public class PopUpEditor extends AbstractComplexEditor implements Wrapper {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#updateEditor()
 	 */
+	@Override
 	public void updateDisplay() {
 		dataChanged = false;
 		// if (editObjCopy != null)
@@ -378,6 +386,7 @@ public class PopUpEditor extends AbstractComplexEditor implements Wrapper {
 
 	class PopUpWindowListener extends WindowAdapter {
 
+		@Override
 		public void windowDeactivated(WindowEvent we) {
 			// updateEditor();
 			// Modif040803: if added

@@ -106,6 +106,7 @@ public class EpecParserTest2 extends JFrame {
 		*/
 		
 		addWindowListener(new WindowAdapter() {
+			@Override
 			public void windowClosing(WindowEvent ev) {
 				System.exit(0);
 			}
@@ -149,6 +150,7 @@ public class EpecParserTest2 extends JFrame {
 			this.parent = parent;
 		}
 		
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			system = new NotationSystem(context);
 			EpecParser parser = new EpecParser();

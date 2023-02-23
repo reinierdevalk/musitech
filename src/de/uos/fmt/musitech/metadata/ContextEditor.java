@@ -105,7 +105,8 @@ public class ContextEditor extends AbstractComplexEditor {
      *  
      * @see de.uos.fmt.musitech.framework.editor.Display#init(java.lang.Object, de.uos.fmt.musitech.framework.editor.EditingProfile, de.uos.fmt.musitech.framework.editor.Display)
      */
-    public void init(Object editObj, EditingProfile profile, Display root){
+    @Override
+	public void init(Object editObj, EditingProfile profile, Display root){
         this.editObj = editObj;
         this.profile = profile;
         if (profile!=null && profile.getPropertyName()!=null){
@@ -179,7 +180,8 @@ public class ContextEditor extends AbstractComplexEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#updateDisplay()
      */
-    public void updateDisplay() {
+    @Override
+	public void updateDisplay() {
         metaDataEditor.updateDisplay();
     }
 
@@ -188,7 +190,8 @@ public class ContextEditor extends AbstractComplexEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#createGUI()
      */
-    protected void createGUI() {
+    @Override
+	protected void createGUI() {
         setLayout(new BorderLayout());
         if (metaDataEditor!=null){
             add(metaDataEditor);
@@ -201,7 +204,8 @@ public class ContextEditor extends AbstractComplexEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#isFocused()
      */
-    public boolean isFocused() {
+    @Override
+	public boolean isFocused() {
         return isFocusOwner() || metaDataEditor.isFocusOwner();
     }
 

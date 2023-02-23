@@ -51,27 +51,8 @@ above is subject to the following three conditions:
 package de.uos.fmt.musitech.performance.gui;
 
 import java.awt.BorderLayout;
-import java.awt.Cursor;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.util.ArrayList;
-
-import javax.swing.AbstractAction;
-import javax.swing.Action;
-import javax.swing.Box;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JPanel;
-
-import de.uos.fmt.musitech.data.performance.MidiNote;
-import de.uos.fmt.musitech.data.performance.MidiNoteSequence;
-import de.uos.fmt.musitech.data.performance.PerformanceNote;
 import de.uos.fmt.musitech.data.structure.container.BasicContainer;
 import de.uos.fmt.musitech.data.structure.container.Container;
 import de.uos.fmt.musitech.data.time.Timeable;
@@ -80,8 +61,6 @@ import de.uos.fmt.musitech.framework.change.DataChangeManager;
 import de.uos.fmt.musitech.framework.editor.AbstractDisplay;
 import de.uos.fmt.musitech.framework.editor.Display;
 import de.uos.fmt.musitech.framework.editor.EditingProfile;
-import de.uos.fmt.musitech.framework.editor.MouseEditorUtils;
-import de.uos.fmt.musitech.framework.editor.TimedImageStaffEditor;
 import de.uos.fmt.musitech.time.gui.LinearDisplayPanel;
 
 /**
@@ -117,7 +96,8 @@ public class PianoRollPanel extends AbstractDisplay implements Timeable {
      *      de.uos.fmt.musitech.framework.editor.EditingProfile,
      *      de.uos.fmt.musitech.framework.editor.Display)
      */
-    public void init(Object editObject, EditingProfile profile, Display root) {
+    @Override
+	public void init(Object editObject, EditingProfile profile, Display root) {
         super.init(editObject, profile, root);
         cont = (Container) getPropertyValue();
         if (cont == null) {
@@ -132,7 +112,8 @@ public class PianoRollPanel extends AbstractDisplay implements Timeable {
     /**
      *  
      */
-    public void createGUI() {
+    @Override
+	public void createGUI() {
         if (cont == null) {
             // default Container
             cont = new BasicContainer();
@@ -175,14 +156,16 @@ public class PianoRollPanel extends AbstractDisplay implements Timeable {
     /**
      * @see de.uos.fmt.musitech.data.time.Timeable#setTimePosition(long)
      */
-    public void setTimePosition(long timeMicros) {
+    @Override
+	public void setTimePosition(long timeMicros) {
         displayPanel.setTimePosition(timeMicros);
     }
 
     /**
      * @see de.uos.fmt.musitech.data.time.Timeable#getEndTime()
      */
-    public long getEndTime() {
+    @Override
+	public long getEndTime() {
         return displayPanel.getEndTime();
     }
 
@@ -216,7 +199,8 @@ public class PianoRollPanel extends AbstractDisplay implements Timeable {
     /**
      * @see de.uos.fmt.musitech.framework.editor.AbstractDisplay#dataChanged(de.uos.fmt.musitech.framework.change.DataChangeEvent)
      */
-    public void dataChanged(DataChangeEvent e) {
+    @Override
+	public void dataChanged(DataChangeEvent e) {
         super.dataChanged(e);
         System.out.println("PianoRollPanel: Data changed");
         displayPanel.updateDisplay();

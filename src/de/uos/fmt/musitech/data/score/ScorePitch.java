@@ -309,7 +309,8 @@ public class ScorePitch implements Serializable{
      * 
      * @see java.lang.Object#toString()
      */
-    public String toString() {
+    @Override
+	public String toString() {
         StringBuffer sb = new StringBuffer();
         if (getOctave() >= 0) {
             for (int i = 0; i < getOctave(); i++)
@@ -337,7 +338,8 @@ public class ScorePitch implements Serializable{
      * @return true if equal, false else
      * @see java.lang.Object#equals(java.lang.Object)
      */
-    public boolean equals(Object obj) {
+    @Override
+	public boolean equals(Object obj) {
     	if(obj == null || !(obj instanceof ScorePitch ))
     		return false;
         ScorePitch sp = (ScorePitch) obj;
@@ -469,7 +471,7 @@ public class ScorePitch implements Serializable{
 		String alphabet = "cdefgab";
 		diatonic = Character.toLowerCase(getDiatonic());
 		char nextDiatonic = alphabet.charAt((alphabet.indexOf(diatonic) + steps) % 7);
-		int octave = this.getOctave() + (int) ( (alphabet.indexOf(diatonic) + steps) / 7 );
+		int octave = this.getOctave() + (alphabet.indexOf(diatonic) + steps) / 7;
 		return new ScorePitch(nextDiatonic, octave, 0);
     }
     

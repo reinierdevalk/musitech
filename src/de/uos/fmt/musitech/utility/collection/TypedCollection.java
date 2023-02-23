@@ -275,7 +275,8 @@ public class TypedCollection<T> implements Serializable, Cloneable {
      * 
      * @see java.lang.Object#clone()
      */
-    public synchronized Object clone() {
+    @Override
+	public synchronized Object clone() {
         TypedCollection tc;
         try {
             tc = (TypedCollection) super.clone();

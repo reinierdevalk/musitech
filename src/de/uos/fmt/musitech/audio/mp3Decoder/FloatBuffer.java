@@ -92,6 +92,7 @@ public class FloatBuffer extends Obuffer {
 	/**
 	 *
 	 */
+	@Override
 	public void clear_buffer() {
 		for (int i = 0; i < channels; ++i)
 			bufferp[i] = 0;	// all channels begin, off course, with the some index, different from SampleBuffer
@@ -106,6 +107,7 @@ public class FloatBuffer extends Obuffer {
 
 	}
 
+	@Override
 	public void appendSamples(int channel, float[] f) {
 		int pos = bufferp[channel];
 		for (int i = 0; i < 32;) {
@@ -133,6 +135,7 @@ public class FloatBuffer extends Obuffer {
 	/**
 	 * @see javazoom.jl.decoder.Obuffer#append(int, short)
 	 */
+	@Override
 	public void append(int channel, short value) {
 		append(channel, (float) value);
 		System.out.println("FloatBuffer.append(...): es wird doch ein short geschrieben!");
@@ -141,16 +144,19 @@ public class FloatBuffer extends Obuffer {
 	/**
 	 * @see javazoom.jl.decoder.Obuffer#write_buffer(int)
 	 */
+	@Override
 	public void write_buffer(int val) {
 	}
 	/**
 	 * @see javazoom.jl.decoder.Obuffer#close()
 	 */
+	@Override
 	public void close() {
 	}
 	/**
 	 * @see javazoom.jl.decoder.Obuffer#set_stop_flag()
 	 */
+	@Override
 	public void set_stop_flag() {
 	}
 

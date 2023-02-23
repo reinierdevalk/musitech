@@ -74,8 +74,8 @@ public class ClefContainer extends SortedContainer<Clef> {
 	public Clef getClefAt(Rational pos) {
 		Clef c = null;
 		for (int i = 0; i < size(); i++) {
-			if(((Clef)get(i)).getMetricTime().isLessOrEqual(pos))
-				c = (Clef)get(i);
+			if(get(i).getMetricTime().isLessOrEqual(pos))
+				c = get(i);
 			else
 				break;
 		}

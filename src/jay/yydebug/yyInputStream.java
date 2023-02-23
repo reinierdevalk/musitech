@@ -63,17 +63,20 @@ public class yyInputStream extends InputStream implements KeyListener {
   protected final StringBuffer line = new StringBuffer();
   protected Vector queue = new Vector();	// null after close()
 
-  public synchronized int available () throws IOException {
+  @Override
+public synchronized int available () throws IOException {
     if (queue == null) throw new IOException("closed");
     return queue.isEmpty() ? 0 : ((byte[])queue.firstElement()).length;
   }
 
-  public synchronized void close () throws IOException {
+  @Override
+public synchronized void close () throws IOException {
     if (queue == null) throw new IOException("closed");
     queue = null;
   }
 
-  public synchronized int read () throws IOException {
+  @Override
+public synchronized int read () throws IOException {
     if (queue == null) throw new IOException("closed");
     while (queue.isEmpty())
       try {
@@ -95,7 +98,8 @@ public class yyInputStream extends InputStream implements KeyListener {
     return buf[0] & 255;
   }
 
-  public synchronized int read(byte[] b, int off, int len) throws IOException {
+  @Override
+public synchronized int read(byte[] b, int off, int len) throws IOException {
     if (queue == null) throw new IOException("closed");
     while (queue.isEmpty())
       try {
@@ -118,14 +122,16 @@ public class yyInputStream extends InputStream implements KeyListener {
     return len;
   }
 
-  public long skip (long len) {
+  @Override
+public long skip (long len) {
     return 0;				// don't skip on terminal
   }
 
   // BUG: Rhapsody DR2 seems to not send some keys to keyTyped()
   //	e.g. German keyboard + is dropped, but numeric pad + is processed
 
-  public void keyTyped (KeyEvent ke) {
+  @Override
+public void keyTyped (KeyEvent ke) {
     TextArea ta = (TextArea)ke.getComponent();
     char ch = ke.getKeyChar();
 
@@ -159,9 +165,11 @@ public class yyInputStream extends InputStream implements KeyListener {
     line.setLength(0);
   }
 
-  public void keyPressed (KeyEvent ke) {
+  @Override
+public void keyPressed (KeyEvent ke) {
   }
 
-  public void keyReleased (KeyEvent ke) {
+  @Override
+public void keyReleased (KeyEvent ke) {
   }
 }

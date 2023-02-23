@@ -55,6 +55,7 @@ import java.net.URL;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.framework.editor.EditingProfile;
 import de.uos.fmt.musitech.framework.editor.Editor;
@@ -147,7 +148,7 @@ public class IconURLEditorTestGUI {
     
     private static void closing(){
        JFrame closingFrame = new JFrame("For closing");
-       closingFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       closingFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
        closingFrame.setVisible(true);
     }
 

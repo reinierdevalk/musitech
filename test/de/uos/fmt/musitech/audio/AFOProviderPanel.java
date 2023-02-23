@@ -97,6 +97,7 @@ public class AFOProviderPanel extends JPanel {
 
 		// textField.setPreferredSize(new Dimension(800, 100));
 		fileChooserButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				String fileName = requestFile();
 				fileToLoad = new File(fileName);

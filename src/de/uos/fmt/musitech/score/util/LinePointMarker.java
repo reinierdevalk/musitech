@@ -64,12 +64,14 @@ public class LinePointMarker implements PointMarker
       this.prevPoint = new Pair();
    }
    
-   public void markFirstPoint(Pair p)
+   @Override
+public void markFirstPoint(Pair p)
    {
    	prevPoint.assign(p);
    }
 
-   public void markPoint(Pair p)
+   @Override
+public void markPoint(Pair p)
    {      
       int x1 = (int)Math.round(prevPoint.getX());
       int y1 = (int)Math.round(prevPoint.getY());

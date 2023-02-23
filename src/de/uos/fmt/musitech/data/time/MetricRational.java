@@ -68,6 +68,7 @@ public class MetricRational extends Rational {
 	}
 	
 	//TODO just hacked for use in PitchExtractionAlgorithm in Exericse Generator
+	@Override
 	public int compare(int num, int den) {
 		if (super.compare(num, den)==0){
 			if (this.getNumer()< num){

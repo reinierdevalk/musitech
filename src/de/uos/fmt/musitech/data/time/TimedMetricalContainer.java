@@ -91,7 +91,7 @@ public class TimedMetricalContainer extends SortedContainer<TimedMetrical> {
 
 		if (position < 0) return null;
 
-		return (TimedMetrical)get(position);
+		return get(position);
 			
 	}
 	

@@ -58,6 +58,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JComponent;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.time.Marker;
 import de.uos.fmt.musitech.data.time.TimedMetrical;
@@ -90,6 +91,7 @@ public class MarkerIconDisplay extends JComponent {
 
 		this.addMouseListener(new MouseListener() {
 
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				selected = !selected;
 				repaint();
@@ -111,13 +113,14 @@ public class MarkerIconDisplay extends JComponent {
 					edPan.addEditor(editor);
 					//EditorWindow edWin = new EditorWindow("Marker");
 					EditorDialog edWin = new EditorDialog("Marker");
-					edWin.setDefaultCloseOperation(EditorDialog.DISPOSE_ON_CLOSE);
+					edWin.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 					edWin.setEditorPanel(edPan);
 					edWin.pack();
 					edWin.show();
 				}
 			}
 
+			@Override
 			public void mouseEntered(MouseEvent e) {
 				markerPanel.getMarkerControlPanel().setTimeLabels(
 					markerPanel.getMetricalTimeLine().getTime(marker.getMetricTime()),
@@ -125,10 +128,13 @@ public class MarkerIconDisplay extends JComponent {
 					markerPanel.getMetricalTimeLine().getCurrentTimeSignature(marker.getMetricTime()));
 			}
 
+			@Override
 			public void mouseExited(MouseEvent e) { }
 
+			@Override
 			public void mousePressed(MouseEvent e) { }
 
+			@Override
 			public void mouseReleased(MouseEvent e) { }
 		});
 
@@ -138,6 +144,7 @@ public class MarkerIconDisplay extends JComponent {
 		}
 	}
 
+	@Override
 	public void paintComponent(Graphics g) {
 		if (selected)
 			img = img_light;

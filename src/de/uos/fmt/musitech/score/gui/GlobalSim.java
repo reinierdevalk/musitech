@@ -49,7 +49,6 @@ package de.uos.fmt.musitech.score.gui;
 
 import java.awt.Dimension;
 import java.awt.Point;
-import java.util.Iterator;
 import java.util.Vector;
 
 import de.uos.fmt.musitech.utility.math.Rational;
@@ -75,6 +74,7 @@ public class GlobalSim implements SpringAttacher {
 	}
 
 	/** Returns the attack (onset) time of this GlobalSim */
+	@Override
 	public Rational attackTime() {
 		if (localSims.isEmpty())
 			return new Rational(-1);
@@ -110,9 +110,11 @@ public class GlobalSim implements SpringAttacher {
 		*/
 	}
 
+	@Override
 	public int lwidth() {
 		return lwidth;
 	}
+	@Override
 	public int rwidth() {
 		return rwidth;
 	}
@@ -130,6 +132,7 @@ public class GlobalSim implements SpringAttacher {
 	/** Returns the ideal distance between this GlobalSim and the following (in pixel units).
 	 *  This space is assigned if the current line of music need not to be stretched. Otherwise
 	 *  the distance will be enlarged or reduced (based on the optimal value). */
+	@Override
 	public int optimalSpace(SpringAttacher successor) {
 		double factor = 1;
 		if (successor != null && successor.attackTime() != null && minDuration.sign() > 0)
@@ -146,11 +149,13 @@ public class GlobalSim implements SpringAttacher {
 		return localSims;
 	}
 
+	@Override
 	public void setXPos(int x) {
 		for (int i = 0; i < localSims.size(); i++)
 			 ((LocalSim) localSims.get(i)).setXPos(x);
 	}
 
+	@Override
 	public void setParentXPos(int x) {
 		for (int i = 0; i < localSims.size(); i++) {
 			LocalSim lsim = (LocalSim) localSims.get(i);
@@ -164,6 +169,7 @@ public class GlobalSim implements SpringAttacher {
 		}
 	}
 
+	@Override
 	public void setMeasureRWidth(int width) {
 		for (int i = 0; i < localSims.size(); i++) {
 			LocalSim lsim = (LocalSim) localSims.get(i);
@@ -204,6 +210,7 @@ public class GlobalSim implements SpringAttacher {
 		*/
 	}
 	
+	@Override
 	public String toString() {
 		String res = "GlobalSim at " + attackTime() + " with duration " + minDuration + "\n";
 		for (int i = 0; i < localSims.size(); i++) 

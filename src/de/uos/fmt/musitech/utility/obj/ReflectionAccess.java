@@ -209,6 +209,7 @@ public class ReflectionAccess {
 		/**
 		 * @see de.uos.fmt.musitech.utility.obj.ReflectionAccess.PropertyAccess#getProperty(java.lang.Object)
 		 */
+		@Override
 		public Object getProperty(Object object) {
 			try {
 				return field.get(object);
@@ -222,6 +223,7 @@ public class ReflectionAccess {
 		/**
 		 * @see ReflectionAccess.PropertyAccess#setProperty(Object, Object)
 		 */
+		@Override
 		public void setProperty(Object object, Object value) {
 			try {
 				field.set(object, value);
@@ -235,6 +237,7 @@ public class ReflectionAccess {
 		/**
 		 * @see de.uos.fmt.musitech.utility.obj.ReflectionAccess.PropertyAccess#getType()
 		 */
+		@Override
 		public Class<?> getType() {
 			return field.getType();
 		}
@@ -274,6 +277,7 @@ public class ReflectionAccess {
 		/**
 		 * @see de.uos.fmt.musitech.utility.obj.ReflectionAccess.PropertyAccess#getProperty(java.lang.Object)
 		 */
+		@Override
 		public Object getProperty(Object object) {
 			try {
 				return methodGet.invoke(object, zeroArgs);
@@ -294,6 +298,7 @@ public class ReflectionAccess {
 		 * @see de.uos.fmt.musitech.utility.obj.ReflectionAccess.PropertyAccess#setProperty(java.lang.Object,
 		 *      java.lang.Object)
 		 */
+		@Override
 		public void setProperty(Object object, Object value) {
 			// oneArg[0] = value;
 			oneArg[0] = adaptPrimArrayTypes(value, getType());
@@ -309,6 +314,7 @@ public class ReflectionAccess {
 		/**
 		 * @see de.uos.fmt.musitech.utility.obj.ReflectionAccess.PropertyAccess#getType()
 		 */
+		@Override
 		public Class<?> getType() {
 			return methodGet.getReturnType();
 		}

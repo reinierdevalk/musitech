@@ -211,6 +211,7 @@ public class FXFloatFilterInputStream implements FloatInputStream, FISReader {
 	 * Returns the floatInputStream.
 	 * @return FloatInputStream
 	 */
+	@Override
 	public FloatInputStream getFloatInputStream() {
 		return floatInputStream;
 	}
@@ -219,6 +220,7 @@ public class FXFloatFilterInputStream implements FloatInputStream, FISReader {
 	 * Sets the floatInputStream.
 	 * @param floatInputStream The floatInputStream to set
 	 */
+	@Override
 	public FISReader setFloatInputStream(FloatInputStream fis) {
 		this.floatInputStream = fis;
 		if (fis != null) {
@@ -241,6 +243,7 @@ public class FXFloatFilterInputStream implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.FloatInputStream#read(float, int, int)
 	 */
+	@Override
 	public int read(float[][] data, int start, int len) throws IOException {
 
 		// XXXX return floatInputStream.read(data, start, len);
@@ -276,6 +279,7 @@ public class FXFloatFilterInputStream implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.FloatInputStream#read(float)
 	 */
+	@Override
 	public int read(float[][] data) throws IOException {
 		return read(data, 0, data[0].length);
 	}
@@ -303,18 +307,21 @@ public class FXFloatFilterInputStream implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getFormat()
 	 */
+	@Override
 	public AudioFormat getFormat() {
 		return floatInputStream.getFormat();
 	}
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#skip(long)
 	 */
+	@Override
 	public long skip(long n) throws IOException {
 		return floatInputStream.skip(n);
 	}
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#reset()
 	 */
+	@Override
 	public void reset() throws IOException {
 		floatInputStream.reset();
 	}
@@ -323,6 +330,7 @@ public class FXFloatFilterInputStream implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
 	 */
+	@Override
 	public long remainingSamples() {
 		return floatInputStream.remainingSamples();
 	}
@@ -330,6 +338,7 @@ public class FXFloatFilterInputStream implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public long getPositionInSamples() {
 		return floatInputStream.getPositionInSamples();
 	}
@@ -337,6 +346,7 @@ public class FXFloatFilterInputStream implements FloatInputStream, FISReader {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public void setPositionInSamples(long newPos) throws IOException {
 		floatInputStream.setPositionInSamples(newPos);
 	}

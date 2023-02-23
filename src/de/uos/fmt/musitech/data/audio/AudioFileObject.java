@@ -54,7 +54,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 
@@ -317,6 +316,7 @@ public class AudioFileObject extends AudioObject {
 	 * 
 	 * @see de.uos.fmt.musitech.data.audio.AudioObject#getAudioInputStream()
 	 */
+	@Override
 	public AudioInputStream getAudioInputStream() {
 		return new FIStoAIS(getFloatInputStream());
 	}
@@ -331,6 +331,7 @@ public class AudioFileObject extends AudioObject {
 	 * @see de.uos.fmt.musitech.data.audio.AudioObject#getFloatInputStream()
 	 *      hibernate.property
 	 */
+	@Override
 	public FloatInputStream getFloatInputStream() {
 
 		if (fis == null) {
@@ -433,6 +434,7 @@ public class AudioFileObject extends AudioObject {
 	 * @see de.uos.fmt.musitech.data.time.Timed#getDuration() hibernate.property
 	 *      access = "field"
 	 */
+	@Override
 	public long getDuration() {
 		if (fis == null) {
 			getFloatInputStream();

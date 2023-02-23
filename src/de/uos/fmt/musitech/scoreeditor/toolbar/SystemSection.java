@@ -78,12 +78,14 @@ public class SystemSection extends AbstractToolbarSection {
 
 		tb.add(new AbstractAction(Messages.getString("SystemSection.AddSystem"), Icons //$NON-NLS-1$
 				.getIcon("sys_dazu.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				getScoreEditor().getScoreManipulator().addStaff();
 			}
 		});
 		tb.add(new AbstractAction(Messages.getString("SystemSection.DeleteSystem"), Icons //$NON-NLS-1$
 				.getIcon("sys_weg.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				getScoreEditor().getScoreManipulator().removeStaff();
 			}
@@ -91,6 +93,7 @@ public class SystemSection extends AbstractToolbarSection {
 
 		tb.add(new AbstractAction(Messages.getString("SystemSection.AddMeasure"), Icons //$NON-NLS-1$
 				.getIcon("takt.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				getScoreEditor().getScoreManipulator().appendMeasure();
 			}
@@ -98,6 +101,7 @@ public class SystemSection extends AbstractToolbarSection {
 		
 		tb.add(new AbstractAction(Messages.getString("SystemSection.DeleteTrailingMaesures"), Icons //$NON-NLS-1$
 				.getIcon("takt_weg.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				getScoreEditor().getScoreManipulator().trim();
 				getScoreEditor().getScoreManipulator().notationSystemChanged();
@@ -112,6 +116,7 @@ public class SystemSection extends AbstractToolbarSection {
 			systembox.addItem(Messages.getString("SystemSection.System") + (i+1)); //$NON-NLS-1$
 		}
 		systembox.addItemListener(new ItemListener() {
+			@Override
 			public void itemStateChanged(ItemEvent e) {
 				getScoreEditor().setSelectedStaff(systembox.getSelectedIndex());
 			}
@@ -119,6 +124,7 @@ public class SystemSection extends AbstractToolbarSection {
 		systembox.setEditable(false);
 	}
 	
+	@Override
 	public void update() {
 		if (systembox.getItemCount() != getScoreEditor().getNotationSystem().size()) {
 			systembox.removeAllItems();

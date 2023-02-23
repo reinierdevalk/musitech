@@ -53,6 +53,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JDialog;
+import javax.swing.WindowConstants;
 
 
 /**
@@ -95,7 +96,7 @@ public class EditorDialog extends JDialog implements ActionListener {
 		
 //		pack();
 //		setVisible(true);
-		setDefaultCloseOperation(JDialog.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	}
 
 			/**
@@ -132,6 +133,7 @@ public class EditorDialog extends JDialog implements ActionListener {
 		/**
 		 * Disposes the JDialog
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e) {
 //			System.exit(0);
 			//hide();

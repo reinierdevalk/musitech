@@ -176,13 +176,13 @@ public class MetaDataEditorTest extends TestCase {
 		//		testMetaDataCollection.addProfile(audio);
 
 		MetaDataProfile recording =
-			(MetaDataProfile) MetaDataProfileManager.getMetaDataProfile(
-				"Recording");
+			MetaDataProfileManager.getMetaDataProfile(
+			"Recording");
 		testMetaDataCollection.addProfile(recording);
 
 		MetaDataProfile piece =
-			(MetaDataProfile) MetaDataProfileManager.getMetaDataProfile(
-				"Piece");
+			MetaDataProfileManager.getMetaDataProfile(
+			"Piece");
 		testMetaDataCollection.addProfile(piece);
 		//MetaDataProfileManager.writeProfilesToXml();	TODO Kommentar wieder löschen
 		return testMetaDataCollection;
@@ -518,7 +518,7 @@ public class MetaDataEditorTest extends TestCase {
 		boolean error = false;
 		Map tableOfManager = DataChangeManager.getInstance().getTable();
 		for (Iterator iter = tableOfManager.keySet().iterator(); iter.hasNext();) {
-			Object key = (Object) iter.next();
+			Object key = iter.next();
 			if (key instanceof MetaDataItem && editObj1.containsMetaDataItem((MetaDataItem)key)){
 				ArrayList views = (ArrayList)tableOfManager.get(key);
 				if (views.size()!=2){

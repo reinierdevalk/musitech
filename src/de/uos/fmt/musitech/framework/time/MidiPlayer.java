@@ -280,6 +280,7 @@ public class MidiPlayer implements MidiDevice, Runnable, Transmitter, Player {
 	 * 
 	 * @see java.lang.Runnable#run()
 	 */
+	@Override
 	public void run() {
 
 		if (DEBUG) {
@@ -697,6 +698,7 @@ public class MidiPlayer implements MidiDevice, Runnable, Transmitter, Player {
 	// timeablesVector.remove(timeable);
 	// }
 
+	@Override
 	public void start() {
 		settingTime = false;
 		playing = true;
@@ -713,12 +715,14 @@ public class MidiPlayer implements MidiDevice, Runnable, Transmitter, Player {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.time.Player#reset()
 	 */
+	@Override
 	public void reset() {
 	}
 
 	/**
 	 * @see de.uos.fmt.musitech.framework.time.Player#stop()
 	 */
+	@Override
 	public void stop() {
 		if (DebugState.DEBUG)
 			System.out.println("MidiPlayer: stop()");
@@ -740,6 +744,7 @@ public class MidiPlayer implements MidiDevice, Runnable, Transmitter, Player {
 	/**
 	 * @see de.uos.fmt.musitech.framework.time.Player#setTimePosition(long)
 	 */
+	@Override
 	public void setTimePosition(long timeMillis) {
 		// settingTime flag is used in delivering events to avoid hanging in
 		// while loop
@@ -906,6 +911,7 @@ public class MidiPlayer implements MidiDevice, Runnable, Transmitter, Player {
 		return controllerNumbers;
 	}
 
+	@Override
 	public void setPlayTimer(PlayTimer timer) {
 		playTimer = timer;
 
@@ -914,6 +920,7 @@ public class MidiPlayer implements MidiDevice, Runnable, Transmitter, Player {
 	/**
 	 * @see javax.sound.midi.Transmitter#getReceiver()
 	 */
+	@Override
 	public Receiver getReceiver() {
 		// Auto-generated method stub
 		return receiver;
@@ -922,6 +929,7 @@ public class MidiPlayer implements MidiDevice, Runnable, Transmitter, Player {
 	/**
 	 * @see javax.sound.midi.Transmitter#setReceiver(javax.sound.midi.Receiver)
 	 */
+	@Override
 	public void setReceiver(Receiver newReceiver) {
 		receiver = newReceiver;
 	}
@@ -929,6 +937,7 @@ public class MidiPlayer implements MidiDevice, Runnable, Transmitter, Player {
 	/**
 	 * @see javax.sound.midi.Transmitter#close()
 	 */
+	@Override
 	public void close() {
 		// Auto-generated method stub
 
@@ -937,6 +946,7 @@ public class MidiPlayer implements MidiDevice, Runnable, Transmitter, Player {
 	/**
 	 * @see javax.sound.midi.MidiDevice#getMaxReceivers()
 	 */
+	@Override
 	public int getMaxReceivers() {
 		return 0;
 	}
@@ -944,6 +954,7 @@ public class MidiPlayer implements MidiDevice, Runnable, Transmitter, Player {
 	/**
 	 * @see javax.sound.midi.MidiDevice#getMaxTransmitters()
 	 */
+	@Override
 	public int getMaxTransmitters() {
 		// Auto-generated method stub
 		return 0;
@@ -952,6 +963,7 @@ public class MidiPlayer implements MidiDevice, Runnable, Transmitter, Player {
 	/**
 	 * @see javax.sound.midi.MidiDevice#getMicrosecondPosition()
 	 */
+	@Override
 	public long getMicrosecondPosition() {
 		return 0;
 	}
@@ -959,6 +971,7 @@ public class MidiPlayer implements MidiDevice, Runnable, Transmitter, Player {
 	/**
 	 * @see javax.sound.midi.MidiDevice#open()
 	 */
+	@Override
 	public void open() throws MidiUnavailableException {
 		openImpl();
 	}
@@ -966,6 +979,7 @@ public class MidiPlayer implements MidiDevice, Runnable, Transmitter, Player {
 	/**
 	 * @see javax.sound.midi.MidiDevice#isOpen()
 	 */
+	@Override
 	public boolean isOpen() {
 		return open;
 	}
@@ -973,6 +987,7 @@ public class MidiPlayer implements MidiDevice, Runnable, Transmitter, Player {
 	/**
 	 * @see javax.sound.midi.MidiDevice#getDeviceInfo()
 	 */
+	@Override
 	public Info getDeviceInfo() {
 		return null;
 	}
@@ -980,6 +995,7 @@ public class MidiPlayer implements MidiDevice, Runnable, Transmitter, Player {
 	/**
 	 * @see javax.sound.midi.MidiDevice#getTransmitter()
 	 */
+	@Override
 	public Transmitter getTransmitter() throws MidiUnavailableException {
 		return null;
 	}
@@ -987,6 +1003,7 @@ public class MidiPlayer implements MidiDevice, Runnable, Transmitter, Player {
 	/**
 	 * @see de.uos.fmt.musitech.framework.time.Player#getEndTime()
 	 */
+	@Override
 	public long getEndTime() {
 
 		return -1;
@@ -1009,6 +1026,7 @@ public class MidiPlayer implements MidiDevice, Runnable, Transmitter, Player {
 	/**
 	 * @see javax.sound.midi.MidiDevice#getReceivers()
 	 */
+	@Override
 	public List getReceivers() {
 		// TODO Auto-generated in order to fully implement JAVA 1.5 interface
 		return null;
@@ -1017,6 +1035,7 @@ public class MidiPlayer implements MidiDevice, Runnable, Transmitter, Player {
 	/**
 	 * @see javax.sound.midi.MidiDevice#getTransmitters()
 	 */
+	@Override
 	public List getTransmitters() {
 		// TODO Auto-generated in order to fully implement JAVA 1.5 interface
 		return null;

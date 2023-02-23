@@ -74,6 +74,7 @@ public class FISSampleCallback implements FISReader, FloatInputStream
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float[][])
 	 */
+	@Override
 	public synchronized int read(float[][] data) throws IOException {
 		return read(data, 0, data[0].length);
 	}
@@ -83,6 +84,7 @@ public class FISSampleCallback implements FISReader, FloatInputStream
 	 * If the callbackSample is reached, notify the listeners.
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float[][], int, int)
 	 */
+	@Override
 	public synchronized int read(float[][] data, int start, int len) throws IOException {
 		// look if so many samples rest to the next callback-sample
 		// as required. Do not read more samples than rest.	
@@ -109,6 +111,7 @@ public class FISSampleCallback implements FISReader, FloatInputStream
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#skip(long)
 	 */
+	@Override
 	public synchronized long skip(long n) throws IOException {
 		if(n>callbackSample-samplesRead)
 			n = callbackSample-samplesRead;
@@ -126,6 +129,7 @@ public class FISSampleCallback implements FISReader, FloatInputStream
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#reset()
 	 */
+	@Override
 	public synchronized void reset() throws IOException {
 		source.reset();
 		samplesRead = 0;
@@ -136,6 +140,7 @@ public class FISSampleCallback implements FISReader, FloatInputStream
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FISReader#setFloatInputStream(de.uos.fmt.musitech.audio.floatStream.FloatInputStream)
 	 */
+	@Override
 	public synchronized FISReader setFloatInputStream(FloatInputStream fis) {
 		source = fis;
 		return this;
@@ -144,6 +149,7 @@ public class FISSampleCallback implements FISReader, FloatInputStream
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FISReader#getFloatInputStream()
 	 */
+	@Override
 	public FloatInputStream getFloatInputStream() {
 		return source;
 	}
@@ -151,6 +157,7 @@ public class FISSampleCallback implements FISReader, FloatInputStream
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getFormat()
 	 */
+	@Override
 	public AudioFormat getFormat() {
 		return source.getFormat();
 	}
@@ -229,7 +236,7 @@ public class FISSampleCallback implements FISReader, FloatInputStream
 		}
 		SampleReachListener srl;
 		for(Iterator<SampleReachListener> iter = srListeners.iterator(); iter.hasNext(); ){
-			srl = (SampleReachListener) iter.next();
+			srl = iter.next();
 			switch(notifyThat){
 				case notifySReached:
 					srl.sampleReached();
@@ -249,6 +256,7 @@ private final int notifyReset = 2;
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
 	 */
+	@Override
 	public long remainingSamples() {
 		return source.remainingSamples();
 	}
@@ -256,6 +264,7 @@ private final int notifyReset = 2;
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public long getPositionInSamples() {
 		return getSamplesRead();
 	}
@@ -264,6 +273,7 @@ private final int notifyReset = 2;
 	 * @param newPos The position to set the stream to.
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public synchronized void setPositionInSamples(long newPos) {
 		try {
 			reset();

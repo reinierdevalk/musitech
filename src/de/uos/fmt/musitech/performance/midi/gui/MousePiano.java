@@ -48,28 +48,19 @@ above is subject to the following three conditions:
 package de.uos.fmt.musitech.performance.midi.gui;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Graphics;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
-
-import javax.sound.midi.InvalidMidiDataException;
-import javax.sound.midi.MidiDevice;
 import javax.sound.midi.MidiMessage;
-import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Receiver;
 import javax.sound.midi.ShortMessage;
 import javax.sound.midi.Transmitter;
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
-import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.utility.DebugState;
 
@@ -119,24 +110,30 @@ public class MousePiano extends JLayeredPane implements Receiver, Transmitter,
 
         // dummy Receiver
         receiver = new Receiver() {
-            public void close() {
+            @Override
+			public void close() {
             }
 
-            public void send(MidiMessage message, long timeStamp) {
+            @Override
+			public void send(MidiMessage message, long timeStamp) {
             }
         };
         addComponentListener(new ComponentListener() {
-            public void componentHidden(ComponentEvent e) {
+            @Override
+			public void componentHidden(ComponentEvent e) {
             }
 
-            public void componentMoved(ComponentEvent e) {
+            @Override
+			public void componentMoved(ComponentEvent e) {
             }
 
-            public void componentResized(ComponentEvent e) {
+            @Override
+			public void componentResized(ComponentEvent e) {
                 pianoLayout(lowestKey, numberOfKeys);
             }
 
-            public void componentShown(ComponentEvent e) {
+            @Override
+			public void componentShown(ComponentEvent e) {
                 //				getParent().getFocusTraversalPolicy().;
                 requestFocus();
             }
@@ -204,7 +201,7 @@ public class MousePiano extends JLayeredPane implements Receiver, Transmitter,
         MousePiano piano = new MousePiano();
         JFrame frame = new JFrame();
         frame.getContentPane().setLayout(new BorderLayout());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(500, 200);
         frame.setLocation(200, 300);
 
@@ -216,10 +213,12 @@ public class MousePiano extends JLayeredPane implements Receiver, Transmitter,
     /**
      * @see javax.sound.midi.Transmitter#close()
      */
-    public void close() {
+    @Override
+	public void close() {
     }
 
-    public Receiver getReceiver() {
+    @Override
+	public Receiver getReceiver() {
         return receiver;
     }
 
@@ -229,7 +228,8 @@ public class MousePiano extends JLayeredPane implements Receiver, Transmitter,
      * @see javax.sound.midi.Receiver#send(MidiMessage, long)
      */
 
-    public void send(MidiMessage message, long timeStamp) {
+    @Override
+	public void send(MidiMessage message, long timeStamp) {
     	if(getThru()) {
     		receiver.send(message, timeStamp);
     	}
@@ -264,7 +264,7 @@ public class MousePiano extends JLayeredPane implements Receiver, Transmitter,
                         // not found or out of range
                         if (keyToTry == keyToFind) {
                             keyFound = true;
-                            BlackKey blackKey = (BlackKey) blackKeys.get(index);
+                            BlackKey blackKey = blackKeys.get(index);
                             if (message.getStatus() >= ShortMessage.NOTE_ON
                                     && message.getStatus() <= ShortMessage.NOTE_ON + 15)
                                 // note on ch 1-15
@@ -295,7 +295,7 @@ public class MousePiano extends JLayeredPane implements Receiver, Transmitter,
                         // not found or out of range
                         if (keyToTry == keyToFind) {
                             keyFound = true;
-                            WhiteKey whiteKey = (WhiteKey) whiteKeys.get(index);
+                            WhiteKey whiteKey = whiteKeys.get(index);
                             if (message.getStatus() >= ShortMessage.NOTE_ON
                                     && message.getStatus() <= ShortMessage.NOTE_ON + 15)
                                 whiteKey.setPressed(true);
@@ -321,7 +321,8 @@ public class MousePiano extends JLayeredPane implements Receiver, Transmitter,
     /**
      * @see javax.sound.midi.Transmitter#setReceiver(javax.sound.midi.Receiver)
      */
-    public void setReceiver(Receiver newReceiver) {
+    @Override
+	public void setReceiver(Receiver newReceiver) {
         receiver = newReceiver;
     }
 
@@ -336,7 +337,8 @@ public class MousePiano extends JLayeredPane implements Receiver, Transmitter,
 	/**
      * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
      */
-    public void propertyChange(PropertyChangeEvent evt) {
+    @Override
+	public void propertyChange(PropertyChangeEvent evt) {
         if (evt.getPropertyName() == "trans") {
             if (DebugState.DEBUG)
                 System.out.println("KeyPiano: (" + evt.getPropertyName()

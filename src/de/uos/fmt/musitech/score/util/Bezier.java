@@ -181,7 +181,8 @@ public class Bezier {
     }
 
     /** Returns a string representation of this Pair. */
-    public String toString() {
+    @Override
+	public String toString() {
         return "Bezier(" + points[0] + ", " + points[1] + ", " + points[2] + ", "
                + points[3] + ")";
     }

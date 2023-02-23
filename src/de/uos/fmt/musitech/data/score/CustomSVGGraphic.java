@@ -51,14 +51,13 @@ above is subject to the following three conditions:
  */
 package de.uos.fmt.musitech.data.score;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Rectangle;
-import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 
+import org.apache.batik.transcoder.SVGAbstractTranscoder;
 import org.apache.batik.transcoder.TranscoderException;
 import org.apache.batik.transcoder.TranscoderInput;
 import org.apache.batik.transcoder.TranscoderOutput;
@@ -92,6 +91,7 @@ public class CustomSVGGraphic implements CustomGraphic {
 	/**
 	 * @see de.uos.fmt.musitech.data.score.CustomGraphic#paint(java.awt.Graphics)
 	 */
+	@Override
 	public void paint(Graphics g, int x, int y, int width, int height, ImageObserver io) {
 		int myCutX = cutX;
 		int myWidth = width;
@@ -118,14 +118,14 @@ public class CustomSVGGraphic implements CustomGraphic {
 		AWTImageTranscoder t = new AWTImageTranscoder(width, height);
 		try {
 			if (myWidth > 0)
-				t.addTranscodingHint(AWTImageTranscoder.KEY_WIDTH, new Float(myWidth));
+				t.addTranscodingHint(SVGAbstractTranscoder.KEY_WIDTH, new Float(myWidth));
 			if (height > 0)
-				t.addTranscodingHint(AWTImageTranscoder.KEY_HEIGHT, new Float(height));
+				t.addTranscodingHint(SVGAbstractTranscoder.KEY_HEIGHT, new Float(height));
 			
 			if (myCutX > 0) {
 				if (documentHeight <= 0) 
 					throw new IllegalArgumentException("if cutX is used a height must be given");
-				t.addTranscodingHint(AWTImageTranscoder.KEY_AOI, new Rectangle(0, 0, myCutX, documentHeight));
+				t.addTranscodingHint(SVGAbstractTranscoder.KEY_AOI, new Rectangle(0, 0, myCutX, documentHeight));
 			}
 			t.transcode(ti, null);
 			g.drawImage(t.image, x, y, io);
@@ -143,12 +143,14 @@ public class CustomSVGGraphic implements CustomGraphic {
 			this.height = height;
 		}
 		
+		@Override
 		public BufferedImage createImage(int arg0, int arg1) {
 			//return new BufferedImage(width, height, ColorSpace.TYPE_RGB);
 			BufferedImage orig = new BufferedImage(arg0, arg1, BufferedImage.TYPE_4BYTE_ABGR);
 			return orig;
 		}
 		
+		@Override
 		public void writeImage(BufferedImage arg0, TranscoderOutput arg1)
 				throws TranscoderException {
 			image = arg0;
@@ -156,12 +158,14 @@ public class CustomSVGGraphic implements CustomGraphic {
 	}
 
 
+	@Override
 	public int getHeight() {
 		return height;
 	}
 	public void setHeight(int height) {
 		this.height = height;
 	}
+	@Override
 	public int getWidth() {
 		return width;
 	}
@@ -210,6 +214,7 @@ public class CustomSVGGraphic implements CustomGraphic {
 	public void setDocumentHeight(int documentHeight) {
 		this.documentHeight = documentHeight;
 	}
+	@Override
 	public float getVerticalShift() {
 		return verticalShift;
 	}

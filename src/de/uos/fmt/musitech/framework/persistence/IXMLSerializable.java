@@ -50,9 +50,6 @@ above is subject to the following three conditions:
  */
 package de.uos.fmt.musitech.framework.persistence;
 
-import java.util.Hashtable;
-
-import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 

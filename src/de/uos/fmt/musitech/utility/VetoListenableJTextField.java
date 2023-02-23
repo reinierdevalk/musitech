@@ -58,12 +58,15 @@ public class VetoListenableJTextField extends ListenableJTextField {
 	boolean notifying = false;	
 	
 	class IvjEventHandler implements java.awt.event.ActionListener, java.awt.event.FocusListener {
+		@Override
 		public void actionPerformed(java.awt.event.ActionEvent e) {
 			if (e.getSource() == VetoListenableJTextField.this)
 				connEtoC1();
 		};
+		@Override
 		public void focusGained(java.awt.event.FocusEvent e) {
 		};
+		@Override
 		public void focusLost(java.awt.event.FocusEvent e) {
 			if (e.getSource() == VetoListenableJTextField.this)
 				connEtoC2(e);
@@ -178,6 +181,7 @@ public class VetoListenableJTextField extends ListenableJTextField {
 			frame.setContentPane(aVetoListenableJTextField);
 			frame.setSize(aVetoListenableJTextField.getSize());
 			frame.addWindowListener(new java.awt.event.WindowAdapter() {
+				@Override
 				public void windowClosing(java.awt.event.WindowEvent e) {
 					System.exit(0);
 				};
@@ -226,6 +230,7 @@ public class VetoListenableJTextField extends ListenableJTextField {
 	 * @exception java.beans.PropertyVetoException The exception description.
 	 * @see #getText
 	 */
+	@Override
 	public void setText(java.lang.String newText) {
 		super.setText(newText);
 		notifyVetoableChange();

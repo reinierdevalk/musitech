@@ -48,7 +48,6 @@ above is subject to the following three conditions:
 package de.uos.fmt.musitech.score.gui;
 import java.awt.Graphics;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import de.uos.fmt.musitech.utility.math.Rational;
@@ -89,6 +88,7 @@ public class Measure extends ScoreContainer {
 		this.metricTime = metricTime;
 	}
 	
+	@Override
 	int arrange(int pass) {
 		int numPasses = 3;
 		int max = Math.max(numPasses, super.arrange(pass));
@@ -169,6 +169,7 @@ public class Measure extends ScoreContainer {
 		return (Head[])heads.toArray(new Head[heads.size()]);
 	}
 	
+	@Override
 	public int depth() {
 		int high = 0;
 		for (int i = 0; i < numChildren(); i++) {
@@ -286,6 +287,7 @@ public class Measure extends ScoreContainer {
 			timeSignature.setScale(scale);
 	}
 
+	@Override
 	public Measure measure() {
 		return this;
 	}
@@ -346,6 +348,7 @@ public class Measure extends ScoreContainer {
 		return predecessor().activeKeySignature();
 	}
 
+	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
 		paintBackground(g);
@@ -373,6 +376,7 @@ public class Measure extends ScoreContainer {
 		g.drawString(s, absX(), absY() - max);
 	}
 	
+	@Override
 	Class parentClass() {
 		return Staff.class;
 	}
@@ -384,6 +388,7 @@ public class Measure extends ScoreContainer {
 	}
 
 	/** Returns a string representation of this Measure. */
+	@Override
 	public String toString() {
 		String res = new String(super.toString());
 		if (rightBarline != null)
@@ -395,6 +400,7 @@ public class Measure extends ScoreContainer {
 		this.rwidth = width;
 	}
 
+	@Override
 	public int rwidth() {
 		/*      int res = 0;
 		      if (clef != null)	
@@ -421,6 +427,7 @@ public class Measure extends ScoreContainer {
 		return res;
 	}
 
+	@Override
 	public boolean add(ScoreObject obj) {
 		LocalSim lsim = (LocalSim) obj;
 		super.addMetrical(lsim);
@@ -505,6 +512,7 @@ public class Measure extends ScoreContainer {
 		this.globalMeasure = globalMeasure;
 	}
 	
+	@Override
 	public void setScale(float scale) {
 		super.setScale(scale);
 		if (clef != null)

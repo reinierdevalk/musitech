@@ -111,7 +111,8 @@ public class PersistenceManagerTest extends TestCase {
     /**
      * @see junit.framework.TestCase#tearDown()
      */
-    protected void tearDown() throws Exception {
+    @Override
+	protected void tearDown() throws Exception {
         pm.close();
         super.tearDown();
     }

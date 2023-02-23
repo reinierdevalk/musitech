@@ -94,6 +94,7 @@ public abstract class FloatOscillator implements FloatInputStream {
 	 * channel.
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float[][])
 	 */
+	@Override
 	public int read(float[][] data) throws IOException {
 		return read(data, 0, data[0].length);
 	}
@@ -105,6 +106,7 @@ public abstract class FloatOscillator implements FloatInputStream {
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float[][],
 	 *      int, int)
 	 */
+	@Override
 	public int read(float[][] data, int start, int len) throws IOException {
 		if (DebugState.DEBUG_AUDIO && data.length != channelNum)
 			System.err
@@ -124,6 +126,7 @@ public abstract class FloatOscillator implements FloatInputStream {
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getFormat()
 	 */
+	@Override
 	public AudioFormat getFormat() {
 		return new AudioFormat(sampleRate, 1, channelNum, true, true);
 	}
@@ -150,6 +153,7 @@ public abstract class FloatOscillator implements FloatInputStream {
 	 * @return -1 indicating that this stream has no defined end.
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
 	 */
+	@Override
 	public long remainingSamples() {
 		return -1;
 	}
@@ -159,6 +163,7 @@ public abstract class FloatOscillator implements FloatInputStream {
 	 * @return -1
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public long getPositionInSamples() {
 		return -1;
 	}
@@ -167,6 +172,7 @@ public abstract class FloatOscillator implements FloatInputStream {
 	 * Does nothing, should be overridden where possible.
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public void setPositionInSamples(long newPos) throws IOException {
 	}
 }

@@ -52,6 +52,7 @@ import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JSlider;
+import javax.swing.WindowConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -107,7 +108,7 @@ public class AudioTest_Jan2 {
 			new DelayInputStream(fisMultiPlex.getMultiplexerMember(), maxDelay, startDelay);
 
 		JFrame jf = new JFrame();
-		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jf.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		jf.getContentPane().setLayout(new GridLayout(2, 2));
 		final JSlider sliderDel = new JSlider(0, maxDelay, startDelay);
 		
@@ -116,6 +117,7 @@ public class AudioTest_Jan2 {
 			/**
 			* @see javax.swing.event.ChangeListener#stateChanged(javax.swing.event.ChangeEvent)
 			*/
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				fisDelay.setDelay(sliderDel.getValue());
 			}

@@ -113,7 +113,8 @@ public class IconURLEditor extends AbstractTranslatingEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#updateDisplay()
      */
-    public void updateDisplay() {
+    @Override
+	public void updateDisplay() {
         //update URL
         determineURL();
         //update urlField
@@ -140,11 +141,13 @@ public class IconURLEditor extends AbstractTranslatingEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#createGUI()
      */
-    protected void createGUI() {
+    @Override
+	protected void createGUI() {
         setLayout(new BorderLayout());
         urlField.setBorder(BorderFactory.createTitledBorder("URL"));
         urlField.addFocusListener(new FocusAdapter() {
-            public void focusGained(FocusEvent e) {
+            @Override
+			public void focusGained(FocusEvent e) {
                 previousText = urlField.getText();
             }
         });
@@ -170,7 +173,8 @@ public class IconURLEditor extends AbstractTranslatingEditor {
     private JComponent createPreviewButton() {
         JButton previewButton = new JButton("Update Preview");
         previewButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            @Override
+			public void actionPerformed(ActionEvent e) {
                 updatePreview();
             }
         });
@@ -212,7 +216,8 @@ public class IconURLEditor extends AbstractTranslatingEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#isFocused()
      */
-    public boolean isFocused() {
+    @Override
+	public boolean isFocused() {
         return (isFocusOwner() || urlField.isFocusOwner());
     }
 
@@ -221,7 +226,8 @@ public class IconURLEditor extends AbstractTranslatingEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.translating.AbstractTranslatingEditor#determineLocalObjs()
      */
-    protected void determineLocalObjs() {
+    @Override
+	protected void determineLocalObjs() {
         determineURL();
         createIcon();
     }
@@ -293,7 +299,8 @@ public class IconURLEditor extends AbstractTranslatingEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Display#getEditObj()
      */
-    public Object getEditObj() {
+    @Override
+	public Object getEditObj() {
         if (editObj == null) {
             applyChangesToEditObj();
         }
@@ -306,7 +313,8 @@ public class IconURLEditor extends AbstractTranslatingEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.translating.AbstractTranslatingEditor#applyChangesToInputObj()
      */
-    protected void applyChangesToInputObj() {
+    @Override
+	protected void applyChangesToInputObj() {
         if (propertyValue != null) {
             ObjectCopy.copyPublicProperties(url, propertyValue);
             ReflectionAccess ref = ReflectionAccess.accessForClass(inputObj
@@ -327,7 +335,8 @@ public class IconURLEditor extends AbstractTranslatingEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.translating.AbstractTranslatingEditor#applyChangesToEditObj()
      */
-    protected void applyChangesToEditObj() {
+    @Override
+	protected void applyChangesToEditObj() {
         createIcon();
         editObj = icon;
     }

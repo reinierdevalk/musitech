@@ -95,6 +95,7 @@ public class TestNullPropertyHandling {
 			super("I exist for you to exit the program :o)");
 			setSize(350, 0);
 			addWindowListener(new java.awt.event.WindowAdapter() {
+				@Override
 				public void windowClosing(java.awt.event.WindowEvent e) {
 					System.exit(0);
 				}
@@ -267,6 +268,7 @@ public class TestNullPropertyHandling {
 			integerObject = integer;
 		}
 
+		@Override
 		public String toString() {
 			StringBuffer stringBuf = new StringBuffer(string1);
 			if (string2 != null)

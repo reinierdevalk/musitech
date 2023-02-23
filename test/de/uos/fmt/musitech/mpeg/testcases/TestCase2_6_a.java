@@ -57,7 +57,6 @@ import java.net.URL;
 import java.util.Iterator;
 
 import de.uos.fmt.musitech.data.rendering.RenderingHints;
-import de.uos.fmt.musitech.data.score.Barline;
 import de.uos.fmt.musitech.data.score.BeamContainer;
 import de.uos.fmt.musitech.data.score.CharSymbol;
 import de.uos.fmt.musitech.data.score.CustomSVGGraphic;
@@ -70,17 +69,12 @@ import de.uos.fmt.musitech.data.score.NotationStaff;
 import de.uos.fmt.musitech.data.score.NotationSystem;
 import de.uos.fmt.musitech.data.score.NotationVoice;
 import de.uos.fmt.musitech.data.score.SVGSymbol;
-import de.uos.fmt.musitech.data.score.ScoreNote;
-import de.uos.fmt.musitech.data.score.ScorePitch;
 import de.uos.fmt.musitech.data.score.SlurContainer;
 import de.uos.fmt.musitech.data.score.StackSymbol;
 import de.uos.fmt.musitech.data.score.StringSymbol;
-import de.uos.fmt.musitech.data.structure.Note;
 import de.uos.fmt.musitech.data.structure.form.NoteList;
-import de.uos.fmt.musitech.data.structure.harmony.KeyMarker;
 import de.uos.fmt.musitech.data.time.MetricalTimeLine;
 import de.uos.fmt.musitech.data.time.TimeSignatureMarker;
-import de.uos.fmt.musitech.score.gui.Accent;
 import de.uos.fmt.musitech.utility.math.Rational;
 
 /**
@@ -152,12 +146,12 @@ public class TestCase2_6_a extends TestCase {
 		
 		RenderingHints ncrh2 = new RenderingHints();
 		ncrh2.registerHint("draw duration extension", new Boolean(true));
-		((NotationChord)voice.get(0)).setRenderingHints(ncrh2);
-		((NotationChord)voice.get(1)).addRenderingHint("draw duration extension", new Boolean(true));
-		((NotationChord)voice.get(1)).addRenderingHint("duration extension pulldown", new Float(0.5f));
-		((NotationChord)voice.get(2)).setRenderingHints(ncrh2);
-		((NotationChord)voice.get(voice.size() - 1)).addRenderingHint("draw duration extension", new Boolean(true));
-		((NotationChord)voice.get(voice.size() - 1)).addRenderingHint("tremolo", "3");
+		voice.get(0).setRenderingHints(ncrh2);
+		voice.get(1).addRenderingHint("draw duration extension", new Boolean(true));
+		voice.get(1).addRenderingHint("duration extension pulldown", new Float(0.5f));
+		voice.get(2).setRenderingHints(ncrh2);
+		voice.get(voice.size() - 1).addRenderingHint("draw duration extension", new Boolean(true));
+		voice.get(voice.size() - 1).addRenderingHint("tremolo", "3");
 		
 		
 		return voice;
@@ -166,6 +160,7 @@ public class TestCase2_6_a extends TestCase {
 	/* (non-Javadoc)
 	 * @see de.uos.fmt.musitech.mpeg.testcases.TestCase#createNotationSystem()
 	 */
+	@Override
 	public NotationSystem createNotationSystem() {
 		NotationSystem system = new NotationSystem(context);
 		TimeSignatureMarker tsm = new TimeSignatureMarker(Integer.MAX_VALUE,1,Rational.ZERO);
@@ -188,7 +183,7 @@ public class TestCase2_6_a extends TestCase {
 		
 		DynamicsLevelMarker fm = new DynamicsLevelMarker();
 		fm.setLevel("f");
-		fm.setMetricTime(((NotationChord)voice.get(voice.size() - 5)).getMetricTime());
+		fm.setMetricTime(voice.get(voice.size() - 5).getMetricTime());
 		if(voice.getContextTimeLine() == null){
 		    voice.setContextTimeLine(new MetricalTimeLine());
 		}
@@ -233,7 +228,7 @@ public class TestCase2_6_a extends TestCase {
 		stack.push(sfz);
 		stack.push(tear);
 		
-		MetricAttachable f3 = new MetricAttachable(((NotationChord)voice.get(3)).get(0), stack);
+		MetricAttachable f3 = new MetricAttachable(voice.get(3).get(0), stack);
 		f3.setRelativePosition(MetricAttachable.SOUTH);
 		//f3.setAlignment(MetricAttachable.CENTER);
 		f3.setDistance(2);
@@ -260,8 +255,8 @@ public class TestCase2_6_a extends TestCase {
 		CustomSVGGraphic hold = new CustomSVGGraphic(holdUrl.toString(), 1, 1);
 		hold.setLeadingText("no vib.");
 		hold.setDocumentHeight(10);
-		DualMetricAttachable h1 = new DualMetricAttachable(((NotationChord)voice.get(0)).get(0),
-													   ((NotationChord)voice.get(voice.size() - 1)).get(0),
+		DualMetricAttachable h1 = new DualMetricAttachable(voice.get(0).get(0),
+													   voice.get(voice.size() - 1).get(0),
 													   hold);
 		h1.setRelativePosition(MetricAttachable.NORTH);
 		h1.setDistance(10);

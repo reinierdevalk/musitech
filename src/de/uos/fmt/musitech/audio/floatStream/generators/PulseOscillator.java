@@ -52,6 +52,7 @@ import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JSlider;
+import javax.swing.WindowConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -112,7 +113,7 @@ public class PulseOscillator extends FloatOscillator {
     public void setFrequency(float argFreq) {
         System.out.println("Setting frequency to " + argFreq);
         frequency = argFreq;
-        step = (float) frequency / getSampleRate() ;
+        step = frequency / getSampleRate() ;
     }
 
     /**
@@ -120,7 +121,8 @@ public class PulseOscillator extends FloatOscillator {
      * 
      * @return the next sample.
      */
-    public float read() {
+    @Override
+	public float read() {
     	phase += step;
         float val = phase<ratio?amplitude:-amplitude ;
         return val;
@@ -137,19 +139,21 @@ public class PulseOscillator extends FloatOscillator {
         final JSlider slider = new JSlider(1, 20000, 440);
         slider.addChangeListener(new ChangeListener() {
 
-            public void stateChanged(ChangeEvent e) {
+            @Override
+			public void stateChanged(ChangeEvent e) {
                 oszi.setFrequency(slider.getValue());
             }
         });
         final JSlider ampSlider = new JSlider(0, 32768, 10000);
         ampSlider.addChangeListener(new ChangeListener() {
 
-            public void stateChanged(ChangeEvent e) {
+            @Override
+			public void stateChanged(ChangeEvent e) {
                 oszi.setAmplitude(ampSlider.getValue());
                 System.out.println("New amplitude: " + ampSlider.getValue());
             }
         });
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(new FlowLayout());
         frame.getContentPane().add(slider);
         frame.getContentPane().add(ampSlider);
@@ -186,6 +190,7 @@ public class PulseOscillator extends FloatOscillator {
 	/** Advances n samples.
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#skip(long)
 	 */
+	@Override
 	public long skip(long n) throws IOException {
 		phase += n*step;
 		phase %= 1;
@@ -195,6 +200,7 @@ public class PulseOscillator extends FloatOscillator {
 	/** resets the phase of this oscillator.
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#reset()
 	 */
+	@Override
 	public void reset() throws IOException {
 		phase =0;
 	}

@@ -111,8 +111,10 @@ public abstract class EventSpanner extends ScoreObject {
 	}
 
 	/** Draws this spanner onto the given Graphics object. */
+	@Override
 	public abstract void paint(Graphics g);
 
+	@Override
 	Class parentClass() {
 		return System.class;
 	}
@@ -124,6 +126,7 @@ public abstract class EventSpanner extends ScoreObject {
 		return new ReverseIterator(events);
 	}
 	
+	@Override
 	public ScoreObject catchScoreObject(int x, int y, Class objectClass) {
 		if (this.getClass().equals(objectClass)) {
 			//if one of the objects below matches we return this one
@@ -146,6 +149,7 @@ public abstract class EventSpanner extends ScoreObject {
 	}
 
 	
+	@Override
 	public void setColor(Color c) {
 		super.setColor(c);
 		

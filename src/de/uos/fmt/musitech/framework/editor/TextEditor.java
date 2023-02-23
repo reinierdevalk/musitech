@@ -59,9 +59,6 @@ import java.awt.event.FocusEvent;
 
 import javax.swing.BoxLayout;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.event.AncestorEvent;
-import javax.swing.event.AncestorListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
@@ -90,6 +87,7 @@ public class TextEditor extends AbstractSimpleEditor {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.AbstractSimpleEditor#applyChangesToPropertyValue()
 	 */
+	@Override
 	public boolean applyChangesToPropertyValue() {
 		if (textArea != null) {
 			propertyValue = textArea.getText();
@@ -114,6 +112,7 @@ public class TextEditor extends AbstractSimpleEditor {
 	 * 	  
 	 * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#createGUI()
 	 */
+	@Override
 	protected void createGUI() {
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		//set up textArea
@@ -145,18 +144,22 @@ public class TextEditor extends AbstractSimpleEditor {
 //		});
 		//		add DocumentListener which sets the dirty flag when data is changed
 		textArea.getDocument().addDocumentListener(new DocumentListener() {
+			@Override
 			public void changedUpdate(DocumentEvent e) {
 				setDirty(true);
 			}
+			@Override
 			public void insertUpdate(DocumentEvent e) {
 				//changedUpdate(e);
 			}
+			@Override
 			public void removeUpdate(DocumentEvent e) {
 				changedUpdate(e);
 			}
 
 		});
 		textArea.addFocusListener(new FocusAdapter(){
+			@Override
 			public void focusLost(FocusEvent e){
 				if (!applyChangesToPropertyValue())
 					textArea.requestFocusInWindow();

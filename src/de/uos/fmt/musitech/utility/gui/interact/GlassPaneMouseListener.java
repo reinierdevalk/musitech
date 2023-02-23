@@ -78,6 +78,7 @@ import javax.swing.JLayeredPane;
 import javax.swing.JMenuBar;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
+import javax.swing.WindowConstants;
 
 /**
  * Mouse listener for usage in glass panes to
@@ -171,6 +172,7 @@ public class GlassPaneMouseListener
 	/**
 	 * @see java.awt.event.MouseMotionListener#mouseMoved(java.awt.event.MouseEvent)
 	 */
+	@Override
 	public void mouseMoved(MouseEvent e) {
 		//System.out.println(e);
 		Component target = findComponent(e);
@@ -223,6 +225,7 @@ public class GlassPaneMouseListener
 	 * gray background or whatever its L&F uses to indicate
 	 * that the button is currently being pressed.
 	 */
+	@Override
 	public void mouseDragged(MouseEvent e) {
 		Component target;
 		if (inDrag) {
@@ -246,6 +249,7 @@ public class GlassPaneMouseListener
 	}
 
 	// Mouse methods
+	@Override
 	public void mouseClicked(MouseEvent e) {
 		Component target = findComponent(e);
 		if (target == null)
@@ -259,6 +263,7 @@ public class GlassPaneMouseListener
 			redispatchMouseEvent(e, target);
 	}
 
+	@Override
 	public void mouseEntered(MouseEvent e) {
 		Component target = findComponent(e);
 		if (target == null)
@@ -272,6 +277,7 @@ public class GlassPaneMouseListener
 			redispatchMouseEvent(e, specialTarget);
 	}
 
+	@Override
 	public void mouseExited(MouseEvent e) {
 		Component target = findComponent(e);
 		if (target != null) {
@@ -296,6 +302,7 @@ public class GlassPaneMouseListener
 	}
 
 	Component lastDragStartComp;
+	@Override
 	public void mousePressed(MouseEvent e) {
 		lastDragStartComp = findComponent(e);
 		if (lastDragStartComp == null)
@@ -311,6 +318,7 @@ public class GlassPaneMouseListener
 			redispatchMouseEvent(e, lastDragStartComp);
 	}
 
+	@Override
 	public void mouseReleased(MouseEvent e) {
 		Component target;
 		if (inDrag && lastDragStartComp != null)
@@ -422,7 +430,7 @@ public class GlassPaneMouseListener
 				list.add(comp);
 			}
 		}
-		Container cont = (Container) c;
+		Container cont = c;
 		Component children[] = cont.getComponents();
 		for (int i = 0; i < children.length; i++) {
 			if (children[i] instanceof Container) {
@@ -585,7 +593,7 @@ public class GlassPaneMouseListener
 	 */
 	public static void main(String[] args) {
 		final JFrame frame = new JFrame("GlassPaneMouseListenerTest");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		JButton button1 = new JButton("Button 1");
 		JButton button2 = new JButton("Button 2");
 		frame.getContentPane().setLayout(new GridLayout(3, 1));
@@ -595,6 +603,7 @@ public class GlassPaneMouseListener
 		frame.getContentPane().add(textField);
 		button1.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				textField.setText("normal action listener");
@@ -608,6 +617,7 @@ public class GlassPaneMouseListener
 			/**
 			* @see java.awt.event.MouseAdapter#mouseClicked(java.awt.event.MouseEvent)
 			*/
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				// TODO Auto-generated method stub
 				textField.setText("glass pane mouse listener");
@@ -617,6 +627,7 @@ public class GlassPaneMouseListener
 		frame.getGlassPane().addMouseListener(gpml);
 		frame.getGlassPane().setVisible(true);
 		SwingUtilities.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				frame.pack();
 				frame.show();

@@ -49,12 +49,10 @@ package de.uos.fmt.musitech.data.performance;
 
 import de.uos.fmt.musitech.data.MObject;
 import de.uos.fmt.musitech.data.time.*;
-import de.uos.fmt.musitech.data.utility.EqualsUtil;
 import de.uos.fmt.musitech.data.utility.IEquivalence;
 import de.uos.fmt.musitech.framework.editor.Editable;
 import de.uos.fmt.musitech.framework.editor.EditingProfile;
 import de.uos.fmt.musitech.utility.DebugState;
-import de.uos.fmt.musitech.utility.obj.ObjectCopy;
 
 /**
  * A performed note with pitch, "expressive" timing and dynamics.
@@ -103,6 +101,7 @@ public class PerformanceNote extends BasicTimedObject implements Editable, Clone
 		super(0);
 	}
 
+	@Override
 	public Object clone() throws CloneNotSupportedException {
 		return super.clone();
 	}
@@ -124,11 +123,13 @@ public class PerformanceNote extends BasicTimedObject implements Editable, Clone
 	 * 
 	 * @return the string
 	 */
+	@Override
 	public String toString() {
 		return "PerformanceNote " + getPitch() + " (pitch) from " + getTime() + " for "
 				+ getDuration();
 	}
 
+	@Override
 	public EditingProfile getEditingProfile() {
 		return new EditingProfile("Performance Note",
 									new EditingProfile[] {new EditingProfile("pitch"),
@@ -143,6 +144,7 @@ public class PerformanceNote extends BasicTimedObject implements Editable, Clone
 	 * @return long
 	 * @hibernate.property
 	 */
+	@Override
 	public long getDuration() {
 		return duration;
 	}
@@ -241,6 +243,7 @@ public class PerformanceNote extends BasicTimedObject implements Editable, Clone
 	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
+	@Override
 	public boolean equals(Object obj) {
 		if (obj ==  null || obj.getClass() != this.getClass())
 			return false;
@@ -264,6 +267,7 @@ public class PerformanceNote extends BasicTimedObject implements Editable, Clone
 	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
+	@Override
 	public int hashCode() {
 		int hash = (int) getTime() ^ (int) (getTime() << 32);
 		hash ^= duration;
@@ -273,8 +277,9 @@ public class PerformanceNote extends BasicTimedObject implements Editable, Clone
 		return hash;
 	}
 
+	@Override
 	public boolean isEquivalent(IEquivalence o) {
 		if( !(o instanceof PerformanceNote) ) return false;
-		return equals( (Object) o);
+		return equals( o);
 	}
 }

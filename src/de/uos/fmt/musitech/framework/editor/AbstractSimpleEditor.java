@@ -54,8 +54,6 @@ import java.awt.Component;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import javax.naming.ldap.HasControls;
-
 import de.uos.fmt.musitech.utility.obj.ReflectionAccess;
 
 /**
@@ -77,7 +75,8 @@ public abstract class AbstractSimpleEditor extends AbstractEditor {
      *      de.uos.fmt.musitech.framework.editor.EditingProfile,
      *      de.uos.fmt.musitech.framework.editor.Editor)
      */
-    public void init(Object editObject, EditingProfile _profile, Display rootEditor) {
+    @Override
+	public void init(Object editObject, EditingProfile _profile, Display rootEditor) {
         this.editObj = editObject;
         this.profile = _profile;
         if (profile != null)
@@ -97,7 +96,8 @@ public abstract class AbstractSimpleEditor extends AbstractEditor {
      * this method to update only what is necessary, e.g. set the text in a JTextfield to
      * the new value.
      */
-    public void updateDisplay() {
+    @Override
+	public void updateDisplay() {
         //        dataChanged = false;
         //        valueCreated = false;
         //		if (editObjCopy != null)
@@ -117,7 +117,8 @@ public abstract class AbstractSimpleEditor extends AbstractEditor {
      * 
      * @return
      */
-    public boolean isFocused() {
+    @Override
+	public boolean isFocused() {
 
         Component[] components = getComponents();
         if (this.isFocusOwner())
@@ -160,7 +161,8 @@ public abstract class AbstractSimpleEditor extends AbstractEditor {
      * DataChangeEvent. The flags <code>dataChanged</code> and <code>dirty</code> are
      * reset to false.
      */
-    public void applyChanges() {
+    @Override
+	public void applyChanges() {
         if (profile.isReadOnly())
             return;
         //check for changed values
@@ -189,7 +191,8 @@ public abstract class AbstractSimpleEditor extends AbstractEditor {
      * @return Collection with objects changed by this editor
      * @see de.uos.fmt.musitech.framework.editor.Editor#getEditedData()
      */
-    public Collection getEditedData() {
+    @Override
+	public Collection getEditedData() {
         ArrayList changedData = new ArrayList();
         // if (hasDataChanged()) //ergänzt 19/11/03
         if (dirty) //ersetzt 01/06/04

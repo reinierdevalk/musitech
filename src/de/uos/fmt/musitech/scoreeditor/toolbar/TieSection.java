@@ -70,6 +70,7 @@ public class TieSection extends AbstractToolbarSection{
 	public void addItems(JToolBar tb) {
 		tb.add(new AbstractAction(Messages.getString("TieSection.TieNote"), Icons //$NON-NLS-1$
 				.getIcon("tie.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				getScoreEditor().getScoreManipulator().tieSelection();
 					
@@ -78,6 +79,7 @@ public class TieSection extends AbstractToolbarSection{
 		
 		tb.add(new AbstractAction(Messages.getString("TieSection.RemoveTie"), Icons //$NON-NLS-1$
 				.getIcon("untie.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				getScoreEditor().getScoreManipulator().untieSelection();
 			}
@@ -85,6 +87,7 @@ public class TieSection extends AbstractToolbarSection{
 		
 		tb.add(new AbstractAction(Messages.getString("TieSection.JoinNotes"), Icons //$NON-NLS-1$
 				.getIcon("join.png")) { //$NON-NLS-1$
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				getScoreEditor().getScoreManipulator().joinSelection();
 			}

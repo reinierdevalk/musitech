@@ -58,7 +58,6 @@ import java.io.FileWriter;
 import org.w3c.dom.Document;
 
 import de.uos.fmt.musitech.data.performance.PerformanceNote;
-import de.uos.fmt.musitech.data.score.DynamicsMarker;
 import de.uos.fmt.musitech.data.score.NotationChord;
 import de.uos.fmt.musitech.data.score.NotationStaff;
 import de.uos.fmt.musitech.data.score.NotationSystem;
@@ -66,7 +65,6 @@ import de.uos.fmt.musitech.data.score.NotationVoice;
 import de.uos.fmt.musitech.data.score.ScoreNote;
 import de.uos.fmt.musitech.data.structure.Note;
 import de.uos.fmt.musitech.data.structure.Piece;
-import de.uos.fmt.musitech.data.time.MetricalTimeLine;
 import de.uos.fmt.musitech.framework.persistence.MusiteXMLSerializer;
 import de.uos.fmt.musitech.framework.time.ObjectToMidiFileProcessor;
 import de.uos.fmt.musitech.performance.ScoreToPerfomance;

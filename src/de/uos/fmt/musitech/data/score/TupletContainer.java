@@ -51,8 +51,6 @@ import de.uos.fmt.musitech.data.structure.Note;
 import de.uos.fmt.musitech.data.structure.Context;
 import de.uos.fmt.musitech.data.structure.container.SortedContainer;
 import de.uos.fmt.musitech.data.time.MetricalComparator;
-import de.uos.fmt.musitech.framework.persistence.MPEG_SMR_Tools;
-import de.uos.fmt.musitech.utility.math.MyMath;
 import de.uos.fmt.musitech.utility.math.Rational;
 
 import java.io.Serializable;
@@ -163,7 +161,8 @@ public class TupletContainer extends SortedContainer implements Serializable {
     /**
      * @see de.uos.fmt.musitech.data.structure.container.SortedContainer#add(java.lang.Object)
      */
-    public boolean add(Object o) {
+    @Override
+	public boolean add(Object o) {
         typeCheck(o);
         Note note = (Note) o;
 

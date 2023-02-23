@@ -442,7 +442,7 @@ public class Interval implements Serializable {
      */
     public static Interval determineInversion(ScorePitch lowerPitch,
             ScorePitch higherPitch) {
-        ScorePitch transposedPitch = (ScorePitch) ObjectCopy
+        ScorePitch transposedPitch = ObjectCopy
                 .copyObject(lowerPitch);
         transposedPitch.setOctave((byte) (transposedPitch.getOctave() + 1));
         return new Interval(higherPitch, transposedPitch);
@@ -566,7 +566,8 @@ public class Interval implements Serializable {
     	octaveExtension = argOctExt;
     }
     
-    public String toString(){
+    @Override
+	public String toString(){
     	return returnName();
     }
     

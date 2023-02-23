@@ -67,6 +67,7 @@ public class GaussHillModel extends DLFModel {
 	/** coefficients aus Modell aufbauen (alle addieren)
 	 * @see de.uos.fmt.musitech.audio.proc.filter.DLFModel#compose()
 	 */
+	@Override
 	protected void compose() {
 //		getCoefficients().initialize();
 //		for (Iterator it = gaussHills.iterator(); it.hasNext();) {
@@ -86,6 +87,7 @@ public class GaussHillModel extends DLFModel {
 //	/** Modell aus coefficients berechnen
 //	 * @see de.uos.fmt.musitech.audio.proc.filter.DLFModel#decompose(de.uos.fmt.musitech.audio.proc.filter.Coefficients, de.uos.fmt.musitech.audio.proc.filter.DLFModel)
 //	 */
+	@Override
 	protected void decompose() {
 		
 	}

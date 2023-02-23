@@ -81,7 +81,8 @@ public interface Player extends Timeable {
      * 
      * @param time the time in microseconds.
      */
-    public void setTimePosition(long time);
+    @Override
+	public void setTimePosition(long time);
 
     /**
      * Set the play-timer, which controls this player.
@@ -95,6 +96,7 @@ public interface Player extends Timeable {
      * 
      * @return the time in microseconds
      */
-    public long getEndTime();
+    @Override
+	public long getEndTime();
 
 }

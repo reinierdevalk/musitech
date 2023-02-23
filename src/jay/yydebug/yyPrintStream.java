@@ -61,31 +61,53 @@ public abstract class yyPrintStream extends PrintStream {
   }
 
 // inherited	public boolean checkError ()
-  public abstract void close ();
+  @Override
+public abstract void close ();
 // inherited	public void flush() 
-  public void print (boolean b) { print(""+b); }
-  public void print (char c) { print(""+(char)c); }
-  public void print (char[] s) { print(s != null ? ""+s.toString() : ""+null); }
-  public void print (double d) { print(""+d); }
-  public void print (float f) { print(""+f); }
-  public void print (int i) { print(""+i); }
-  public void print (long l) { print(""+l); }
-  public void print (Object obj) { print(""+obj); }
-  public void print (String s) {
+  @Override
+public void print (boolean b) { print(""+b); }
+  @Override
+public void print (char c) { print(""+c); }
+  @Override
+public void print (char[] s) { print(s != null ? ""+s.toString() : ""+null); }
+  @Override
+public void print (double d) { print(""+d); }
+  @Override
+public void print (float f) { print(""+f); }
+  @Override
+public void print (int i) { print(""+i); }
+  @Override
+public void print (long l) { print(""+l); }
+  @Override
+public void print (Object obj) { print(""+obj); }
+  @Override
+public void print (String s) {
     byte[] buf = (s != null ? s : ""+null).getBytes();
     if (buf.length > 0) write(buf, 0, buf.length);
   }
-  public void println () { print(nl); }
-  public void println (boolean b) { print(""+b+nl); }
-  public void println (char c) { print(""+(char)c+nl); }
-  public void println (char[] s) { print(s != null ? s.toString()+nl : null+nl); }
-  public void println (double d) { print(""+d+nl); }
-  public void println (float f) { print(""+f+nl); }
-  public void println (int i) { print(""+i+nl); }
-  public void println (long l) { print(""+l+nl); }
-  public void println (Object obj) { print(""+obj+nl); }
-  public void println (String s) { print(s != null ? s+nl : null+nl); }
+  @Override
+public void println () { print(nl); }
+  @Override
+public void println (boolean b) { print(""+b+nl); }
+  @Override
+public void println (char c) { print(""+c+nl); }
+  @Override
+public void println (char[] s) { print(s != null ? s.toString()+nl : null+nl); }
+  @Override
+public void println (double d) { print(""+d+nl); }
+  @Override
+public void println (float f) { print(""+f+nl); }
+  @Override
+public void println (int i) { print(""+i+nl); }
+  @Override
+public void println (long l) { print(""+l+nl); }
+  @Override
+public void println (Object obj) { print(""+obj+nl); }
+  @Override
+public void println (String s) { print(s != null ? s+nl : null+nl); }
 // inherited	public void setError ()
-  public abstract void write (byte[] buf, int off, int len);
-  public abstract void write (int b);
+  @Override
+public abstract void write (byte[] buf, int off, int len);
+  @Override
+public abstract void write (int b);
 }

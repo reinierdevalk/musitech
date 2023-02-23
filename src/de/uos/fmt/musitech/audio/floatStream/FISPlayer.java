@@ -155,6 +155,7 @@ public class FISPlayer implements Player {
 		 * 
 		 * @see java.lang.Thread#run()
 		 */
+		@Override
 		public void run() {
 			try {
 				//				while (samplesRead >= 0) {
@@ -267,6 +268,7 @@ public class FISPlayer implements Player {
 	/**
 	 * @see de.uos.fmt.musitech.framework.time.Player#stop()
 	 */
+	@Override
 	public synchronized void stop() {
 		stop = true;
 		dataLine.stop();
@@ -322,6 +324,7 @@ public class FISPlayer implements Player {
 	/**
 	 * @see de.uos.fmt.musitech.framework.time.Player#start()
 	 */
+	@Override
 	public void start() {
 		play();
 	}
@@ -354,6 +357,7 @@ public class FISPlayer implements Player {
 	 * @param time - microseconds
 	 * @see de.uos.fmt.musitech.framework.time.Player#setTimePosition(long)
 	 */
+	@Override
 	public void setTimePosition(long time) {
 		long sample = (long) (time * fis.getFormat().getFrameRate() / 1000000);
 		setToSample(sample);
@@ -362,6 +366,7 @@ public class FISPlayer implements Player {
 	/**
 	 * @see de.uos.fmt.musitech.framework.time.Player#setPlayTimer(de.uos.fmt.musitech.framework.time.PlayTimer)
 	 */
+	@Override
 	public void setPlayTimer(PlayTimer timer) {
 		// TODO check if other actions are necessary.
 		playTime = timer;
@@ -373,6 +378,7 @@ public class FISPlayer implements Player {
 	 * @return Total playable time from begin to end in microsekonds
 	 * @see de.uos.fmt.musitech.framework.time.Player#getEndTime()
 	 */
+	@Override
 	public long getEndTime() {
 		long out = (long) ((fis.getPositionInSamples() + fis.remainingSamples()) / fis.getFormat().getSampleRate() * 1000000);
 		if(DebugState.DEBUG_AUDIO)
@@ -383,6 +389,7 @@ public class FISPlayer implements Player {
 	/**
 	 * @see de.uos.fmt.musitech.framework.time.Player#reset()
 	 */
+	@Override
 	public synchronized void reset() {
 		stop();
 		while (playing) {

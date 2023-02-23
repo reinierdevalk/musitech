@@ -52,10 +52,7 @@ import de.uos.fmt.musitech.data.structure.Piece;
 import de.uos.fmt.musitech.data.structure.form.NoteList;
 import junit.framework.TestCase;
 
-import de.uos.fmt.musitech.data.structure.Context;
 import de.uos.fmt.musitech.data.structure.Note;
-import de.uos.fmt.musitech.data.structure.Piece;
-import de.uos.fmt.musitech.data.structure.container.Container;
 
 
 public class TestScoreNote extends TestCase {
@@ -65,7 +62,7 @@ public class TestScoreNote extends TestCase {
         Context context = new Context(new Piece());
         NoteList list1 = new NoteList(context, "8c8c");
         NoteList list2 = new NoteList(context, "8c8c");
-		boolean check = ((Note)list1.get(0)).getScoreNote().isEquivalent( ((Note)list2.get(0)).getScoreNote() );
+		boolean check = list1.get(0).getScoreNote().isEquivalent( list2.get(0).getScoreNote() );
 		assertTrue(check);
 	}
 	
@@ -73,7 +70,7 @@ public class TestScoreNote extends TestCase {
 		System.out.println("testNonEquivalenceScoreNote");
         Context context = new Context(new Piece());
         NoteList list1 = new NoteList(context, "8c8c");
-		boolean check = ((Note)list1.get(0)).getScoreNote().isEquivalent( ((Note)list1.get(1)).getScoreNote() );
+		boolean check = list1.get(0).getScoreNote().isEquivalent( list1.get(1).getScoreNote() );
 		assertFalse(check);
 	}
 	

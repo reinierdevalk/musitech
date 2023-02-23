@@ -81,7 +81,8 @@ public class TypedCollectionEditor extends CollectionEditor {
      * created. Children and element editors are created if necessary. The
      * editor is registered at the DataChangeManager and the GUI is built.
      */
-    public void init(Object editObject, EditingProfile profile,
+    @Override
+	public void init(Object editObject, EditingProfile profile,
             Display rootEditor) {
         this.editObj = editObject;
         this.profile = profile;
@@ -134,12 +135,13 @@ public class TypedCollectionEditor extends CollectionEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.CollectionMapEditor#writeCopyBackToEditObj()
      */
-    protected void writeCopyBackToEditObj() {
+    @Override
+	protected void writeCopyBackToEditObj() {
         if (editObj instanceof TypedCollection) {
             ((TypedCollection) editObj).clear();
             if (editCollCopy != null && editCollCopy.size() > 0) {
                 for (Iterator iter = editCollCopy.iterator(); iter.hasNext();) {
-                    Object element = (Object) iter.next();
+                    Object element = iter.next();
                     ((TypedCollection) editObj).add(element); //TODO bei
                                                               // NoteList:
                                                               // NullPointerException,
@@ -153,7 +155,7 @@ public class TypedCollectionEditor extends CollectionEditor {
             ((TypedCollection) propertyValue).clear();
             if (editCollCopy != null && editCollCopy.size() > 0) {
                 for (Iterator iter = editCollCopy.iterator(); iter.hasNext();) {
-                    Object element = (Object) iter.next();
+                    Object element = iter.next();
                     ((TypedCollection) propertyValue).add(element);
                 }
             }
@@ -177,7 +179,7 @@ public class TypedCollectionEditor extends CollectionEditor {
             editCollCopy.clear();
         }
         for (Iterator iter = typedColl.iterator(); iter.hasNext();) {
-            Object element = (Object) iter.next();
+            Object element = iter.next();
             editCollCopy.add(element);
         }
     }
@@ -191,7 +193,8 @@ public class TypedCollectionEditor extends CollectionEditor {
      * @return Object new element of the type chosen by the user out of a
      *         selection of possible types, or null
      */
-    protected Object getNewElement() {
+    @Override
+	protected Object getNewElement() {
         Object element = null;
         Class[] possibleTypes = ((TypedCollection) editObj).getTypes();
         Class chosenType = null;
@@ -221,11 +224,12 @@ public class TypedCollectionEditor extends CollectionEditor {
      * @return true if elements have been added, deleted or replaced, false
      *         otherwise
      */
-    protected boolean hasCollectionChanged() {
+    @Override
+	protected boolean hasCollectionChanged() {
         boolean same = true;
         if (editCollCopy.size() == ((TypedCollection) editObj).size()) {
             for (Iterator iter = editCollCopy.iterator(); iter.hasNext();) {
-                Object element = (Object) iter.next();
+                Object element = iter.next();
                 if (!((TypedCollection) editObj).contains(element))
                     same = false;
             }
@@ -238,7 +242,8 @@ public class TypedCollectionEditor extends CollectionEditor {
      * Creates editors for the elements of <code>workingCopy</code> and adds
      * them to the Vector <code>elementEditors</code>.
      */
-    protected void createElementEditors() {
+    @Override
+	protected void createElementEditors() {
         int count = 0;
         //for all elements in workingCopy: create an editor and add it to the
         // elementEditors
@@ -274,7 +279,8 @@ public class TypedCollectionEditor extends CollectionEditor {
      * 
      * @see de.uos.fmt.musitech.framework.editor.Editor#updateEditor()
      */
-    public void updateDisplay() {
+    @Override
+	public void updateDisplay() {
         dataChanged = false;
         setValueCreated(false);
         if (editCollCopy != null) {

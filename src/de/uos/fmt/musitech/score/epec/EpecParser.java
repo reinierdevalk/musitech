@@ -539,12 +539,12 @@ case 12:
   break;
 case 13:
 					// line 243 "EpecParser.y"
-  {yyVal = ((NotationChord)yyVals[-1+yyTop]); context.attack = context.attack.add(context.duration);
+  {yyVal = (yyVals[-1+yyTop]); context.attack = context.attack.add(context.duration);
                                context.linebreaks.add(context.attack);}
   break;
 case 14:
 					// line 245 "EpecParser.y"
-  {yyVal = ((NotationChord)yyVals[0+yyTop]); context.attack = context.attack.add(context.duration);}
+  {yyVal = (yyVals[0+yyTop]); context.attack = context.attack.add(context.duration);}
   break;
 case 15:
 					// line 246 "EpecParser.y"
@@ -604,7 +604,7 @@ case 27:
   break;
 case 28:
 					// line 271 "EpecParser.y"
-  {yyVal = ((NotationChord)yyVals[0+yyTop]);}
+  {yyVal = (yyVals[0+yyTop]);}
   break;
 case 29:
 					// line 272 "EpecParser.y"
@@ -616,12 +616,12 @@ case 30:
   break;
 case 31:
 					// line 278 "EpecParser.y"
-  {yyVal = ((NotationChord)yyVals[0+yyTop]);
+  {yyVal = (yyVals[0+yyTop]);
                                if (context.beam != null) context.beam.add(((NotationChord)yyVals[0+yyTop]));}
   break;
 case 32:
 					// line 280 "EpecParser.y"
-  {yyVal = ((NotationChord)yyVals[-1+yyTop]);}
+  {yyVal = (yyVals[-1+yyTop]);}
   break;
 case 33:
 					// line 285 "EpecParser.y"
@@ -637,7 +637,7 @@ case 34:
   break;
 case 35:
 					// line 292 "EpecParser.y"
-  {context = (EpecParserContext)contextStack.pop(); yyVal = ((NotationChord)yyVals[-2+yyTop]);}
+  {context = (EpecParserContext)contextStack.pop(); yyVal = (yyVals[-2+yyTop]);}
   break;
 case 36:
 					// line 293 "EpecParser.y"
@@ -646,12 +646,12 @@ case 36:
 case 37:
 					// line 298 "EpecParser.y"
   {if (context.pitches == null) context.pitches = new Vector(); yyVal = context.pitches;
-                               ((Vector)yyVal).add(((Note)yyVals[0+yyTop]));}
+                               ((Vector)yyVal).add((yyVals[0+yyTop]));}
   break;
 case 38:
 					// line 300 "EpecParser.y"
   {if (context.pitches == null) context.pitches = new Vector(); yyVal = context.pitches;
-                               ((Vector)yyVal).add(((Note)yyVals[0+yyTop]));}
+                               ((Vector)yyVal).add((yyVals[0+yyTop]));}
   break;
 case 39:
 					// line 305 "EpecParser.y"
@@ -685,19 +685,19 @@ case 44:
   break;
 case 45:
 					// line 321 "EpecParser.y"
-  {yyVal = ((Integer)yyVals[0+yyTop]);}
+  {yyVal = (yyVals[0+yyTop]);}
   break;
 case 46:
 					// line 322 "EpecParser.y"
-  {yyVal = ((Integer)yyVals[0+yyTop]);}
+  {yyVal = (yyVals[0+yyTop]);}
   break;
 case 47:
 					// line 326 "EpecParser.y"
-  {yyVal = ((Integer)yyVals[0+yyTop]);}
+  {yyVal = (yyVals[0+yyTop]);}
   break;
 case 48:
 					// line 327 "EpecParser.y"
-  {yyVal = ((Integer)yyVals[0+yyTop]);}
+  {yyVal = (yyVals[0+yyTop]);}
   break;
 case 49:
 					// line 328 "EpecParser.y"
@@ -731,7 +731,7 @@ case 55:
   break;
 case 56:
 					// line 347 "EpecParser.y"
-  {yyVal = ((Character)yyVals[0+yyTop]);}
+  {yyVal = (yyVals[0+yyTop]);}
   break;
 case 57:
 					// line 348 "EpecParser.y"

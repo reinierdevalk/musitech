@@ -104,6 +104,7 @@ public class ExtensionFilter extends javax.swing.filechooser.FileFilter implemen
 	 * @param name The name of the file without the containing directory.
 	 * @return True if the filename has the extension required by this filter.
 	 */
+	@Override
 	public boolean accept(java.io.File dir, String name) {
 		if (doShowDirs && new File(dir, name).isDirectory())
 			return true;

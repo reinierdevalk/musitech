@@ -170,7 +170,8 @@ public class LinearEquationSystem
    }  
 	
 	/** Returns a string representation of this LinearEquationSystem. */   
-   public String toString ()
+   @Override
+public String toString ()
    {
       String res = "";
       for (int i=0; i < equations.length; i++)

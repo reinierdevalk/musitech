@@ -63,6 +63,7 @@ public class PhysTimeMidiDumpReceiver extends MidiDumpReceiver {
 	 * Physical Time.
 	 * @see de.uos.fmt.musitech.performance.midi.MidiDumpReceiver#toMicros(long)
 	 */
+	@Override
 	long toMicros(long ticks) {
 		return ticks;
 	}

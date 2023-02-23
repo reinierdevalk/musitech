@@ -160,7 +160,7 @@ public class FloatStreamFFT {
 		
 		int fft_length = 256;
 		for (int i = 0; i < output.length; i++) {
-		  output[i][1] = Math.log(output[i][1] / (double)fft_length);
+		  output[i][1] = Math.log(output[i][1] / fft_length);
 		}
 		
 		FrequencyPanel panel = new FrequencyPanel(output);

@@ -85,6 +85,7 @@ public class BooleanEditor extends AbstractSimpleEditor {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.AbstractSimpleEditor#applyChangesToPropertyValue()
 	 */
+	@Override
 	public boolean applyChangesToPropertyValue() {
 		propertyValue = new Boolean((String) booleanBox.getSelectedItem());
 		return true;
@@ -95,6 +96,7 @@ public class BooleanEditor extends AbstractSimpleEditor {
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#createGUI()
 	 */
+	@Override
 	protected void createGUI() {
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		if (propertyName != null && propertyValue == null)
@@ -117,6 +119,7 @@ public class BooleanEditor extends AbstractSimpleEditor {
 			createButton.setEnabled(false);
 		else
 		createButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				createNewBooleanValue();
 			}
@@ -158,6 +161,7 @@ public class BooleanEditor extends AbstractSimpleEditor {
 		if (value != null)
 			booleanBox.setSelectedItem(value.toString());
 		booleanBox.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				applyChangesToPropertyValue();
 			}

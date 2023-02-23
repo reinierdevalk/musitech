@@ -190,7 +190,8 @@ public class PlayTimer {
          * 
          * @see java.lang.Runnable#run()
          */
-        public void run() {
+        @Override
+		public void run() {
             if (DebugState.DEBUG)
                 System.out.println("*** Push Thread: start running");
             while (true) {
@@ -753,7 +754,8 @@ public class PlayTimer {
         /**
          * @see de.uos.fmt.musitech.framework.time.PlayTimer#getPlayTimeMicros()
          */
-        public long getPlayTimeMicros() {
+        @Override
+		public long getPlayTimeMicros() {
             if (playing) {
                 //				System.out.println(
                 //					"MetronomTimer playing: "
@@ -778,28 +780,32 @@ public class PlayTimer {
          * 
          * @see de.uos.fmt.musitech.framework.time.PlayTimer#initMetronomTimer()
          */
-        void initMetronomTimer() {
+        @Override
+		void initMetronomTimer() {
             // Nothing done to avoid endless calls from PlayTimer
         }
 
         /**
          * @see de.uos.fmt.musitech.framework.time.PlayTimer#setContext(de.uos.fmt.musitech.data.structure.Context)
          */
-        public void setContext(Context context) {
+        @Override
+		public void setContext(Context context) {
             metronom.setContext(context);
         }
 
         /**
          * @see de.uos.fmt.musitech.framework.time.PlayTimer#setPlayTimeMicros(long)
          */
-        public synchronized void setPlayTimeMicros(long time) {
+        @Override
+		public synchronized void setPlayTimeMicros(long time) {
             metronom.setTimePosition(time);
         }
 
         /**
          * @see de.uos.fmt.musitech.framework.time.PlayTimer#setMetronome(boolean)
          */
-        public void setMetronome(boolean metronomeOn) {
+        @Override
+		public void setMetronome(boolean metronomeOn) {
 
             metronom.setPlayMetronom(metronomeOn);
         }
@@ -807,7 +813,8 @@ public class PlayTimer {
         /**
          * @see de.uos.fmt.musitech.framework.time.PlayTimer#setPreCount(boolean)
          */
-        public void setPreCount(boolean preCount) {
+        @Override
+		public void setPreCount(boolean preCount) {
 
             metronom.setPreCount(preCount);
         }
@@ -815,14 +822,16 @@ public class PlayTimer {
         /**
          * @see de.uos.fmt.musitech.framework.time.PlayTimer#setPreCountNum(int)
          */
-        public void setPreCountNum(int num) {
+        @Override
+		public void setPreCountNum(int num) {
             super.setPreCountNum(num);
         }
 
         /**
          * @see de.uos.fmt.musitech.framework.time.PlayTimer#start()
          */
-        public void start() {
+        @Override
+		public void start() {
             //			super.start();
             if (preCount && !playing) {
                 metronom.setTimePosition(timePlayed - preCountOffset);

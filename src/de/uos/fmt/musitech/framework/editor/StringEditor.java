@@ -62,6 +62,7 @@ public class StringEditor extends SimpleTextfieldEditor{
 	 * a new editor window) when more than one line is to be displayed. This is
 	 * to be done in further releases.)
 	 */
+	@Override
 	protected void createGUI() {
 		super.createGUI();
 	}
@@ -71,6 +72,7 @@ public class StringEditor extends SimpleTextfieldEditor{
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.SimpleTextfieldEditor#getInputValue()
 	 */
+	@Override
 	protected Object getInputValue() {
 //		if (!isEmptyDisplayOptionSet() && textfield.getText().equals(""))
 //			return null;

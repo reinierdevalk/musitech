@@ -57,12 +57,12 @@ import java.util.HashMap;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.structure.harmony.ChordSymbol;
 import de.uos.fmt.musitech.data.structure.harmony.ChordSymbolSequence;
 import de.uos.fmt.musitech.data.structure.lyrics.LyricsSyllable;
 import de.uos.fmt.musitech.data.structure.lyrics.LyricsSyllableSequence;
-import de.uos.fmt.musitech.framework.editor.CollectionDisplayTestGUI.ObjForCollectionDisplay;
 import de.uos.fmt.musitech.framework.editor.EditorFactory.EditorConstructionException;
 
 /**
@@ -79,7 +79,7 @@ public class MapDisplayTestGUI {
      */
     private static void provideClosingFrame() {
         JFrame frame = new JFrame("For closing all running frames");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
     /**

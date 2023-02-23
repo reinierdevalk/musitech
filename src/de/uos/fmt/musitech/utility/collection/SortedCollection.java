@@ -73,6 +73,7 @@ public class SortedCollection<T> extends TypedCollection<T> {
 		/**
 		 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 		 */
+		@Override
 		public int compare(Object o1, Object o2) {
 			if (o1 instanceof Comparable && o2 instanceof Comparable)
 				return ((Comparable) o1).compareTo(o2);
@@ -160,9 +161,11 @@ public class SortedCollection<T> extends TypedCollection<T> {
 	 */
 	public int find(final Rational metricTime) throws IllegalArgumentException {
 		Metrical metrical = new Metrical(){
+			@Override
 			public Rational getMetricTime() {
 				return metricTime;
 			}
+			@Override
 			public Rational getMetricDuration() {
 				return Rational.ZERO;
 			}
@@ -244,6 +247,7 @@ public class SortedCollection<T> extends TypedCollection<T> {
 	 * Implements indexOf making use of the element order.
 	 * @see java.util.List#indexOf(Object)
 	 */
+	@Override
 	public int indexOf(Object obj) {
 		int pos = find(obj);
 		if (pos >= 0) {
@@ -328,6 +332,7 @@ public class SortedCollection<T> extends TypedCollection<T> {
 	/**
 	 * @see java.util.Collection#addAll(java.util.Collection)
 	 */
+	@Override
 	public boolean addAll(Collection<T> c) {
 		Iterator<T> iter = c.iterator();
 		T obj;
@@ -344,6 +349,7 @@ public class SortedCollection<T> extends TypedCollection<T> {
 	 * Add at a special position could destroy the order so it's not allowed. Please use
 	 * @see add(Object obj)
 	 */
+	@Override
 	public void add(int pos, Object obj) {
 		throw new UnsupportedOperationException("SortedColletion - add(pos,obj) not supported.");
 	}
@@ -352,6 +358,7 @@ public class SortedCollection<T> extends TypedCollection<T> {
 	 * Add at a special position could destroy the order so it's not allowed. Please use
 	 * 	 * @see java.util.List#addAll(int, java.util.Collection)
 	 */
+	@Override
 	public boolean addAll(int index, Collection c) {
 		throw new UnsupportedOperationException("SortedColletion - add(pos,obj) not supported.");
 	}

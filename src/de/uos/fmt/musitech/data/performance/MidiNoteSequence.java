@@ -157,7 +157,8 @@ public class MidiNoteSequence extends SortedContainer implements //java.util.Com
      * 
      * @param newName String
      */
-    public void setName(String newName) {
+    @Override
+	public void setName(String newName) {
         name = newName;
     }
 
@@ -168,7 +169,8 @@ public class MidiNoteSequence extends SortedContainer implements //java.util.Com
      * 
      * @hibernate.property
      */
-    public String getName() {
+    @Override
+	public String getName() {
         return name;
     }
 

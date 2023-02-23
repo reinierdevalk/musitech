@@ -119,9 +119,38 @@ public class MetricalTimeLine extends SortedContainer<Marker> {
     }
 
     public MetricalTimeLine() {
-        this(null);
+        this((Context) null);
+//    	this(null); // rdv
     }
-
+    
+    /**
+     * Copy constructor.
+     * 
+     * @param mtl
+     * @author Reinier
+     */
+    public MetricalTimeLine(MetricalTimeLine mtl) {
+        super(null, Marker.class, new MetricalComparator());
+        for (Marker m : mtl) {
+        	if (m instanceof TimedMetrical && !(m instanceof TempoMarker)) {
+        		super.add(
+        			new TimedMetrical(((TimedMetrical)m).getTime(), m.getMetricTime())
+        		);
+        	}
+        	if (m instanceof TempoMarker) {
+        		super.add(
+        			new TempoMarker(((TempoMarker) m).getTime(), m.getMetricTime())
+        		);
+        	}
+        	if (m instanceof TimeSignatureMarker) {
+        		super.add(
+        			new TimeSignatureMarker(((TimeSignatureMarker) m).getTimeSignature(), 
+        			m.getMetricTime())
+        		);
+        	}
+        }
+    }
+        
     /**
      * Constructor with a default MetricalComparator, zeroMarker and endMarker.
      */
@@ -132,7 +161,7 @@ public class MetricalTimeLine extends SortedContainer<Marker> {
         // to get the Timestamp, multiply r.getNumer() by 2,000,000.
         int bars = 1000000;
         //		Rational r = new Rational(bars);
-        //		endMarker = new TimedMetrical(bars * 2000000L, r);
+        //		endMarker = new TimedMetrical(bars * 2000000L, r);        
         super.add(zeroMarker);
         super.add(endMarker);
         defaultTSM = new TimeSignatureMarker(4, 4, Rational.ZERO);
@@ -147,8 +176,10 @@ public class MetricalTimeLine extends SortedContainer<Marker> {
         //		km.accidentalNum = -6;
         //		add(km);
     }
+    
 
-    public boolean add(Marker o) {
+    @Override
+	public boolean add(Marker o) {
         if (o instanceof TimeSignatureMarker)
             remove(defaultTSM);
         return super.add(o);
@@ -517,10 +548,10 @@ public class MetricalTimeLine extends SortedContainer<Marker> {
         int pos = lookup(metricTime, markerClass);
         found: if (pos >= 0) {
             // Marker at exact position found.
-            markers[0] = (Marker) get(pos);
+            markers[0] = get(pos);
             int right = pos;
             while (right < size()
-                   && metricTime.equals(((Marker) get(right)).getMetricTime())) {
+                   && metricTime.equals(get(right).getMetricTime())) {
                 right++;
             }
             if(right == size())
@@ -528,7 +559,7 @@ public class MetricalTimeLine extends SortedContainer<Marker> {
             while (right > pos &&
             		!markerClass.isAssignableFrom(get(right).getClass()))
             	right--;
-            markers[1] = (Marker) get(right);
+            markers[1] = get(right);
             break found;
         } else {
             // Marker not found, calc search position. Search to the left.
@@ -551,9 +582,9 @@ public class MetricalTimeLine extends SortedContainer<Marker> {
                 }
             }
             if (left >= 0)
-                markers[0] = (Marker) get(left);
+                markers[0] = get(left);
             if (right >= 0)
-                markers[1] = (Marker) get(right);
+                markers[1] = get(right);
             //            while (left >= 0 && !(markerClass.isAssignableFrom(get(left).getClass())))
             //                left--;
             //            if (left >= 0) //ToDo: casting throws exception
@@ -742,7 +773,7 @@ public class MetricalTimeLine extends SortedContainer<Marker> {
                 markers[0] = (TimedMetrical) get(left);
             }
             if (right < 0) { //no TimedMetrical could be found => use default one
-                markers[1] = (TimedMetrical) endMarker;
+                markers[1] = endMarker;
             } else {
                 markers[1] = (TimedMetrical) get(right);
             }
@@ -841,7 +872,8 @@ public class MetricalTimeLine extends SortedContainer<Marker> {
     /**
      * Returns the MetricalTimeLine as a String.
      */
-    public String toString() {
+    @Override
+	public String toString() {
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < size(); i++) {
             sb.append(get(i).toString());
@@ -1082,7 +1114,7 @@ public class MetricalTimeLine extends SortedContainer<Marker> {
         int i = 0;
         // Suche nach dem ersten Marker vom Typ ChordSymbol
         while (i < size()) {
-            actualMarker = (Marker) get(i);
+            actualMarker = get(i);
             i++;
             if (actualMarker instanceof ChordSymbol) {
                 break;
@@ -1092,7 +1124,7 @@ public class MetricalTimeLine extends SortedContainer<Marker> {
         // Mit hilfe des n?chsten Marker vom Typ ChordSymbol ergibt sich
         // ein Zeitabschnitt, der mit diesem Akkord begleitet wird
         while (i < size()) {
-            nextMarker = (Marker) get(i);
+            nextMarker = get(i);
             i++;
             if (nextMarker instanceof ChordSymbol) {
                 Rational metricDuration = nextMarker.getMetricTime().sub(
@@ -1624,7 +1656,8 @@ public class MetricalTimeLine extends SortedContainer<Marker> {
      * 
      * @see de.uos.fmt.musitech.data.structure.container.SortedContainer#getTime()
      */
-    public long getTime() {
+    @Override
+	public long getTime() {
         return 0;
     }
 
@@ -1633,7 +1666,8 @@ public class MetricalTimeLine extends SortedContainer<Marker> {
      * 
      * @see de.uos.fmt.musitech.data.time.Timed#getDuration()
      */
-    public long getDuration() {
+    @Override
+	public long getDuration() {
         for (int i = size() - 2; i >= 0; i++) {
             if (get(i) instanceof Timed) {
                 Timed timed = (Timed) get(i);

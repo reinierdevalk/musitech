@@ -105,7 +105,8 @@ public class ExpandEditor extends AbstractComplexEditor implements Wrapper {
      * @param editorToExpand
      *            Editor to be shown in case of the expanded view
      */
-    public void setWrappedView(Display editorToExpand) {
+    @Override
+	public void setWrappedView(Display editorToExpand) {
         this.editorToExpand = (Editor) editorToExpand;
         this.editObj = editorToExpand.getEditObj();
     }
@@ -127,7 +128,8 @@ public class ExpandEditor extends AbstractComplexEditor implements Wrapper {
      * to the DataChangeManager.
      * The flags <code>dataChanged</code> and <code>dirty</code> are reset to false.
      */
-    public void applyChanges() {
+    @Override
+	public void applyChanges() {
         if (profile.isReadOnly())
             return;
         Collection editedData = getEditedData();
@@ -153,7 +155,8 @@ public class ExpandEditor extends AbstractComplexEditor implements Wrapper {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractComplexEditor#createGUI()
      */
-    public void createGUI() {
+    @Override
+	public void createGUI() {
         setLayout(new BorderLayout());
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
@@ -198,7 +201,8 @@ public class ExpandEditor extends AbstractComplexEditor implements Wrapper {
             JButton createButton = new JButton(BUTTON_TEXT_CREATE);
 
             createButton.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent ae) {
+                @Override
+				public void actionPerformed(ActionEvent ae) {
                     //					propertyValue = createNewPropertyValue("New
                     // propertyValue");
                     propertyValue = createNewValue("New propertyValue");
@@ -228,7 +232,8 @@ public class ExpandEditor extends AbstractComplexEditor implements Wrapper {
         }
 
         expandCollapseButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent ce) {
+            @Override
+			public void actionPerformed(ActionEvent ce) {
                 //				updateDisplay();
                 updateGUI();
             }
@@ -327,7 +332,8 @@ public class ExpandEditor extends AbstractComplexEditor implements Wrapper {
      *  
      * @see de.uos.fmt.musitech.framework.editor.Display#updateDisplay()
      */
-    public void updateDisplay() {
+    @Override
+	public void updateDisplay() {
         editorToExpand.updateDisplay();
         dataChanged = false;
         setValueCreated(false);
@@ -362,7 +368,8 @@ public class ExpandEditor extends AbstractComplexEditor implements Wrapper {
      * 
      * @see de.uos.fmt.musitech.framework.editor.AbstractEditor#isRemoteEventSource(java.lang.Object)
      */
-    protected boolean isRemoteEventSource(Object eventSource) {
+    @Override
+	protected boolean isRemoteEventSource(Object eventSource) {
         boolean related = true;
         if (editorToExpand != null)
             related = eventSource.equals(editorToExpand);
@@ -374,7 +381,8 @@ public class ExpandEditor extends AbstractComplexEditor implements Wrapper {
      *  
      * @see de.uos.fmt.musitech.framework.editor.Display#isFocused()
      */
-    public boolean isFocused() {
+    @Override
+	public boolean isFocused() {
         return isFocusOwner(); //TODO welche Komponenten müssen überprüft
                                // werden?
     }
@@ -389,7 +397,8 @@ public class ExpandEditor extends AbstractComplexEditor implements Wrapper {
      *  
      * @see de.uos.fmt.musitech.framework.editor.Editor#getEditedData()
      */
-    public Collection getEditedData() {
+    @Override
+	public Collection getEditedData() {
         Collection editedData = new ArrayList();
         if (editorToExpand != null) {
             Collection data = editorToExpand.getEditedData();
@@ -410,7 +419,8 @@ public class ExpandEditor extends AbstractComplexEditor implements Wrapper {
      *  
      * @see de.uos.fmt.musitech.framework.editor.Display#externalChanges()
      */
-    public boolean externalChanges(){
+    @Override
+	public boolean externalChanges(){
         if (editorToExpand!=null)
             dataChanged = editorToExpand.externalChanges();
         return dataChanged;

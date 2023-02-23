@@ -66,41 +66,48 @@ public class ClefSim implements SpringAttacher {
 		rwidth = Math.max(rwidth, clef.rwidth());
 	}
 
+	@Override
 	public int lwidth() {
 		return 0;
 	}
+	@Override
 	public int rwidth() {
 		return rwidth;
 	}
 	public int size() {
 		return clefs.size();
 	}
+	@Override
 	public Rational attackTime() {
 		return null;
 	}
 
+	@Override
 	public int optimalSpace(SpringAttacher successor) {
 		return optimalSpace + successor.lwidth();
 	}
 
+	@Override
 	public void setXPos(int x) {
 		for (int i = 0; i < clefs.size(); i++) {
-			Clef clef = (Clef) clefs.get(i);
+			Clef clef = clefs.get(i);
 			clef.setXPos(x);
 		}
 	}
 
+	@Override
 	public void setParentXPos(int x) {
 		for (int i = 0; i < clefs.size(); i++) {
-			Clef clef = (Clef) clefs.get(i);
+			Clef clef = clefs.get(i);
 			if (clef.getScoreParent() != null)
 				clef.getScoreParent().setXPos(x);
 		}
 	}
 
+	@Override
 	public void setMeasureRWidth(int width) {
 		for (int i = 0; i < clefs.size(); i++) {
-			Clef clef = (Clef) clefs.get(i);
+			Clef clef = clefs.get(i);
 			Measure m = clef.measure();
 			if (m != null)
 				m.setRWidth(width);

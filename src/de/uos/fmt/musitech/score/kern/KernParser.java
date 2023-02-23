@@ -64,15 +64,10 @@ import java.util.ArrayList;
 
 import antlr.TokenBuffer;
 import antlr.TokenStreamException;
-import antlr.TokenStreamIOException;
-import antlr.ANTLRException;
-import antlr.LLkParser;
 import antlr.Token;
 import antlr.TokenStream;
 import antlr.RecognitionException;
 import antlr.NoViableAltException;
-import antlr.MismatchedTokenException;
-import antlr.SemanticException;
 import antlr.ParserSharedInputState;
 import antlr.collections.impl.BitSet;
 
@@ -433,7 +428,7 @@ public class KernParser extends antlr.LLkParser       implements KernParserToken
 	        firstStaff = (NotationStaff) notationStaffs.get(firstIndex);
 	    
 	    // Set the second staff at the index of the first staff
-		notationStaffs.set(firstIndex, (NotationStaff) notationStaffs.get(secondIndex));
+		notationStaffs.set(firstIndex, notationStaffs.get(secondIndex));
 		// Set the first staff at the index of the second staff
 		notationStaffs.set(secondIndex, firstStaff);
 	}
@@ -457,7 +452,7 @@ public class KernParser extends antlr.LLkParser       implements KernParserToken
 	        firstVoice = (NotationVoice) notationVoices.get(firstIndex);
 	    
 	    // Set the second staff at the index of the first staff
-		notationVoices.set(firstIndex, (NotationVoice) notationVoices.get(secondIndex));
+		notationVoices.set(firstIndex, notationVoices.get(secondIndex));
 		// Set the first staff at the index of the second staff
 		notationVoices.set(secondIndex, firstVoice);
 	}

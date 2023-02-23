@@ -238,6 +238,7 @@ public class WaveDisplay extends AbstractDisplay implements LinearDisplay, Horiz
 	private PTActivationThread ptActivationThread;
 	
 	class PTActivationThread extends Thread{
+		@Override
 		public void run(){
 			while(!endPaintThread){ // stop whith paintThread 
 				// if Thread is painting, stop them
@@ -295,6 +296,7 @@ public class WaveDisplay extends AbstractDisplay implements LinearDisplay, Horiz
 	class PaintThread extends Thread {
 		int id;
 
+		@Override
 		public void run() {
 			while (!endPaintThread) {
 				paintOffImage();
@@ -416,6 +418,7 @@ public class WaveDisplay extends AbstractDisplay implements LinearDisplay, Horiz
 		}
 	}
 
+	@Override
 	public synchronized void paintComponent(Graphics g) {
 //		screenGraphics = g;
 		if (createOffscreenBuffer())
@@ -825,6 +828,7 @@ public class WaveDisplay extends AbstractDisplay implements LinearDisplay, Horiz
 	 * 
 	 * @see de.uos.fmt.musitech.time.gui.LinearDisplay#setMicrosPerPix(double)
 	 */
+	@Override
 	public void setMicrosPerPix(double microsPPix) {
 		double valInSamples = microsPPix * fpr.getFormat().getFrameRate() / 1000000;
 		setDisplayScale(valInSamples);
@@ -834,6 +838,7 @@ public class WaveDisplay extends AbstractDisplay implements LinearDisplay, Horiz
 	/**
 	 * @see de.uos.fmt.musitech.time.gui.LinearDisplay#setOffset(long)
 	 */
+	@Override
 	public void setOffset(long micros) {
 		int valInSamples = (int) (micros * fpr.getFormat().getFrameRate() / 1000000);
 		setDataStartPos(valInSamples);
@@ -843,6 +848,7 @@ public class WaveDisplay extends AbstractDisplay implements LinearDisplay, Horiz
 	/**
 	 * @see de.uos.fmt.musitech.time.gui.LinearDisplay#updateDisplay()
 	 */
+	@Override
 	public void updateDisplay() {
 		repaint();
 	}
@@ -850,6 +856,7 @@ public class WaveDisplay extends AbstractDisplay implements LinearDisplay, Horiz
 	/**
 	 * @see de.uos.fmt.musitech.time.gui.LinearDisplay#getEndTime()
 	 */
+	@Override
 	public long getEndTime() {
 		return getEndInMikroseconds();
 	}
@@ -857,6 +864,7 @@ public class WaveDisplay extends AbstractDisplay implements LinearDisplay, Horiz
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.Display#destroy()
 	 */
+	@Override
 	public void destroy() {
 		super.destroy();
 		// stopping and ending paintThread
@@ -878,6 +886,7 @@ public class WaveDisplay extends AbstractDisplay implements LinearDisplay, Horiz
 
 	}
 
+	@Override
 	public void dataChanged(DataChangeEvent dataChangeEvent) {
 		paintWave();
 	}
@@ -887,6 +896,7 @@ public class WaveDisplay extends AbstractDisplay implements LinearDisplay, Horiz
 	 * 
 	 * @see de.uos.fmt.musitech.framework.editor.Display#focusReceived()
 	 */
+	@Override
 	public void focusReceived() {
 		//		haveFocus = true;
 		//		if(toChange || externalChanges()){
@@ -908,6 +918,7 @@ public class WaveDisplay extends AbstractDisplay implements LinearDisplay, Horiz
 	/**
 	 * @see de.uos.fmt.musitech.framework.editor.AbstractDisplay#createGUI()
 	 */
+	@Override
 	public void createGUI() {
 		if (getPropertyValue() != null && getPropertyValue() instanceof AudioFileObject) {
 			setAudioFileObject((AudioFileObject) getPropertyValue());
@@ -920,6 +931,7 @@ public class WaveDisplay extends AbstractDisplay implements LinearDisplay, Horiz
 	 * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#getMinimalPositionForTime(long,
 	 *      de.uos.fmt.musitech.utility.math.Rational)
 	 */
+	@Override
 	public int getMinimalPositionForTime(long t, Rational m) throws WrongArgumentException {
 		if(t == Timed.INVALID_TIME){
 			if(m!=null){
@@ -937,6 +949,7 @@ public class WaveDisplay extends AbstractDisplay implements LinearDisplay, Horiz
 	 * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#setMinimalPositionForTime(long,
 	 *      de.uos.fmt.musitech.utility.math.Rational, int)
 	 */
+	@Override
 	public boolean setMinimalPositionForTime(long t, Rational m, int position) throws WrongArgumentException {
 		// TODO Auto-generated method stub
 		return false;
@@ -945,6 +958,7 @@ public class WaveDisplay extends AbstractDisplay implements LinearDisplay, Horiz
 	/**
 	 * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#getNextPositioningTime(long)
 	 */
+	@Override
 	public long getNextPositioningTime(long startTime) {
 		// TODO Auto-generated method stub
 		return 0;
@@ -953,18 +967,21 @@ public class WaveDisplay extends AbstractDisplay implements LinearDisplay, Horiz
 	/**
 	 * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#doInitialLayout()
 	 */
+	@Override
 	public void doInitialLayout() {
 		// TODO Auto-generated method stub
 
 	}
 	
 	
+	@Override
 	public Dimension getPreferredSize(){
 	    //TODO verbessern
 	    int prefWidth = (int)(audioFileObject.getLengthInSamples()/samplesOnX);
 	    return new Dimension(prefWidth, 250);
 	}
 	
+	@Override
 	public void setTimePosition(long timeMicros) {
 		setCursorPosTime(timeMicros);
 //		scrollToCursorPos(2);

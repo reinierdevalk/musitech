@@ -71,6 +71,7 @@ public class BarlineCustom extends Barline {
 		this.to = to;
 	}
 	
+	@Override
 	void movePropertiesTo(ScoreObject o) {
 		super.movePropertiesTo(o);
 		((BarlineCustom)o).from = from;
@@ -80,6 +81,7 @@ public class BarlineCustom extends Barline {
 	/**
 	 * @see de.uos.fmt.musitech.score.gui.Barline#paint(java.awt.Graphics, int, int, int)
 	 */
+	@Override
 	void paint(Graphics g, int x, int y1, int y2) {
 		if(!isVisible()) return;
 		super.paint(g, x, y1, y2);
@@ -96,10 +98,12 @@ public class BarlineCustom extends Barline {
 	/**
 	 * @see de.uos.fmt.musitech.score.gui.Barline#create()
 	 */
+	@Override
 	public Barline create() {
 		return new BarlineCustom(0, 5);
 	}
 	
+	@Override
 	public int barlineRwidth() {
 		return 1;
 	}

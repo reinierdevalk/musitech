@@ -53,6 +53,7 @@ import java.util.Dictionary;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JSlider;
+import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -71,7 +72,7 @@ public class PanSlider extends JSlider{
 	
 		
 		
-		super(JSlider.HORIZONTAL, 0, 127, 64);
+		super(SwingConstants.HORIZONTAL, 0, 127, 64);
 	
 		this.fis = fis;
 		
@@ -94,9 +95,10 @@ public class PanSlider extends JSlider{
 	
 		addChangeListener(
 			new ChangeListener() {
+				@Override
 				public void stateChanged(ChangeEvent e){
 					float gain;
-					gain = (float)((JSlider)(e.getSource())).getValue(); 
+					gain = ((JSlider)(e.getSource())).getValue(); 
 					
 					if (gain<64.0f) {
 						gain = gain/64;

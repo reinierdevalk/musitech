@@ -64,7 +64,8 @@ public class LocatorComparator implements Comparator{
     /**
      * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
      */
-    public int compare(Object obj1, Object obj2) {
+    @Override
+	public int compare(Object obj1, Object obj2) {
         Locator loc1 = (Locator) obj1;
         Locator loc2 = (Locator) obj2;
         if (loc1.getTimeInMicros() < loc2.getTimeInMicros()){

@@ -65,9 +65,11 @@ public class MidiTee implements Receiver {
 	boolean on1= true ;
 	boolean on2= true ;
 
+	@Override
 	public void close() {
 	}
 
+	@Override
 	public void send(MidiMessage event, long time) {
 		if (on1)
 			out1.send(event, time);

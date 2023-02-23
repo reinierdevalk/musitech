@@ -49,42 +49,23 @@ above is subject to the following three conditions:
 **********************************************/
 package de.uos.fmt.musitech.score.kern;
 
-import de.uos.fmt.musitech.data.performance.*;
-import de.uos.fmt.musitech.data.structure.*;
-import de.uos.fmt.musitech.data.structure.container.*;
-import de.uos.fmt.musitech.data.structure.harmony.*;
-import de.uos.fmt.musitech.data.structure.linear.*;
-import de.uos.fmt.musitech.data.score.*;
-import de.uos.fmt.musitech.data.score.Barline;
-import de.uos.fmt.musitech.data.time.*;
-import de.uos.fmt.musitech.utility.math.*;
-
-import java.util.List;
-import java.util.ArrayList;
-
 import java.io.InputStream;
 import antlr.TokenStreamException;
 import antlr.TokenStreamIOException;
 import antlr.TokenStreamRecognitionException;
 import antlr.CharStreamException;
 import antlr.CharStreamIOException;
-import antlr.ANTLRException;
 import java.io.Reader;
 import java.util.Hashtable;
-import antlr.CharScanner;
 import antlr.InputBuffer;
 import antlr.ByteBuffer;
 import antlr.CharBuffer;
 import antlr.Token;
-import antlr.CommonToken;
 import antlr.RecognitionException;
 import antlr.NoViableAltForCharException;
-import antlr.MismatchedCharException;
 import antlr.TokenStream;
-import antlr.ANTLRHashString;
 import antlr.LexerSharedInputState;
 import antlr.collections.impl.BitSet;
-import antlr.SemanticException;
 
 public class KernLexer extends antlr.CharScanner implements KernParserTokenTypes, TokenStream
  {
@@ -112,6 +93,7 @@ public KernLexer(LexerSharedInputState state) {
 	literals = new Hashtable();
 }
 
+@Override
 public Token nextToken() throws TokenStreamException {
 	Token theRetToken=null;
 tryAgain:
@@ -358,7 +340,7 @@ tryAgain:
 					}
 				else {
 					if (LA(1)==EOF_CHAR) {uponEOF(); _returnToken = makeToken(Token.EOF_TYPE);}
-				else {throw new NoViableAltForCharException((char)LA(1), getFilename(), getLine(), getColumn());}
+				else {throw new NoViableAltForCharException(LA(1), getFilename(), getLine(), getColumn());}
 				}
 				}
 				if ( _returnToken==null ) continue tryAgain; // found SKIP token
@@ -395,7 +377,7 @@ tryAgain:
 				matchRange('0','9');
 			}
 			else {
-				if ( _cnt3>=1 ) { break _loop3; } else {throw new NoViableAltForCharException((char)LA(1), getFilename(), getLine(), getColumn());}
+				if ( _cnt3>=1 ) { break _loop3; } else {throw new NoViableAltForCharException(LA(1), getFilename(), getLine(), getColumn());}
 			}
 			
 			_cnt3++;
@@ -475,7 +457,7 @@ tryAgain:
 		}
 		default:
 		{
-			throw new NoViableAltForCharException((char)LA(1), getFilename(), getLine(), getColumn());
+			throw new NoViableAltForCharException(LA(1), getFilename(), getLine(), getColumn());
 		}
 		}
 		}
@@ -573,7 +555,7 @@ tryAgain:
 			match('\n');
 		}
 		else {
-			throw new NoViableAltForCharException((char)LA(1), getFilename(), getLine(), getColumn());
+			throw new NoViableAltForCharException(LA(1), getFilename(), getLine(), getColumn());
 		}
 		
 		}
@@ -843,13 +825,13 @@ tryAgain:
 				match("tb32");
 			}
 			else {
-				throw new NoViableAltForCharException((char)LA(1), getFilename(), getLine(), getColumn());
+				throw new NoViableAltForCharException(LA(1), getFilename(), getLine(), getColumn());
 			}
 			
 			}
 		}
 		else {
-			throw new NoViableAltForCharException((char)LA(1), getFilename(), getLine(), getColumn());
+			throw new NoViableAltForCharException(LA(1), getFilename(), getLine(), getColumn());
 		}
 		
 		}
@@ -1095,7 +1077,7 @@ tryAgain:
 		}
 		default:
 		{
-			throw new NoViableAltForCharException((char)LA(1), getFilename(), getLine(), getColumn());
+			throw new NoViableAltForCharException(LA(1), getFilename(), getLine(), getColumn());
 		}
 		}
 		}
@@ -1175,7 +1157,7 @@ tryAgain:
 			match("!!");
 		}
 		else {
-			throw new NoViableAltForCharException((char)LA(1), getFilename(), getLine(), getColumn());
+			throw new NoViableAltForCharException(LA(1), getFilename(), getLine(), getColumn());
 		}
 		
 		}

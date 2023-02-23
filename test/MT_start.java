@@ -51,6 +51,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import de.uos.fmt.musitech.data.audio.AudioFileObject;
 import de.uos.fmt.musitech.data.structure.Piece;
@@ -70,7 +71,7 @@ public class MT_start {
 		JFrame frame = new JFrame("Transport Panel");
 		frame.getContentPane().add(transBut);
 		frame.pack();
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 	}
 	

@@ -58,6 +58,7 @@ class BarlineDouble extends Barline
 
 //	public BarlineDouble (
 
+	@Override
 	void paint(Graphics g, int x, int y1, int y2) {
 		if(!isVisible()) return;
 		super.paint(g, x, y1, y2);
@@ -67,14 +68,17 @@ class BarlineDouble extends Barline
 		g.fillRect(x, y1, 4, Math.abs(y2 - y1));
 	}
 	
+	@Override
 	public Barline create ()
 	{
 	   return new BarlineDouble();
 	}
 
+	@Override
 	public int barlineRwidth() {
 		return 7;
 	}
 	
+	@Override
 	public void paint(Graphics g) {}
 }

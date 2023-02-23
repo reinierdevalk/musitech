@@ -136,10 +136,10 @@ public class TestCase2_8 {
 			form == 15) {
 			graphic.setVerticalAlignment(-4);
 		}
-		((Note)nc.get(0)).addRenderingHint("custom head", graphic);
+		nc.get(0).addRenderingHint("custom head", graphic);
 		nc.addRenderingHint("draw stem", new Boolean(false));
 		// added by Jan Kramer
-		TestCase2_8MidiRendering.setMidiRendering(((Note)nc.get(0)).getScoreNote(), form);
+		TestCase2_8MidiRendering.setMidiRendering(nc.get(0).getScoreNote(), form);
 	}
 
 	public static void fillPiece(Piece piece) {
@@ -148,8 +148,8 @@ public class TestCase2_8 {
 	
 	
 	public static void fillNotationSystem(NotationSystem system) {
-		NotationStaff staff = (NotationStaff)system.get(0);
-		NotationVoice voice = (NotationVoice)staff.get(0);
+		NotationStaff staff = system.get(0);
+		NotationVoice voice = staff.get(0);
 		
 		Locale language = Locale.getDefault();
 		voice.setLyrics(new LyricsContainer(null));
@@ -690,7 +690,7 @@ public class TestCase2_8 {
 		
 		URL verseURL = TestCase2_8.class.getResource("verse.svg");
 		SVGSymbol verse = new SVGSymbol(verseURL.toString());
-		Attachable verseAttach = new Attachable((Note)nc27.get(0), verse, -5.0f, 4.0f);
+		Attachable verseAttach = new Attachable(nc27.get(0), verse, -5.0f, 4.0f);
 		staff.addAttachable(verseAttach);
 	}
 }

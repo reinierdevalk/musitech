@@ -136,6 +136,7 @@ public abstract class PCMFileFloatIS_old implements RangeFloatIS, FloatPreviewRe
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float[][])
 	 */
+	@Override
 	public int read(float[][] data) throws IOException {
 		return read(data, 0, data[0].length);
 	}
@@ -145,6 +146,7 @@ public abstract class PCMFileFloatIS_old implements RangeFloatIS, FloatPreviewRe
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#read(float[][], int, int)
 	 */
+	@Override
 	public int read(float[][] data, int start, int len) throws IOException {
 		int t_i = 0; // target index (float-array)
 		int lim = readLimit-frameSize;
@@ -207,6 +209,7 @@ public abstract class PCMFileFloatIS_old implements RangeFloatIS, FloatPreviewRe
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getFormat()
 	 */
+	@Override
 	public AudioFormat getFormat() {
 		AudioFormat out =
 			new AudioFormat(
@@ -223,6 +226,7 @@ public abstract class PCMFileFloatIS_old implements RangeFloatIS, FloatPreviewRe
 	 * Skip n samples
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#skip(long)
 	 */
+	@Override
 	public long skip(long n) throws IOException {
 		position((int) (position()+n));
 		return position();
@@ -230,34 +234,39 @@ public abstract class PCMFileFloatIS_old implements RangeFloatIS, FloatPreviewRe
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#reset()
 	 */
+	@Override
 	public void reset() throws IOException {
 		position((int) mark);
 	}
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.PositionableFIS#position(long)
 	 */
+	@Override
 	public void position(int n) throws IOException {
-		offset = header + (int) (n * frameSize);
+		offset = header + n * frameSize;
 		if(offset>readLimit) offset = readLimit;
 	}
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.PositionableFIS#position()
 	 */
+	@Override
 	public int position() {
 		return (offset-header) / frameSize;
 	}
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.PositionableFIS#readLimit(long)
 	 */
+	@Override
 	public int markEnd(int newLimit) {
 		if(newLimit > getMaxEndPos())
 			newLimit = getMaxEndPos();
-		readLimit = (int) ((newLimit * frameSize) + header);
+		readLimit = (newLimit * frameSize) + header;
 		return getEndMark();
 	}
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.PositionableFIS#readLimit()
 	 */
+	@Override
 	public int getEndMark() {
 		return (readLimit-header)/frameSize;
 	}
@@ -265,6 +274,7 @@ public abstract class PCMFileFloatIS_old implements RangeFloatIS, FloatPreviewRe
 	 * if(marker > getEndMark()) marker = getEndMark();
 	 * @see de.uos.fmt.musitech.audio.floatStream.PositionableFIS#mark(long)
 	 */
+	@Override
 	public void markBegin(int marker) {
 		if(marker > getEndMark()) marker = getEndMark();
 		mark = marker;
@@ -272,12 +282,14 @@ public abstract class PCMFileFloatIS_old implements RangeFloatIS, FloatPreviewRe
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.PositionableFIS#mark()
 	 */
+	@Override
 	public int getBeginMark() throws IOException {
 		return (int)mark;
 	}
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.PositionableFIS#totalAvailable()
 	 */
+	@Override
 	public int getMaxEndPos() {
 		return (int)framesAvailable;
 	}
@@ -287,6 +299,7 @@ public abstract class PCMFileFloatIS_old implements RangeFloatIS, FloatPreviewRe
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#previewRead(float[][], int, int)
 	 */
+	@Override
 	public int previewRead(float[][] data, int start, int len) {
 		
 		// TODO TODO TODO: in arbeit
@@ -303,7 +316,7 @@ public abstract class PCMFileFloatIS_old implements RangeFloatIS, FloatPreviewRe
 		}
 		int bLen = (int) (len * sInPerSOut * frameSize);
 		int available = 0;
-		available = (int) ((readLimit - position()) * frameSize);
+		available = (readLimit - position()) * frameSize;
 		bLen = available>bLen?bLen:available;
 		if(bLen<1) return -1;
 
@@ -315,7 +328,7 @@ public abstract class PCMFileFloatIS_old implements RangeFloatIS, FloatPreviewRe
 		s_si = 0.0f;
 		int t_i = 0;	// target index (float-array)
 		int endAt = (int) (bLen-(frameSize*sInPerSOut));
-		for (int s_i = 0, channel = 0; s_i <= endAt && t_i<data[0].length; t_i++, s_i = (int) ((int)s_si*frameSize)) {
+		for (int s_i = 0, channel = 0; s_i <= endAt && t_i<data[0].length; t_i++, s_i = (int)s_si*frameSize) {
 		   for (channel = 0; channel < channels.length; channel++) {
 				chOfs = channels[channel] * bytesPerSample;
 					
@@ -373,12 +386,14 @@ public abstract class PCMFileFloatIS_old implements RangeFloatIS, FloatPreviewRe
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#setSinPerSOut(float)
 	 */
+	@Override
 	public void setSampleRateRatio(float s) {
 		// TODO Auto-generated method stub
 	}
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#getSinPerSOut()
 	 */
+	@Override
 	public float getSampleRateRatio() {
 		// TODO Auto-generated method stub
 		return 0;
@@ -386,6 +401,7 @@ public abstract class PCMFileFloatIS_old implements RangeFloatIS, FloatPreviewRe
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#setAllChannels()
 	 */
+	@Override
 	public int setAllChannels() {
 		// TODO Auto-generated method stub
 		return 0;
@@ -393,6 +409,7 @@ public abstract class PCMFileFloatIS_old implements RangeFloatIS, FloatPreviewRe
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#setChannels(int[])
 	 */
+	@Override
 	public boolean setChannels(int[] chan) {
 		// TODO Auto-generated method stub
 		return false;
@@ -400,6 +417,7 @@ public abstract class PCMFileFloatIS_old implements RangeFloatIS, FloatPreviewRe
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#channelsDisponible()
 	 */
+	@Override
 	public int channelsDisponible() {
 		// TODO Auto-generated method stub
 		return 0;
@@ -427,6 +445,7 @@ public abstract class PCMFileFloatIS_old implements RangeFloatIS, FloatPreviewRe
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatPreviewReader#getPositionableFIS()
 	 */
+	@Override
 	public PositionableFIS getPositionableFIS() {
 		return null;
 	}
@@ -440,6 +459,7 @@ public abstract class PCMFileFloatIS_old implements RangeFloatIS, FloatPreviewRe
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#remainingSamples()
 	 */
+	@Override
 	public long remainingSamples() {
 		return getMaxEndPos() - position();
 	}
@@ -447,6 +467,7 @@ public abstract class PCMFileFloatIS_old implements RangeFloatIS, FloatPreviewRe
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#getPositionInSamples()
 	 */
+	@Override
 	public long getPositionInSamples() {
 		return position();
 	}
@@ -454,6 +475,7 @@ public abstract class PCMFileFloatIS_old implements RangeFloatIS, FloatPreviewRe
 	/**
 	 * @see de.uos.fmt.musitech.audio.floatStream.FloatInputStream#setPositionInSamples(long)
 	 */
+	@Override
 	public void setPositionInSamples(long newPos) throws IOException {
 		position((int) newPos);
 	}

@@ -93,6 +93,7 @@ public class DataChangeManagerTest extends TestCase {
 	}
 	
 	static class PseudoListener implements DataChangeListener{
+		@Override
 		public void dataChanged(DataChangeEvent e) {
 			// dummy method
 		}

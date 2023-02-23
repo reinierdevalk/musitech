@@ -54,7 +54,6 @@ package de.uos.fmt.musitech.framework.user;
 
 import java.awt.Frame;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 

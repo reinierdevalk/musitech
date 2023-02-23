@@ -75,7 +75,8 @@ public class DistributedSelection extends LocalSelection {	//TODO implements Sel
      * @param source the component causing the change
      * @return boolean true if the selection has changed and a SelectionChangeEvent has been sent, false otherwise
      */
-    public boolean add(Object selectedObject, Object source) {
+    @Override
+	public boolean add(Object selectedObject, Object source) {
         if (super.add(selectedObject, source)) {
             SelectionChangeEvent sce = new SelectionChangeEvent(source, this);
             sce.addedObjects.add(selectedObject);
@@ -93,7 +94,8 @@ public class DistributedSelection extends LocalSelection {	//TODO implements Sel
      * @param source The component causing the change.
      * @return
      */
-    public boolean addAll(Collection selectedObjects, Object source) {
+    @Override
+	public boolean addAll(Collection selectedObjects, Object source) {
         if (super.addAll(selectedObjects, source)) {
             SelectionChangeEvent sce = new SelectionChangeEvent(source, this);
             sce.addedObjects.addAll(selectedObjects);
@@ -110,7 +112,8 @@ public class DistributedSelection extends LocalSelection {	//TODO implements Sel
      * @param newSelectedObjects
      * @param source The component causing the change.
      */
-    public synchronized void replace(Collection newSelectedObjects, Object source) {
+    @Override
+	public synchronized void replace(Collection newSelectedObjects, Object source) {
         SelectionChangeEvent sce = new SelectionChangeEvent(source, this);
         sce.removedObjects.addAll(selected);
         selected.clear();
@@ -132,7 +135,8 @@ public class DistributedSelection extends LocalSelection {	//TODO implements Sel
      * @param obj The new only selected object 
      * @param source The component causing the change.
      */
-    public synchronized void replace(Object obj, Object source) {
+    @Override
+	public synchronized void replace(Object obj, Object source) {
         SelectionChangeEvent sce = new SelectionChangeEvent(source, this);
         sce.removedObjects.addAll(selected);
         selected.clear();
@@ -150,7 +154,8 @@ public class DistributedSelection extends LocalSelection {	//TODO implements Sel
      * the specified Object as its source and all former elements of <code>selected</code>
      * added to its <code>removedObjects</code> to the SelectionManager.
      */
-    public void clear(Object source) {
+    @Override
+	public void clear(Object source) {
         if (!selected.isEmpty()) {
             SelectionChangeEvent sce = new SelectionChangeEvent(source, this);
             sce.removedObjects.addAll(selected);
@@ -171,7 +176,8 @@ public class DistributedSelection extends LocalSelection {	//TODO implements Sel
      * @param source Object causing the change of the selection
      * @return boolean true if <code>selected</code> has changed and a SelectionChangeEvent has been sent, false otherwise
      */
-    public boolean remove(Object deselectedObject, Object source) {
+    @Override
+	public boolean remove(Object deselectedObject, Object source) {
         if (super.remove(deselectedObject, source)) { 
             SelectionChangeEvent sce = new SelectionChangeEvent(this);
             sce.removedObjects.add(deselectedObject);
@@ -192,7 +198,8 @@ public class DistributedSelection extends LocalSelection {	//TODO implements Sel
      * @param source Object causing the change of the selection
      * @return boolean true if <code>selected</code> has changed and a SelectionChangeEvent has been sent, false otherwise
      */
-    public boolean removeAll(Collection deselectedObjects, Object source) {
+    @Override
+	public boolean removeAll(Collection deselectedObjects, Object source) {
         if (super.removeAll(deselectedObjects, source)) { 
             SelectionChangeEvent sce = new SelectionChangeEvent(this);
             sce.removedObjects.addAll(deselectedObjects);

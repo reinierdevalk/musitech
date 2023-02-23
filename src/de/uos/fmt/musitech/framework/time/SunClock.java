@@ -87,6 +87,7 @@ public class SunClock implements MTimer {
 	}
 
 	Object[] noArgs = new Object[]{};
+	@Override
 	public long getTimeMicros() {
 //		return perf.highResCounter() * 1000L / freq;
 		try {

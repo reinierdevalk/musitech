@@ -109,6 +109,7 @@ public abstract class AudioObject extends BasicTimedObject implements Named, Ser
 	 * 
 	 * 
 	 */
+	@Override
 	public java.lang.String getName() 
    {
 		return name;
@@ -119,6 +120,7 @@ public abstract class AudioObject extends BasicTimedObject implements Named, Ser
 	 * Creation date: (10.1.2002 17:28:03)
 	 * @param newName java.lang.String
 	 */
+	@Override
 	public void setName(String newName) 
     {
 		name = newName;

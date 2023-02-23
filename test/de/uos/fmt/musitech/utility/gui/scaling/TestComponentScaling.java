@@ -63,6 +63,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.WindowConstants;
 
 import junit.framework.TestCase;
 import de.uos.fmt.musitech.data.structure.Piece;
@@ -88,7 +89,7 @@ public class TestComponentScaling extends TestCase {
 	 * Building up components (panelS, panelU, buttonS, textfieldS).
 	 */
 	static void init() {
-		wScaled.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		wScaled.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 				
 		// panel 1: "unscaled" button and textfield
 		panelU = new JPanel();
@@ -320,6 +321,7 @@ public class TestComponentScaling extends TestCase {
 	 * @author tobi
 	 */	
 	static class FocusOutput extends FocusAdapter {
+		@Override
 		public void focusGained(FocusEvent e) {
 			if (e.getSource() instanceof java.awt.Component)
 				System.out.println(((java.awt.Component)e.getSource()).getName()+" has got the focus");
@@ -332,6 +334,7 @@ public class TestComponentScaling extends TestCase {
 	 * @author tobi
 	 */
 	static class ActionOutput implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("\t"+e);
 //			if (e.getSource() instanceof Container) {
@@ -344,6 +347,7 @@ public class TestComponentScaling extends TestCase {
 
 	static class MouseOutput extends MouseAdapter {
 		
+		@Override
 		public void mouseClicked(MouseEvent e) {
 			System.out.println("\t"+e);
 		}

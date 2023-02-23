@@ -387,7 +387,7 @@ public class BaroqueAlignmentTest extends JFrame {
         staff2.add(ma2);
 
 //        MetricAttachable ma3 = new MetricAttachable(nl4.get(3), mordentup);
-        ((Note)nl4.get(3)).getScoreNote().addAccent(Accent.MORDENT_UP);
+        nl4.get(3).getScoreNote().addAccent(Accent.MORDENT_UP);
 //        ma3.setRelativePosition(MetricAttachable.NORTH);
 //        ma3.setAlignment(MetricAttachable.CENTER);
 //        ma3.setDistance(1);
@@ -641,7 +641,8 @@ public class BaroqueAlignmentTest extends JFrame {
     public BaroqueAlignmentTest() {
         addWindowListener(new WindowAdapter() {
 
-            public void windowClosing(WindowEvent ev) {
+            @Override
+			public void windowClosing(WindowEvent ev) {
                 System.exit(0);
             }
         });

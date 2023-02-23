@@ -90,7 +90,7 @@ public class Pattern {
 			for (Iterator e = ch.values().iterator() ; e.hasNext() ;) {
 				int pi = ((Integer) e.next()).intValue();
 				perNote.setPitch(pi);
-				Note note = new Note((PerformanceNote) ObjectCopy.copyObject(perNote));
+				Note note = new Note(ObjectCopy.copyObject(perNote));
 				cont.add(note);
 			}
 		}

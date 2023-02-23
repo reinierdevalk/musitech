@@ -59,6 +59,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 import de.uos.fmt.musitech.time.gui.TempoPanel;
 import de.uos.fmt.musitech.utility.math.Rational;
@@ -97,19 +98,19 @@ public class MarkerControlPanel extends JPanel {
 	
 		JPanel labelPanel = new JPanel();		
 		realTimeField = new JTextField("0");
-		realTimeField.setHorizontalAlignment(JTextField.RIGHT);
+		realTimeField.setHorizontalAlignment(SwingConstants.RIGHT);
 		realTimeField.setPreferredSize(new Dimension(150,20));
 		realTimeField.setBackground(Color.GRAY.brighter());
 		realTimeField.setEditable(false);
 		JLabel labelA = new JLabel(" physical time       ");
 		metricalTimeField = new JTextField("0");
-		metricalTimeField.setHorizontalAlignment(JTextField.RIGHT);
+		metricalTimeField.setHorizontalAlignment(SwingConstants.RIGHT);
 		metricalTimeField.setPreferredSize(new Dimension(200,20));
 		metricalTimeField.setBackground(Color.GRAY.brighter());
 		metricalTimeField.setEditable(false);
 		JLabel labelB = new JLabel(" metrical time");
 		timeSignatureField = new JTextField("0");
-		timeSignatureField.setHorizontalAlignment(JTextField.RIGHT);
+		timeSignatureField.setHorizontalAlignment(SwingConstants.RIGHT);
 		timeSignatureField.setPreferredSize(new Dimension(50,20));
 		timeSignatureField.setBackground(Color.GRAY.brighter());
 		timeSignatureField.setEditable(false);
@@ -128,6 +129,7 @@ public class MarkerControlPanel extends JPanel {
 		knopfA = new JRadioButton("physical time", true);
 		knopfA.setToolTipText("Show the MetricalTimeLine in physical time relation.");
 		knopfA.addActionListener(new ActionListener(){
+			@Override
 			public void actionPerformed(ActionEvent event){
 				if ( event.getSource()== knopfA ){
 					knopfA.setSelected(true);
@@ -140,6 +142,7 @@ public class MarkerControlPanel extends JPanel {
 		knopfB = new JRadioButton("metrical time", false);
 		knopfB.setToolTipText("Show the MetricalTimeLine in metrical time relation.");
 		knopfB.addActionListener(new ActionListener(){
+			@Override
 			public void actionPerformed(ActionEvent event){
 				if ( event.getSource()== knopfB ){
 					knopfB.setSelected(true);
@@ -156,10 +159,11 @@ public class MarkerControlPanel extends JPanel {
 		zoomPanel.setBorder(BorderFactory.createEtchedBorder());
 		zoomPanel.setLayout(new BorderLayout());		
 		JLabel zoomLabel = new JLabel("Zoom");
-		zoomLabel.setHorizontalAlignment(JTextField.CENTER);
+		zoomLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		knopfC = new JButton(new ImageIcon(this.getClass().getResource("../utility/gui/icons/zoom_in.gif")));
 		knopfC.setToolTipText("zoom in");
 		knopfC.addActionListener(new ActionListener(){
+			@Override
 			public void actionPerformed(ActionEvent event){
 				if ( event.getSource()== knopfC ){
 					zoomIn();
@@ -170,6 +174,7 @@ public class MarkerControlPanel extends JPanel {
 		knopfD = new JButton(new ImageIcon(this.getClass().getResource("../utility/gui/icons/zoom_out.gif")));
 		knopfD.setToolTipText("zoom out");
 		knopfD.addActionListener(new ActionListener(){
+			@Override
 			public void actionPerformed(ActionEvent event){
 				if ( event.getSource()== knopfD ){
 					zoomOut();
@@ -179,7 +184,7 @@ public class MarkerControlPanel extends JPanel {
 		
 		zoomTextField = new JTextField(zoomFactor+"x");
 		zoomTextField.setToolTipText("the current zoomfactor");
-		zoomTextField.setHorizontalAlignment(JTextField.RIGHT);
+		zoomTextField.setHorizontalAlignment(SwingConstants.RIGHT);
 		zoomTextField.setPreferredSize(new Dimension(30,20));
 		zoomTextField.setBackground(Color.GRAY.brighter());
 		zoomTextField.setEditable(false);

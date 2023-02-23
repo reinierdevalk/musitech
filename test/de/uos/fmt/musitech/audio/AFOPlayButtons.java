@@ -101,11 +101,13 @@ public class AFOPlayButtons extends JPanel {
 	private boolean pause;
 	private void initialiseButtons(){
 		playButton.addActionListener(new ActionListener(){
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				stopppp = false;
 				afoPlayer.start();
 			}});
 		pauseButton.addActionListener(new ActionListener(){
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(pause){
 					stopppp=false;
@@ -117,6 +119,7 @@ public class AFOPlayButtons extends JPanel {
 				pause = !pause;
 			}});
 		stopButton.addActionListener(new ActionListener(){
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				afoPlayer.reset();
 			}});
@@ -124,14 +127,20 @@ public class AFOPlayButtons extends JPanel {
 	
 	private void initialiseSliders(){
 		playPosSlider.addChangeListener(new ChangeListener(){
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				playPosLabel.setText(String.valueOf(playPosSlider.getValue()));
 			}});
 		playPosSlider.addMouseListener(new MouseListener(){
+			@Override
 			public void mouseClicked(MouseEvent e) {			}
+			@Override
 			public void mouseEntered(MouseEvent e) {}
+			@Override
 			public void mouseExited(MouseEvent e) {}
+			@Override
 			public void mousePressed(MouseEvent e) {}
+			@Override
 			public void mouseReleased(MouseEvent e) {
 				afoPlayer.setTimePosition(playPosSlider.getValue()*1000);
 				try {

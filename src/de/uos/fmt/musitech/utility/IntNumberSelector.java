@@ -105,6 +105,7 @@ public class IntNumberSelector extends javax.swing.JComboBox {
 	/**
 	 * Fires a vetoableChange.
 	 */
+	@Override
 	protected void selectedItemChanged() {
 		Object selectedItem = getSelectedItem();
 		if (selectedItem != null && selectedItem.equals(lastSelectedItem))

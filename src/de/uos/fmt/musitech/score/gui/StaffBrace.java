@@ -62,6 +62,7 @@ public class StaffBrace extends StaffConnector {
 		super(first, last);
 	}
 	
+	@Override
 	public int arrange(int pass) {
 		int ld = getFirstStaff().getLineDistance();
 		int y1 = getFirstStaff().absY();
@@ -88,6 +89,7 @@ public class StaffBrace extends StaffConnector {
 		return 3;
 	}
 
+	@Override
 	public void paint(java.awt.Graphics g) {
 		if(!isVisible()) return;
 		g.setPaintMode();
@@ -95,6 +97,7 @@ public class StaffBrace extends StaffConnector {
 		b2.paint(g);
 	}
 	
+	@Override
 	public int rwidth() {
 		return width;
 	}

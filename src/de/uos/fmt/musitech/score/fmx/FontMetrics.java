@@ -361,6 +361,7 @@ public class FontMetrics {
 	}
 
 	/** Returns a text representation of the current metrics layout. */
+	@Override
 	public String toString() {
 		String res = "";
 		for (int i = 0; i < 256; i++) {

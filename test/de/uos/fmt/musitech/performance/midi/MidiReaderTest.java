@@ -52,8 +52,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.List;
-
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.Sequence;
 
@@ -61,12 +59,9 @@ import junit.framework.Assert;
 import junit.framework.TestCase;
 import de.uos.fmt.musitech.data.metadata.MetaDataItem;
 import de.uos.fmt.musitech.data.score.NotationStaff;
-import de.uos.fmt.musitech.data.score.NotationSystem;
 import de.uos.fmt.musitech.data.score.NotationVoice;
 import de.uos.fmt.musitech.data.structure.Note;
 import de.uos.fmt.musitech.data.structure.Piece;
-import de.uos.fmt.musitech.data.structure.container.Container;
-import de.uos.fmt.musitech.data.structure.lyrics.LyricsContainer;
 import de.uos.fmt.musitech.data.structure.lyrics.LyricsSyllable;
 import de.uos.fmt.musitech.utility.math.Rational;
 
@@ -549,7 +544,8 @@ public class MidiReaderTest extends TestCase {
     /**
      * @see junit.framework.TestCase#setUp()
      */
-    protected void setUp() throws Exception {
+    @Override
+	protected void setUp() throws Exception {
         getClass().getClassLoader().setDefaultAssertionStatus(true);
     }
 

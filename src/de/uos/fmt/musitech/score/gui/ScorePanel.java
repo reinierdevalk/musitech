@@ -67,13 +67,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
-import java.util.Vector;
-
 import javax.swing.JLayeredPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -204,6 +200,7 @@ public class ScorePanel extends JLayeredPane implements ChangeListener,
 	 * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#getMinimalPositionForTime(long,
 	 *      de.uos.fmt.musitech.utility.math.Rational)
 	 */
+	@Override
 	public int getMinimalPositionForTime(long t, Rational m)
 			throws WrongArgumentException {
 		if (t == Timed.INVALID_TIME && m == null)
@@ -249,6 +246,7 @@ public class ScorePanel extends JLayeredPane implements ChangeListener,
 	 * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#setMinimalPositionForTime(long,
 	 *      de.uos.fmt.musitech.utility.math.Rational, int)
 	 */
+	@Override
 	public boolean setMinimalPositionForTime(long t, Rational m, int position)
 			throws WrongArgumentException {
 		if ((t == Timed.INVALID_TIME && m == null) || position < 0)
@@ -300,6 +298,7 @@ public class ScorePanel extends JLayeredPane implements ChangeListener,
 	 * 
 	 * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#getNextPositioningTime(long)
 	 */
+	@Override
 	public long getNextPositioningTime(long startTime) {
 		MetricalTimeLine mtl = notationSystem.getContext().getPiece()
 				.getMetricalTimeLine();
@@ -323,6 +322,7 @@ public class ScorePanel extends JLayeredPane implements ChangeListener,
 	 * 
 	 * @see de.uos.fmt.musitech.time.gui.HorizontalTimedDisplay#doInitialLayout()
 	 */
+	@Override
 	public void doInitialLayout() {
 		// as the score is arranged in the constructor this method does nothing
 	}
@@ -332,6 +332,7 @@ public class ScorePanel extends JLayeredPane implements ChangeListener,
 	 * 
 	 * @see javax.swing.event.ChangeListener#stateChanged(javax.swing.event.ChangeEvent)
 	 */
+	@Override
 	public void stateChanged(ChangeEvent e) {
 		setSize(score.getSize().width, score.getSize().height);
 		redraw = true;
@@ -344,6 +345,7 @@ public class ScorePanel extends JLayeredPane implements ChangeListener,
 	 * @see de.uos.fmt.musitech.data.time.MetricTimeable#setMetricTime(de.uos.fmt.musitech.utility.math.Rational)
 	 */
 	// Cursor debugCursor;
+	@Override
 	public void setMetricTime(Rational time) {
 		/*
 		 * if (cursor != null) { remove(cursor); }
@@ -450,16 +452,20 @@ public class ScorePanel extends JLayeredPane implements ChangeListener,
 	private void addListener() {
 		addComponentListener(new ComponentListener() {
 
+			@Override
 			public void componentHidden(ComponentEvent e) {
 			}
 
+			@Override
 			public void componentMoved(ComponentEvent e) {
 			}
 
+			@Override
 			public void componentResized(ComponentEvent e) {
 				adjustZoom();
 			}
 
+			@Override
 			public void componentShown(ComponentEvent e) {
 			}
 		});
@@ -472,9 +478,9 @@ public class ScorePanel extends JLayeredPane implements ChangeListener,
 	void adjustZoom() {
 		if (autoZoom) {
 			double xFactor = getWidth()
-								/ (double) score.getPreferredSize().getWidth();
+								/ score.getPreferredSize().getWidth();
 			double yFactor = getHeight()
-								/ (double) score.getPreferredSize().getHeight();
+								/ score.getPreferredSize().getHeight();
 			zoom = Math.min(xFactor, yFactor);
 		}
 	}
@@ -496,6 +502,7 @@ public class ScorePanel extends JLayeredPane implements ChangeListener,
 		}
 	}
 
+	@Override
 	public void setSize(int w, int h) {
 		Insets i = getInsets();
 		h += i.top + i.bottom;
@@ -503,6 +510,7 @@ public class ScorePanel extends JLayeredPane implements ChangeListener,
 		super.setSize(w, h);
 	}
 
+	@Override
 	public void setSize(Dimension dim) {
 		setSize(dim.width, dim.height);
 	}
@@ -609,7 +617,7 @@ public class ScorePanel extends JLayeredPane implements ChangeListener,
 			if(vWidth>3000)
 				vWidth = 3000;
 //			offscreenBuffer = (BufferedImage) createImage(vWidth, vHeight);
-			offscreenBuffer = (BufferedImage) new BufferedImage(vWidth, vHeight,BufferedImage.TYPE_INT_ARGB);
+			offscreenBuffer = new BufferedImage(vWidth, vHeight,BufferedImage.TYPE_INT_ARGB);
 			offscreenGraphics = offscreenBuffer.createGraphics();
 			offscreenGraphics.setClip(0, 0, vWidth, vHeight);
 		}
@@ -684,6 +692,7 @@ public class ScorePanel extends JLayeredPane implements ChangeListener,
 		}
 	}
 
+	@Override
 	public int print(Graphics graphics, PageFormat pageFormat, int pageIndex)
 			throws PrinterException {
 		if (pageIndex == 0) {
@@ -730,6 +739,7 @@ public class ScorePanel extends JLayeredPane implements ChangeListener,
 		return NO_SUCH_PAGE;
 	}
 
+	@Override
 	public void paintChildren(Graphics g) {
 		// we take care of that ourselfs in paintComponent().
 	}
@@ -802,6 +812,7 @@ public class ScorePanel extends JLayeredPane implements ChangeListener,
 	/**
 	 * @see java.awt.Component#getPreferredSize()
 	 */
+	@Override
 	public Dimension getPreferredSize() {
 		return new Dimension((int)Math.round(score.getPreferredSize().width*zoom),
 			(int)Math.round(score.getPreferredSize().height*zoom));
@@ -851,7 +862,7 @@ public class ScorePanel extends JLayeredPane implements ChangeListener,
 			return null;
 		}
 
-		return (Note) chord.get(0);
+		return chord.get(0);
 	}
 
 	private final Color[] selectionColors = new Color[] {
@@ -916,6 +927,7 @@ public class ScorePanel extends JLayeredPane implements ChangeListener,
 	/**
 	 * @see de.uos.fmt.musitech.framework.selection.SelectionListener#selectionChanged(SelectionChangeEvent)
 	 */
+	@Override
 	public void selectionChanged(SelectionChangeEvent e) {
 		Selection sel = e.getSelection();
 		HashMap notationToGraphical = scoreMapper.getNotationToGraphical();

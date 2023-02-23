@@ -47,19 +47,10 @@ above is subject to the following three conditions:
 **********************************************/
 package de.uos.fmt.musitech.score.kern;
 
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.net.URL;
-
-import javax.swing.AbstractAction;
-import javax.swing.JButton;
-import javax.swing.JComponent;
 
 import de.uos.fmt.musitech.data.score.NotationSystem;
 import de.uos.fmt.musitech.score.gui.ScoreMapper;
-import de.uos.fmt.musitech.score.gui.ScorePanel;
 
 
 /**

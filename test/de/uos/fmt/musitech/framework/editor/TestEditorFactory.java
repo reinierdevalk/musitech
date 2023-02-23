@@ -118,6 +118,7 @@ public class TestEditorFactory  {
 		EditorWindow w = new EditorWindow("Note Editor");
 		w.addEditor(editor);
 		w.getEditorPanel().addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("note: " + note);
 			}
@@ -176,6 +177,7 @@ public class TestEditorFactory  {
 		System.out.println(
 			"test default profile: " + testDefaultScoreNote + " TiedNote: " + testDefaultScoreNote.getTiedNote());
 		w.getEditorPanel().addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println(
 					"test default profile: "
@@ -317,6 +319,7 @@ public class TestEditorFactory  {
 		w.addEditor(editor);
 		System.out.println("test panel editor: " + note2);
 		w.getEditorPanel().addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("test panel editor: " + note2);
 			}
@@ -446,6 +449,7 @@ public class TestEditorFactory  {
 			super("I exist for you to exit the program :o)");
 			setSize(350, 0);
 			addWindowListener(new java.awt.event.WindowAdapter() {
+				@Override
 				public void windowClosing(java.awt.event.WindowEvent e) {
 					System.exit(0);
 				}
@@ -650,6 +654,7 @@ public class TestEditorFactory  {
 			longWrap = long1;
 		}
 
+		@Override
 		public String toString() {
 			StringBuffer stringBuffer = new StringBuffer(byteWrap.toString() + "\t");
 			stringBuffer.append(intWrap.toString() + "\t");
@@ -714,6 +719,7 @@ public class TestEditorFactory  {
 			this.note = note;
 		}
 
+		@Override
 		public String toString() {
 			String string = "";
 			string += getClass().toString();

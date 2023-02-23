@@ -76,6 +76,7 @@ public class TimeSignatureMarker implements Marker {
 	 * 		generator-class="native" 
 	 * 
 	 */
+	@Override
 	public Long getUid() {
 		return uid;
 	}
@@ -83,7 +84,8 @@ public class TimeSignatureMarker implements Marker {
 	/**
 	 * @see de.uos.fmt.musitech.data.MObject#setUid(java.lang.Long)
 	 */
-	 public void setUid(Long uid) {
+	 @Override
+	public void setUid(Long uid) {
 	     this.uid = uid;
 	}
 	 
@@ -134,7 +136,8 @@ public class TimeSignatureMarker implements Marker {
      * cascade = "all"
      * 
      */
-    public Rational getMetricTime() {
+    @Override
+	public Rational getMetricTime() {
         return metricTime;
     }
 
@@ -175,7 +178,8 @@ public class TimeSignatureMarker implements Marker {
      * 
      * @return String
      */
-    public String toString() {
+    @Override
+	public String toString() {
         return "TimeSignatureMarker at " + metricTime + " (metricTime): " + timeSignature;
     }
 
@@ -185,7 +189,8 @@ public class TimeSignatureMarker implements Marker {
      * @see de.uos.fmt.musitech.data.time.Metrical#getMetricDuration()
      * 
      */
-    public Rational getMetricDuration() {
+    @Override
+	public Rational getMetricDuration() {
         return Rational.ZERO;
     }
 
@@ -193,7 +198,8 @@ public class TimeSignatureMarker implements Marker {
      * @see de.uos.fmt.musitech.data.MObject#isValidValue(java.lang.String,
      *      java.lang.Object)
      */
-    public boolean isValidValue(String propertyName, Object value) {
+    @Override
+	public boolean isValidValue(String propertyName, Object value) {
         // TODO Auto-generated method stub
         return true; //default
     }

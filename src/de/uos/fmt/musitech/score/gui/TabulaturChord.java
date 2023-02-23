@@ -57,9 +57,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-import de.uos.fmt.musitech.data.score.DualMetricAttachable;
 import de.uos.fmt.musitech.data.score.NotationChord;
-import de.uos.fmt.musitech.data.structure.Note;
 import de.uos.fmt.musitech.score.util.Pair;
 
 /**
@@ -90,6 +88,7 @@ public class TabulaturChord extends Chord implements ContentChangeListener {
 	}
 
 	private List addedSlurs = new ArrayList();
+	@Override
 	public int arrange(int pass) {
 		NotationChord n = (NotationChord)graphicalToNotation.get(shadowCaster);
 		if (n.getRenderingHint("tabulatur note") != null &&
@@ -133,6 +132,7 @@ public class TabulaturChord extends Chord implements ContentChangeListener {
 		return super.arrange(pass);
 	}
 	
+	@Override
 	public void paint(Graphics g) {
 		for (Iterator iter = getChildren().iterator(); iter.hasNext();) {
 			ScoreObject element = (ScoreObject) iter.next();
@@ -142,15 +142,18 @@ public class TabulaturChord extends Chord implements ContentChangeListener {
 			paintTremolo(g,shadowCaster.getTremolo());
 	}
 	
+	@Override
 	public void contentAdded(Object newContent) {
 		Pitch pitch = (Pitch)newContent;
 		add(new TabulaturPitch(pitch, graphicalToNotation));
 	}
 	
+	@Override
 	public void contentRemoved(Object content) {
 		
 	}
 	
+	@Override
 	Pair slurPoint(boolean left, boolean above, boolean atStem) {
 		TabulaturPitch pitch = (TabulaturPitch)child(0);
 		int topPullUpY = pitch.getTopPullUpY();
